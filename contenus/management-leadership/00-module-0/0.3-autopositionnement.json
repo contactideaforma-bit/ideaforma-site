@@ -1,0 +1,28 @@
+{
+  "consigne": "Autopositionnement (non noté). Pour chaque affirmation, choisissez la réponse qui décrit le mieux votre situation aujourd'hui. Répondez sincèrement : ce questionnaire vous sert de point de départ et sera repris en fin de parcours.",
+  "seuil": 0,
+  "tentatives_max": 0,
+  "corrections": false,
+  "questions": [
+    { "id": "ap01", "enonce": "Je sais expliquer clairement en quoi le rôle d'un manager diffère de celui d'un expert technique.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap02", "enonce": "Je connais les principales obligations légales qui pèsent sur un manager (sécurité, harcèlement, discrimination, temps de travail).", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap03", "enonce": "Je suis capable d'adapter ma façon de manager selon la personne et la situation, plutôt que d'appliquer un seul style.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap04", "enonce": "Je sais lister les compétences nécessaires à une activité et repérer celles qui manquent dans une équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap05", "enonce": "Je sais répartir les rôles et les missions dans une équipe de façon claire et équitable.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap06", "enonce": "Je sais formuler un objectif précis, mesurable et daté pour une équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap07", "enonce": "Je sais construire et utiliser un tableau de bord simple (quelques indicateurs) pour suivre l'activité.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap08", "enonce": "Je sais déléguer une tâche en fixant le cadre, le niveau d'autonomie et le point de contrôle.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap09", "enonce": "Je sais donner un retour (feedback) sur un comportement, positif ou correctif, sans blesser ni minimiser.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap10", "enonce": "Je sais préparer et conduire un entretien individuel de suivi avec un collaborateur.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap11", "enonce": "Je connais la différence entre l'entretien annuel d'évaluation et l'entretien de parcours professionnel prévu par la loi.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap12", "enonce": "Je sais animer une réunion d'équipe qui aboutit à des décisions et à des actions suivies.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap13", "enonce": "Je sais faire remonter un problème ou un désaccord à ma hiérarchie de manière constructive.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap14", "enonce": "Je sais ce qui motive réellement les personnes au travail et comment agir dessus en tant que manager.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap15", "enonce": "Je sais créer un climat où chacun ose signaler un problème ou une erreur sans crainte.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap16", "enonce": "Je sais repérer les signaux d'une charge de travail excessive ou d'un risque psychosocial dans une équipe et je sais quoi faire.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap17", "enonce": "Je sais ce qu'un manager peut et doit faire pour intégrer un collaborateur en situation de handicap.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap18", "enonce": "Je sais accompagner la montée en compétences d'un collaborateur (plan de développement, tutorat, formation).", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap19", "enonce": "Je sais intervenir dans un conflit entre deux collaborateurs avec une méthode, sans prendre parti.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] },
+    { "id": "ap20", "enonce": "Je sais évaluer les résultats d'une équipe, en tirer des enseignements et conduire un changement dans l'équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3] }
+  ]
+}

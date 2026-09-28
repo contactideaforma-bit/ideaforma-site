@@ -425,3 +425,9 @@ table.table { width: 100%; border-collapse: collapse; font-size: .88rem; }
 .pdf-page canvas { display: block; max-width: 100%; }
 .pdf-barre { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; font-size: .85rem; font-weight: 600; color: var(--blue-dark); }
 .pdf-fin { font-size: .8rem; color: var(--text-muted); }
+
+.cours-table { font-size: .85rem; margin: .5rem 0 1rem; }
+.cours-table th, .cours-table td { border: 1px solid var(--border); }
+.transcription { margin-top: 1.25rem; border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: .75rem 1rem; background: var(--white); }
+.transcription summary { cursor: pointer; font-weight: 600; color: var(--blue-dark); font-size: .9rem; }
+.transcription .cours { margin-top: .75rem; }

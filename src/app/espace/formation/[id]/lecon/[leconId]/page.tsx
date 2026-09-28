@@ -3,7 +3,8 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { TYPES_LECON, type Formation, type Lecon, type Module } from "@/lib/types";
-import { BUCKET, blocsTexte, estFichier, estQuiz, lireQuiz, urlIntegration, type ContenuMedia } from "@/lib/contenu";
+import { BUCKET, estFichier, estQuiz, lireQuiz, urlIntegration, type ContenuMedia } from "@/lib/contenu";
+import TexteCours from "@/components/lecteur/TexteCours";
 import { terminerLecon } from "@/app/espace/actions";
 import ProtectionContenu from "@/components/ProtectionContenu";
 import LecteurPdf from "@/components/lecteur/LecteurPdf";
@@ -84,15 +85,10 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
 
       <div className="panel lecteur">
         {lecon.type === "texte" && (
-          <div className="cours">
-            {blocsTexte(contenu.texte ?? "").map((b, i) =>
-              b.type === "h1" ? <h2 key={i}>{b.contenu as string}</h2>
-              : b.type === "h2" ? <h3 key={i}>{b.contenu as string}</h3>
-              : b.type === "ul" ? <ul key={i}>{(b.contenu as string[]).map((li, k) => <li key={k}>{li}</li>)}</ul>
-              : <p key={i}>{b.contenu as string}</p>
-            )}
+          <>
+            <TexteCours texte={contenu.texte ?? ""} />
             {!contenu.texte && <div className="empty">Contenu en cours de rédaction.</div>}
-          </div>
+          </>
         )}
 
         {(lecon.type === "video" || lecon.type === "podcast") && (
@@ -115,12 +111,10 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
         )}
 
         {contenu.description && estFichier(lecon.type) && (
-          <div className="cours" style={{ marginTop: "1.25rem" }}>
-            {blocsTexte(contenu.description).map((b, i) =>
-              b.type === "ul" ? <ul key={i}>{(b.contenu as string[]).map((li, k) => <li key={k}>{li}</li>)}</ul>
-              : b.type === "p" ? <p key={i}>{b.contenu as string}</p> : <h3 key={i}>{b.contenu as string}</h3>
-            )}
-          </div>
+          <details className="transcription" open={!urlSignee && !embed}>
+            <summary>{urlSignee || embed ? "Transcription et notes" : "Texte de la leçon (média en cours de mise en ligne)"}</summary>
+            <TexteCours texte={contenu.description} />
+          </details>
         )}
 
         {quiz && (

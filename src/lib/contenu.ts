@@ -89,19 +89,35 @@ export function corrigerQuiz(quiz: ContenuQuiz, reponses: number[][]) {
 }
 
 /** Transforme le texte enrichi léger en blocs affichables. */
-export function blocsTexte(texte: string): { type: "h1" | "h2" | "p" | "ul"; contenu: string | string[] }[] {
-  const blocs: { type: "h1" | "h2" | "p" | "ul"; contenu: string | string[] }[] = [];
+export type BlocTexte =
+  | { type: "h1" | "h2" | "p"; contenu: string }
+  | { type: "ul"; contenu: string[] }
+  | { type: "table"; contenu: string[][] };
+
+/** Transforme le texte enrichi léger en blocs affichables (titres, paragraphes, puces, tableaux `| a | b |`). */
+export function blocsTexte(texte: string): BlocTexte[] {
+  const blocs: BlocTexte[] = [];
   let para: string[] = [];
   let liste: string[] = [];
+  let table: string[][] = [];
   const flush = () => {
     if (para.length) blocs.push({ type: "p", contenu: para.join(" ") });
     if (liste.length) blocs.push({ type: "ul", contenu: liste });
+    if (table.length) blocs.push({ type: "table", contenu: table });
     para = [];
     liste = [];
+    table = [];
   };
   for (const brute of texte.split("\n")) {
     const l = brute.trim();
     if (!l) { flush(); continue; }
+    if (l.startsWith("|")) {
+      if (para.length || liste.length) { const t = table; table = []; flush(); table = t; }
+      if (/^\|[\s:|-]+\|$/.test(l)) continue; // ligne de séparation |---|---|
+      table.push(l.replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+      continue;
+    }
+    if (table.length) { blocs.push({ type: "table", contenu: table }); table = []; }
     if (l.startsWith("## ")) { flush(); blocs.push({ type: "h2", contenu: l.slice(3) }); continue; }
     if (l.startsWith("# ")) { flush(); blocs.push({ type: "h1", contenu: l.slice(2) }); continue; }
     if (l.startsWith("- ") || l.startsWith("• ")) { if (para.length) { blocs.push({ type: "p", contenu: para.join(" ") }); para = []; } liste.push(l.slice(2)); continue; }

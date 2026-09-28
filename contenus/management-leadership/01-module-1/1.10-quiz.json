@@ -1,0 +1,137 @@
+{
+  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "seuil": 70,
+  "tentatives_max": 3,
+  "corrections": true,
+  "questions": [
+    {
+      "id": "m1q01",
+      "enonce": "Selon la distinction proposée par John Kotter (1990), à quoi sert le leadership, par opposition au management ?",
+      "options": [
+        "À planifier, budgéter et contrôler pour que les choses se passent comme prévu",
+        "À donner une direction, mobiliser et motiver pour que les choses évoluent",
+        "À représenter l'équipe auprès de la direction",
+        "À sanctionner les écarts de comportement"
+      ],
+      "bonnes": [1],
+      "explication": "Pour Kotter, le management gère la complexité (faire fonctionner) et le leadership gère le changement (faire évoluer). Une organisation a besoin des deux."
+    },
+    {
+      "id": "m1q02",
+      "enonce": "Henry Mintzberg a observé des managers au travail. Quelle est la conclusion la plus juste de ses observations ?",
+      "options": [
+        "Les managers passent l'essentiel de leur temps à planifier dans leur bureau",
+        "Les managers sont interrompus rarement et travaillent sur peu de sujets à la fois",
+        "Les managers passent la majeure partie de leur temps en communication orale, sur de nombreux sujets courts",
+        "Les managers ne prennent presque jamais de décision"
+      ],
+      "bonnes": [2],
+      "explication": "Mintzberg a montré un travail fragmenté, fait d'interruptions fréquentes et dominé par la communication orale (60 à 80 % du temps)."
+    },
+    {
+      "id": "m1q03",
+      "enonce": "Parmi les cinq fonctions du manager, laquelle est le plus souvent négligée parce que ses résultats ne se voient qu'à long terme ?",
+      "options": ["Planifier", "Animer", "Contrôler", "Développer"],
+      "bonnes": [3],
+      "explication": "Développer les personnes et l'équipe est la première fonction sacrifiée quand le temps manque : il faut la protéger en la mettant à l'agenda."
+    },
+    {
+      "id": "m1q04",
+      "enonce": "Un nouveau manager continue à assurer une production personnelle à temps plein et gère l'équipe « entre deux tâches ». Dans quel piège tombe-t-il ?",
+      "options": [
+        "Tout changer tout de suite",
+        "Rester dans la production",
+        "Ne rien changer du tout",
+        "Faire seul"
+      ],
+      "bonnes": [1],
+      "explication": "C'est le piège de l'expert promu : il n'a pas de temps pour manager. Le temps de management doit être négocié et protégé."
+    },
+    {
+      "id": "m1q05",
+      "enonce": "D'après l'étude reprise par Daniel Goleman (2000), quels styles de leadership dégradent le climat de l'équipe lorsqu'ils sont utilisés régulièrement ? (plusieurs réponses)",
+      "options": ["Directif", "Visionnaire", "Chef de file", "Coach"],
+      "bonnes": [0, 2],
+      "explication": "Directif et chef de file sont utiles ponctuellement (crise, équipe d'experts très motivés) mais toxiques en usage courant. Visionnaire, participatif, coach et collaboratif ont un effet positif."
+    },
+    {
+      "id": "m1q06",
+      "enonce": "Quel style de leadership consiste à donner une direction claire et un sens (« venez avec moi ») en laissant la liberté des moyens ?",
+      "options": ["Participatif", "Collaboratif", "Visionnaire", "Directif"],
+      "bonnes": [2],
+      "explication": "Le style visionnaire est, selon l'étude, celui qui a l'effet le plus positif sur le climat dans la plupart des situations."
+    },
+    {
+      "id": "m1q07",
+      "enonce": "Dans le leadership situationnel (Hersey & Blanchard), un collaborateur compétent sur une tâche mais qui hésite à prendre l'initiative relève de quel style ?",
+      "options": [
+        "Diriger (beaucoup de direction, peu de soutien)",
+        "Entraîner (beaucoup de direction, beaucoup de soutien)",
+        "Épauler (peu de direction, beaucoup de soutien)",
+        "Déléguer (peu de direction, peu de soutien)"
+      ],
+      "bonnes": [2],
+      "explication": "Compétence forte et engagement variable = niveau A3 : on n'explique plus comment faire, on écoute, on rassure, on consulte."
+    },
+    {
+      "id": "m1q08",
+      "enonce": "Quelle affirmation sur le niveau d'autonomie est exacte ?",
+      "options": [
+        "Le niveau d'autonomie est une caractéristique stable de la personne",
+        "Le niveau d'autonomie dépend de la tâche et évolue dans le temps",
+        "Un expert est autonome sur toutes les tâches",
+        "Le niveau d'autonomie se déduit de l'ancienneté"
+      ],
+      "bonnes": [1],
+      "explication": "On manage une personne sur une tâche donnée. Un excellent carrossier peut être débutant sur un logiciel de devis. Le style doit évoluer avec le niveau."
+    },
+    {
+      "id": "m1q09",
+      "enonce": "Un ancien collègue conteste votre légitimité par des remarques devant l'équipe. Quelle est la réaction la plus appropriée ?",
+      "options": [
+        "L'ignorer : cela passera avec le temps",
+        "Le recadrer publiquement pour montrer que vous êtes le chef",
+        "Le recevoir en entretien, reconnaître son expérience, nommer les faits et fixer la règle : désaccord en privé, pas devant l'équipe",
+        "Demander à la direction de le sanctionner"
+      ],
+      "bonnes": [2],
+      "explication": "Ni affrontement ni évitement : un entretien individuel qui reconnaît la place de la personne et pose la règle. Les contestations non traitées s'installent."
+    },
+    {
+      "id": "m1q10",
+      "enonce": "Concernant l'obligation de sécurité (Code du travail, L4121-1), quelle affirmation est exacte ?",
+      "options": [
+        "Elle ne concerne que les risques physiques",
+        "Elle pèse sur l'employeur et couvre la santé physique et mentale ; le manager la met en œuvre au quotidien",
+        "Elle pèse uniquement sur le salarié, responsable de sa propre sécurité",
+        "Elle ne s'applique qu'aux entreprises de plus de 50 salariés"
+      ],
+      "bonnes": [1],
+      "explication": "L'employeur doit prendre les mesures nécessaires pour protéger la santé physique et mentale. Le manager en est le relais ; il peut être personnellement responsable en cas de délégation de pouvoirs."
+    },
+    {
+      "id": "m1q11",
+      "enonce": "Un salarié vous signale des faits qui pourraient constituer du harcèlement de la part d'un collègue. Que devez-vous faire ?",
+      "options": [
+        "Mener vous-même une enquête discrète avant d'en parler",
+        "Attendre d'avoir des preuves solides pour ne pas accuser à tort",
+        "Prendre le signalement au sérieux et le transmettre sans délai à la hiérarchie ou aux RH, par écrit",
+        "Organiser une confrontation entre les deux personnes"
+      ],
+      "bonnes": [2],
+      "explication": "L'employeur doit agir dès qu'il est informé. Le manager ne minimise pas, n'enquête pas seul et transmet immédiatement ; l'inaction engage la responsabilité de l'entreprise et la sienne."
+    },
+    {
+      "id": "m1q12",
+      "enonce": "Votre direction vous demande de livrer huit véhicules pour vendredi, ce qui est irréaliste avec l'équipe actuelle. Quelle réponse correspond à la méthode vue dans le module ?",
+      "options": [
+        "« D'accord, on va y arriver » puis livrer en retard",
+        "« C'est impossible » sans autre précision",
+        "« C'est possible si nous décalons les deux véhicules de particuliers ; sinon il faut deux jours d'intérim. Que préférez-vous ? »",
+        "Transmettre la demande à l'équipe telle quelle en précisant que la direction l'exige"
+      ],
+      "bonnes": [2],
+      "explication": "« Oui, à ces conditions » : rendre visibles les conséquences et laisser la décision à qui elle appartient, plutôt qu'un oui intenable ou un non sans argument."
+    }
+  ]
+}

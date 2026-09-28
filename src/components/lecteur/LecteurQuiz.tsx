@@ -57,7 +57,8 @@ export default function LecteurQuiz({
 
   // ── Écran de résultat ──
   if (resultat?.ok) {
-    const detail = new Map((resultat.detail ?? []).map((d) => [d.id, d] as const));
+    type Detail = NonNullable<ResultatQuiz["detail"]>[number];
+    const detail = new Map<string, Detail>((resultat.detail ?? []).map((d: Detail) => [d.id, d]));
     return (
       <div>
         <div className={`alert ${resultat.reussi ? "alert-success" : "alert-warn"}`} style={{ fontSize: "1rem" }}>
