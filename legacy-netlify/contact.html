@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Devis — IDEAFORMA</title>
+  <meta name="description" content="Contactez IDEAFORMA pour un devis ou une prise de rendez-vous. Formulaire, email, téléphone et lien de réservation en ligne." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-list { display: flex; flex-direction: column; gap: .75rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-question .arrow {
+      flex-shrink: 0;
+      transition: transform .25s ease;
+      color: var(--blue);
+      font-size: .8rem;
+    }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .faq-item.open .faq-answer { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" title="Cliquez 5 fois pour une surprise !">
+      <img src="images/logo-ideaforma.png" alt="IDEAFORMA" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="formations.html">Nos Formations</a></li>
+      <li><a href="a-propos.html">À Propos</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="#rdv" class="btn btn-primary nav-cta">📅 Prendre RDV</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Accueil</a>
+  <a href="formations.html">Nos Formations</a>
+  <a href="a-propos.html">À Propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="#rdv" class="btn btn-primary">📅 Prendre RDV</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero page-hero-contact">
+  <h1>Contact &amp; Devis</h1>
+  <p>Vous avez un projet de formation ? Écrivez-nous, appelez-nous ou prenez directement RDV en ligne.</p>
+</div>
+
+<!-- ── CONTACT FORM + INFO ── -->
+<section class="section" style="background: var(--bg);">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <!-- Infos de contact -->
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>contact.ideaforma@gmail.com</p>
+            <p style="font-size:.8rem;">Réponse sous 24h ouvrées</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Téléphone</h4>
+            <p>06 25 16 13 93</p>
+            <p style="font-size:.8rem;">Lun–Ven · 9h–18h</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Adresse</h4>
+            <p>144 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine</p>
+            <p style="font-size:.8rem;">Interventions partout en Île-de-France et en France</p>
+          </div>
+        </div>
+
+        <!-- Bloc RDV Google Calendar / Calendly -->
+        <div class="calendly-box" id="rdv">
+          <h3>📅 Réservez votre créneau</h3>
+          <p>Prenez directement RDV en ligne avec notre équipe pour un échange de 30 min gratuit.</p>
+          <!-- 🔧 REMPLACER l'URL ci-dessous par votre lien Google Calendar Appointment ou Calendly -->
+          <a
+            href="https://calendar.google.com/calendar/u/0?cid=Y29udGFjdC5pZGVhZm9ybWFAZ21haWwuY29t"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            style="width:100%;justify-content:center;font-size:1rem;">
+            📅 Choisir mon créneau
+          </a>
+          <p style="font-size:.75rem;margin-top:.75rem;opacity:.7;">
+            Vous serez redirigé(e) vers Google Calendar pour choisir votre créneau.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="form-card">
+        <h3>Demande de contact ou de devis</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" required />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Dupont" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email professionnel *</label>
+              <input type="email" id="email" name="email" placeholder="jean.dupont@entreprise.fr" required />
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" />
+            </div>
+            <div class="form-group">
+              <label for="entreprise">Entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" placeholder="Mon Entreprise SAS" />
+            </div>
+            <div class="form-group">
+              <label for="fonction">Fonction</label>
+              <input type="text" id="fonction" name="fonction" placeholder="Responsable RH" />
+            </div>
+            <div class="form-group full">
+              <label for="formation">Formation souhaitée</label>
+              <select id="formation" name="formation">
+                <option value="">— Choisir une formation —</option>
+                <option value="management">Management &amp; Leadership</option>
+                <option value="communication">Communication Professionnelle</option>
+                <option value="parole">Prise de Parole en Public</option>
+                <option value="gestes">Gestes &amp; Postures / TMS</option>
+                <option value="securite">Sécurité &amp; Prévention</option>
+                <option value="excel">Excel Avancé</option>
+                <option value="projet">Gestion de Projet</option>
+                <option value="rh">Recrutement &amp; Intégration</option>
+                <option value="stress">Gestion du Stress &amp; QVT</option>
+                <option value="surmesure">Formation sur-mesure</option>
+                <option value="autre">Autre / Ne sait pas encore</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="participants">Nombre de participants estimé</label>
+              <select id="participants" name="participants">
+                <option value="">— Sélectionner —</option>
+                <option value="1">1 personne (formation individuelle)</option>
+                <option value="5">2 à 5 personnes</option>
+                <option value="10">6 à 10 personnes</option>
+                <option value="20">11 à 20 personnes</option>
+                <option value="20+">Plus de 20 personnes</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="message">Votre message *</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet, vos besoins, vos contraintes de dates ou toute information utile…" required></textarea>
+            </div>
+          </div>
+          <div class="form-footer">
+            <span class="form-notice">* Champs obligatoires · Vos données ne sont jamais revendues.</span>
+            <button type="submit" class="btn btn-primary">Envoyer ma demande →</button>
+          </div>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✅</div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre demande. Notre équipe vous répondra dans les 24h ouvrées.<br>En attendant, vous pouvez prendre RDV directement en ligne :</p>
+          <a
+            href="https://calendar.google.com/calendar/u/0?cid=Y29udGFjdC5pZGVhZm9ybWFAZ21haWwuY29t"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-blue"
+            style="margin-top:1rem;">
+            📅 Réserver mon créneau
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="overline">Questions fréquentes</span>
+      <h2>On répond à vos questions</h2>
+    </div>
+    <div class="faq-list" style="max-width:760px;margin:0 auto;">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Comment financer une formation IDEAFORMA ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Nos formations sont finançables via les OPCO (Opérateurs de Compétences), le plan de développement des compétences de votre entreprise ou en autofinancement. Nous vous accompagnons dans vos démarches administratives.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Proposez-vous des formations en intra-entreprise ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Toutes nos formations sont dispensées en intra-entreprise : soit en visioconférence, soit directement dans vos locaux. Nous adaptons systématiquement le contenu à votre contexte, vos exemples métier et vos objectifs spécifiques.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Quel délai pour organiser une formation ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Pour une formation intra-entreprise, comptez 2 à 4 semaines pour l'analyse des besoins, la personnalisation du contenu et la planification de la session.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Êtes-vous certifiés Qualiopi ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Oui. IDEAFORMA est certifié Qualiopi au titre des actions de formation. Cette certification garantit la qualité de nos processus pédagogiques et est indispensable pour accéder aux financements publics et mutualisés (OPCO, etc.).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Comment adapter une formation à des besoins spécifiques ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Nous réalisons systématiquement une analyse des besoins (entretien téléphonique ou questionnaire) avant toute formation intra-entreprise. Cela nous permet d'ajuster les objectifs pédagogiques, les exemples utilisés, les exercices pratiques et la durée.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Disposez-vous d'un référent handicap ?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Oui. Notre référent handicap est disponible pour étudier les aménagements nécessaires (supports adaptés, accessibilité des locaux, rythme pédagogique) afin que chaque stagiaire puisse suivre la formation dans les meilleures conditions.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-ideaforma.png" alt="IDEAFORMA" class="footer-logo-img">
+        <p>Organisme de formation professionnelle certifié Qualiopi, spécialisé dans le développement des compétences en entreprise.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos Formations</a></li>
+          <li><a href="a-propos.html">À Propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="formations.html">Management</a></li>
+          <li><a href="formations.html">Communication</a></li>
+          <li><a href="formations.html">Sécurité &amp; TMS</a></li>
+          <li><a href="formations.html">Bureautique</a></li>
+          <li><a href="formations.html">Gestion de projet</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📧 contact.ideaforma@gmail.com</p>
+        <p>📞 06 25 16 13 93</p>
+        <p>📍 144 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine</p>
+        <a href="#rdv" class="btn btn-primary" style="margin-top:1rem;font-size:.85rem;">📅 Prendre RDV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IDEAFORMA. Tous droits réservés.</span>
+      <span><a href="#">Mentions légales</a> &nbsp;·&nbsp; <a href="#">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="#">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#rdv" class="rdv-float" id="rdv-float" style="opacity:0;pointer-events:none;">
+  📅 <span class="label">Prendre RDV</span>
+</a>
+<canvas id="confetti-canvas" style="display:none;"></canvas>
+<div class="modal-overlay" id="konami-modal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <span class="modal-emoji">🎮</span>
+    <h3>Mode Expert Activé !</h3>
+    <p>Vous venez de débloquer le <strong>MODE EXPERT FORMATION</strong> ! Vous connaissez même le code Konami — la curiosité, c'est la première compétence. 🎓</p>
+    <a href="#rdv" class="btn btn-primary">Réserver mon créneau maintenant</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+<!-- ── MODAL JEU DU PENDU ── -->
+<div class="modal-overlay" id="hangman-modal">
+  <div class="modal-box hangman-box">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <h3>🎮 Jeu du Pendu</h3>
+    <div class="hm-layout">
+      <svg class="hangman-svg" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="205" x2="180" y2="205" stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="60" y1="205" x2="60" y2="15"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="58" y1="15"  x2="130" y2="15"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="130" y1="15" x2="130" y2="42"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <circle id="hm-head"  cx="130" cy="60"  r="18" fill="none" stroke="#FF6B35" stroke-width="3" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-body"  x1="130" y1="78"  x2="130" y2="130" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-arm-l" x1="130" y1="95"  x2="100" y2="120" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-arm-r" x1="130" y1="95"  x2="160" y2="120" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-leg-l" x1="130" y1="130" x2="100" y2="168" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-leg-r" x1="130" y1="130" x2="160" y2="168" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+      </svg>
+      <div class="hm-word-area">
+        <div id="hm-word"></div>
+        <div id="hm-status"></div>
+      </div>
+    </div>
+    <div id="hm-keyboard"></div>
+    <p style="text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.75rem;">Tapez « jeu » n'importe où sur le site pour rejouer !</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# dépendances et build
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# environnement (jamais dans git)
+.env
+.env.local
+.env.*.local
+
+# système
+.DS_Store
+_to_delete/
+
+# documents internes (ne pas publier sur GitHub)
+OPCO-dossier-referencement/
+Claude outputs/

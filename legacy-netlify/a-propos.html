@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À Propos — IDEAFORMA</title>
+  <meta name="description" content="IDEAFORMA, organisme de formation certifié Qualiopi. Notre mission, nos valeurs, notre approche pédagogique et nos certifications qualité." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .chiffres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .chiffre-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .chiffre-item .big { font-size: 2rem; font-weight: 800; color: var(--blue); display: block; }
+    .chiffre-item span:last-child { font-size: .8rem; color: var(--text-muted); }
+    .mission-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .engagements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .engagement-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .engagement-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .engagement-card h4 { color: var(--blue-dark); margin-bottom: .35rem; }
+    .engagement-card p { font-size: .85rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" title="Cliquez 5 fois pour une surprise !">
+      <img src="images/logo-ideaforma.png" alt="IDEAFORMA" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="formations.html">Nos Formations</a></li>
+      <li><a href="a-propos.html" class="active">À Propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html#rdv" class="btn btn-primary nav-cta">📅 Prendre RDV</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Accueil</a>
+  <a href="formations.html">Nos Formations</a>
+  <a href="a-propos.html">À Propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html#rdv" class="btn btn-primary">📅 Prendre RDV</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero page-hero-apropos">
+  <h1>À Propos d'IDEAFORMA</h1>
+  <p>Notre mission : rendre la formation professionnelle concrète, utile et mesurable pour chaque entreprise et chaque apprenant.</p>
+</div>
+
+<!-- ── MISSION ── -->
+<section class="section" style="background: var(--bg);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="overline">Notre mission</span>
+        <h2 style="color:var(--blue-dark);margin:.5rem 0 1rem;">Former pour transformer</h2>
+        <p style="font-size:1rem;margin-bottom:1rem;">IDEAFORMA est né d'une conviction simple : <strong>la formation est le levier le plus puissant du développement humain et professionnel.</strong></p>
+        <p style="margin-bottom:1.5rem;">Nous concevons des parcours de formation ancrés dans la réalité du terrain, animés par des experts praticiens qui transmettent non seulement des savoirs, mais des savoir-faire directement applicables.</p>
+
+        <div class="cert-strip">
+          <img src="images/logo-qualiopi.png" alt="Certification Qualiopi" class="cert-logo">
+          <div>
+            <h4>Certification Qualiopi</h4>
+            <p>IDEAFORMA est certifié Qualiopi (référentiel national qualité) — gage de rigueur pédagogique et condition pour accéder aux financements publics (OPCO, France Compétences).</p>
+          </div>
+        </div>
+
+        <div class="cert-strip" style="margin-top:1rem;">
+          <div class="cert-badge">📋</div>
+          <div>
+            <h4>Numéro DA : 11922999392</h4>
+            <p>Déclaration d'activité enregistrée auprès du Préfet de Région d'Île-de-France.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-photo">
+        <img src="images/formation-digital.png" alt="Formation digitale IDEAFORMA">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALEURS ── -->
+<section class="section" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="overline">Ce qui nous anime</span>
+      <h2>Nos valeurs</h2>
+      <p>Des principes qui guident chacune de nos formations et toutes nos interactions.</p>
+    </div>
+    <div class="values-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; display: grid;">
+      <div class="value-item">
+        <div class="v-icon">🎯</div>
+        <div>
+          <h4>Pragmatisme</h4>
+          <p>Chaque apport théorique se traduit en outils concrets, applicables dès le retour au poste.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="v-icon">🤝</div>
+        <div>
+          <h4>Proximité</h4>
+          <p>Nous prenons le temps de comprendre vos enjeux avant de proposer la moindre solution.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="v-icon">⭐</div>
+        <div>
+          <h4>Excellence pédagogique</h4>
+          <p>Nos formateurs sont sélectionnés pour leur expertise terrain autant que pour leur pédagogie.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="v-icon">🔄</div>
+        <div>
+          <h4>Amélioration continue</h4>
+          <p>Nous faisons évoluer nos contenus en permanence pour rester à l'état de l'art.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOTRE APPROCHE PÉDAGOGIQUE ── -->
+<section class="section" style="background: var(--bg);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="overline">Comment nous travaillons</span>
+      <h2>Notre approche pédagogique</h2>
+      <p>Chaque formation IDEAFORMA suit un processus rigoureux, du diagnostic initial à l'évaluation finale.</p>
+    </div>
+    <div class="split-grid">
+      <div class="split-photo">
+        <img src="images/training-dev.png" alt="Approche pédagogique IDEAFORMA">
+      </div>
+      <div class="split-text">
+        <ul>
+          <li>Analyse des besoins et des objectifs avant toute intervention</li>
+          <li>Programme adapté au contexte métier de l'entreprise</li>
+          <li>Pédagogie active : cas pratiques, mises en situation, échanges réels</li>
+          <li>Évaluation des acquis à chaud et à froid</li>
+          <li>Compte-rendu et bilan transmis à l'entreprise commanditaire</li>
+          <li>Formateurs sélectionnés pour leur expertise terrain</li>
+        </ul>
+        <a href="contact.html" class="btn btn-blue" style="margin-top:1rem;">Discuter de votre projet →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOS ENGAGEMENTS ── -->
+<section class="section" style="background: var(--bg);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="overline">Notre promesse</span>
+      <h2>Nos engagements</h2>
+    </div>
+    <div class="engagements-grid">
+      <div class="engagement-card">
+        <div class="engagement-icon">📞</div>
+        <div>
+          <h4>Réponse sous 24h</h4>
+          <p>Toute demande de renseignement ou de devis reçoit une réponse dans la journée ouvrable.</p>
+        </div>
+      </div>
+      <div class="engagement-card">
+        <div class="engagement-icon">🎯</div>
+        <div>
+          <h4>Adéquation programme / besoins</h4>
+          <p>Analyse de vos besoins et adaptation du contenu avant toute formation intra-entreprise.</p>
+        </div>
+      </div>
+      <div class="engagement-card">
+        <div class="engagement-icon">📊</div>
+        <div>
+          <h4>Évaluation systématique</h4>
+          <p>Bilan à chaud et à froid pour mesurer les acquis et l'impact réel en situation de travail.</p>
+        </div>
+      </div>
+      <div class="engagement-card">
+        <div class="engagement-icon">🔒</div>
+        <div>
+          <h4>Accessibilité &amp; inclusion</h4>
+          <p>Référent handicap disponible pour adapter nos dispositifs aux besoins spécifiques de chaque stagiaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-banner">
+  <h2>Envie d'en savoir plus ?</h2>
+  <p>Rencontrons-nous pour échanger sur vos projets de formation.</p>
+  <div class="cta-actions">
+    <a href="contact.html#rdv" class="btn btn-primary">📅 Prendre RDV</a>
+    <a href="formations.html" class="btn btn-outline">Voir nos formations</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-ideaforma.png" alt="IDEAFORMA" class="footer-logo-img">
+        <p>Organisme de formation professionnelle certifié Qualiopi, spécialisé dans le développement des compétences en entreprise.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos Formations</a></li>
+          <li><a href="a-propos.html">À Propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="formations.html">Management</a></li>
+          <li><a href="formations.html">Communication</a></li>
+          <li><a href="formations.html">Sécurité &amp; TMS</a></li>
+          <li><a href="formations.html">Bureautique</a></li>
+          <li><a href="formations.html">Gestion de projet</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📧 contact.ideaforma@gmail.com</p>
+        <p>📞 06 25 16 13 93</p>
+        <p>📍 144 Avenue Charles de Gaulle<br>92200 Neuilly-sur-Seine</p>
+        <a href="contact.html#rdv" class="btn btn-primary" style="margin-top:1rem;font-size:.85rem;">📅 Prendre RDV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IDEAFORMA. Tous droits réservés.</span>
+      <span><a href="#">Mentions légales</a> &nbsp;·&nbsp; <a href="#">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="#">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="contact.html#rdv" class="rdv-float" id="rdv-float" style="opacity:0;pointer-events:none;">
+  📅 <span class="label">Prendre RDV</span>
+</a>
+<canvas id="confetti-canvas" style="display:none;"></canvas>
+<div class="modal-overlay" id="konami-modal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <span class="modal-emoji">🎮</span>
+    <h3>Mode Expert Activé !</h3>
+    <p>Vous venez de débloquer le <strong>MODE EXPERT FORMATION</strong> ! Vous connaissez même le code Konami — la curiosité, c'est la première compétence. 🎓</p>
+    <a href="contact.html" class="btn btn-primary">Choisir ma prochaine formation</a>
+  </div>
+</div>
+
+<!-- ── MODAL JEU DU PENDU ── -->
+<div class="modal-overlay" id="hangman-modal">
+  <div class="modal-box hangman-box">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <h3>🎮 Jeu du Pendu</h3>
+    <div class="hm-layout">
+      <svg class="hangman-svg" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="205" x2="180" y2="205" stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="60" y1="205" x2="60" y2="15"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="58" y1="15"  x2="130" y2="15"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="130" y1="15" x2="130" y2="42"  stroke="#4A9FD4" stroke-width="4" stroke-linecap="round"/>
+        <circle id="hm-head"  cx="130" cy="60"  r="18" fill="none" stroke="#FF6B35" stroke-width="3" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-body"  x1="130" y1="78"  x2="130" y2="130" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-arm-l" x1="130" y1="95"  x2="100" y2="120" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-arm-r" x1="130" y1="95"  x2="160" y2="120" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-leg-l" x1="130" y1="130" x2="100" y2="168" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+        <line   id="hm-leg-r" x1="130" y1="130" x2="160" y2="168" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" style="opacity:0;transition:opacity .4s ease"/>
+      </svg>
+      <div class="hm-word-area">
+        <div id="hm-word"></div>
+        <div id="hm-status"></div>
+      </div>
+    </div>
+    <div id="hm-keyboard"></div>
+    <p style="text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.75rem;">Tapez « jeu » n'importe où sur le site pour rejouer !</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
