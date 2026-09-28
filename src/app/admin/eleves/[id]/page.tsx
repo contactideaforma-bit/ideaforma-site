@@ -22,6 +22,12 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
   if (!eleve) notFound();
   const e = eleve as Profile;
 
+  const inscIds = ((inscriptionsData ?? []) as { id: string }[]).map((i) => i.id);
+  const { data: quizData } = inscIds.length
+    ? await supabase.from("quiz_reponses").select("id, lecon_id, score, reussi, created_at, lecons:lecon_id(titre)").in("inscription_id", inscIds).order("created_at", { ascending: false }).limit(50)
+    : { data: [] };
+  const tentativesQuiz = (quizData ?? []) as unknown as { id: string; score: number; reussi: boolean; created_at: string; lecons: { titre: string } | null }[];
+
   type Insc = { id: string; formation_id: string; date_debut: string; date_fin: string | null; statut: string; formations: { id: string; titre: string } | null };
   const inscriptions = (inscriptionsData ?? []) as unknown as Insc[];
   const avance = new Map<string, { pourcentage: number; nb_lecons: number; nb_terminees: number }>(
@@ -125,6 +131,27 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
         </div>
 
         <div>
+          {tentativesQuiz.length > 0 && (
+            <div className="panel">
+              <h2>Quiz et évaluations <span className="count">{tentativesQuiz.length}</span></h2>
+              <div className="table-wrap">
+                <table className="table">
+                  <thead><tr><th>Leçon</th><th>Score</th><th>Résultat</th><th>Date</th></tr></thead>
+                  <tbody>
+                    {tentativesQuiz.map((t) => (
+                      <tr key={t.id}>
+                        <td>{t.lecons?.titre ?? "—"}</td>
+                        <td>{t.score} %</td>
+                        <td>{t.reussi ? <span className="badge badge-green">Réussi</span> : <span className="badge badge-orange">Échec</span>}</td>
+                        <td className="muted">{formatDate(t.created_at)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           <div className="panel">
             <h2>Identité</h2>
             <form action={modifier}>

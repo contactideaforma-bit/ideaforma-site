@@ -132,9 +132,31 @@ après création, à transmettre à la main.
 - [ ] Attribuer une formation avec une date de fin passée → l'élève la voit « Délai dépassé » et ne peut pas l'ouvrir.
 - [ ] Désactiver le compte test → connexion refusée.
 
-## Étape 2 (à venir)
+## Étape 2 — contenus et quiz (livrée)
 
-Lecteur de contenu (vidéo, slides, PDF, podcast, e-book) via le bucket privé `contenus` et des URL
-signées de quelques minutes, éditeur de quiz et d'évaluations avec notation, certificats de réalisation,
-protection renforcée (filigrane dynamique, flou quand l'onglet perd le focus, lecture vidéo sans
-téléchargement), et création des premières formations « solides ».
+**À faire une fois** : Supabase → SQL Editor → coller `supabase/migrations/0002_contenus_quiz.sql` → Run
+(table `quiz_reponses` = traçabilité de chaque tentative, preuve de réalisation).
+
+Ce que ça apporte :
+- **Admin → Formations → fiche → « Modifier »** sur une leçon : rédaction d'un cours texte, dépôt d'un fichier
+  (vidéo MP4, podcast MP3, PDF / e-book / slides exportées en PDF) directement dans le stockage privé,
+  lien vidéo externe (YouTube non répertorié / Vimeo), éditeur de quiz et d'évaluations (choix unique ou
+  multiple, seuil de réussite, tentatives maximum, explications).
+- **Élève** : lecteur intégré (vidéo et audio sans téléchargement, PDF rendu page par page sans barre
+  d'outils, diaporama avec flèches), quiz corrigés **côté serveur** (les bonnes réponses ne sont jamais
+  envoyées au navigateur avant soumission), progression automatique, navigation précédent / suivant.
+- **Protection** : clic droit, copie, impression et raccourcis bloqués ; contenu flouté quand la fenêtre
+  perd le focus ; filigrane avec l'e-mail de l'élève sur les pages, vidéos et PDF ; fichiers servis par
+  URL signées valables 3 h, uniquement aux inscrits dans leur délai d'accès.
+
+Limites à connaître :
+- Fichiers : 50 Mo maximum par fichier sur l'offre Supabase gratuite (l'offre Pro monte à 5 Go). Pour les
+  vidéos longues, utilisez un lien YouTube « non répertorié » ou Vimeo.
+- Capture d'écran : impossible à empêcher techniquement dans un navigateur ; le filigrane nominatif et le
+  floutage hors focus rendent la fuite dissuasive et traçable.
+
+## Étape 3 (à venir)
+
+Attestations / certificats de réalisation PDF générés automatiquement, relevés de connexion (temps passé
+par leçon), questionnaire de satisfaction à chaud, rappels e-mail avant la fin du délai d'accès, et
+création des premières formations complètes.

@@ -3,7 +3,6 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { TYPES_LECON, formatDate, type Formation, type Lecon, type Module } from "@/lib/types";
-import { terminerLecon } from "@/app/espace/actions";
 import ProtectionContenu from "@/components/ProtectionContenu";
 
 export default async function FormationEleve({ params }: { params: Promise<{ id: string }> }) {
@@ -45,6 +44,7 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
 
       <div className="panel">
         <h2>Ma progression <span className="count">{pct} %</span></h2>
+        {pct === 100 && <div className="alert alert-success">🎉 Formation terminée : toutes les leçons sont validées.</div>}
         <div className="progress" style={{ height: 12 }}><span style={{ width: `${pct}%` }} /></div>
         <div className="progress-label">{faites} leçon{faites > 1 ? "s" : ""} terminée{faites > 1 ? "s" : ""} sur {total}</div>
       </div>
@@ -73,19 +73,14 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
                   {m.lecons.filter((l) => l.publie).sort((a, b) => a.ordre - b.ordre).map((l) => {
                     const t = typeLabel(l.type);
                     const faite = terminees.has(l.id);
-                    const terminer = terminerLecon.bind(null, f.id, l.id);
                     return (
-                      <div key={l.id} className="lecon-item">
+                      <Link key={l.id} href={`/espace/formation/${f.id}/lecon/${l.id}`} className="lecon-item lecon-lien">
                         <span>{faite ? "✅" : t?.icone ?? "📄"}</span>
                         <span style={{ fontWeight: faite ? 400 : 500 }}>{l.titre}</span>
                         <span className="type">{t?.label ?? l.type}{l.duree_minutes ? ` · ${l.duree_minutes} min` : ""}</span>
                         <span className="spacer" />
-                        {insc && !faite && (
-                          <form action={terminer}>
-                            <button className="btn btn-ghost btn-sm" type="submit">Marquer terminée</button>
-                          </form>
-                        )}
-                      </div>
+                        <span className="btn btn-ghost btn-sm">{faite ? "Revoir" : "Ouvrir"} →</span>
+                      </Link>
                     );
                   })}
                   {m.lecons.filter((l) => l.publie).length === 0 && <div className="muted" style={{ fontSize: ".82rem" }}>Contenu à venir.</div>}

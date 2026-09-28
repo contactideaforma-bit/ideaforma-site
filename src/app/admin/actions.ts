@@ -356,3 +356,55 @@ export async function supprimerDemande(id: string): Promise<void> {
   revalidatePath("/admin/demandes");
   revalidatePath("/admin");
 }
+
+/* ───────────────────────── contenu des leçons (étape 2) ───────────────────────── */
+
+export async function modifierLecon(id: string, formationId: string, _prev: EtatSimple, fd: FormData): Promise<EtatSimple> {
+  await requireAdmin();
+  const titre = s(fd, "titre", 160);
+  if (!titre) return { erreur: "Le titre est obligatoire." };
+  let contenu: Record<string, unknown> = {};
+  try {
+    contenu = JSON.parse(s(fd, "contenu_json", 200000) || "{}");
+  } catch {
+    return { erreur: "Contenu invalide." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("lecons")
+    .update({
+      titre,
+      type: s(fd, "type", 20) || "texte",
+      duree_minutes: num(fd, "duree_minutes"),
+      publie: fd.get("publie") === "on",
+      contenu,
+      storage_path: typeof contenu.storage_path === "string" ? contenu.storage_path : null,
+    })
+    .eq("id", id);
+  if (error) return { erreur: `Enregistrement impossible : ${error.message}` };
+  revalidatePath(`/admin/formations/${formationId}`);
+  revalidatePath(`/admin/formations/${formationId}/lecons/${id}`);
+  return { ok: true, message: "Leçon enregistrée." };
+}
+
+export async function deplacerLecon(id: string, moduleId: string, formationId: string, sens: "haut" | "bas"): Promise<void> {
+  await requireAdmin();
+  const supabase = await createClient();
+  const { data } = await supabase.from("lecons").select("id, ordre").eq("module_id", moduleId).order("ordre");
+  const lecs = (data ?? []) as { id: string; ordre: number }[];
+  const i = lecs.findIndex((l) => l.id === id);
+  const j = sens === "haut" ? i - 1 : i + 1;
+  if (i < 0 || j < 0 || j >= lecs.length) return;
+  const ordre = lecs.map((l) => l.id);
+  [ordre[i], ordre[j]] = [ordre[j], ordre[i]];
+  await Promise.all(ordre.map((lid, idx) => supabase.from("lecons").update({ ordre: idx + 1 }).eq("id", lid)));
+  revalidatePath(`/admin/formations/${formationId}`);
+}
+
+/** URL signée (lecture) d'un fichier du bucket privé, pour l'aperçu admin. */
+export async function urlSigneeAdmin(storagePath: string): Promise<string | null> {
+  await requireAdmin();
+  const supabase = await createClient();
+  const { data } = await supabase.storage.from("contenus").createSignedUrl(storagePath, 60 * 30);
+  return data?.signedUrl ?? null;
+}

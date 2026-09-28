@@ -5,7 +5,7 @@ import { TYPES_LECON, type Formation, type Lecon, type Module } from "@/lib/type
 import FormationForm from "@/components/admin/FormationForm";
 import ConfirmForm from "@/components/admin/ConfirmForm";
 import {
-  ajouterLecon, ajouterModule, deplacerModule, modifierFormation, modifierModule,
+  ajouterLecon, ajouterModule, deplacerLecon, deplacerModule, modifierFormation, modifierModule,
   supprimerFormation, supprimerLecon, supprimerModule,
 } from "@/app/admin/actions";
 
@@ -48,7 +48,7 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
             <h2>Contenu de la formation <span className="count">{modules.length} modules</span></h2>
             <p style={{ fontSize: ".85rem", marginBottom: "1rem" }}>
               Structurez le parcours : modules, puis leçons (vidéo, slides, PDF, podcast, quiz, évaluation…).
-              Le dépôt des fichiers et l&apos;éditeur de quiz arrivent à l&apos;étape 2 ; vous pouvez déjà bâtir le squelette.
+              Cliquez sur « Modifier » pour déposer le fichier, rédiger le cours ou composer le quiz.
             </p>
             <div className="module-list">
               {modules.map((m, idx) => {
@@ -90,7 +90,13 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                             <span>{t?.icone ?? "📄"}</span>
                             <span>{l.titre}</span>
                             <span className="type">{t?.label ?? l.type}{l.duree_minutes ? ` · ${l.duree_minutes} min` : ""}</span>
+                            {(l.type === "quiz" || l.type === "evaluation") && !(l.contenu as { questions?: unknown[] })?.questions?.length && <span className="badge badge-orange">sans questions</span>}
+                            {["video", "podcast", "pdf", "ebook", "slides"].includes(l.type) && !l.storage_path && !(l.contenu as { url_externe?: string })?.url_externe && <span className="badge badge-orange">sans fichier</span>}
+                            {!l.publie && <span className="badge badge-grey">masquée</span>}
                             <span className="spacer" />
+                            <Link href={`/admin/formations/${f.id}/lecons/${l.id}`} className="btn btn-blue btn-sm">Modifier</Link>
+                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "haut")}><button className="btn btn-ghost btn-sm" type="submit" title="Monter">↑</button></form>
+                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "bas")}><button className="btn btn-ghost btn-sm" type="submit" title="Descendre">↓</button></form>
                             <ConfirmForm action={supprimerLec} message={`Supprimer la leçon « ${l.titre} » ?`}>
                               <button className="btn btn-ghost btn-sm" type="submit" title="Supprimer">✕</button>
                             </ConfirmForm>
