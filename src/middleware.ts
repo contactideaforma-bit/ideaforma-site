@@ -10,9 +10,33 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
 
+  // Sans configuration Supabase (variables absentes sur Vercel), on laisse passer le site public
+  // au lieu de faire planter toutes les pages.
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) {
+    const { pathname } = request.nextUrl;
+    if (pathname.startsWith("/admin") || pathname.startsWith("/espace")) {
+      return new NextResponse(
+        "Plateforme non configurée : ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans les variables d'environnement Vercel, puis redéployez.",
+        { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } }
+      );
+    }
+    return response;
+  }
+
+  try {
+    return await avecSession(request, response, url, key);
+  } catch (e) {
+    console.error("[middleware] erreur Supabase :", e);
+    return response;
+  }
+}
+
+async function avecSession(request: NextRequest, response: NextResponse, url: string, key: string) {
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    url,
+    key,
     {
       cookies: {
         getAll() {
