@@ -40,6 +40,7 @@ export default async function EditionLecon({
           <p>Module « {l.modules?.titre} »</p>
         </div>
         <div className="actions">
+          <Link href={`/espace/formation/${id}/lecon/${leconId}`} className="btn btn-primary btn-sm" target="_blank"><Icon name="play" size={14} /> Aperçu élève</Link>
           <Link href={`/admin/formations/${id}`} className="btn btn-ghost btn-sm"><Icon name="arrow-left" size={14} /> Retour à la formation</Link>
         </div>
       </div>

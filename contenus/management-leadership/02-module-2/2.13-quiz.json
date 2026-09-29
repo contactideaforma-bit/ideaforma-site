@@ -1,0 +1,142 @@
+{
+  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "seuil": 70,
+  "tentatives_max": 3,
+  "corrections": true,
+  "questions": [
+    {
+      "id": "m2q01",
+      "enonce": "Selon Locke et Latham, quel type d'objectif produit les meilleurs résultats ?",
+      "options": [
+        "Un objectif vague qui laisse toute liberté (« faites de votre mieux »)",
+        "Un objectif facile, pour ne décourager personne",
+        "Un objectif précis et difficile, accepté par la personne et suivi régulièrement",
+        "Un objectif fixé sans discussion, pour gagner du temps"
+      ],
+      "bonnes": [2],
+      "explication": "Précis, difficile mais accepté, avec un retour d'information régulier : ce sont les quatre conditions établies par la recherche sur la fixation d'objectifs."
+    },
+    {
+      "id": "m2q02",
+      "enonce": "Lequel de ces objectifs est correctement formulé selon la méthode SMART ?",
+      "options": [
+        "Améliorer la qualité des finitions",
+        "Faire plus de contrôles qualité",
+        "D'ici le 31 décembre, aucune reprise pour défaut de finition sur les véhicules de flotte (3 ce trimestre)",
+        "Être le meilleur atelier de la région"
+      ],
+      "bonnes": [2],
+      "explication": "Spécifique, mesurable (aucune reprise, contre 3), atteignable, pertinent (lié à l'enjeu client) et daté (31 décembre)."
+    },
+    {
+      "id": "m2q03",
+      "enonce": "Dans quel ordre fixe-t-on les objectifs d'une équipe ?",
+      "options": [
+        "Les objectifs individuels d'abord, puis on additionne pour obtenir l'objectif collectif",
+        "Les objectifs collectifs d'abord, en réunion, puis les objectifs individuels, en entretien",
+        "Uniquement des objectifs individuels, pour responsabiliser chacun",
+        "Uniquement des objectifs collectifs, pour éviter les comparaisons"
+      ],
+      "bonnes": [1],
+      "explication": "Le collectif crée le sens et la solidarité ; l'individuel crée la responsabilité. Commencer par l'individuel donne une somme de contributions, pas une équipe."
+    },
+    {
+      "id": "m2q04",
+      "enonce": "Dans une matrice de compétences, que signale une compétence détenue par une seule personne au niveau 2 ou 3 ?",
+      "options": [
+        "Que cette personne est indispensable et doit être augmentée",
+        "Un point de fragilité : l'activité s'arrête si elle est absente",
+        "Que la compétence n'est pas importante",
+        "Qu'il faut retirer cette compétence de la matrice"
+      ],
+      "bonnes": [1],
+      "explication": "C'est un risque : il appelle un binôme, une formation ou un recrutement. Une organisation ne doit jamais reposer sur une seule personne."
+    },
+    {
+      "id": "m2q05",
+      "enonce": "Dans une matrice RACI, combien de « A » (approuve / répond du résultat) doit-on trouver sur chaque ligne ?",
+      "options": ["Aucun, c'est facultatif", "Exactement un", "Au moins deux, pour se couvrir", "Autant que de personnes impliquées"],
+      "bonnes": [1],
+      "explication": "Un seul A par ligne. Deux A = un conflit en réserve ; aucun A = personne ne répond du résultat."
+    },
+    {
+      "id": "m2q06",
+      "enonce": "Parmi ces éléments, lesquels se délèguent ? (plusieurs réponses)",
+      "options": [
+        "Le contrôle technique d'une production",
+        "La formation d'un nouvel arrivant",
+        "L'évaluation et le recadrage des personnes",
+        "La relation avec un fournisseur"
+      ],
+      "bonnes": [0, 1, 3],
+      "explication": "L'exécution et l'expertise se délèguent. Le cœur du rôle de manager (objectifs, arbitrages, évaluation, recadrage, sanction, crise) ne se délègue pas."
+    },
+    {
+      "id": "m2q07",
+      "enonce": "Vous confiez une mission à un collaborateur expert, en lui disant « décide et tiens-moi informé ». À quel niveau de délégation cela correspond-il ?",
+      "options": [
+        "Niveau 1 : exécuter une consigne précise sous contrôle",
+        "Niveau 2 : organiser et faire valider avant la fin",
+        "Niveau 4 : décider seul et rendre compte après",
+        "Niveau 5 : décider sans rendre compte"
+      ],
+      "bonnes": [2],
+      "explication": "Le niveau 4 convient à une personne autonome sur la tâche. Rester au niveau 1 ou 2 avec un expert est vécu comme de la défiance."
+    },
+    {
+      "id": "m2q08",
+      "enonce": "Dans la matrice importance / urgence, quelle case est celle où « se joue le management » et qui disparaît si on ne la planifie pas ?",
+      "options": ["Important et urgent", "Important et pas urgent", "Pas important et urgent", "Pas important et pas urgent"],
+      "bonnes": [1],
+      "explication": "Fixer des objectifs, former, organiser, faire des entretiens : rien n'est urgent, tout est important. Négliger cette case fabrique les urgences de demain."
+    },
+    {
+      "id": "m2q09",
+      "enonce": "Quelle est la différence entre un indicateur de résultat et un indicateur de moyens ?",
+      "options": [
+        "Le premier est financier, le second ne l'est pas",
+        "Le premier mesure ce qu'on veut obtenir (souvent trop tard pour corriger), le second mesure ce qu'on fait pour y arriver (à temps pour ajuster)",
+        "Le premier est mensuel, le second est annuel",
+        "Il n'y a pas de différence, ce sont deux noms pour la même chose"
+      ],
+      "bonnes": [1],
+      "explication": "Un bon tableau de bord combine les deux : le résultat dit si l'on a réussi, les moyens disent si l'on est sur la bonne voie."
+    },
+    {
+      "id": "m2q10",
+      "enonce": "Le taux d'interventions à l'heure d'une agence grimpe rapidement, mais les intervenantes écourtent les prestations pour y parvenir. De quoi s'agit-il et que faire ?",
+      "options": [
+        "D'une réussite : l'objectif est atteint",
+        "De la loi de Goodhart : l'indicateur est devenu l'objectif ; il faut ajouter un garde-fou (durée réelle des interventions) et cesser d'utiliser le chiffre pour juger les personnes",
+        "D'une fraude à sanctionner individuellement",
+        "D'un problème de logiciel"
+      ],
+      "bonnes": [1],
+      "explication": "Quand un indicateur sert à juger, il est optimisé au détriment du résultat réel. Garde-fou, indicateurs collectifs et recherche des causes plutôt que des coupables."
+    },
+    {
+      "id": "m2q11",
+      "enonce": "Un collaborateur vous informe qu'il a une reconnaissance de travailleur handicapé et une restriction de port de charge. Quelle est la bonne réaction ?",
+      "options": [
+        "Lui demander son diagnostic pour comprendre",
+        "Organiser le travail à partir de la restriction prescrite par le médecin du travail, sans divulguer le motif à l'équipe",
+        "L'écarter des tâches physiques « pour le protéger », sans lui demander son avis",
+        "Informer l'équipe de sa situation médicale pour expliquer l'aménagement"
+      ],
+      "bonnes": [1],
+      "explication": "Le médecin du travail prescrit, le manager organise à partir de la restriction. Le diagnostic ne vous regarde pas et ne se divulgue jamais. L'écarter sans son avis serait une discrimination « bienveillante »."
+    },
+    {
+      "id": "m2q12",
+      "enonce": "Concernant l'aménagement raisonnable du poste d'un travailleur handicapé, quelle affirmation est exacte ?",
+      "options": [
+        "Il n'est obligatoire que dans les entreprises de plus de 250 salariés",
+        "L'employeur doit prendre les mesures appropriées, sauf charge disproportionnée ; un refus non motivé peut constituer une discrimination",
+        "Il est laissé à la libre appréciation du manager",
+        "Il est entièrement financé par le salarié"
+      ],
+      "bonnes": [1],
+      "explication": "Code du travail L5213-6 : obligation d'aménagement raisonnable, sous réserve de charge disproportionnée ; l'Agefiph aide à financer. Le refus doit être motivé par écrit."
+    }
+  ]
+}

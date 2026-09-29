@@ -23,7 +23,9 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
 
   const [{ data: formation }, { data: modulesData }] = await Promise.all([
     supabase.from("formations").select("id, titre, icone").eq("id", id).maybeSingle(),
-    supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).eq("publie", true).order("ordre"),
+    user.role === "admin"
+      ? supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).order("ordre")
+      : supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).eq("publie", true).order("ordre"),
   ]);
   if (!formation) notFound();
   const f = formation as Pick<Formation, "id" | "titre" | "icone">;
@@ -32,7 +34,7 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
   // Liste ordonnée des leçons publiées → précédent / suivant
   const plat: { lecon: Lecon; module: Module }[] = [];
   for (const m of modules) {
-    for (const l of [...m.lecons].filter((x) => x.publie).sort((a, b) => a.ordre - b.ordre)) plat.push({ lecon: l, module: m });
+    for (const l of [...m.lecons].filter((x) => user.role === "admin" || x.publie).sort((a, b) => a.ordre - b.ordre)) plat.push({ lecon: l, module: m });
   }
   const idx = plat.findIndex((p) => p.lecon.id === leconId);
   if (idx < 0) notFound();
@@ -72,6 +74,12 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
 
   return (
     <ProtectionContenu email={user.email}>
+      {user.role === "admin" && (
+        <div className="alert alert-info">
+          <Icon name="settings" size={16} />
+          <span>Aperçu administrateur{!lecon.publie ? " — leçon non publiée" : ""}. <Link href={`/admin/formations/${id}/lecons/${leconId}`} style={{ fontWeight: 600 }}>Modifier cette leçon</Link></span>
+        </div>
+      )}
       <div className="breadcrumb">
         <Link href="/espace">Mes formations</Link> / <Link href={`/espace/formation/${id}`}>{f.titre}</Link> / {module.titre}
       </div>

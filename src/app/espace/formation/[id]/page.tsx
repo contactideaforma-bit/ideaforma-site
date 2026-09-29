@@ -18,13 +18,17 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
 
   const [{ data: formation }, { data: modulesData }, { data: progData }] = await Promise.all([
     supabase.from("formations").select("*").eq("id", id).maybeSingle(),
-    supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).eq("publie", true).order("ordre"),
+    user.role === "admin"
+      ? supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).order("ordre")
+      : supabase.from("modules").select("*, lecons(*)").eq("formation_id", id).eq("publie", true).order("ordre"),
     insc ? supabase.from("progression").select("lecon_id, statut, score").eq("inscription_id", insc.id) : Promise.resolve({ data: [] }),
   ]);
   if (!formation) notFound(); // RLS : formation inaccessible (délai dépassé, suspendue…) → 404
   const f = formation as Formation;
   const modules = (modulesData ?? []) as unknown as (Module & { lecons: Lecon[] })[];
   const terminees = new Set(((progData ?? []) as { lecon_id: string; statut: string }[]).filter((p) => p.statut === "termine").map((p) => p.lecon_id));
+  const apercu = user.role === "admin";
+  const visible = (l: Lecon) => apercu || l.publie;
   const total = modules.reduce((n, m) => n + m.lecons.filter((l) => l.publie).length, 0);
   const faites = modules.reduce((n, m) => n + m.lecons.filter((l) => l.publie && terminees.has(l.id)).length, 0);
   const pct = total ? Math.round((100 * faites) / total) : 0;
@@ -32,6 +36,12 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
 
   return (
     <ProtectionContenu email={user.email}>
+      {apercu && (
+        <div className="alert alert-info">
+          <Icon name="settings" size={16} />
+          <span>Aperçu administrateur : vous voyez cette formation comme un élève, y compris les modules et leçons non publiés (marqués). <Link href={`/admin/formations/${f.id}`} style={{ fontWeight: 600 }}>Retour à l&apos;édition</Link></span>
+        </div>
+      )}
       <div className="breadcrumb"><Link href="/espace">Mes formations</Link> / {f.titre}</div>
       <div className="page-title">
         <div>
@@ -66,25 +76,26 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
             {modules.map((m, idx) => (
               <div key={m.id} className="module-item">
                 <header>
-                  <h3><span className="num">{idx + 1}</span>{m.titre}</h3>
+                  <h3><span className="num">{idx + 1}</span>{m.titre} {apercu && !m.publie && <span className="badge badge-grey">module non publié</span>}</h3>
                   {m.duree_minutes ? <span className="badge badge-grey">⏱ {m.duree_minutes} min</span> : null}
                 </header>
                 {m.description && <p>{m.description}</p>}
                 <div className="lecon-list">
-                  {m.lecons.filter((l) => l.publie).sort((a, b) => a.ordre - b.ordre).map((l) => {
+                  {m.lecons.filter(visible).sort((a, b) => a.ordre - b.ordre).map((l) => {
                     const t = typeLabel(l.type);
                     const faite = terminees.has(l.id);
                     return (
                       <Link key={l.id} href={`/espace/formation/${f.id}/lecon/${l.id}`} className="lecon-item lecon-lien">
                         <span className={`lecon-ico${faite ? " done" : ""}`}><Icon name={faite ? "check" : t?.icone ?? "file"} size={15} /></span>
                         <span style={{ fontWeight: faite ? 400 : 500 }}>{l.titre}</span>
+                        {apercu && !l.publie && <span className="badge badge-grey">non publiée</span>}
                         <span className="type">{t?.label ?? l.type}{l.duree_minutes ? ` · ${l.duree_minutes} min` : ""}</span>
                         <span className="spacer" />
                         <span className="btn btn-ghost btn-sm">{faite ? "Revoir" : "Ouvrir"} <Icon name="arrow-right" size={14} /></span>
                       </Link>
                     );
                   })}
-                  {m.lecons.filter((l) => l.publie).length === 0 && <div className="muted" style={{ fontSize: ".82rem" }}>Contenu à venir.</div>}
+                  {m.lecons.filter(visible).length === 0 && <div className="muted" style={{ fontSize: ".82rem" }}>Contenu à venir.</div>}
                 </div>
               </div>
             ))}

@@ -39,6 +39,7 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
           <p>{modules.length} module{modules.length > 1 ? "s" : ""} · {modules.reduce((n, m) => n + m.lecons.length, 0)} leçon(s) · {eleves.length} inscrit(s)</p>
         </div>
         <div className="actions">
+          <Link href={`/espace/formation/${f.id}`} className="btn btn-primary btn-sm" target="_blank"><Icon name="play" size={14} /> Aperçu élève</Link>
           {f.publie && <Link href="/formations" className="btn btn-ghost btn-sm" target="_blank">Voir sur le site <Icon name="external" size={14} /></Link>}
         </div>
       </div>
@@ -95,6 +96,7 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                             {["video", "podcast", "pdf", "ebook", "slides"].includes(l.type) && !l.storage_path && !(l.contenu as { url_externe?: string })?.url_externe && <span className="badge badge-orange">sans fichier</span>}
                             {!l.publie && <span className="badge badge-grey">masquée</span>}
                             <span className="spacer" />
+                            <Link href={`/espace/formation/${f.id}/lecon/${l.id}`} className="btn btn-ghost btn-sm" target="_blank" title="Aperçu élève"><Icon name="play" size={14} /></Link>
                             <Link href={`/admin/formations/${f.id}/lecons/${l.id}`} className="btn btn-blue btn-sm">Modifier</Link>
                             <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "haut")}><button className="btn btn-ghost btn-sm" type="submit" title="Monter"><Icon name="arrow-up" size={14} /></button></form>
                             <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "bas")}><button className="btn btn-ghost btn-sm" type="submit" title="Descendre"><Icon name="arrow-down" size={14} /></button></form>

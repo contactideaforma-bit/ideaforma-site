@@ -1,0 +1,152 @@
+{
+  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "seuil": 70,
+  "tentatives_max": 3,
+  "corrections": true,
+  "questions": [
+    {
+      "id": "m3q01",
+      "enonce": "Un manager ne dit rien après le troisième retard d'un apprenti dans la semaine. Selon le principe de Watzlawick vu en leçon 3.1, que se passe-t-il ?",
+      "options": [
+        "Rien : le silence n'est pas une communication",
+        "Il a communiqué que les retards sont tolérés",
+        "L'apprenti comprendra tout seul qu'il exagère",
+        "Il a gagné du temps pour préparer une sanction"
+      ],
+      "bonnes": [1],
+      "explication": "« On ne peut pas ne pas communiquer » : le silence du manager est lu comme un message par toute l'équipe. Ici, il signifie que le retard passe."
+    },
+    {
+      "id": "m3q02",
+      "enonce": "Laquelle de ces phrases est une reformulation, au sens de l'écoute active ?",
+      "options": [
+        "« Je comprends, moi aussi j'ai connu ça à mes débuts. »",
+        "« Tu devrais en parler à Sophie directement. »",
+        "« Si je comprends bien, tu découvres les interventions au dernier moment et ça t'oblige à tout lâcher. »",
+        "« Ne t'inquiète pas, ça va s'arranger. »"
+      ],
+      "bonnes": [2],
+      "explication": "Reformuler, c'est redire avec ses mots ce qu'on a compris pour le faire vérifier. Les autres réponses sont un récit de soi, un conseil et un réconfort prématuré, qui interrompent l'écoute."
+    },
+    {
+      "id": "m3q03",
+      "enonce": "Quel biais consiste à expliquer les erreurs des autres par leur personnalité et les siennes par les circonstances ?",
+      "options": [
+        "L'effet de halo",
+        "Le biais de confirmation",
+        "La projection",
+        "L'erreur fondamentale d'attribution"
+      ],
+      "bonnes": [3],
+      "explication": "C'est l'erreur fondamentale d'attribution décrite par Lee Ross. Le remède : chercher d'abord la cause dans la situation."
+    },
+    {
+      "id": "m3q04",
+      "enonce": "Dans la méthode SBI, que désigne le « B » (Behavior, comportement) ?",
+      "options": [
+        "Ce que la personne a fait ou dit, observable, sans interprétation",
+        "Ce que le manager pense de la personne",
+        "Le besoin de la personne",
+        "La bonne pratique à adopter"
+      ],
+      "bonnes": [0],
+      "explication": "Le comportement est un fait observable. « Une coulure sur l'aile arrière, véhicule sorti sans contrôle » est un comportement ; « tu es brouillon » est une étiquette."
+    },
+    {
+      "id": "m3q05",
+      "enonce": "Pourquoi le feedback « sandwich » (compliment, critique, compliment) est-il déconseillé ?",
+      "options": [
+        "Parce qu'il est trop long",
+        "Parce que la personne ne retient que le « mais », ou ne retient que les compliments, et apprend à se méfier des compliments",
+        "Parce qu'il est interdit par le Code du travail",
+        "Parce qu'il ne fonctionne qu'avec les nouveaux"
+      ],
+      "bonnes": [1],
+      "explication": "Le message correctif se perd ou se dilue, et les compliments deviennent suspects. Un correctif clair et respectueux, et des positifs sincères à d'autres moments, valent mieux."
+    },
+    {
+      "id": "m3q06",
+      "enonce": "Plusieurs réponses. Quelles règles de forme s'appliquent à un feedback correctif ?",
+      "options": [
+        "Le donner rapidement après les faits",
+        "Le donner en privé",
+        "Regrouper plusieurs reproches pour n'avoir à le faire qu'une fois",
+        "Terminer par une question ouverte"
+      ],
+      "bonnes": [0, 1, 3],
+      "explication": "Vite, en privé, un seul sujet à la fois, sur ce qui peut changer, avec une question. Regrouper six reproches n'en fait passer aucun."
+    },
+    {
+      "id": "m3q07",
+      "enonce": "Dans la trame d'entretien individuel de suivi en cinq temps, à quoi sert le temps « ressenti et besoins » ?",
+      "options": [
+        "À évaluer la personnalité du salarié",
+        "À détecter tôt les difficultés (surcharge, tensions, démotivation) avant qu'elles n'explosent",
+        "À négocier une augmentation",
+        "À remplir le compte rendu obligatoire de l'entretien de parcours professionnel"
+      ],
+      "bonnes": [1],
+      "explication": "C'est la partie que les managers sautent, et celle qui fait sortir les problèmes avant qu'ils ne coûtent cher. Le manager écoute et oriente si nécessaire ; il n'est ni médecin ni confident."
+    },
+    {
+      "id": "m3q08",
+      "enonce": "Quelle est la différence essentielle entre l'entretien annuel d'évaluation et l'entretien de parcours professionnel ?",
+      "options": [
+        "Il n'y en a pas : ce sont deux noms pour le même entretien",
+        "L'entretien annuel est obligatoire, l'entretien de parcours est facultatif",
+        "L'entretien annuel, facultatif, porte sur le travail de l'année ; l'entretien de parcours, obligatoire (art. L6315-1), porte sur l'avenir professionnel et ne doit pas être une évaluation",
+        "L'entretien de parcours est réservé aux salariés de plus de 45 ans"
+      ],
+      "bonnes": [2],
+      "explication": "L'évaluation annuelle relève du pouvoir de direction (sauf accord). L'entretien de parcours professionnel est une obligation légale au contenu fixé (compétences, formation, évolution, CPF, CEP), avec un écrit remis au salarié."
+    },
+    {
+      "id": "m3q09",
+      "enonce": "Depuis la loi du 24 octobre 2025, quelle est la périodicité de droit commun de l'entretien de parcours professionnel, hors accord plus favorable ?",
+      "options": [
+        "Tous les ans",
+        "Tous les deux ans, avec un bilan tous les six ans",
+        "Dans la première année après l'embauche, puis tous les quatre ans, avec un état des lieux tous les huit ans, plus des entretiens à 45 ans et avant 60 ans",
+        "Uniquement au retour d'un congé long"
+      ],
+      "bonnes": [2],
+      "explication": "C'est le nouveau rythme de l'article L6315-1. La convention collective ou un accord d'entreprise peut l'aménager : vérifiez toujours auprès des RH."
+    },
+    {
+      "id": "m3q10",
+      "enonce": "Une réunion d'équipe de 30 minutes se termine sans qu'aucune décision ni action n'ait été formulée. Quelle est la conséquence principale ?",
+      "options": [
+        "Aucune : l'important est que l'équipe se soit vue",
+        "L'équipe apprend que les réunions ne servent à rien, et les suivantes perdent leur crédibilité",
+        "Le manager doit reconvoquer immédiatement",
+        "Le CSE doit être informé"
+      ],
+      "bonnes": [1],
+      "explication": "Chaque point doit finir par : décidé quoi, qui, pour quand. Le relevé de décisions, suivi à la réunion suivante, est ce qui donne aux réunions leur crédibilité."
+    },
+    {
+      "id": "m3q11",
+      "enonce": "En réunion, un participant reste silencieux pendant qu'un autre monopolise la parole. Quelle est la bonne conduite de l'animateur ?",
+      "options": [
+        "Laisser faire : le silencieux parlera s'il a quelque chose à dire",
+        "Recadrer le bavard poliment en notant son point, et donner la parole nommément au silencieux sur une question précise",
+        "Interrompre sèchement le bavard devant tout le monde",
+        "Reporter la réunion"
+      ],
+      "bonnes": [1],
+      "explication": "Le bavard se cadre sans humiliation (« merci, je note, je voudrais entendre les autres ») ; le silencieux se sollicite par son nom, sur une question concrète. Un tour de table court est l'outil le plus efficace."
+    },
+    {
+      "id": "m3q12",
+      "enonce": "Votre directeur vous demande d'absorber une charge que votre équipe ne peut pas tenir. Quelle réponse relève d'une communication de manager vers sa hiérarchie ?",
+      "options": [
+        "« On va faire au mieux. »",
+        "« C'est impossible, débrouillez-vous. »",
+        "« Avec l'équipe actuelle on tient la moitié en respectant les délais ; pour tout absorber il faut deux renforts ou accepter deux jours de retard sur le non prioritaire. Que préférez-vous ? » puis confirmation écrite",
+        "Accepter, puis expliquer à l'équipe que c'est la faute de la direction"
+      ],
+      "bonnes": [2],
+      "explication": "Les faits, l'impact, des options, une décision demandée, puis l'écrit « comme convenu ». « Faire au mieux » n'est ni un oui ni un non ; désavouer la direction devant l'équipe rompt la loyauté."
+    }
+  ]
+}
