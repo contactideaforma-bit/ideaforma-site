@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { formatDate, type Profile } from "@/lib/types";
@@ -71,7 +72,7 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
         <div>
           <div className="panel">
             <h2>Formations attribuées <span className="count">{inscriptions.length}</span></h2>
-            {inscriptions.length === 0 && <div className="empty"><div className="big">📚</div>Aucune formation attribuée.</div>}
+            {inscriptions.length === 0 && <div className="empty"><div className="big"><Icon name="book-open" size={26} /></div>Aucune formation attribuée.</div>}
             {inscriptions.map((i) => {
               const a = avance.get(i.id);
               const modifierInsc = modifierInscription.bind(null, i.id, e.id);

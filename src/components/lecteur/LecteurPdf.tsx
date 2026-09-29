@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Icon from "@/components/Icon";
 
 /**
  * Lecteur PDF « fermé » : rendu page par page sur canvas via pdf.js (CDN cdnjs),
@@ -74,9 +75,9 @@ export default function LecteurPdf({ src, mode, email }: { src: string; mode: "d
       {!doc && !erreur && <div className="empty">Chargement du document…</div>}
       {doc && mode === "slides" && (
         <div className="pdf-barre">
-          <button type="button" className="btn btn-ghost btn-sm" disabled={page <= 1} onClick={() => setPage((p) => p - 1)}>← Précédente</button>
+          <button type="button" className="btn btn-ghost btn-sm" disabled={page <= 1} onClick={() => setPage((p) => p - 1)}><Icon name="arrow-left" size={14} /> Précédente</button>
           <span>Diapositive {page} / {doc.numPages}</span>
-          <button type="button" className="btn btn-ghost btn-sm" disabled={page >= doc.numPages} onClick={() => setPage((p) => p + 1)}>Suivante →</button>
+          <button type="button" className="btn btn-ghost btn-sm" disabled={page >= doc.numPages} onClick={() => setPage((p) => p + 1)}>Suivante <Icon name="arrow-right" size={14} /></button>
         </div>
       )}
       {doc && largeur > 0 && pages.map((n) => <PagePdf key={n} doc={doc} numero={n} largeur={largeur} email={email} />)}

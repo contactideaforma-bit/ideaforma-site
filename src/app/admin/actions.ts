@@ -151,7 +151,7 @@ export async function supprimerEleve(id: string): Promise<void> {
   const supaAdmin = createAdminClient();
   const { data: profil } = await supaAdmin.from("profiles").select("role").eq("id", id).maybeSingle();
   if (!profil || profil.role === "admin") return;
-  await supaAdmin.auth.admin.deleteUser(id); // cascade → profiles → inscriptions → progression
+  await supaAdmin.auth.admin.deleteUser(id); // cascade : profiles, inscriptions, progression
   revalidatePath("/admin/eleves");
   redirect("/admin/eleves");
 }
@@ -210,7 +210,7 @@ function champsFormation(fd: FormData) {
     accroche: sOrNull(fd, "accroche", 400),
     description: sOrNull(fd, "description", 5000),
     categorie: s(fd, "categorie", 40) || "autre",
-    icone: sOrNull(fd, "icone", 8) ?? "🎓",
+    icone: sOrNull(fd, "icone", 40) ?? "graduation",
     duree_heures: num(fd, "duree_heures"),
     duree_label: sOrNull(fd, "duree_label", 60),
     modalite: sOrNull(fd, "modalite", 80),

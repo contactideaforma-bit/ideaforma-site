@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { TYPES_LECON, type Formation, type Lecon, type Module } from "@/lib/types";
@@ -34,11 +35,11 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
       <div className="breadcrumb"><Link href="/admin/formations">Formations</Link> / {f.titre}</div>
       <div className="page-title">
         <div>
-          <h1>{f.icone} {f.titre} {f.publie ? <span className="badge badge-green">Publiée</span> : <span className="badge badge-grey">Masquée</span>}</h1>
+          <h1>{f.titre} {f.publie ? <span className="badge badge-green">Publiée</span> : <span className="badge badge-grey">Masquée</span>}</h1>
           <p>{modules.length} module{modules.length > 1 ? "s" : ""} · {modules.reduce((n, m) => n + m.lecons.length, 0)} leçon(s) · {eleves.length} inscrit(s)</p>
         </div>
         <div className="actions">
-          {f.publie && <Link href="/formations" className="btn btn-ghost btn-sm" target="_blank">Voir sur le site ↗</Link>}
+          {f.publie && <Link href="/formations" className="btn btn-ghost btn-sm" target="_blank">Voir sur le site <Icon name="external" size={14} /></Link>}
         </div>
       </div>
 
@@ -62,8 +63,8 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                     <header>
                       <h3><span className="num">{idx + 1}</span>{m.titre} {!m.publie && <span className="badge badge-grey">masqué</span>}</h3>
                       <div className="actions-row">
-                        <form action={monter}><button className="btn btn-ghost btn-sm" type="submit" disabled={idx === 0} title="Monter">↑</button></form>
-                        <form action={descendre}><button className="btn btn-ghost btn-sm" type="submit" disabled={idx === modules.length - 1} title="Descendre">↓</button></form>
+                        <form action={monter}><button className="btn btn-ghost btn-sm" type="submit" disabled={idx === 0} title="Monter"><Icon name="arrow-up" size={14} /></button></form>
+                        <form action={descendre}><button className="btn btn-ghost btn-sm" type="submit" disabled={idx === modules.length - 1} title="Descendre"><Icon name="arrow-down" size={14} /></button></form>
                         <ConfirmForm action={supprimerMod} message={`Supprimer le module « ${m.titre} » et ses leçons ?`}>
                           <button className="btn btn-danger btn-sm" type="submit">Supprimer</button>
                         </ConfirmForm>
@@ -87,7 +88,7 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                         const t = typeLabel(l.type);
                         return (
                           <div key={l.id} className="lecon-item">
-                            <span>{t?.icone ?? "📄"}</span>
+                            <span className="lecon-ico"><Icon name={t?.icone ?? "file"} size={15} /></span>
                             <span>{l.titre}</span>
                             <span className="type">{t?.label ?? l.type}{l.duree_minutes ? ` · ${l.duree_minutes} min` : ""}</span>
                             {(l.type === "quiz" || l.type === "evaluation") && !(l.contenu as { questions?: unknown[] })?.questions?.length && <span className="badge badge-orange">sans questions</span>}
@@ -95,10 +96,10 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                             {!l.publie && <span className="badge badge-grey">masquée</span>}
                             <span className="spacer" />
                             <Link href={`/admin/formations/${f.id}/lecons/${l.id}`} className="btn btn-blue btn-sm">Modifier</Link>
-                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "haut")}><button className="btn btn-ghost btn-sm" type="submit" title="Monter">↑</button></form>
-                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "bas")}><button className="btn btn-ghost btn-sm" type="submit" title="Descendre">↓</button></form>
+                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "haut")}><button className="btn btn-ghost btn-sm" type="submit" title="Monter"><Icon name="arrow-up" size={14} /></button></form>
+                            <form action={deplacerLecon.bind(null, l.id, m.id, f.id, "bas")}><button className="btn btn-ghost btn-sm" type="submit" title="Descendre"><Icon name="arrow-down" size={14} /></button></form>
                             <ConfirmForm action={supprimerLec} message={`Supprimer la leçon « ${l.titre} » ?`}>
-                              <button className="btn btn-ghost btn-sm" type="submit" title="Supprimer">✕</button>
+                              <button className="btn btn-ghost btn-sm" type="submit" title="Supprimer"><Icon name="x" size={14} /></button>
                             </ConfirmForm>
                           </div>
                         );
@@ -106,7 +107,7 @@ export default async function FicheFormation({ params }: { params: Promise<{ id:
                       <form action={ajouterLec} className="inline-form" style={{ marginTop: ".4rem" }}>
                         <input name="titre" placeholder="Nouvelle leçon…" required style={{ flex: 1, minWidth: 160 }} />
                         <select name="type" defaultValue="texte">
-                          {TYPES_LECON.map((t) => <option key={t.value} value={t.value}>{t.icone} {t.label}</option>)}
+                          {TYPES_LECON.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
                         </select>
                         <input name="duree_minutes" type="number" min="0" placeholder="min" style={{ width: 70 }} />
                         <button className="btn btn-ghost btn-sm" type="submit">+ Ajouter</button>

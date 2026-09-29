@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Icon from "@/components/Icon";
 
 export type SidebarItem = { href: string; label: string; icone: string; exact?: boolean };
 export type SidebarSection = { titre?: string; items: SidebarItem[] };
@@ -32,7 +33,7 @@ export default function AppSidebar({
           {s.titre && <div className="nav-section">{s.titre}</div>}
           {s.items.map((it) => (
             <Link key={it.href} href={it.href} className={`nav-item${actif(it) ? " active" : ""}`}>
-              <span>{it.icone}</span>
+              <Icon name={it.icone} size={18} />
               {it.label}
             </Link>
           ))}
@@ -42,7 +43,7 @@ export default function AppSidebar({
         <div className="who">{nom}</div>
         <div className="mail">{email}</div>
         <form action="/auth/deconnexion" method="post">
-          <button type="submit" className="btn btn-ghost btn-sm">Se déconnecter</button>
+          <button type="submit" className="btn btn-ghost btn-sm"><Icon name="log-out" size={15} /> Se déconnecter</button>
         </form>
       </div>
     </aside>

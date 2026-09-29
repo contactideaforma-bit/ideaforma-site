@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { createClient } from "@/lib/supabase/server";
 import { formatDate } from "@/lib/types";
 
@@ -51,7 +52,7 @@ export default async function ElevesPage({
         </form>
 
         {eleves.length === 0 ? (
-          <div className="empty"><div className="big">🎓</div>Aucun élève trouvé.</div>
+          <div className="empty"><div className="big"><Icon name="graduation" size={26} /></div>Aucun élève trouvé.</div>
         ) : (
           <div className="table-wrap">
             <table className="table">

@@ -6,6 +6,7 @@ import type { Lecon, LeconType } from "@/lib/types";
 import { TYPES_LECON } from "@/lib/types";
 import { BUCKET, cheminStorage, estFichier, estQuiz, lireQuiz, type ContenuMedia, type QuestionQuiz } from "@/lib/contenu";
 import type { EtatSimple } from "@/app/admin/actions";
+import Icon from "@/components/Icon";
 import { urlSigneeAdmin } from "@/app/admin/actions";
 
 const ACCEPT: Record<string, string> = {
@@ -99,7 +100,7 @@ export default function LeconEditor({
         <div className="form-group">
           <label htmlFor="type">Type</label>
           <select id="type" name="type" value={type} onChange={(e) => setType(e.target.value as LeconType)}>
-            {TYPES_LECON.map((t) => <option key={t.value} value={t.value}>{t.icone} {t.label}</option>)}
+            {TYPES_LECON.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
           </select>
         </div>
         <div className="form-group"><label htmlFor="duree_minutes">Durée estimée (min)</label><input id="duree_minutes" name="duree_minutes" type="number" min="0" defaultValue={lecon.duree_minutes ?? ""} /></div>
@@ -124,7 +125,7 @@ export default function LeconEditor({
           <p style={{ fontSize: ".85rem", marginBottom: ".75rem" }}>{AIDE[type]}</p>
           {media.storage_path ? (
             <div className="callout" style={{ marginBottom: "1rem" }}>
-              <div style={{ fontWeight: 600 }}>📎 {media.nom_fichier ?? media.storage_path}</div>
+              <div style={{ fontWeight: 600, display: "flex", alignItems: "center", gap: ".4rem" }}><Icon name="paperclip" size={16} /> {media.nom_fichier ?? media.storage_path}</div>
               {media.taille ? <div className="muted" style={{ fontSize: ".8rem", color: "var(--text-muted)" }}>{(media.taille / 1048576).toFixed(1)} Mo</div> : null}
               <div className="actions-row" style={{ marginTop: ".5rem" }}>
                 <button type="button" className="btn btn-ghost btn-sm" onClick={apercu}>Aperçu</button>
@@ -170,8 +171,8 @@ export default function LeconEditor({
                 <header>
                   <h3><span className="num">{i + 1}</span>Question</h3>
                   <div className="actions-row">
-                    <button type="button" className="btn btn-ghost btn-sm" disabled={i === 0} onClick={() => setQuestions((qs) => { const a = [...qs]; [a[i - 1], a[i]] = [a[i], a[i - 1]]; return a; })}>↑</button>
-                    <button type="button" className="btn btn-ghost btn-sm" disabled={i === questions.length - 1} onClick={() => setQuestions((qs) => { const a = [...qs]; [a[i + 1], a[i]] = [a[i], a[i + 1]]; return a; })}>↓</button>
+                    <button type="button" className="btn btn-ghost btn-sm" disabled={i === 0} onClick={() => setQuestions((qs) => { const a = [...qs]; [a[i - 1], a[i]] = [a[i], a[i - 1]]; return a; })}><Icon name="arrow-up" size={14} /></button>
+                    <button type="button" className="btn btn-ghost btn-sm" disabled={i === questions.length - 1} onClick={() => setQuestions((qs) => { const a = [...qs]; [a[i + 1], a[i]] = [a[i], a[i + 1]]; return a; })}><Icon name="arrow-down" size={14} /></button>
                     <button type="button" className="btn btn-danger btn-sm" onClick={() => setQuestions((qs) => qs.filter((_, k) => k !== i))}>Supprimer</button>
                   </div>
                 </header>
@@ -194,7 +195,7 @@ export default function LeconEditor({
                         placeholder={`Réponse ${k + 1}`}
                         style={{ flex: 1, padding: ".4rem .6rem", border: "1.5px solid var(--border)", borderRadius: 6, fontFamily: "inherit", fontSize: ".88rem" }}
                       />
-                      <button type="button" className="btn btn-ghost btn-sm" title="Retirer" onClick={() => majQuestion(i, { options: q.options.filter((_, j) => j !== k), bonnes: q.bonnes.filter((b) => b !== k).map((b) => (b > k ? b - 1 : b)) })}>✕</button>
+                      <button type="button" className="btn btn-ghost btn-sm" title="Retirer" onClick={() => majQuestion(i, { options: q.options.filter((_, j) => j !== k), bonnes: q.bonnes.filter((b) => b !== k).map((b) => (b > k ? b - 1 : b)) })}><Icon name="x" size={14} /></button>
                     </div>
                   ))}
                   <button type="button" className="btn btn-ghost btn-sm" style={{ alignSelf: "flex-start" }} onClick={() => majQuestion(i, { options: [...q.options, ""] })}>+ Réponse</button>

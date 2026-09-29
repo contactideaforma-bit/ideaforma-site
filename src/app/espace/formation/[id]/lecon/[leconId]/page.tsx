@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
@@ -76,7 +77,7 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
       </div>
       <div className="page-title">
         <div>
-          <h1>{typeInfo?.icone} {lecon.titre} {statut === "termine" && <span className="badge badge-green">✓ Terminée</span>}</h1>
+          <h1><span className="lecon-ico"><Icon name={typeInfo?.icone ?? "file"} size={18} /></span> {lecon.titre} {statut === "termine" && <span className="badge badge-green"><Icon name="check" /> Terminée</span>}</h1>
           <p>
             {typeInfo?.label}{lecon.duree_minutes ? ` · ${lecon.duree_minutes} min` : ""} · Leçon {idx + 1} sur {plat.length}
           </p>
@@ -100,14 +101,14 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
             ) : urlSignee ? (
               <LecteurMedia type={lecon.type} src={urlSignee} email={user.email} />
             ) : (
-              <div className="empty"><div className="big">🚧</div>Média en cours de mise en ligne.</div>
+              <div className="empty"><div className="big"><Icon name="construction" size={26} /></div>Média en cours de mise en ligne.</div>
             )}
           </>
         )}
 
         {(lecon.type === "pdf" || lecon.type === "ebook" || lecon.type === "slides") && (
           urlSignee ? <LecteurPdf src={urlSignee} mode={lecon.type === "slides" ? "slides" : "document"} email={user.email} />
-          : <div className="empty"><div className="big">🚧</div>Document en cours de mise en ligne.</div>
+          : <div className="empty"><div className="big"><Icon name="construction" size={26} /></div>Document en cours de mise en ligne.</div>
         )}
 
         {contenu.description && estFichier(lecon.type) && (
@@ -139,17 +140,17 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
 
       <div className="lecteur-nav">
         {precedente ? (
-          <Link href={`/espace/formation/${id}/lecon/${precedente.id}`} className="btn btn-ghost">← {precedente.titre}</Link>
+          <Link href={`/espace/formation/${id}/lecon/${precedente.id}`} className="btn btn-ghost"><Icon name="arrow-left" size={15} /> {precedente.titre}</Link>
         ) : <span />}
         {insc && !quiz && statut !== "termine" && (
           <form action={terminer}>
-            <button className="btn btn-primary" type="submit">✓ J&apos;ai terminé cette leçon</button>
+            <button className="btn btn-primary" type="submit"><Icon name="check" size={16} /> J&apos;ai terminé cette leçon</button>
           </form>
         )}
         {suivante ? (
-          <Link href={`/espace/formation/${id}/lecon/${suivante.id}`} className="btn btn-blue">{suivante.titre} →</Link>
+          <Link href={`/espace/formation/${id}/lecon/${suivante.id}`} className="btn btn-blue">{suivante.titre} <Icon name="arrow-right" size={15} /></Link>
         ) : (
-          <Link href={`/espace/formation/${id}`} className="btn btn-blue">Retour au programme →</Link>
+          <Link href={`/espace/formation/${id}`} className="btn btn-blue">Retour au programme <Icon name="arrow-right" size={15} /></Link>
         )}
       </div>
     </ProtectionContenu>

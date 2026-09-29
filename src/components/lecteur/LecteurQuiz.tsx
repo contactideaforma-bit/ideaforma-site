@@ -3,6 +3,7 @@
 import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { soumettreQuiz, type ResultatQuiz } from "@/app/espace/actions";
+import Icon from "@/components/Icon";
 
 type QuestionAffichee = { id: string; enonce: string; options: string[]; multiple: boolean };
 
@@ -62,8 +63,8 @@ export default function LecteurQuiz({
     return (
       <div>
         <div className={`alert ${resultat.reussi ? "alert-success" : "alert-warn"}`} style={{ fontSize: "1rem" }}>
-          {resultat.reussi ? "🎉 Réussi !" : "😕 Pas encore…"} Score : <strong>{resultat.score} %</strong> ({resultat.justes}/{resultat.total} bonnes réponses, seuil {resultat.seuil} %).
-          {resultat.tentatives_max ? ` Tentative ${resultat.tentative} sur ${resultat.tentatives_max}.` : ` Tentative n° ${resultat.tentative}.`}
+          <Icon name={resultat.reussi ? "party" : "frown"} size={20} /> <span>{resultat.reussi ? "Réussi !" : "Pas encore…"} Score : <strong>{resultat.score} %</strong> ({resultat.justes}/{resultat.total} bonnes réponses, seuil {resultat.seuil} %).
+          {resultat.tentatives_max ? ` Tentative ${resultat.tentative} sur ${resultat.tentatives_max}.` : ` Tentative n° ${resultat.tentative}.`}</span>
         </div>
         {resultat.corrections && (
           <div className="module-list">
@@ -78,12 +79,12 @@ export default function LecteurQuiz({
                       const choisie = d?.choisis.includes(k);
                       return (
                         <div key={k} className="lecon-item" style={{ background: bonne ? "rgba(63,181,121,.14)" : choisie ? "rgba(214,69,69,.10)" : undefined }}>
-                          <span>{bonne ? "✅" : choisie ? "❌" : "▫️"}</span><span>{o}</span>
+                          <span className={`lecon-ico${bonne ? " done" : ""}`}><Icon name={bonne ? "check" : choisie ? "x" : "chevron-right"} size={14} /></span><span>{o}</span>
                         </div>
                       );
                     })}
                   </div>
-                  {resultat.explications?.[q.id] && <p style={{ marginTop: ".5rem", fontSize: ".85rem" }}>💡 {resultat.explications[q.id]}</p>}
+                  {resultat.explications?.[q.id] && <p style={{ marginTop: ".5rem", fontSize: ".85rem", display: "flex", gap: ".4rem" }}><Icon name="lightbulb" size={16} /> <span>{resultat.explications[q.id]}</span></p>}
                 </div>
               );
             })}

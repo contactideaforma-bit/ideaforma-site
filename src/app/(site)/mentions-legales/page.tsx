@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function MentionsLegales() {
   return (
     <>
-      <div className="page-hero page-hero-simple">
+      <div className="page-hero">
         <h1>Mentions légales</h1>
       </div>
       <section className="section">

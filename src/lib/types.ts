@@ -107,28 +107,32 @@ export type DemandeContact = {
   created_at: string;
 };
 
-export const CATEGORIES: { value: string; label: string }[] = [
-  { value: "management", label: "Management" },
-  { value: "communication", label: "Communication" },
-  { value: "securite", label: "Sécurité" },
-  { value: "bureautique", label: "Bureautique" },
-  { value: "projet", label: "Gestion de projet" },
-  { value: "rh", label: "RH" },
-  { value: "automobile", label: "Automobile" },
-  { value: "ia", label: "Intelligence artificielle" },
-  { value: "autre", label: "Autre" },
+export const CATEGORIES: { value: string; label: string; icone: string }[] = [
+  { value: "management", label: "Management", icone: "users" },
+  { value: "communication", label: "Communication", icone: "mic" },
+  { value: "securite", label: "Sécurité", icone: "shield" },
+  { value: "bureautique", label: "Bureautique", icone: "monitor" },
+  { value: "projet", label: "Gestion de projet", icone: "folder" },
+  { value: "rh", label: "RH", icone: "heart" },
+  { value: "automobile", label: "Automobile", icone: "wrench" },
+  { value: "ia", label: "Intelligence artificielle", icone: "brain" },
+  { value: "autre", label: "Autre", icone: "graduation" },
 ];
 
 export const TYPES_LECON: { value: LeconType; label: string; icone: string }[] = [
-  { value: "video", label: "Vidéo", icone: "🎬" },
-  { value: "slides", label: "Slides", icone: "🖥️" },
-  { value: "pdf", label: "Document PDF", icone: "📄" },
-  { value: "podcast", label: "Podcast audio", icone: "🎧" },
-  { value: "ebook", label: "E-book", icone: "📘" },
-  { value: "texte", label: "Texte / cours", icone: "📝" },
-  { value: "quiz", label: "Quiz", icone: "❓" },
-  { value: "evaluation", label: "Évaluation", icone: "🏁" },
+  { value: "video", label: "Vidéo", icone: "video" },
+  { value: "slides", label: "Slides", icone: "presentation" },
+  { value: "pdf", label: "Document PDF", icone: "file" },
+  { value: "podcast", label: "Podcast audio", icone: "headphones" },
+  { value: "ebook", label: "E-book", icone: "book" },
+  { value: "texte", label: "Texte / cours", icone: "book-open" },
+  { value: "quiz", label: "Quiz", icone: "help-circle" },
+  { value: "evaluation", label: "Évaluation", icone: "flag" },
 ];
+
+export function iconeCategorie(value: string): string {
+  return CATEGORIES.find((c) => c.value === value)?.icone ?? "graduation";
+}
 
 export function libelleCategorie(value: string): string {
   return CATEGORIES.find((c) => c.value === value)?.label ?? value;

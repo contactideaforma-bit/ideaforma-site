@@ -49,7 +49,7 @@ export default function MotDePasseOublie() {
           </form>
         )}
         <div className="auth-links">
-          <Link href="/connexion">← Retour à la connexion</Link>
+          <Link href="/connexion">Retour à la connexion</Link>
         </div>
       </div>
     </div>

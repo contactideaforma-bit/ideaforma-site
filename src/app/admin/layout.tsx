@@ -15,20 +15,20 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         email={admin.email}
         sections={[
           {
-            items: [{ href: "/admin", label: "Tableau de bord", icone: "📊", exact: true }],
+            items: [{ href: "/admin", label: "Tableau de bord", icone: "layout", exact: true }],
           },
           {
             titre: "Pédagogie",
             items: [
-              { href: "/admin/eleves", label: "Élèves", icone: "🎓" },
-              { href: "/admin/formations", label: "Formations", icone: "📚" },
+              { href: "/admin/eleves", label: "Élèves", icone: "graduation" },
+              { href: "/admin/formations", label: "Formations", icone: "book-open" },
             ],
           },
           {
             titre: "Site",
             items: [
-              { href: "/admin/demandes", label: "Demandes de contact", icone: "✉️" },
-              { href: "/admin/compte", label: "Mon compte", icone: "⚙️" },
+              { href: "/admin/demandes", label: "Demandes de contact", icone: "inbox" },
+              { href: "/admin/compte", label: "Mon compte", icone: "settings" },
             ],
           },
         ]}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
@@ -34,7 +35,7 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
       <div className="breadcrumb"><Link href="/espace">Mes formations</Link> / {f.titre}</div>
       <div className="page-title">
         <div>
-          <h1>{f.icone} {f.titre}</h1>
+          <h1>{f.titre}</h1>
           <p>
             {f.duree_label && <>Durée indicative : {f.duree_label} · </>}
             {insc?.date_fin ? `Accès jusqu'au ${formatDate(insc.date_fin)}` : "Accès sans limite de temps"}
@@ -44,7 +45,7 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
 
       <div className="panel">
         <h2>Ma progression <span className="count">{pct} %</span></h2>
-        {pct === 100 && <div className="alert alert-success">🎉 Formation terminée : toutes les leçons sont validées.</div>}
+        {pct === 100 && <div className="alert alert-success"><Icon name="party" size={18} /> Formation terminée : toutes les leçons sont validées.</div>}
         <div className="progress" style={{ height: 12 }}><span style={{ width: `${pct}%` }} /></div>
         <div className="progress-label">{faites} leçon{faites > 1 ? "s" : ""} terminée{faites > 1 ? "s" : ""} sur {total}</div>
       </div>
@@ -59,7 +60,7 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
       <div className="panel">
         <h2>Programme</h2>
         {modules.length === 0 ? (
-          <div className="empty"><div className="big">🚧</div>Le contenu de cette formation est en cours de mise en ligne.</div>
+          <div className="empty"><div className="big"><Icon name="construction" size={26} /></div>Le contenu de cette formation est en cours de mise en ligne.</div>
         ) : (
           <div className="module-list">
             {modules.map((m, idx) => (
@@ -75,11 +76,11 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
                     const faite = terminees.has(l.id);
                     return (
                       <Link key={l.id} href={`/espace/formation/${f.id}/lecon/${l.id}`} className="lecon-item lecon-lien">
-                        <span>{faite ? "✅" : t?.icone ?? "📄"}</span>
+                        <span className={`lecon-ico${faite ? " done" : ""}`}><Icon name={faite ? "check" : t?.icone ?? "file"} size={15} /></span>
                         <span style={{ fontWeight: faite ? 400 : 500 }}>{l.titre}</span>
                         <span className="type">{t?.label ?? l.type}{l.duree_minutes ? ` · ${l.duree_minutes} min` : ""}</span>
                         <span className="spacer" />
-                        <span className="btn btn-ghost btn-sm">{faite ? "Revoir" : "Ouvrir"} →</span>
+                        <span className="btn btn-ghost btn-sm">{faite ? "Revoir" : "Ouvrir"} <Icon name="arrow-right" size={14} /></span>
                       </Link>
                     );
                   })}
@@ -90,7 +91,7 @@ export default async function FormationEleve({ params }: { params: Promise<{ id:
           </div>
         )}
         <p style={{ fontSize: ".8rem", marginTop: "1rem" }}>
-          🔒 Les contenus de cette formation sont strictement personnels : leur téléchargement, capture ou diffusion sont interdits.
+          <Icon name="lock" size={14} /> Les contenus de cette formation sont strictement personnels : leur téléchargement, capture ou diffusion sont interdits.
         </p>
       </div>
     </ProtectionContenu>

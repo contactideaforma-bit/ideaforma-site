@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import type { Lecon, Module } from "@/lib/types";
@@ -39,7 +40,7 @@ export default async function EditionLecon({
           <p>Module « {l.modules?.titre} »</p>
         </div>
         <div className="actions">
-          <Link href={`/admin/formations/${id}`} className="btn btn-ghost btn-sm">← Retour à la formation</Link>
+          <Link href={`/admin/formations/${id}`} className="btn btn-ghost btn-sm"><Icon name="arrow-left" size={14} /> Retour à la formation</Link>
         </div>
       </div>
 

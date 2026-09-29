@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { createClient } from "@/lib/supabase/server";
 import { formatPrix, libelleCategorie } from "@/lib/types";
 
@@ -30,7 +31,7 @@ export default async function FormationsAdmin() {
 
       <div className="panel">
         {formations.length === 0 ? (
-          <div className="empty"><div className="big">📚</div>Aucune formation. Le catalogue par défaut s&apos;affiche sur le site tant que la base est vide.</div>
+          <div className="empty"><div className="big"><Icon name="book-open" size={26} /></div>Aucune formation. Le catalogue par défaut s&apos;affiche sur le site tant que la base est vide.</div>
         ) : (
           <div className="table-wrap">
             <table className="table">
@@ -41,7 +42,7 @@ export default async function FormationsAdmin() {
                 {formations.map((f) => (
                   <tr key={f.id}>
                     <td className="muted">{f.ordre}</td>
-                    <td><Link href={`/admin/formations/${f.id}`} className="row-link">{f.icone} {f.titre}</Link></td>
+                    <td><Link href={`/admin/formations/${f.id}`} className="row-link">{f.titre}</Link></td>
                     <td>{libelleCategorie(f.categorie)}</td>
                     <td>{f.duree_label ?? "—"}</td>
                     <td>{formatPrix(f.prix_ht)}</td>

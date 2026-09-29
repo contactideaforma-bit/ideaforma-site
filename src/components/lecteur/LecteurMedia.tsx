@@ -1,5 +1,7 @@
 "use client";
 
+import Icon from "@/components/Icon";
+
 /**
  * Lecteur vidéo / audio sur URL signée courte durée.
  * Téléchargement, image-dans-l'image et menu contextuel désactivés ; filigrane sur la vidéo.
@@ -9,7 +11,7 @@ export default function LecteurMedia({ type, src, email }: { type: "video" | "po
   if (type === "podcast") {
     return (
       <div className="audio-box">
-        <div className="audio-icon">🎧</div>
+        <div className="audio-icon"><Icon name="headphones" size={28} /></div>
         <audio src={src} controls controlsList="nodownload noplaybackrate" preload="metadata" onContextMenu={(e) => e.preventDefault()} style={{ width: "100%" }} />
       </div>
     );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Icon from "@/components/Icon";
 
 const FORMATIONS_OPTIONS = [
   "Management & Leadership",
@@ -44,7 +45,7 @@ export default function ContactForm({ formationInitiale }: { formationInitiale?:
     return (
       <div className="form-card">
         <div className="form-success">
-          <div className="success-icon">✅</div>
+          <div className="success-icon"><Icon name="check" size={30} /></div>
           <h3>Merci, votre demande est bien envoyée !</h3>
           <p>Nous revenons vers vous sous 24h ouvrées.</p>
         </div>
@@ -60,7 +61,7 @@ export default function ContactForm({ formationInitiale }: { formationInitiale?:
 
   return (
     <div className="form-card">
-      <h3>📝 Demande de devis / renseignements</h3>
+      <h3><Icon name="clipboard" size={22} /> Demande de devis ou de renseignements</h3>
       {etat === "erreur" && <div className="alert alert-error">{erreur}</div>}
       <form onSubmit={onSubmit}>
         <div className="form-grid">

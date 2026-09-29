@@ -29,7 +29,7 @@ export default async function Connexion({
         <LoginForm suivant={suivant} />
         <div className="auth-links">
           <Link href="/mot-de-passe-oublie">Mot de passe oublié ?</Link>
-          <Link href="/">← Retour au site</Link>
+          <Link href="/">Retour au site</Link>
         </div>
       </div>
     </div>

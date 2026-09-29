@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Icon from "@/components/Icon";
 
 /**
  * Protection des contenus pédagogiques :
@@ -58,7 +59,7 @@ export default function ProtectionContenu({ email, children }: { email: string; 
       </div>
       {masque && (
         <div className="protege-voile" aria-hidden>
-          <div>🔒 Contenu masqué — revenez sur cette fenêtre pour continuer.</div>
+          <div><Icon name="lock" size={18} /> Contenu masqué — revenez sur cette fenêtre pour continuer.</div>
         </div>
       )}
     </div>

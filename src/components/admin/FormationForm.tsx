@@ -31,7 +31,7 @@ export default function FormationForm({
             {CATEGORIES.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
-        <div className="form-group"><label htmlFor="icone">Icône (emoji)</label><input id="icone" name="icone" defaultValue={f?.icone ?? "🎓"} maxLength={8} /></div>
+        <input type="hidden" name="icone" value={f?.icone ?? "graduation"} readOnly />
         <div className="form-group"><label htmlFor="duree_heures">Durée (heures)</label><input id="duree_heures" name="duree_heures" type="number" step="0.5" min="0" defaultValue={f?.duree_heures ?? ""} /></div>
         <div className="form-group"><label htmlFor="duree_label">Durée affichée</label><input id="duree_label" name="duree_label" placeholder="2 jours" defaultValue={f?.duree_label ?? ""} /></div>
         <div className="form-group"><label htmlFor="modalite">Modalité</label><input id="modalite" name="modalite" placeholder="En ligne / Intra" defaultValue={f?.modalite ?? ""} /></div>

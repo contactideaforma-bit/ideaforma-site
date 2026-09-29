@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Icon from "@/components/Icon";
 
 const LIENS = [
-  { href: "/", label: "Accueil" },
-  { href: "/formations", label: "Nos Formations" },
-  { href: "/a-propos", label: "À Propos" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Accueil", icone: "layout" },
+  { href: "/formations", label: "Formations", icone: "book-open" },
+  { href: "/a-propos", label: "À propos", icone: "compass" },
+  { href: "/contact", label: "Contact", icone: "mail" },
 ];
 
 export default function SiteNav({ connecte }: { connecte: boolean }) {
@@ -16,6 +17,8 @@ export default function SiteNav({ connecte }: { connecte: boolean }) {
   const [open, setOpen] = useState(false);
   const espaceHref = connecte ? "/espace" : "/connexion";
   const espaceLabel = connecte ? "Mon espace" : "Espace élève";
+
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <>
@@ -36,35 +39,33 @@ export default function SiteNav({ connecte }: { connecte: boolean }) {
           </ul>
           <div className="nav-actions">
             <Link href={espaceHref} className="btn btn-ghost btn-sm">
-              🔐 {espaceLabel}
+              <Icon name="lock" size={16} /> {espaceLabel}
             </Link>
-            <Link href="/contact#rdv" className="btn btn-primary btn-sm nav-cta">
-              📅 Prendre RDV
+            <Link href="/contact#rdv" className="btn btn-primary btn-sm">
+              <Icon name="calendar" size={16} /> Prendre rendez-vous
             </Link>
             <button
-              className={`hamburger${open ? " open" : ""}`}
-              aria-label="Menu"
+              className="hamburger"
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={open}
               onClick={() => setOpen((o) => !o)}
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <Icon name={open ? "x" : "menu"} size={22} />
             </button>
           </div>
         </div>
       </nav>
       <div className={`mobile-menu${open ? " open" : ""}`}>
         {LIENS.map((l) => (
-          <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
-            {l.label}
+          <Link key={l.href} href={l.href}>
+            <Icon name={l.icone} size={18} /> {l.label}
           </Link>
         ))}
-        <Link href={espaceHref} onClick={() => setOpen(false)}>
-          🔐 {espaceLabel}
+        <Link href={espaceHref}>
+          <Icon name="lock" size={18} /> {espaceLabel}
         </Link>
-        <Link href="/contact#rdv" className="btn btn-primary" onClick={() => setOpen(false)}>
-          📅 Prendre RDV
+        <Link href="/contact#rdv" className="btn btn-primary">
+          <Icon name="calendar" size={16} /> Prendre rendez-vous
         </Link>
       </div>
     </>

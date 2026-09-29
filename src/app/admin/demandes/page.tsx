@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import Icon from "@/components/Icon";
 import { formatDate, type DemandeContact } from "@/lib/types";
 import { marquerDemande, supprimerDemande } from "@/app/admin/actions";
 import ConfirmForm from "@/components/admin/ConfirmForm";
@@ -30,7 +31,7 @@ export default async function DemandesPage() {
         </div>
         <p style={{ whiteSpace: "pre-wrap", color: "var(--text)", fontSize: ".9rem", borderLeft: "3px solid var(--blue)", paddingLeft: ".75rem" }}>{d.message}</p>
         <div className="actions-row" style={{ marginTop: ".75rem" }}>
-          <form action={basculer}><button className={`btn btn-sm ${d.traitee ? "btn-ghost" : "btn-blue"}`} type="submit">{d.traitee ? "Remettre à traiter" : "✓ Marquer traitée"}</button></form>
+          <form action={basculer}><button className={`btn btn-sm ${d.traitee ? "btn-ghost" : "btn-blue"}`} type="submit">{d.traitee ? "Remettre à traiter" : "Marquer traitée"}</button></form>
           <a className="btn btn-ghost btn-sm" href={`mailto:${d.email}?subject=${encodeURIComponent("Votre demande de formation — IDEAFORMA")}`}>Répondre</a>
           <ConfirmForm action={supprimer} message="Supprimer cette demande ?"><button className="btn btn-danger btn-sm" type="submit">Supprimer</button></ConfirmForm>
         </div>
@@ -48,7 +49,7 @@ export default async function DemandesPage() {
       </div>
       <div className="panel">
         <h2>À traiter <span className="count">{aTraiter.length}</span></h2>
-        {aTraiter.length === 0 ? <div className="empty"><div className="big">✅</div>Tout est traité.</div> : <div className="module-list">{aTraiter.map((d) => <Bloc key={d.id} d={d} />)}</div>}
+        {aTraiter.length === 0 ? <div className="empty"><div className="big"><Icon name="check-circle" size={26} /></div>Tout est traité.</div> : <div className="module-list">{aTraiter.map((d) => <Bloc key={d.id} d={d} />)}</div>}
       </div>
       {traitees.length > 0 && (
         <div className="panel">

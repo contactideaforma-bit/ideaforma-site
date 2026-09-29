@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { createClient } from "@/lib/supabase/server";
 import { formatDate } from "@/lib/types";
 
@@ -47,14 +48,14 @@ export default async function AdminDashboard() {
         <div className="stat-tile"><div className="label">Élèves</div><div className="value">{eleves.count ?? 0}</div><div className="sub">{elevesActifs.count ?? 0} actifs</div></div>
         <div className="stat-tile"><div className="label">Formations</div><div className="value">{formations.count ?? 0}</div><div className="sub">au catalogue</div></div>
         <div className="stat-tile"><div className="label">Inscriptions actives</div><div className="value">{inscriptions.count ?? 0}</div><div className="sub">parcours en cours</div></div>
-        <div className="stat-tile"><div className="label">Demandes à traiter</div><div className="value">{demandes.count ?? 0}</div><div className="sub"><Link href="/admin/demandes" style={{ color: "var(--blue)" }}>voir les demandes →</Link></div></div>
+        <div className="stat-tile"><div className="label">Demandes à traiter</div><div className="value">{demandes.count ?? 0}</div><div className="sub"><Link href="/admin/demandes" style={{ color: "var(--blue)" }}>voir les demandes</Link></div></div>
       </div>
 
       <div className="two-cols">
         <div className="panel">
           <h2>Dernières inscriptions</h2>
           {insc.length === 0 ? (
-            <div className="empty"><div className="big">📭</div>Aucune inscription pour le moment.</div>
+            <div className="empty"><div className="big"><Icon name="inbox" size={26} /></div>Aucune inscription pour le moment.</div>
           ) : (
             <div className="table-wrap">
               <table className="table">
@@ -70,7 +71,7 @@ export default async function AdminDashboard() {
                         ) : "—"}
                       </td>
                       <td>{i.formations?.titre ?? "—"}</td>
-                      <td className="muted">{formatDate(i.date_debut)} → {i.date_fin ? formatDate(i.date_fin) : "illimité"}</td>
+                      <td className="muted">{formatDate(i.date_debut)} – {i.date_fin ? formatDate(i.date_fin) : "illimité"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -82,7 +83,7 @@ export default async function AdminDashboard() {
         <div className="panel">
           <h2>Derniers élèves créés</h2>
           {nouveaux.length === 0 ? (
-            <div className="empty"><div className="big">🎓</div>Aucun élève. <Link href="/admin/eleves/nouveau" style={{ color: "var(--blue)" }}>Créer le premier compte →</Link></div>
+            <div className="empty"><div className="big"><Icon name="graduation" size={26} /></div>Aucun élève. <Link href="/admin/eleves/nouveau" style={{ color: "var(--blue)" }}>Créer le premier compte</Link></div>
           ) : (
             <div className="table-wrap">
               <table className="table">

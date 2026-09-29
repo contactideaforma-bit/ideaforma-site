@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState } from "react";
 import { creerEleve, type EtatCreationEleve } from "@/app/admin/actions";
+import Icon from "@/components/Icon";
 
 export default function NouvelEleveForm({
   formations,
@@ -17,7 +18,7 @@ export default function NouvelEleveForm({
   if (etat.ok) {
     return (
       <div className="panel">
-        <div className="alert alert-success">✅ Compte créé pour <strong>{etat.email}</strong>.</div>
+        <div className="alert alert-success"><Icon name="check-circle" size={18} /> Compte créé pour <strong>{etat.email}</strong>.</div>
         {etat.mailEnvoye ? (
           <p style={{ marginBottom: "1rem" }}>L&apos;e-mail de bienvenue avec les identifiants a été envoyé.</p>
         ) : (

@@ -9,13 +9,13 @@ export default async function EspaceLayout({ children }: { children: React.React
   const sections: SidebarSection[] = [
     {
       items: [
-        { href: "/espace", label: "Mes formations", icone: "📚", exact: true },
-        { href: "/espace/compte", label: "Mon compte", icone: "⚙️" },
+        { href: "/espace", label: "Mes formations", icone: "book-open", exact: true },
+        { href: "/espace/compte", label: "Mon compte", icone: "settings" },
       ],
     },
   ];
   if (user.role === "admin") {
-    sections.push({ items: [{ href: "/admin", label: "Administration", icone: "🛠️" }] });
+    sections.push({ items: [{ href: "/admin", label: "Administration", icone: "wrench" }] });
   }
 
   return (

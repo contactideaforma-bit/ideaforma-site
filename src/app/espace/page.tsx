@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { formatDate } from "@/lib/types";
@@ -28,7 +29,7 @@ export default async function MesFormations() {
     <>
       <div className="page-title">
         <div>
-          <h1>Bonjour {user.prenom ?? ""} 👋</h1>
+          <h1>Bonjour {user.prenom ?? ""}</h1>
           <p>Retrouvez ici vos formations et votre progression.</p>
         </div>
       </div>
@@ -36,7 +37,7 @@ export default async function MesFormations() {
       {inscriptions.length === 0 ? (
         <div className="panel">
           <div className="empty">
-            <div className="big">📚</div>
+            <div className="big"><Icon name="book-open" size={26} /></div>
             Aucune formation ne vous est attribuée pour le moment.
             <br />Contactez IDEAFORMA si vous pensez qu&apos;il s&apos;agit d&apos;une erreur.
           </div>
@@ -50,11 +51,11 @@ export default async function MesFormations() {
             const accessible = i.statut === "active" && !pasCommence && !expiree;
             return (
               <article key={i.id} className="card formation-card">
-                <div className="card-icon">{i.formations?.icone ?? "🎓"}</div>
+                <div className="icon-box"><Icon name="book-open" size={22} /></div>
                 <h3>{i.formations?.titre ?? "Formation"}</h3>
                 <div className="card-meta">
-                  {i.formations?.duree_label && <span className="card-tag">⏱ {i.formations.duree_label}</span>}
-                  {accessible && <span className="card-tag green">Accès ouvert</span>}
+                  {i.formations?.duree_label && <span className="card-tag"><Icon name="clock" /> {i.formations.duree_label}</span>}
+                  {accessible && <span className="card-tag green"><Icon name="check" /> Accès ouvert</span>}
                   {pasCommence && <span className="card-tag grey">Ouvre le {formatDate(i.date_debut)}</span>}
                   {expiree && <span className="card-tag red">Délai dépassé</span>}
                   {i.statut === "terminee" && <span className="card-tag green">Terminée</span>}
