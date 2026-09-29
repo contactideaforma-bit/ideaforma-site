@@ -56,6 +56,10 @@ export default async function Formations({
             ))}
           </div>
 
+          <p className="center" style={{ fontSize: ".86rem", marginTop: "-1rem", marginBottom: "2rem" }}>
+            Tarifs inter-entreprises, par personne, hors taxes. Intra-entreprise, groupes et parcours sur-mesure : sur devis. Prise en charge OPCO possible.
+          </p>
+
           {actives.length === 0 ? (
             <div className="empty">
               <div className="big"><Icon name="compass" size={26} /></div>
