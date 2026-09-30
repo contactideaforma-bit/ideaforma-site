@@ -13,14 +13,15 @@ export default async function ElevesPage({
 
   let query = supabase
     .from("profiles")
-    .select("id, prenom, nom, email, entreprise, actif, created_at, inscriptions(id, statut, formations:formation_id(titre))")
+    .select("id, prenom, nom, email, entreprise, actif, created_at, inscriptions!eleve_id(id, statut, formations:formation_id(titre))")
     .eq("role", "eleve")
     .order("created_at", { ascending: false });
   if (filtre === "actifs") query = query.eq("actif", true);
   if (filtre === "inactifs") query = query.eq("actif", false);
   if (q) query = query.or(`nom.ilike.%${q}%,prenom.ilike.%${q}%,email.ilike.%${q}%,entreprise.ilike.%${q}%`);
 
-  const { data } = await query;
+  const { data, error } = await query;
+  if (error) console.error("[admin/eleves] requête impossible :", error.message);
   type Row = {
     id: string; prenom: string | null; nom: string | null; email: string; entreprise: string | null;
     actif: boolean; created_at: string;
