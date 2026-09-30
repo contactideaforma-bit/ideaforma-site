@@ -1,8 +1,10 @@
 import ChangerMotDePasse from "@/components/ChangerMotDePasse";
 import { requireAdmin, nomComplet } from "@/lib/auth";
+import { transportActif, expediteur, destinataireContact } from "@/lib/mail";
 
 export default async function CompteAdmin() {
   const admin = await requireAdmin();
+  const transport = transportActif();
   return (
     <>
       <div className="page-title">
@@ -19,9 +21,9 @@ export default async function CompteAdmin() {
         <h2>Configuration</h2>
         <table className="table">
           <tbody>
-            <tr><td>Envoi d&apos;e-mails (Resend)</td><td>{process.env.RESEND_API_KEY ? <span className="badge badge-green">Configuré</span> : <span className="badge badge-orange">Non configuré</span>}</td></tr>
-            <tr><td>Expéditeur</td><td className="muted">{process.env.MAIL_FROM || "IDEAFORMA <onboarding@resend.dev>"}</td></tr>
-            <tr><td>Réception des demandes de contact</td><td className="muted">{process.env.CONTACT_TO || "contact.ideaforma@gmail.com"}</td></tr>
+            <tr><td>Envoi d&apos;e-mails</td><td>{transport === "smtp" ? <span className="badge badge-green">SMTP OVH ({process.env.SMTP_HOST})</span> : transport === "resend" ? <span className="badge badge-blue">Resend</span> : <span className="badge badge-orange">Non configuré</span>}</td></tr>
+            <tr><td>Expéditeur</td><td className="muted">{expediteur()}</td></tr>
+            <tr><td>Réception des demandes de contact</td><td className="muted">{destinataireContact()}</td></tr>
             <tr><td>URL du site</td><td className="muted">{process.env.NEXT_PUBLIC_SITE_URL || "—"}</td></tr>
           </tbody>
         </table>

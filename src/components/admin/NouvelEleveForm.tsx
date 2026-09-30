@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
+import { messageBienvenueParDefaut } from "@/lib/mail-gabarits";
 import { creerEleve, type EtatCreationEleve } from "@/app/admin/actions";
 import Icon from "@/components/Icon";
 
@@ -14,6 +15,18 @@ export default function NouvelEleveForm({
 }) {
   const [etat, action, enCours] = useActionState<EtatCreationEleve, FormData>(creerEleve, {});
   const aujourdhui = new Date().toISOString().slice(0, 10);
+  const [envoyer, setEnvoyer] = useState(mailConfigure);
+  const [prenom, setPrenom] = useState("");
+  const [formationId, setFormationId] = useState("");
+  const [dateFin, setDateFin] = useState("");
+  const [message, setMessage] = useState(() => messageBienvenueParDefaut({ prenom: null, formations: [] }));
+  const [messageModifie, setMessageModifie] = useState(false);
+  // Tant que l'admin n'a pas touché au texte, il suit le prénom et la formation saisis.
+  useEffect(() => {
+    if (messageModifie) return;
+    const f = formations.find((x) => x.id === formationId);
+    setMessage(messageBienvenueParDefaut({ prenom: prenom.trim() || null, formations: f ? [{ titre: f.titre, date_fin: dateFin || null }] : [] }));
+  }, [prenom, formationId, dateFin, messageModifie, formations]);
 
   if (etat.ok) {
     return (
@@ -46,12 +59,12 @@ export default function NouvelEleveForm({
       {etat.erreur && <div className="alert alert-error">{etat.erreur}</div>}
       {!mailConfigure && (
         <div className="alert alert-info">
-          Envoi d&apos;e-mails non configuré (RESEND_API_KEY absente) : le mot de passe sera affiché à l&apos;écran pour transmission manuelle.
+          Envoi d&apos;e-mails non configuré (variables SMTP sur Vercel) : le mot de passe sera affiché à l&apos;écran pour transmission manuelle.
         </div>
       )}
       <h2>Identité</h2>
       <div className="form-grid">
-        <div className="form-group"><label htmlFor="prenom">Prénom</label><input id="prenom" name="prenom" autoComplete="off" /></div>
+        <div className="form-group"><label htmlFor="prenom">Prénom</label><input id="prenom" name="prenom" autoComplete="off" value={prenom} onChange={(e) => setPrenom(e.target.value)} /></div>
         <div className="form-group"><label htmlFor="nom">Nom *</label><input id="nom" name="nom" required autoComplete="off" /></div>
         <div className="form-group"><label htmlFor="email">E-mail (identifiant) *</label><input id="email" name="email" type="email" required autoComplete="off" /></div>
         <div className="form-group"><label htmlFor="telephone">Téléphone</label><input id="telephone" name="telephone" type="tel" autoComplete="off" /></div>
@@ -62,7 +75,7 @@ export default function NouvelEleveForm({
       <div className="form-grid">
         <div className="form-group full">
           <label htmlFor="formation_id">Formation</label>
-          <select id="formation_id" name="formation_id" defaultValue="">
+          <select id="formation_id" name="formation_id" value={formationId} onChange={(e) => setFormationId(e.target.value)}>
             <option value="">— Attribuer plus tard —</option>
             {formations.map((f) => (
               <option key={f.id} value={f.id}>{f.titre}</option>
@@ -72,17 +85,26 @@ export default function NouvelEleveForm({
         <div className="form-group"><label htmlFor="date_debut">Début d&apos;accès</label><input id="date_debut" name="date_debut" type="date" defaultValue={aujourdhui} /></div>
         <div className="form-group">
           <label htmlFor="date_fin">Fin d&apos;accès</label>
-          <input id="date_fin" name="date_fin" type="date" />
+          <input id="date_fin" name="date_fin" type="date" value={dateFin} onChange={(e) => setDateFin(e.target.value)} />
           <span className="hint">Vide = accès sans limite de temps.</span>
         </div>
       </div>
 
-      <div style={{ marginTop: "1.5rem" }}>
-        <label className="form-check">
-          <input type="checkbox" name="envoyer_mail" defaultChecked={mailConfigure} />
-          Envoyer l&apos;e-mail de bienvenue avec l&apos;identifiant et le mot de passe
-        </label>
-      </div>
+      <h2 style={{ marginTop: "1.5rem" }}>E-mail de bienvenue</h2>
+      <label className="form-check">
+        <input type="checkbox" name="envoyer_mail" checked={envoyer} onChange={(e) => setEnvoyer(e.target.checked)} />
+        Envoyer l&apos;e-mail de bienvenue avec l&apos;identifiant et le mot de passe
+      </label>
+      {envoyer && (
+        <div className="form-group full" style={{ marginTop: ".75rem" }}>
+          <label htmlFor="message">Message (modifiable)</label>
+          <textarea id="message" name="message" rows={10} value={message} onChange={(e) => { setMessage(e.target.value); setMessageModifie(true); }} maxLength={4000} />
+          <span className="hint">
+            Le bloc identifiants et le bouton « Accéder à ma formation » sont insérés à l'endroit du repère [identifiants] ; mise en page IDEAFORMA automatique.
+            Le prénom et la formation choisis ci-dessus sont repris dans le texte proposé ; vous pouvez le modifier librement.
+          </span>
+        </div>
+      )}
 
       <div className="form-footer">
         <span className="form-notice">Le mot de passe est généré automatiquement et affiché une seule fois après création.</span>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { mailConfigure as mailEstConfigure } from "@/lib/mail";
 import { formatDate, type Profile } from "@/lib/types";
 import { nomComplet } from "@/lib/auth";
 import {
@@ -9,6 +10,7 @@ import {
 } from "@/app/admin/actions";
 import ConfirmForm from "@/components/admin/ConfirmForm";
 import MotDePasseActions from "@/components/admin/MotDePasseActions";
+import MailEleveForm from "@/components/admin/MailEleveForm";
 
 export default async function FicheEleve({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -37,7 +39,7 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
   );
   const dejaInscrit = new Set(inscriptions.map((i) => i.formation_id));
   const disponibles = ((formations ?? []) as { id: string; titre: string }[]).filter((f) => !dejaInscrit.has(f.id));
-  const mailConfigure = !!process.env.RESEND_API_KEY;
+  const mailConfigure = mailEstConfigure();
   const aujourdhui = new Date().toISOString().slice(0, 10);
 
   const modifier = modifierEleve.bind(null, e.id);
@@ -165,6 +167,21 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
               </div>
               <button className="btn btn-blue btn-sm" type="submit" style={{ marginTop: ".75rem" }}>Enregistrer</button>
             </form>
+          </div>
+
+          <div className="panel">
+            <h2>Envoyer un e-mail à l&apos;élève</h2>
+            <p style={{ fontSize: ".85rem", marginBottom: ".75rem" }}>
+              E-mail de bienvenue, relance ou message libre, aux couleurs du site. Vous pouvez modifier le texte avant envoi et prévisualiser le rendu.
+            </p>
+            <MailEleveForm
+              eleveId={e.id}
+              prenom={e.prenom}
+              email={e.email}
+              formations={inscriptions.map((i) => ({ titre: i.formations?.titre ?? "Formation", date_debut: i.date_debut, date_fin: i.date_fin }))}
+              mailConfigure={mailConfigure}
+              site={process.env.NEXT_PUBLIC_SITE_URL || "https://ideaforma.fr"}
+            />
           </div>
 
           <div className="panel">

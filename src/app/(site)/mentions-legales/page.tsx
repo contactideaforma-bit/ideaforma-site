@@ -19,7 +19,7 @@ export default function MentionsLegales() {
             <br />
             Siège social : 144 avenue Charles de Gaulle, 92200 Neuilly-sur-Seine.
             <br />
-            Téléphone : 06 25 16 13 93 — E-mail : contact.ideaforma@gmail.com.
+            Téléphone : 06 25 16 13 93 — E-mail : contact@ideaforma.fr.
             <br />
             Directrice de la publication : Madame Myriam Ayouaz, Présidente.
           </p>
@@ -56,7 +56,7 @@ export default function MentionsLegales() {
           </p>
           <p>
             Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification, d&apos;effacement,
-            de limitation et d&apos;opposition. Pour l&apos;exercer : contact.ideaforma@gmail.com. Vous pouvez
+            de limitation et d&apos;opposition. Pour l&apos;exercer : contact@ideaforma.fr. Vous pouvez
             introduire une réclamation auprès de la CNIL (cnil.fr).
           </p>
           <p>

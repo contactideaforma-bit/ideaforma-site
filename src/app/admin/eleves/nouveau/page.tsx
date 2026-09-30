@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { mailConfigure as mailEstConfigure } from "@/lib/mail";
 import NouvelEleveForm from "@/components/admin/NouvelEleveForm";
 
 export default async function NouvelElevePage() {
   const supabase = await createClient();
   const { data: formations } = await supabase.from("formations").select("id, titre").order("titre");
-  const mailConfigure = !!process.env.RESEND_API_KEY;
+  const mailConfigure = mailEstConfigure();
 
   return (
     <>

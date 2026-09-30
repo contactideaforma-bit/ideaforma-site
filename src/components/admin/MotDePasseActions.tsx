@@ -32,7 +32,7 @@ export default function MotDePasseActions({ eleveId, mailConfigure }: { eleveId:
         </div>
       )}
       <div className="actions-row">
-        <button type="button" className="btn btn-blue btn-sm" disabled={enCours || !mailConfigure} onClick={() => lancer(true)} title={mailConfigure ? "" : "Configurer RESEND_API_KEY pour activer l'envoi"}>
+        <button type="button" className="btn btn-blue btn-sm" disabled={enCours || !mailConfigure} onClick={() => lancer(true)} title={mailConfigure ? "" : "Configurer SMTP_HOST, SMTP_USER et SMTP_PASS pour activer l'envoi"}>
           <Icon name="mail" size={15} /> Renvoyer des identifiants par e-mail
         </button>
         <button type="button" className="btn btn-ghost btn-sm" disabled={enCours} onClick={() => lancer(false)}>

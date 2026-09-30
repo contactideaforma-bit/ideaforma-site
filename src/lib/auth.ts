@@ -10,8 +10,30 @@ export async function getCurrentProfile(): Promise<Profile | null> {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const { data } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
-  return (data as Profile | null) ?? null;
+  let { data, error } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  if (error || !data) {
+    // Seconde tentative : la première peut tomber pendant le renouvellement du jeton.
+    ({ data, error } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle());
+  }
+  if (data) return data as Profile;
+
+  // Profil illisible alors que l'utilisateur est bien connecté : on reconstruit le minimum
+  // depuis le jeton (rôle synchronisé dans app_metadata) plutôt que de le traiter en élève.
+  const meta = (user.app_metadata ?? {}) as { role?: string; actif?: boolean };
+  const um = (user.user_metadata ?? {}) as { prenom?: string; nom?: string };
+  if (!meta.role) return null;
+  return {
+    id: user.id,
+    email: user.email ?? "",
+    prenom: um.prenom ?? null,
+    nom: um.nom ?? null,
+    telephone: null,
+    entreprise: null,
+    role: meta.role as Profile["role"],
+    actif: meta.actif ?? true,
+    created_at: user.created_at,
+    updated_at: user.created_at,
+  } as Profile;
 }
 
 /** Garantit un admin connecté, sinon redirige. */

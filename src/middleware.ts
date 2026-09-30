@@ -73,14 +73,25 @@ async function avecSession(request: NextRequest, response: NextResponse, url: st
   }
 
   if (isAdminRoute || isEspaceRoute || isLoginRoute) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("role, actif")
-      .eq("id", user.id)
-      .maybeSingle();
+    // Le rôle est lu d'abord dans le jeton (app_metadata, synchronisé par trigger depuis profiles) :
+    // aucune requête base, donc aucun risque de "rétrograder" un admin pendant un rafraîchissement de session.
+    const meta = (user.app_metadata ?? {}) as { role?: string; actif?: boolean };
+    let role: string | undefined = meta.role;
+    let actif: boolean | undefined = meta.actif;
 
-    const role = profile?.role ?? "eleve";
-    const actif = profile?.actif ?? false;
+    if (!role) {
+      const { data: profile, error } = await supabase
+        .from("profiles")
+        .select("role, actif")
+        .eq("id", user.id)
+        .maybeSingle();
+      // Requête en échec (jeton en cours de renouvellement, réseau) : on ne décide rien ici,
+      // les layouts serveur trancheront avec une session à jour.
+      if (error || !profile) return response;
+      role = profile.role;
+      actif = profile.actif;
+    }
+    if (actif === undefined) actif = true;
 
     if (isLoginRoute) {
       const url = request.nextUrl.clone();

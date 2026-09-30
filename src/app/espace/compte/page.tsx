@@ -22,7 +22,7 @@ export default async function CompteEleve() {
         <h2>Mes informations</h2>
         <p style={{ fontSize: ".85rem" }}>
           Pour modifier votre nom, votre téléphone ou votre entreprise, contactez IDEAFORMA :{" "}
-          <a href="mailto:contact.ideaforma@gmail.com" style={{ color: "var(--blue)" }}>contact.ideaforma@gmail.com</a>.
+          <a href="mailto:contact@ideaforma.fr" style={{ color: "var(--blue)" }}>contact@ideaforma.fr</a>.
         </p>
       </div>
     </>

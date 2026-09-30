@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { envoyerMail, genererMotDePasse, mailBienvenue, mailNouveauMotDePasse } from "@/lib/mail";
+import { envoyerMail, genererMotDePasse, mailBienvenue, mailNouveauMotDePasse, mailPersonnalise, type FormationAttribuee } from "@/lib/mail";
 
 /* ───────────────────────── helpers ───────────────────────── */
 
@@ -89,7 +89,12 @@ export async function creerEleve(_prev: EtatCreationEleve, fd: FormData): Promis
   let mailEnvoye = false;
   let raisonMail: string | undefined;
   if (envoyerMailBienvenue) {
-    const m = mailBienvenue({ prenom, email, motDePasse });
+    let formationsMail: FormationAttribuee[] = [];
+    if (formationId) {
+      const { data: f } = await supaAdmin.from("formations").select("titre").eq("id", formationId).maybeSingle();
+      if (f) formationsMail = [{ titre: (f as { titre: string }).titre, date_debut: dateDebut, date_fin: dateFin }];
+    }
+    const m = mailBienvenue({ prenom, email, motDePasse, formations: formationsMail, message: sOrNull(fd, "message", 4000) });
     const r = await envoyerMail({ to: email, ...m });
     mailEnvoye = r.ok;
     if (!r.ok) raisonMail = r.raison;
@@ -143,6 +148,44 @@ export async function regenererMotDePasse(id: string, envoyer: boolean): Promise
     return { ok: true, motDePasse, message: `Nouveau mot de passe envoyé à ${profil.email}.` };
   }
   return { ok: true, motDePasse, message: "Nouveau mot de passe généré. Transmettez-le à l'élève." };
+}
+
+export type EtatMailEleve = { ok?: boolean; erreur?: string; message?: string; motDePasse?: string };
+
+/**
+ * E-mail personnalisé à un élève depuis sa fiche (bienvenue, relance, information).
+ * Si "nouveaux_identifiants" est coché, un nouveau mot de passe est généré et inclus dans l'e-mail.
+ */
+export async function envoyerMailEleve(eleveId: string, _prev: EtatMailEleve, fd: FormData): Promise<EtatMailEleve> {
+  await requireAdmin();
+  const sujet = s(fd, "sujet", 200);
+  const message = s(fd, "message", 6000);
+  const nouveauxIdentifiants = fd.get("nouveaux_identifiants") === "on";
+  if (!sujet) return { erreur: "L'objet est obligatoire." };
+  if (!message) return { erreur: "Le message est vide." };
+
+  const supaAdmin = createAdminClient();
+  const { data: profil } = await supaAdmin.from("profiles").select("email, prenom").eq("id", eleveId).eq("role", "eleve").maybeSingle();
+  if (!profil) return { erreur: "Élève introuvable." };
+
+  let motDePasse: string | undefined;
+  if (nouveauxIdentifiants) {
+    motDePasse = genererMotDePasse();
+    const { error } = await supaAdmin.auth.admin.updateUserById(eleveId, { password: motDePasse });
+    if (error) return { erreur: `Impossible de générer le mot de passe : ${error.message}` };
+  }
+
+  const m = mailPersonnalise({ sujet, message, email: profil.email, motDePasse });
+  const r = await envoyerMail({ to: profil.email, ...m });
+  if (!r.ok) {
+    return {
+      erreur: motDePasse
+        ? `E-mail non envoyé (${r.raison}). Le mot de passe a tout de même été changé : ${motDePasse}`
+        : `E-mail non envoyé (${r.raison}).`,
+      motDePasse,
+    };
+  }
+  return { ok: true, message: `E-mail envoyé à ${profil.email}.`, motDePasse };
 }
 
 export async function supprimerEleve(id: string): Promise<void> {

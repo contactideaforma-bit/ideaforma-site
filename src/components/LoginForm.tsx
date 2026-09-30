@@ -38,8 +38,10 @@ export default function LoginForm({ suivant }: { suivant?: string }) {
       return;
     }
 
+    const roleJeton = (data.user.app_metadata as { role?: string } | undefined)?.role;
+    const role = profile?.role ?? roleJeton;
     const destination =
-      suivant && suivant.startsWith("/") ? suivant : profile?.role === "admin" ? "/admin" : "/espace";
+      suivant && suivant.startsWith("/") ? suivant : role === "admin" ? "/admin" : "/espace";
     router.replace(destination);
     router.refresh();
   }

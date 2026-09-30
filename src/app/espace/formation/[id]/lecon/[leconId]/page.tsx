@@ -107,7 +107,7 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
                 <iframe src={embed} title={lecon.titre} allow="autoplay; encrypted-media; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
               </div>
             ) : urlSignee ? (
-              <LecteurMedia type={lecon.type} src={urlSignee} email={user.email} />
+              <LecteurMedia type={lecon.type} src={urlSignee} email={user.email} titre={lecon.titre} sousTitre={`${f.titre} · ${module.titre}`} />
             ) : (
               <div className="empty"><div className="big"><Icon name="construction" size={26} /></div>Média en cours de mise en ligne.</div>
             )}

@@ -32,7 +32,7 @@ export default async function Contact({
             <Reveal className="contact-info">
               <div className="contact-item">
                 <div className="icon-box"><Icon name="mail" size={20} /></div>
-                <div><h4>E-mail</h4><p><a href="mailto:contact.ideaforma@gmail.com">contact.ideaforma@gmail.com</a></p></div>
+                <div><h4>E-mail</h4><p><a href="mailto:contact@ideaforma.fr">contact@ideaforma.fr</a></p></div>
               </div>
               <div className="contact-item">
                 <div className="icon-box amber"><Icon name="phone" size={20} /></div>

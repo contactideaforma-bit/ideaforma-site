@@ -41,7 +41,7 @@ export default function SiteFooter() {
           </div>
           <div className="footer-contact">
             <h4>Contact</h4>
-            <p><Icon name="mail" size={16} /><a href="mailto:contact.ideaforma@gmail.com">contact.ideaforma@gmail.com</a></p>
+            <p><Icon name="mail" size={16} /><a href="mailto:contact@ideaforma.fr">contact@ideaforma.fr</a></p>
             <p><Icon name="phone" size={16} /><a href="tel:+33625161393">06 25 16 13 93</a></p>
             <p><Icon name="map-pin" size={16} /><span>144 avenue Charles de Gaulle<br />92200 Neuilly-sur-Seine</span></p>
             <Link href="/contact#rdv" className="btn btn-primary btn-sm" style={{ marginTop: ".75rem" }}>

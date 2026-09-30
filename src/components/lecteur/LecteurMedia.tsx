@@ -1,21 +1,21 @@
 "use client";
 
-import Icon from "@/components/Icon";
+import { useState } from "react";
+import LecteurPodcast from "@/components/lecteur/LecteurPodcast";
 
 /**
  * Lecteur vidéo / audio sur URL signée courte durée.
  * Téléchargement, image-dans-l'image et menu contextuel désactivés ; filigrane sur la vidéo.
  * (Aucune protection navigateur n'est absolue : le filigrane rend toute fuite traçable.)
+ * Un podcast (ou une "vidéo" sans piste image) est lu avec le lecteur podcast animé.
  */
-export default function LecteurMedia({ type, src, email }: { type: "video" | "podcast"; src: string; email: string }) {
-  if (type === "podcast") {
-    return (
-      <div className="audio-box">
-        <div className="audio-icon"><Icon name="headphones" size={28} /></div>
-        <audio src={src} controls controlsList="nodownload noplaybackrate" preload="metadata" onContextMenu={(e) => e.preventDefault()} style={{ width: "100%" }} />
-      </div>
-    );
-  }
+export default function LecteurMedia({
+  type, src, email, titre, sousTitre,
+}: { type: "video" | "podcast"; src: string; email: string; titre?: string; sousTitre?: string }) {
+  const [audioSeul, setAudioSeul] = useState(type === "podcast");
+
+  if (audioSeul) return <LecteurPodcast src={src} titre={titre} sousTitre={sousTitre} />;
+
   return (
     <div className="video-frame">
       <video
@@ -27,6 +27,7 @@ export default function LecteurMedia({ type, src, email }: { type: "video" | "po
         playsInline
         preload="metadata"
         onContextMenu={(e) => e.preventDefault()}
+        onLoadedMetadata={(e) => { if (e.currentTarget.videoWidth === 0) setAudioSeul(true); }}
       />
       <div className="video-filigrane" aria-hidden>{email}</div>
     </div>

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { envoyerMail, mailDemandeContact } from "@/lib/mail";
+import { envoyerMail, mailDemandeContact, destinataireContact, CONTACT_EMAIL } from "@/lib/mail";
 
 export const runtime = "nodejs";
 
@@ -46,15 +46,15 @@ export async function POST(req: Request) {
     console.error("[contact] base injoignable :", e);
   }
 
-  // 2. Notification e-mail (facultative : dépend de RESEND_API_KEY)
-  const to = process.env.CONTACT_TO || "contact.ideaforma@gmail.com";
+  // 2. Notification e-mail (SMTP OVH ou Resend, selon la configuration)
+  const to = destinataireContact();
   const mail = mailDemandeContact(demande);
   const envoi = await envoyerMail({ to, ...mail, replyTo: demande.email });
   if (!envoi.ok) console.warn("[contact] e-mail non envoyé :", envoi.raison);
 
   if (!enregistre && !envoi.ok) {
     return NextResponse.json(
-      { erreur: "Nous n'avons pas pu enregistrer votre demande. Écrivez-nous directement à contact.ideaforma@gmail.com." },
+      { erreur: `Nous n'avons pas pu enregistrer votre demande. Écrivez-nous directement à ${CONTACT_EMAIL}.` },
       { status: 500 }
     );
   }
