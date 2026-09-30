@@ -141,7 +141,23 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
               consigne={quiz.consigne}
             />
           ) : (
-            <div className="alert alert-info">Aperçu administrateur : {quiz.questions.length} question(s), seuil {quiz.seuil} %.</div>
+            <LecteurQuiz
+              formationId={id}
+              leconId={leconId}
+              titre={lecon.type === "evaluation" ? "Évaluation" : "Quiz"}
+              questions={quiz.questions.map((q) => ({ id: q.id, enonce: q.enonce, options: q.options, multiple: q.bonnes.length > 1 }))}
+              seuil={quiz.seuil}
+              tentativesMax={quiz.tentatives_max}
+              tentativesFaites={0}
+              meilleurScore={null}
+              dejaReussi={false}
+              consigne={quiz.consigne}
+              essai={{
+                bonnes: quiz.questions.map((q) => q.bonnes),
+                explications: Object.fromEntries(quiz.questions.filter((q) => q.explication).map((q) => [q.id, q.explication as string])),
+                corrections: quiz.corrections,
+              }}
+            />
           )
         )}
       </div>

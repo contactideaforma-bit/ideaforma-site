@@ -8,7 +8,7 @@ import Icon from "@/components/Icon";
 type QuestionAffichee = { id: string; enonce: string; options: string[]; multiple: boolean };
 
 export default function LecteurQuiz({
-  formationId, leconId, titre, questions, seuil, tentativesMax, tentativesFaites, meilleurScore, dejaReussi, consigne,
+  formationId, leconId, titre, questions, seuil, tentativesMax, tentativesFaites, meilleurScore, dejaReussi, consigne, essai,
 }: {
   formationId: string;
   leconId: string;
@@ -20,6 +20,8 @@ export default function LecteurQuiz({
   meilleurScore: number | null;
   dejaReussi: boolean;
   consigne?: string;
+  /** Mode essai (aperçu administrateur) : correction locale, rien n'est enregistré. */
+  essai?: { bonnes: number[][]; explications: Record<string, string>; corrections: boolean };
 }) {
   const router = useRouter();
   const [reponses, setReponses] = useState<number[][]>(questions.map(() => []));
@@ -28,7 +30,7 @@ export default function LecteurQuiz({
   const [faites, setFaites] = useState(tentativesFaites);
   const debut = useRef<number>(Date.now());
 
-  const epuise = tentativesMax > 0 && faites >= tentativesMax;
+  const epuise = !essai && tentativesMax > 0 && faites >= tentativesMax;
   const toutesRepondues = reponses.every((r) => r.length > 0);
 
   function choisir(qi: number, k: number, multiple: boolean) {
@@ -41,6 +43,19 @@ export default function LecteurQuiz({
 
   function soumettre() {
     if (!toutesRepondues && !window.confirm("Certaines questions sont sans réponse. Soumettre quand même ?")) return;
+    if (essai) {
+      const detail = questions.map((q, i) => {
+        const choisis = [...new Set<number>(reponses[i] ?? [])].sort((a, b) => a - b);
+        const bonnes = [...new Set<number>(essai.bonnes[i] ?? [])].sort((a, b) => a - b);
+        const correct = choisis.length === bonnes.length && choisis.every((v, k) => v === bonnes[k]);
+        return { id: q.id, correct, choisis, bonnes };
+      });
+      const justes = detail.filter((d) => d.correct).length;
+      const score = questions.length ? Math.round((1000 * justes) / questions.length) / 10 : 0;
+      setResultat({ ok: true, score, justes, total: questions.length, reussi: score >= seuil, seuil, tentative: faites + 1, tentatives_max: tentativesMax, detail, corrections: true, explications: essai.explications });
+      setFaites((n) => n + 1);
+      return;
+    }
     startTransition(async () => {
       const r = await soumettreQuiz(formationId, leconId, reponses, (Date.now() - debut.current) / 1000);
       setResultat(r);
@@ -62,6 +77,7 @@ export default function LecteurQuiz({
     const detail = new Map<string, Detail>((resultat.detail ?? []).map((d: Detail) => [d.id, d]));
     return (
       <div>
+        {essai && <div className="alert alert-info"><Icon name="settings" size={16} /> <span>Mode essai administrateur : ce résultat n&apos;est pas enregistré. Les corrections et explications sont toujours affichées ici, même si le quiz les masque aux élèves.</span></div>}
         <div className={`alert ${resultat.reussi ? "alert-success" : "alert-warn"}`} style={{ fontSize: "1rem" }}>
           <Icon name={resultat.reussi ? "party" : "frown"} size={20} /> <span>{resultat.reussi ? "Réussi !" : "Pas encore…"} Score : <strong>{resultat.score} %</strong> ({resultat.justes}/{resultat.total} bonnes réponses, seuil {resultat.seuil} %).
           {resultat.tentatives_max ? ` Tentative ${resultat.tentative} sur ${resultat.tentatives_max}.` : ` Tentative n° ${resultat.tentative}.`}</span>
@@ -91,7 +107,7 @@ export default function LecteurQuiz({
           </div>
         )}
         <div className="actions-row" style={{ marginTop: "1rem" }}>
-          {!resultat.reussi && !(tentativesMax > 0 && faites >= tentativesMax) && (
+          {(essai || (!resultat.reussi && !(tentativesMax > 0 && faites >= tentativesMax))) && (
             <button type="button" className="btn btn-primary" onClick={recommencer}>Réessayer</button>
           )}
         </div>
@@ -102,6 +118,7 @@ export default function LecteurQuiz({
   // ── Formulaire ──
   return (
     <div>
+      {essai && <div className="alert alert-info"><Icon name="settings" size={16} /> <span>Mode essai administrateur : vous pouvez répondre et voir la correction, rien n&apos;est enregistré et les tentatives ne sont pas décomptées.</span></div>}
       {dejaReussi && <div className="alert alert-success">Vous avez déjà validé ce {titre.toLowerCase()}{meilleurScore !== null ? ` (meilleur score : ${meilleurScore} %)` : ""}. Vous pouvez le refaire pour vous entraîner.</div>}
       {resultat && !resultat.ok && <div className="alert alert-error">{resultat.erreur}</div>}
       <p style={{ fontSize: ".9rem", marginBottom: "1rem" }}>
