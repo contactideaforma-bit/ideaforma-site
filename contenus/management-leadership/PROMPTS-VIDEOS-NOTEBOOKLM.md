@@ -5,7 +5,7 @@ Prompts prêts à coller dans NotebookLM (Google) pour produire les vidéos de c
 ## Mode d'emploi
 
 1. Créez un carnet NotebookLM par module (« IDEAFORMA — M&L — Module N »).
-2. Importez comme sources les fichiers `.md` du module (dossier `contenus/management-leadership/0N-module-N/`). Importez au minimum le script de la vidéo concernée et les leçons écrites qu'elle introduit. Pour les modules 6 et 7, attendez que les contenus soient rédigés (phase P4) ; les prompts ci-dessous sont déjà prêts.
+2. Importez comme sources le fichier `contenus/CHARTE-VIDEO-PODCAST.md` et les fichiers `.md` du module (dossier `contenus/management-leadership/0N-module-N/`). Importez au minimum le script de la vidéo concernée et les leçons écrites qu'elle introduit. Pour les modules 6 et 7, attendez que les contenus soient rédigés (phase P4) ; les prompts ci-dessous sont déjà prêts.
 3. Dans le studio, choisissez « Vue d'ensemble vidéo », puis « Personnaliser ». Collez le bloc commun suivi du prompt de la vidéo. Choisissez le format « Explication » (pas « Résumé ») et un style visuel sobre (classique ou tableau blanc). Langue de sortie : français (réglage du carnet).
 4. Générez, visionnez, et regénérez si la vidéo s'écarte du script : NotebookLM reformule à partir des sources, il ne lit pas le script mot à mot. Pour une lecture mot à mot avec avatar, c'est la phase P5 (HeyGen, Synthesia ou équivalent) avec les scripts tels quels.
 5. Exportez la vidéo, puis déposez-la dans le bucket `contenus` de Supabase et renseignez le chemin dans l'éditeur de leçon (type vidéo).
@@ -23,7 +23,8 @@ Règles impératives :
 - Langue : français, vouvoiement, ton chaleureux, direct et concret. Jamais de jargon non expliqué.
 - Suis fidèlement la structure et les formulations du script fourni dans les sources (fichier indiqué ci-dessous). N'ajoute aucune notion, aucun chiffre, aucune référence qui n'est pas dans les sources. N'invente ni témoignage ni statistique.
 - Cite les auteurs et textes exactement comme les sources (Mintzberg, Kotter, Code du travail, etc.).
-- Visuel : fond clair uniquement, jamais de fond sombre. Pictogrammes simples, pas d'emojis. Textes à l'écran courts. Bleu (#2F8BD6), bleu foncé (#0B2545) et orange (#FF6B35) comme couleurs principales.
+- Visuel (charte IDEAFORMA, importer aussi le fichier CHARTE-VIDEO-PODCAST.md comme source) : fond gris très clair (#F6F9FC) sur tous les écrans, jamais de fond sombre. Couleurs : bleu (#2F8BD6) pour les titres et mots clés, bleu marine (#0B2545) pour le texte des titres, orange (#FF6B35) pour un seul élément à retenir par écran, bleu pâle (#EAF4FC) pour les encadrés. Vert (#22A06B) et rouge (#D64545) uniquement pour opposer « ce qui marche » et « ce qui échoue ». Titres en Poppins, texte en Inter. Pictogrammes au trait monochromes, pas d'emojis, pas de photos de banque, pas de clipart. Schémas simples : un schéma, une idée. Transitions : fondu et glissement léger uniquement, pas de zoom ni d'effet 3D.
+- Structure fixe : carton d'ouverture (logo, titre de la leçon, module), accroche, plan annoncé, développement avec le bandeau « À l'atelier Garnier » pour le cas, écran « À retenir » en 4 ou 5 points, transition vers la leçon suivante, carton de fin avec ideaforma.fr.
 - Structure : une accroche, le plan annoncé, le développement avec l'exemple de l'atelier Garnier, un « à retenir » en 4 ou 5 points, et une phrase de transition vers la leçon suivante.
 - Ne mentionne pas NotebookLM, ni « les sources », ni « ce document » : parle comme le formateur qui s'adresse à l'apprenant.
 ```

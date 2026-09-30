@@ -12,6 +12,7 @@ begin
   -- 0.1-video-bienvenue.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Ton : chaleureux, direct, vouvoiement · Débit : 140 mots/min
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 Indications visuelles entre crochets. Sous-titres à générer depuis ce texte.
 
 ---
@@ -105,6 +106,7 @@ C''est parti. Rendez-vous dans la leçon suivante pour la méthode de travail.
 [Fondu, logo IDEAFORMA]
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Ton : chaleureux, direct, vouvoiement · Débit : 140 mots/min
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 Indications visuelles entre crochets. Sous-titres à générer depuis ce texte.
 
 ---
@@ -493,6 +495,7 @@ Gardez ces réponses : vous les relirez au module 7.
   -- 1.1-video-manager-leader-chef.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -573,6 +576,7 @@ Dans les prochaines leçons, nous allons entrer dans le détail : ce que fait vr
 Sources citées : Fayol, *Administration industrielle et générale* (1916) ; Mintzberg, *The Nature of Managerial Work* (1973) ; Kotter, « What Leaders Really Do », *Harvard Business Review* (1990).
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -1082,6 +1086,7 @@ Ce dont l''atelier a besoin dans les trois prochains mois : du visionnaire d''ab
   -- 1.4-video-leadership-situationnel.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -1168,6 +1173,7 @@ Dans le podcast qui suit, nous parlerons d''une situation particulière et très
 Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (rééd. Prentice Hall) ; Blanchard, *Leadership and the One Minute Manager*, 1985 (modèle SLII, terminologie « diriger / entraîner / épauler / déléguer »).
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -1260,6 +1266,7 @@ Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (ré
   -- 1.5-podcast-de-collegue-a-manager.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles). Débit : 150 mots/min. Voix distinctes pour la synthèse (ElevenLabs / NotebookLM).
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -1358,6 +1365,7 @@ Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (ré
 Repères théoriques mobilisés : Linda Hill, *Becoming a Manager* (2003), sur la découverte du rôle par les nouveaux managers ; Mintzberg (1973), rôles d''agent de liaison et de porte-parole ; Kotter (1990), management vs leadership.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles). Débit : 150 mots/min. Voix distinctes pour la synthèse (ElevenLabs / NotebookLM).
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -2184,6 +2192,7 @@ Vous pouvez maintenant passer au quiz du module 1.
   -- 2.1-video-strategie-objectifs.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -2244,6 +2253,7 @@ Des objectifs imposés sans explication. Un objectif accepté vaut dix fois un o
 Sources : Peter Drucker, *The Practice of Management* (1954) — management par objectifs ; Locke & Latham (1990) — théorie de la fixation d''objectifs.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -3299,6 +3309,7 @@ Dans un service administratif de six personnes, remplacez « contrôle qualité 
   -- 2.5-video-deleguer.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -3381,6 +3392,7 @@ Déléguer, c''est un investissement. Les premières semaines, ça prend plus de
 Sources : Hersey & Blanchard (leadership situationnel) ; Peter Drucker, *The Effective Executive* (1967) ; Linda Hill, *Becoming a Manager* (2003).
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -3941,6 +3953,7 @@ Fatou a une RQTH pour une pathologie lombaire et une restriction de port de char
   -- 2.9-podcast-tableau-de-bord.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **SANDRINE** = responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -4023,6 +4036,7 @@ Fatou a une RQTH pour une pathologie lombaire et une restriction de port de char
 Repères mobilisés : indicateurs de résultat / de moyens (Kaplan & Norton, 1996) ; loi de Goodhart ; rituel hebdomadaire de pilotage.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **SANDRINE** = responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -4111,6 +4125,7 @@ Repères mobilisés : indicateurs de résultat / de moyens (Kaplan & Norton, 199
   -- 3.1-video-communication-du-manager.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -4167,6 +4182,7 @@ Vous verrez qu''il n''y a pas de recette miracle, mais des méthodes simples qui
 Sources : Mintzberg (1973) ; Paul Watzlawick, *Une logique de la communication* (1967) — « on ne peut pas ne pas communiquer ».
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -4860,6 +4876,7 @@ Et trois semaines plus tard, le positif, devant Thierry : « Trois finitions cet
   -- 3.4-video-feedback-en-pratique.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar, avec trois séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -4949,6 +4966,7 @@ Le feedback n''est pas un talent. C''est une méthode qui s''applique en cinq mi
 Sources : Center for Creative Leadership, méthode SBI ; Bower & Bower, méthode DESC ; Edmondson (1999) sur les conséquences de l''humiliation publique des erreurs.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar, avec trois séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -5590,6 +5608,7 @@ Thierry commence à raconter comment on faisait « avant » ; Karim le remercie,
   -- 3.8-podcast-dire-non-alerter-negocier.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -5692,6 +5711,7 @@ Thierry commence à raconter comment on faisait « avant » ; Karim le remercie,
 Sources : Mintzberg (1973) sur les rôles de liaison ; Code du travail, art. L1152-2 et L1132-3-3 (protection des salariés qui relatent des faits de harcèlement ou de discrimination), art. L4122-1 (obligation de sécurité du salarié) ; Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 (éd. originale *Getting to Yes*, 1981) — négociation sur les intérêts.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -6050,6 +6070,7 @@ Sujets parqués pour une prochaine fois : ____________________
   -- 4.1-video-motivation.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -6136,6 +6157,7 @@ La motivation n''est pas un mystère. C''est le résultat de conditions que vous
 Sources : Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -7263,6 +7285,7 @@ Thierry, depuis un mois, arrive plus tôt, ne prend plus sa pause, a fait une er
   -- 4.8-podcast-securite-psychologique.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -7357,6 +7380,7 @@ Thierry, depuis un mois, arrive plus tôt, ne prend plus sa pause, a fait une er
 Sources : Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -7669,6 +7693,7 @@ Mes cinq comportements (leçon 4.2), à noter de 1 à 5 :
   -- 5.1-video-conflit.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -7731,6 +7756,7 @@ Le conflit n''est pas le problème. L''attente, oui.
 Sources : Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -8284,6 +8310,7 @@ Passer la main n''est pas un échec du manager. C''est la reconnaissance qu''un 
   -- 5.5-video-deux-collegues.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -8375,6 +8402,7 @@ Et une quatrième : si Léa avait refusé l''entretien à trois, ou si les attaq
 Sources : méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -8660,6 +8688,7 @@ Nadia vient voir Karim, tendue : depuis deux semaines, un client de flotte, qui 
   -- 5.7-podcast-le-conflit-que-jai-laisse-pourrir.md
   update public.lecons l set contenu = case when l.type = 'texte'
       then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
@@ -8750,6 +8779,7 @@ Nadia vient voir Karim, tendue : depuis deux semaines, un client de flotte, qui 
 Sources : Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
 ')
       else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
+Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
 
 ---
 
