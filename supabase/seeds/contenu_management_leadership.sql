@@ -6047,5 +6047,3001 @@ Sujets parqués pour une prochaine fois : ____________________
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 4 and l.ordre = 9;
   n := n + 1;
 
+  -- 4.1-video-motivation.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+
+---
+
+[Plan : avatar, fond clair. Titre : « Module 4 — Motiver, engager, faire progresser »]
+
+Bienvenue dans le module 4. Vous savez maintenant organiser le travail et communiquer avec votre équipe. Reste une question que tous les managers se posent, souvent à voix basse : comment faire pour que les gens aient envie ?
+
+Commençons par démonter une idée reçue. La plupart des managers pensent que la motivation, c''est une affaire de prime, de salaire, de « carotte ». Ce n''est pas faux, mais c''est très incomplet. Et si vous ne comptez que là-dessus, vous serez vite à court de moyens, parce qu''un manager de proximité ne décide ni des salaires ni des primes.
+
+Trois chercheurs, à trois époques, ont éclairé ce qui motive au travail. Leurs conclusions se complètent, et elles donnent au manager des leviers qu''il peut actionner sans budget.
+
+[Titre : « Herzberg : deux familles de facteurs »]
+
+Le premier est Frederick Herzberg, psychologue américain. À la fin des années 1950, il a interrogé des centaines de salariés en leur demandant de raconter un moment où ils s''étaient sentis exceptionnellement bien au travail, et un moment où ils s''étaient sentis exceptionnellement mal.
+
+Il s''attendait à trouver les mêmes causes, dans un sens et dans l''autre. Ce n''est pas ce qu''il a trouvé.
+
+[Schéma : deux colonnes. Gauche « Facteurs d''hygiène » : salaire, conditions de travail, relations avec le chef, politique de l''entreprise, sécurité de l''emploi. Droite « Facteurs de motivation » : accomplissement, reconnaissance, intérêt du travail, responsabilité, progression.]
+
+Les mauvais moments étaient liés à ce qu''il a appelé les facteurs d''hygiène : le salaire, les conditions de travail, la relation avec le supérieur, les règles de l''entreprise. Quand ces facteurs sont mauvais, les gens sont insatisfaits. Mais quand ils sont bons, les gens ne sont pas motivés pour autant : ils ne sont simplement plus insatisfaits.
+
+Les bons moments, eux, étaient liés à une autre famille : l''accomplissement, la reconnaissance, l''intérêt du travail lui-même, la responsabilité, le fait de progresser. Ce sont les facteurs de motivation.
+
+Ce que cela signifie pour vous : le salaire et les conditions de travail sont indispensables, mais ils ne créent pas l''engagement. Ils évitent le désengagement. Une augmentation fait plaisir trois semaines. Un travail intéressant, une responsabilité confiée, une progression visible font effet pendant des années. Et ces leviers-là, c''est vous qui les tenez.
+
+[Titre : « Deci et Ryan : trois besoins »]
+
+Le deuxième éclairage vient d''Edward Deci et Richard Ryan, psychologues américains, avec la théorie de l''autodétermination, développée à partir des années 1980. Ils ont montré, expériences à l''appui, que la motivation la plus solide, celle qui dure et qui produit de la qualité, vient de l''intérieur de la personne, et qu''elle se nourrit de trois besoins.
+
+[Schéma : trois cercles : Autonomie · Compétence · Lien]
+
+L''autonomie : avoir une marge de décision sur la façon de faire son travail. Pas l''absence de cadre, mais un espace à l''intérieur du cadre.
+
+La compétence : sentir qu''on maîtrise ce qu''on fait et qu''on progresse. Être mis en situation de réussir, avec des défis à sa mesure.
+
+Le lien : se sentir relié aux autres, appartenir à une équipe, compter pour quelqu''un.
+
+Quand ces trois besoins sont nourris, les gens s''engagent d''eux-mêmes. Quand ils sont frustrés, aucune prime ne compense. Deci a même montré quelque chose de contre-intuitif : dans certaines conditions, récompenser financièrement une activité que les gens aimaient faire diminuait leur intérêt pour cette activité. La récompense externe avait remplacé le plaisir interne.
+
+Pour le manager, la traduction est simple : à chaque décision, demandez-vous si elle augmente ou diminue l''autonomie, la compétence et le lien de la personne concernée.
+
+[Titre : « Amabile et Kramer : le principe du progrès »]
+
+Le troisième éclairage est le plus récent. Teresa Amabile et Steven Kramer, chercheurs à Harvard, ont demandé à plus de deux cents personnes, dans sept entreprises, de tenir un journal quotidien de leur journée de travail pendant plusieurs mois. Près de douze mille journées analysées.
+
+Leur question : qu''est-ce qui distingue une bonne journée d''une mauvaise, du point de vue de la motivation ?
+
+La réponse, publiée en 2011, tient en une phrase : ce qui compte le plus, c''est le sentiment d''avancer dans un travail qui a du sens. Pas les grandes victoires. Les petits progrès. Une pièce terminée, un problème résolu, un client satisfait. Et à l''inverse, ce qui plombe le plus une journée, c''est le sentiment de reculer : un travail refait, une décision annulée, un obstacle qui bloque.
+
+[Texte à l''écran : « Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses. »]
+
+Ce que cela signifie pour vous : votre rôle est de rendre le progrès possible et visible. Enlever les obstacles, donner les moyens, fixer des objectifs qui permettent de constater qu''on avance, et dire quand ça avance. Un manager qui ne relève que ce qui ne va pas fabrique des journées de recul.
+
+[Titre : « Ce que le manager peut faire, sans budget »]
+
+Rassemblons. Trois modèles, un même message : la motivation ne s''achète pas, elle se construit dans le travail lui-même. Et voici ce que vous pouvez faire dès demain.
+
+Donner de l''autonomie : déléguer, comme au module 2, avec un vrai espace de décision. Laisser choisir la méthode quand le résultat est clair.
+
+Faire progresser : confier des tâches un peu au-dessus du niveau actuel, former, mettre en binôme. La leçon 4.4 y est consacrée.
+
+Reconnaître : dire ce qui est bien, précisément, à temps. La leçon 4.3.
+
+Rendre le progrès visible : un tableau de bord partagé, un point quotidien où l''on dit ce qui a avancé, une réunion qui commence par les réussites.
+
+Enlever les obstacles : c''est peut-être le plus important et le moins vu. Chaque fois que vous réglez un problème d''outil, de pièce manquante, d''information qui n''arrive pas, vous fabriquez une bonne journée.
+
+Et protéger le lien : une équipe où l''on peut parler, où l''on n''est pas humilié, où l''on compte. C''est la sécurité psychologique, la leçon suivante.
+
+[Plan : reprise du cas]
+
+À l''atelier Garnier, deux histoires illustrent tout cela. Marc, le mécanicien, était démotivé. Pas à cause de son salaire : à cause du sentiment de reculer chaque jour, en découvrant les interventions au dernier moment, et de ne compter pour personne. Le jour où Karim l''a consulté chaque soir pour le planning du lendemain, Marc a retrouvé de l''autonomie, du lien, et des journées qui avancent.
+
+Julien, lui, s''était éteint après avoir été humilié devant tout le monde pour une coulure. Le binôme avec Thierry lui a rendu la compétence ; le retour positif trois semaines plus tard lui a rendu la reconnaissance. Aucun des deux n''a eu un euro de plus.
+
+La motivation n''est pas un mystère. C''est le résultat de conditions que vous pouvez créer.
+
+À tout de suite pour la sécurité psychologique.
+
+[Fondu, logo]
+
+---
+
+Sources : Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+
+---
+
+[Plan : avatar, fond clair. Titre : « Module 4 — Motiver, engager, faire progresser »]
+
+Bienvenue dans le module 4. Vous savez maintenant organiser le travail et communiquer avec votre équipe. Reste une question que tous les managers se posent, souvent à voix basse : comment faire pour que les gens aient envie ?
+
+Commençons par démonter une idée reçue. La plupart des managers pensent que la motivation, c''est une affaire de prime, de salaire, de « carotte ». Ce n''est pas faux, mais c''est très incomplet. Et si vous ne comptez que là-dessus, vous serez vite à court de moyens, parce qu''un manager de proximité ne décide ni des salaires ni des primes.
+
+Trois chercheurs, à trois époques, ont éclairé ce qui motive au travail. Leurs conclusions se complètent, et elles donnent au manager des leviers qu''il peut actionner sans budget.
+
+[Titre : « Herzberg : deux familles de facteurs »]
+
+Le premier est Frederick Herzberg, psychologue américain. À la fin des années 1950, il a interrogé des centaines de salariés en leur demandant de raconter un moment où ils s''étaient sentis exceptionnellement bien au travail, et un moment où ils s''étaient sentis exceptionnellement mal.
+
+Il s''attendait à trouver les mêmes causes, dans un sens et dans l''autre. Ce n''est pas ce qu''il a trouvé.
+
+[Schéma : deux colonnes. Gauche « Facteurs d''hygiène » : salaire, conditions de travail, relations avec le chef, politique de l''entreprise, sécurité de l''emploi. Droite « Facteurs de motivation » : accomplissement, reconnaissance, intérêt du travail, responsabilité, progression.]
+
+Les mauvais moments étaient liés à ce qu''il a appelé les facteurs d''hygiène : le salaire, les conditions de travail, la relation avec le supérieur, les règles de l''entreprise. Quand ces facteurs sont mauvais, les gens sont insatisfaits. Mais quand ils sont bons, les gens ne sont pas motivés pour autant : ils ne sont simplement plus insatisfaits.
+
+Les bons moments, eux, étaient liés à une autre famille : l''accomplissement, la reconnaissance, l''intérêt du travail lui-même, la responsabilité, le fait de progresser. Ce sont les facteurs de motivation.
+
+Ce que cela signifie pour vous : le salaire et les conditions de travail sont indispensables, mais ils ne créent pas l''engagement. Ils évitent le désengagement. Une augmentation fait plaisir trois semaines. Un travail intéressant, une responsabilité confiée, une progression visible font effet pendant des années. Et ces leviers-là, c''est vous qui les tenez.
+
+[Titre : « Deci et Ryan : trois besoins »]
+
+Le deuxième éclairage vient d''Edward Deci et Richard Ryan, psychologues américains, avec la théorie de l''autodétermination, développée à partir des années 1980. Ils ont montré, expériences à l''appui, que la motivation la plus solide, celle qui dure et qui produit de la qualité, vient de l''intérieur de la personne, et qu''elle se nourrit de trois besoins.
+
+[Schéma : trois cercles : Autonomie · Compétence · Lien]
+
+L''autonomie : avoir une marge de décision sur la façon de faire son travail. Pas l''absence de cadre, mais un espace à l''intérieur du cadre.
+
+La compétence : sentir qu''on maîtrise ce qu''on fait et qu''on progresse. Être mis en situation de réussir, avec des défis à sa mesure.
+
+Le lien : se sentir relié aux autres, appartenir à une équipe, compter pour quelqu''un.
+
+Quand ces trois besoins sont nourris, les gens s''engagent d''eux-mêmes. Quand ils sont frustrés, aucune prime ne compense. Deci a même montré quelque chose de contre-intuitif : dans certaines conditions, récompenser financièrement une activité que les gens aimaient faire diminuait leur intérêt pour cette activité. La récompense externe avait remplacé le plaisir interne.
+
+Pour le manager, la traduction est simple : à chaque décision, demandez-vous si elle augmente ou diminue l''autonomie, la compétence et le lien de la personne concernée.
+
+[Titre : « Amabile et Kramer : le principe du progrès »]
+
+Le troisième éclairage est le plus récent. Teresa Amabile et Steven Kramer, chercheurs à Harvard, ont demandé à plus de deux cents personnes, dans sept entreprises, de tenir un journal quotidien de leur journée de travail pendant plusieurs mois. Près de douze mille journées analysées.
+
+Leur question : qu''est-ce qui distingue une bonne journée d''une mauvaise, du point de vue de la motivation ?
+
+La réponse, publiée en 2011, tient en une phrase : ce qui compte le plus, c''est le sentiment d''avancer dans un travail qui a du sens. Pas les grandes victoires. Les petits progrès. Une pièce terminée, un problème résolu, un client satisfait. Et à l''inverse, ce qui plombe le plus une journée, c''est le sentiment de reculer : un travail refait, une décision annulée, un obstacle qui bloque.
+
+[Texte à l''écran : « Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses. »]
+
+Ce que cela signifie pour vous : votre rôle est de rendre le progrès possible et visible. Enlever les obstacles, donner les moyens, fixer des objectifs qui permettent de constater qu''on avance, et dire quand ça avance. Un manager qui ne relève que ce qui ne va pas fabrique des journées de recul.
+
+[Titre : « Ce que le manager peut faire, sans budget »]
+
+Rassemblons. Trois modèles, un même message : la motivation ne s''achète pas, elle se construit dans le travail lui-même. Et voici ce que vous pouvez faire dès demain.
+
+Donner de l''autonomie : déléguer, comme au module 2, avec un vrai espace de décision. Laisser choisir la méthode quand le résultat est clair.
+
+Faire progresser : confier des tâches un peu au-dessus du niveau actuel, former, mettre en binôme. La leçon 4.4 y est consacrée.
+
+Reconnaître : dire ce qui est bien, précisément, à temps. La leçon 4.3.
+
+Rendre le progrès visible : un tableau de bord partagé, un point quotidien où l''on dit ce qui a avancé, une réunion qui commence par les réussites.
+
+Enlever les obstacles : c''est peut-être le plus important et le moins vu. Chaque fois que vous réglez un problème d''outil, de pièce manquante, d''information qui n''arrive pas, vous fabriquez une bonne journée.
+
+Et protéger le lien : une équipe où l''on peut parler, où l''on n''est pas humilié, où l''on compte. C''est la sécurité psychologique, la leçon suivante.
+
+[Plan : reprise du cas]
+
+À l''atelier Garnier, deux histoires illustrent tout cela. Marc, le mécanicien, était démotivé. Pas à cause de son salaire : à cause du sentiment de reculer chaque jour, en découvrant les interventions au dernier moment, et de ne compter pour personne. Le jour où Karim l''a consulté chaque soir pour le planning du lendemain, Marc a retrouvé de l''autonomie, du lien, et des journées qui avancent.
+
+Julien, lui, s''était éteint après avoir été humilié devant tout le monde pour une coulure. Le binôme avec Thierry lui a rendu la compétence ; le retour positif trois semaines plus tard lui a rendu la reconnaissance. Aucun des deux n''a eu un euro de plus.
+
+La motivation n''est pas un mystère. C''est le résultat de conditions que vous pouvez créer.
+
+À tout de suite pour la sécurité psychologique.
+
+[Fondu, logo]
+
+---
+
+Sources : Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 1;
+  n := n + 1;
+
+  -- 4.10-carnet-application.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Vous avez vu ce qui motive au travail, la sécurité psychologique, la reconnaissance, le développement des compétences, l''intégration, le cadre de travail soutenable et la prévention des risques psychosociaux. À vous de l''appliquer à votre équipe. Comptez 1 h 45 à 2 h. Utilisez les gabarits de la fiche outil (leçon 4.9).
+
+Si vous n''encadrez pas d''équipe, travaillez sur une équipe que vous connaissez, ou sur l''atelier Garnier en imaginant les situations de votre secteur.
+
+## Étape 1 — Diagnostic motivation (20 min)
+
+- Pour chaque membre de l''équipe, notez en une ligne ce qui, selon vous, le motive et ce qui le freine, en vous appuyant sur les trois besoins de Deci et Ryan (autonomie, compétence, lien) et sur le principe du progrès. Soyez concret : « découvre les interventions au dernier moment », pas « manque de reconnaissance ».
+- Pour deux personnes, identifiez une décision qui dépend de vous et qui augmenterait leur autonomie, leur compétence ou leur lien. Datez-la.
+- Quels obstacles au progrès quotidien (outil, information, pièce, validation) pourriez-vous lever cette semaine ? Choisissez-en un.
+
+## Étape 2 — Diagnostic sécurité psychologique (25 min)
+
+- Remplissez le gabarit 3 pour vous-même. Si vous le pouvez, proposez-le à l''équipe de façon anonyme (une boîte, un formulaire) et comparez.
+- Repensez à la dernière fois où quelqu''un vous a signalé une erreur, contesté une décision ou posé une question « bête ». Qu''avez-vous fait dans les dix secondes qui ont suivi ? Que retient l''équipe de ce moment ?
+- Notez vos cinq comportements de 1 à 5. Choisissez celui que vous allez travailler en premier et la situation précise où vous l''appliquerez cette semaine.
+- Y a-t-il dans l''équipe une habitude (moquerie, coupure de parole, mépris) que vous laissez passer ? Écrivez la phrase que vous direz la prochaine fois.
+
+## Étape 3 — Reconnaissance (15 min)
+
+- Pour chaque membre de l''équipe, notez la date du dernier retour positif précis que vous lui avez fait. Qui est à plus de quinze jours ?
+- Pour ces personnes, trouvez une reconnaissance sincère et précise, en variant les formes (personne, manière de faire, effort, résultat). Écrivez la phrase, et le moment où vous la direz.
+- Quelle reconnaissance existentielle manque dans votre équipe (informer avant, consulter, saluer chacun) ? Que changez-vous ?
+
+## Étape 4 — Plan de développement d''un collaborateur (25 min)
+
+- Choisissez une personne : soit une compétence critique qu''elle est seule à détenir (à transmettre), soit un souhait d''évolution qu''elle a exprimé, soit un plafonnement.
+- Préparez l''entretien GROW : vos questions pour chaque temps (objectif, réalité, options, engagement).
+- Remplissez le gabarit 1 (PDI) tel que vous l''imaginez ; vous le corrigerez avec la personne en entretien. Un seul objectif.
+- Quel dispositif mobiliser (plan de développement des compétences, OPCO, CPF, VAE, formation interne) ? Auprès de qui vous renseignez-vous ?
+
+## Étape 5 — Charge de travail et cadre (20 min)
+
+- Qui, dans l''équipe, absorbe les imprévus et les heures supplémentaires ? Qui n''en fait jamais, et pourquoi ? Est-ce équitable ? Est-ce connu et expliqué ?
+- Passez en revue les attributions de l''année (missions intéressantes, formations, horaires, primes si vous en décidez) : reposent-elles toutes sur un critère objectif ? Y a-t-il une personne systématiquement écartée sans raison dite ?
+- Vérifiez les limites légales de durée du travail et de repos dans votre équipe : y a-t-il un dépassement toléré ? Que faites-vous ?
+- Vos propres messages : à quelle heure envoyez-vous le dernier ? Que changez-vous ?
+- Si votre équipe compte des télétravailleurs : l''entretien annuel sur la charge est-il fait ? Les plages de joignabilité sont-elles fixées ? Les personnes à distance ont-elles le même accès à l''information et aux missions ?
+
+## Étape 6 — Signaux d''alerte (15 min)
+
+- Pour chaque membre de l''équipe, y a-t-il un changement de comportement récent (irritabilité, repli, présence excessive, erreurs inhabituelles, absences courtes) ? Notez les faits, pas une interprétation.
+- Pour l''une de ces personnes, si vous en avez repéré une, préparez l''entretien : la phrase d''ouverture factuelle, ce que vous écoutez, ce sur quoi vous pouvez agir dans le travail, les relais que vous rappellerez (médecin du travail, visite à la demande, autres).
+- Connaissez-vous le nom et les coordonnées du médecin du travail de votre entreprise, du référent harcèlement s''il existe, des représentants du personnel ? Sinon, trouvez-les cette semaine.
+- Et vous-même : lequel de ces signaux vous concerne ? À qui pouvez-vous en parler ?
+
+## Étape 7 — Bilan (10 min)
+
+- Parmi les sept compétences du module, laquelle est votre point fort ? Laquelle est votre point faible ?
+- Quelle est la première chose que vous faites dès demain ? Écrivez-la avec une date.
+- Que retirez-vous du diagnostic de sécurité psychologique qui vous a surpris ?
+
+Conservez ce carnet : le module 5 (tensions et conflits) reprend la sécurité psychologique comme base de la prévention des conflits.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Vous avez vu ce qui motive au travail, la sécurité psychologique, la reconnaissance, le développement des compétences, l''intégration, le cadre de travail soutenable et la prévention des risques psychosociaux. À vous de l''appliquer à votre équipe. Comptez 1 h 45 à 2 h. Utilisez les gabarits de la fiche outil (leçon 4.9).
+
+Si vous n''encadrez pas d''équipe, travaillez sur une équipe que vous connaissez, ou sur l''atelier Garnier en imaginant les situations de votre secteur.
+
+## Étape 1 — Diagnostic motivation (20 min)
+
+- Pour chaque membre de l''équipe, notez en une ligne ce qui, selon vous, le motive et ce qui le freine, en vous appuyant sur les trois besoins de Deci et Ryan (autonomie, compétence, lien) et sur le principe du progrès. Soyez concret : « découvre les interventions au dernier moment », pas « manque de reconnaissance ».
+- Pour deux personnes, identifiez une décision qui dépend de vous et qui augmenterait leur autonomie, leur compétence ou leur lien. Datez-la.
+- Quels obstacles au progrès quotidien (outil, information, pièce, validation) pourriez-vous lever cette semaine ? Choisissez-en un.
+
+## Étape 2 — Diagnostic sécurité psychologique (25 min)
+
+- Remplissez le gabarit 3 pour vous-même. Si vous le pouvez, proposez-le à l''équipe de façon anonyme (une boîte, un formulaire) et comparez.
+- Repensez à la dernière fois où quelqu''un vous a signalé une erreur, contesté une décision ou posé une question « bête ». Qu''avez-vous fait dans les dix secondes qui ont suivi ? Que retient l''équipe de ce moment ?
+- Notez vos cinq comportements de 1 à 5. Choisissez celui que vous allez travailler en premier et la situation précise où vous l''appliquerez cette semaine.
+- Y a-t-il dans l''équipe une habitude (moquerie, coupure de parole, mépris) que vous laissez passer ? Écrivez la phrase que vous direz la prochaine fois.
+
+## Étape 3 — Reconnaissance (15 min)
+
+- Pour chaque membre de l''équipe, notez la date du dernier retour positif précis que vous lui avez fait. Qui est à plus de quinze jours ?
+- Pour ces personnes, trouvez une reconnaissance sincère et précise, en variant les formes (personne, manière de faire, effort, résultat). Écrivez la phrase, et le moment où vous la direz.
+- Quelle reconnaissance existentielle manque dans votre équipe (informer avant, consulter, saluer chacun) ? Que changez-vous ?
+
+## Étape 4 — Plan de développement d''un collaborateur (25 min)
+
+- Choisissez une personne : soit une compétence critique qu''elle est seule à détenir (à transmettre), soit un souhait d''évolution qu''elle a exprimé, soit un plafonnement.
+- Préparez l''entretien GROW : vos questions pour chaque temps (objectif, réalité, options, engagement).
+- Remplissez le gabarit 1 (PDI) tel que vous l''imaginez ; vous le corrigerez avec la personne en entretien. Un seul objectif.
+- Quel dispositif mobiliser (plan de développement des compétences, OPCO, CPF, VAE, formation interne) ? Auprès de qui vous renseignez-vous ?
+
+## Étape 5 — Charge de travail et cadre (20 min)
+
+- Qui, dans l''équipe, absorbe les imprévus et les heures supplémentaires ? Qui n''en fait jamais, et pourquoi ? Est-ce équitable ? Est-ce connu et expliqué ?
+- Passez en revue les attributions de l''année (missions intéressantes, formations, horaires, primes si vous en décidez) : reposent-elles toutes sur un critère objectif ? Y a-t-il une personne systématiquement écartée sans raison dite ?
+- Vérifiez les limites légales de durée du travail et de repos dans votre équipe : y a-t-il un dépassement toléré ? Que faites-vous ?
+- Vos propres messages : à quelle heure envoyez-vous le dernier ? Que changez-vous ?
+- Si votre équipe compte des télétravailleurs : l''entretien annuel sur la charge est-il fait ? Les plages de joignabilité sont-elles fixées ? Les personnes à distance ont-elles le même accès à l''information et aux missions ?
+
+## Étape 6 — Signaux d''alerte (15 min)
+
+- Pour chaque membre de l''équipe, y a-t-il un changement de comportement récent (irritabilité, repli, présence excessive, erreurs inhabituelles, absences courtes) ? Notez les faits, pas une interprétation.
+- Pour l''une de ces personnes, si vous en avez repéré une, préparez l''entretien : la phrase d''ouverture factuelle, ce que vous écoutez, ce sur quoi vous pouvez agir dans le travail, les relais que vous rappellerez (médecin du travail, visite à la demande, autres).
+- Connaissez-vous le nom et les coordonnées du médecin du travail de votre entreprise, du référent harcèlement s''il existe, des représentants du personnel ? Sinon, trouvez-les cette semaine.
+- Et vous-même : lequel de ces signaux vous concerne ? À qui pouvez-vous en parler ?
+
+## Étape 7 — Bilan (10 min)
+
+- Parmi les sept compétences du module, laquelle est votre point fort ? Laquelle est votre point faible ?
+- Quelle est la première chose que vous faites dès demain ? Écrivez-la avec une date.
+- Que retirez-vous du diagnostic de sécurité psychologique qui vous a surpris ?
+
+Conservez ce carnet : le module 5 (tensions et conflits) reprend la sécurité psychologique comme base de la prévention des conflits.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 10;
+  n := n + 1;
+
+  -- 4.11-quiz.json
+  update public.lecons l set contenu = '{"questions": [{"id": "m4q01", "enonce": "Selon Herzberg, qu''est-ce qu''un facteur d''hygiène (salaire, conditions de travail, relation avec le chef) ?", "options": ["Un facteur qui crée la motivation quand il est bon", "Un facteur dont l''absence crée de l''insatisfaction, mais dont la présence ne crée pas de motivation durable", "Un facteur sans aucun effet sur les salariés", "Un facteur réservé aux métiers physiques"], "bonnes": [1], "explication": "Les facteurs d''hygiène évitent le désengagement ; ce sont les facteurs de motivation (accomplissement, reconnaissance, intérêt du travail, responsabilité, progression) qui créent l''engagement."}, {"id": "m4q02", "enonce": "Quels sont les trois besoins de la théorie de l''autodétermination de Deci et Ryan ?", "options": ["Salaire, sécurité, statut", "Autonomie, compétence, lien", "Pouvoir, réussite, affiliation", "Reconnaissance, prime, promotion"], "bonnes": [1], "explication": "Quand l''autonomie, la compétence et le lien sont nourris, la motivation vient de l''intérieur ; quand ils sont frustrés, aucune prime ne compense."}, {"id": "m4q03", "enonce": "D''après Amabile et Kramer (principe du progrès), qu''est-ce qui distingue le plus une bonne journée de travail d''une mauvaise ?", "options": ["Le montant de la prime du mois", "Le nombre d''heures travaillées", "Le sentiment d''avancer dans un travail qui a du sens, même par de petits progrès", "L''absence totale de difficulté"], "bonnes": [2], "explication": "Les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses ; le sentiment de reculer (travail refait, obstacle) est ce qui la plombe."}, {"id": "m4q04", "enonce": "Qu''est-ce que la sécurité psychologique au sens d''Amy Edmondson ?", "options": ["Une équipe où tout le monde est d''accord et où l''on évite les sujets difficiles", "La conviction partagée que l''on peut poser une question, admettre une erreur, proposer ou contester sans être puni ni humilié", "Un dispositif de sécurité physique obligatoire dans les ateliers", "L''absence de toute exigence de la part du manager"], "bonnes": [1], "explication": "La sécurité psychologique se combine avec l''exigence : c''est ce qui permet de se dire les choses difficiles, pas de les éviter."}, {"id": "m4q05", "enonce": "Dans l''étude d''Edmondson en milieu hospitalier, pourquoi les meilleures équipes déclaraient-elles plus d''erreurs ?", "options": ["Parce qu''elles en faisaient réellement plus", "Parce qu''elles osaient les signaler, alors que les autres les cachaient", "Parce qu''elles étaient moins compétentes", "Parce qu''elles y étaient obligées par la direction"], "bonnes": [1], "explication": "Les erreurs existaient partout ; seules les équipes psychologiquement sûres les signalaient, ce qui permettait de les traiter."}, {"id": "m4q06", "enonce": "Plusieurs réponses. Quels comportements du manager construisent la sécurité psychologique ?", "options": ["Admettre ses propres erreurs devant l''équipe", "Remercier la personne qui signale un problème, même si elle s''est trompée", "Ne jamais dire « je ne sais pas » pour préserver son autorité", "Poser des limites aux moqueries et au mépris dans l''équipe"], "bonnes": [0, 1, 3], "explication": "Un manager qui ne se trompe jamais et sait tout oblige les autres à cacher et à se taire. Admettre, remercier, questionner et poser des limites sont les comportements qui comptent."}, {"id": "m4q07", "enonce": "Selon la typologie de Brun et Dugas, quelle forme de reconnaissance permet de reconnaître aussi ceux qui n''ont pas encore de résultats (débutants, tâches ingrates) ?", "options": ["La reconnaissance des résultats uniquement", "La reconnaissance de la pratique de travail et de l''investissement (la manière de faire, l''effort)", "La prime de fin d''année", "La comparaison avec les meilleurs"], "bonnes": [1], "explication": "Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs. La manière de faire et l''effort se reconnaissent chez tous, et la reconnaissance existentielle (bonjour, informer, consulter) est la base."}, {"id": "m4q08", "enonce": "Dans le modèle GROW pour un entretien de progression, que signifie le « O » ?", "options": ["Objectif : ce que la personne veut être capable de faire", "Obstacles : ce qui empêche la personne de progresser", "Options : les pistes possibles, celles de la personne d''abord, puis celles du manager", "Ordre : la consigne donnée par le manager"], "bonnes": [2], "explication": "G = Goal (objectif), R = Reality (réalité), O = Options, W = Will (engagement). Le manager questionne plus qu''il ne conseille."}, {"id": "m4q09", "enonce": "Un nouveau salarié arrive lundi. Quelle formation est obligatoire dès son arrivée selon le Code du travail (art. L4141-2) ?", "options": ["Une formation au management", "Une formation pratique et appropriée à la sécurité", "Une formation aux outils informatiques", "Aucune formation n''est obligatoire avant la fin de la période d''essai"], "bonnes": [1], "explication": "La formation à la sécurité est obligatoire pour tout nouvel embauché, y compris les intérimaires et les salariés changeant de poste, et elle est tracée."}, {"id": "m4q10", "enonce": "Sophie, seule à un poste administratif, demande un jour de télétravail. L''entreprise n''a ni accord collectif ni charte. Que dit le Code du travail (L1222-9) ?", "options": ["Le télétravail est impossible sans accord collectif", "Le télétravail peut être mis en place par simple accord entre le salarié et l''employeur, formalisé par tout moyen", "L''employeur peut l''imposer à tout moment", "Le télétravail est réservé aux cadres"], "bonnes": [1], "explication": "À défaut d''accord collectif ou de charte, un accord individuel suffit. Le télétravail est volontaire des deux côtés, sauf circonstances exceptionnelles."}, {"id": "m4q11", "enonce": "Quelle est la limite légale de la durée quotidienne de travail (hors dérogations) et du repos quotidien ?", "options": ["8 heures de travail, 8 heures de repos", "10 heures de travail, 11 heures de repos consécutives", "12 heures de travail, 10 heures de repos", "Aucune limite si le salarié est d''accord"], "bonnes": [1], "explication": "Art. L3121-18 et L3131-1. S''y ajoutent 48 h par semaine, 44 h en moyenne sur douze semaines, 35 h de repos hebdomadaire et 20 min de pause dès 6 h de travail."}, {"id": "m4q12", "enonce": "Thierry arrive plus tôt, ne prend plus de pause, fait des erreurs inhabituelles et a eu un accrochage. Quelle est la bonne conduite du manager ?", "options": ["Lui dire qu''il fait un burn-out et lui conseiller de s''arrêter", "Ne rien faire tant qu''il ne se plaint pas", "Le voir seul avec des faits, écouter sans creuser la vie privée, agir sur ce qui pèse dans le travail, rappeler l''accès au médecin du travail, alerter la hiérarchie si nécessaire, suivre", "Convoquer une réunion d''équipe pour en parler devant tous"], "bonnes": [2], "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte et suit ; il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 11;
+  n := n + 1;
+
+  -- 4.2-securite-psychologique.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Dans certaines équipes, on ose dire « je ne sais pas », « je me suis trompé », « je ne suis pas d''accord », « j''ai une idée ». Dans d''autres, on se tait, on cache ses erreurs, on laisse le chef se tromper sans rien dire. La différence entre les deux a un nom : la sécurité psychologique. Et elle explique une grande partie des écarts de performance entre des équipes pourtant composées de personnes aussi compétentes.
+
+## D''où vient le concept
+
+Amy Edmondson, professeure à la Harvard Business School, étudiait à la fin des années 1990 les erreurs médicales dans des services hospitaliers. Elle s''attendait à ce que les meilleures équipes déclarent moins d''erreurs. Elle a trouvé l''inverse : les équipes les mieux notées par ailleurs déclaraient plus d''erreurs. Non parce qu''elles en faisaient plus, mais parce qu''elles osaient les signaler. Dans les équipes moins performantes, les erreurs existaient tout autant ; elles étaient cachées.
+
+Edmondson a défini en 1999 la sécurité psychologique comme la conviction partagée, au sein d''une équipe, que l''on peut prendre un risque interpersonnel sans être puni ni humilié : poser une question, admettre une erreur, proposer une idée, exprimer un désaccord.
+
+Ce n''est pas du confort. Une équipe psychologiquement sûre n''est pas une équipe où tout le monde est gentil et où l''on ne se dit rien de difficile. C''est au contraire une équipe où l''on peut se dire les choses difficiles, parce qu''on sait que ce ne sera pas retenu contre soi. Edmondson insiste : la sécurité psychologique doit se combiner avec un haut niveau d''exigence. Sécurité sans exigence, c''est la zone de confort ; exigence sans sécurité, c''est la zone d''anxiété, où l''on cache et où l''on se tait ; les deux ensemble, c''est la zone d''apprentissage et de performance.
+
+## Ce que Google a confirmé
+
+En 2012, Google a lancé une étude interne, le projet Aristotle, pour comprendre ce qui distinguait ses équipes les plus efficaces. Les chercheurs ont examiné 180 équipes et des dizaines de variables : la composition, l''ancienneté, la personnalité, l''expertise, le fait de déjeuner ensemble. Aucune ne permettait de prédire la performance. Ce qui la prédisait, publié en 2015, c''était la façon dont les membres se comportaient entre eux, et le premier facteur, de loin, était la sécurité psychologique. Venaient ensuite la fiabilité (chacun fait ce qu''il dit), la clarté des rôles et des objectifs, le sens du travail et son impact.
+
+Autrement dit, ce n''est pas d''abord qui est dans l''équipe qui compte, c''est comment on s''y parle.
+
+## Pourquoi cela concerne le manager de proximité
+
+La sécurité psychologique se joue au niveau de l''équipe, pas de l''entreprise. Deux équipes de la même entreprise, avec les mêmes règles, peuvent en avoir des niveaux très différents. Et le facteur principal, c''est le comportement du manager. Ce qu''il fait quand quelqu''un se trompe, quand quelqu''un le contredit, quand quelqu''un pose une question « bête ». L''équipe observe, et apprend.
+
+Michel, à l''atelier Garnier, a crié sur Julien devant tout le monde pour une coulure. Ce jour-là, tout l''atelier a appris qu''une erreur se paie en public. Conséquence prévisible : la prochaine erreur sera cachée, jusqu''à ce que le client la découvre. Le coût de l''humiliation n''est pas la vexation de Julien ; c''est toutes les erreurs que personne ne signalera plus.
+
+## Les cinq comportements du manager
+
+Edmondson et les travaux qui ont suivi dégagent cinq comportements qui construisent la sécurité psychologique. Aucun ne demande de budget.
+
+## 1. Présenter le travail comme un apprentissage
+
+Un manager qui dit « on n''a jamais fait ça, on va forcément se tromper, l''important est de le voir vite » installe autre chose qu''un manager qui dit « je ne veux pas d''erreur ». Le premier rend l''erreur normale et signalable ; le second la rend honteuse et cachée. Cela ne veut pas dire tolérer la négligence : on distingue l''erreur d''apprentissage, l''erreur d''inattention, et la faute délibérée (leçon 5.6). Seule la première est sans conséquence ; les deux autres se traitent, mais sans humiliation.
+
+## 2. Reconnaître sa propre faillibilité
+
+« Je me suis trompé sur le planning de mardi, je vous ai mis en difficulté, je le refais. » Un manager qui admet ses erreurs autorise les autres à admettre les leurs. Un manager qui ne se trompe jamais oblige les autres à ne jamais se tromper, donc à cacher. Cela ne diminue pas l''autorité ; cela la rend crédible.
+
+## 3. Poser des questions, beaucoup
+
+« Qu''est-ce que je ne vois pas ? », « Qu''est-ce qui vous inquiète dans cette organisation ? », « Qui a un avis différent ? ». Le manager qui pose des questions signale qu''il ne sait pas tout et qu''il veut entendre. Le manager qui n''affirme que des certitudes signale qu''il n''y a rien à ajouter. Les questions ouvertes du module 3 sont l''outil.
+
+## 4. Réagir de façon productive quand quelqu''un prend un risque
+
+C''est le moment décisif. Quelqu''un signale une erreur, propose une idée, exprime un désaccord. La réaction du manager dans les dix secondes qui suivent fixe la règle pour tous. Remercier (« merci de l''avoir dit »), écouter jusqu''au bout, traiter le fond, et ne jamais rendre la personne ridicule. Même quand l''idée est mauvaise, même quand le désaccord est infondé : on peut dire « je ne suis pas d''accord, et voilà pourquoi » sans dire « c''est n''importe quoi ».
+
+## 5. Poser des limites claires et les tenir
+
+La sécurité psychologique n''est pas l''absence de règles. Elle suppose au contraire que l''on sache ce qui est acceptable et ce qui ne l''est pas, et que le manager protège l''équipe des comportements qui la détruisent : l''humiliation, le mépris, le fait de couper la parole, les moqueries. Un manager qui laisse un membre de l''équipe se moquer d''un autre a détruit en une minute ce qu''il construisait depuis des mois.
+
+## Les signes d''une équipe qui ne se sent pas en sécurité
+
+- Personne ne pose de question en réunion ; les questions viennent après, en aparté.
+- Les erreurs sont découvertes par le client ou par le chef, jamais signalées par celui qui les a faites.
+- Les idées viennent toujours des deux mêmes personnes.
+- Les désaccords ne s''expriment pas, mais les décisions ne s''appliquent pas.
+- Les nouveaux se taisent au bout de deux semaines.
+
+Si vous reconnaissez votre équipe, la cause est presque toujours un comportement passé, du manager actuel ou du précédent, que l''équipe n''a pas oublié. Il faudra du temps et de la constance pour que les gens y croient à nouveau.
+
+## Le cas Garnier
+
+Karim veut que les reprises se voient avant la restitution. Il sait que l''équipe a appris avec Michel à cacher. Il commence par lui-même : au brief du matin, il annonce qu''il s''est trompé la veille sur une commande de pièces, et ce qu''il fait pour rattraper. Il installe une règle : « Une erreur signalée avant la sortie du véhicule ne se discute pas, on la corrige. Une erreur découverte par le client, on en parle. » Il demande chaque semaine en réunion : « Qu''est-ce qui a failli mal tourner cette semaine ? » Les premières fois, silence. La troisième semaine, Lucas dit qu''il a failli monter un pare-chocs avec les mauvaises fixations et que Fatou l''a vu. Karim remercie Lucas, remercie Fatou, et demande comment éviter que ça se reproduise. À partir de là, les signalements arrivent.
+
+Il reste Michel. Karim ne peut pas changer Michel, mais il peut lui demander (leçon 3.10) que les remarques passent par lui, et il peut, quand Michel s''emporte, aller voir la personne ensuite. Ce n''est pas parfait ; c''est ce qui est à sa portée.
+
+## À retenir
+
+- La sécurité psychologique, c''est pouvoir dire « je ne sais pas », « je me suis trompé », « je ne suis pas d''accord » sans être puni ni humilié (Edmondson, 1999).
+- Les équipes qui l''ont signalent plus d''erreurs parce qu''elles les cachent moins ; c''est le premier facteur de performance identifié par Google (projet Aristotle).
+- Elle se combine avec l''exigence : sécurité et exigence ensemble donnent l''apprentissage.
+- Cinq comportements du manager : présenter le travail comme un apprentissage, admettre ses erreurs, poser des questions, réagir de façon productive aux prises de risque, poser des limites et les tenir.
+- Elle se construit lentement et se détruit en une minute.
+
+## Sources
+
+- Amy C. Edmondson, « Psychological Safety and Learning Behavior in Work Teams », *Administrative Science Quarterly*, 1999.
+- Amy C. Edmondson, *The Fearless Organization*, Wiley, 2018 (trad. fr. *L''entreprise sans peur*, Pearson, 2021).
+- Google re:Work, « Guide: Understand team effectiveness » (projet Aristotle), 2015.
+- Charles Duhigg, « What Google Learned From Its Quest to Build the Perfect Team », *The New York Times Magazine*, 2016.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Dans certaines équipes, on ose dire « je ne sais pas », « je me suis trompé », « je ne suis pas d''accord », « j''ai une idée ». Dans d''autres, on se tait, on cache ses erreurs, on laisse le chef se tromper sans rien dire. La différence entre les deux a un nom : la sécurité psychologique. Et elle explique une grande partie des écarts de performance entre des équipes pourtant composées de personnes aussi compétentes.
+
+## D''où vient le concept
+
+Amy Edmondson, professeure à la Harvard Business School, étudiait à la fin des années 1990 les erreurs médicales dans des services hospitaliers. Elle s''attendait à ce que les meilleures équipes déclarent moins d''erreurs. Elle a trouvé l''inverse : les équipes les mieux notées par ailleurs déclaraient plus d''erreurs. Non parce qu''elles en faisaient plus, mais parce qu''elles osaient les signaler. Dans les équipes moins performantes, les erreurs existaient tout autant ; elles étaient cachées.
+
+Edmondson a défini en 1999 la sécurité psychologique comme la conviction partagée, au sein d''une équipe, que l''on peut prendre un risque interpersonnel sans être puni ni humilié : poser une question, admettre une erreur, proposer une idée, exprimer un désaccord.
+
+Ce n''est pas du confort. Une équipe psychologiquement sûre n''est pas une équipe où tout le monde est gentil et où l''on ne se dit rien de difficile. C''est au contraire une équipe où l''on peut se dire les choses difficiles, parce qu''on sait que ce ne sera pas retenu contre soi. Edmondson insiste : la sécurité psychologique doit se combiner avec un haut niveau d''exigence. Sécurité sans exigence, c''est la zone de confort ; exigence sans sécurité, c''est la zone d''anxiété, où l''on cache et où l''on se tait ; les deux ensemble, c''est la zone d''apprentissage et de performance.
+
+## Ce que Google a confirmé
+
+En 2012, Google a lancé une étude interne, le projet Aristotle, pour comprendre ce qui distinguait ses équipes les plus efficaces. Les chercheurs ont examiné 180 équipes et des dizaines de variables : la composition, l''ancienneté, la personnalité, l''expertise, le fait de déjeuner ensemble. Aucune ne permettait de prédire la performance. Ce qui la prédisait, publié en 2015, c''était la façon dont les membres se comportaient entre eux, et le premier facteur, de loin, était la sécurité psychologique. Venaient ensuite la fiabilité (chacun fait ce qu''il dit), la clarté des rôles et des objectifs, le sens du travail et son impact.
+
+Autrement dit, ce n''est pas d''abord qui est dans l''équipe qui compte, c''est comment on s''y parle.
+
+## Pourquoi cela concerne le manager de proximité
+
+La sécurité psychologique se joue au niveau de l''équipe, pas de l''entreprise. Deux équipes de la même entreprise, avec les mêmes règles, peuvent en avoir des niveaux très différents. Et le facteur principal, c''est le comportement du manager. Ce qu''il fait quand quelqu''un se trompe, quand quelqu''un le contredit, quand quelqu''un pose une question « bête ». L''équipe observe, et apprend.
+
+Michel, à l''atelier Garnier, a crié sur Julien devant tout le monde pour une coulure. Ce jour-là, tout l''atelier a appris qu''une erreur se paie en public. Conséquence prévisible : la prochaine erreur sera cachée, jusqu''à ce que le client la découvre. Le coût de l''humiliation n''est pas la vexation de Julien ; c''est toutes les erreurs que personne ne signalera plus.
+
+## Les cinq comportements du manager
+
+Edmondson et les travaux qui ont suivi dégagent cinq comportements qui construisent la sécurité psychologique. Aucun ne demande de budget.
+
+## 1. Présenter le travail comme un apprentissage
+
+Un manager qui dit « on n''a jamais fait ça, on va forcément se tromper, l''important est de le voir vite » installe autre chose qu''un manager qui dit « je ne veux pas d''erreur ». Le premier rend l''erreur normale et signalable ; le second la rend honteuse et cachée. Cela ne veut pas dire tolérer la négligence : on distingue l''erreur d''apprentissage, l''erreur d''inattention, et la faute délibérée (leçon 5.6). Seule la première est sans conséquence ; les deux autres se traitent, mais sans humiliation.
+
+## 2. Reconnaître sa propre faillibilité
+
+« Je me suis trompé sur le planning de mardi, je vous ai mis en difficulté, je le refais. » Un manager qui admet ses erreurs autorise les autres à admettre les leurs. Un manager qui ne se trompe jamais oblige les autres à ne jamais se tromper, donc à cacher. Cela ne diminue pas l''autorité ; cela la rend crédible.
+
+## 3. Poser des questions, beaucoup
+
+« Qu''est-ce que je ne vois pas ? », « Qu''est-ce qui vous inquiète dans cette organisation ? », « Qui a un avis différent ? ». Le manager qui pose des questions signale qu''il ne sait pas tout et qu''il veut entendre. Le manager qui n''affirme que des certitudes signale qu''il n''y a rien à ajouter. Les questions ouvertes du module 3 sont l''outil.
+
+## 4. Réagir de façon productive quand quelqu''un prend un risque
+
+C''est le moment décisif. Quelqu''un signale une erreur, propose une idée, exprime un désaccord. La réaction du manager dans les dix secondes qui suivent fixe la règle pour tous. Remercier (« merci de l''avoir dit »), écouter jusqu''au bout, traiter le fond, et ne jamais rendre la personne ridicule. Même quand l''idée est mauvaise, même quand le désaccord est infondé : on peut dire « je ne suis pas d''accord, et voilà pourquoi » sans dire « c''est n''importe quoi ».
+
+## 5. Poser des limites claires et les tenir
+
+La sécurité psychologique n''est pas l''absence de règles. Elle suppose au contraire que l''on sache ce qui est acceptable et ce qui ne l''est pas, et que le manager protège l''équipe des comportements qui la détruisent : l''humiliation, le mépris, le fait de couper la parole, les moqueries. Un manager qui laisse un membre de l''équipe se moquer d''un autre a détruit en une minute ce qu''il construisait depuis des mois.
+
+## Les signes d''une équipe qui ne se sent pas en sécurité
+
+- Personne ne pose de question en réunion ; les questions viennent après, en aparté.
+- Les erreurs sont découvertes par le client ou par le chef, jamais signalées par celui qui les a faites.
+- Les idées viennent toujours des deux mêmes personnes.
+- Les désaccords ne s''expriment pas, mais les décisions ne s''appliquent pas.
+- Les nouveaux se taisent au bout de deux semaines.
+
+Si vous reconnaissez votre équipe, la cause est presque toujours un comportement passé, du manager actuel ou du précédent, que l''équipe n''a pas oublié. Il faudra du temps et de la constance pour que les gens y croient à nouveau.
+
+## Le cas Garnier
+
+Karim veut que les reprises se voient avant la restitution. Il sait que l''équipe a appris avec Michel à cacher. Il commence par lui-même : au brief du matin, il annonce qu''il s''est trompé la veille sur une commande de pièces, et ce qu''il fait pour rattraper. Il installe une règle : « Une erreur signalée avant la sortie du véhicule ne se discute pas, on la corrige. Une erreur découverte par le client, on en parle. » Il demande chaque semaine en réunion : « Qu''est-ce qui a failli mal tourner cette semaine ? » Les premières fois, silence. La troisième semaine, Lucas dit qu''il a failli monter un pare-chocs avec les mauvaises fixations et que Fatou l''a vu. Karim remercie Lucas, remercie Fatou, et demande comment éviter que ça se reproduise. À partir de là, les signalements arrivent.
+
+Il reste Michel. Karim ne peut pas changer Michel, mais il peut lui demander (leçon 3.10) que les remarques passent par lui, et il peut, quand Michel s''emporte, aller voir la personne ensuite. Ce n''est pas parfait ; c''est ce qui est à sa portée.
+
+## À retenir
+
+- La sécurité psychologique, c''est pouvoir dire « je ne sais pas », « je me suis trompé », « je ne suis pas d''accord » sans être puni ni humilié (Edmondson, 1999).
+- Les équipes qui l''ont signalent plus d''erreurs parce qu''elles les cachent moins ; c''est le premier facteur de performance identifié par Google (projet Aristotle).
+- Elle se combine avec l''exigence : sécurité et exigence ensemble donnent l''apprentissage.
+- Cinq comportements du manager : présenter le travail comme un apprentissage, admettre ses erreurs, poser des questions, réagir de façon productive aux prises de risque, poser des limites et les tenir.
+- Elle se construit lentement et se détruit en une minute.
+
+## Sources
+
+- Amy C. Edmondson, « Psychological Safety and Learning Behavior in Work Teams », *Administrative Science Quarterly*, 1999.
+- Amy C. Edmondson, *The Fearless Organization*, Wiley, 2018 (trad. fr. *L''entreprise sans peur*, Pearson, 2021).
+- Google re:Work, « Guide: Understand team effectiveness » (projet Aristotle), 2015.
+- Charles Duhigg, « What Google Learned From Its Quest to Build the Perfect Team », *The New York Times Magazine*, 2016.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 2;
+  n := n + 1;
+
+  -- 4.3-reconnaitre-sans-flatter.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'La reconnaissance est le levier de motivation le plus cité par les salariés et le plus négligé par les managers. Non par méchanceté : par pudeur, par habitude (« c''est normal de bien faire son travail »), par manque de temps, ou par peur de paraître flatteur. Or reconnaître n''est pas flatter. La flatterie est vague, intéressée et fausse ; la reconnaissance est précise, gratuite et vraie.
+
+## Pourquoi c''est un besoin, pas un luxe
+
+Les trois modèles de la leçon 4.1 convergent : la reconnaissance est un facteur de motivation chez Herzberg, elle nourrit le besoin de compétence et de lien chez Deci et Ryan, et elle rend le progrès visible chez Amabile. Les enquêtes sur les conditions de travail, en France comme ailleurs, placent régulièrement le manque de reconnaissance parmi les premières causes de mal-être et de départ. Et le rapport Gollac sur les risques psychosociaux (2011) classe le déficit de reconnaissance parmi les facteurs de risque, dans la catégorie des rapports sociaux au travail.
+
+À l''inverse, une reconnaissance régulière et juste fait baisser l''absentéisme, le turnover et les tensions. Elle ne coûte rien. Elle demande de l''attention.
+
+## Les quatre formes de la reconnaissance
+
+Jean-Pierre Brun et Ninon Dugas, chercheurs québécois, ont proposé en 2005 une typologie devenue une référence. La reconnaissance peut porter sur quatre objets, et un manager complet les pratique tous les quatre.
+
+| Forme | Ce qu''on reconnaît | Exemple à l''atelier |
+|---|---|---|
+| Existentielle | La personne elle-même : elle existe, on la salue, on la consulte, on l''informe | Dire bonjour à chacun, demander l''avis de Marc sur le planning, prévenir Fatou d''un changement avant les autres |
+| De la pratique de travail | La manière de faire : le soin, la méthode, la rigueur, même quand le résultat n''est pas encore là | « Ta façon de préparer les surfaces, c''est propre, ça se voit au vernis » |
+| De l''investissement | L''effort et l''engagement, indépendamment du résultat | « Tu es resté vendredi soir pour finir la Clio, je l''ai vu » |
+| Des résultats | Ce qui a été obtenu, mesurable | « Trois finitions sans reprise ce mois-ci » |
+
+La reconnaissance existentielle est la plus élémentaire et la plus souvent oubliée. Un manager qui ne dit bonjour qu''à ceux qu''il apprécie, qui informe l''équipe par affichage sans jamais expliquer, qui ne demande jamais l''avis de personne, envoie un message d''indifférence, quels que soient ses compliments sur les résultats.
+
+La reconnaissance de l''investissement et de la pratique est ce qui permet de reconnaître aussi ceux qui n''ont pas encore de résultats : le débutant, celui qui apprend, celui qui est sur une tâche ingrate. Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs, et laisser les autres invisibles.
+
+## Les règles d''une reconnaissance qui porte
+
+- Précise. « Bon boulot » ne dit rien. « Le raccord de teinte sur l''aile, on ne le voit pas sous le néon » dit exactement ce qui est bien et ce qu''il faut refaire. C''est la même règle que pour le feedback positif du module 3.
+- Sincère. On ne reconnaît que ce qui est vrai. Une reconnaissance fabriquée pour « faire de la reconnaissance » se voit, et discrédite les suivantes.
+- À temps. Le jour même, ou le lendemain. Un compliment sur un travail d''il y a trois semaines dit surtout que vous n''aviez pas regardé à l''époque.
+- Régulière, pas rare. Une cérémonie par an ne remplace pas une remarque par semaine. Amabile a montré que ce sont les petits progrès quotidiens qui comptent ; ils demandent une reconnaissance quotidienne.
+- Adaptée à la personne. Certains aiment être félicités devant l''équipe ; d''autres le vivent comme une gêne. Demandez, ou observez. Une reconnaissance publique imposée à quelqu''un qui la redoute est une punition.
+- Équitable. Si les mêmes sont toujours félicités, les autres concluent qu''il y a des chouchous. Tenez un compte, mentalement ou dans votre carnet : à qui n''avez-vous rien dit de positif depuis quinze jours ?
+- Sans « mais ». « C''est bien, mais… » annule ce qui précède. Le correctif se dit à un autre moment.
+
+## Les formes qui ne coûtent rien
+
+La parole directe est la première. Mais il y en a d''autres : un mot écrit (une note manuscrite marque plus qu''on ne le croit) ; mentionner le travail de quelqu''un devant sa hiérarchie ou devant un client ; confier une responsabilité ou une tâche valorisante (former un nouveau, représenter l''équipe) ; demander son avis à quelqu''un sur un sujet qu''il maîtrise ; commencer la réunion hebdomadaire par ce qui a bien marché, en nommant qui.
+
+Les formes matérielles (prime, cadeau, repas d''équipe) ont leur place, mais elles relèvent souvent de l''employeur, et elles ne remplacent jamais la parole. Une prime sans un mot est un virement ; un mot sans prime est une reconnaissance.
+
+## Les erreurs courantes
+
+- Ne reconnaître que l''exceptionnel. Le travail bien fait au quotidien mérite d''être vu. Si seule la prouesse est reconnue, le travail normal devient invisible.
+- Reconnaître collectivement pour éviter de choisir. « Bravo à tous » est utile, mais ne remplace pas le mot individuel. Chacun sait s''il a contribué ou non.
+- Le compliment instrumental : « Tu es formidable, tu peux rester ce soir ? » La reconnaissance qui précède une demande est perçue comme une manipulation, et elle en est une.
+- Comparer : « Toi au moins tu fais les choses proprement, pas comme Julien. » Reconnaître l''un en rabaissant l''autre détruit l''équipe.
+- Se reconnaître soi-même : « Grâce à mon organisation, on a tenu les délais. » Le manager reconnaît l''équipe ; c''est sa hiérarchie qui le reconnaît lui.
+
+## Recevoir la reconnaissance
+
+Le manager reconnaît ; il est aussi reconnu, ou pas. Beaucoup de managers de proximité souffrent d''un déficit de reconnaissance de leur propre hiérarchie, et le reproduisent vers le bas. Si c''est votre cas, la solution n''est pas d''attendre : dites à votre hiérarchie ce dont vous avez besoin (« j''aimerais savoir ce que vous pensez du trimestre ») et, surtout, ne faites pas payer à l''équipe ce que vous ne recevez pas.
+
+## Le cas Garnier
+
+Karim tient, dans son carnet, une colonne « dernier mot positif » par personne. Il constate qu''il n''a rien dit à Fatou depuis un mois : son travail de préparation est invisible parce qu''il précède celui des autres. Le lendemain, devant Nadia : « Fatou, la 308 d''hier, la préparation était impeccable, Nadia a pu peindre direct. C''est ça qui fait qu''on tient les délais. » Il ajoute Fatou au tour de table de la réunion, où elle n''avait jamais été sollicitée. Et il obtient de Michel que la prime de fin d''année, qui existait, soit accompagnée d''un mot à chacun, plutôt que d''un virement muet.
+
+## À retenir
+
+- Reconnaître n''est pas flatter : la reconnaissance est précise, sincère, à temps, régulière, adaptée, équitable, sans « mais ».
+- Quatre formes (Brun et Dugas) : la personne, la manière de faire, l''effort, les résultats. Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs.
+- La reconnaissance existentielle (bonjour, informer, consulter) est la base.
+- Tenez le compte : à qui n''avez-vous rien dit de positif depuis quinze jours ?
+- Ne comparez pas, ne conditionnez pas, ne vous attribuez pas le mérite de l''équipe.
+
+## Sources
+
+- Jean-Pierre Brun, Ninon Dugas, « La reconnaissance au travail : une pratique riche de sens », Chaire en gestion de la santé et de la sécurité du travail, Université Laval, 2005.
+- Michel Gollac, Marceline Bodier (dir.), *Mesurer les facteurs psychosociaux de risque au travail pour les maîtriser*, rapport du Collège d''expertise, 2011.
+- ANACT, « La reconnaissance au travail », anact.fr.
+- Teresa Amabile, Steven Kramer, *The Progress Principle*, 2011.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'La reconnaissance est le levier de motivation le plus cité par les salariés et le plus négligé par les managers. Non par méchanceté : par pudeur, par habitude (« c''est normal de bien faire son travail »), par manque de temps, ou par peur de paraître flatteur. Or reconnaître n''est pas flatter. La flatterie est vague, intéressée et fausse ; la reconnaissance est précise, gratuite et vraie.
+
+## Pourquoi c''est un besoin, pas un luxe
+
+Les trois modèles de la leçon 4.1 convergent : la reconnaissance est un facteur de motivation chez Herzberg, elle nourrit le besoin de compétence et de lien chez Deci et Ryan, et elle rend le progrès visible chez Amabile. Les enquêtes sur les conditions de travail, en France comme ailleurs, placent régulièrement le manque de reconnaissance parmi les premières causes de mal-être et de départ. Et le rapport Gollac sur les risques psychosociaux (2011) classe le déficit de reconnaissance parmi les facteurs de risque, dans la catégorie des rapports sociaux au travail.
+
+À l''inverse, une reconnaissance régulière et juste fait baisser l''absentéisme, le turnover et les tensions. Elle ne coûte rien. Elle demande de l''attention.
+
+## Les quatre formes de la reconnaissance
+
+Jean-Pierre Brun et Ninon Dugas, chercheurs québécois, ont proposé en 2005 une typologie devenue une référence. La reconnaissance peut porter sur quatre objets, et un manager complet les pratique tous les quatre.
+
+| Forme | Ce qu''on reconnaît | Exemple à l''atelier |
+|---|---|---|
+| Existentielle | La personne elle-même : elle existe, on la salue, on la consulte, on l''informe | Dire bonjour à chacun, demander l''avis de Marc sur le planning, prévenir Fatou d''un changement avant les autres |
+| De la pratique de travail | La manière de faire : le soin, la méthode, la rigueur, même quand le résultat n''est pas encore là | « Ta façon de préparer les surfaces, c''est propre, ça se voit au vernis » |
+| De l''investissement | L''effort et l''engagement, indépendamment du résultat | « Tu es resté vendredi soir pour finir la Clio, je l''ai vu » |
+| Des résultats | Ce qui a été obtenu, mesurable | « Trois finitions sans reprise ce mois-ci » |
+
+La reconnaissance existentielle est la plus élémentaire et la plus souvent oubliée. Un manager qui ne dit bonjour qu''à ceux qu''il apprécie, qui informe l''équipe par affichage sans jamais expliquer, qui ne demande jamais l''avis de personne, envoie un message d''indifférence, quels que soient ses compliments sur les résultats.
+
+La reconnaissance de l''investissement et de la pratique est ce qui permet de reconnaître aussi ceux qui n''ont pas encore de résultats : le débutant, celui qui apprend, celui qui est sur une tâche ingrate. Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs, et laisser les autres invisibles.
+
+## Les règles d''une reconnaissance qui porte
+
+- Précise. « Bon boulot » ne dit rien. « Le raccord de teinte sur l''aile, on ne le voit pas sous le néon » dit exactement ce qui est bien et ce qu''il faut refaire. C''est la même règle que pour le feedback positif du module 3.
+- Sincère. On ne reconnaît que ce qui est vrai. Une reconnaissance fabriquée pour « faire de la reconnaissance » se voit, et discrédite les suivantes.
+- À temps. Le jour même, ou le lendemain. Un compliment sur un travail d''il y a trois semaines dit surtout que vous n''aviez pas regardé à l''époque.
+- Régulière, pas rare. Une cérémonie par an ne remplace pas une remarque par semaine. Amabile a montré que ce sont les petits progrès quotidiens qui comptent ; ils demandent une reconnaissance quotidienne.
+- Adaptée à la personne. Certains aiment être félicités devant l''équipe ; d''autres le vivent comme une gêne. Demandez, ou observez. Une reconnaissance publique imposée à quelqu''un qui la redoute est une punition.
+- Équitable. Si les mêmes sont toujours félicités, les autres concluent qu''il y a des chouchous. Tenez un compte, mentalement ou dans votre carnet : à qui n''avez-vous rien dit de positif depuis quinze jours ?
+- Sans « mais ». « C''est bien, mais… » annule ce qui précède. Le correctif se dit à un autre moment.
+
+## Les formes qui ne coûtent rien
+
+La parole directe est la première. Mais il y en a d''autres : un mot écrit (une note manuscrite marque plus qu''on ne le croit) ; mentionner le travail de quelqu''un devant sa hiérarchie ou devant un client ; confier une responsabilité ou une tâche valorisante (former un nouveau, représenter l''équipe) ; demander son avis à quelqu''un sur un sujet qu''il maîtrise ; commencer la réunion hebdomadaire par ce qui a bien marché, en nommant qui.
+
+Les formes matérielles (prime, cadeau, repas d''équipe) ont leur place, mais elles relèvent souvent de l''employeur, et elles ne remplacent jamais la parole. Une prime sans un mot est un virement ; un mot sans prime est une reconnaissance.
+
+## Les erreurs courantes
+
+- Ne reconnaître que l''exceptionnel. Le travail bien fait au quotidien mérite d''être vu. Si seule la prouesse est reconnue, le travail normal devient invisible.
+- Reconnaître collectivement pour éviter de choisir. « Bravo à tous » est utile, mais ne remplace pas le mot individuel. Chacun sait s''il a contribué ou non.
+- Le compliment instrumental : « Tu es formidable, tu peux rester ce soir ? » La reconnaissance qui précède une demande est perçue comme une manipulation, et elle en est une.
+- Comparer : « Toi au moins tu fais les choses proprement, pas comme Julien. » Reconnaître l''un en rabaissant l''autre détruit l''équipe.
+- Se reconnaître soi-même : « Grâce à mon organisation, on a tenu les délais. » Le manager reconnaît l''équipe ; c''est sa hiérarchie qui le reconnaît lui.
+
+## Recevoir la reconnaissance
+
+Le manager reconnaît ; il est aussi reconnu, ou pas. Beaucoup de managers de proximité souffrent d''un déficit de reconnaissance de leur propre hiérarchie, et le reproduisent vers le bas. Si c''est votre cas, la solution n''est pas d''attendre : dites à votre hiérarchie ce dont vous avez besoin (« j''aimerais savoir ce que vous pensez du trimestre ») et, surtout, ne faites pas payer à l''équipe ce que vous ne recevez pas.
+
+## Le cas Garnier
+
+Karim tient, dans son carnet, une colonne « dernier mot positif » par personne. Il constate qu''il n''a rien dit à Fatou depuis un mois : son travail de préparation est invisible parce qu''il précède celui des autres. Le lendemain, devant Nadia : « Fatou, la 308 d''hier, la préparation était impeccable, Nadia a pu peindre direct. C''est ça qui fait qu''on tient les délais. » Il ajoute Fatou au tour de table de la réunion, où elle n''avait jamais été sollicitée. Et il obtient de Michel que la prime de fin d''année, qui existait, soit accompagnée d''un mot à chacun, plutôt que d''un virement muet.
+
+## À retenir
+
+- Reconnaître n''est pas flatter : la reconnaissance est précise, sincère, à temps, régulière, adaptée, équitable, sans « mais ».
+- Quatre formes (Brun et Dugas) : la personne, la manière de faire, l''effort, les résultats. Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs.
+- La reconnaissance existentielle (bonjour, informer, consulter) est la base.
+- Tenez le compte : à qui n''avez-vous rien dit de positif depuis quinze jours ?
+- Ne comparez pas, ne conditionnez pas, ne vous attribuez pas le mérite de l''équipe.
+
+## Sources
+
+- Jean-Pierre Brun, Ninon Dugas, « La reconnaissance au travail : une pratique riche de sens », Chaire en gestion de la santé et de la sécurité du travail, Université Laval, 2005.
+- Michel Gollac, Marceline Bodier (dir.), *Mesurer les facteurs psychosociaux de risque au travail pour les maîtriser*, rapport du Collège d''expertise, 2011.
+- ANACT, « La reconnaissance au travail », anact.fr.
+- Teresa Amabile, Steven Kramer, *The Progress Principle*, 2011.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 3;
+  n := n + 1;
+
+  -- 4.4-developper-les-competences.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Un manager qui fait progresser son équipe gagne sur tous les tableaux : l''équipe devient plus robuste (les compétences critiques ne reposent plus sur une seule personne, module 2), les personnes sont plus motivées (le besoin de compétence, leçon 4.1), et le manager lui-même gagne du temps à mesure que l''autonomie augmente. C''est aussi une obligation de l''employeur, que le manager de proximité met en œuvre : l''article L6321-1 du Code du travail impose d''assurer l''adaptation des salariés à leur poste et de veiller au maintien de leur capacité à occuper un emploi.
+
+## Repérer ce qu''il faut développer
+
+Le point de départ est la matrice de compétences du module 2. Elle montre trois choses : les compétences que l''équipe ne détient pas assez (risque collectif), les personnes qui plafonnent (risque individuel), et les personnes qui peuvent aller plus loin (potentiel).
+
+Puis on croise avec ce que veut la personne. Un plan de développement imposé ne fonctionne pas ; un plan construit avec la personne, à partir de ses souhaits exprimés en entretien de parcours professionnel (module 3), fonctionne. Les questions utiles : « Sur quoi aimerais-tu être meilleur ? », « Qu''est-ce que tu aimerais faire dans deux ans que tu ne sais pas faire aujourd''hui ? », « Qu''est-ce qui te freine ? »
+
+Attention à deux biais. Le premier : ne développer que les meilleurs, parce qu''ils sont gratifiants. Le second : ne développer que les plus faibles, pour combler les manques, et laisser les bons s''ennuyer jusqu''à ce qu''ils partent. Chacun a besoin de progresser, à son niveau.
+
+## Les moyens, du moins cher au plus cher
+
+La formation « en salle » ou en ligne est le moyen auquel on pense d''abord. C''est rarement le plus efficace, et c''est le plus cher. La recherche sur l''apprentissage des adultes montre que l''on apprend surtout en faisant, avec un retour ; les formations formelles servent à structurer ce que l''expérience a commencé. Voici les moyens, du plus courant au plus formel.
+
+La mise en situation progressive : confier une tâche un peu au-dessus du niveau actuel, avec un droit à l''erreur et un point de contrôle. C''est le principe du leadership situationnel (module 1) : on passe de « diriger » à « entraîner » à « épauler ». Lucas apprend à monter un pare-chocs seul, puis avec contrôle, puis sans.
+
+Le binôme ou tutorat : associer une personne qui apprend à une personne qui sait, sur des séances prévues, pas « quand on aura le temps ». Le tuteur doit être volontaire, savoir expliquer (ce n''est pas la même compétence que savoir faire), et être reconnu pour ce rôle. Nadia forme Julien à la nacrée une heure par semaine : c''est du développement pour les deux.
+
+Le retour d''expérience : après une difficulté ou une réussite, prendre dix minutes pour comprendre ce qui s''est passé (module 6). C''est de la formation gratuite.
+
+La formation interne : un membre de l''équipe, ou le manager, présente une méthode, un outil, une règle, en trente minutes, à toute l''équipe. À l''atelier, Thierry présente le contrôle de finition ; Sophie présente le circuit des demandes.
+
+La formation externe : organisme de formation, fournisseur (les constructeurs et les fabricants de peinture forment les carrossiers), centre de formation d''apprentis. Elle se prépare (qu''est-ce qu''on attend, comment on l''appliquera au retour) et se suit (qu''est-ce qui a changé un mois après). Une formation externe sans préparation ni suivi est un budget perdu.
+
+## Les dispositifs à connaître
+
+Le manager ne gère pas les budgets de formation, mais il doit connaître les dispositifs pour orienter et pour parler juste en entretien de parcours.
+
+Le plan de développement des compétences (art. L6312-1 et suivants) : l''ensemble des formations décidées par l''employeur pour ses salariés. Il est construit chaque année, souvent avec les demandes remontées par les managers. C''est là que va la demande de Karim pour former Julien à la peinture. Dans les entreprises de moins de 50 salariés, l''OPCO (opérateur de compétences) de la branche peut financer tout ou partie des formations ; le manager doit savoir quel est l''OPCO de son entreprise.
+
+Le compte personnel de formation (CPF) : compte en euros, alimenté chaque année pour tout salarié, mobilisable par lui pour une formation certifiante de son choix, en dehors ou pendant le temps de travail (avec accord de l''employeur dans ce cas). Une participation financière du salarié s''applique depuis 2024, sauf exceptions. L''employeur peut abonder.
+
+La validation des acquis de l''expérience (VAE) : obtenir un diplôme ou un titre à partir de son expérience. Thierry, avec 28 ans de carrosserie, peut viser un titre sans retourner à l''école.
+
+Le conseil en évolution professionnelle (CEP) : accompagnement gratuit et extérieur à l''entreprise pour construire un projet professionnel.
+
+L''apprentissage et la professionnalisation : pour recruter et former en alternance. Lucas est apprenti ; le manager est souvent son maître d''apprentissage, avec des obligations de suivi et de lien avec le CFA.
+
+## Le plan de développement individuel
+
+Un plan de développement individuel (PDI) tient sur une page (gabarit dans la fiche 4.9). Il contient : la compétence visée, formulée en « être capable de » ; le niveau actuel et le niveau visé (l''échelle 0-3 de la matrice) ; les moyens (mise en situation, binôme, formation) avec leurs dates ; les points de suivi ; ce que la personne fait, ce que le manager fait. Un seul objectif de développement à la fois, deux au maximum. Un PDI à six objectifs n''aboutit jamais.
+
+Le PDI se construit en entretien, se relit à chaque entretien de suivi, et se met à jour. Ce n''est pas un document RH ; c''est un outil de travail entre le manager et la personne.
+
+## Conduire un entretien de progression : le modèle GROW
+
+Pour les entretiens consacrés au développement, le modèle GROW, formalisé par John Whitmore dans les années 1990, donne une trame simple en quatre temps. Il repose sur le questionnement, pas sur le conseil : la personne trouve elle-même son chemin, ce qui rend l''engagement bien plus solide.
+
+- G, Goal (objectif) : « Qu''est-ce que tu veux être capable de faire ? D''ici quand ? Comment saurons-nous que c''est acquis ? »
+- R, Reality (réalité) : « Où en es-tu aujourd''hui ? Qu''est-ce que tu as déjà essayé ? Qu''est-ce qui te manque ? »
+- O, Options : « Qu''est-ce que tu pourrais faire ? Quoi d''autre ? Et si tu avais plus de temps, de moyens ? » Le manager peut ajouter des options, après celles de la personne.
+- W, Will (volonté, engagement) : « Qu''est-ce que tu vas faire, concrètement, d''ici notre prochain point ? Qu''est-ce qui pourrait t''en empêcher ? De quoi as-tu besoin de ma part ? »
+
+Un entretien GROW dure vingt à trente minutes. Le manager parle un quart du temps.
+
+## Le cas Garnier — le plan de Julien
+
+Objectif (G) : Julien veut être autonome sur la peinture de raccord d''ici six mois, niveau 2 de la matrice. Réalité (R) : niveau 1 aujourd''hui, il a fait deux reprises de finition, il va trop vite sous pression ; il a déjà regardé Nadia travailler mais sans pratiquer. Options (O) : binôme avec Nadia une heure par semaine sur véhicule réel ; formation d''une journée chez le fournisseur de peinture (demande au plan de développement des compétences, financement OPCO à vérifier) ; contrôle de chaque finition par Thierry jusqu''à Noël ; retour d''expérience après chaque reprise. Engagement (W) : Julien prépare chaque séance avec Nadia en notant une question ; Karim planifie les séances le mardi à 14 h et fait la demande de formation avant fin de mois ; point tous les six semaines. Le PDI tient sur une page, signé par les deux.
+
+Six mois plus tard, ce plan est la matière de l''entretien de parcours professionnel de Julien : sa progression est documentée, son souhait d''évolution est clair.
+
+## À retenir
+
+- Développer les compétences est une obligation de l''employeur (L6321-1) et le meilleur levier de motivation et de robustesse.
+- Partir de la matrice de compétences et des souhaits de la personne ; développer chacun, pas seulement les meilleurs ni seulement les plus faibles.
+- On apprend surtout en faisant, avec retour : mise en situation, binôme, retour d''expérience, avant la formation formelle.
+- Connaître les dispositifs : plan de développement des compétences, OPCO, CPF, VAE, CEP, apprentissage.
+- Un PDI d''une page, un objectif à la fois, relu à chaque entretien de suivi.
+- GROW pour l''entretien de progression : objectif, réalité, options, engagement ; le manager questionne plus qu''il ne conseille.
+
+## Sources
+
+- Code du travail, art. L6321-1 (obligation d''adaptation), L6312-1 et s. (plan de développement des compétences), L6323-1 et s. (CPF), L6411-1 et s. (VAE), L6111-6 (CEP).
+- John Whitmore, *Coaching for Performance*, Nicholas Brealey, 1992 (5e éd. 2017) — modèle GROW.
+- Ministère du Travail, « Plan de développement des compétences », « Compte personnel de formation », travail-emploi.gouv.fr ; moncompteformation.gouv.fr.
+- France Compétences, référentiel RS7377, compétence 7.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Un manager qui fait progresser son équipe gagne sur tous les tableaux : l''équipe devient plus robuste (les compétences critiques ne reposent plus sur une seule personne, module 2), les personnes sont plus motivées (le besoin de compétence, leçon 4.1), et le manager lui-même gagne du temps à mesure que l''autonomie augmente. C''est aussi une obligation de l''employeur, que le manager de proximité met en œuvre : l''article L6321-1 du Code du travail impose d''assurer l''adaptation des salariés à leur poste et de veiller au maintien de leur capacité à occuper un emploi.
+
+## Repérer ce qu''il faut développer
+
+Le point de départ est la matrice de compétences du module 2. Elle montre trois choses : les compétences que l''équipe ne détient pas assez (risque collectif), les personnes qui plafonnent (risque individuel), et les personnes qui peuvent aller plus loin (potentiel).
+
+Puis on croise avec ce que veut la personne. Un plan de développement imposé ne fonctionne pas ; un plan construit avec la personne, à partir de ses souhaits exprimés en entretien de parcours professionnel (module 3), fonctionne. Les questions utiles : « Sur quoi aimerais-tu être meilleur ? », « Qu''est-ce que tu aimerais faire dans deux ans que tu ne sais pas faire aujourd''hui ? », « Qu''est-ce qui te freine ? »
+
+Attention à deux biais. Le premier : ne développer que les meilleurs, parce qu''ils sont gratifiants. Le second : ne développer que les plus faibles, pour combler les manques, et laisser les bons s''ennuyer jusqu''à ce qu''ils partent. Chacun a besoin de progresser, à son niveau.
+
+## Les moyens, du moins cher au plus cher
+
+La formation « en salle » ou en ligne est le moyen auquel on pense d''abord. C''est rarement le plus efficace, et c''est le plus cher. La recherche sur l''apprentissage des adultes montre que l''on apprend surtout en faisant, avec un retour ; les formations formelles servent à structurer ce que l''expérience a commencé. Voici les moyens, du plus courant au plus formel.
+
+La mise en situation progressive : confier une tâche un peu au-dessus du niveau actuel, avec un droit à l''erreur et un point de contrôle. C''est le principe du leadership situationnel (module 1) : on passe de « diriger » à « entraîner » à « épauler ». Lucas apprend à monter un pare-chocs seul, puis avec contrôle, puis sans.
+
+Le binôme ou tutorat : associer une personne qui apprend à une personne qui sait, sur des séances prévues, pas « quand on aura le temps ». Le tuteur doit être volontaire, savoir expliquer (ce n''est pas la même compétence que savoir faire), et être reconnu pour ce rôle. Nadia forme Julien à la nacrée une heure par semaine : c''est du développement pour les deux.
+
+Le retour d''expérience : après une difficulté ou une réussite, prendre dix minutes pour comprendre ce qui s''est passé (module 6). C''est de la formation gratuite.
+
+La formation interne : un membre de l''équipe, ou le manager, présente une méthode, un outil, une règle, en trente minutes, à toute l''équipe. À l''atelier, Thierry présente le contrôle de finition ; Sophie présente le circuit des demandes.
+
+La formation externe : organisme de formation, fournisseur (les constructeurs et les fabricants de peinture forment les carrossiers), centre de formation d''apprentis. Elle se prépare (qu''est-ce qu''on attend, comment on l''appliquera au retour) et se suit (qu''est-ce qui a changé un mois après). Une formation externe sans préparation ni suivi est un budget perdu.
+
+## Les dispositifs à connaître
+
+Le manager ne gère pas les budgets de formation, mais il doit connaître les dispositifs pour orienter et pour parler juste en entretien de parcours.
+
+Le plan de développement des compétences (art. L6312-1 et suivants) : l''ensemble des formations décidées par l''employeur pour ses salariés. Il est construit chaque année, souvent avec les demandes remontées par les managers. C''est là que va la demande de Karim pour former Julien à la peinture. Dans les entreprises de moins de 50 salariés, l''OPCO (opérateur de compétences) de la branche peut financer tout ou partie des formations ; le manager doit savoir quel est l''OPCO de son entreprise.
+
+Le compte personnel de formation (CPF) : compte en euros, alimenté chaque année pour tout salarié, mobilisable par lui pour une formation certifiante de son choix, en dehors ou pendant le temps de travail (avec accord de l''employeur dans ce cas). Une participation financière du salarié s''applique depuis 2024, sauf exceptions. L''employeur peut abonder.
+
+La validation des acquis de l''expérience (VAE) : obtenir un diplôme ou un titre à partir de son expérience. Thierry, avec 28 ans de carrosserie, peut viser un titre sans retourner à l''école.
+
+Le conseil en évolution professionnelle (CEP) : accompagnement gratuit et extérieur à l''entreprise pour construire un projet professionnel.
+
+L''apprentissage et la professionnalisation : pour recruter et former en alternance. Lucas est apprenti ; le manager est souvent son maître d''apprentissage, avec des obligations de suivi et de lien avec le CFA.
+
+## Le plan de développement individuel
+
+Un plan de développement individuel (PDI) tient sur une page (gabarit dans la fiche 4.9). Il contient : la compétence visée, formulée en « être capable de » ; le niveau actuel et le niveau visé (l''échelle 0-3 de la matrice) ; les moyens (mise en situation, binôme, formation) avec leurs dates ; les points de suivi ; ce que la personne fait, ce que le manager fait. Un seul objectif de développement à la fois, deux au maximum. Un PDI à six objectifs n''aboutit jamais.
+
+Le PDI se construit en entretien, se relit à chaque entretien de suivi, et se met à jour. Ce n''est pas un document RH ; c''est un outil de travail entre le manager et la personne.
+
+## Conduire un entretien de progression : le modèle GROW
+
+Pour les entretiens consacrés au développement, le modèle GROW, formalisé par John Whitmore dans les années 1990, donne une trame simple en quatre temps. Il repose sur le questionnement, pas sur le conseil : la personne trouve elle-même son chemin, ce qui rend l''engagement bien plus solide.
+
+- G, Goal (objectif) : « Qu''est-ce que tu veux être capable de faire ? D''ici quand ? Comment saurons-nous que c''est acquis ? »
+- R, Reality (réalité) : « Où en es-tu aujourd''hui ? Qu''est-ce que tu as déjà essayé ? Qu''est-ce qui te manque ? »
+- O, Options : « Qu''est-ce que tu pourrais faire ? Quoi d''autre ? Et si tu avais plus de temps, de moyens ? » Le manager peut ajouter des options, après celles de la personne.
+- W, Will (volonté, engagement) : « Qu''est-ce que tu vas faire, concrètement, d''ici notre prochain point ? Qu''est-ce qui pourrait t''en empêcher ? De quoi as-tu besoin de ma part ? »
+
+Un entretien GROW dure vingt à trente minutes. Le manager parle un quart du temps.
+
+## Le cas Garnier — le plan de Julien
+
+Objectif (G) : Julien veut être autonome sur la peinture de raccord d''ici six mois, niveau 2 de la matrice. Réalité (R) : niveau 1 aujourd''hui, il a fait deux reprises de finition, il va trop vite sous pression ; il a déjà regardé Nadia travailler mais sans pratiquer. Options (O) : binôme avec Nadia une heure par semaine sur véhicule réel ; formation d''une journée chez le fournisseur de peinture (demande au plan de développement des compétences, financement OPCO à vérifier) ; contrôle de chaque finition par Thierry jusqu''à Noël ; retour d''expérience après chaque reprise. Engagement (W) : Julien prépare chaque séance avec Nadia en notant une question ; Karim planifie les séances le mardi à 14 h et fait la demande de formation avant fin de mois ; point tous les six semaines. Le PDI tient sur une page, signé par les deux.
+
+Six mois plus tard, ce plan est la matière de l''entretien de parcours professionnel de Julien : sa progression est documentée, son souhait d''évolution est clair.
+
+## À retenir
+
+- Développer les compétences est une obligation de l''employeur (L6321-1) et le meilleur levier de motivation et de robustesse.
+- Partir de la matrice de compétences et des souhaits de la personne ; développer chacun, pas seulement les meilleurs ni seulement les plus faibles.
+- On apprend surtout en faisant, avec retour : mise en situation, binôme, retour d''expérience, avant la formation formelle.
+- Connaître les dispositifs : plan de développement des compétences, OPCO, CPF, VAE, CEP, apprentissage.
+- Un PDI d''une page, un objectif à la fois, relu à chaque entretien de suivi.
+- GROW pour l''entretien de progression : objectif, réalité, options, engagement ; le manager questionne plus qu''il ne conseille.
+
+## Sources
+
+- Code du travail, art. L6321-1 (obligation d''adaptation), L6312-1 et s. (plan de développement des compétences), L6323-1 et s. (CPF), L6411-1 et s. (VAE), L6111-6 (CEP).
+- John Whitmore, *Coaching for Performance*, Nicholas Brealey, 1992 (5e éd. 2017) — modèle GROW.
+- Ministère du Travail, « Plan de développement des compétences », « Compte personnel de formation », travail-emploi.gouv.fr ; moncompteformation.gouv.fr.
+- France Compétences, référentiel RS7377, compétence 7.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 4;
+  n := n + 1;
+
+  -- 4.5-integrer-un-nouvel-arrivant.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Les premières semaines d''un nouveau salarié décident de beaucoup : de sa vitesse d''apprentissage, de sa place dans l''équipe, et souvent de son maintien dans l''entreprise. Les ruptures de période d''essai et les départs dans la première année sont fréquents, et une part importante d''entre eux tient à une intégration ratée : personne pour accueillir, pas de poste prêt, pas d''explication, l''impression de déranger. Le coût d''un recrutement à refaire (annonce, entretiens, temps de formation perdu) dépasse largement le coût de quelques heures d''intégration bien préparées.
+
+L''intégration est l''affaire du manager de proximité. Les RH gèrent le contrat et les formalités ; c''est vous qui gérez l''arrivée dans l''équipe.
+
+## Avant le premier jour
+
+L''intégration commence avant l''arrivée. Entre la signature et le premier jour, un message du manager (« nous vous attendons lundi à 8 h, voilà comment ça se passera, voilà ce qu''il faut apporter ») change tout pour quelqu''un qui, souvent, quitte un autre emploi avec une part d''inquiétude.
+
+Côté pratique, la liste est connue et pourtant régulièrement oubliée : poste de travail prêt, tenue et équipements de protection à la bonne taille, accès et identifiants, badge, casier. Un nouveau qui passe sa première matinée à attendre des chaussures de sécurité a compris qu''il n''était pas attendu.
+
+Côté équipe : prévenir tout le monde de qui arrive, quand, pour quel poste, et désigner un parrain (ou tuteur d''intégration). Le parrain n''est pas le manager : c''est un collègue expérimenté, volontaire, qui répond aux questions qu''on n''ose pas poser au chef (où l''on mange, comment on demande un congé, qui il faut ménager). Le parrain est reconnu pour ce rôle et dispose du temps nécessaire.
+
+## Le premier jour
+
+Le manager est là, à l''heure, et consacre la première heure au nouveau. Il présente l''entreprise en quelques phrases, l''équipe (chacun par son prénom et son rôle, pas une liste), les lieux, les règles essentielles de sécurité, et le programme des premiers jours. Il dit ce qu''il attend, et ce que le nouveau peut attendre de lui.
+
+Il présente le parrain et laisse la journée se dérouler avec lui. Le nouveau ne doit pas être productif le premier jour ; il doit comprendre où il est. Un déjeuner avec l''équipe, ou au moins avec le parrain, est plus utile que la première tâche.
+
+En fin de journée, cinq minutes avec le manager : « Comment s''est passée la journée ? Qu''est-ce qui vous a surpris ? Qu''est-ce qui manque ? »
+
+## La première semaine
+
+Le nouveau observe, puis fait avec, puis fait sous contrôle. C''est le style « diriger » du leadership situationnel : consignes précises, contrôle rapproché, retours fréquents. Ce n''est pas de la méfiance ; c''est ce dont un débutant a besoin, même s''il est expérimenté ailleurs, parce qu''ici il ne connaît ni les habitudes ni les outils.
+
+Chaque jour, un point court avec le parrain ou le manager. En fin de semaine, un entretien de trente minutes : ce qui est compris, ce qui ne l''est pas, ce qui étonne, ce que le nouveau apporte (il voit des choses que l''équipe ne voit plus : profitez-en avant qu''il ne s''habitue).
+
+La première semaine est aussi le moment de la formation à la sécurité, obligatoire (art. L4141-2 du Code du travail : formation pratique et appropriée à la sécurité pour tout nouvel embauché, y compris les intérimaires et les salariés qui changent de poste). Elle est tracée.
+
+## Le premier mois
+
+L''autonomie augmente par paliers, avec le PDI de la leçon 4.4 comme support. Le manager donne des retours fréquents, positifs et correctifs, avec la méthode du module 3. Il veille à ce que le nouveau soit intégré socialement : invité aux pauses, sollicité en réunion, pas laissé seul dans un coin.
+
+Le point à un mois est un entretien formel (trente minutes) : bilan de ce qui est acquis, de ce qui reste à apprendre, du ressenti, de la relation avec l''équipe. C''est aussi le moment de dire clairement si la période d''essai est en bonne voie ou non. Une rupture de période d''essai ne doit jamais être une surprise : si des difficultés existent, elles ont été dites, avec des attentes précises et un délai, avant.
+
+## Les cas particuliers
+
+L''apprenti ou l''alternant : le manager (ou le maître d''apprentissage désigné) a une obligation de formation et de suivi, en lien avec le CFA. Il faut du temps pour expliquer, pas seulement pour faire faire. Lucas, à l''atelier, doit apprendre le métier, pas seulement porter les pièces.
+
+L''intérimaire ou le CDD court : l''intégration est condensée mais pas supprimée. La sécurité, les règles essentielles, le parrain, le point de fin de première journée. Un intérimaire mal intégré est un risque d''accident.
+
+La personne en situation de handicap : l''intégration inclut la mise en place des aménagements prévus (module 2), sans annoncer à l''équipe ce qui relève de la vie privée. On explique l''organisation (« Fatou ne porte pas les éléments lourds, Lucas s''en charge »), pas le motif.
+
+Le nouveau manager lui-même : si c''est vous qui arrivez, tout ce qui précède vaut pour vous, et vous en êtes en grande partie responsable. La feuille de route des 90 premiers jours du module 1 est votre plan d''intégration.
+
+## Le retour après une longue absence
+
+Le retour d''un salarié après un congé maternité ou parental, un arrêt long, une expatriation, se prépare comme une intégration : ce qui a changé (outils, organisation, personnes), un point d''étape, une montée en charge progressive. L''entretien de parcours professionnel est obligatoire au retour de plusieurs de ces absences (module 3). Un retour sans accueil, où la personne découvre son bureau réattribué et de nouveaux outils sans explication, est une cause fréquente de départ ou de rechute.
+
+## Le cas Garnier
+
+Michel a recruté un second peintre, Amine, 31 ans, expérimenté. Karim prépare : message une semaine avant, tenue et EPI commandés à sa taille, cabine et poste préparés, Nadia désignée parraine (elle a demandé à former : c''est une reconnaissance). Premier jour : présentation de l''équipe, règles de sécurité de la cabine, déjeuner avec Nadia et Julien, cinq minutes le soir. Première semaine : Amine observe Nadia deux jours, peint avec elle, puis seul avec contrôle ; entretien le vendredi, où Amine signale que le circuit des pièces lui paraît lent par rapport à son ancien atelier. Karim note : c''est une idée à creuser. Point à un mois : Amine est autonome sur les peintures courantes, pas encore sur la nacrée (PDI avec Nadia) ; la période d''essai est confirmée.
+
+## À retenir
+
+- L''intégration décide de la période d''essai et de la première année ; elle est de la responsabilité du manager.
+- Avant l''arrivée : message, poste prêt, EPI, accès, équipe prévenue, parrain désigné.
+- Premier jour : présence du manager, présentation, sécurité, parrain, cinq minutes le soir.
+- Première semaine : style directif, formation sécurité obligatoire (L4141-2), entretien le vendredi.
+- Premier mois : autonomie par paliers, retours fréquents, point formel à un mois, aucune surprise sur la période d''essai.
+- Apprentis, intérimaires, retours d''absence : intégration adaptée, jamais supprimée.
+
+## Sources
+
+- Code du travail, art. L4141-2 (formation à la sécurité), L1221-19 et s. (période d''essai), L6223-1 et s. (maître d''apprentissage).
+- INRS, « Accueil et formation à la sécurité des nouveaux embauchés », inrs.fr.
+- Talya N. Bauer, *Onboarding New Employees: Maximizing Success*, SHRM Foundation, 2010.
+- France Compétences, référentiel RS7377, compétences 5 et 7.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Les premières semaines d''un nouveau salarié décident de beaucoup : de sa vitesse d''apprentissage, de sa place dans l''équipe, et souvent de son maintien dans l''entreprise. Les ruptures de période d''essai et les départs dans la première année sont fréquents, et une part importante d''entre eux tient à une intégration ratée : personne pour accueillir, pas de poste prêt, pas d''explication, l''impression de déranger. Le coût d''un recrutement à refaire (annonce, entretiens, temps de formation perdu) dépasse largement le coût de quelques heures d''intégration bien préparées.
+
+L''intégration est l''affaire du manager de proximité. Les RH gèrent le contrat et les formalités ; c''est vous qui gérez l''arrivée dans l''équipe.
+
+## Avant le premier jour
+
+L''intégration commence avant l''arrivée. Entre la signature et le premier jour, un message du manager (« nous vous attendons lundi à 8 h, voilà comment ça se passera, voilà ce qu''il faut apporter ») change tout pour quelqu''un qui, souvent, quitte un autre emploi avec une part d''inquiétude.
+
+Côté pratique, la liste est connue et pourtant régulièrement oubliée : poste de travail prêt, tenue et équipements de protection à la bonne taille, accès et identifiants, badge, casier. Un nouveau qui passe sa première matinée à attendre des chaussures de sécurité a compris qu''il n''était pas attendu.
+
+Côté équipe : prévenir tout le monde de qui arrive, quand, pour quel poste, et désigner un parrain (ou tuteur d''intégration). Le parrain n''est pas le manager : c''est un collègue expérimenté, volontaire, qui répond aux questions qu''on n''ose pas poser au chef (où l''on mange, comment on demande un congé, qui il faut ménager). Le parrain est reconnu pour ce rôle et dispose du temps nécessaire.
+
+## Le premier jour
+
+Le manager est là, à l''heure, et consacre la première heure au nouveau. Il présente l''entreprise en quelques phrases, l''équipe (chacun par son prénom et son rôle, pas une liste), les lieux, les règles essentielles de sécurité, et le programme des premiers jours. Il dit ce qu''il attend, et ce que le nouveau peut attendre de lui.
+
+Il présente le parrain et laisse la journée se dérouler avec lui. Le nouveau ne doit pas être productif le premier jour ; il doit comprendre où il est. Un déjeuner avec l''équipe, ou au moins avec le parrain, est plus utile que la première tâche.
+
+En fin de journée, cinq minutes avec le manager : « Comment s''est passée la journée ? Qu''est-ce qui vous a surpris ? Qu''est-ce qui manque ? »
+
+## La première semaine
+
+Le nouveau observe, puis fait avec, puis fait sous contrôle. C''est le style « diriger » du leadership situationnel : consignes précises, contrôle rapproché, retours fréquents. Ce n''est pas de la méfiance ; c''est ce dont un débutant a besoin, même s''il est expérimenté ailleurs, parce qu''ici il ne connaît ni les habitudes ni les outils.
+
+Chaque jour, un point court avec le parrain ou le manager. En fin de semaine, un entretien de trente minutes : ce qui est compris, ce qui ne l''est pas, ce qui étonne, ce que le nouveau apporte (il voit des choses que l''équipe ne voit plus : profitez-en avant qu''il ne s''habitue).
+
+La première semaine est aussi le moment de la formation à la sécurité, obligatoire (art. L4141-2 du Code du travail : formation pratique et appropriée à la sécurité pour tout nouvel embauché, y compris les intérimaires et les salariés qui changent de poste). Elle est tracée.
+
+## Le premier mois
+
+L''autonomie augmente par paliers, avec le PDI de la leçon 4.4 comme support. Le manager donne des retours fréquents, positifs et correctifs, avec la méthode du module 3. Il veille à ce que le nouveau soit intégré socialement : invité aux pauses, sollicité en réunion, pas laissé seul dans un coin.
+
+Le point à un mois est un entretien formel (trente minutes) : bilan de ce qui est acquis, de ce qui reste à apprendre, du ressenti, de la relation avec l''équipe. C''est aussi le moment de dire clairement si la période d''essai est en bonne voie ou non. Une rupture de période d''essai ne doit jamais être une surprise : si des difficultés existent, elles ont été dites, avec des attentes précises et un délai, avant.
+
+## Les cas particuliers
+
+L''apprenti ou l''alternant : le manager (ou le maître d''apprentissage désigné) a une obligation de formation et de suivi, en lien avec le CFA. Il faut du temps pour expliquer, pas seulement pour faire faire. Lucas, à l''atelier, doit apprendre le métier, pas seulement porter les pièces.
+
+L''intérimaire ou le CDD court : l''intégration est condensée mais pas supprimée. La sécurité, les règles essentielles, le parrain, le point de fin de première journée. Un intérimaire mal intégré est un risque d''accident.
+
+La personne en situation de handicap : l''intégration inclut la mise en place des aménagements prévus (module 2), sans annoncer à l''équipe ce qui relève de la vie privée. On explique l''organisation (« Fatou ne porte pas les éléments lourds, Lucas s''en charge »), pas le motif.
+
+Le nouveau manager lui-même : si c''est vous qui arrivez, tout ce qui précède vaut pour vous, et vous en êtes en grande partie responsable. La feuille de route des 90 premiers jours du module 1 est votre plan d''intégration.
+
+## Le retour après une longue absence
+
+Le retour d''un salarié après un congé maternité ou parental, un arrêt long, une expatriation, se prépare comme une intégration : ce qui a changé (outils, organisation, personnes), un point d''étape, une montée en charge progressive. L''entretien de parcours professionnel est obligatoire au retour de plusieurs de ces absences (module 3). Un retour sans accueil, où la personne découvre son bureau réattribué et de nouveaux outils sans explication, est une cause fréquente de départ ou de rechute.
+
+## Le cas Garnier
+
+Michel a recruté un second peintre, Amine, 31 ans, expérimenté. Karim prépare : message une semaine avant, tenue et EPI commandés à sa taille, cabine et poste préparés, Nadia désignée parraine (elle a demandé à former : c''est une reconnaissance). Premier jour : présentation de l''équipe, règles de sécurité de la cabine, déjeuner avec Nadia et Julien, cinq minutes le soir. Première semaine : Amine observe Nadia deux jours, peint avec elle, puis seul avec contrôle ; entretien le vendredi, où Amine signale que le circuit des pièces lui paraît lent par rapport à son ancien atelier. Karim note : c''est une idée à creuser. Point à un mois : Amine est autonome sur les peintures courantes, pas encore sur la nacrée (PDI avec Nadia) ; la période d''essai est confirmée.
+
+## À retenir
+
+- L''intégration décide de la période d''essai et de la première année ; elle est de la responsabilité du manager.
+- Avant l''arrivée : message, poste prêt, EPI, accès, équipe prévenue, parrain désigné.
+- Premier jour : présence du manager, présentation, sécurité, parrain, cinq minutes le soir.
+- Première semaine : style directif, formation sécurité obligatoire (L4141-2), entretien le vendredi.
+- Premier mois : autonomie par paliers, retours fréquents, point formel à un mois, aucune surprise sur la période d''essai.
+- Apprentis, intérimaires, retours d''absence : intégration adaptée, jamais supprimée.
+
+## Sources
+
+- Code du travail, art. L4141-2 (formation à la sécurité), L1221-19 et s. (période d''essai), L6223-1 et s. (maître d''apprentissage).
+- INRS, « Accueil et formation à la sécurité des nouveaux embauchés », inrs.fr.
+- Talya N. Bauer, *Onboarding New Employees: Maximizing Success*, SHRM Foundation, 2010.
+- France Compétences, référentiel RS7377, compétences 5 et 7.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 5;
+  n := n + 1;
+
+  -- 4.6-cadre-de-travail-soutenable.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Le référentiel RS7377 demande au manager de « mettre en place et faire vivre un cadre de travail respectueux, soutenable et équitable ». Derrière ces trois adjectifs, il y a des règles de droit, des outils, et surtout des décisions quotidiennes du manager de proximité : qui fait quoi, combien, quand, et si c''est juste. Cette leçon traite de la charge de travail, de la qualité de vie et des conditions de travail, du télétravail, du droit à la déconnexion et de l''équité de traitement. La leçon suivante traite des risques psychosociaux.
+
+## La charge de travail : la réguler, pas la subir
+
+La charge de travail est la première cause de dégradation des conditions de travail dans les enquêtes sur le sujet, et c''est le manager de proximité qui la distribue. Trois notions à distinguer : la charge prescrite (ce qu''on demande), la charge réelle (ce que la personne fait effectivement, y compris ce qui n''est pas prescrit : rattraper, improviser, gérer les imprévus), et la charge ressentie (comment elle le vit). Un manager qui ne regarde que la charge prescrite ne voit pas la surcharge ; elle est dans l''écart entre les trois.
+
+Réguler la charge, concrètement :
+
+- Mesurer : le tableau de bord du module 2 avec un indicateur de garde-fou (heures supplémentaires, retards, reprises) ; le brief quotidien où l''on dit ce qui déborde.
+- Prioriser : la matrice d''Eisenhower ; quand tout est urgent, c''est au manager de dire ce qui attend, pas à la personne de tout faire.
+- Dire non ou « oui à ces conditions » à la hiérarchie quand la charge n''est pas tenable (module 3, podcast 3.8).
+- Répartir équitablement : les mêmes ne doivent pas absorber tous les imprévus parce qu''ils ne disent jamais non.
+- Vérifier régulièrement, en entretien de suivi : « Comment tu vis ta charge en ce moment ? » Pour les salariés en forfait-jours, cet entretien sur la charge de travail est une obligation légale annuelle (art. L3121-65).
+
+Le cadre légal de la durée du travail est le garde-fou minimal, et le manager le connaît : 10 heures par jour maximum (L3121-18), 48 heures par semaine et 44 heures en moyenne sur douze semaines (L3121-20 et L3121-22), 11 heures de repos quotidien (L3131-1), 35 heures de repos hebdomadaire consécutives (L3132-2), 20 minutes de pause dès 6 heures de travail (L3121-16). Des dérogations existent par accord ; le manager se renseigne auprès des RH avant d''en supposer. Un manager qui fait dépasser ces limites engage la responsabilité de l''employeur, et la sienne.
+
+## La QVCT : de quoi parle-t-on
+
+L''accord national interprofessionnel du 9 décembre 2020 sur la santé au travail, transposé par la loi du 2 août 2021, a remplacé la « qualité de vie au travail » (QVT) par la « qualité de vie et des conditions de travail » (QVCT). Le changement de mot n''est pas anodin : il recentre le sujet sur le travail lui-même (son organisation, ses conditions, son contenu) plutôt que sur les à-côtés (le baby-foot, les paniers de fruits). La QVCT est un thème de négociation obligatoire dans les entreprises où existe une représentation syndicale (L2242-17).
+
+L''ANACT (Agence nationale pour l''amélioration des conditions de travail) résume la QVCT en quelques champs sur lesquels le manager de proximité a prise : le contenu du travail (intérêt, autonomie, variété), l''organisation (charge, rythme, clarté des rôles), les relations (soutien du manager et des collègues, reconnaissance), les possibilités de progression, l''articulation entre vie professionnelle et vie personnelle, et la participation aux décisions qui concernent le travail.
+
+Ce dernier point est central : la QVCT se construit avec les salariés, pas pour eux. Les « espaces de discussion sur le travail », où l''équipe parle de ce qui la gêne et de ce qui pourrait changer, sont l''outil que l''ANACT recommande. La réunion mensuelle du module 3, avec un point « qu''est-ce qui nous complique le travail », en est une forme simple.
+
+## Le télétravail et l''hybride
+
+Le télétravail est encadré par les articles L1222-9 à L1222-11 du Code du travail et par l''ANI du 26 novembre 2020. Ce que le manager doit savoir :
+
+- Il est mis en place par accord collectif ou, à défaut, par une charte de l''employeur, ou, à défaut, par simple accord entre le salarié et l''employeur, par tout moyen. Il est volontaire des deux côtés, sauf circonstances exceptionnelles (épidémie, force majeure) où l''employeur peut l''imposer.
+- Si un poste est éligible selon l''accord ou la charte, un refus opposé au salarié qui le demande doit être motivé.
+- Le télétravailleur a les mêmes droits que les autres : mêmes règles de durée du travail, mêmes possibilités de formation et d''évolution, même accès à l''information.
+- L''employeur doit organiser chaque année un entretien sur les conditions d''activité et la charge de travail du télétravailleur, et fixer les plages horaires pendant lesquelles il peut être contacté.
+- L''accident survenu sur le lieu et pendant les heures de télétravail est présumé accident du travail.
+
+Pour le manager, le télétravail change la manière de manager, pas les principes : on manage sur les résultats et la confiance, pas sur la présence ; on adapte les rituels (module 6, leçon 6.6) ; on veille à l''équité entre ceux qui sont sur site et ceux qui sont à distance (accès à l''information, aux missions intéressantes, à la reconnaissance) ; on repère l''isolement.
+
+Dans un atelier, un commerce, un service de soins, le télétravail ne concerne qu''une partie des postes (l''administratif, parfois l''encadrement). Le manager veille alors à ce que cela ne crée pas deux catégories de salariés : ceux qui peuvent et ceux qui ne peuvent pas. On l''explique (le poste, pas la personne), et on cherche d''autres souplesses pour les seconds (horaires, jours).
+
+## Le droit à la déconnexion
+
+Depuis 2017, le droit à la déconnexion est un thème de négociation obligatoire (L2242-17), et à défaut d''accord, l''employeur établit une charte. L''objet : garantir le respect des temps de repos et de congé et de la vie personnelle. Le manager de proximité est le premier acteur de ce droit, par l''exemple : un manager qui envoie des messages à 22 h ou le dimanche, même « sans attendre de réponse », crée une pression que l''équipe ressent. Les règles simples : pas de message professionnel hors des horaires sauf urgence réelle (et définir ce qu''est une urgence), envoi différé si l''on travaille tard, pas de reproche à qui ne répond pas le soir, et des congés qui sont des congés.
+
+## L''équité de traitement
+
+Un cadre de travail équitable, ce n''est pas un cadre identique pour tous : c''est un cadre où les différences de traitement ont une raison objective et connue. Le Code du travail interdit toute discrimination fondée sur une liste de critères (origine, sexe, âge, situation de famille, état de santé, handicap, opinions, activités syndicales, etc. ; art. L1132-1), à l''embauche comme dans la carrière, la rémunération, la formation, l''affectation. Le principe « à travail égal, salaire égal » s''applique.
+
+Le manager de proximité est exposé à la discrimination indirecte, celle qu''on ne voit pas : donner les missions intéressantes toujours aux mêmes, ne pas proposer de formation à celle qui est à temps partiel, écarter un senior d''un projet « parce qu''il va partir », ne pas confier de responsabilités à celui qui revient d''arrêt. Chacune de ces décisions, prise sans y penser, peut constituer une discrimination.
+
+Trois réflexes : se demander, à chaque attribution (mission, formation, horaire, prime), sur quel critère objectif elle repose ; tenir le compte de qui a eu quoi sur l''année ; expliquer les décisions, parce qu''une décision non expliquée est vécue comme injuste même quand elle ne l''est pas. La justice perçue (chacun comprend pourquoi) compte autant que la justice réelle.
+
+## Le cas Garnier
+
+Karim constate que Thierry et Nadia font l''essentiel des heures supplémentaires, parce qu''ils ne refusent jamais, et que Marc n''en fait aucune, parce qu''il a une contrainte de garde le mercredi et qu''on a cessé de lui demander. Il remet à plat : les heures supplémentaires sont proposées à tous, par roulement, en tenant compte des contraintes déclarées ; l''indicateur « heures sup par personne » entre dans le tableau de bord ; et il en parle à Michel pour que le volume global baisse, ce qui passe par le circuit des pièces qu''Amine a signalé. Sophie, seule à un poste administratif, demande un jour de télétravail : l''entreprise n''a ni accord ni charte ; Karim propose à Michel un accord écrit simple avec Sophie (jour fixe, plages joignables, matériel), et explique à l''atelier que c''est le poste qui le permet, pas la personne.
+
+## À retenir
+
+- La charge se régule : mesurer (garde-fous), prioriser, dire non vers le haut, répartir, vérifier en entretien ; connaître les limites légales de durée du travail et de repos.
+- La QVCT (ANI 2020, loi 2021) porte sur le travail lui-même et se construit avec les salariés : espaces de discussion sur le travail.
+- Télétravail (L1222-9 à 11) : volontaire, par accord, charte ou accord individuel ; mêmes droits ; entretien annuel sur la charge ; manager sur les résultats et veiller à l''équité.
+- Droit à la déconnexion : le manager donne l''exemple.
+- Équité : des différences justifiées par un critère objectif, connues et expliquées ; vigilance sur la discrimination indirecte (L1132-1).
+
+## Sources
+
+- Code du travail : durée du travail et repos (L3121-16, L3121-18, L3121-20, L3121-22, L3131-1, L3132-2, L3121-65), télétravail (L1222-9 à L1222-11), négociation QVCT et déconnexion (L2242-17), non-discrimination (L1132-1).
+- ANI du 9 décembre 2020 sur la santé au travail ; loi n° 2021-1018 du 2 août 2021 ; ANI du 26 novembre 2020 sur le télétravail.
+- ANACT, « La QVCT : de quoi parle-t-on ? » et « Les espaces de discussion sur le travail », anact.fr.
+- Défenseur des droits, « Discrimination au travail », defenseurdesdroits.fr.
+- France Compétences, référentiel RS7377, compétence 5.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Le référentiel RS7377 demande au manager de « mettre en place et faire vivre un cadre de travail respectueux, soutenable et équitable ». Derrière ces trois adjectifs, il y a des règles de droit, des outils, et surtout des décisions quotidiennes du manager de proximité : qui fait quoi, combien, quand, et si c''est juste. Cette leçon traite de la charge de travail, de la qualité de vie et des conditions de travail, du télétravail, du droit à la déconnexion et de l''équité de traitement. La leçon suivante traite des risques psychosociaux.
+
+## La charge de travail : la réguler, pas la subir
+
+La charge de travail est la première cause de dégradation des conditions de travail dans les enquêtes sur le sujet, et c''est le manager de proximité qui la distribue. Trois notions à distinguer : la charge prescrite (ce qu''on demande), la charge réelle (ce que la personne fait effectivement, y compris ce qui n''est pas prescrit : rattraper, improviser, gérer les imprévus), et la charge ressentie (comment elle le vit). Un manager qui ne regarde que la charge prescrite ne voit pas la surcharge ; elle est dans l''écart entre les trois.
+
+Réguler la charge, concrètement :
+
+- Mesurer : le tableau de bord du module 2 avec un indicateur de garde-fou (heures supplémentaires, retards, reprises) ; le brief quotidien où l''on dit ce qui déborde.
+- Prioriser : la matrice d''Eisenhower ; quand tout est urgent, c''est au manager de dire ce qui attend, pas à la personne de tout faire.
+- Dire non ou « oui à ces conditions » à la hiérarchie quand la charge n''est pas tenable (module 3, podcast 3.8).
+- Répartir équitablement : les mêmes ne doivent pas absorber tous les imprévus parce qu''ils ne disent jamais non.
+- Vérifier régulièrement, en entretien de suivi : « Comment tu vis ta charge en ce moment ? » Pour les salariés en forfait-jours, cet entretien sur la charge de travail est une obligation légale annuelle (art. L3121-65).
+
+Le cadre légal de la durée du travail est le garde-fou minimal, et le manager le connaît : 10 heures par jour maximum (L3121-18), 48 heures par semaine et 44 heures en moyenne sur douze semaines (L3121-20 et L3121-22), 11 heures de repos quotidien (L3131-1), 35 heures de repos hebdomadaire consécutives (L3132-2), 20 minutes de pause dès 6 heures de travail (L3121-16). Des dérogations existent par accord ; le manager se renseigne auprès des RH avant d''en supposer. Un manager qui fait dépasser ces limites engage la responsabilité de l''employeur, et la sienne.
+
+## La QVCT : de quoi parle-t-on
+
+L''accord national interprofessionnel du 9 décembre 2020 sur la santé au travail, transposé par la loi du 2 août 2021, a remplacé la « qualité de vie au travail » (QVT) par la « qualité de vie et des conditions de travail » (QVCT). Le changement de mot n''est pas anodin : il recentre le sujet sur le travail lui-même (son organisation, ses conditions, son contenu) plutôt que sur les à-côtés (le baby-foot, les paniers de fruits). La QVCT est un thème de négociation obligatoire dans les entreprises où existe une représentation syndicale (L2242-17).
+
+L''ANACT (Agence nationale pour l''amélioration des conditions de travail) résume la QVCT en quelques champs sur lesquels le manager de proximité a prise : le contenu du travail (intérêt, autonomie, variété), l''organisation (charge, rythme, clarté des rôles), les relations (soutien du manager et des collègues, reconnaissance), les possibilités de progression, l''articulation entre vie professionnelle et vie personnelle, et la participation aux décisions qui concernent le travail.
+
+Ce dernier point est central : la QVCT se construit avec les salariés, pas pour eux. Les « espaces de discussion sur le travail », où l''équipe parle de ce qui la gêne et de ce qui pourrait changer, sont l''outil que l''ANACT recommande. La réunion mensuelle du module 3, avec un point « qu''est-ce qui nous complique le travail », en est une forme simple.
+
+## Le télétravail et l''hybride
+
+Le télétravail est encadré par les articles L1222-9 à L1222-11 du Code du travail et par l''ANI du 26 novembre 2020. Ce que le manager doit savoir :
+
+- Il est mis en place par accord collectif ou, à défaut, par une charte de l''employeur, ou, à défaut, par simple accord entre le salarié et l''employeur, par tout moyen. Il est volontaire des deux côtés, sauf circonstances exceptionnelles (épidémie, force majeure) où l''employeur peut l''imposer.
+- Si un poste est éligible selon l''accord ou la charte, un refus opposé au salarié qui le demande doit être motivé.
+- Le télétravailleur a les mêmes droits que les autres : mêmes règles de durée du travail, mêmes possibilités de formation et d''évolution, même accès à l''information.
+- L''employeur doit organiser chaque année un entretien sur les conditions d''activité et la charge de travail du télétravailleur, et fixer les plages horaires pendant lesquelles il peut être contacté.
+- L''accident survenu sur le lieu et pendant les heures de télétravail est présumé accident du travail.
+
+Pour le manager, le télétravail change la manière de manager, pas les principes : on manage sur les résultats et la confiance, pas sur la présence ; on adapte les rituels (module 6, leçon 6.6) ; on veille à l''équité entre ceux qui sont sur site et ceux qui sont à distance (accès à l''information, aux missions intéressantes, à la reconnaissance) ; on repère l''isolement.
+
+Dans un atelier, un commerce, un service de soins, le télétravail ne concerne qu''une partie des postes (l''administratif, parfois l''encadrement). Le manager veille alors à ce que cela ne crée pas deux catégories de salariés : ceux qui peuvent et ceux qui ne peuvent pas. On l''explique (le poste, pas la personne), et on cherche d''autres souplesses pour les seconds (horaires, jours).
+
+## Le droit à la déconnexion
+
+Depuis 2017, le droit à la déconnexion est un thème de négociation obligatoire (L2242-17), et à défaut d''accord, l''employeur établit une charte. L''objet : garantir le respect des temps de repos et de congé et de la vie personnelle. Le manager de proximité est le premier acteur de ce droit, par l''exemple : un manager qui envoie des messages à 22 h ou le dimanche, même « sans attendre de réponse », crée une pression que l''équipe ressent. Les règles simples : pas de message professionnel hors des horaires sauf urgence réelle (et définir ce qu''est une urgence), envoi différé si l''on travaille tard, pas de reproche à qui ne répond pas le soir, et des congés qui sont des congés.
+
+## L''équité de traitement
+
+Un cadre de travail équitable, ce n''est pas un cadre identique pour tous : c''est un cadre où les différences de traitement ont une raison objective et connue. Le Code du travail interdit toute discrimination fondée sur une liste de critères (origine, sexe, âge, situation de famille, état de santé, handicap, opinions, activités syndicales, etc. ; art. L1132-1), à l''embauche comme dans la carrière, la rémunération, la formation, l''affectation. Le principe « à travail égal, salaire égal » s''applique.
+
+Le manager de proximité est exposé à la discrimination indirecte, celle qu''on ne voit pas : donner les missions intéressantes toujours aux mêmes, ne pas proposer de formation à celle qui est à temps partiel, écarter un senior d''un projet « parce qu''il va partir », ne pas confier de responsabilités à celui qui revient d''arrêt. Chacune de ces décisions, prise sans y penser, peut constituer une discrimination.
+
+Trois réflexes : se demander, à chaque attribution (mission, formation, horaire, prime), sur quel critère objectif elle repose ; tenir le compte de qui a eu quoi sur l''année ; expliquer les décisions, parce qu''une décision non expliquée est vécue comme injuste même quand elle ne l''est pas. La justice perçue (chacun comprend pourquoi) compte autant que la justice réelle.
+
+## Le cas Garnier
+
+Karim constate que Thierry et Nadia font l''essentiel des heures supplémentaires, parce qu''ils ne refusent jamais, et que Marc n''en fait aucune, parce qu''il a une contrainte de garde le mercredi et qu''on a cessé de lui demander. Il remet à plat : les heures supplémentaires sont proposées à tous, par roulement, en tenant compte des contraintes déclarées ; l''indicateur « heures sup par personne » entre dans le tableau de bord ; et il en parle à Michel pour que le volume global baisse, ce qui passe par le circuit des pièces qu''Amine a signalé. Sophie, seule à un poste administratif, demande un jour de télétravail : l''entreprise n''a ni accord ni charte ; Karim propose à Michel un accord écrit simple avec Sophie (jour fixe, plages joignables, matériel), et explique à l''atelier que c''est le poste qui le permet, pas la personne.
+
+## À retenir
+
+- La charge se régule : mesurer (garde-fous), prioriser, dire non vers le haut, répartir, vérifier en entretien ; connaître les limites légales de durée du travail et de repos.
+- La QVCT (ANI 2020, loi 2021) porte sur le travail lui-même et se construit avec les salariés : espaces de discussion sur le travail.
+- Télétravail (L1222-9 à 11) : volontaire, par accord, charte ou accord individuel ; mêmes droits ; entretien annuel sur la charge ; manager sur les résultats et veiller à l''équité.
+- Droit à la déconnexion : le manager donne l''exemple.
+- Équité : des différences justifiées par un critère objectif, connues et expliquées ; vigilance sur la discrimination indirecte (L1132-1).
+
+## Sources
+
+- Code du travail : durée du travail et repos (L3121-16, L3121-18, L3121-20, L3121-22, L3131-1, L3132-2, L3121-65), télétravail (L1222-9 à L1222-11), négociation QVCT et déconnexion (L2242-17), non-discrimination (L1132-1).
+- ANI du 9 décembre 2020 sur la santé au travail ; loi n° 2021-1018 du 2 août 2021 ; ANI du 26 novembre 2020 sur le télétravail.
+- ANACT, « La QVCT : de quoi parle-t-on ? » et « Les espaces de discussion sur le travail », anact.fr.
+- Défenseur des droits, « Discrimination au travail », defenseurdesdroits.fr.
+- France Compétences, référentiel RS7377, compétence 5.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 6;
+  n := n + 1;
+
+  -- 4.7-prevenir-les-risques-psychosociaux.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Les risques psychosociaux (RPS) sont les risques pour la santé mentale, physique et sociale engendrés par les conditions d''emploi et les facteurs organisationnels et relationnels du travail. Stress chronique, épuisement, violences internes (harcèlement, conflits exacerbés) et externes (agressions de clients ou d''usagers) en sont les formes les plus connues. Ils ne relèvent pas de la fragilité des personnes : ils relèvent de l''organisation du travail. C''est pour cela que le manager de proximité, qui organise le travail, est en première ligne pour les prévenir, et aussi pour les produire quand il s''y prend mal.
+
+## Ce que dit la loi
+
+L''employeur a une obligation de sécurité : il doit prendre les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale des travailleurs (art. L4121-1). La santé mentale figure dans le texte depuis 2002. Les RPS doivent être évalués dans le document unique d''évaluation des risques professionnels (DUERP, art. L4121-3-1), obligatoire dans toute entreprise dès le premier salarié, et faire l''objet d''actions de prévention selon les principes généraux (L4121-2) : éviter les risques, les combattre à la source, adapter le travail à l''homme, planifier la prévention.
+
+Cette obligation pèse sur l''employeur, pas sur le manager. Mais le manager est celui par qui l''employeur agit : ses décisions d''organisation sont des mesures de prévention, ou des facteurs de risque. Et il a, comme tout salarié, l''obligation de prendre soin de sa santé et de celle des autres (L4122-1).
+
+## Les six familles de facteurs de risque
+
+Le rapport du collège d''expertise présidé par Michel Gollac (2011), référence en France, classe les facteurs de RPS en six familles. Elles sont utiles au manager parce que chacune renvoie à une décision d''organisation qu''il prend, ou pas.
+
+| Famille | Ce dont il s''agit | Ce que le manager peut faire |
+|---|---|---|
+| Intensité et temps de travail | Charge, rythme, délais, interruptions, horaires, heures supplémentaires | Réguler la charge, prioriser, protéger les repos (leçon 4.6) |
+| Exigences émotionnelles | Contact avec le public, clients difficiles, devoir cacher ses émotions, contact avec la souffrance | Ne pas laisser seul face au client agressif, débriefer, former |
+| Autonomie insuffisante | Pas de marge sur la manière de faire, pas de participation aux décisions, compétences sous-utilisées | Déléguer, consulter, laisser choisir la méthode |
+| Rapports sociaux dégradés | Manque de soutien du manager ou des collègues, manque de reconnaissance, injustice, violence, harcèlement | Écoute, feedback, reconnaissance, équité, limites (modules 3 et 4) |
+| Conflits de valeurs | Devoir faire un travail qu''on désapprouve, travail « bâclé » faute de moyens, sentiment d''inutilité | Donner les moyens de faire du travail de qualité, expliquer le sens |
+| Insécurité de la situation de travail | Peur de perdre son emploi, changements non maîtrisés, incertitude sur l''avenir | Informer, accompagner le changement (module 6) |
+
+Un manager qui relit ce tableau y retrouve tout le contenu de cette formation. Ce n''est pas un hasard : bien manager, c''est prévenir les RPS.
+
+## Les signaux d''alerte
+
+Le manager n''est pas un soignant et ne pose pas de diagnostic. Mais il est le mieux placé pour voir les changements. Les signaux à repérer sont des écarts par rapport au comportement habituel de la personne :
+
+- Au niveau individuel : irritabilité, repli, fatigue visible, erreurs inhabituelles, retards ou absences courtes répétées, présence excessive (arrive plus tôt, part plus tard, ne prend plus de pause), propos de découragement (« je n''y arrive plus », « à quoi bon »), pleurs, plaintes physiques (dos, sommeil, maux de tête).
+- Au niveau collectif : absentéisme en hausse, turnover, tensions et conflits, baisse de qualité, silence en réunion, demandes de mutation, accidents.
+
+Un signal isolé ne veut rien dire. Un faisceau de signaux, ou un changement net chez quelqu''un, demande d''agir. Le tableau de bord (absentéisme, heures supplémentaires, reprises) et l''entretien de suivi (temps « ressenti et besoins ») sont les outils de détection.
+
+## Ce qui relève du manager, de l''employeur, du médecin du travail
+
+Cette distinction est essentielle : le manager qui essaie de tout porter seul se met en danger, et met la personne en danger.
+
+Le manager : il organise le travail pour réduire les facteurs de risque (le tableau ci-dessus) ; il repère les signaux ; il écoute la personne, sans creuser dans sa vie privée ni interpréter (« tu fais un burn-out » n''est pas une phrase de manager) ; il agit sur ce qui dépend de lui (charge, horaires, soutien, conflit) ; il oriente vers les bons interlocuteurs ; il alerte sa hiérarchie et les RH quand la situation le dépasse ; il trace ce qu''il a fait.
+
+L''employeur (direction, RH) : il porte l''obligation de sécurité, décide des mesures collectives (effectifs, organisation, moyens), traite les situations graves (harcèlement, violence), met en place le DUERP et le plan de prévention, et répond aux alertes du manager.
+
+Le médecin du travail et le service de prévention et de santé au travail : ils sont les seuls compétents pour évaluer la santé d''une personne et proposer des aménagements ou un arrêt. Tout salarié peut demander une visite au médecin du travail à tout moment, sans passer par l''employeur (art. L4624-1) ; le manager peut le lui rappeler, et l''employeur peut aussi demander une visite. Le médecin du travail est tenu au secret ; il ne dira pas au manager ce qu''a la personne, mais il peut prescrire des aménagements de poste.
+
+Les autres relais : le CSE et sa commission santé, sécurité et conditions de travail dans les entreprises qui en ont ; les représentants du personnel ; l''assistante sociale du travail quand elle existe ; le référent harcèlement ; les services d''écoute mis en place par certaines entreprises ou branches ; et, hors de l''entreprise, le médecin traitant de la personne.
+
+## Que faire face à un salarié en difficulté
+
+1. Le voir, seul, vite : « J''ai remarqué que tu étais moins présent aux pauses et que tu es resté tard trois soirs cette semaine. Je voulais savoir comment tu allais. » Des faits, pas d''interprétation.
+2. Écouter (module 3), sans forcer : la personne dit ce qu''elle veut dire. On ne pose pas de question sur sa santé ni sur sa vie privée ; on accueille ce qui vient.
+3. Agir sur le travail : qu''est-ce qui, dans le travail, pèse ? Charge, conflit, horaires, manque de moyens ? C''est là que le manager a prise, et c''est souvent là que se trouve une partie de la cause.
+4. Orienter : rappeler l''existence du médecin du travail, de la visite à la demande, des relais internes. Proposer, ne pas imposer, sauf danger.
+5. Alerter : informer sa hiérarchie ou les RH de la situation (sans détails de santé), pour que les mesures qui dépassent le manager soient prises.
+6. Suivre : un point rapproché, et de la constance. La personne doit voir que quelque chose a changé.
+
+Si la personne exprime des idées de mort ou de mise en danger, on ne reste pas seul : on reste avec elle, on contacte immédiatement le médecin du travail, les secours (15) ou le 3114 (numéro national de prévention du suicide, gratuit, 24 h/24), et on informe l''employeur. Ce n''est pas trahir une confidence ; c''est protéger.
+
+## Le manager lui-même
+
+Le manager de proximité est l''une des populations les plus exposées aux RPS : pris entre la hiérarchie et l''équipe, chargé de faire appliquer ce qu''il ne décide pas, souvent sans formation ni soutien. Les mêmes signaux valent pour lui. Les mêmes relais aussi. Et un manager épuisé manage mal : dire à sa hiérarchie que la charge n''est pas tenable, comme au podcast 3.8, est un acte de management, pas un aveu de faiblesse.
+
+## Le cas Garnier
+
+Thierry, depuis un mois, arrive plus tôt, ne prend plus sa pause, a fait une erreur inhabituelle de commande, et a eu un accrochage sec avec Sophie. Karim le voit un mardi, dans le bureau. Faits, écoute. Thierry finit par dire qu''il a « la tête ailleurs », sans plus ; qu''il en a assez de « faire le contremaître sans le titre » ; et que les cadences depuis la nouvelle organisation le fatiguent. Karim n''interprète pas. Il agit sur le travail : le rôle de référent qualité de Thierry sera formalisé et reconnu (en entretien de parcours avec Michel), le contrôle des finitions est réparti avec Karim les jours chargés, et Karim rappelle que Thierry peut voir le médecin du travail s''il le souhaite, sans passer par personne. Il informe Michel qu''il a une inquiétude sur la charge de Thierry, sans plus. Point dans dix jours. Ce que Thierry a « ailleurs » ne regarde pas Karim, sauf si Thierry choisit de lui en parler.
+
+## À retenir
+
+- Les RPS viennent de l''organisation du travail, pas de la fragilité des personnes ; l''employeur a une obligation de sécurité (L4121-1), le manager en est l''acteur quotidien.
+- Six familles de facteurs (Gollac) : intensité, exigences émotionnelles, autonomie, rapports sociaux, conflits de valeurs, insécurité ; chacune renvoie à une décision du manager.
+- Repérer les changements de comportement, individuels et collectifs, avec le tableau de bord et l''entretien de suivi.
+- Le manager repère, écoute, agit sur le travail, oriente, alerte, suit ; il ne diagnostique pas et ne soigne pas.
+- Le médecin du travail est accessible à tout salarié, à sa demande (L4624-1). En cas de danger immédiat : ne pas rester seul, 15 ou 3114.
+
+## Sources
+
+- Code du travail, art. L4121-1 à L4121-3-1, L4122-1, L4624-1.
+- INRS, *Risques psychosociaux : 9 conseils pour agir au quotidien*, ED 6250, et dossier « Risques psychosociaux », inrs.fr.
+- Michel Gollac, Marceline Bodier (dir.), *Mesurer les facteurs psychosociaux de risque au travail pour les maîtriser*, 2011.
+- ANACT, « Prévenir les risques psychosociaux », anact.fr.
+- Ministère du Travail, « Risques psychosociaux », travail-emploi.gouv.fr ; 3114.fr.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Les risques psychosociaux (RPS) sont les risques pour la santé mentale, physique et sociale engendrés par les conditions d''emploi et les facteurs organisationnels et relationnels du travail. Stress chronique, épuisement, violences internes (harcèlement, conflits exacerbés) et externes (agressions de clients ou d''usagers) en sont les formes les plus connues. Ils ne relèvent pas de la fragilité des personnes : ils relèvent de l''organisation du travail. C''est pour cela que le manager de proximité, qui organise le travail, est en première ligne pour les prévenir, et aussi pour les produire quand il s''y prend mal.
+
+## Ce que dit la loi
+
+L''employeur a une obligation de sécurité : il doit prendre les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale des travailleurs (art. L4121-1). La santé mentale figure dans le texte depuis 2002. Les RPS doivent être évalués dans le document unique d''évaluation des risques professionnels (DUERP, art. L4121-3-1), obligatoire dans toute entreprise dès le premier salarié, et faire l''objet d''actions de prévention selon les principes généraux (L4121-2) : éviter les risques, les combattre à la source, adapter le travail à l''homme, planifier la prévention.
+
+Cette obligation pèse sur l''employeur, pas sur le manager. Mais le manager est celui par qui l''employeur agit : ses décisions d''organisation sont des mesures de prévention, ou des facteurs de risque. Et il a, comme tout salarié, l''obligation de prendre soin de sa santé et de celle des autres (L4122-1).
+
+## Les six familles de facteurs de risque
+
+Le rapport du collège d''expertise présidé par Michel Gollac (2011), référence en France, classe les facteurs de RPS en six familles. Elles sont utiles au manager parce que chacune renvoie à une décision d''organisation qu''il prend, ou pas.
+
+| Famille | Ce dont il s''agit | Ce que le manager peut faire |
+|---|---|---|
+| Intensité et temps de travail | Charge, rythme, délais, interruptions, horaires, heures supplémentaires | Réguler la charge, prioriser, protéger les repos (leçon 4.6) |
+| Exigences émotionnelles | Contact avec le public, clients difficiles, devoir cacher ses émotions, contact avec la souffrance | Ne pas laisser seul face au client agressif, débriefer, former |
+| Autonomie insuffisante | Pas de marge sur la manière de faire, pas de participation aux décisions, compétences sous-utilisées | Déléguer, consulter, laisser choisir la méthode |
+| Rapports sociaux dégradés | Manque de soutien du manager ou des collègues, manque de reconnaissance, injustice, violence, harcèlement | Écoute, feedback, reconnaissance, équité, limites (modules 3 et 4) |
+| Conflits de valeurs | Devoir faire un travail qu''on désapprouve, travail « bâclé » faute de moyens, sentiment d''inutilité | Donner les moyens de faire du travail de qualité, expliquer le sens |
+| Insécurité de la situation de travail | Peur de perdre son emploi, changements non maîtrisés, incertitude sur l''avenir | Informer, accompagner le changement (module 6) |
+
+Un manager qui relit ce tableau y retrouve tout le contenu de cette formation. Ce n''est pas un hasard : bien manager, c''est prévenir les RPS.
+
+## Les signaux d''alerte
+
+Le manager n''est pas un soignant et ne pose pas de diagnostic. Mais il est le mieux placé pour voir les changements. Les signaux à repérer sont des écarts par rapport au comportement habituel de la personne :
+
+- Au niveau individuel : irritabilité, repli, fatigue visible, erreurs inhabituelles, retards ou absences courtes répétées, présence excessive (arrive plus tôt, part plus tard, ne prend plus de pause), propos de découragement (« je n''y arrive plus », « à quoi bon »), pleurs, plaintes physiques (dos, sommeil, maux de tête).
+- Au niveau collectif : absentéisme en hausse, turnover, tensions et conflits, baisse de qualité, silence en réunion, demandes de mutation, accidents.
+
+Un signal isolé ne veut rien dire. Un faisceau de signaux, ou un changement net chez quelqu''un, demande d''agir. Le tableau de bord (absentéisme, heures supplémentaires, reprises) et l''entretien de suivi (temps « ressenti et besoins ») sont les outils de détection.
+
+## Ce qui relève du manager, de l''employeur, du médecin du travail
+
+Cette distinction est essentielle : le manager qui essaie de tout porter seul se met en danger, et met la personne en danger.
+
+Le manager : il organise le travail pour réduire les facteurs de risque (le tableau ci-dessus) ; il repère les signaux ; il écoute la personne, sans creuser dans sa vie privée ni interpréter (« tu fais un burn-out » n''est pas une phrase de manager) ; il agit sur ce qui dépend de lui (charge, horaires, soutien, conflit) ; il oriente vers les bons interlocuteurs ; il alerte sa hiérarchie et les RH quand la situation le dépasse ; il trace ce qu''il a fait.
+
+L''employeur (direction, RH) : il porte l''obligation de sécurité, décide des mesures collectives (effectifs, organisation, moyens), traite les situations graves (harcèlement, violence), met en place le DUERP et le plan de prévention, et répond aux alertes du manager.
+
+Le médecin du travail et le service de prévention et de santé au travail : ils sont les seuls compétents pour évaluer la santé d''une personne et proposer des aménagements ou un arrêt. Tout salarié peut demander une visite au médecin du travail à tout moment, sans passer par l''employeur (art. L4624-1) ; le manager peut le lui rappeler, et l''employeur peut aussi demander une visite. Le médecin du travail est tenu au secret ; il ne dira pas au manager ce qu''a la personne, mais il peut prescrire des aménagements de poste.
+
+Les autres relais : le CSE et sa commission santé, sécurité et conditions de travail dans les entreprises qui en ont ; les représentants du personnel ; l''assistante sociale du travail quand elle existe ; le référent harcèlement ; les services d''écoute mis en place par certaines entreprises ou branches ; et, hors de l''entreprise, le médecin traitant de la personne.
+
+## Que faire face à un salarié en difficulté
+
+1. Le voir, seul, vite : « J''ai remarqué que tu étais moins présent aux pauses et que tu es resté tard trois soirs cette semaine. Je voulais savoir comment tu allais. » Des faits, pas d''interprétation.
+2. Écouter (module 3), sans forcer : la personne dit ce qu''elle veut dire. On ne pose pas de question sur sa santé ni sur sa vie privée ; on accueille ce qui vient.
+3. Agir sur le travail : qu''est-ce qui, dans le travail, pèse ? Charge, conflit, horaires, manque de moyens ? C''est là que le manager a prise, et c''est souvent là que se trouve une partie de la cause.
+4. Orienter : rappeler l''existence du médecin du travail, de la visite à la demande, des relais internes. Proposer, ne pas imposer, sauf danger.
+5. Alerter : informer sa hiérarchie ou les RH de la situation (sans détails de santé), pour que les mesures qui dépassent le manager soient prises.
+6. Suivre : un point rapproché, et de la constance. La personne doit voir que quelque chose a changé.
+
+Si la personne exprime des idées de mort ou de mise en danger, on ne reste pas seul : on reste avec elle, on contacte immédiatement le médecin du travail, les secours (15) ou le 3114 (numéro national de prévention du suicide, gratuit, 24 h/24), et on informe l''employeur. Ce n''est pas trahir une confidence ; c''est protéger.
+
+## Le manager lui-même
+
+Le manager de proximité est l''une des populations les plus exposées aux RPS : pris entre la hiérarchie et l''équipe, chargé de faire appliquer ce qu''il ne décide pas, souvent sans formation ni soutien. Les mêmes signaux valent pour lui. Les mêmes relais aussi. Et un manager épuisé manage mal : dire à sa hiérarchie que la charge n''est pas tenable, comme au podcast 3.8, est un acte de management, pas un aveu de faiblesse.
+
+## Le cas Garnier
+
+Thierry, depuis un mois, arrive plus tôt, ne prend plus sa pause, a fait une erreur inhabituelle de commande, et a eu un accrochage sec avec Sophie. Karim le voit un mardi, dans le bureau. Faits, écoute. Thierry finit par dire qu''il a « la tête ailleurs », sans plus ; qu''il en a assez de « faire le contremaître sans le titre » ; et que les cadences depuis la nouvelle organisation le fatiguent. Karim n''interprète pas. Il agit sur le travail : le rôle de référent qualité de Thierry sera formalisé et reconnu (en entretien de parcours avec Michel), le contrôle des finitions est réparti avec Karim les jours chargés, et Karim rappelle que Thierry peut voir le médecin du travail s''il le souhaite, sans passer par personne. Il informe Michel qu''il a une inquiétude sur la charge de Thierry, sans plus. Point dans dix jours. Ce que Thierry a « ailleurs » ne regarde pas Karim, sauf si Thierry choisit de lui en parler.
+
+## À retenir
+
+- Les RPS viennent de l''organisation du travail, pas de la fragilité des personnes ; l''employeur a une obligation de sécurité (L4121-1), le manager en est l''acteur quotidien.
+- Six familles de facteurs (Gollac) : intensité, exigences émotionnelles, autonomie, rapports sociaux, conflits de valeurs, insécurité ; chacune renvoie à une décision du manager.
+- Repérer les changements de comportement, individuels et collectifs, avec le tableau de bord et l''entretien de suivi.
+- Le manager repère, écoute, agit sur le travail, oriente, alerte, suit ; il ne diagnostique pas et ne soigne pas.
+- Le médecin du travail est accessible à tout salarié, à sa demande (L4624-1). En cas de danger immédiat : ne pas rester seul, 15 ou 3114.
+
+## Sources
+
+- Code du travail, art. L4121-1 à L4121-3-1, L4122-1, L4624-1.
+- INRS, *Risques psychosociaux : 9 conseils pour agir au quotidien*, ED 6250, et dossier « Risques psychosociaux », inrs.fr.
+- Michel Gollac, Marceline Bodier (dir.), *Mesurer les facteurs psychosociaux de risque au travail pour les maîtriser*, 2011.
+- ANACT, « Prévenir les risques psychosociaux », anact.fr.
+- Ministère du Travail, « Risques psychosociaux », travail-emploi.gouv.fr ; 3114.fr.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 7;
+  n := n + 1;
+
+  -- 4.8-podcast-securite-psychologique.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
+
+---
+
+**CLAIRE** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
+
+**HÉLÈNE** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
+
+**CLAIRE** — Pourquoi ?
+
+**HÉLÈNE** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
+
+**CLAIRE** — Une remarque.
+
+**HÉLÈNE** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
+
+**CLAIRE** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
+
+**HÉLÈNE** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
+
+**CLAIRE** — Qu''est-ce que vous avez fait, après le rappel ?
+
+**HÉLÈNE** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
+
+**CLAIRE** — Alors ?
+
+**HÉLÈNE** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
+
+**CLAIRE** — Vous avez commencé par reconnaître votre erreur.
+
+**HÉLÈNE** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
+
+**CLAIRE** — Comment vous l''avez vu changer ?
+
+**HÉLÈNE** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
+
+**CLAIRE** — Et vous avez réagi comment ?
+
+**HÉLÈNE** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
+
+**CLAIRE** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
+
+**HÉLÈNE** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
+
+**CLAIRE** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
+
+**HÉLÈNE** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
+
+**CLAIRE** — Et la différence, l''équipe la comprend ?
+
+**HÉLÈNE** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
+
+**CLAIRE** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
+
+**HÉLÈNE** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
+
+**CLAIRE** — La deuxième ?
+
+**HÉLÈNE** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
+
+**CLAIRE** — Et la troisième ?
+
+**HÉLÈNE** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
+
+**CLAIRE** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
+
+**HÉLÈNE** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
+
+**CLAIRE** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
+
+**HÉLÈNE** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
+
+**CLAIRE** — Est-ce que ça a eu un effet sur les chiffres ?
+
+**HÉLÈNE** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
+
+**CLAIRE** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
+
+**HÉLÈNE** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
+
+**CLAIRE** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
+
+**HÉLÈNE** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
+
+**CLAIRE** — Merci Hélène.
+
+**HÉLÈNE** — Merci à vous.
+
+**CLAIRE** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
+
+---
+
+Sources : Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
+
+---
+
+**CLAIRE** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
+
+**HÉLÈNE** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
+
+**CLAIRE** — Pourquoi ?
+
+**HÉLÈNE** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
+
+**CLAIRE** — Une remarque.
+
+**HÉLÈNE** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
+
+**CLAIRE** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
+
+**HÉLÈNE** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
+
+**CLAIRE** — Qu''est-ce que vous avez fait, après le rappel ?
+
+**HÉLÈNE** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
+
+**CLAIRE** — Alors ?
+
+**HÉLÈNE** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
+
+**CLAIRE** — Vous avez commencé par reconnaître votre erreur.
+
+**HÉLÈNE** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
+
+**CLAIRE** — Comment vous l''avez vu changer ?
+
+**HÉLÈNE** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
+
+**CLAIRE** — Et vous avez réagi comment ?
+
+**HÉLÈNE** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
+
+**CLAIRE** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
+
+**HÉLÈNE** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
+
+**CLAIRE** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
+
+**HÉLÈNE** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
+
+**CLAIRE** — Et la différence, l''équipe la comprend ?
+
+**HÉLÈNE** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
+
+**CLAIRE** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
+
+**HÉLÈNE** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
+
+**CLAIRE** — La deuxième ?
+
+**HÉLÈNE** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
+
+**CLAIRE** — Et la troisième ?
+
+**HÉLÈNE** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
+
+**CLAIRE** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
+
+**HÉLÈNE** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
+
+**CLAIRE** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
+
+**HÉLÈNE** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
+
+**CLAIRE** — Est-ce que ça a eu un effet sur les chiffres ?
+
+**HÉLÈNE** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
+
+**CLAIRE** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
+
+**HÉLÈNE** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
+
+**CLAIRE** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
+
+**HÉLÈNE** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
+
+**CLAIRE** — Merci Hélène.
+
+**HÉLÈNE** — Merci à vous.
+
+**CLAIRE** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
+
+---
+
+Sources : Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 8;
+  n := n + 1;
+
+  -- 4.9-fiche-pdi-checklist-integration.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Trois gabarits à recopier ou à imprimer (PDF à générer, mise en page IDEAFORMA, fond clair). Ils servent au carnet de bord du module (leçon 4.10) et ensuite au quotidien.
+
+---
+
+## GABARIT 1 — Plan de développement individuel (PDI)
+
+Personne : ____________________ Manager : ____________________ Date : ________ Révision prévue le : ________
+
+Construit en entretien (trame GROW), un objectif de développement à la fois, deux au maximum.
+
+| Rubrique | Contenu |
+|---|---|
+| Compétence visée (« être capable de… ») | |
+| Pourquoi (pour la personne, pour l''équipe) | |
+| Niveau actuel (échelle 0-3 de la matrice) et faits qui le montrent | |
+| Niveau visé et échéance | |
+| Comment saurons-nous que c''est acquis (critère observable) | |
+
+Moyens :
+
+| Moyen | Détail (avec qui, sur quoi) | Quand | Fait |
+|---|---|---|---|
+| Mise en situation progressive | | | |
+| Binôme / tutorat | | | |
+| Retour d''expérience | | | |
+| Formation interne | | | |
+| Formation externe (plan de développement des compétences, OPCO, CPF) | | | |
+
+Engagements :
+
+| Ce que la personne fait | Ce que le manager fait | Prochain point |
+|---|---|---|
+| | | |
+
+Freins possibles et comment les lever : ____________________
+
+Signatures (personne, manager) : ____________________
+
+---
+
+## GABARIT 2 — Check-list d''intégration d''un nouvel arrivant
+
+Nouvel arrivant : ____________________ Poste : ________ Date d''arrivée : ________ Parrain : ________ Fin de période d''essai : ________
+
+| Quand | Action | Responsable | Fait |
+|---|---|---|---|
+| Avant l''arrivée | Message de bienvenue du manager (heure, lieu, déroulé, quoi apporter) | Manager | |
+| Avant l''arrivée | Poste de travail, outils, tenue et EPI à la taille, accès, badge, casier | Manager / RH | |
+| Avant l''arrivée | Équipe prévenue (qui, quand, quel poste) ; parrain désigné et d''accord | Manager | |
+| Avant l''arrivée | Programme des deux premières semaines écrit | Manager | |
+| Jour 1 | Accueil par le manager, présentation de l''entreprise, de l''équipe (prénoms et rôles), des lieux | Manager | |
+| Jour 1 | Formation à la sécurité (L4141-2), tracée | Manager / référent sécurité | |
+| Jour 1 | Règles essentielles : horaires, pauses, absences, qui contacter | Manager | |
+| Jour 1 | Déjeuner avec le parrain ou l''équipe | Parrain | |
+| Jour 1 | Cinq minutes en fin de journée : « Comment ça s''est passé ? Qu''est-ce qui manque ? » | Manager | |
+| Semaine 1 | Observation, puis faire avec, puis faire sous contrôle | Parrain | |
+| Semaine 1 | Point quotidien court | Parrain / manager | |
+| Semaine 1 | Entretien de fin de semaine (30 min) : compris / pas compris / étonnements / suggestions | Manager | |
+| Semaine 2 à 4 | Autonomie par paliers ; PDI si nécessaire ; retours fréquents | Manager | |
+| Semaine 2 à 4 | Intégration sociale : pauses, tour de table en réunion | Manager / parrain | |
+| Mois 1 | Entretien formel (30 min) : acquis, reste à apprendre, ressenti, relation à l''équipe ; point clair sur la période d''essai | Manager | |
+| Avant la fin de l''essai | Décision motivée, sans surprise ; si difficultés : attentes précises et délai donnés avant | Manager / employeur | |
+| Mois 3 à 12 | Entretien de parcours professionnel dans la première année (L6315-1) | Manager / RH | |
+
+Cas particuliers : apprenti (lien CFA, maître d''apprentissage) ; intérimaire ou CDD court (sécurité, règles, parrain, point jour 1) ; aménagement de poste (mis en place avant l''arrivée, sans divulguer le motif) ; retour après longue absence (ce qui a changé, montée en charge, entretien de parcours).
+
+---
+
+## GABARIT 3 — Diagnostic de sécurité psychologique de mon équipe
+
+À remplir seul et honnêtement, puis, si possible, à proposer à l''équipe de façon anonyme (les sept premières questions sont inspirées de l''échelle d''Edmondson). Réponses de 1 (pas du tout d''accord) à 5 (tout à fait d''accord).
+
+| Question | Ma réponse (1-5) | Réponse moyenne de l''équipe (si sondage) |
+|---|---|---|
+| Dans cette équipe, si quelqu''un fait une erreur, on ne la lui reproche pas de façon humiliante | | |
+| Les membres de l''équipe peuvent soulever des problèmes et des sujets difficiles | | |
+| Personne dans l''équipe n''est rejeté parce qu''il est différent | | |
+| On peut prendre un risque (proposer, essayer) sans crainte dans cette équipe | | |
+| Il est facile de demander de l''aide aux autres membres de l''équipe | | |
+| Personne ne cherche délibérément à nuire aux efforts des autres | | |
+| Les compétences et talents de chacun sont valorisés et utilisés | | |
+| Les questions sont posées en réunion, pas seulement après en aparté | | |
+| Les erreurs sont signalées par ceux qui les font, pas découvertes par le client ou le chef | | |
+| Les désaccords s''expriment ouvertement | | |
+
+Mes cinq comportements (leçon 4.2), à noter de 1 à 5 :
+
+| Comportement | Note | Un exemple récent | Ce que je change |
+|---|---|---|---|
+| Je présente le travail comme un apprentissage et je distingue erreur d''apprentissage, d''inattention et faute | | | |
+| J''admets mes propres erreurs devant l''équipe | | | |
+| Je pose des questions et j''attends les réponses | | | |
+| Je réagis de façon productive quand quelqu''un signale, propose ou conteste | | | |
+| Je pose des limites (moqueries, mépris, coupures de parole) et je les tiens | | | |
+
+---
+
+## Rappels d''usage
+
+- Un PDI se relit à chaque entretien de suivi ; un PDI oublié dans un tiroir est pire que pas de PDI.
+- La check-list d''intégration se prépare la semaine précédant l''arrivée, pas le matin même.
+- Le diagnostic de sécurité psychologique se refait tous les six mois ; on regarde la tendance, pas la note.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Trois gabarits à recopier ou à imprimer (PDF à générer, mise en page IDEAFORMA, fond clair). Ils servent au carnet de bord du module (leçon 4.10) et ensuite au quotidien.
+
+---
+
+## GABARIT 1 — Plan de développement individuel (PDI)
+
+Personne : ____________________ Manager : ____________________ Date : ________ Révision prévue le : ________
+
+Construit en entretien (trame GROW), un objectif de développement à la fois, deux au maximum.
+
+| Rubrique | Contenu |
+|---|---|
+| Compétence visée (« être capable de… ») | |
+| Pourquoi (pour la personne, pour l''équipe) | |
+| Niveau actuel (échelle 0-3 de la matrice) et faits qui le montrent | |
+| Niveau visé et échéance | |
+| Comment saurons-nous que c''est acquis (critère observable) | |
+
+Moyens :
+
+| Moyen | Détail (avec qui, sur quoi) | Quand | Fait |
+|---|---|---|---|
+| Mise en situation progressive | | | |
+| Binôme / tutorat | | | |
+| Retour d''expérience | | | |
+| Formation interne | | | |
+| Formation externe (plan de développement des compétences, OPCO, CPF) | | | |
+
+Engagements :
+
+| Ce que la personne fait | Ce que le manager fait | Prochain point |
+|---|---|---|
+| | | |
+
+Freins possibles et comment les lever : ____________________
+
+Signatures (personne, manager) : ____________________
+
+---
+
+## GABARIT 2 — Check-list d''intégration d''un nouvel arrivant
+
+Nouvel arrivant : ____________________ Poste : ________ Date d''arrivée : ________ Parrain : ________ Fin de période d''essai : ________
+
+| Quand | Action | Responsable | Fait |
+|---|---|---|---|
+| Avant l''arrivée | Message de bienvenue du manager (heure, lieu, déroulé, quoi apporter) | Manager | |
+| Avant l''arrivée | Poste de travail, outils, tenue et EPI à la taille, accès, badge, casier | Manager / RH | |
+| Avant l''arrivée | Équipe prévenue (qui, quand, quel poste) ; parrain désigné et d''accord | Manager | |
+| Avant l''arrivée | Programme des deux premières semaines écrit | Manager | |
+| Jour 1 | Accueil par le manager, présentation de l''entreprise, de l''équipe (prénoms et rôles), des lieux | Manager | |
+| Jour 1 | Formation à la sécurité (L4141-2), tracée | Manager / référent sécurité | |
+| Jour 1 | Règles essentielles : horaires, pauses, absences, qui contacter | Manager | |
+| Jour 1 | Déjeuner avec le parrain ou l''équipe | Parrain | |
+| Jour 1 | Cinq minutes en fin de journée : « Comment ça s''est passé ? Qu''est-ce qui manque ? » | Manager | |
+| Semaine 1 | Observation, puis faire avec, puis faire sous contrôle | Parrain | |
+| Semaine 1 | Point quotidien court | Parrain / manager | |
+| Semaine 1 | Entretien de fin de semaine (30 min) : compris / pas compris / étonnements / suggestions | Manager | |
+| Semaine 2 à 4 | Autonomie par paliers ; PDI si nécessaire ; retours fréquents | Manager | |
+| Semaine 2 à 4 | Intégration sociale : pauses, tour de table en réunion | Manager / parrain | |
+| Mois 1 | Entretien formel (30 min) : acquis, reste à apprendre, ressenti, relation à l''équipe ; point clair sur la période d''essai | Manager | |
+| Avant la fin de l''essai | Décision motivée, sans surprise ; si difficultés : attentes précises et délai donnés avant | Manager / employeur | |
+| Mois 3 à 12 | Entretien de parcours professionnel dans la première année (L6315-1) | Manager / RH | |
+
+Cas particuliers : apprenti (lien CFA, maître d''apprentissage) ; intérimaire ou CDD court (sécurité, règles, parrain, point jour 1) ; aménagement de poste (mis en place avant l''arrivée, sans divulguer le motif) ; retour après longue absence (ce qui a changé, montée en charge, entretien de parcours).
+
+---
+
+## GABARIT 3 — Diagnostic de sécurité psychologique de mon équipe
+
+À remplir seul et honnêtement, puis, si possible, à proposer à l''équipe de façon anonyme (les sept premières questions sont inspirées de l''échelle d''Edmondson). Réponses de 1 (pas du tout d''accord) à 5 (tout à fait d''accord).
+
+| Question | Ma réponse (1-5) | Réponse moyenne de l''équipe (si sondage) |
+|---|---|---|
+| Dans cette équipe, si quelqu''un fait une erreur, on ne la lui reproche pas de façon humiliante | | |
+| Les membres de l''équipe peuvent soulever des problèmes et des sujets difficiles | | |
+| Personne dans l''équipe n''est rejeté parce qu''il est différent | | |
+| On peut prendre un risque (proposer, essayer) sans crainte dans cette équipe | | |
+| Il est facile de demander de l''aide aux autres membres de l''équipe | | |
+| Personne ne cherche délibérément à nuire aux efforts des autres | | |
+| Les compétences et talents de chacun sont valorisés et utilisés | | |
+| Les questions sont posées en réunion, pas seulement après en aparté | | |
+| Les erreurs sont signalées par ceux qui les font, pas découvertes par le client ou le chef | | |
+| Les désaccords s''expriment ouvertement | | |
+
+Mes cinq comportements (leçon 4.2), à noter de 1 à 5 :
+
+| Comportement | Note | Un exemple récent | Ce que je change |
+|---|---|---|---|
+| Je présente le travail comme un apprentissage et je distingue erreur d''apprentissage, d''inattention et faute | | | |
+| J''admets mes propres erreurs devant l''équipe | | | |
+| Je pose des questions et j''attends les réponses | | | |
+| Je réagis de façon productive quand quelqu''un signale, propose ou conteste | | | |
+| Je pose des limites (moqueries, mépris, coupures de parole) et je les tiens | | | |
+
+---
+
+## Rappels d''usage
+
+- Un PDI se relit à chaque entretien de suivi ; un PDI oublié dans un tiroir est pire que pas de PDI.
+- La check-list d''intégration se prépare la semaine précédant l''arrivée, pas le matin même.
+- Le diagnostic de sécurité psychologique se refait tous les six mois ; on regarde la tendance, pas la note.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 9;
+  n := n + 1;
+
+  -- 5.1-video-conflit.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+
+---
+
+[Plan : avatar, fond clair. Titre : « Module 5 — Gérer les tensions et les conflits »]
+
+Bienvenue dans le module 5. Nous allons parler de ce que la plupart des managers redoutent le plus : les tensions et les conflits dans l''équipe. Deux personnes qui ne se parlent plus. Un salarié qui conteste chaque consigne. Une équipe coupée en deux clans. Un client qui s''en prend à un salarié.
+
+Commençons par une idée qui va peut-être vous surprendre : le conflit n''est pas le problème. Le problème, c''est ce qu''on en fait.
+
+[Titre : « Conflit de tâche, conflit de relation »]
+
+Il y a deux sortes de conflits, et il est essentiel de les distinguer, parce qu''ils ne se traitent pas de la même façon.
+
+[Schéma : deux colonnes. « Conflit de tâche » : désaccord sur le travail, la méthode, la priorité, la décision. « Conflit de relation » : attaque de la personne, ressentiment, mépris, rivalité.]
+
+Le conflit de tâche, c''est un désaccord sur le travail. Sur la méthode, sur la priorité, sur la décision à prendre. Thierry pense qu''il faut redresser avant de commander la pièce ; Karim pense l''inverse. C''est un conflit de tâche. Et les recherches, notamment celles de Karen Jehn dans les années 1990, montrent qu''un conflit de tâche, s''il reste sur le terrain du travail, est utile. Il fait émerger les désaccords, il évite les décisions prises sans examen, il améliore les solutions. Une équipe sans aucun conflit de tâche est une équipe où l''on ne dit plus rien. Vous avez vu au module 4 ce que cela produit.
+
+Le conflit de relation, c''est autre chose. Ce n''est plus la méthode qui est en cause, c''est la personne. « De toute façon, avec lui, on ne peut pas discuter. » « Elle fait exprès. » Ressentiment, mépris, rivalité, clans. Le conflit de relation est toujours coûteux : il consomme de l''énergie, il détériore la communication, il fait baisser la qualité du travail et il chasse les gens.
+
+Le drame, c''est que le premier se transforme en second si on ne s''en occupe pas. Un désaccord de méthode non traité devient, en quelques semaines, une affaire de personnes. Le rôle du manager est de garder les conflits sur le terrain de la tâche, et de traiter vite ceux qui glissent vers la relation.
+
+[Titre : « L''escalade : les neuf marches de Glasl »]
+
+Friedrich Glasl, chercheur autrichien spécialiste des conflits, a décrit en 1980 comment un conflit s''aggrave. Il a identifié neuf niveaux, qu''on regroupe en trois phases.
+
+[Schéma : un escalier qui descend, neuf marches, trois paliers de couleur.]
+
+Première phase, niveaux 1 à 3 : on peut encore se parler. Les positions se durcissent, les débats deviennent des polémiques, puis on cesse de discuter et on met l''autre devant le fait accompli. Mais chacun pense encore qu''une solution où les deux y gagnent est possible. C''est ici que le manager doit intervenir. C''est ici que c''est facile.
+
+Deuxième phase, niveaux 4 à 6 : on ne cherche plus à résoudre, on cherche à gagner. On recrute des alliés, on attaque la réputation de l''autre, on lui fait perdre la face, on menace. Chacun pense : « l''un de nous deux doit perdre. » Le manager seul n''y suffit plus ; il faut une méthode formelle, souvent un tiers.
+
+Troisième phase, niveaux 7 à 9 : on cherche à nuire, même à ses propres dépens. Sabotage, destruction, « ensemble dans l''abîme ». À ce stade, ce n''est plus de la gestion de conflit ; c''est une procédure disciplinaire, une séparation, parfois un dossier juridique.
+
+Ce que Glasl nous apprend : un conflit ne reste jamais au même niveau. Il descend, marche par marche, tant que personne ne l''arrête. Et plus on attend, plus il est coûteux de remonter.
+
+[Titre : « Le coût de l''évitement »]
+
+Pourquoi les managers attendent-ils ? Par peur d''aggraver, par manque de temps, par espoir que ça passe, par crainte de devoir trancher. L''évitement est la réponse la plus fréquente au conflit, et la plus chère.
+
+Un conflit évité ne disparaît pas. Il s''installe. Il coûte du temps de travail perdu en discussions de couloir, en énergie, en absences. Il coûte de la qualité : deux personnes qui ne se parlent plus ne se transmettent plus l''information, et l''erreur arrive. Il coûte des gens : celui qui se sent seul face à l''autre finit par partir, et c''est rarement le moins bon. Et il coûte l''autorité du manager : une équipe qui voit un conflit durer sans que le chef intervienne conclut que le chef ne protège personne.
+
+[Texte à l''écran : « Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne. »]
+
+[Titre : « Ce que ce module vous apprend »]
+
+Ce module vous donne d''abord de quoi comprendre ce qui se joue dans un conflit : ses sources, le piège du triangle dramatique, vos propres biais. Puis de quoi prévenir : un cadre, des règles du jeu, et l''attention aux signaux faibles. Puis une méthode pour résoudre, en cinq étapes, avec la communication non violente et le recours à la médiation. Vous verrez une mise en situation complète en vidéo. Et enfin, les situations difficiles : recadrer, sanctionner, alerter, avec ce que le manager fait et ne fait pas, et ce que dit la loi.
+
+[Plan : reprise du cas]
+
+À l''atelier Garnier, deux tensions couvent. Sophie et Marc ne se parlent plus depuis l''affaire du planning de la Clio : Marc estime que Sophie « balance les urgences sans prévenir », Sophie estime que Marc « fait la tête au lieu de bosser ». Et Thierry, qui a mal vécu l''arrivée d''Amine, laisse entendre à Julien que « le nouveau ne sait pas ce que c''est, un vrai atelier ». Deux conflits, niveau 2 ou 3. Karim a quelques semaines pour agir avant qu''ils ne descendent.
+
+Le conflit n''est pas le problème. L''attente, oui.
+
+À tout de suite pour comprendre ce qui se joue.
+
+[Fondu, logo]
+
+---
+
+Sources : Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
+
+---
+
+[Plan : avatar, fond clair. Titre : « Module 5 — Gérer les tensions et les conflits »]
+
+Bienvenue dans le module 5. Nous allons parler de ce que la plupart des managers redoutent le plus : les tensions et les conflits dans l''équipe. Deux personnes qui ne se parlent plus. Un salarié qui conteste chaque consigne. Une équipe coupée en deux clans. Un client qui s''en prend à un salarié.
+
+Commençons par une idée qui va peut-être vous surprendre : le conflit n''est pas le problème. Le problème, c''est ce qu''on en fait.
+
+[Titre : « Conflit de tâche, conflit de relation »]
+
+Il y a deux sortes de conflits, et il est essentiel de les distinguer, parce qu''ils ne se traitent pas de la même façon.
+
+[Schéma : deux colonnes. « Conflit de tâche » : désaccord sur le travail, la méthode, la priorité, la décision. « Conflit de relation » : attaque de la personne, ressentiment, mépris, rivalité.]
+
+Le conflit de tâche, c''est un désaccord sur le travail. Sur la méthode, sur la priorité, sur la décision à prendre. Thierry pense qu''il faut redresser avant de commander la pièce ; Karim pense l''inverse. C''est un conflit de tâche. Et les recherches, notamment celles de Karen Jehn dans les années 1990, montrent qu''un conflit de tâche, s''il reste sur le terrain du travail, est utile. Il fait émerger les désaccords, il évite les décisions prises sans examen, il améliore les solutions. Une équipe sans aucun conflit de tâche est une équipe où l''on ne dit plus rien. Vous avez vu au module 4 ce que cela produit.
+
+Le conflit de relation, c''est autre chose. Ce n''est plus la méthode qui est en cause, c''est la personne. « De toute façon, avec lui, on ne peut pas discuter. » « Elle fait exprès. » Ressentiment, mépris, rivalité, clans. Le conflit de relation est toujours coûteux : il consomme de l''énergie, il détériore la communication, il fait baisser la qualité du travail et il chasse les gens.
+
+Le drame, c''est que le premier se transforme en second si on ne s''en occupe pas. Un désaccord de méthode non traité devient, en quelques semaines, une affaire de personnes. Le rôle du manager est de garder les conflits sur le terrain de la tâche, et de traiter vite ceux qui glissent vers la relation.
+
+[Titre : « L''escalade : les neuf marches de Glasl »]
+
+Friedrich Glasl, chercheur autrichien spécialiste des conflits, a décrit en 1980 comment un conflit s''aggrave. Il a identifié neuf niveaux, qu''on regroupe en trois phases.
+
+[Schéma : un escalier qui descend, neuf marches, trois paliers de couleur.]
+
+Première phase, niveaux 1 à 3 : on peut encore se parler. Les positions se durcissent, les débats deviennent des polémiques, puis on cesse de discuter et on met l''autre devant le fait accompli. Mais chacun pense encore qu''une solution où les deux y gagnent est possible. C''est ici que le manager doit intervenir. C''est ici que c''est facile.
+
+Deuxième phase, niveaux 4 à 6 : on ne cherche plus à résoudre, on cherche à gagner. On recrute des alliés, on attaque la réputation de l''autre, on lui fait perdre la face, on menace. Chacun pense : « l''un de nous deux doit perdre. » Le manager seul n''y suffit plus ; il faut une méthode formelle, souvent un tiers.
+
+Troisième phase, niveaux 7 à 9 : on cherche à nuire, même à ses propres dépens. Sabotage, destruction, « ensemble dans l''abîme ». À ce stade, ce n''est plus de la gestion de conflit ; c''est une procédure disciplinaire, une séparation, parfois un dossier juridique.
+
+Ce que Glasl nous apprend : un conflit ne reste jamais au même niveau. Il descend, marche par marche, tant que personne ne l''arrête. Et plus on attend, plus il est coûteux de remonter.
+
+[Titre : « Le coût de l''évitement »]
+
+Pourquoi les managers attendent-ils ? Par peur d''aggraver, par manque de temps, par espoir que ça passe, par crainte de devoir trancher. L''évitement est la réponse la plus fréquente au conflit, et la plus chère.
+
+Un conflit évité ne disparaît pas. Il s''installe. Il coûte du temps de travail perdu en discussions de couloir, en énergie, en absences. Il coûte de la qualité : deux personnes qui ne se parlent plus ne se transmettent plus l''information, et l''erreur arrive. Il coûte des gens : celui qui se sent seul face à l''autre finit par partir, et c''est rarement le moins bon. Et il coûte l''autorité du manager : une équipe qui voit un conflit durer sans que le chef intervienne conclut que le chef ne protège personne.
+
+[Texte à l''écran : « Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne. »]
+
+[Titre : « Ce que ce module vous apprend »]
+
+Ce module vous donne d''abord de quoi comprendre ce qui se joue dans un conflit : ses sources, le piège du triangle dramatique, vos propres biais. Puis de quoi prévenir : un cadre, des règles du jeu, et l''attention aux signaux faibles. Puis une méthode pour résoudre, en cinq étapes, avec la communication non violente et le recours à la médiation. Vous verrez une mise en situation complète en vidéo. Et enfin, les situations difficiles : recadrer, sanctionner, alerter, avec ce que le manager fait et ne fait pas, et ce que dit la loi.
+
+[Plan : reprise du cas]
+
+À l''atelier Garnier, deux tensions couvent. Sophie et Marc ne se parlent plus depuis l''affaire du planning de la Clio : Marc estime que Sophie « balance les urgences sans prévenir », Sophie estime que Marc « fait la tête au lieu de bosser ». Et Thierry, qui a mal vécu l''arrivée d''Amine, laisse entendre à Julien que « le nouveau ne sait pas ce que c''est, un vrai atelier ». Deux conflits, niveau 2 ou 3. Karim a quelques semaines pour agir avant qu''ils ne descendent.
+
+Le conflit n''est pas le problème. L''attente, oui.
+
+À tout de suite pour comprendre ce qui se joue.
+
+[Fondu, logo]
+
+---
+
+Sources : Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 1;
+  n := n + 1;
+
+  -- 5.10-quiz.json
+  update public.lecons l set contenu = '{"questions": [{"id": "m5q01", "enonce": "Thierry et Karim ne sont pas d''accord sur l''ordre des opérations (redresser avant ou après la commande de pièce). De quel type de conflit s''agit-il, et que faut-il en penser ?", "options": ["Un conflit de relation, à faire cesser immédiatement", "Un conflit de tâche, utile s''il reste sur le terrain du travail", "Une insubordination à sanctionner", "Un signe que Thierry doit changer d''équipe"], "bonnes": [1], "explication": "Le conflit de tâche (désaccord sur le travail) est utile : il évite les décisions non examinées. Le rôle du manager est de l''empêcher de glisser vers un conflit de relation (attaque des personnes)."}, {"id": "m5q02", "enonce": "Dans l''escalier de Glasl, que caractérise la deuxième phase (niveaux 4 à 6) ?", "options": ["On peut encore se parler et chercher une solution où les deux gagnent", "On ne cherche plus à résoudre mais à gagner : alliés, attaques sur la réputation, menaces", "On cherche à nuire à l''autre même à ses propres dépens", "Le conflit s''est éteint de lui-même"], "bonnes": [1], "explication": "Phase 1 (1-3) : on peut encore se parler, c''est là que le manager intervient facilement. Phase 2 (4-6) : chacun pense que l''un doit perdre ; il faut une méthode formelle, souvent un tiers. Phase 3 (7-9) : destruction, registre disciplinaire ou juridique."}, {"id": "m5q03", "enonce": "Devant une tension entre deux personnes, dans quel ordre le manager cherche-t-il la source ?", "options": ["Les personnes d''abord, puis l''organisation", "Les rôles flous et les ressources (organisation), puis les valeurs et manières de faire, et seulement en dernier les personnes", "Uniquement les personnes : un conflit est toujours une affaire de caractère", "Il ne cherche pas la source, il tranche"], "bonnes": [1], "explication": "La cause est le plus souvent dans l''organisation. Traiter les personnes sans traiter la cause, c''est repartir pour un tour."}, {"id": "m5q04", "enonce": "Marc vient se plaindre de Sophie à Karim. Karim décide d''aller « régler ça » avec Sophie à la place de Marc. Dans le triangle de Karpman, quel rôle Karim vient-il de prendre, et quel est le risque ?", "options": ["Le persécuteur : il va sanctionner Sophie", "Le sauveur : Marc reste victime sans rien avoir à faire, Sophie devient persécutrice, et Karim sera le prochain persécuteur dès qu''il ne donnera pas raison à Marc", "La victime : il subit le conflit", "Aucun rôle : c''est la bonne conduite"], "bonnes": [1], "explication": "Sortir du triangle, c''est refuser les trois rôles et ramener chacun à sa responsabilité : « qu''est-ce que tu as dit à Sophie ? »"}, {"id": "m5q05", "enonce": "Plusieurs réponses. Quels sont des signaux faibles d''un conflit naissant ?", "options": ["Deux personnes qui ne se parlent plus que par un tiers ou par écrit", "Le passage du fait au trait de caractère (« elle ne prévient jamais »)", "Un désaccord exprimé ouvertement en réunion sur une méthode", "Des alliances : les mêmes appuient toujours les mêmes, déjeunent toujours ensemble"], "bonnes": [0, 1, 3], "explication": "Un désaccord exprimé ouvertement sur le travail est sain. La communication indirecte, les « toujours / jamais » et les alliances sont les signes d''un conflit qui glisse vers la relation."}, {"id": "m5q06", "enonce": "Quelle est la règle que le manager impose si l''équipe ne la propose pas lors de la construction des règles du jeu ?", "options": ["L''interdiction de tout désaccord", "Le respect des personnes : on peut tout se dire sur le travail, on ne s''attaque pas aux personnes, et pas devant les autres", "L''obligation de déjeuner ensemble", "La priorité aux plus anciens"], "bonnes": [1], "explication": "C''est la ligne que le manager défend sans négociation ; les autres règles (cinq à huit, positives, vérifiables) sont construites avec l''équipe."}, {"id": "m5q07", "enonce": "Dans la méthode en cinq étapes, pourquoi écoute-t-on chaque partie séparément avant de les réunir ?", "options": ["Pour gagner du temps", "Pour pouvoir choisir la version la plus crédible", "Pour entendre chacun sans qu''il rejoue le conflit devant l''autre, et repérer derrière les positions les besoins, qui sont rarement incompatibles", "Parce que la loi l''impose"], "bonnes": [2], "explication": "Réunir tout de suite, c''est faire rejouer le conflit devant le chef. Les positions s''opposent ; les besoins (savoir la veille, être reconnu) peuvent presque toujours être satisfaits ensemble."}, {"id": "m5q08", "enonce": "Quels sont les quatre temps de la communication non violente (Rosenberg) ?", "options": ["Accuser, exiger, menacer, conclure", "Observation sans jugement, sentiment, besoin, demande concrète", "Situation, comportement, impact, sanction", "Écouter, trancher, notifier, sanctionner"], "bonnes": [1], "explication": "« Mardi j''ai appris à 14 h… / j''étais en colère / j''ai besoin de savoir la veille / est-ce que tu peux me dire à 17 h… » : une façon de dire ce qui ne va pas sans attaquer, avec une demande à laquelle l''autre peut répondre."}, {"id": "m5q09", "enonce": "Quand le manager doit-il passer la main à un tiers neutre (RH, médiateur) ?", "options": ["Jamais : un bon manager gère tout seul", "Dès la première pique en réunion", "Quand le conflit a dépassé le niveau 4, quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué", "Uniquement si le salarié le demande par écrit"], "bonnes": [2], "explication": "Passer la main n''est pas un échec : c''est la reconnaissance qu''un conflit installé demande d''autres moyens, et une protection pour le manager et les personnes."}, {"id": "m5q10", "enonce": "Quelle est la différence entre un recadrage et une sanction disciplinaire ?", "options": ["Aucune : ce sont deux mots pour la même chose", "Le recadrage est un acte de management du manager, sans forme légale ; la sanction est un acte de l''employeur, encadré par une procédure (L1332-1 et s.), le règlement intérieur et la prescription de deux mois", "Le recadrage est réservé aux cadres", "La sanction est décidée par le manager de proximité seul, sans procédure"], "bonnes": [1], "explication": "Le manager recadre et trace ; l''employeur sanctionne, avec entretien préalable pour toute sanction ayant une incidence sur la présence, la fonction, la carrière ou la rémunération. Les sanctions pécuniaires sont interdites."}, {"id": "m5q11", "enonce": "Un salarié refuse d''exécuter une consigne. Dans quel cas ce refus n''est-il pas une faute ?", "options": ["Quand il n''est pas d''accord avec la méthode", "Quand la consigne est illégale, expose à un danger grave et imminent (droit de retrait, L4131-1) ou sort du cadre du contrat", "Quand il a plus d''ancienneté que le manager", "Jamais : tout refus est une faute"], "bonnes": [1], "explication": "Face à un refus, le manager demande d''abord la raison. Si c''est un danger ou une illégalité, c''est lui qui a un problème à traiter ; sinon, il recadre et remonte."}, {"id": "m5q12", "enonce": "Nadia signale à Karim qu''un client lui fait des remarques sur son physique et l''a touchée avec insistance. Que fait Karim ?", "options": ["Il lui dit que c''est sûrement un malentendu et qu''il faut relativiser", "Il mène l''enquête lui-même en confrontant Nadia et le client", "Il prend au sérieux, note les faits, informe l''employeur sans délai et par écrit, protège Nadia (ne plus la laisser seule avec ce client), l''oriente vers les relais, garde la confidentialité", "Il en parle à l''équipe pour que tout le monde soit vigilant"], "bonnes": [2], "explication": "L''employeur a l''obligation de prévenir et de faire cesser le harcèlement (L1153-5) ; le manager déclenche cette obligation en informant sans délai. Il n''enquête pas lui-même. La personne qui parle de bonne foi est protégée."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 10;
+  n := n + 1;
+
+  -- 5.2-comprendre-ce-qui-se-joue.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Avant de résoudre un conflit, il faut comprendre d''où il vient. La plupart des managers se trompent de cause : ils voient deux personnes qui s''affrontent et concluent à un problème de caractère. Or, dans la grande majorité des cas, la cause est dans l''organisation, et les personnes ne font que la révéler. Traiter les personnes sans traiter la cause, c''est repartir pour un tour.
+
+## Les quatre sources de conflit
+
+Les travaux sur les conflits au travail identifient quatre grandes sources, souvent combinées.
+
+Les rôles flous. Quand on ne sait pas qui décide, qui fait, qui est responsable, chacun le décide pour lui-même, et deux personnes se retrouvent à vouloir décider la même chose, ou à attendre que l''autre fasse. C''est la source la plus fréquente, et la moins visible : le conflit entre Sophie et Marc est d''abord un conflit de rôle (qui fixe les priorités de la mécanique ?), pas un conflit de personnes. Le RACI du module 2 est l''outil de prévention.
+
+Les ressources rares. Deux personnes ont besoin du même outil, du même créneau de cabine, du même budget, de la même attention du chef. La rareté crée la rivalité. Le manager qui distribue les ressources sans règle connue fabrique des conflits.
+
+Les valeurs et les manières de faire. « Un vrai carrossier redresse, il ne remplace pas. » « Le client attend, on ne fait pas dans la dentelle. » Des conceptions différentes du bon travail, souvent liées à la génération, à la formation, à l''expérience. Ces conflits sont profonds parce que chacun a le sentiment de défendre quelque chose de juste. Le manager ne tranche pas entre des valeurs ; il fixe la règle de l''atelier (« ici, on fait comme ça, et voilà pourquoi ») et il fait respecter les personnes.
+
+Les personnes. Il arrive que deux personnes ne s''entendent pas, sans autre cause. Histoire ancienne, incompatibilité, jalousie. C''est plus rare qu''on ne le croit, et c''est souvent le résidu d''un conflit de rôle ou de ressource non traité. Le manager n''a pas à faire s''aimer les gens ; il a à faire respecter des règles de comportement qui permettent de travailler ensemble.
+
+Le réflexe utile : devant toute tension, chercher d''abord la source dans l''organisation (rôles, ressources), puis dans les manières de faire, et seulement en dernier dans les personnes.
+
+## Le triangle dramatique
+
+Stephen Karpman, psychiatre américain, a décrit en 1968 un schéma qui se rejoue dans une grande part des conflits : le triangle dramatique, avec trois rôles.
+
+La victime : « ce n''est pas ma faute, on m''en veut, je ne peux rien faire ». Le persécuteur : « c''est de ta faute, tu es nul, tu fais exprès ». Le sauveur : « laisse, je vais m''en occuper, je vais te défendre ».
+
+Trois pièges pour le manager. Le premier : se laisser mettre en position de sauveur. Marc vient se plaindre de Sophie ; Karim, pour bien faire, va « régler ça » avec Sophie, à la place de Marc. Résultat : Sophie devient la persécutrice, Marc reste la victime (il n''a rien eu à faire), et Karim, sauveur, sera le prochain persécuteur dès qu''il ne donnera pas raison à Marc. Le triangle tourne ; personne ne sort.
+
+Le deuxième piège : devenir persécuteur soi-même, en tranchant sur la base d''une seule version. Le troisième : se vivre en victime (« je ne peux rien faire, c''est Michel qui décide, ils sont impossibles ») et ne plus agir.
+
+Sortir du triangle, c''est refuser les trois rôles : ne pas sauver (aider la personne à agir elle-même : « qu''est-ce que tu as dit à Sophie ? »), ne pas persécuter (les faits, pas les jugements), ne pas se plaindre (agir sur ce qui dépend de soi). Et ramener chacun à une position d''adulte responsable : « Vous avez toutes les deux un problème de fonctionnement ; on va le régler ensemble. »
+
+## Les biais du manager en situation de conflit
+
+Vous avez vu au module 3 les biais d''interprétation. En situation de conflit, ils sont décuplés, parce que l''émotion est là.
+
+- Le biais de la première version : celui qui vient se plaindre le premier a un avantage, parce que son récit structure la façon dont le manager voit la situation. Remède : ne jamais conclure avant d''avoir entendu l''autre.
+- Le biais d''affinité : on donne raison à celui qu''on apprécie, ou qui nous ressemble. Karim, ancien carrossier, comprend spontanément Thierry mieux que Sophie. Remède : se demander « si c''était l''inverse, que penserais-je ? »
+- L''attribution : on explique le comportement de l''autre par sa personnalité (« Marc est susceptible ») et non par la situation (« Marc a découvert trois urgences non prévues cette semaine »). Remède : chercher la situation d''abord.
+- La recherche du coupable : le manager veut savoir qui a tort. Or dans la plupart des conflits, les deux ont contribué, et la question utile n''est pas « qui a tort » mais « qu''est-ce qui doit changer ». Remède : remplacer « qui » par « quoi ».
+- L''évitement déguisé : « ce n''est pas si grave », « ils sont adultes », « ça va se tasser ». Remède : relire l''escalier de Glasl.
+- Le passage en force : trancher vite pour en finir. Une décision imposée sans écoute règle le symptôme et alimente le ressentiment. Remède : la méthode de la leçon 5.4.
+
+## Les émotions dans le conflit
+
+Un conflit n''est jamais seulement rationnel. La colère, la peur, l''humiliation, le sentiment d''injustice sont là, et ils expliquent que des gens raisonnables disent des choses déraisonnables. Le manager ne les nie pas (« calme-toi » est la phrase la plus inefficace du monde) ; il les reconnaît (« je vois que ça te met en colère »), et il attend qu''elles retombent avant de traiter le fond. Un entretien de résolution ne se tient pas à chaud. On sépare, on laisse passer quelques heures ou une nuit, et on reprend.
+
+Le manager a aussi ses émotions : l''agacement, la peur de mal faire, parfois la colère. Les reconnaître pour soi-même (« je suis énervé, je ne vais pas décider maintenant ») évite de les faire payer à l''équipe.
+
+## Le cas Garnier — comprendre avant d''agir
+
+Le conflit Sophie-Marc. Source : un rôle flou (qui fixe les priorités de la mécanique ? le RACI du module 2 ne l''avait pas prévu, parce que Marc n''était pas dans le circuit du planning). Escalade : niveau 3 (ils ne se parlent plus, communiquent par post-it). Triangle : Marc est venu se plaindre à Karim (victime), désignant Sophie (persécutrice) ; Karim a failli aller « régler ça » (sauveur). Biais : Karim, ancien de l''atelier, comprend Marc mieux que Sophie ; il a entendu Marc en premier. Ce que Karim comprend : la cause est organisationnelle, les deux ont contribué (Sophie n''a pas prévenu, Marc a boudé au lieu de le dire), et la solution passera par une règle, pas par un arbitrage entre personnes.
+
+Le conflit Thierry-Amine. Source : des valeurs (la conception du métier) et une ressource (la place de référent, que Thierry sent menacée). Escalade : niveau 2 (polémique, piques devant les autres), avec un début de recrutement d''allié (Julien). Ce que Karim comprend : ce n''est pas Amine le sujet, c''est la reconnaissance de Thierry, déjà repérée au module 4. Traiter Amine serait traiter le symptôme.
+
+## À retenir
+
+- Chercher la source dans l''ordre : rôles flous, ressources rares, valeurs et manières de faire, personnes. La cause est le plus souvent dans l''organisation.
+- Le triangle dramatique (Karpman) : victime, persécuteur, sauveur. Le manager n''entre dans aucun des trois rôles et ramène chacun à sa responsabilité.
+- Biais du manager : première version, affinité, attribution, recherche du coupable, évitement déguisé, passage en force. Remplacer « qui a tort » par « qu''est-ce qui doit changer ».
+- Les émotions se reconnaissent, ne se nient pas ; on ne résout pas à chaud.
+
+## Sources
+
+- Stephen B. Karpman, « Fairy Tales and Script Drama Analysis », *Transactional Analysis Bulletin*, 1968.
+- Karen A. Jehn, Elizabeth A. Mannix, « The Dynamic Nature of Conflict », *Academy of Management Journal*, 2001.
+- Daniel Kahneman, *Système 1 / Système 2*, Flammarion, 2012.
+- ANACT, « Prévenir et gérer les conflits au travail », anact.fr.
+- France Compétences, référentiel RS7377, compétence 8.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Avant de résoudre un conflit, il faut comprendre d''où il vient. La plupart des managers se trompent de cause : ils voient deux personnes qui s''affrontent et concluent à un problème de caractère. Or, dans la grande majorité des cas, la cause est dans l''organisation, et les personnes ne font que la révéler. Traiter les personnes sans traiter la cause, c''est repartir pour un tour.
+
+## Les quatre sources de conflit
+
+Les travaux sur les conflits au travail identifient quatre grandes sources, souvent combinées.
+
+Les rôles flous. Quand on ne sait pas qui décide, qui fait, qui est responsable, chacun le décide pour lui-même, et deux personnes se retrouvent à vouloir décider la même chose, ou à attendre que l''autre fasse. C''est la source la plus fréquente, et la moins visible : le conflit entre Sophie et Marc est d''abord un conflit de rôle (qui fixe les priorités de la mécanique ?), pas un conflit de personnes. Le RACI du module 2 est l''outil de prévention.
+
+Les ressources rares. Deux personnes ont besoin du même outil, du même créneau de cabine, du même budget, de la même attention du chef. La rareté crée la rivalité. Le manager qui distribue les ressources sans règle connue fabrique des conflits.
+
+Les valeurs et les manières de faire. « Un vrai carrossier redresse, il ne remplace pas. » « Le client attend, on ne fait pas dans la dentelle. » Des conceptions différentes du bon travail, souvent liées à la génération, à la formation, à l''expérience. Ces conflits sont profonds parce que chacun a le sentiment de défendre quelque chose de juste. Le manager ne tranche pas entre des valeurs ; il fixe la règle de l''atelier (« ici, on fait comme ça, et voilà pourquoi ») et il fait respecter les personnes.
+
+Les personnes. Il arrive que deux personnes ne s''entendent pas, sans autre cause. Histoire ancienne, incompatibilité, jalousie. C''est plus rare qu''on ne le croit, et c''est souvent le résidu d''un conflit de rôle ou de ressource non traité. Le manager n''a pas à faire s''aimer les gens ; il a à faire respecter des règles de comportement qui permettent de travailler ensemble.
+
+Le réflexe utile : devant toute tension, chercher d''abord la source dans l''organisation (rôles, ressources), puis dans les manières de faire, et seulement en dernier dans les personnes.
+
+## Le triangle dramatique
+
+Stephen Karpman, psychiatre américain, a décrit en 1968 un schéma qui se rejoue dans une grande part des conflits : le triangle dramatique, avec trois rôles.
+
+La victime : « ce n''est pas ma faute, on m''en veut, je ne peux rien faire ». Le persécuteur : « c''est de ta faute, tu es nul, tu fais exprès ». Le sauveur : « laisse, je vais m''en occuper, je vais te défendre ».
+
+Trois pièges pour le manager. Le premier : se laisser mettre en position de sauveur. Marc vient se plaindre de Sophie ; Karim, pour bien faire, va « régler ça » avec Sophie, à la place de Marc. Résultat : Sophie devient la persécutrice, Marc reste la victime (il n''a rien eu à faire), et Karim, sauveur, sera le prochain persécuteur dès qu''il ne donnera pas raison à Marc. Le triangle tourne ; personne ne sort.
+
+Le deuxième piège : devenir persécuteur soi-même, en tranchant sur la base d''une seule version. Le troisième : se vivre en victime (« je ne peux rien faire, c''est Michel qui décide, ils sont impossibles ») et ne plus agir.
+
+Sortir du triangle, c''est refuser les trois rôles : ne pas sauver (aider la personne à agir elle-même : « qu''est-ce que tu as dit à Sophie ? »), ne pas persécuter (les faits, pas les jugements), ne pas se plaindre (agir sur ce qui dépend de soi). Et ramener chacun à une position d''adulte responsable : « Vous avez toutes les deux un problème de fonctionnement ; on va le régler ensemble. »
+
+## Les biais du manager en situation de conflit
+
+Vous avez vu au module 3 les biais d''interprétation. En situation de conflit, ils sont décuplés, parce que l''émotion est là.
+
+- Le biais de la première version : celui qui vient se plaindre le premier a un avantage, parce que son récit structure la façon dont le manager voit la situation. Remède : ne jamais conclure avant d''avoir entendu l''autre.
+- Le biais d''affinité : on donne raison à celui qu''on apprécie, ou qui nous ressemble. Karim, ancien carrossier, comprend spontanément Thierry mieux que Sophie. Remède : se demander « si c''était l''inverse, que penserais-je ? »
+- L''attribution : on explique le comportement de l''autre par sa personnalité (« Marc est susceptible ») et non par la situation (« Marc a découvert trois urgences non prévues cette semaine »). Remède : chercher la situation d''abord.
+- La recherche du coupable : le manager veut savoir qui a tort. Or dans la plupart des conflits, les deux ont contribué, et la question utile n''est pas « qui a tort » mais « qu''est-ce qui doit changer ». Remède : remplacer « qui » par « quoi ».
+- L''évitement déguisé : « ce n''est pas si grave », « ils sont adultes », « ça va se tasser ». Remède : relire l''escalier de Glasl.
+- Le passage en force : trancher vite pour en finir. Une décision imposée sans écoute règle le symptôme et alimente le ressentiment. Remède : la méthode de la leçon 5.4.
+
+## Les émotions dans le conflit
+
+Un conflit n''est jamais seulement rationnel. La colère, la peur, l''humiliation, le sentiment d''injustice sont là, et ils expliquent que des gens raisonnables disent des choses déraisonnables. Le manager ne les nie pas (« calme-toi » est la phrase la plus inefficace du monde) ; il les reconnaît (« je vois que ça te met en colère »), et il attend qu''elles retombent avant de traiter le fond. Un entretien de résolution ne se tient pas à chaud. On sépare, on laisse passer quelques heures ou une nuit, et on reprend.
+
+Le manager a aussi ses émotions : l''agacement, la peur de mal faire, parfois la colère. Les reconnaître pour soi-même (« je suis énervé, je ne vais pas décider maintenant ») évite de les faire payer à l''équipe.
+
+## Le cas Garnier — comprendre avant d''agir
+
+Le conflit Sophie-Marc. Source : un rôle flou (qui fixe les priorités de la mécanique ? le RACI du module 2 ne l''avait pas prévu, parce que Marc n''était pas dans le circuit du planning). Escalade : niveau 3 (ils ne se parlent plus, communiquent par post-it). Triangle : Marc est venu se plaindre à Karim (victime), désignant Sophie (persécutrice) ; Karim a failli aller « régler ça » (sauveur). Biais : Karim, ancien de l''atelier, comprend Marc mieux que Sophie ; il a entendu Marc en premier. Ce que Karim comprend : la cause est organisationnelle, les deux ont contribué (Sophie n''a pas prévenu, Marc a boudé au lieu de le dire), et la solution passera par une règle, pas par un arbitrage entre personnes.
+
+Le conflit Thierry-Amine. Source : des valeurs (la conception du métier) et une ressource (la place de référent, que Thierry sent menacée). Escalade : niveau 2 (polémique, piques devant les autres), avec un début de recrutement d''allié (Julien). Ce que Karim comprend : ce n''est pas Amine le sujet, c''est la reconnaissance de Thierry, déjà repérée au module 4. Traiter Amine serait traiter le symptôme.
+
+## À retenir
+
+- Chercher la source dans l''ordre : rôles flous, ressources rares, valeurs et manières de faire, personnes. La cause est le plus souvent dans l''organisation.
+- Le triangle dramatique (Karpman) : victime, persécuteur, sauveur. Le manager n''entre dans aucun des trois rôles et ramène chacun à sa responsabilité.
+- Biais du manager : première version, affinité, attribution, recherche du coupable, évitement déguisé, passage en force. Remplacer « qui a tort » par « qu''est-ce qui doit changer ».
+- Les émotions se reconnaissent, ne se nient pas ; on ne résout pas à chaud.
+
+## Sources
+
+- Stephen B. Karpman, « Fairy Tales and Script Drama Analysis », *Transactional Analysis Bulletin*, 1968.
+- Karen A. Jehn, Elizabeth A. Mannix, « The Dynamic Nature of Conflict », *Academy of Management Journal*, 2001.
+- Daniel Kahneman, *Système 1 / Système 2*, Flammarion, 2012.
+- ANACT, « Prévenir et gérer les conflits au travail », anact.fr.
+- France Compétences, référentiel RS7377, compétence 8.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 2;
+  n := n + 1;
+
+  -- 5.3-prevenir.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'La meilleure gestion de conflit est celle qu''on n''a pas à faire. Une équipe où les rôles sont clairs, où les règles de fonctionnement sont connues et appliquées, où l''on peut dire les désaccords tôt, produit peu de conflits de relation. Cette leçon rassemble ce qui, dans les modules précédents, prévient les conflits, et y ajoute deux outils : les règles du jeu co-construites et les rituels de régulation.
+
+## Le cadre : ce que vous avez déjà
+
+Relisez vos modules avec l''œil de la prévention des conflits :
+
+- Des objectifs clairs (module 2) : quand l''équipe sait où elle va, les désaccords portent sur le chemin, pas sur la destination.
+- Des rôles clairs (RACI, module 2) : la première source de conflit, les rôles flous, est traitée à la racine. Chaque fois qu''une tension apparaît, la première question est : « le RACI prévoit-il ce cas ? »
+- Des règles de répartition des ressources (module 2 et leçon 4.6) : le planning de la cabine, les heures supplémentaires, les missions intéressantes, distribués selon une règle connue.
+- Un feedback rapide (module 3) : un comportement gênant relevé dans les 48 heures ne devient pas un ressentiment.
+- Des entretiens de suivi réguliers (module 3) : le temps « ressenti et besoins » fait sortir les tensions à leur début.
+- Une réunion où l''on peut parler (module 3) et une sécurité psychologique (module 4) : les désaccords s''expriment en réunion plutôt qu''en clans.
+- L''équité (leçon 4.6) : le sentiment d''injustice est le carburant des conflits.
+
+Un manager qui fait tout cela a déjà fait l''essentiel de la prévention.
+
+## Les règles du jeu co-construites
+
+Au-delà des règles de l''entreprise (règlement intérieur, consignes de sécurité), chaque équipe a besoin de règles de fonctionnement propres : comment on se parle, comment on gère les désaccords, comment on se transmet l''information, comment on demande de l''aide, ce qu''on fait quand quelqu''un est en difficulté.
+
+Ces règles sont d''autant mieux respectées qu''elles ont été construites par l''équipe, pas édictées par le manager. La méthode tient en une réunion d''une heure :
+
+1. Le manager pose la question : « Qu''est-ce qui, dans notre façon de fonctionner ensemble, nous fait perdre du temps ou de l''énergie ? » Tour de table, chacun une réponse, sans discussion.
+2. On regroupe les réponses par thème (information, entraide, respect, décisions).
+3. Pour chaque thème, on formule une règle en une phrase, positive et vérifiable : « Toute urgence est annoncée à voix haute au brief ou à Karim, jamais par post-it » plutôt que « il faut mieux communiquer ».
+4. On garde cinq à huit règles, pas vingt. On les affiche.
+5. On fixe une date de relecture (trois mois) : « Est-ce qu''on les tient ? Faut-il en changer une ? »
+
+Le manager tient une règle en réserve, qu''il impose si l''équipe ne la propose pas : le respect des personnes. « On peut tout se dire sur le travail ; on ne s''attaque pas aux personnes, et pas devant les autres. » C''est la ligne qu''il défendra sans négociation.
+
+## Les rituels de régulation
+
+Une règle affichée ne suffit pas. Il faut des moments où l''on vérifie et où l''on ajuste. Trois rituels simples :
+
+Le point « ce qui nous a compliqué la vie » : cinq minutes à la fin du point hebdomadaire. Chacun peut dire une chose qui a gêné son travail cette semaine, en termes de faits, sans viser une personne. Le manager note et traite. Ce rituel désamorce des dizaines de conflits par an, parce qu''il donne un lieu légitime aux irritations avant qu''elles ne deviennent des griefs.
+
+La rétrospective d''équipe : une fois par mois ou par trimestre, trente minutes (module 6). Qu''est-ce qui a bien fonctionné, qu''est-ce qui a moins bien fonctionné, qu''est-ce qu''on change. Elle porte sur le fonctionnement, pas sur les personnes.
+
+La relecture des règles du jeu : tous les trois mois, dix minutes. Elle rappelle que les règles existent et qu''on peut les faire évoluer.
+
+## Les signaux faibles
+
+Un conflit de niveau 1 ou 2 ne se voit pas. Il s''entend, si l''on est attentif. Les signaux faibles :
+
+- Deux personnes qui ne se parlent plus directement : elles passent par un tiers, par écrit, par le manager.
+- Les piques et l''humour à double sens : « Ah, c''est le nouveau qui décide maintenant ? »
+- Les silences : quelqu''un qui ne dit plus rien en réunion alors qu''il parlait.
+- Les « toujours » et les « jamais » : « Elle ne prévient jamais. » Le passage du fait au trait de caractère est le signe que le conflit de tâche glisse vers la relation.
+- Les alliances : deux personnes qui déjeunent toujours ensemble et jamais avec un troisième ; un tour de table où les mêmes appuient les mêmes.
+- Les plaintes indirectes : quelqu''un vient parler « d''un problème d''organisation » qui est en fait un problème avec une personne.
+- La baisse de qualité à une interface : les erreurs se concentrent là où deux personnes doivent se transmettre quelque chose.
+
+Quand vous repérez un signal, vous n''attendez pas. Vous allez voir, individuellement, avec des faits et une question ouverte : « J''ai remarqué que les demandes de Sophie te passent par post-it maintenant. Qu''est-ce qui se passe ? » À ce stade, une conversation de dix minutes suffit souvent.
+
+## Le manager, source de conflit
+
+Il faut le dire : le manager est lui-même, souvent, la source du conflit. Par des décisions non expliquées, une répartition inéquitable, des chouchous, des changements de consigne, des promesses non tenues, ou en laissant durer une situation. Avant de chercher la cause dans l''équipe, le manager se pose la question : « Qu''ai-je fait, ou pas fait, qui a contribué à cette tension ? » La réponse est rarement « rien ».
+
+## Le cas Garnier
+
+Karim tient la réunion des règles du jeu. Il en sort six règles, dont : « Une urgence s''annonce de vive voix, au brief ou à Karim » (Sophie et Marc l''ont formulée ensemble, ce qui était l''objectif) ; « Quand on n''est pas d''accord avec la façon de faire de quelqu''un, on lui dit à lui, pas aux autres » (Karim l''a proposée, en regardant tout le monde, et Thierry a compris) ; « Un nouveau a un mois pour poser toutes les questions qu''il veut, sans commentaire » (proposée par Nadia, qui a vu Amine se faire charrier). Le point « ce qui nous a compliqué la vie » entre dans le point hebdomadaire. Et Karim admet devant l''équipe qu''il aurait dû mettre Marc dans le circuit du planning dès le départ.
+
+## À retenir
+
+- La prévention, c''est tout ce qui précède : objectifs, rôles, règles de répartition, feedback, entretiens, réunion, sécurité psychologique, équité.
+- Des règles du jeu co-construites (cinq à huit, positives, vérifiables, affichées, relues), avec une règle non négociable : le respect des personnes.
+- Des rituels de régulation : le point « ce qui nous a compliqué la vie », la rétrospective, la relecture des règles.
+- Repérer les signaux faibles (communication indirecte, piques, silences, « toujours / jamais », alliances) et aller voir tout de suite.
+- Se demander d''abord ce que le manager a fait, ou pas fait.
+
+## Sources
+
+- ANACT, « Espaces de discussion sur le travail » et « Prévenir et gérer les conflits au travail », anact.fr.
+- Friedrich Glasl, *Konfliktmanagement*, 1980.
+- Patrick Lencioni, *Les cinq dysfonctionnements d''une équipe*, 2002 (sur la peur du conflit et l''absence de confiance).
+- France Compétences, référentiel RS7377, compétences 5 et 8.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'La meilleure gestion de conflit est celle qu''on n''a pas à faire. Une équipe où les rôles sont clairs, où les règles de fonctionnement sont connues et appliquées, où l''on peut dire les désaccords tôt, produit peu de conflits de relation. Cette leçon rassemble ce qui, dans les modules précédents, prévient les conflits, et y ajoute deux outils : les règles du jeu co-construites et les rituels de régulation.
+
+## Le cadre : ce que vous avez déjà
+
+Relisez vos modules avec l''œil de la prévention des conflits :
+
+- Des objectifs clairs (module 2) : quand l''équipe sait où elle va, les désaccords portent sur le chemin, pas sur la destination.
+- Des rôles clairs (RACI, module 2) : la première source de conflit, les rôles flous, est traitée à la racine. Chaque fois qu''une tension apparaît, la première question est : « le RACI prévoit-il ce cas ? »
+- Des règles de répartition des ressources (module 2 et leçon 4.6) : le planning de la cabine, les heures supplémentaires, les missions intéressantes, distribués selon une règle connue.
+- Un feedback rapide (module 3) : un comportement gênant relevé dans les 48 heures ne devient pas un ressentiment.
+- Des entretiens de suivi réguliers (module 3) : le temps « ressenti et besoins » fait sortir les tensions à leur début.
+- Une réunion où l''on peut parler (module 3) et une sécurité psychologique (module 4) : les désaccords s''expriment en réunion plutôt qu''en clans.
+- L''équité (leçon 4.6) : le sentiment d''injustice est le carburant des conflits.
+
+Un manager qui fait tout cela a déjà fait l''essentiel de la prévention.
+
+## Les règles du jeu co-construites
+
+Au-delà des règles de l''entreprise (règlement intérieur, consignes de sécurité), chaque équipe a besoin de règles de fonctionnement propres : comment on se parle, comment on gère les désaccords, comment on se transmet l''information, comment on demande de l''aide, ce qu''on fait quand quelqu''un est en difficulté.
+
+Ces règles sont d''autant mieux respectées qu''elles ont été construites par l''équipe, pas édictées par le manager. La méthode tient en une réunion d''une heure :
+
+1. Le manager pose la question : « Qu''est-ce qui, dans notre façon de fonctionner ensemble, nous fait perdre du temps ou de l''énergie ? » Tour de table, chacun une réponse, sans discussion.
+2. On regroupe les réponses par thème (information, entraide, respect, décisions).
+3. Pour chaque thème, on formule une règle en une phrase, positive et vérifiable : « Toute urgence est annoncée à voix haute au brief ou à Karim, jamais par post-it » plutôt que « il faut mieux communiquer ».
+4. On garde cinq à huit règles, pas vingt. On les affiche.
+5. On fixe une date de relecture (trois mois) : « Est-ce qu''on les tient ? Faut-il en changer une ? »
+
+Le manager tient une règle en réserve, qu''il impose si l''équipe ne la propose pas : le respect des personnes. « On peut tout se dire sur le travail ; on ne s''attaque pas aux personnes, et pas devant les autres. » C''est la ligne qu''il défendra sans négociation.
+
+## Les rituels de régulation
+
+Une règle affichée ne suffit pas. Il faut des moments où l''on vérifie et où l''on ajuste. Trois rituels simples :
+
+Le point « ce qui nous a compliqué la vie » : cinq minutes à la fin du point hebdomadaire. Chacun peut dire une chose qui a gêné son travail cette semaine, en termes de faits, sans viser une personne. Le manager note et traite. Ce rituel désamorce des dizaines de conflits par an, parce qu''il donne un lieu légitime aux irritations avant qu''elles ne deviennent des griefs.
+
+La rétrospective d''équipe : une fois par mois ou par trimestre, trente minutes (module 6). Qu''est-ce qui a bien fonctionné, qu''est-ce qui a moins bien fonctionné, qu''est-ce qu''on change. Elle porte sur le fonctionnement, pas sur les personnes.
+
+La relecture des règles du jeu : tous les trois mois, dix minutes. Elle rappelle que les règles existent et qu''on peut les faire évoluer.
+
+## Les signaux faibles
+
+Un conflit de niveau 1 ou 2 ne se voit pas. Il s''entend, si l''on est attentif. Les signaux faibles :
+
+- Deux personnes qui ne se parlent plus directement : elles passent par un tiers, par écrit, par le manager.
+- Les piques et l''humour à double sens : « Ah, c''est le nouveau qui décide maintenant ? »
+- Les silences : quelqu''un qui ne dit plus rien en réunion alors qu''il parlait.
+- Les « toujours » et les « jamais » : « Elle ne prévient jamais. » Le passage du fait au trait de caractère est le signe que le conflit de tâche glisse vers la relation.
+- Les alliances : deux personnes qui déjeunent toujours ensemble et jamais avec un troisième ; un tour de table où les mêmes appuient les mêmes.
+- Les plaintes indirectes : quelqu''un vient parler « d''un problème d''organisation » qui est en fait un problème avec une personne.
+- La baisse de qualité à une interface : les erreurs se concentrent là où deux personnes doivent se transmettre quelque chose.
+
+Quand vous repérez un signal, vous n''attendez pas. Vous allez voir, individuellement, avec des faits et une question ouverte : « J''ai remarqué que les demandes de Sophie te passent par post-it maintenant. Qu''est-ce qui se passe ? » À ce stade, une conversation de dix minutes suffit souvent.
+
+## Le manager, source de conflit
+
+Il faut le dire : le manager est lui-même, souvent, la source du conflit. Par des décisions non expliquées, une répartition inéquitable, des chouchous, des changements de consigne, des promesses non tenues, ou en laissant durer une situation. Avant de chercher la cause dans l''équipe, le manager se pose la question : « Qu''ai-je fait, ou pas fait, qui a contribué à cette tension ? » La réponse est rarement « rien ».
+
+## Le cas Garnier
+
+Karim tient la réunion des règles du jeu. Il en sort six règles, dont : « Une urgence s''annonce de vive voix, au brief ou à Karim » (Sophie et Marc l''ont formulée ensemble, ce qui était l''objectif) ; « Quand on n''est pas d''accord avec la façon de faire de quelqu''un, on lui dit à lui, pas aux autres » (Karim l''a proposée, en regardant tout le monde, et Thierry a compris) ; « Un nouveau a un mois pour poser toutes les questions qu''il veut, sans commentaire » (proposée par Nadia, qui a vu Amine se faire charrier). Le point « ce qui nous a compliqué la vie » entre dans le point hebdomadaire. Et Karim admet devant l''équipe qu''il aurait dû mettre Marc dans le circuit du planning dès le départ.
+
+## À retenir
+
+- La prévention, c''est tout ce qui précède : objectifs, rôles, règles de répartition, feedback, entretiens, réunion, sécurité psychologique, équité.
+- Des règles du jeu co-construites (cinq à huit, positives, vérifiables, affichées, relues), avec une règle non négociable : le respect des personnes.
+- Des rituels de régulation : le point « ce qui nous a compliqué la vie », la rétrospective, la relecture des règles.
+- Repérer les signaux faibles (communication indirecte, piques, silences, « toujours / jamais », alliances) et aller voir tout de suite.
+- Se demander d''abord ce que le manager a fait, ou pas fait.
+
+## Sources
+
+- ANACT, « Espaces de discussion sur le travail » et « Prévenir et gérer les conflits au travail », anact.fr.
+- Friedrich Glasl, *Konfliktmanagement*, 1980.
+- Patrick Lencioni, *Les cinq dysfonctionnements d''une équipe*, 2002 (sur la peur du conflit et l''absence de confiance).
+- France Compétences, référentiel RS7377, compétences 5 et 8.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 3;
+  n := n + 1;
+
+  -- 5.4-resoudre.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Quand la prévention n''a pas suffi et qu''un conflit est installé (niveau 2 à 4 de l''escalier de Glasl), le manager intervient. Pas en arbitre qui dit qui a raison, pas en sauveur qui règle à la place des gens, mais en tiers qui organise la résolution. La méthode en cinq étapes ci-dessous fonctionne pour un conflit entre deux personnes de l''équipe ; elle s''adapte à un conflit entre le manager et une personne (le manager est alors partie, et doit être encore plus rigoureux) et à un conflit entre deux sous-groupes.
+
+## Avant de commencer : trois conditions
+
+Le bon moment : pas à chaud. Si l''incident vient d''avoir lieu, on sépare, on fait retomber (« on en parle demain matin, chacun de son côté d''abord »), et on fixe l''heure.
+
+Le bon lieu : un lieu fermé, neutre, sans public. Jamais dans l''atelier ou l''open space.
+
+La bonne posture : le manager n''a pas d''avis sur qui a tort. S''il en a un (et il en a souvent un), il le met de côté pendant les entretiens. Il cherche ce qui doit changer, pas qui est coupable.
+
+## Étape 1 — Accueillir : poser le cadre
+
+Le manager voit chaque personne séparément, puis, si nécessaire, ensemble. Dans les deux cas, il commence par le cadre : « Il y a une difficulté entre vous deux qui pèse sur le travail de l''équipe. Mon rôle n''est pas de dire qui a raison, c''est qu''on trouve ensemble comment travailler. Voilà comment on va procéder. » Il pose les règles de l''échange : on parle de faits, on ne coupe pas, on ne s''attaque pas aux personnes, ce qui se dit ici reste ici.
+
+## Étape 2 — Écouter chaque partie, séparément
+
+C''est l''étape décisive et la plus souvent sautée. Chaque personne, seule avec le manager, raconte ce qui s''est passé de son point de vue. Le manager écoute avec les outils du module 3 : questions ouvertes (« qu''est-ce qui s''est passé exactement ? », « depuis quand ? », « qu''est-ce que tu as essayé ? »), reformulation, silence. Il ne prend pas parti, ne commente pas la version de l''autre, ne promet rien.
+
+Il cherche, derrière les positions (« je veux qu''elle arrête de me donner des urgences »), les besoins (« j''ai besoin de savoir la veille ce qui m''attend »). C''est la distinction fondamentale de la négociation raisonnée de Fisher et Ury : les positions sont incompatibles, les besoins ne le sont presque jamais.
+
+Il termine par : « Qu''est-ce qu''il faudrait pour que ça fonctionne, selon toi ? » et « Es-tu d''accord pour qu''on en parle à trois ? »
+
+## Étape 3 — Objectiver : les faits, la source, la règle
+
+Le manager rassemble ce qu''il a entendu et le met à plat : les faits sur lesquels les deux versions concordent ; les faits qui divergent (et qu''on pourra vérifier, ou qu''on laissera de côté) ; la source du conflit (rôle flou, ressource, manière de faire, leçon 5.2) ; la règle existante qui s''applique (RACI, règles du jeu) ou qui manque.
+
+Le plus souvent, cette étape révèle que le conflit a une cause organisationnelle que le manager peut traiter lui-même. Sophie et Marc : le circuit du planning ne prévoyait pas la mécanique. C''est la décision de Karim qui manque, pas la bonne volonté de l''un ou de l''autre.
+
+## Étape 4 — Chercher les options, ensemble
+
+L''entretien à trois. Le manager rappelle le cadre, expose ce qu''il a compris de manière équilibrée (les besoins de chacun, la source), et demande : « Qu''est-ce qu''on peut faire pour que ça fonctionne ? » Il laisse les deux proposer avant de proposer lui-même. Il cherche des options qui répondent aux besoins des deux, pas un compromis où chacun perd la moitié.
+
+C''est ici que la communication non violente (CNV), formalisée par le psychologue Marshall Rosenberg, est précieuse. Elle donne à chacun une façon de dire ce qui ne va pas sans attaquer, en quatre temps :
+
+- L''observation, sans jugement : « Mardi, j''ai appris à 14 h que la Clio passait en géométrie à 17 h. »
+- Le sentiment : « J''étais en colère et j''ai eu l''impression de ne pas compter. »
+- Le besoin : « J''ai besoin de savoir la veille ce qui m''attend. »
+- La demande, concrète et négociable : « Est-ce que tu peux me dire à 17 h ce qui passe en méca le lendemain ? »
+
+Le manager peut proposer ce format aux deux personnes (« chacun dit à l''autre, avec ces quatre temps, ce qui s''est passé pour lui »), et veiller à ce qu''il soit respecté. La CNV n''est pas une baguette magique ; c''est une discipline qui empêche les phrases qui blessent (« tu ne préviens jamais ») et oblige à formuler une demande à laquelle l''autre peut répondre.
+
+## Étape 5 — Contractualiser et suivre
+
+On termine par un accord explicite : ce que chacun fait, à partir de quand, et ce que le manager fait (la règle qu''il fixe, le RACI qu''il modifie). Deux ou trois engagements, précis. Le manager les reformule à voix haute, et, pour un conflit sérieux, les note et les remet aux deux.
+
+Puis le suivi : un point à deux semaines, à trois, puis, si tout va bien, à un mois. Sans suivi, l''accord dure le temps de la bonne volonté. Le manager observe aussi les signaux faibles (leçon 5.3) : les post-it ont-ils disparu ?
+
+## Quand le manager est partie au conflit
+
+Si le conflit oppose le manager à un membre de l''équipe, la méthode reste la même, avec deux précautions. D''abord, le manager écoute vraiment, en commençant par l''autre, et il reconnaît sa part (il y en a presque toujours une). Ensuite, s''il n''y parvient pas, il demande un tiers : son propre manager, les RH, un collègue manager. Un manager qui refuse le tiers parce qu''il « gère » perd la confiance de l''équipe et souvent le conflit.
+
+## Quand et comment recourir à la médiation
+
+Le manager n''est pas médiateur : il a une position d''autorité, un intérêt au résultat, et parfois une part dans le conflit. Quand le conflit a dépassé le niveau 4 (recrutement d''alliés, attaques sur la réputation, refus de se parler même en présence du manager), ou quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué, il faut un tiers neutre.
+
+En interne : les RH, un manager d''un autre service, parfois un représentant du personnel, si les deux parties l''acceptent. En externe : un médiateur professionnel, que l''entreprise peut mandater. La médiation est volontaire, confidentielle, et le médiateur ne décide pas : il aide les parties à trouver leur accord. Le manager, qui a proposé la médiation, en respecte les règles : il ne demande pas au médiateur ce qui s''est dit.
+
+Passer la main n''est pas un échec du manager. C''est la reconnaissance qu''un conflit installé demande d''autres moyens que les siens, et c''est une protection pour lui et pour les personnes.
+
+## Ce qui ne marche pas
+
+- Réunir les deux tout de suite, sans les avoir écoutés séparément : chacun rejoue le conflit devant le chef.
+- Trancher sur une version.
+- Demander aux gens de « faire un effort » sans rien changer à la cause.
+- Séparer physiquement les personnes sans traiter (changer les horaires, les postes) : le conflit se déplace.
+- Attendre que ça se tasse.
+- Prendre le conflit pour soi et s''en vouloir : le manager organise la résolution, il n''est pas responsable de la mésentente.
+
+## Le cas Garnier — Sophie et Marc
+
+Étape 1 : Karim voit Sophie mardi 13 h, Marc mardi 13 h 30, chacun dans le bureau. Il pose le cadre. Étape 2 : Sophie raconte que Marc « fait la tête » et qu''elle n''ose plus lui parler ; derrière, son besoin : ne pas être perçue comme celle qui impose des urgences alors qu''elle transmet celles des clients. Marc raconte les trois urgences non prévues ; son besoin : la visibilité la veille. Étape 3 : les faits concordent (les urgences sont arrivées sans prévenir ; Marc a cessé de parler) ; la source est un rôle flou (le planning ne prévoyait pas la mécanique ; Sophie ne sait pas à qui annoncer) ; la règle manque. Étape 4 : à trois, jeudi. Karim expose ce qu''il a compris, sans désigner. Chacun dit à l''autre, en quatre temps. Options trouvées par eux : Sophie annonce toute urgence de vive voix au brief ou à Karim ; Karim consulte Marc chaque soir à 17 h pour la mécanique du lendemain ; Marc, s''il découvre une urgence non prévue, le dit sur le moment plutôt que de se taire. Étape 5 : trois engagements notés, point dans deux semaines. Karim modifie le RACI. Deux semaines plus tard, les post-it ont disparu et Sophie a demandé à Marc un conseil sur sa propre voiture.
+
+## À retenir
+
+- Pas à chaud, en lieu fermé, sans avis sur qui a tort.
+- Cinq étapes : accueillir (le cadre), écouter chacun séparément (positions et besoins), objectiver (faits, source, règle), chercher les options ensemble (CNV : observation, sentiment, besoin, demande), contractualiser et suivre.
+- Le plus souvent, la cause est organisationnelle, et c''est le manager qui la traite.
+- Quand le manager est partie, il commence par écouter et reconnaît sa part ; quand le conflit dépasse le niveau 4 ou que la méthode échoue, il passe la main à un tiers neutre (RH, médiateur).
+- Passer la main n''est pas un échec.
+
+## Sources
+
+- Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 — positions et intérêts.
+- Marshall B. Rosenberg, *Les mots sont des fenêtres (ou bien ce sont des murs)*, La Découverte, 1999 — communication non violente.
+- Friedrich Glasl, *Konfliktmanagement*, 1980 — niveaux d''escalade et modes d''intervention.
+- Code du travail, art. L1152-6 (médiation en cas de harcèlement moral) ; ANACT, « La médiation en entreprise ».
+- France Compétences, référentiel RS7377, compétence 8.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Quand la prévention n''a pas suffi et qu''un conflit est installé (niveau 2 à 4 de l''escalier de Glasl), le manager intervient. Pas en arbitre qui dit qui a raison, pas en sauveur qui règle à la place des gens, mais en tiers qui organise la résolution. La méthode en cinq étapes ci-dessous fonctionne pour un conflit entre deux personnes de l''équipe ; elle s''adapte à un conflit entre le manager et une personne (le manager est alors partie, et doit être encore plus rigoureux) et à un conflit entre deux sous-groupes.
+
+## Avant de commencer : trois conditions
+
+Le bon moment : pas à chaud. Si l''incident vient d''avoir lieu, on sépare, on fait retomber (« on en parle demain matin, chacun de son côté d''abord »), et on fixe l''heure.
+
+Le bon lieu : un lieu fermé, neutre, sans public. Jamais dans l''atelier ou l''open space.
+
+La bonne posture : le manager n''a pas d''avis sur qui a tort. S''il en a un (et il en a souvent un), il le met de côté pendant les entretiens. Il cherche ce qui doit changer, pas qui est coupable.
+
+## Étape 1 — Accueillir : poser le cadre
+
+Le manager voit chaque personne séparément, puis, si nécessaire, ensemble. Dans les deux cas, il commence par le cadre : « Il y a une difficulté entre vous deux qui pèse sur le travail de l''équipe. Mon rôle n''est pas de dire qui a raison, c''est qu''on trouve ensemble comment travailler. Voilà comment on va procéder. » Il pose les règles de l''échange : on parle de faits, on ne coupe pas, on ne s''attaque pas aux personnes, ce qui se dit ici reste ici.
+
+## Étape 2 — Écouter chaque partie, séparément
+
+C''est l''étape décisive et la plus souvent sautée. Chaque personne, seule avec le manager, raconte ce qui s''est passé de son point de vue. Le manager écoute avec les outils du module 3 : questions ouvertes (« qu''est-ce qui s''est passé exactement ? », « depuis quand ? », « qu''est-ce que tu as essayé ? »), reformulation, silence. Il ne prend pas parti, ne commente pas la version de l''autre, ne promet rien.
+
+Il cherche, derrière les positions (« je veux qu''elle arrête de me donner des urgences »), les besoins (« j''ai besoin de savoir la veille ce qui m''attend »). C''est la distinction fondamentale de la négociation raisonnée de Fisher et Ury : les positions sont incompatibles, les besoins ne le sont presque jamais.
+
+Il termine par : « Qu''est-ce qu''il faudrait pour que ça fonctionne, selon toi ? » et « Es-tu d''accord pour qu''on en parle à trois ? »
+
+## Étape 3 — Objectiver : les faits, la source, la règle
+
+Le manager rassemble ce qu''il a entendu et le met à plat : les faits sur lesquels les deux versions concordent ; les faits qui divergent (et qu''on pourra vérifier, ou qu''on laissera de côté) ; la source du conflit (rôle flou, ressource, manière de faire, leçon 5.2) ; la règle existante qui s''applique (RACI, règles du jeu) ou qui manque.
+
+Le plus souvent, cette étape révèle que le conflit a une cause organisationnelle que le manager peut traiter lui-même. Sophie et Marc : le circuit du planning ne prévoyait pas la mécanique. C''est la décision de Karim qui manque, pas la bonne volonté de l''un ou de l''autre.
+
+## Étape 4 — Chercher les options, ensemble
+
+L''entretien à trois. Le manager rappelle le cadre, expose ce qu''il a compris de manière équilibrée (les besoins de chacun, la source), et demande : « Qu''est-ce qu''on peut faire pour que ça fonctionne ? » Il laisse les deux proposer avant de proposer lui-même. Il cherche des options qui répondent aux besoins des deux, pas un compromis où chacun perd la moitié.
+
+C''est ici que la communication non violente (CNV), formalisée par le psychologue Marshall Rosenberg, est précieuse. Elle donne à chacun une façon de dire ce qui ne va pas sans attaquer, en quatre temps :
+
+- L''observation, sans jugement : « Mardi, j''ai appris à 14 h que la Clio passait en géométrie à 17 h. »
+- Le sentiment : « J''étais en colère et j''ai eu l''impression de ne pas compter. »
+- Le besoin : « J''ai besoin de savoir la veille ce qui m''attend. »
+- La demande, concrète et négociable : « Est-ce que tu peux me dire à 17 h ce qui passe en méca le lendemain ? »
+
+Le manager peut proposer ce format aux deux personnes (« chacun dit à l''autre, avec ces quatre temps, ce qui s''est passé pour lui »), et veiller à ce qu''il soit respecté. La CNV n''est pas une baguette magique ; c''est une discipline qui empêche les phrases qui blessent (« tu ne préviens jamais ») et oblige à formuler une demande à laquelle l''autre peut répondre.
+
+## Étape 5 — Contractualiser et suivre
+
+On termine par un accord explicite : ce que chacun fait, à partir de quand, et ce que le manager fait (la règle qu''il fixe, le RACI qu''il modifie). Deux ou trois engagements, précis. Le manager les reformule à voix haute, et, pour un conflit sérieux, les note et les remet aux deux.
+
+Puis le suivi : un point à deux semaines, à trois, puis, si tout va bien, à un mois. Sans suivi, l''accord dure le temps de la bonne volonté. Le manager observe aussi les signaux faibles (leçon 5.3) : les post-it ont-ils disparu ?
+
+## Quand le manager est partie au conflit
+
+Si le conflit oppose le manager à un membre de l''équipe, la méthode reste la même, avec deux précautions. D''abord, le manager écoute vraiment, en commençant par l''autre, et il reconnaît sa part (il y en a presque toujours une). Ensuite, s''il n''y parvient pas, il demande un tiers : son propre manager, les RH, un collègue manager. Un manager qui refuse le tiers parce qu''il « gère » perd la confiance de l''équipe et souvent le conflit.
+
+## Quand et comment recourir à la médiation
+
+Le manager n''est pas médiateur : il a une position d''autorité, un intérêt au résultat, et parfois une part dans le conflit. Quand le conflit a dépassé le niveau 4 (recrutement d''alliés, attaques sur la réputation, refus de se parler même en présence du manager), ou quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué, il faut un tiers neutre.
+
+En interne : les RH, un manager d''un autre service, parfois un représentant du personnel, si les deux parties l''acceptent. En externe : un médiateur professionnel, que l''entreprise peut mandater. La médiation est volontaire, confidentielle, et le médiateur ne décide pas : il aide les parties à trouver leur accord. Le manager, qui a proposé la médiation, en respecte les règles : il ne demande pas au médiateur ce qui s''est dit.
+
+Passer la main n''est pas un échec du manager. C''est la reconnaissance qu''un conflit installé demande d''autres moyens que les siens, et c''est une protection pour lui et pour les personnes.
+
+## Ce qui ne marche pas
+
+- Réunir les deux tout de suite, sans les avoir écoutés séparément : chacun rejoue le conflit devant le chef.
+- Trancher sur une version.
+- Demander aux gens de « faire un effort » sans rien changer à la cause.
+- Séparer physiquement les personnes sans traiter (changer les horaires, les postes) : le conflit se déplace.
+- Attendre que ça se tasse.
+- Prendre le conflit pour soi et s''en vouloir : le manager organise la résolution, il n''est pas responsable de la mésentente.
+
+## Le cas Garnier — Sophie et Marc
+
+Étape 1 : Karim voit Sophie mardi 13 h, Marc mardi 13 h 30, chacun dans le bureau. Il pose le cadre. Étape 2 : Sophie raconte que Marc « fait la tête » et qu''elle n''ose plus lui parler ; derrière, son besoin : ne pas être perçue comme celle qui impose des urgences alors qu''elle transmet celles des clients. Marc raconte les trois urgences non prévues ; son besoin : la visibilité la veille. Étape 3 : les faits concordent (les urgences sont arrivées sans prévenir ; Marc a cessé de parler) ; la source est un rôle flou (le planning ne prévoyait pas la mécanique ; Sophie ne sait pas à qui annoncer) ; la règle manque. Étape 4 : à trois, jeudi. Karim expose ce qu''il a compris, sans désigner. Chacun dit à l''autre, en quatre temps. Options trouvées par eux : Sophie annonce toute urgence de vive voix au brief ou à Karim ; Karim consulte Marc chaque soir à 17 h pour la mécanique du lendemain ; Marc, s''il découvre une urgence non prévue, le dit sur le moment plutôt que de se taire. Étape 5 : trois engagements notés, point dans deux semaines. Karim modifie le RACI. Deux semaines plus tard, les post-it ont disparu et Sophie a demandé à Marc un conseil sur sa propre voiture.
+
+## À retenir
+
+- Pas à chaud, en lieu fermé, sans avis sur qui a tort.
+- Cinq étapes : accueillir (le cadre), écouter chacun séparément (positions et besoins), objectiver (faits, source, règle), chercher les options ensemble (CNV : observation, sentiment, besoin, demande), contractualiser et suivre.
+- Le plus souvent, la cause est organisationnelle, et c''est le manager qui la traite.
+- Quand le manager est partie, il commence par écouter et reconnaît sa part ; quand le conflit dépasse le niveau 4 ou que la méthode échoue, il passe la main à un tiers neutre (RH, médiateur).
+- Passer la main n''est pas un échec.
+
+## Sources
+
+- Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 — positions et intérêts.
+- Marshall B. Rosenberg, *Les mots sont des fenêtres (ou bien ce sont des murs)*, La Découverte, 1999 — communication non violente.
+- Friedrich Glasl, *Konfliktmanagement*, 1980 — niveaux d''escalade et modes d''intervention.
+- Code du travail, art. L1152-6 (médiation en cas de harcèlement moral) ; ANACT, « La médiation en entreprise ».
+- France Compétences, référentiel RS7377, compétence 8.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 4;
+  n := n + 1;
+
+  -- 5.5-video-deux-collegues.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
+
+---
+
+[Plan : avatar. Titre : « Deux collègues qui ne se parlent plus »]
+
+Vous connaissez la méthode en cinq étapes. Voyons-la fonctionner sur une situation réelle, dans un autre secteur que la carrosserie : une agence bancaire de quartier, sept personnes. Le manager s''appelle Nour. Deux conseillères, Léa et Camille, ne se parlent plus depuis trois semaines. Les clients commencent à le sentir : un dossier de prêt a traîné parce que chacune pensait que l''autre s''en occupait.
+
+[Titre : « Ce qui a été fait de travers d''abord »]
+
+Nour a d''abord fait ce que font beaucoup de managers : elle a réuni Léa et Camille dans son bureau, sans préparation, un vendredi à 17 h 30, et leur a dit : « Bon, vous allez me dire ce qui se passe, et vous allez arrêter, parce que ça se voit. »
+
+[Texte à l''écran, voix off]
+LÉA : « Il ne se passe rien. »
+CAMILLE : « Demande-lui, c''est elle qui a un problème. »
+LÉA : « Moi j''ai un problème ? C''est toi qui as pris mon client. »
+NOUR : « Bon, on se calme. Vous êtes adultes, faites un effort, on en reparle lundi. »
+
+[Retour avatar]
+Résultat : rien. Le conflit a été rejoué devant le chef, chacune a durci sa position, et Nour a demandé un effort sans rien changer. Lundi, les deux se parlaient encore moins. Reprenons avec la méthode.
+
+[Titre : « Étape 1 — Accueillir »]
+
+Nour convoque Léa mardi à 9 h, Camille à 9 h 30, dans la salle de réunion, porte fermée. Même phrase d''ouverture pour les deux :
+
+[Séquence jouée]
+NOUR : « Il y a une difficulté entre Camille et toi qui pèse sur l''agence ; le dossier Martin a pris quatre jours de retard. Je ne cherche pas qui a raison. Je cherche comment on travaille ensemble. Je vais vous écouter chacune, puis on se verra à trois. Ce qu''on se dit ici reste ici. D''accord ? »
+
+[Titre : « Étape 2 — Écouter chacune »]
+
+[Séquence jouée, Léa]
+NOUR : « Raconte-moi ce qui s''est passé. »
+LÉA : « Le client Rousseau, c''est moi qui le suis depuis deux ans. Camille l''a reçu pendant mes congés et elle lui a ouvert une assurance-vie. Le client est passé dans son portefeuille. Elle ne m''a rien dit. Je l''ai découvert dans l''outil. »
+NOUR : « Tu l''as découvert dans l''outil, sans qu''elle t''en parle. » (reformulation)
+LÉA : « Oui. Et depuis, je ne lui adresse plus la parole, parce que si je lui parle, je vais dire des choses que je regretterai. »
+NOUR : « Qu''est-ce qu''il te faudrait ? »
+LÉA : « Que mes clients restent mes clients. Et qu''on me le dise, au moins. »
+
+[Voix off] Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
+
+[Séquence jouée, Camille]
+NOUR : « Raconte-moi ce qui s''est passé. »
+CAMILLE : « Le client Rousseau est venu pendant les congés de Léa avec un besoin urgent, une succession. Je l''ai traité. L''outil a basculé le client automatiquement dans mon portefeuille, je ne l''ai pas demandé. Quand Léa est revenue, elle ne m''a pas dit bonjour. Alors je n''ai rien dit non plus. »
+NOUR : « Tu as traité une urgence, l''outil a fait le transfert, et tu as pris le silence de Léa comme une accusation. »
+CAMILLE : « Exactement. Et je ne vais pas m''excuser d''avoir fait mon travail. »
+NOUR : « Qu''est-ce qu''il te faudrait ? »
+CAMILLE : « Qu''on ne me traite pas comme une voleuse. Et qu''il y ait une règle claire quand on remplace quelqu''un. »
+
+[Voix off] Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
+
+[Titre : « Étape 3 — Objectiver »]
+
+[Retour avatar]
+Nour met à plat. Les faits concordent : Camille a traité une urgence, l''outil a transféré le client, personne ne s''est parlé. Le fait divergent, « elle m''a pris mon client », n''est pas un fait ; c''est une interprétation. La source : un rôle flou. Que se passe-t-il quand on reçoit le client d''un collègue absent ? Personne ne l''a jamais dit. Et la règle manque : c''est à Nour de la fixer.
+
+Elle remarque aussi ses propres biais : elle a entendu Léa en premier, elle connaît Léa depuis plus longtemps, et elle avait déjà, en son for intérieur, donné tort à Camille. Elle le met de côté.
+
+[Titre : « Étape 4 — Chercher les options ensemble »]
+
+Jeudi 9 h, à trois. Nour rappelle le cadre, puis expose ce qu''elle a compris, de façon équilibrée.
+
+[Séquence jouée]
+NOUR : « Ce que j''ai compris : Camille a traité une urgence pendant les congés de Léa, l''outil a transféré le client, et personne ne s''est parlé au retour. Léa, tu as eu le sentiment qu''on te retirait deux ans de travail. Camille, tu as eu le sentiment d''être traitée en voleuse pour avoir fait ton travail. Et il n''y a pas de règle sur ce qu''on fait quand on remplace un collègue. Ça, c''est de ma responsabilité. Je vous propose que chacune dise à l''autre ce qui s''est passé pour elle, en quatre temps : ce qu''elle a observé, ce qu''elle a ressenti, ce dont elle a besoin, ce qu''elle demande. Léa ? »
+LÉA : « Quand je suis rentrée, j''ai vu dans l''outil que Rousseau était dans ton portefeuille. J''ai été blessée, parce que je le suis depuis deux ans. J''ai besoin que mon travail soit reconnu. Je te demande de me prévenir quand tu traites un de mes clients. »
+CAMILLE : « Je comprends. Quand tu es rentrée, tu ne m''as pas dit bonjour. J''ai été vexée, parce que j''avais traité une succession en urgence. J''ai besoin qu''on ne me prenne pas pour quelqu''un qui pique des clients. Je te demande de me parler quand quelque chose ne va pas, plutôt que de te taire. »
+NOUR : « Qu''est-ce qu''on fait pour que ça fonctionne ? »
+CAMILLE : « On peut remettre Rousseau dans le portefeuille de Léa. Je ne tiens pas à le garder. »
+LÉA : « Et quand on remplace, on laisse un mot au retour. Un mail, deux lignes. »
+NOUR : « Je fixe la règle pour l''agence : un client reçu pendant l''absence de son conseiller reste dans son portefeuille ; le remplaçant lui envoie un mail de passation. Je vais voir avec le siège pour le paramétrage de l''outil. »
+
+[Titre : « Étape 5 — Contractualiser et suivre »]
+
+[Retour avatar]
+Trois engagements, reformulés à voix haute et notés : Camille remet le client Rousseau à Léa cette semaine ; toute passation fait l''objet d''un mail au retour ; Nour fixe la règle pour l''agence et voit le siège pour l''outil. Point dans deux semaines. Et Nour ajoute une chose : « Ce conflit vient d''une règle qui manquait. C''était à moi de la poser. » Ce n''est pas de la faiblesse ; c''est ce qui permet aux deux de sortir sans perdre la face.
+
+Deux semaines plus tard, Léa et Camille se parlent. Pas comme des amies ; comme des collègues. C''est tout ce que Nour avait à obtenir.
+
+[Titre : « Ce qu''il faut retenir »]
+
+Trois choses. D''abord : écouter séparément avant de réunir. La première tentative de Nour a échoué là. Ensuite : chercher la source dans l''organisation ; ici, une règle manquante, que le manager pose. Enfin : ne pas trancher entre les personnes, mais organiser leur échange, avec un format qui empêche les attaques, et conclure par des engagements suivis.
+
+Et une quatrième : si Léa avait refusé l''entretien à trois, ou si les attaques avaient continué devant Nour, il aurait fallu un tiers. Passer la main est une décision de manager.
+
+À tout de suite pour les situations difficiles : recadrer, sanctionner, alerter.
+
+[Fondu, logo]
+
+---
+
+Sources : méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
+
+---
+
+[Plan : avatar. Titre : « Deux collègues qui ne se parlent plus »]
+
+Vous connaissez la méthode en cinq étapes. Voyons-la fonctionner sur une situation réelle, dans un autre secteur que la carrosserie : une agence bancaire de quartier, sept personnes. Le manager s''appelle Nour. Deux conseillères, Léa et Camille, ne se parlent plus depuis trois semaines. Les clients commencent à le sentir : un dossier de prêt a traîné parce que chacune pensait que l''autre s''en occupait.
+
+[Titre : « Ce qui a été fait de travers d''abord »]
+
+Nour a d''abord fait ce que font beaucoup de managers : elle a réuni Léa et Camille dans son bureau, sans préparation, un vendredi à 17 h 30, et leur a dit : « Bon, vous allez me dire ce qui se passe, et vous allez arrêter, parce que ça se voit. »
+
+[Texte à l''écran, voix off]
+LÉA : « Il ne se passe rien. »
+CAMILLE : « Demande-lui, c''est elle qui a un problème. »
+LÉA : « Moi j''ai un problème ? C''est toi qui as pris mon client. »
+NOUR : « Bon, on se calme. Vous êtes adultes, faites un effort, on en reparle lundi. »
+
+[Retour avatar]
+Résultat : rien. Le conflit a été rejoué devant le chef, chacune a durci sa position, et Nour a demandé un effort sans rien changer. Lundi, les deux se parlaient encore moins. Reprenons avec la méthode.
+
+[Titre : « Étape 1 — Accueillir »]
+
+Nour convoque Léa mardi à 9 h, Camille à 9 h 30, dans la salle de réunion, porte fermée. Même phrase d''ouverture pour les deux :
+
+[Séquence jouée]
+NOUR : « Il y a une difficulté entre Camille et toi qui pèse sur l''agence ; le dossier Martin a pris quatre jours de retard. Je ne cherche pas qui a raison. Je cherche comment on travaille ensemble. Je vais vous écouter chacune, puis on se verra à trois. Ce qu''on se dit ici reste ici. D''accord ? »
+
+[Titre : « Étape 2 — Écouter chacune »]
+
+[Séquence jouée, Léa]
+NOUR : « Raconte-moi ce qui s''est passé. »
+LÉA : « Le client Rousseau, c''est moi qui le suis depuis deux ans. Camille l''a reçu pendant mes congés et elle lui a ouvert une assurance-vie. Le client est passé dans son portefeuille. Elle ne m''a rien dit. Je l''ai découvert dans l''outil. »
+NOUR : « Tu l''as découvert dans l''outil, sans qu''elle t''en parle. » (reformulation)
+LÉA : « Oui. Et depuis, je ne lui adresse plus la parole, parce que si je lui parle, je vais dire des choses que je regretterai. »
+NOUR : « Qu''est-ce qu''il te faudrait ? »
+LÉA : « Que mes clients restent mes clients. Et qu''on me le dise, au moins. »
+
+[Voix off] Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
+
+[Séquence jouée, Camille]
+NOUR : « Raconte-moi ce qui s''est passé. »
+CAMILLE : « Le client Rousseau est venu pendant les congés de Léa avec un besoin urgent, une succession. Je l''ai traité. L''outil a basculé le client automatiquement dans mon portefeuille, je ne l''ai pas demandé. Quand Léa est revenue, elle ne m''a pas dit bonjour. Alors je n''ai rien dit non plus. »
+NOUR : « Tu as traité une urgence, l''outil a fait le transfert, et tu as pris le silence de Léa comme une accusation. »
+CAMILLE : « Exactement. Et je ne vais pas m''excuser d''avoir fait mon travail. »
+NOUR : « Qu''est-ce qu''il te faudrait ? »
+CAMILLE : « Qu''on ne me traite pas comme une voleuse. Et qu''il y ait une règle claire quand on remplace quelqu''un. »
+
+[Voix off] Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
+
+[Titre : « Étape 3 — Objectiver »]
+
+[Retour avatar]
+Nour met à plat. Les faits concordent : Camille a traité une urgence, l''outil a transféré le client, personne ne s''est parlé. Le fait divergent, « elle m''a pris mon client », n''est pas un fait ; c''est une interprétation. La source : un rôle flou. Que se passe-t-il quand on reçoit le client d''un collègue absent ? Personne ne l''a jamais dit. Et la règle manque : c''est à Nour de la fixer.
+
+Elle remarque aussi ses propres biais : elle a entendu Léa en premier, elle connaît Léa depuis plus longtemps, et elle avait déjà, en son for intérieur, donné tort à Camille. Elle le met de côté.
+
+[Titre : « Étape 4 — Chercher les options ensemble »]
+
+Jeudi 9 h, à trois. Nour rappelle le cadre, puis expose ce qu''elle a compris, de façon équilibrée.
+
+[Séquence jouée]
+NOUR : « Ce que j''ai compris : Camille a traité une urgence pendant les congés de Léa, l''outil a transféré le client, et personne ne s''est parlé au retour. Léa, tu as eu le sentiment qu''on te retirait deux ans de travail. Camille, tu as eu le sentiment d''être traitée en voleuse pour avoir fait ton travail. Et il n''y a pas de règle sur ce qu''on fait quand on remplace un collègue. Ça, c''est de ma responsabilité. Je vous propose que chacune dise à l''autre ce qui s''est passé pour elle, en quatre temps : ce qu''elle a observé, ce qu''elle a ressenti, ce dont elle a besoin, ce qu''elle demande. Léa ? »
+LÉA : « Quand je suis rentrée, j''ai vu dans l''outil que Rousseau était dans ton portefeuille. J''ai été blessée, parce que je le suis depuis deux ans. J''ai besoin que mon travail soit reconnu. Je te demande de me prévenir quand tu traites un de mes clients. »
+CAMILLE : « Je comprends. Quand tu es rentrée, tu ne m''as pas dit bonjour. J''ai été vexée, parce que j''avais traité une succession en urgence. J''ai besoin qu''on ne me prenne pas pour quelqu''un qui pique des clients. Je te demande de me parler quand quelque chose ne va pas, plutôt que de te taire. »
+NOUR : « Qu''est-ce qu''on fait pour que ça fonctionne ? »
+CAMILLE : « On peut remettre Rousseau dans le portefeuille de Léa. Je ne tiens pas à le garder. »
+LÉA : « Et quand on remplace, on laisse un mot au retour. Un mail, deux lignes. »
+NOUR : « Je fixe la règle pour l''agence : un client reçu pendant l''absence de son conseiller reste dans son portefeuille ; le remplaçant lui envoie un mail de passation. Je vais voir avec le siège pour le paramétrage de l''outil. »
+
+[Titre : « Étape 5 — Contractualiser et suivre »]
+
+[Retour avatar]
+Trois engagements, reformulés à voix haute et notés : Camille remet le client Rousseau à Léa cette semaine ; toute passation fait l''objet d''un mail au retour ; Nour fixe la règle pour l''agence et voit le siège pour l''outil. Point dans deux semaines. Et Nour ajoute une chose : « Ce conflit vient d''une règle qui manquait. C''était à moi de la poser. » Ce n''est pas de la faiblesse ; c''est ce qui permet aux deux de sortir sans perdre la face.
+
+Deux semaines plus tard, Léa et Camille se parlent. Pas comme des amies ; comme des collègues. C''est tout ce que Nour avait à obtenir.
+
+[Titre : « Ce qu''il faut retenir »]
+
+Trois choses. D''abord : écouter séparément avant de réunir. La première tentative de Nour a échoué là. Ensuite : chercher la source dans l''organisation ; ici, une règle manquante, que le manager pose. Enfin : ne pas trancher entre les personnes, mais organiser leur échange, avec un format qui empêche les attaques, et conclure par des engagements suivis.
+
+Et une quatrième : si Léa avait refusé l''entretien à trois, ou si les attaques avaient continué devant Nour, il aurait fallu un tiers. Passer la main est une décision de manager.
+
+À tout de suite pour les situations difficiles : recadrer, sanctionner, alerter.
+
+[Fondu, logo]
+
+---
+
+Sources : méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 5;
+  n := n + 1;
+
+  -- 5.6-situations-difficiles.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Toutes les tensions ne se résolvent pas par la méthode en cinq étapes. Certaines situations relèvent d''un autre registre : un comportement qui doit cesser, un refus d''obéir, une personne en souffrance, un soupçon de harcèlement. Dans ces situations, le manager de proximité doit savoir précisément ce qu''il fait, ce qu''il ne fait pas, et ce que dit la loi. Se tromper de registre, ou de procédure, coûte cher à la personne, à l''entreprise et au manager lui-même.
+
+## Recadrage et sanction : deux choses différentes
+
+Le recadrage est un acte de management. Il relève du manager de proximité. Vous l''avez vu au module 3 : des faits datés, la règle, l''écoute, l''attente, la conséquence annoncée, la trace. Il n''a pas de forme légale, il n''apparaît pas au dossier disciplinaire, il vise à faire cesser un comportement avant qu''il ne devienne une faute. Un rappel à l''ordre oral, un point de recadrage, une note dans le carnet du manager : ce n''est pas une sanction.
+
+La sanction disciplinaire est un acte de l''employeur. Le Code du travail la définit comme toute mesure, autre que les observations verbales, prise par l''employeur à la suite d''un agissement du salarié considéré comme fautif (art. L1331-1). Avertissement écrit, blâme, mise à pied disciplinaire, mutation ou rétrogradation disciplinaire, licenciement pour faute. Elle obéit à une procédure, elle est encadrée par le règlement intérieur, et elle relève du chef d''entreprise ou de la personne qui a reçu délégation. Dans une petite entreprise, ce peut être le manager de proximité s''il a une délégation écrite ; dans la plupart des cas, ce n''est pas lui.
+
+Les règles que le manager doit connaître, même s''il ne sanctionne pas lui-même :
+
+- Les sanctions pécuniaires (amende, retenue sur salaire) sont interdites (L1331-2).
+- Dans les entreprises d''au moins 50 salariés, le règlement intérieur est obligatoire (L1311-2) et il fixe l''échelle des sanctions ; une sanction qui n''y figure pas ne peut pas être prononcée. En dessous de ce seuil, un règlement intérieur reste possible et utile.
+- Aucun fait fautif ne peut donner lieu à des poursuites disciplinaires au-delà de deux mois à compter du jour où l''employeur en a eu connaissance (L1332-4). C''est pour cela que le recadrage tracé compte : un manager qui « laisse passer » pendant trois mois avant de remonter a rendu la sanction impossible.
+- Une sanction datant de plus de trois ans ne peut plus être invoquée à l''appui d''une nouvelle sanction (L1332-5).
+- La sanction doit être proportionnée à la faute, et un même fait ne peut pas être sanctionné deux fois.
+- Pour toute sanction qui a une incidence sur la présence, la fonction, la carrière ou la rémunération (donc tout sauf l''avertissement et le blâme simples), la procédure est obligatoire (L1332-2) : convocation écrite à un entretien préalable, entretien où le salarié peut se faire assister par une personne de l''entreprise, puis notification écrite et motivée, au plus tôt deux jours ouvrables après l''entretien et au plus tard un mois après. En cas de faute grave, une mise à pied conservatoire peut être prononcée immédiatement, dans l''attente de la procédure (L1332-3).
+
+Le rôle du manager de proximité dans une procédure disciplinaire : fournir à l''employeur les faits, datés et précis, avec les recadrages déjà faits et leur trace ; ne pas annoncer lui-même une sanction qu''il n''a pas le pouvoir de prononcer ; ne pas en parler à l''équipe ; et, après la sanction, reprendre le management de la personne sans acharnement ni évitement. Une sanction n''est pas une rupture de relation ; c''est un acte qui doit permettre de repartir.
+
+## Les trois catégories d''erreur, et la faute
+
+Le podcast 4.8 distinguait l''erreur d''apprentissage, l''erreur d''inattention et la faute délibérée. Cette distinction guide le registre :
+
+- L''erreur d''apprentissage se traite par le retour d''expérience et l''accompagnement (module 4). Jamais par le recadrage.
+- L''erreur d''inattention se traite par le feedback (module 3), puis, si elle se répète malgré les retours, par le recadrage.
+- La faute délibérée (contournement d''une règle en connaissance de cause, notamment de sécurité ; comportement inacceptable envers un collègue ou un client ; refus d''exécuter une consigne légitime) se traite par le recadrage immédiat et, selon la gravité, par la remontée à l''employeur pour sanction.
+
+Le manager qui confond les registres fait deux dégâts : il sanctionne l''apprentissage (et détruit la sécurité psychologique), ou il « accompagne » la faute délibérée (et détruit la règle).
+
+## L''insubordination
+
+Un salarié doit exécuter les consignes de l''employeur qui entrent dans le cadre de son contrat et qui sont légitimes. Le refus d''obéir à une consigne légitime est une faute. Mais trois cas font exception, et le manager doit les connaître :
+
+- L''ordre illégal ou contraire à la dignité : un salarié n''a pas à exécuter un ordre qui l''expose à commettre une infraction ou qui porte atteinte à ses droits fondamentaux.
+- Le danger grave et imminent : tout salarié a le droit de se retirer d''une situation de travail dont il a un motif raisonnable de penser qu''elle présente un danger grave et imminent pour sa vie ou sa santé, et d''alerter l''employeur (L4131-1). Aucune sanction ne peut être prise pour un retrait légitime (L4131-3).
+- La consigne hors contrat : demander une tâche sans rapport avec le poste, ou une modification du contrat (horaires, lieu, rémunération) sans accord.
+
+Face à un refus, le manager ne s''emporte pas et ne tranche pas sur le moment. Il demande la raison (« qu''est-ce qui fait que tu refuses ? »), il note, et il vérifie : si la raison est un danger ou une illégalité, il a lui-même un problème à traiter ; si c''est un refus pur et simple, il recadre (rappel de la consigne, de sa légitimité, de la conséquence), et il remonte. Un refus répété est une faute ; un refus isolé peut cacher une cause à comprendre.
+
+## Le collaborateur en souffrance
+
+Quand la difficulté d''une personne n''est pas un comportement fautif mais une souffrance (épuisement, détresse, addiction, difficulté personnelle qui déborde), le registre disciplinaire est le mauvais. Vous avez vu à la leçon 4.7 ce que fait le manager : voir, écouter sans creuser, agir sur le travail, orienter vers le médecin du travail, alerter la hiérarchie, suivre.
+
+Deux points à ajouter. D''abord, souffrance et faute peuvent coexister : un salarié épuisé peut commettre une faute. On traite les deux, séparément, et on ne se sert pas de la souffrance pour excuser une faute grave ni de la faute pour ignorer la souffrance. Ensuite, certaines situations exigent d''agir sans attendre la volonté de la personne : un salarié manifestement sous l''emprise d''alcool ou de stupéfiants à un poste dangereux doit être retiré du poste immédiatement (obligation de sécurité), raccompagné, et l''employeur informé ; le règlement intérieur prévoit en général la procédure.
+
+## Le soupçon de harcèlement ou de violence
+
+C''est la situation où le manager a le moins le droit à l''erreur. Le harcèlement moral (agissements répétés ayant pour objet ou pour effet une dégradation des conditions de travail susceptible de porter atteinte aux droits, à la dignité, à la santé ou à l''avenir professionnel ; art. L1152-1), le harcèlement sexuel (L1153-1), les agissements sexistes (L1142-2-1), la violence physique ou verbale, sont interdits, et l''employeur a l''obligation de les prévenir et d''y mettre fin (L1152-4, L1153-5). Il doit, dès qu''il est informé, réagir : enquêter, protéger, sanctionner si les faits sont établis (L1152-5).
+
+Ce que fait le manager qui reçoit une plainte, ou qui constate des faits :
+
+1. Il prend au sérieux, sans juger de la véracité : « Merci de me l''avoir dit. Je vais faire ce qu''il faut. » Il ne dit ni « c''est sûrement un malentendu » ni « il va payer ».
+2. Il note ce qui lui est dit, avec les mots de la personne, la date, les faits décrits.
+3. Il informe sans délai l''employeur (direction, RH) : ce n''est pas une option, c''est l''obligation d''agir de l''employeur qu''il déclenche. Il indique à la personne qu''il le fait, et vers qui.
+4. Il protège : si la personne le demande ou si la situation l''exige, il prend les mesures d''organisation immédiates à sa portée (ne pas laisser seuls la personne et l''auteur présumé, aménager les horaires), sans pénaliser la personne qui a parlé.
+5. Il oriente vers les relais : le référent harcèlement sexuel et agissements sexistes du CSE (obligatoire dans tout CSE, L2314-1) et celui de l''entreprise dans les entreprises d''au moins 250 salariés (L1153-5-1), le médecin du travail, les représentants du personnel, et, à l''extérieur, l''inspection du travail, le Défenseur des droits, une association.
+6. Il ne mène pas l''enquête lui-même et ne confronte pas les personnes : l''enquête est conduite par l''employeur, souvent avec le CSE ou un tiers, selon une procédure. Il y contribue si on le lui demande.
+7. Il garde la confidentialité : ni l''équipe, ni les autres managers, ni le café.
+
+Le salarié qui relate ou témoigne de faits de harcèlement de bonne foi est protégé contre toute sanction (L1152-2, L1153-3). Le manager l''est aussi. Le manager qui, informé, ne fait rien, engage la responsabilité de l''employeur et peut engager la sienne.
+
+Si les faits impliquent le manager lui-même comme auteur présumé, le circuit est le même, par-dessus lui : la personne s''adresse à la hiérarchie supérieure, aux RH, au référent, au CSE. Si les faits impliquent la hiérarchie du manager, le manager remonte au niveau supérieur ou saisit directement le CSE ou l''inspection du travail.
+
+## Alerter : le geste du manager
+
+Dans toutes ces situations, un même geste revient : alerter, c''est-à-dire informer par écrit, à temps, la personne qui a le pouvoir d''agir. Un manager de proximité qui a recadré, tracé, et alerté sa hiérarchie a fait son travail, même si la situation ne se règle pas. Un manager qui a « géré seul » pendant des mois, sans trace, a pris sur lui une responsabilité qui n''est pas la sienne, et souvent laissé prescrire les faits.
+
+Le gabarit 5 de la fiche 3.9 (alerte à la hiérarchie) et le gabarit 3 (recadrage) sont les outils. La règle : jamais plus de 48 heures entre un fait grave et son signalement écrit.
+
+## Le cas Garnier
+
+Lucas, l''apprenti, a été surpris par Thierry à utiliser la ponceuse sans lunettes, pour la troisième fois. Erreur d''apprentissage ? Non : la consigne a été donnée, rappelée, et Lucas l''a reconnue. Karim recadre le jour même, dans le bureau : faits, règle (et pourquoi : la projection dans l''œil), écoute (« j''y pense pas, ça me gêne pour voir »), attente (« lunettes à chaque usage, sans exception ; on essaie un autre modèle demain »), conséquence (« si ça se reproduit, j''en informe Michel, et ça peut donner lieu à une sanction »), trace, point dans une semaine. Il informe Michel par écrit ce soir-là. Une quatrième fois serait une faute délibérée, et le registre changerait.
+
+Nadia vient voir Karim, tendue : depuis deux semaines, un client de flotte, qui passe souvent, fait des remarques sur son physique et lui a touché l''épaule en insistant. Karim : « Merci de me l''avoir dit. C''est inacceptable et je vais faire ce qu''il faut. » Il note les faits avec ses mots. Il informe Michel le jour même, par écrit, en demandant que le client soit reçu par Michel et prévenu, et que Nadia ne soit plus seule à le recevoir ; d''ici là, Sophie ou Karim sont présents à chaque restitution de ce client. Il indique à Nadia qu''elle peut aussi en parler au médecin du travail et qu''elle est protégée pour avoir parlé. Il n''en parle à personne d''autre. Michel reçoit le client la semaine suivante ; les remarques cessent. Si Michel n''avait rien fait, Karim aurait eu à saisir l''inspection du travail, et le lui aurait dit.
+
+## À retenir
+
+- Recadrage (manager, acte de management, tracé) et sanction (employeur, procédure L1332-1 et suivants, règlement intérieur, prescription de deux mois, proportionnalité) sont deux registres distincts.
+- Erreur d''apprentissage : accompagner. Erreur d''inattention : feedback, puis recadrage si répétition. Faute délibérée : recadrage et remontée.
+- Insubordination : c''est une faute, sauf ordre illégal, danger grave et imminent (droit de retrait, L4131-1) ou consigne hors contrat. Demander la raison avant de conclure.
+- Collaborateur en souffrance : registre de la leçon 4.7 ; souffrance et faute se traitent séparément ; un salarié en état dangereux est retiré du poste immédiatement.
+- Harcèlement ou violence : prendre au sérieux, noter, informer l''employeur sans délai, protéger, orienter (référents, médecin du travail, CSE, inspection), ne pas enquêter soi-même, garder la confidentialité. La personne qui parle de bonne foi est protégée.
+- Alerter par écrit, à temps : jamais plus de 48 heures pour un fait grave.
+
+## Sources
+
+- Code du travail : L1331-1, L1331-2, L1311-2, L1332-1 à L1332-5 (discipline) ; L4131-1 et L4131-3 (danger grave et imminent, droit de retrait) ; L1152-1 à L1152-6, L1153-1 à L1153-6, L1142-2-1, L1153-5-1, L2314-1 (harcèlement, agissements sexistes, référents).
+- Ministère du Travail, « Le pouvoir disciplinaire de l''employeur », « Harcèlement moral », « Harcèlement sexuel et agissements sexistes au travail », travail-emploi.gouv.fr ; guide « Harcèlement sexuel et agissements sexistes au travail : prévenir, agir, sanctionner », 2019.
+- INRS, « Harcèlement et violence interne », inrs.fr.
+- Défenseur des droits, defenseurdesdroits.fr.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Toutes les tensions ne se résolvent pas par la méthode en cinq étapes. Certaines situations relèvent d''un autre registre : un comportement qui doit cesser, un refus d''obéir, une personne en souffrance, un soupçon de harcèlement. Dans ces situations, le manager de proximité doit savoir précisément ce qu''il fait, ce qu''il ne fait pas, et ce que dit la loi. Se tromper de registre, ou de procédure, coûte cher à la personne, à l''entreprise et au manager lui-même.
+
+## Recadrage et sanction : deux choses différentes
+
+Le recadrage est un acte de management. Il relève du manager de proximité. Vous l''avez vu au module 3 : des faits datés, la règle, l''écoute, l''attente, la conséquence annoncée, la trace. Il n''a pas de forme légale, il n''apparaît pas au dossier disciplinaire, il vise à faire cesser un comportement avant qu''il ne devienne une faute. Un rappel à l''ordre oral, un point de recadrage, une note dans le carnet du manager : ce n''est pas une sanction.
+
+La sanction disciplinaire est un acte de l''employeur. Le Code du travail la définit comme toute mesure, autre que les observations verbales, prise par l''employeur à la suite d''un agissement du salarié considéré comme fautif (art. L1331-1). Avertissement écrit, blâme, mise à pied disciplinaire, mutation ou rétrogradation disciplinaire, licenciement pour faute. Elle obéit à une procédure, elle est encadrée par le règlement intérieur, et elle relève du chef d''entreprise ou de la personne qui a reçu délégation. Dans une petite entreprise, ce peut être le manager de proximité s''il a une délégation écrite ; dans la plupart des cas, ce n''est pas lui.
+
+Les règles que le manager doit connaître, même s''il ne sanctionne pas lui-même :
+
+- Les sanctions pécuniaires (amende, retenue sur salaire) sont interdites (L1331-2).
+- Dans les entreprises d''au moins 50 salariés, le règlement intérieur est obligatoire (L1311-2) et il fixe l''échelle des sanctions ; une sanction qui n''y figure pas ne peut pas être prononcée. En dessous de ce seuil, un règlement intérieur reste possible et utile.
+- Aucun fait fautif ne peut donner lieu à des poursuites disciplinaires au-delà de deux mois à compter du jour où l''employeur en a eu connaissance (L1332-4). C''est pour cela que le recadrage tracé compte : un manager qui « laisse passer » pendant trois mois avant de remonter a rendu la sanction impossible.
+- Une sanction datant de plus de trois ans ne peut plus être invoquée à l''appui d''une nouvelle sanction (L1332-5).
+- La sanction doit être proportionnée à la faute, et un même fait ne peut pas être sanctionné deux fois.
+- Pour toute sanction qui a une incidence sur la présence, la fonction, la carrière ou la rémunération (donc tout sauf l''avertissement et le blâme simples), la procédure est obligatoire (L1332-2) : convocation écrite à un entretien préalable, entretien où le salarié peut se faire assister par une personne de l''entreprise, puis notification écrite et motivée, au plus tôt deux jours ouvrables après l''entretien et au plus tard un mois après. En cas de faute grave, une mise à pied conservatoire peut être prononcée immédiatement, dans l''attente de la procédure (L1332-3).
+
+Le rôle du manager de proximité dans une procédure disciplinaire : fournir à l''employeur les faits, datés et précis, avec les recadrages déjà faits et leur trace ; ne pas annoncer lui-même une sanction qu''il n''a pas le pouvoir de prononcer ; ne pas en parler à l''équipe ; et, après la sanction, reprendre le management de la personne sans acharnement ni évitement. Une sanction n''est pas une rupture de relation ; c''est un acte qui doit permettre de repartir.
+
+## Les trois catégories d''erreur, et la faute
+
+Le podcast 4.8 distinguait l''erreur d''apprentissage, l''erreur d''inattention et la faute délibérée. Cette distinction guide le registre :
+
+- L''erreur d''apprentissage se traite par le retour d''expérience et l''accompagnement (module 4). Jamais par le recadrage.
+- L''erreur d''inattention se traite par le feedback (module 3), puis, si elle se répète malgré les retours, par le recadrage.
+- La faute délibérée (contournement d''une règle en connaissance de cause, notamment de sécurité ; comportement inacceptable envers un collègue ou un client ; refus d''exécuter une consigne légitime) se traite par le recadrage immédiat et, selon la gravité, par la remontée à l''employeur pour sanction.
+
+Le manager qui confond les registres fait deux dégâts : il sanctionne l''apprentissage (et détruit la sécurité psychologique), ou il « accompagne » la faute délibérée (et détruit la règle).
+
+## L''insubordination
+
+Un salarié doit exécuter les consignes de l''employeur qui entrent dans le cadre de son contrat et qui sont légitimes. Le refus d''obéir à une consigne légitime est une faute. Mais trois cas font exception, et le manager doit les connaître :
+
+- L''ordre illégal ou contraire à la dignité : un salarié n''a pas à exécuter un ordre qui l''expose à commettre une infraction ou qui porte atteinte à ses droits fondamentaux.
+- Le danger grave et imminent : tout salarié a le droit de se retirer d''une situation de travail dont il a un motif raisonnable de penser qu''elle présente un danger grave et imminent pour sa vie ou sa santé, et d''alerter l''employeur (L4131-1). Aucune sanction ne peut être prise pour un retrait légitime (L4131-3).
+- La consigne hors contrat : demander une tâche sans rapport avec le poste, ou une modification du contrat (horaires, lieu, rémunération) sans accord.
+
+Face à un refus, le manager ne s''emporte pas et ne tranche pas sur le moment. Il demande la raison (« qu''est-ce qui fait que tu refuses ? »), il note, et il vérifie : si la raison est un danger ou une illégalité, il a lui-même un problème à traiter ; si c''est un refus pur et simple, il recadre (rappel de la consigne, de sa légitimité, de la conséquence), et il remonte. Un refus répété est une faute ; un refus isolé peut cacher une cause à comprendre.
+
+## Le collaborateur en souffrance
+
+Quand la difficulté d''une personne n''est pas un comportement fautif mais une souffrance (épuisement, détresse, addiction, difficulté personnelle qui déborde), le registre disciplinaire est le mauvais. Vous avez vu à la leçon 4.7 ce que fait le manager : voir, écouter sans creuser, agir sur le travail, orienter vers le médecin du travail, alerter la hiérarchie, suivre.
+
+Deux points à ajouter. D''abord, souffrance et faute peuvent coexister : un salarié épuisé peut commettre une faute. On traite les deux, séparément, et on ne se sert pas de la souffrance pour excuser une faute grave ni de la faute pour ignorer la souffrance. Ensuite, certaines situations exigent d''agir sans attendre la volonté de la personne : un salarié manifestement sous l''emprise d''alcool ou de stupéfiants à un poste dangereux doit être retiré du poste immédiatement (obligation de sécurité), raccompagné, et l''employeur informé ; le règlement intérieur prévoit en général la procédure.
+
+## Le soupçon de harcèlement ou de violence
+
+C''est la situation où le manager a le moins le droit à l''erreur. Le harcèlement moral (agissements répétés ayant pour objet ou pour effet une dégradation des conditions de travail susceptible de porter atteinte aux droits, à la dignité, à la santé ou à l''avenir professionnel ; art. L1152-1), le harcèlement sexuel (L1153-1), les agissements sexistes (L1142-2-1), la violence physique ou verbale, sont interdits, et l''employeur a l''obligation de les prévenir et d''y mettre fin (L1152-4, L1153-5). Il doit, dès qu''il est informé, réagir : enquêter, protéger, sanctionner si les faits sont établis (L1152-5).
+
+Ce que fait le manager qui reçoit une plainte, ou qui constate des faits :
+
+1. Il prend au sérieux, sans juger de la véracité : « Merci de me l''avoir dit. Je vais faire ce qu''il faut. » Il ne dit ni « c''est sûrement un malentendu » ni « il va payer ».
+2. Il note ce qui lui est dit, avec les mots de la personne, la date, les faits décrits.
+3. Il informe sans délai l''employeur (direction, RH) : ce n''est pas une option, c''est l''obligation d''agir de l''employeur qu''il déclenche. Il indique à la personne qu''il le fait, et vers qui.
+4. Il protège : si la personne le demande ou si la situation l''exige, il prend les mesures d''organisation immédiates à sa portée (ne pas laisser seuls la personne et l''auteur présumé, aménager les horaires), sans pénaliser la personne qui a parlé.
+5. Il oriente vers les relais : le référent harcèlement sexuel et agissements sexistes du CSE (obligatoire dans tout CSE, L2314-1) et celui de l''entreprise dans les entreprises d''au moins 250 salariés (L1153-5-1), le médecin du travail, les représentants du personnel, et, à l''extérieur, l''inspection du travail, le Défenseur des droits, une association.
+6. Il ne mène pas l''enquête lui-même et ne confronte pas les personnes : l''enquête est conduite par l''employeur, souvent avec le CSE ou un tiers, selon une procédure. Il y contribue si on le lui demande.
+7. Il garde la confidentialité : ni l''équipe, ni les autres managers, ni le café.
+
+Le salarié qui relate ou témoigne de faits de harcèlement de bonne foi est protégé contre toute sanction (L1152-2, L1153-3). Le manager l''est aussi. Le manager qui, informé, ne fait rien, engage la responsabilité de l''employeur et peut engager la sienne.
+
+Si les faits impliquent le manager lui-même comme auteur présumé, le circuit est le même, par-dessus lui : la personne s''adresse à la hiérarchie supérieure, aux RH, au référent, au CSE. Si les faits impliquent la hiérarchie du manager, le manager remonte au niveau supérieur ou saisit directement le CSE ou l''inspection du travail.
+
+## Alerter : le geste du manager
+
+Dans toutes ces situations, un même geste revient : alerter, c''est-à-dire informer par écrit, à temps, la personne qui a le pouvoir d''agir. Un manager de proximité qui a recadré, tracé, et alerté sa hiérarchie a fait son travail, même si la situation ne se règle pas. Un manager qui a « géré seul » pendant des mois, sans trace, a pris sur lui une responsabilité qui n''est pas la sienne, et souvent laissé prescrire les faits.
+
+Le gabarit 5 de la fiche 3.9 (alerte à la hiérarchie) et le gabarit 3 (recadrage) sont les outils. La règle : jamais plus de 48 heures entre un fait grave et son signalement écrit.
+
+## Le cas Garnier
+
+Lucas, l''apprenti, a été surpris par Thierry à utiliser la ponceuse sans lunettes, pour la troisième fois. Erreur d''apprentissage ? Non : la consigne a été donnée, rappelée, et Lucas l''a reconnue. Karim recadre le jour même, dans le bureau : faits, règle (et pourquoi : la projection dans l''œil), écoute (« j''y pense pas, ça me gêne pour voir »), attente (« lunettes à chaque usage, sans exception ; on essaie un autre modèle demain »), conséquence (« si ça se reproduit, j''en informe Michel, et ça peut donner lieu à une sanction »), trace, point dans une semaine. Il informe Michel par écrit ce soir-là. Une quatrième fois serait une faute délibérée, et le registre changerait.
+
+Nadia vient voir Karim, tendue : depuis deux semaines, un client de flotte, qui passe souvent, fait des remarques sur son physique et lui a touché l''épaule en insistant. Karim : « Merci de me l''avoir dit. C''est inacceptable et je vais faire ce qu''il faut. » Il note les faits avec ses mots. Il informe Michel le jour même, par écrit, en demandant que le client soit reçu par Michel et prévenu, et que Nadia ne soit plus seule à le recevoir ; d''ici là, Sophie ou Karim sont présents à chaque restitution de ce client. Il indique à Nadia qu''elle peut aussi en parler au médecin du travail et qu''elle est protégée pour avoir parlé. Il n''en parle à personne d''autre. Michel reçoit le client la semaine suivante ; les remarques cessent. Si Michel n''avait rien fait, Karim aurait eu à saisir l''inspection du travail, et le lui aurait dit.
+
+## À retenir
+
+- Recadrage (manager, acte de management, tracé) et sanction (employeur, procédure L1332-1 et suivants, règlement intérieur, prescription de deux mois, proportionnalité) sont deux registres distincts.
+- Erreur d''apprentissage : accompagner. Erreur d''inattention : feedback, puis recadrage si répétition. Faute délibérée : recadrage et remontée.
+- Insubordination : c''est une faute, sauf ordre illégal, danger grave et imminent (droit de retrait, L4131-1) ou consigne hors contrat. Demander la raison avant de conclure.
+- Collaborateur en souffrance : registre de la leçon 4.7 ; souffrance et faute se traitent séparément ; un salarié en état dangereux est retiré du poste immédiatement.
+- Harcèlement ou violence : prendre au sérieux, noter, informer l''employeur sans délai, protéger, orienter (référents, médecin du travail, CSE, inspection), ne pas enquêter soi-même, garder la confidentialité. La personne qui parle de bonne foi est protégée.
+- Alerter par écrit, à temps : jamais plus de 48 heures pour un fait grave.
+
+## Sources
+
+- Code du travail : L1331-1, L1331-2, L1311-2, L1332-1 à L1332-5 (discipline) ; L4131-1 et L4131-3 (danger grave et imminent, droit de retrait) ; L1152-1 à L1152-6, L1153-1 à L1153-6, L1142-2-1, L1153-5-1, L2314-1 (harcèlement, agissements sexistes, référents).
+- Ministère du Travail, « Le pouvoir disciplinaire de l''employeur », « Harcèlement moral », « Harcèlement sexuel et agissements sexistes au travail », travail-emploi.gouv.fr ; guide « Harcèlement sexuel et agissements sexistes au travail : prévenir, agir, sanctionner », 2019.
+- INRS, « Harcèlement et violence interne », inrs.fr.
+- Défenseur des droits, defenseurdesdroits.fr.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 6;
+  n := n + 1;
+
+  -- 5.7-podcast-le-conflit-que-jai-laisse-pourrir.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
+
+---
+
+**CLAIRE** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
+
+**PATRICE** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
+
+**CLAIRE** — Et là ?
+
+**PATRICE** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
+
+**CLAIRE** — Qu''est-ce que vous avez fait à ce moment-là ?
+
+**PATRICE** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
+
+**CLAIRE** — Et ensuite ?
+
+**PATRICE** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
+
+**CLAIRE** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
+
+**PATRICE** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
+
+**CLAIRE** — Quand est-ce que ça a basculé ?
+
+**PATRICE** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
+
+**CLAIRE** — Et vous, pendant ce temps ?
+
+**PATRICE** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
+
+**CLAIRE** — Et l''équipe ?
+
+**PATRICE** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
+
+**CLAIRE** — Qu''est-ce qui vous a forcé à agir ?
+
+**PATRICE** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
+
+**CLAIRE** — C''est dur.
+
+**PATRICE** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
+
+**CLAIRE** — Qu''est-ce que vous avez fait avec Bruno ?
+
+**PATRICE** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
+
+**CLAIRE** — Vous aviez laissé la règle s''effacer.
+
+**PATRICE** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
+
+**CLAIRE** — Qu''est-ce que vous avez entendu ?
+
+**PATRICE** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
+
+**CLAIRE** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
+
+**PATRICE** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
+
+**CLAIRE** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
+
+**PATRICE** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
+
+**CLAIRE** — C''est courageux de le dire.
+
+**PATRICE** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
+
+**CLAIRE** — Et aujourd''hui, comment vous repérez le niveau 1 ?
+
+**PATRICE** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
+
+**CLAIRE** — Et Bruno ?
+
+**PATRICE** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
+
+**CLAIRE** — Un dernier conseil ?
+
+**PATRICE** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
+
+**CLAIRE** — Merci Patrice.
+
+**PATRICE** — Merci.
+
+**CLAIRE** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
+
+---
+
+Sources : Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
+
+---
+
+**CLAIRE** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
+
+**PATRICE** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
+
+**CLAIRE** — Et là ?
+
+**PATRICE** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
+
+**CLAIRE** — Qu''est-ce que vous avez fait à ce moment-là ?
+
+**PATRICE** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
+
+**CLAIRE** — Et ensuite ?
+
+**PATRICE** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
+
+**CLAIRE** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
+
+**PATRICE** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
+
+**CLAIRE** — Quand est-ce que ça a basculé ?
+
+**PATRICE** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
+
+**CLAIRE** — Et vous, pendant ce temps ?
+
+**PATRICE** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
+
+**CLAIRE** — Et l''équipe ?
+
+**PATRICE** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
+
+**CLAIRE** — Qu''est-ce qui vous a forcé à agir ?
+
+**PATRICE** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
+
+**CLAIRE** — C''est dur.
+
+**PATRICE** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
+
+**CLAIRE** — Qu''est-ce que vous avez fait avec Bruno ?
+
+**PATRICE** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
+
+**CLAIRE** — Vous aviez laissé la règle s''effacer.
+
+**PATRICE** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
+
+**CLAIRE** — Qu''est-ce que vous avez entendu ?
+
+**PATRICE** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
+
+**CLAIRE** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
+
+**PATRICE** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
+
+**CLAIRE** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
+
+**PATRICE** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
+
+**CLAIRE** — C''est courageux de le dire.
+
+**PATRICE** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
+
+**CLAIRE** — Et aujourd''hui, comment vous repérez le niveau 1 ?
+
+**PATRICE** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
+
+**CLAIRE** — Et Bruno ?
+
+**PATRICE** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
+
+**CLAIRE** — Un dernier conseil ?
+
+**PATRICE** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
+
+**CLAIRE** — Merci Patrice.
+
+**PATRICE** — Merci.
+
+**CLAIRE** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
+
+---
+
+Sources : Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 7;
+  n := n + 1;
+
+  -- 5.8-cas-pratique-tension-bureau-garnier.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Deux situations, à traiter par écrit avant de lire le corrigé. Comptez 25 minutes. Utilisez la méthode en cinq étapes (leçon 5.4), la grille des registres (leçon 5.6) et les gabarits de la fiche 3.9.
+
+## Situation A — Thierry, Amine et Julien
+
+Amine, le nouveau peintre, est arrivé il y a six semaines. Thierry, carrossier depuis 28 ans et référent qualité, n''a jamais été franchement hostile, mais il multiplie les remarques : « À l''époque, on n''avait pas besoin de trois couches pour faire une aile. » « Le nouveau, il connaît les logiciels, mais un vrai atelier, c''est autre chose. » Julien, qui admire Thierry, rit et renchérit. Nadia a dit à Karim, en aparté, qu''Amine mange seul depuis dix jours. Hier, au brief, Amine a proposé de changer le circuit des pièces (il l''avait signalé dès sa première semaine) ; Thierry a répondu, devant tout le monde : « Quand tu auras fait tes preuves, on en reparlera. » Amine n''a rien dit. Marc a levé les yeux au ciel.
+
+Question A1 — À quel niveau d''escalade est-on ? Quelle est la source du conflit (rôles, ressources, valeurs, personnes) ? Qu''est-ce que Karim a fait, ou pas fait, qui y a contribué ?
+
+Question A2 — Karim doit-il traiter la remarque d''hier ? Comment, avec qui, dans quel registre (feedback, recadrage, méthode en cinq étapes) ?
+
+Question A3 — Que fait Karim pour Amine ? Pour Julien ?
+
+Question A4 — Quelle décision d''organisation Karim doit-il prendre, et comment l''annonce-t-il ?
+
+## Situation B — Sophie et Fatou
+
+Depuis que Fatou prépare les pièces la veille (décision de la première réunion d''équipe, module 3), elle passe au bureau chaque soir pour consulter les commandes. Sophie s''en plaint à Karim : « Elle est tout le temps dans mes papiers, elle touche à mon ordinateur, et hier elle a dit à Michel qu''une commande n''était pas partie alors que c''est faux. » Fatou, interrogée, dit que Sophie « refuse de lui donner les informations » et qu''elle « a juste répondu à Michel qui lui posait la question ». Karim apprend par Michel que ce dernier a effectivement demandé à Fatou, en passant, où en était la commande de la 3008, et que Fatou a répondu qu''elle ne l''avait pas vue partir. Depuis, Sophie ne dit plus bonjour à Fatou.
+
+Question B1 — Quels sont les faits établis, les faits divergents, et l''interprétation ? Quelle est la source ?
+
+Question B2 — Y a-t-il un triangle dramatique en train de se former ? Avec qui dans chaque rôle ? Quel est le piège pour Karim ?
+
+Question B3 — Conduisez la méthode en cinq étapes : rédigez la phrase d''ouverture de Karim, deux questions pour chaque entretien séparé, ce que Karim met à plat, et les engagements que vous imaginez.
+
+Question B4 — Y a-t-il ici quelque chose qui relève d''un autre registre (recadrage, sanction, alerte) ?
+
+---
+
+# Corrigé
+
+## Situation A
+
+A1. Niveau 2 (polémique, piques répétées devant les autres) qui bascule vers le niveau 3 (Amine ne répond plus, s''isole) et le niveau 4 (Thierry recrute Julien ; Marc commence à prendre position). Source principale : les valeurs et manières de faire (la conception du métier, l''ancien contre le nouveau), doublée d''une ressource (la place de référent, la reconnaissance de Thierry, déjà repérée au module 4). Ce n''est pas un conflit de personnes : Thierry ne connaît pas Amine. Ce que Karim n''a pas fait : traiter la première pique il y a six semaines ; répondre à la proposition d''Amine sur le circuit des pièces, signalée dès la première semaine (Amine a le sentiment de ne pas être entendu, ce qui l''a poussé à la porter en public) ; formaliser le rôle de référent de Thierry, promis au module 4. Le manager a sa part.
+
+A2. Oui, le jour même, et dans deux registres. La remarque « quand tu auras fait tes preuves », devant tout le monde, est un manquement à la règle du jeu « quand on n''est pas d''accord avec quelqu''un, on lui dit à lui, pas aux autres » et un comportement qui exclut un membre de l''équipe. C''est un feedback correctif à Thierry, en privé, en SBI : les faits (la remarque d''hier, les précédentes), l''impact (Amine s''isole, l''équipe se divise, une proposition utile a été balayée), l''attente (les remarques sur le travail d''Amine se font à Amine, ou à Karim ; devant l''équipe, on parle du travail, pas de « faire ses preuves »), et une question. Si Thierry répète, ce sera un recadrage. La méthode en cinq étapes n''est pas le bon outil ici, parce qu''il n''y a pas deux parties en conflit : il y a un comportement à faire cesser, et une personne à protéger. En revanche, Karim traite en même temps le vrai sujet de Thierry : « Tu as l''impression que l''arrivée d''Amine te retire quelque chose. On en parle. » Et il tient sa promesse : le rôle de référent qualité, formalisé avec Michel.
+
+A3. Pour Amine : un entretien de suivi rapide, factuel (« j''ai vu ce qui s''est passé hier, et je vois que tu manges seul »), pour écouter, dire que la remarque était inacceptable et qu''elle a été traitée (sans détailler), et répondre enfin à sa proposition sur le circuit des pièces : l''examiner sérieusement, avec lui, et, si elle est bonne, la mettre en œuvre en le disant. Rien ne réintègre mieux quelqu''un qu''une idée à lui adoptée par l''équipe. Pour Julien : un mot en privé, court : « Rire avec Thierry, c''est prendre parti. Tu as été le nouveau il y a deux ans. » Julien n''est pas fautif ; il suit. On lui donne l''occasion de ne plus suivre.
+
+A4. La décision : le rôle de chacun sur la peinture (Nadia référente peinture, Amine peintre à part entière, Thierry référent qualité toutes finitions confondues) inscrit dans le RACI, et la règle du jeu rappelée à l''équipe. Karim l''annonce au brief, sans citer l''incident : « Trois choses claires à partir d''aujourd''hui… » Et il traite la proposition d''Amine en réunion, en la présentant comme venant d''Amine. Si l''idée est retenue, Thierry sera associé à sa mise en œuvre : un ancien qui contribue au changement ne le combat plus.
+
+## Situation B
+
+B1. Faits établis : Fatou consulte le bureau chaque soir (c''est la conséquence d''une décision d''équipe) ; Michel a posé une question à Fatou ; Fatou a répondu ce qu''elle savait ; Sophie ne dit plus bonjour. Faits divergents : « elle touche à mon ordinateur » (à vérifier : a-t-elle besoin d''y accéder ? y a-t-elle un accès prévu ?) ; « Sophie refuse de donner les informations » (à vérifier : qu''a demandé Fatou, qu''a répondu Sophie ?). Interprétation : « elle a dit à Michel que… alors que c''est faux » ; Sophie lit une dénonciation là où il y a une réponse à une question. Source : un rôle flou. La décision « Fatou prépare les pièces la veille » n''a pas dit comment Fatou accède à l''information sur les commandes : qui lui donne quoi, sous quelle forme, à quelle heure. Sophie vit l''intrusion dans son espace ; Fatou vit le refus d''accès. Aucune des deux n''a tort sur son besoin.
+
+B2. Oui. Sophie se présente en victime (« elle est tout le temps dans mes papiers »), désigne Fatou en persécutrice, et cherche en Karim un sauveur qui « dira à Fatou de ne plus venir ». Fatou, de son côté, se présente aussi en victime (« elle refuse »). Michel, par sa question en passant, a joué sans le vouloir un rôle de déclencheur. Le piège pour Karim : sauver Sophie (interdire à Fatou le bureau, ce qui casse la préparation des pièces) ou sauver Fatou (ordonner à Sophie de tout lui donner, ce qui humilie Sophie), c''est-à-dire trancher sur une version et entrer dans le triangle. Sortir du triangle : ramener les deux à leur responsabilité et traiter la règle qui manque.
+
+B3. Ouverture (à chacune, séparément) : « Il y a une difficulté entre Fatou et toi sur l''accès aux commandes, et depuis deux jours vous ne vous parlez plus. Je ne cherche pas qui a raison. Je cherche comment on fait pour que la préparation des pièces fonctionne sans que le bureau soit envahi. Je vous écoute chacune, puis on se voit à trois. » Questions à Sophie : « Qu''est-ce que Fatou vient chercher exactement chaque soir ? » « Qu''est-ce qu''il te faudrait pour que ça ne te dérange plus ? » Questions à Fatou : « De quelle information as-tu besoin, et à quelle heure au plus tard ? » « Qu''est-ce que tu as demandé à Sophie, et qu''est-ce qu''elle t''a répondu ? » Mise à plat : Fatou a besoin, chaque jour à 16 h, de la liste des pièces reçues et attendues pour les véhicules du lendemain ; Sophie a besoin que personne ne touche à son poste et de ne pas être mise en cause auprès de Michel ; personne n''a organisé la transmission ; la réponse de Fatou à Michel n''était pas une dénonciation. Engagements possibles : Sophie imprime (ou envoie) à 16 h la liste des pièces du lendemain ; Fatou ne vient au bureau que si la liste manque, et le dit à Sophie ; Karim demande à Michel de passer par lui pour les questions de suivi de commandes (ce qui règle le déclencheur) ; point dans deux semaines. Et Karim reconnaît sa part : « La décision de préparer la veille, c''était la bonne, mais je n''ai pas dit comment l''information circulait. »
+
+B4. Non, au stade actuel : pas de faute, pas de souffrance signalée, pas de harcèlement. Deux vigilances tout de même. La première : « elle touche à mon ordinateur » peut cacher une question de confidentialité (données clients, paie) ; si Fatou a accédé à des données qu''elle n''avait pas à voir, c''est une règle à poser, pas une faute, puisque personne ne l''avait dite. La seconde : Sophie qui ne dit plus bonjour à Fatou, si cela durait et s''accompagnait d''autres mises à l''écart, deviendrait un comportement à recadrer, parce qu''un isolement répété d''une collègue n''est pas un simple désaccord. À ce stade, c''est un signal faible que la méthode en cinq étapes doit suffire à lever.
+
+## Ce que ce cas illustre
+
+Deux tensions, deux traitements. La première n''est pas un conflit entre deux parties mais un comportement d''exclusion : elle se traite par le feedback, le recadrage si besoin, la protection de la personne visée, et une décision d''organisation qui traite la cause (la reconnaissance de Thierry, le rôle de chacun). La seconde est un vrai conflit à deux, né d''un rôle flou : elle se traite par la méthode en cinq étapes, en refusant le triangle, et par la règle que le manager pose. Dans les deux cas, le manager cherche d''abord sa propre part et la cause organisationnelle. Et dans les deux cas, attendre aurait coûté beaucoup plus cher.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Deux situations, à traiter par écrit avant de lire le corrigé. Comptez 25 minutes. Utilisez la méthode en cinq étapes (leçon 5.4), la grille des registres (leçon 5.6) et les gabarits de la fiche 3.9.
+
+## Situation A — Thierry, Amine et Julien
+
+Amine, le nouveau peintre, est arrivé il y a six semaines. Thierry, carrossier depuis 28 ans et référent qualité, n''a jamais été franchement hostile, mais il multiplie les remarques : « À l''époque, on n''avait pas besoin de trois couches pour faire une aile. » « Le nouveau, il connaît les logiciels, mais un vrai atelier, c''est autre chose. » Julien, qui admire Thierry, rit et renchérit. Nadia a dit à Karim, en aparté, qu''Amine mange seul depuis dix jours. Hier, au brief, Amine a proposé de changer le circuit des pièces (il l''avait signalé dès sa première semaine) ; Thierry a répondu, devant tout le monde : « Quand tu auras fait tes preuves, on en reparlera. » Amine n''a rien dit. Marc a levé les yeux au ciel.
+
+Question A1 — À quel niveau d''escalade est-on ? Quelle est la source du conflit (rôles, ressources, valeurs, personnes) ? Qu''est-ce que Karim a fait, ou pas fait, qui y a contribué ?
+
+Question A2 — Karim doit-il traiter la remarque d''hier ? Comment, avec qui, dans quel registre (feedback, recadrage, méthode en cinq étapes) ?
+
+Question A3 — Que fait Karim pour Amine ? Pour Julien ?
+
+Question A4 — Quelle décision d''organisation Karim doit-il prendre, et comment l''annonce-t-il ?
+
+## Situation B — Sophie et Fatou
+
+Depuis que Fatou prépare les pièces la veille (décision de la première réunion d''équipe, module 3), elle passe au bureau chaque soir pour consulter les commandes. Sophie s''en plaint à Karim : « Elle est tout le temps dans mes papiers, elle touche à mon ordinateur, et hier elle a dit à Michel qu''une commande n''était pas partie alors que c''est faux. » Fatou, interrogée, dit que Sophie « refuse de lui donner les informations » et qu''elle « a juste répondu à Michel qui lui posait la question ». Karim apprend par Michel que ce dernier a effectivement demandé à Fatou, en passant, où en était la commande de la 3008, et que Fatou a répondu qu''elle ne l''avait pas vue partir. Depuis, Sophie ne dit plus bonjour à Fatou.
+
+Question B1 — Quels sont les faits établis, les faits divergents, et l''interprétation ? Quelle est la source ?
+
+Question B2 — Y a-t-il un triangle dramatique en train de se former ? Avec qui dans chaque rôle ? Quel est le piège pour Karim ?
+
+Question B3 — Conduisez la méthode en cinq étapes : rédigez la phrase d''ouverture de Karim, deux questions pour chaque entretien séparé, ce que Karim met à plat, et les engagements que vous imaginez.
+
+Question B4 — Y a-t-il ici quelque chose qui relève d''un autre registre (recadrage, sanction, alerte) ?
+
+---
+
+# Corrigé
+
+## Situation A
+
+A1. Niveau 2 (polémique, piques répétées devant les autres) qui bascule vers le niveau 3 (Amine ne répond plus, s''isole) et le niveau 4 (Thierry recrute Julien ; Marc commence à prendre position). Source principale : les valeurs et manières de faire (la conception du métier, l''ancien contre le nouveau), doublée d''une ressource (la place de référent, la reconnaissance de Thierry, déjà repérée au module 4). Ce n''est pas un conflit de personnes : Thierry ne connaît pas Amine. Ce que Karim n''a pas fait : traiter la première pique il y a six semaines ; répondre à la proposition d''Amine sur le circuit des pièces, signalée dès la première semaine (Amine a le sentiment de ne pas être entendu, ce qui l''a poussé à la porter en public) ; formaliser le rôle de référent de Thierry, promis au module 4. Le manager a sa part.
+
+A2. Oui, le jour même, et dans deux registres. La remarque « quand tu auras fait tes preuves », devant tout le monde, est un manquement à la règle du jeu « quand on n''est pas d''accord avec quelqu''un, on lui dit à lui, pas aux autres » et un comportement qui exclut un membre de l''équipe. C''est un feedback correctif à Thierry, en privé, en SBI : les faits (la remarque d''hier, les précédentes), l''impact (Amine s''isole, l''équipe se divise, une proposition utile a été balayée), l''attente (les remarques sur le travail d''Amine se font à Amine, ou à Karim ; devant l''équipe, on parle du travail, pas de « faire ses preuves »), et une question. Si Thierry répète, ce sera un recadrage. La méthode en cinq étapes n''est pas le bon outil ici, parce qu''il n''y a pas deux parties en conflit : il y a un comportement à faire cesser, et une personne à protéger. En revanche, Karim traite en même temps le vrai sujet de Thierry : « Tu as l''impression que l''arrivée d''Amine te retire quelque chose. On en parle. » Et il tient sa promesse : le rôle de référent qualité, formalisé avec Michel.
+
+A3. Pour Amine : un entretien de suivi rapide, factuel (« j''ai vu ce qui s''est passé hier, et je vois que tu manges seul »), pour écouter, dire que la remarque était inacceptable et qu''elle a été traitée (sans détailler), et répondre enfin à sa proposition sur le circuit des pièces : l''examiner sérieusement, avec lui, et, si elle est bonne, la mettre en œuvre en le disant. Rien ne réintègre mieux quelqu''un qu''une idée à lui adoptée par l''équipe. Pour Julien : un mot en privé, court : « Rire avec Thierry, c''est prendre parti. Tu as été le nouveau il y a deux ans. » Julien n''est pas fautif ; il suit. On lui donne l''occasion de ne plus suivre.
+
+A4. La décision : le rôle de chacun sur la peinture (Nadia référente peinture, Amine peintre à part entière, Thierry référent qualité toutes finitions confondues) inscrit dans le RACI, et la règle du jeu rappelée à l''équipe. Karim l''annonce au brief, sans citer l''incident : « Trois choses claires à partir d''aujourd''hui… » Et il traite la proposition d''Amine en réunion, en la présentant comme venant d''Amine. Si l''idée est retenue, Thierry sera associé à sa mise en œuvre : un ancien qui contribue au changement ne le combat plus.
+
+## Situation B
+
+B1. Faits établis : Fatou consulte le bureau chaque soir (c''est la conséquence d''une décision d''équipe) ; Michel a posé une question à Fatou ; Fatou a répondu ce qu''elle savait ; Sophie ne dit plus bonjour. Faits divergents : « elle touche à mon ordinateur » (à vérifier : a-t-elle besoin d''y accéder ? y a-t-elle un accès prévu ?) ; « Sophie refuse de donner les informations » (à vérifier : qu''a demandé Fatou, qu''a répondu Sophie ?). Interprétation : « elle a dit à Michel que… alors que c''est faux » ; Sophie lit une dénonciation là où il y a une réponse à une question. Source : un rôle flou. La décision « Fatou prépare les pièces la veille » n''a pas dit comment Fatou accède à l''information sur les commandes : qui lui donne quoi, sous quelle forme, à quelle heure. Sophie vit l''intrusion dans son espace ; Fatou vit le refus d''accès. Aucune des deux n''a tort sur son besoin.
+
+B2. Oui. Sophie se présente en victime (« elle est tout le temps dans mes papiers »), désigne Fatou en persécutrice, et cherche en Karim un sauveur qui « dira à Fatou de ne plus venir ». Fatou, de son côté, se présente aussi en victime (« elle refuse »). Michel, par sa question en passant, a joué sans le vouloir un rôle de déclencheur. Le piège pour Karim : sauver Sophie (interdire à Fatou le bureau, ce qui casse la préparation des pièces) ou sauver Fatou (ordonner à Sophie de tout lui donner, ce qui humilie Sophie), c''est-à-dire trancher sur une version et entrer dans le triangle. Sortir du triangle : ramener les deux à leur responsabilité et traiter la règle qui manque.
+
+B3. Ouverture (à chacune, séparément) : « Il y a une difficulté entre Fatou et toi sur l''accès aux commandes, et depuis deux jours vous ne vous parlez plus. Je ne cherche pas qui a raison. Je cherche comment on fait pour que la préparation des pièces fonctionne sans que le bureau soit envahi. Je vous écoute chacune, puis on se voit à trois. » Questions à Sophie : « Qu''est-ce que Fatou vient chercher exactement chaque soir ? » « Qu''est-ce qu''il te faudrait pour que ça ne te dérange plus ? » Questions à Fatou : « De quelle information as-tu besoin, et à quelle heure au plus tard ? » « Qu''est-ce que tu as demandé à Sophie, et qu''est-ce qu''elle t''a répondu ? » Mise à plat : Fatou a besoin, chaque jour à 16 h, de la liste des pièces reçues et attendues pour les véhicules du lendemain ; Sophie a besoin que personne ne touche à son poste et de ne pas être mise en cause auprès de Michel ; personne n''a organisé la transmission ; la réponse de Fatou à Michel n''était pas une dénonciation. Engagements possibles : Sophie imprime (ou envoie) à 16 h la liste des pièces du lendemain ; Fatou ne vient au bureau que si la liste manque, et le dit à Sophie ; Karim demande à Michel de passer par lui pour les questions de suivi de commandes (ce qui règle le déclencheur) ; point dans deux semaines. Et Karim reconnaît sa part : « La décision de préparer la veille, c''était la bonne, mais je n''ai pas dit comment l''information circulait. »
+
+B4. Non, au stade actuel : pas de faute, pas de souffrance signalée, pas de harcèlement. Deux vigilances tout de même. La première : « elle touche à mon ordinateur » peut cacher une question de confidentialité (données clients, paie) ; si Fatou a accédé à des données qu''elle n''avait pas à voir, c''est une règle à poser, pas une faute, puisque personne ne l''avait dite. La seconde : Sophie qui ne dit plus bonjour à Fatou, si cela durait et s''accompagnait d''autres mises à l''écart, deviendrait un comportement à recadrer, parce qu''un isolement répété d''une collègue n''est pas un simple désaccord. À ce stade, c''est un signal faible que la méthode en cinq étapes doit suffire à lever.
+
+## Ce que ce cas illustre
+
+Deux tensions, deux traitements. La première n''est pas un conflit entre deux parties mais un comportement d''exclusion : elle se traite par le feedback, le recadrage si besoin, la protection de la personne visée, et une décision d''organisation qui traite la cause (la reconnaissance de Thierry, le rôle de chacun). La seconde est un vrai conflit à deux, né d''un rôle flou : elle se traite par la méthode en cinq étapes, en refusant le triangle, et par la règle que le manager pose. Dans les deux cas, le manager cherche d''abord sa propre part et la cause organisationnelle. Et dans les deux cas, attendre aurait coûté beaucoup plus cher.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 8;
+  n := n + 1;
+
+  -- 5.9-carnet-application.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Vous avez vu ce qu''est un conflit et comment il s''aggrave, ses sources, le triangle dramatique et vos biais, la prévention, la méthode en cinq étapes, et les situations qui relèvent du recadrage, de la sanction ou de l''alerte. À vous d''appliquer cela à une situation réelle. Comptez 40 minutes. Utilisez les gabarits de la fiche 3.9.
+
+Si vous n''encadrez pas d''équipe, travaillez sur une tension que vous avez vécue comme membre d''une équipe, en vous mettant à la place du manager, ou sur l''une des situations du cas pratique en la transposant dans votre secteur.
+
+## Étape 1 — Choisir et décrire une tension vécue (10 min)
+
+- Choisissez une tension ou un conflit que vous avez vécu ou observé dans une équipe, récent de préférence. Décrivez-le en cinq lignes, en faits uniquement : qui, quoi, quand, ce qui s''est dit et fait. Barrez tout jugement (« il est de mauvaise foi ») et remplacez-le par un fait.
+- À quel niveau de l''escalier de Glasl est-il, ou était-il, quand vous l''avez repéré ? Quels signaux faibles avaient précédé ?
+- Quelle est sa source, dans l''ordre de recherche : rôles flous, ressources, valeurs et manières de faire, personnes ?
+- Qu''est-ce que le manager (vous, ou un autre) a fait ou pas fait qui y a contribué ?
+
+## Étape 2 — Le triangle et les biais (5 min)
+
+- Qui, dans cette situation, s''est placé en victime, en persécuteur, en sauveur ? Le manager est-il entré dans le triangle ? Par quel rôle ?
+- Quel biais a joué sur le manager : la première version, l''affinité, l''attribution, la recherche du coupable, l''évitement déguisé, le passage en force ?
+
+## Étape 3 — Rejouer avec la méthode en cinq étapes (15 min)
+
+- Étape 1, accueillir : écrivez la phrase d''ouverture que vous diriez à chaque partie.
+- Étape 2, écouter : pour chaque partie, notez sa position (ce qu''elle réclame) et, derrière, son besoin. Écrivez deux questions ouvertes par personne.
+- Étape 3, objectiver : les faits qui concordent, les faits divergents, la source, la règle qui existe ou qui manque.
+- Étape 4, options : formulez, en quatre temps de la communication non violente (observation, sentiment, besoin, demande), ce que chaque partie pourrait dire à l''autre. Puis listez deux options qui répondent aux besoins des deux.
+- Étape 5, contractualiser : deux ou trois engagements, dont au moins un du manager (la règle, la décision d''organisation), et la date du point de suivi.
+- Si la situation était réelle et encore ouverte : allez-vous la traiter ? Quand ?
+
+## Étape 4 — Le bon registre (5 min)
+
+- Dans votre situation, y a-t-il un élément qui relève d''un autre registre que la résolution de conflit : un comportement fautif (recadrage, puis remontée), une souffrance (leçon 4.7), un soupçon de harcèlement ou de violence (alerte immédiate) ?
+- Si oui : à qui l''auriez-vous signalé, sous quelle forme, dans quel délai ? Connaissez-vous, dans votre entreprise, la procédure disciplinaire (règlement intérieur, qui sanctionne), le référent harcèlement, le médecin du travail ?
+- Y a-t-il un moment où il aurait fallu passer la main à un tiers (RH, médiateur) ? L''auriez-vous fait ? Qu''est-ce qui vous aurait retenu ?
+
+## Étape 5 — Prévention dans mon équipe (5 min)
+
+- Mon équipe a-t-elle des règles du jeu explicites ? Sinon, à quelle date je tiens la réunion pour les construire ? Quelle est la règle que j''imposerai si l''équipe ne la propose pas ?
+- Quel rituel de régulation j''installe (point « ce qui nous a compliqué la vie », rétrospective) ? Quand ?
+- Quel signal faible je repère aujourd''hui dans mon équipe, et que je vais aller voir cette semaine ?
+- Quand je me dis « ça va se tasser » : de quelle situation s''agit-il, en ce moment ?
+
+Conservez ce carnet : le module 6 (piloter la performance, accompagner le changement) reprend le retour d''expérience comme outil, y compris sur les conflits traités.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Vous avez vu ce qu''est un conflit et comment il s''aggrave, ses sources, le triangle dramatique et vos biais, la prévention, la méthode en cinq étapes, et les situations qui relèvent du recadrage, de la sanction ou de l''alerte. À vous d''appliquer cela à une situation réelle. Comptez 40 minutes. Utilisez les gabarits de la fiche 3.9.
+
+Si vous n''encadrez pas d''équipe, travaillez sur une tension que vous avez vécue comme membre d''une équipe, en vous mettant à la place du manager, ou sur l''une des situations du cas pratique en la transposant dans votre secteur.
+
+## Étape 1 — Choisir et décrire une tension vécue (10 min)
+
+- Choisissez une tension ou un conflit que vous avez vécu ou observé dans une équipe, récent de préférence. Décrivez-le en cinq lignes, en faits uniquement : qui, quoi, quand, ce qui s''est dit et fait. Barrez tout jugement (« il est de mauvaise foi ») et remplacez-le par un fait.
+- À quel niveau de l''escalier de Glasl est-il, ou était-il, quand vous l''avez repéré ? Quels signaux faibles avaient précédé ?
+- Quelle est sa source, dans l''ordre de recherche : rôles flous, ressources, valeurs et manières de faire, personnes ?
+- Qu''est-ce que le manager (vous, ou un autre) a fait ou pas fait qui y a contribué ?
+
+## Étape 2 — Le triangle et les biais (5 min)
+
+- Qui, dans cette situation, s''est placé en victime, en persécuteur, en sauveur ? Le manager est-il entré dans le triangle ? Par quel rôle ?
+- Quel biais a joué sur le manager : la première version, l''affinité, l''attribution, la recherche du coupable, l''évitement déguisé, le passage en force ?
+
+## Étape 3 — Rejouer avec la méthode en cinq étapes (15 min)
+
+- Étape 1, accueillir : écrivez la phrase d''ouverture que vous diriez à chaque partie.
+- Étape 2, écouter : pour chaque partie, notez sa position (ce qu''elle réclame) et, derrière, son besoin. Écrivez deux questions ouvertes par personne.
+- Étape 3, objectiver : les faits qui concordent, les faits divergents, la source, la règle qui existe ou qui manque.
+- Étape 4, options : formulez, en quatre temps de la communication non violente (observation, sentiment, besoin, demande), ce que chaque partie pourrait dire à l''autre. Puis listez deux options qui répondent aux besoins des deux.
+- Étape 5, contractualiser : deux ou trois engagements, dont au moins un du manager (la règle, la décision d''organisation), et la date du point de suivi.
+- Si la situation était réelle et encore ouverte : allez-vous la traiter ? Quand ?
+
+## Étape 4 — Le bon registre (5 min)
+
+- Dans votre situation, y a-t-il un élément qui relève d''un autre registre que la résolution de conflit : un comportement fautif (recadrage, puis remontée), une souffrance (leçon 4.7), un soupçon de harcèlement ou de violence (alerte immédiate) ?
+- Si oui : à qui l''auriez-vous signalé, sous quelle forme, dans quel délai ? Connaissez-vous, dans votre entreprise, la procédure disciplinaire (règlement intérieur, qui sanctionne), le référent harcèlement, le médecin du travail ?
+- Y a-t-il un moment où il aurait fallu passer la main à un tiers (RH, médiateur) ? L''auriez-vous fait ? Qu''est-ce qui vous aurait retenu ?
+
+## Étape 5 — Prévention dans mon équipe (5 min)
+
+- Mon équipe a-t-elle des règles du jeu explicites ? Sinon, à quelle date je tiens la réunion pour les construire ? Quelle est la règle que j''imposerai si l''équipe ne la propose pas ?
+- Quel rituel de régulation j''installe (point « ce qui nous a compliqué la vie », rétrospective) ? Quand ?
+- Quel signal faible je repère aujourd''hui dans mon équipe, et que je vais aller voir cette semaine ?
+- Quand je me dis « ça va se tasser » : de quelle situation s''agit-il, en ce moment ?
+
+Conservez ce carnet : le module 6 (piloter la performance, accompagner le changement) reprend le retour d''expérience comme outil, y compris sur les conflits traités.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 9;
+  n := n + 1;
+
   raise notice 'Contenus importés : % leçons', n;
 end $$;

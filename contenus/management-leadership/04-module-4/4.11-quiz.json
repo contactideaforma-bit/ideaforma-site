@@ -1,0 +1,152 @@
+{
+  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "seuil": 70,
+  "tentatives_max": 3,
+  "corrections": true,
+  "questions": [
+    {
+      "id": "m4q01",
+      "enonce": "Selon Herzberg, qu'est-ce qu'un facteur d'hygiène (salaire, conditions de travail, relation avec le chef) ?",
+      "options": [
+        "Un facteur qui crée la motivation quand il est bon",
+        "Un facteur dont l'absence crée de l'insatisfaction, mais dont la présence ne crée pas de motivation durable",
+        "Un facteur sans aucun effet sur les salariés",
+        "Un facteur réservé aux métiers physiques"
+      ],
+      "bonnes": [1],
+      "explication": "Les facteurs d'hygiène évitent le désengagement ; ce sont les facteurs de motivation (accomplissement, reconnaissance, intérêt du travail, responsabilité, progression) qui créent l'engagement."
+    },
+    {
+      "id": "m4q02",
+      "enonce": "Quels sont les trois besoins de la théorie de l'autodétermination de Deci et Ryan ?",
+      "options": [
+        "Salaire, sécurité, statut",
+        "Autonomie, compétence, lien",
+        "Pouvoir, réussite, affiliation",
+        "Reconnaissance, prime, promotion"
+      ],
+      "bonnes": [1],
+      "explication": "Quand l'autonomie, la compétence et le lien sont nourris, la motivation vient de l'intérieur ; quand ils sont frustrés, aucune prime ne compense."
+    },
+    {
+      "id": "m4q03",
+      "enonce": "D'après Amabile et Kramer (principe du progrès), qu'est-ce qui distingue le plus une bonne journée de travail d'une mauvaise ?",
+      "options": [
+        "Le montant de la prime du mois",
+        "Le nombre d'heures travaillées",
+        "Le sentiment d'avancer dans un travail qui a du sens, même par de petits progrès",
+        "L'absence totale de difficulté"
+      ],
+      "bonnes": [2],
+      "explication": "Les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses ; le sentiment de reculer (travail refait, obstacle) est ce qui la plombe."
+    },
+    {
+      "id": "m4q04",
+      "enonce": "Qu'est-ce que la sécurité psychologique au sens d'Amy Edmondson ?",
+      "options": [
+        "Une équipe où tout le monde est d'accord et où l'on évite les sujets difficiles",
+        "La conviction partagée que l'on peut poser une question, admettre une erreur, proposer ou contester sans être puni ni humilié",
+        "Un dispositif de sécurité physique obligatoire dans les ateliers",
+        "L'absence de toute exigence de la part du manager"
+      ],
+      "bonnes": [1],
+      "explication": "La sécurité psychologique se combine avec l'exigence : c'est ce qui permet de se dire les choses difficiles, pas de les éviter."
+    },
+    {
+      "id": "m4q05",
+      "enonce": "Dans l'étude d'Edmondson en milieu hospitalier, pourquoi les meilleures équipes déclaraient-elles plus d'erreurs ?",
+      "options": [
+        "Parce qu'elles en faisaient réellement plus",
+        "Parce qu'elles osaient les signaler, alors que les autres les cachaient",
+        "Parce qu'elles étaient moins compétentes",
+        "Parce qu'elles y étaient obligées par la direction"
+      ],
+      "bonnes": [1],
+      "explication": "Les erreurs existaient partout ; seules les équipes psychologiquement sûres les signalaient, ce qui permettait de les traiter."
+    },
+    {
+      "id": "m4q06",
+      "enonce": "Plusieurs réponses. Quels comportements du manager construisent la sécurité psychologique ?",
+      "options": [
+        "Admettre ses propres erreurs devant l'équipe",
+        "Remercier la personne qui signale un problème, même si elle s'est trompée",
+        "Ne jamais dire « je ne sais pas » pour préserver son autorité",
+        "Poser des limites aux moqueries et au mépris dans l'équipe"
+      ],
+      "bonnes": [0, 1, 3],
+      "explication": "Un manager qui ne se trompe jamais et sait tout oblige les autres à cacher et à se taire. Admettre, remercier, questionner et poser des limites sont les comportements qui comptent."
+    },
+    {
+      "id": "m4q07",
+      "enonce": "Selon la typologie de Brun et Dugas, quelle forme de reconnaissance permet de reconnaître aussi ceux qui n'ont pas encore de résultats (débutants, tâches ingrates) ?",
+      "options": [
+        "La reconnaissance des résultats uniquement",
+        "La reconnaissance de la pratique de travail et de l'investissement (la manière de faire, l'effort)",
+        "La prime de fin d'année",
+        "La comparaison avec les meilleurs"
+      ],
+      "bonnes": [1],
+      "explication": "Ne reconnaître que les résultats, c'est ne reconnaître que les meilleurs. La manière de faire et l'effort se reconnaissent chez tous, et la reconnaissance existentielle (bonjour, informer, consulter) est la base."
+    },
+    {
+      "id": "m4q08",
+      "enonce": "Dans le modèle GROW pour un entretien de progression, que signifie le « O » ?",
+      "options": [
+        "Objectif : ce que la personne veut être capable de faire",
+        "Obstacles : ce qui empêche la personne de progresser",
+        "Options : les pistes possibles, celles de la personne d'abord, puis celles du manager",
+        "Ordre : la consigne donnée par le manager"
+      ],
+      "bonnes": [2],
+      "explication": "G = Goal (objectif), R = Reality (réalité), O = Options, W = Will (engagement). Le manager questionne plus qu'il ne conseille."
+    },
+    {
+      "id": "m4q09",
+      "enonce": "Un nouveau salarié arrive lundi. Quelle formation est obligatoire dès son arrivée selon le Code du travail (art. L4141-2) ?",
+      "options": [
+        "Une formation au management",
+        "Une formation pratique et appropriée à la sécurité",
+        "Une formation aux outils informatiques",
+        "Aucune formation n'est obligatoire avant la fin de la période d'essai"
+      ],
+      "bonnes": [1],
+      "explication": "La formation à la sécurité est obligatoire pour tout nouvel embauché, y compris les intérimaires et les salariés changeant de poste, et elle est tracée."
+    },
+    {
+      "id": "m4q10",
+      "enonce": "Sophie, seule à un poste administratif, demande un jour de télétravail. L'entreprise n'a ni accord collectif ni charte. Que dit le Code du travail (L1222-9) ?",
+      "options": [
+        "Le télétravail est impossible sans accord collectif",
+        "Le télétravail peut être mis en place par simple accord entre le salarié et l'employeur, formalisé par tout moyen",
+        "L'employeur peut l'imposer à tout moment",
+        "Le télétravail est réservé aux cadres"
+      ],
+      "bonnes": [1],
+      "explication": "À défaut d'accord collectif ou de charte, un accord individuel suffit. Le télétravail est volontaire des deux côtés, sauf circonstances exceptionnelles."
+    },
+    {
+      "id": "m4q11",
+      "enonce": "Quelle est la limite légale de la durée quotidienne de travail (hors dérogations) et du repos quotidien ?",
+      "options": [
+        "8 heures de travail, 8 heures de repos",
+        "10 heures de travail, 11 heures de repos consécutives",
+        "12 heures de travail, 10 heures de repos",
+        "Aucune limite si le salarié est d'accord"
+      ],
+      "bonnes": [1],
+      "explication": "Art. L3121-18 et L3131-1. S'y ajoutent 48 h par semaine, 44 h en moyenne sur douze semaines, 35 h de repos hebdomadaire et 20 min de pause dès 6 h de travail."
+    },
+    {
+      "id": "m4q12",
+      "enonce": "Thierry arrive plus tôt, ne prend plus de pause, fait des erreurs inhabituelles et a eu un accrochage. Quelle est la bonne conduite du manager ?",
+      "options": [
+        "Lui dire qu'il fait un burn-out et lui conseiller de s'arrêter",
+        "Ne rien faire tant qu'il ne se plaint pas",
+        "Le voir seul avec des faits, écouter sans creuser la vie privée, agir sur ce qui pèse dans le travail, rappeler l'accès au médecin du travail, alerter la hiérarchie si nécessaire, suivre",
+        "Convoquer une réunion d'équipe pour en parler devant tous"
+      ],
+      "bonnes": [2],
+      "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte et suit ; il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."
+    }
+  ]
+}

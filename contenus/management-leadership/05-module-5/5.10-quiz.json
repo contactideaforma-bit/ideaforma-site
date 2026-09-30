@@ -1,0 +1,152 @@
+{
+  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "seuil": 70,
+  "tentatives_max": 3,
+  "corrections": true,
+  "questions": [
+    {
+      "id": "m5q01",
+      "enonce": "Thierry et Karim ne sont pas d'accord sur l'ordre des opérations (redresser avant ou après la commande de pièce). De quel type de conflit s'agit-il, et que faut-il en penser ?",
+      "options": [
+        "Un conflit de relation, à faire cesser immédiatement",
+        "Un conflit de tâche, utile s'il reste sur le terrain du travail",
+        "Une insubordination à sanctionner",
+        "Un signe que Thierry doit changer d'équipe"
+      ],
+      "bonnes": [1],
+      "explication": "Le conflit de tâche (désaccord sur le travail) est utile : il évite les décisions non examinées. Le rôle du manager est de l'empêcher de glisser vers un conflit de relation (attaque des personnes)."
+    },
+    {
+      "id": "m5q02",
+      "enonce": "Dans l'escalier de Glasl, que caractérise la deuxième phase (niveaux 4 à 6) ?",
+      "options": [
+        "On peut encore se parler et chercher une solution où les deux gagnent",
+        "On ne cherche plus à résoudre mais à gagner : alliés, attaques sur la réputation, menaces",
+        "On cherche à nuire à l'autre même à ses propres dépens",
+        "Le conflit s'est éteint de lui-même"
+      ],
+      "bonnes": [1],
+      "explication": "Phase 1 (1-3) : on peut encore se parler, c'est là que le manager intervient facilement. Phase 2 (4-6) : chacun pense que l'un doit perdre ; il faut une méthode formelle, souvent un tiers. Phase 3 (7-9) : destruction, registre disciplinaire ou juridique."
+    },
+    {
+      "id": "m5q03",
+      "enonce": "Devant une tension entre deux personnes, dans quel ordre le manager cherche-t-il la source ?",
+      "options": [
+        "Les personnes d'abord, puis l'organisation",
+        "Les rôles flous et les ressources (organisation), puis les valeurs et manières de faire, et seulement en dernier les personnes",
+        "Uniquement les personnes : un conflit est toujours une affaire de caractère",
+        "Il ne cherche pas la source, il tranche"
+      ],
+      "bonnes": [1],
+      "explication": "La cause est le plus souvent dans l'organisation. Traiter les personnes sans traiter la cause, c'est repartir pour un tour."
+    },
+    {
+      "id": "m5q04",
+      "enonce": "Marc vient se plaindre de Sophie à Karim. Karim décide d'aller « régler ça » avec Sophie à la place de Marc. Dans le triangle de Karpman, quel rôle Karim vient-il de prendre, et quel est le risque ?",
+      "options": [
+        "Le persécuteur : il va sanctionner Sophie",
+        "Le sauveur : Marc reste victime sans rien avoir à faire, Sophie devient persécutrice, et Karim sera le prochain persécuteur dès qu'il ne donnera pas raison à Marc",
+        "La victime : il subit le conflit",
+        "Aucun rôle : c'est la bonne conduite"
+      ],
+      "bonnes": [1],
+      "explication": "Sortir du triangle, c'est refuser les trois rôles et ramener chacun à sa responsabilité : « qu'est-ce que tu as dit à Sophie ? »"
+    },
+    {
+      "id": "m5q05",
+      "enonce": "Plusieurs réponses. Quels sont des signaux faibles d'un conflit naissant ?",
+      "options": [
+        "Deux personnes qui ne se parlent plus que par un tiers ou par écrit",
+        "Le passage du fait au trait de caractère (« elle ne prévient jamais »)",
+        "Un désaccord exprimé ouvertement en réunion sur une méthode",
+        "Des alliances : les mêmes appuient toujours les mêmes, déjeunent toujours ensemble"
+      ],
+      "bonnes": [0, 1, 3],
+      "explication": "Un désaccord exprimé ouvertement sur le travail est sain. La communication indirecte, les « toujours / jamais » et les alliances sont les signes d'un conflit qui glisse vers la relation."
+    },
+    {
+      "id": "m5q06",
+      "enonce": "Quelle est la règle que le manager impose si l'équipe ne la propose pas lors de la construction des règles du jeu ?",
+      "options": [
+        "L'interdiction de tout désaccord",
+        "Le respect des personnes : on peut tout se dire sur le travail, on ne s'attaque pas aux personnes, et pas devant les autres",
+        "L'obligation de déjeuner ensemble",
+        "La priorité aux plus anciens"
+      ],
+      "bonnes": [1],
+      "explication": "C'est la ligne que le manager défend sans négociation ; les autres règles (cinq à huit, positives, vérifiables) sont construites avec l'équipe."
+    },
+    {
+      "id": "m5q07",
+      "enonce": "Dans la méthode en cinq étapes, pourquoi écoute-t-on chaque partie séparément avant de les réunir ?",
+      "options": [
+        "Pour gagner du temps",
+        "Pour pouvoir choisir la version la plus crédible",
+        "Pour entendre chacun sans qu'il rejoue le conflit devant l'autre, et repérer derrière les positions les besoins, qui sont rarement incompatibles",
+        "Parce que la loi l'impose"
+      ],
+      "bonnes": [2],
+      "explication": "Réunir tout de suite, c'est faire rejouer le conflit devant le chef. Les positions s'opposent ; les besoins (savoir la veille, être reconnu) peuvent presque toujours être satisfaits ensemble."
+    },
+    {
+      "id": "m5q08",
+      "enonce": "Quels sont les quatre temps de la communication non violente (Rosenberg) ?",
+      "options": [
+        "Accuser, exiger, menacer, conclure",
+        "Observation sans jugement, sentiment, besoin, demande concrète",
+        "Situation, comportement, impact, sanction",
+        "Écouter, trancher, notifier, sanctionner"
+      ],
+      "bonnes": [1],
+      "explication": "« Mardi j'ai appris à 14 h… / j'étais en colère / j'ai besoin de savoir la veille / est-ce que tu peux me dire à 17 h… » : une façon de dire ce qui ne va pas sans attaquer, avec une demande à laquelle l'autre peut répondre."
+    },
+    {
+      "id": "m5q09",
+      "enonce": "Quand le manager doit-il passer la main à un tiers neutre (RH, médiateur) ?",
+      "options": [
+        "Jamais : un bon manager gère tout seul",
+        "Dès la première pique en réunion",
+        "Quand le conflit a dépassé le niveau 4, quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué",
+        "Uniquement si le salarié le demande par écrit"
+      ],
+      "bonnes": [2],
+      "explication": "Passer la main n'est pas un échec : c'est la reconnaissance qu'un conflit installé demande d'autres moyens, et une protection pour le manager et les personnes."
+    },
+    {
+      "id": "m5q10",
+      "enonce": "Quelle est la différence entre un recadrage et une sanction disciplinaire ?",
+      "options": [
+        "Aucune : ce sont deux mots pour la même chose",
+        "Le recadrage est un acte de management du manager, sans forme légale ; la sanction est un acte de l'employeur, encadré par une procédure (L1332-1 et s.), le règlement intérieur et la prescription de deux mois",
+        "Le recadrage est réservé aux cadres",
+        "La sanction est décidée par le manager de proximité seul, sans procédure"
+      ],
+      "bonnes": [1],
+      "explication": "Le manager recadre et trace ; l'employeur sanctionne, avec entretien préalable pour toute sanction ayant une incidence sur la présence, la fonction, la carrière ou la rémunération. Les sanctions pécuniaires sont interdites."
+    },
+    {
+      "id": "m5q11",
+      "enonce": "Un salarié refuse d'exécuter une consigne. Dans quel cas ce refus n'est-il pas une faute ?",
+      "options": [
+        "Quand il n'est pas d'accord avec la méthode",
+        "Quand la consigne est illégale, expose à un danger grave et imminent (droit de retrait, L4131-1) ou sort du cadre du contrat",
+        "Quand il a plus d'ancienneté que le manager",
+        "Jamais : tout refus est une faute"
+      ],
+      "bonnes": [1],
+      "explication": "Face à un refus, le manager demande d'abord la raison. Si c'est un danger ou une illégalité, c'est lui qui a un problème à traiter ; sinon, il recadre et remonte."
+    },
+    {
+      "id": "m5q12",
+      "enonce": "Nadia signale à Karim qu'un client lui fait des remarques sur son physique et l'a touchée avec insistance. Que fait Karim ?",
+      "options": [
+        "Il lui dit que c'est sûrement un malentendu et qu'il faut relativiser",
+        "Il mène l'enquête lui-même en confrontant Nadia et le client",
+        "Il prend au sérieux, note les faits, informe l'employeur sans délai et par écrit, protège Nadia (ne plus la laisser seule avec ce client), l'oriente vers les relais, garde la confidentialité",
+        "Il en parle à l'équipe pour que tout le monde soit vigilant"
+      ],
+      "bonnes": [2],
+      "explication": "L'employeur a l'obligation de prévenir et de faire cesser le harcèlement (L1153-5) ; le manager déclenche cette obligation en informant sans délai. Il n'enquête pas lui-même. La personne qui parle de bonne foi est protégée."
+    }
+  ]
+}
