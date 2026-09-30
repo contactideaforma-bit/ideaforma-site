@@ -44,9 +44,9 @@ Le site public fonctionne même sans Supabase (catalogue par défaut). L'admin e
    - Redirect URLs : `https://ideaforma.fr/auth/callback`, `https://*.vercel.app/auth/callback`,
      `http://localhost:3000/auth/callback`
 7. **Authentication → Emails → SMTP Settings** (pour « mot de passe oublié ») : activer Custom SMTP
-   avec Resend — Host `smtp.resend.com`, Port `465`, User `resend`, Password = clé API Resend,
-   Sender = `onboarding@resend.dev` tant que le domaine n'est pas vérifié (voir étape 6).
-   Dans **Email Templates → Reset password**, texte en français et lien `{{ .ConfirmationURL }}`.
+   avec la boîte OVH — Host `smtp.mail.ovh.net`, Port `465`, User `contact@ideaforma.fr`,
+   Password = mot de passe de la boîte, Sender `contact@ideaforma.fr`, nom `IDEAFORMA`.
+   Templates en français : voir section 6.2 (`supabase/emails/`).
 8. **Project Settings → API** : noter `Project URL`, `anon public` et `service_role` (secrète !).
 
 ---
@@ -81,9 +81,13 @@ ils restent sur ton Mac et ne partent pas sur GitHub.
    | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | clé `anon public` |
    | `SUPABASE_SERVICE_ROLE_KEY` | clé `service_role` |
    | `NEXT_PUBLIC_SITE_URL` | `https://ideaforma.fr` |
-   | `RESEND_API_KEY` | clé Resend (facultatif au début) |
-   | `MAIL_FROM` | `IDEAFORMA <onboarding@resend.dev>` puis `IDEAFORMA <contact@ideaforma.fr>` |
-   | `CONTACT_TO` | `contact.ideaforma@gmail.com` |
+   | `SMTP_HOST` | `smtp.mail.ovh.net` (boîte OVH contact@ideaforma.fr) |
+   | `SMTP_PORT` | `465` |
+   | `SMTP_USER` | `contact@ideaforma.fr` |
+   | `SMTP_PASS` | mot de passe de la boîte (celui défini dans l'espace client OVH → E-mails) |
+   | `MAIL_FROM` | `IDEAFORMA <contact@ideaforma.fr>` |
+   | `CONTACT_TO` | `contact@ideaforma.fr` |
+   | `RESEND_API_KEY` | facultatif : transport de secours si SMTP n'est pas renseigné |
 
 3. **Deploy**. Tester sur l'URL `*.vercel.app` : accueil, `/formations`, `/connexion` avec ton compte
    admin → `/admin`.
@@ -109,24 +113,51 @@ Les anciennes URL (`/formations.html`…) redirigent en 301 vers les nouvelles.
 
 ---
 
-## 6. Resend — envoi des e-mails de bienvenue (10 min)
+## 6. E-mails — boîte OVH contact@ideaforma.fr (10 min)
 
-Sans clé Resend, la plateforme fonctionne : le mot de passe de l'élève s'affiche à l'écran
-après création, à transmettre à la main.
+Tous les e-mails de la plateforme (bienvenue et identifiants, nouveau mot de passe, e-mails
+personnalisés depuis la fiche élève, notification des demandes de contact) partent de la boîte
+OVH `contact@ideaforma.fr` via SMTP. Sans configuration, la plateforme fonctionne quand même :
+le mot de passe de l'élève s'affiche à l'écran après création, à transmettre à la main.
 
-1. https://resend.com → **API Keys** → créer une clé → `RESEND_API_KEY` sur Vercel.
-2. **Domains → Add domain → `ideaforma.fr`** → ajouter les enregistrements DNS indiqués
-   (MX + TXT SPF + TXT DKIM) chez le gestionnaire DNS → Verify.
-   ⚠️ Tant que le domaine n'est pas vérifié, `onboarding@resend.dev` ne peut écrire **qu'à ton
-   adresse** : les élèves ne recevront rien. C'est donc une étape obligatoire avant le premier vrai élève.
-3. Passer `MAIL_FROM` à `IDEAFORMA <contact@ideaforma.fr>` sur Vercel → Redeploy.
+### 6.1 Envois de l'application (Vercel)
+
+1. Vercel → Settings → Environment Variables : ajouter `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`,
+   `SMTP_PASS`, `MAIL_FROM`, `CONTACT_TO` (valeurs dans le tableau de la section 4) → Redeploy.
+2. Vérifier dans **Admin → Mon compte → Configuration** : « Envoi d'e-mails : SMTP OVH ».
+3. Test : Admin → Élèves → un élève → « Envoyer un e-mail à l'élève » → aperçu → envoyer à
+   une adresse à toi. Si l'envoi échoue, l'erreur SMTP s'affiche dans le formulaire (mot de passe
+   de la boîte le plus souvent : c'est celui d'OVH → E-mails, pas celui du compte OVH).
+
+### 6.2 E-mails d'authentification Supabase (mot de passe oublié)
+
+Le lien « Mot de passe oublié » de la page de connexion est envoyé par Supabase, pas par
+l'application. Par défaut Supabase utilise un expéditeur générique limité à quelques envois par
+heure : il faut lui donner la boîte OVH.
+
+1. Supabase → **Authentication → Emails → SMTP Settings** → Enable Custom SMTP :
+   Sender email `contact@ideaforma.fr`, Sender name `IDEAFORMA`, Host `smtp.mail.ovh.net`,
+   Port `465`, Username `contact@ideaforma.fr`, Password (mot de passe de la boîte) → Save.
+2. **Authentication → Emails → Templates → Reset password** : Subject
+   `Réinitialiser votre mot de passe — IDEAFORMA`, et coller le contenu de
+   `supabase/emails/reset-password.html` (gabarit aux couleurs du site, fond clair).
+   Faire de même pour **Change email address** avec `supabase/emails/change-email.html`.
+3. **Authentication → URL Configuration** : Site URL `https://ideaforma.fr`, Redirect URLs
+   `https://ideaforma.fr/reinitialiser` (déjà fait à l'étape 2 si tu as suivi le guide).
+
+### 6.3 Délivrabilité
+
+Les MX du domaine pointent déjà vers OVH (la boîte reçoit). Pour que les e-mails envoyés ne
+finissent pas en spam, vérifier dans la zone DNS OVH la présence d'un enregistrement TXT SPF
+(`v=spf1 include:mx.ovh.com ~all`) et activer DKIM dans l'espace client OVH → E-mails →
+ideaforma.fr → onglet DKIM (Activer). Aucune modification côté Vercel.
 
 ---
 
 ## Vérifications de fin d'étape 1
 
 - [ ] `https://ideaforma.fr` affiche le nouveau site (4 pages + mentions légales).
-- [ ] Formulaire de contact → la demande apparaît dans **Admin → Demandes de contact** (+ e-mail si Resend).
+- [ ] Formulaire de contact → la demande apparaît dans **Admin → Demandes de contact** (+ e-mail si SMTP configuré).
 - [ ] `/connexion` avec le compte admin → tableau de bord.
 - [ ] Créer un élève test avec ta propre adresse → e-mail reçu (ou mot de passe affiché) → connexion sur `/espace`.
 - [ ] Attribuer une formation avec une date de fin passée → l'élève la voit « Délai dépassé » et ne peut pas l'ouvrir.

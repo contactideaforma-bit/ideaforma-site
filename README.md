@@ -4,7 +4,7 @@ Site public d'IDEAFORMA (organisme de formation certifié Qualiopi) et plateform
 espace administrateur (comptes élèves, formations, modules, inscriptions, demandes de contact) et
 espace élève (formations attribuées, progression, délai d'accès).
 
-**Stack** : Next.js 15 (App Router, TypeScript), Supabase (Auth + Postgres + RLS + Storage), Vercel, Resend.
+**Stack** : Next.js 15 (App Router, TypeScript), Supabase (Auth + Postgres + RLS + Storage), Vercel, e-mails via SMTP OVH (contact@ideaforma.fr).
 
 ## Démarrer
 
@@ -31,7 +31,7 @@ src/
   lib/
     supabase/          clients : navigateur, serveur (RLS), admin (service_role, serveur uniquement)
     auth.ts            getCurrentProfile / requireAdmin / requireUser
-    mail.ts            envoi Resend + gabarits (bienvenue, nouveau mot de passe, contact)
+    mail.ts            envoi SMTP OVH (ou Resend en secours) ; mail-gabarits.ts : gabarits HTML aux couleurs du site
     catalogue.ts       catalogue par défaut si la base est vide
     types.ts           types métier
   middleware.ts        rafraîchit la session et protège /admin et /espace
@@ -48,4 +48,3 @@ legacy-netlify/        ancien site statique (référence, non déployé)
 - RLS : un élève ne voit que son profil, ses inscriptions, sa progression, et le contenu des formations
   auxquelles il est inscrit **pendant la période d'accès** (`date_debut` → `date_fin`).
 - Le bucket Storage `contenus` est privé : les fichiers seront servis par URL signées (étape 2).
-# ideaforma-site
