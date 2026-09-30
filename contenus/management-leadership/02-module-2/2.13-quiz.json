@@ -1,5 +1,5 @@
 {
-  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
   "seuil": 70,
   "tentatives_max": 3,
   "corrections": true,
@@ -13,7 +13,9 @@
         "Un objectif précis et difficile, accepté par la personne et suivi régulièrement",
         "Un objectif fixé sans discussion, pour gagner du temps"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Précis, difficile mais accepté, avec un retour d'information régulier : ce sont les quatre conditions établies par la recherche sur la fixation d'objectifs."
     },
     {
@@ -25,7 +27,9 @@
         "D'ici le 31 décembre, aucune reprise pour défaut de finition sur les véhicules de flotte (3 ce trimestre)",
         "Être le meilleur atelier de la région"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Spécifique, mesurable (aucune reprise, contre 3), atteignable, pertinent (lié à l'enjeu client) et daté (31 décembre)."
     },
     {
@@ -37,7 +41,9 @@
         "Uniquement des objectifs individuels, pour responsabiliser chacun",
         "Uniquement des objectifs collectifs, pour éviter les comparaisons"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le collectif crée le sens et la solidarité ; l'individuel crée la responsabilité. Commencer par l'individuel donne une somme de contributions, pas une équipe."
     },
     {
@@ -49,14 +55,23 @@
         "Que la compétence n'est pas importante",
         "Qu'il faut retirer cette compétence de la matrice"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "C'est un risque : il appelle un binôme, une formation ou un recrutement. Une organisation ne doit jamais reposer sur une seule personne."
     },
     {
       "id": "m2q05",
       "enonce": "Dans une matrice RACI, combien de « A » (approuve / répond du résultat) doit-on trouver sur chaque ligne ?",
-      "options": ["Aucun, c'est facultatif", "Exactement un", "Au moins deux, pour se couvrir", "Autant que de personnes impliquées"],
-      "bonnes": [1],
+      "options": [
+        "Aucun, c'est facultatif",
+        "Exactement un",
+        "Au moins deux, pour se couvrir",
+        "Autant que de personnes impliquées"
+      ],
+      "bonnes": [
+        1
+      ],
       "explication": "Un seul A par ligne. Deux A = un conflit en réserve ; aucun A = personne ne répond du résultat."
     },
     {
@@ -68,7 +83,11 @@
         "L'évaluation et le recadrage des personnes",
         "La relation avec un fournisseur"
       ],
-      "bonnes": [0, 1, 3],
+      "bonnes": [
+        0,
+        1,
+        3
+      ],
       "explication": "L'exécution et l'expertise se délèguent. Le cœur du rôle de manager (objectifs, arbitrages, évaluation, recadrage, sanction, crise) ne se délègue pas."
     },
     {
@@ -80,14 +99,23 @@
         "Niveau 4 : décider seul et rendre compte après",
         "Niveau 5 : décider sans rendre compte"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Le niveau 4 convient à une personne autonome sur la tâche. Rester au niveau 1 ou 2 avec un expert est vécu comme de la défiance."
     },
     {
       "id": "m2q08",
       "enonce": "Dans la matrice importance / urgence, quelle case est celle où « se joue le management » et qui disparaît si on ne la planifie pas ?",
-      "options": ["Important et urgent", "Important et pas urgent", "Pas important et urgent", "Pas important et pas urgent"],
-      "bonnes": [1],
+      "options": [
+        "Important et urgent",
+        "Important et pas urgent",
+        "Pas important et urgent",
+        "Pas important et pas urgent"
+      ],
+      "bonnes": [
+        1
+      ],
       "explication": "Fixer des objectifs, former, organiser, faire des entretiens : rien n'est urgent, tout est important. Négliger cette case fabrique les urgences de demain."
     },
     {
@@ -99,7 +127,9 @@
         "Le premier est mensuel, le second est annuel",
         "Il n'y a pas de différence, ce sont deux noms pour la même chose"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Un bon tableau de bord combine les deux : le résultat dit si l'on a réussi, les moyens disent si l'on est sur la bonne voie."
     },
     {
@@ -111,7 +141,9 @@
         "D'une fraude à sanctionner individuellement",
         "D'un problème de logiciel"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Quand un indicateur sert à juger, il est optimisé au détriment du résultat réel. Garde-fou, indicateurs collectifs et recherche des causes plutôt que des coupables."
     },
     {
@@ -123,7 +155,9 @@
         "L'écarter des tâches physiques « pour le protéger », sans lui demander son avis",
         "Informer l'équipe de sa situation médicale pour expliquer l'aménagement"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le médecin du travail prescrit, le manager organise à partir de la restriction. Le diagnostic ne vous regarde pas et ne se divulgue jamais. L'écarter sans son avis serait une discrimination « bienveillante »."
     },
     {
@@ -135,8 +169,124 @@
         "Il est laissé à la libre appréciation du manager",
         "Il est entièrement financé par le salarié"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Code du travail L5213-6 : obligation d'aménagement raisonnable, sous réserve de charge disproportionnée ; l'Agefiph aide à financer. Le refus doit être motivé par écrit."
+    },
+    {
+      "id": "m2q13",
+      "enonce": "Comment un objectif individuel se présente-t-il en entretien pour être accepté ?",
+      "options": [
+        "On l'envoie par e-mail pour gagner du temps",
+        "Contexte, proposition, discussion, ajustement, suivi",
+        "On l'annonce en réunion devant l'équipe",
+        "On laisse la personne le fixer seule, sans cadre"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Un objectif imposé sans discussion n'est pas accepté ; un objectif discuté et ajusté engage. Le suivi (dates, indicateurs) fait partie de la présentation."
+    },
+    {
+      "id": "m2q14",
+      "enonce": "Dans la matrice de compétences, que signifie le niveau 3 ?",
+      "options": [
+        "Ne sait pas faire",
+        "Sait faire avec aide",
+        "Sait faire seul au niveau attendu",
+        "Sait faire et peut former ou contrôler les autres"
+      ],
+      "bonnes": [
+        3
+      ],
+      "explication": "Échelle 0-3 : 0 ne sait pas, 1 avec aide, 2 autonome, 3 peut former ou contrôler. Les niveaux 3 sont les tuteurs et contrôleurs naturels de l'équipe."
+    },
+    {
+      "id": "m2q15",
+      "enonce": "Dans une matrice RACI, quelle est la différence entre « C » et « I » ?",
+      "options": [
+        "C réalise, I approuve",
+        "C est consulté avant la décision, I est informé après",
+        "C et I sont interchangeables",
+        "C est le chef, I est l'intérimaire"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Consulté avant (son avis compte), informé après (il doit savoir). Marc, mécanicien, doit être consulté la veille sur le planning : c'est un C, pas un I."
+    },
+    {
+      "id": "m2q16",
+      "enonce": "Plusieurs réponses. Qu'est-ce qui ne se délègue pas ?",
+      "options": [
+        "Le recadrage d'un membre de l'équipe",
+        "La commande des pièces",
+        "La responsabilité finale du résultat",
+        "Les décisions qui engagent la sécurité"
+      ],
+      "bonnes": [
+        0,
+        2,
+        3
+      ],
+      "explication": "On délègue des tâches et des décisions, avec un contrat clair ; on ne délègue ni le recadrage, ni la sanction, ni la sécurité, ni la responsabilité finale."
+    },
+    {
+      "id": "m2q17",
+      "enonce": "Que contient un contrat de délégation ?",
+      "options": [
+        "Uniquement la tâche à faire",
+        "Quoi, jusqu'où (niveau de délégation), avec quels moyens, quel point de contrôle",
+        "Un avenant au contrat de travail",
+        "Le montant de la prime associée"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Sans le « jusqu'où » et le point de contrôle, la délégation devient soit un abandon, soit une reprise en main permanente."
+    },
+    {
+      "id": "m2q18",
+      "enonce": "Dans le podcast sur le tableau de bord, Sandrine a d'abord construit un tableau de 25 colonnes qu'elle a abandonné en trois semaines. Quelle leçon en tire-t-elle ?",
+      "options": [
+        "Il faut un logiciel plus puissant",
+        "Vingt-cinq chiffres, c'est comme zéro chiffre : on part des objectifs et on garde trois à six indicateurs",
+        "Il faut déléguer le tableau de bord au comptable",
+        "Le pilotage au ressenti suffit"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Le tableau de bord découle des objectifs : un indicateur de résultat par objectif, des indicateurs de moyens et des garde-fous, pas un inventaire."
+    },
+    {
+      "id": "m2q19",
+      "enonce": "Karim vise 95 % de délais tenus. Quel indicateur garde-fou doit l'accompagner ?",
+      "options": [
+        "Le chiffre d'affaires du mois",
+        "Le nombre de reprises après restitution (qualité)",
+        "Le nombre de véhicules reçus",
+        "La note de l'atelier sur internet"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Un objectif de délai poussé seul dégrade la qualité. Le garde-fou (reprises, réclamations) signale l'effet secondaire avant qu'il ne coûte cher."
+    },
+    {
+      "id": "m2q20",
+      "enonce": "Une tâche est urgente mais peu importante (une demande de document sans enjeu, à rendre aujourd'hui). Que fait le manager selon la matrice importance / urgence ?",
+      "options": [
+        "Il la traite lui-même en priorité, avant tout le reste",
+        "Il la délègue ou la traite vite, sans y consacrer d'énergie ni d'attention",
+        "Il la reporte au mois prochain",
+        "Il la refuse systématiquement"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "L'urgent non important se délègue ou s'expédie. Le piège est d'y consacrer le temps qui devait aller à l'important non urgent (organiser, former, anticiper)."
     }
   ]
 }

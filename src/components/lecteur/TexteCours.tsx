@@ -1,4 +1,12 @@
+import type { ReactNode } from "react";
 import { blocsTexte } from "@/lib/contenu";
+
+/** Gras inline : **texte**. Le reste est rendu tel quel. */
+function inline(t: string): ReactNode {
+  const parts = t.split(/(\*\*[^*]+\*\*)/g);
+  if (parts.length === 1) return t;
+  return parts.map((p, i) => (p.startsWith("**") && p.endsWith("**") ? <strong key={i}>{p.slice(2, -2)}</strong> : p));
+}
 
 /** Rendu d'un texte enrichi léger (titres, paragraphes, puces, tableaux). */
 export default function TexteCours({ texte, className = "cours" }: { texte: string; className?: string }) {
@@ -7,19 +15,19 @@ export default function TexteCours({ texte, className = "cours" }: { texte: stri
       {blocsTexte(texte).map((b, i) => {
         if (b.type === "h1") return <h2 key={i}>{b.contenu}</h2>;
         if (b.type === "h2") return <h3 key={i}>{b.contenu}</h3>;
-        if (b.type === "ul") return <ul key={i}>{b.contenu.map((li, k) => <li key={k}>{li}</li>)}</ul>;
+        if (b.type === "ul") return <ul key={i}>{b.contenu.map((li, k) => <li key={k}>{inline(li)}</li>)}</ul>;
         if (b.type === "table") {
           const [tete, ...lignes] = b.contenu;
           return (
             <div key={i} className="table-wrap">
               <table className="table cours-table">
                 <thead><tr>{tete.map((c, k) => <th key={k}>{c}</th>)}</tr></thead>
-                <tbody>{lignes.map((l, r) => <tr key={r}>{l.map((c, k) => <td key={k}>{c}</td>)}</tr>)}</tbody>
+                <tbody>{lignes.map((l, r) => <tr key={r}>{l.map((c, k) => <td key={k}>{inline(c)}</td>)}</tr>)}</tbody>
               </table>
             </div>
           );
         }
-        return <p key={i}>{b.contenu}</p>;
+        return <p key={i}>{inline(b.contenu)}</p>;
       })}
     </div>
   );

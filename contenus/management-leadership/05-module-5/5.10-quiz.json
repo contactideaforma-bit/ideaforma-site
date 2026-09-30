@@ -1,5 +1,5 @@
 {
-  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
   "seuil": 70,
   "tentatives_max": 3,
   "corrections": true,
@@ -13,7 +13,9 @@
         "Une insubordination à sanctionner",
         "Un signe que Thierry doit changer d'équipe"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le conflit de tâche (désaccord sur le travail) est utile : il évite les décisions non examinées. Le rôle du manager est de l'empêcher de glisser vers un conflit de relation (attaque des personnes)."
     },
     {
@@ -25,7 +27,9 @@
         "On cherche à nuire à l'autre même à ses propres dépens",
         "Le conflit s'est éteint de lui-même"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Phase 1 (1-3) : on peut encore se parler, c'est là que le manager intervient facilement. Phase 2 (4-6) : chacun pense que l'un doit perdre ; il faut une méthode formelle, souvent un tiers. Phase 3 (7-9) : destruction, registre disciplinaire ou juridique."
     },
     {
@@ -37,7 +41,9 @@
         "Uniquement les personnes : un conflit est toujours une affaire de caractère",
         "Il ne cherche pas la source, il tranche"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "La cause est le plus souvent dans l'organisation. Traiter les personnes sans traiter la cause, c'est repartir pour un tour."
     },
     {
@@ -49,7 +55,9 @@
         "La victime : il subit le conflit",
         "Aucun rôle : c'est la bonne conduite"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Sortir du triangle, c'est refuser les trois rôles et ramener chacun à sa responsabilité : « qu'est-ce que tu as dit à Sophie ? »"
     },
     {
@@ -61,7 +69,11 @@
         "Un désaccord exprimé ouvertement en réunion sur une méthode",
         "Des alliances : les mêmes appuient toujours les mêmes, déjeunent toujours ensemble"
       ],
-      "bonnes": [0, 1, 3],
+      "bonnes": [
+        0,
+        1,
+        3
+      ],
       "explication": "Un désaccord exprimé ouvertement sur le travail est sain. La communication indirecte, les « toujours / jamais » et les alliances sont les signes d'un conflit qui glisse vers la relation."
     },
     {
@@ -73,7 +85,9 @@
         "L'obligation de déjeuner ensemble",
         "La priorité aux plus anciens"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "C'est la ligne que le manager défend sans négociation ; les autres règles (cinq à huit, positives, vérifiables) sont construites avec l'équipe."
     },
     {
@@ -85,7 +99,9 @@
         "Pour entendre chacun sans qu'il rejoue le conflit devant l'autre, et repérer derrière les positions les besoins, qui sont rarement incompatibles",
         "Parce que la loi l'impose"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Réunir tout de suite, c'est faire rejouer le conflit devant le chef. Les positions s'opposent ; les besoins (savoir la veille, être reconnu) peuvent presque toujours être satisfaits ensemble."
     },
     {
@@ -97,7 +113,9 @@
         "Situation, comportement, impact, sanction",
         "Écouter, trancher, notifier, sanctionner"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "« Mardi j'ai appris à 14 h… / j'étais en colère / j'ai besoin de savoir la veille / est-ce que tu peux me dire à 17 h… » : une façon de dire ce qui ne va pas sans attaquer, avec une demande à laquelle l'autre peut répondre."
     },
     {
@@ -109,7 +127,9 @@
         "Quand le conflit a dépassé le niveau 4, quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué",
         "Uniquement si le salarié le demande par écrit"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Passer la main n'est pas un échec : c'est la reconnaissance qu'un conflit installé demande d'autres moyens, et une protection pour le manager et les personnes."
     },
     {
@@ -121,7 +141,9 @@
         "Le recadrage est réservé aux cadres",
         "La sanction est décidée par le manager de proximité seul, sans procédure"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le manager recadre et trace ; l'employeur sanctionne, avec entretien préalable pour toute sanction ayant une incidence sur la présence, la fonction, la carrière ou la rémunération. Les sanctions pécuniaires sont interdites."
     },
     {
@@ -133,7 +155,9 @@
         "Quand il a plus d'ancienneté que le manager",
         "Jamais : tout refus est une faute"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Face à un refus, le manager demande d'abord la raison. Si c'est un danger ou une illégalité, c'est lui qui a un problème à traiter ; sinon, il recadre et remonte."
     },
     {
@@ -145,8 +169,122 @@
         "Il prend au sérieux, note les faits, informe l'employeur sans délai et par écrit, protège Nadia (ne plus la laisser seule avec ce client), l'oriente vers les relais, garde la confidentialité",
         "Il en parle à l'équipe pour que tout le monde soit vigilant"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "L'employeur a l'obligation de prévenir et de faire cesser le harcèlement (L1153-5) ; le manager déclenche cette obligation en informant sans délai. Il n'enquête pas lui-même. La personne qui parle de bonne foi est protégée."
+    },
+    {
+      "id": "m5q13",
+      "enonce": "Que devient un conflit de tâche (désaccord sur la méthode) qu'on laisse sans réponse pendant des semaines ?",
+      "options": [
+        "Il disparaît de lui-même",
+        "Il se transforme en conflit de relation : ce n'est plus la méthode qui est en cause, c'est la personne",
+        "Il devient un conflit de valeurs",
+        "Il n'a aucune conséquence"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Le rôle du manager est de garder les conflits sur le terrain de la tâche et de traiter vite ceux qui glissent vers la relation."
+    },
+    {
+      "id": "m5q14",
+      "enonce": "Deux peintres se disputent régulièrement le créneau de cabine du matin. Quelle est la source la plus probable, et quel remède ?",
+      "options": [
+        "Un conflit de personnes : les séparer",
+        "Une ressource rare distribuée sans règle connue : fixer une règle de répartition",
+        "Un conflit de valeurs : trancher pour le plus ancien",
+        "Une insubordination : sanctionner"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "La rareté crée la rivalité. Un manager qui distribue les ressources sans règle fabrique des conflits ; la règle connue les prévient."
+    },
+    {
+      "id": "m5q15",
+      "enonce": "Qu'est-ce que le biais de la première version ?",
+      "options": [
+        "Croire la version écrite plutôt qu'orale",
+        "Le récit de celui qui vient se plaindre en premier structure la façon dont le manager voit la situation",
+        "Préférer l'avis du plus ancien",
+        "Retenir la dernière chose entendue"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Remède : ne jamais conclure avant d'avoir entendu l'autre partie, séparément."
+    },
+    {
+      "id": "m5q16",
+      "enonce": "Un incident vient d'éclater entre deux membres de l'équipe, à chaud. Que fait le manager ?",
+      "options": [
+        "Il réunit les deux immédiatement pour régler l'affaire",
+        "Il dit « calmez-vous » et reprend le travail",
+        "Il sépare, reconnaît l'émotion, laisse retomber (quelques heures ou une nuit) et fixe le moment de reprendre, chacun d'abord séparément",
+        "Il tranche sur place en faveur du plus calme"
+      ],
+      "bonnes": [
+        2
+      ],
+      "explication": "« Calme-toi » est la phrase la plus inefficace du monde. Un entretien de résolution ne se tient pas à chaud."
+    },
+    {
+      "id": "m5q17",
+      "enonce": "Dans le podcast « Le conflit que j'ai laissé pourrir », Patrice passait son temps à transmettre les informations entre ses deux chefs de rayon. Que faisait-il en réalité ?",
+      "options": [
+        "Il gérait le conflit",
+        "Il entretenait le conflit en compensant, tout en croyant le maîtriser",
+        "Il appliquait la méthode en cinq étapes",
+        "Il jouait le rôle de médiateur neutre"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Quand le manager fait l'intermédiaire à la place des gens, le conflit s'installe. Le signal d'alarme : « Dis à Untel que… »."
+    },
+    {
+      "id": "m5q18",
+      "enonce": "Marc réclame : « je veux qu'elle arrête de me donner des urgences ». Selon Fisher et Ury, qu'est-ce que le manager cherche derrière cette position ?",
+      "options": [
+        "Qui a raison",
+        "Le besoin : savoir la veille ce qui l'attend, qui, lui, peut être satisfait sans que l'autre perde",
+        "Une sanction proportionnée",
+        "Un compromis où chacun perd la moitié"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Les positions sont incompatibles ; les besoins ne le sont presque jamais. C'est sur les besoins qu'on trouve des options."
+    },
+    {
+      "id": "m5q19",
+      "enonce": "Pour une sanction ayant une incidence sur la présence, la fonction ou la rémunération (mise à pied, mutation, licenciement), que prévoit la procédure (L1332-2) ?",
+      "options": [
+        "Une simple lettre, sans entretien",
+        "Convocation écrite à un entretien préalable où le salarié peut être assisté, puis notification écrite et motivée au plus tôt deux jours ouvrables et au plus tard un mois après l'entretien",
+        "Un vote de l'équipe",
+        "Une amende retenue sur salaire"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "La sanction relève de l'employeur, avec cette procédure ; les faits doivent avoir moins de deux mois (L1332-4). Le manager fournit les faits datés et les recadrages tracés."
+    },
+    {
+      "id": "m5q20",
+      "enonce": "Un salarié se présente manifestement sous l'emprise de l'alcool à un poste dangereux. Que fait le manager ?",
+      "options": [
+        "Il le laisse travailler en le surveillant",
+        "Il le retire du poste immédiatement, veille à ce qu'il soit raccompagné, et informe l'employeur ; la procédure du règlement intérieur s'applique ensuite",
+        "Il lui fait un feedback SBI le lendemain",
+        "Il appelle le médecin traitant du salarié"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "L'obligation de sécurité prime : retrait immédiat du poste. Souffrance éventuelle et faute se traitent ensuite, séparément."
     }
   ]
 }

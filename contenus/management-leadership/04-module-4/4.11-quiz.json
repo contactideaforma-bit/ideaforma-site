@@ -1,5 +1,5 @@
 {
-  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
   "seuil": 70,
   "tentatives_max": 3,
   "corrections": true,
@@ -13,7 +13,9 @@
         "Un facteur sans aucun effet sur les salariés",
         "Un facteur réservé aux métiers physiques"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Les facteurs d'hygiène évitent le désengagement ; ce sont les facteurs de motivation (accomplissement, reconnaissance, intérêt du travail, responsabilité, progression) qui créent l'engagement."
     },
     {
@@ -25,7 +27,9 @@
         "Pouvoir, réussite, affiliation",
         "Reconnaissance, prime, promotion"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Quand l'autonomie, la compétence et le lien sont nourris, la motivation vient de l'intérieur ; quand ils sont frustrés, aucune prime ne compense."
     },
     {
@@ -37,7 +41,9 @@
         "Le sentiment d'avancer dans un travail qui a du sens, même par de petits progrès",
         "L'absence totale de difficulté"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses ; le sentiment de reculer (travail refait, obstacle) est ce qui la plombe."
     },
     {
@@ -49,7 +55,9 @@
         "Un dispositif de sécurité physique obligatoire dans les ateliers",
         "L'absence de toute exigence de la part du manager"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "La sécurité psychologique se combine avec l'exigence : c'est ce qui permet de se dire les choses difficiles, pas de les éviter."
     },
     {
@@ -61,7 +69,9 @@
         "Parce qu'elles étaient moins compétentes",
         "Parce qu'elles y étaient obligées par la direction"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Les erreurs existaient partout ; seules les équipes psychologiquement sûres les signalaient, ce qui permettait de les traiter."
     },
     {
@@ -73,7 +83,11 @@
         "Ne jamais dire « je ne sais pas » pour préserver son autorité",
         "Poser des limites aux moqueries et au mépris dans l'équipe"
       ],
-      "bonnes": [0, 1, 3],
+      "bonnes": [
+        0,
+        1,
+        3
+      ],
       "explication": "Un manager qui ne se trompe jamais et sait tout oblige les autres à cacher et à se taire. Admettre, remercier, questionner et poser des limites sont les comportements qui comptent."
     },
     {
@@ -85,7 +99,9 @@
         "La prime de fin d'année",
         "La comparaison avec les meilleurs"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Ne reconnaître que les résultats, c'est ne reconnaître que les meilleurs. La manière de faire et l'effort se reconnaissent chez tous, et la reconnaissance existentielle (bonjour, informer, consulter) est la base."
     },
     {
@@ -97,7 +113,9 @@
         "Options : les pistes possibles, celles de la personne d'abord, puis celles du manager",
         "Ordre : la consigne donnée par le manager"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "G = Goal (objectif), R = Reality (réalité), O = Options, W = Will (engagement). Le manager questionne plus qu'il ne conseille."
     },
     {
@@ -109,7 +127,9 @@
         "Une formation aux outils informatiques",
         "Aucune formation n'est obligatoire avant la fin de la période d'essai"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "La formation à la sécurité est obligatoire pour tout nouvel embauché, y compris les intérimaires et les salariés changeant de poste, et elle est tracée."
     },
     {
@@ -121,7 +141,9 @@
         "L'employeur peut l'imposer à tout moment",
         "Le télétravail est réservé aux cadres"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "À défaut d'accord collectif ou de charte, un accord individuel suffit. Le télétravail est volontaire des deux côtés, sauf circonstances exceptionnelles."
     },
     {
@@ -133,7 +155,9 @@
         "12 heures de travail, 10 heures de repos",
         "Aucune limite si le salarié est d'accord"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Art. L3121-18 et L3131-1. S'y ajoutent 48 h par semaine, 44 h en moyenne sur douze semaines, 35 h de repos hebdomadaire et 20 min de pause dès 6 h de travail."
     },
     {
@@ -145,8 +169,124 @@
         "Le voir seul avec des faits, écouter sans creuser la vie privée, agir sur ce qui pèse dans le travail, rappeler l'accès au médecin du travail, alerter la hiérarchie si nécessaire, suivre",
         "Convoquer une réunion d'équipe pour en parler devant tous"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte et suit ; il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."
+    },
+    {
+      "id": "m4q13",
+      "enonce": "Deci a montré un effet contre-intuitif des récompenses. Lequel ?",
+      "options": [
+        "Une prime augmente toujours la motivation",
+        "Dans certaines conditions, récompenser financièrement une activité que les gens aimaient faire diminue leur intérêt pour cette activité",
+        "Les récompenses n'ont aucun effet",
+        "Seules les récompenses en nature fonctionnent"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "La récompense externe peut remplacer le plaisir interne. Cela ne veut pas dire qu'il ne faut jamais récompenser, mais que la motivation ne s'achète pas."
+    },
+    {
+      "id": "m4q14",
+      "enonce": "Selon Edmondson, que produit une équipe où l'exigence est forte mais la sécurité psychologique faible ?",
+      "options": [
+        "Une zone d'apprentissage et de performance",
+        "Une zone de confort",
+        "Une zone d'anxiété : on cache les erreurs et on se tait",
+        "Une zone d'apathie"
+      ],
+      "bonnes": [
+        2
+      ],
+      "explication": "Sécurité sans exigence = confort ; exigence sans sécurité = anxiété ; les deux ensemble = apprentissage. Le manager tient les deux."
+    },
+    {
+      "id": "m4q15",
+      "enonce": "Comment traite-t-on les trois catégories d'erreur (apprentissage, inattention, faute délibérée) ?",
+      "options": [
+        "Toutes de la même façon, par une remarque devant l'équipe",
+        "Apprentissage : on en tire les leçons sans conséquence ; inattention : on cherche la cause et on en parle si ça se répète ; faute délibérée : recadrage et, selon la gravité, sanction",
+        "Toutes par une sanction, pour être juste",
+        "Aucune ne doit être relevée, pour préserver la sécurité psychologique"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Le droit à l'erreur n'est pas le droit à la négligence. Distinguer les trois catégories est ce qui rend l'exigence juste et la sécurité crédible."
+    },
+    {
+      "id": "m4q16",
+      "enonce": "Plusieurs réponses. Quelles sont des erreurs de reconnaissance ?",
+      "options": [
+        "« C'est bien, mais… »",
+        "« Tu es formidable, tu peux rester ce soir ? »",
+        "« Toi au moins tu fais les choses proprement, pas comme Julien »",
+        "Un mot précis, le jour même, sur ce qui a été bien fait"
+      ],
+      "bonnes": [
+        0,
+        1,
+        2
+      ],
+      "explication": "Le « mais » annule, le compliment instrumental est une manipulation, la comparaison détruit l'équipe. La reconnaissance est précise, sincère, à temps, sans condition."
+    },
+    {
+      "id": "m4q17",
+      "enonce": "Combien d'objectifs contient un plan de développement individuel (PDI) efficace ?",
+      "options": [
+        "Un seul à la fois, deux au maximum",
+        "Au moins six, pour couvrir tous les manques",
+        "Autant que de compétences dans la matrice",
+        "Aucun objectif précis, juste une intention"
+      ],
+      "bonnes": [
+        0
+      ],
+      "explication": "Un PDI à six objectifs n'aboutit jamais. Un objectif, des moyens datés, un point de suivi, relu à chaque entretien."
+    },
+    {
+      "id": "m4q18",
+      "enonce": "Une rupture de période d'essai est envisagée pour un nouveau salarié. Quelle règle la formation pose-t-elle ?",
+      "options": [
+        "Elle peut être annoncée le dernier jour, sans préavis d'explication",
+        "Elle ne doit jamais être une surprise : les difficultés ont été dites, avec des attentes précises et un délai, lors des points à une semaine et à un mois",
+        "Elle relève du parrain",
+        "Elle est impossible si le salarié a été formé à la sécurité"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Le point formel à un mois dit clairement si l'essai est en bonne voie. Une décision motivée, sans surprise, est plus juste et moins risquée."
+    },
+    {
+      "id": "m4q19",
+      "enonce": "Qu'a changé l'accord national interprofessionnel du 9 décembre 2020 (transposé par la loi du 2 août 2021) ?",
+      "options": [
+        "Il a supprimé le CSE",
+        "Il a remplacé la « qualité de vie au travail » par la « qualité de vie et des conditions de travail », recentrée sur le travail lui-même",
+        "Il a rendu le télétravail obligatoire",
+        "Il a créé le CPF"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "La QVCT porte sur le contenu et l'organisation du travail, pas sur les à-côtés. Elle se construit avec les salariés, par exemple dans des espaces de discussion sur le travail."
+    },
+    {
+      "id": "m4q20",
+      "enonce": "Parmi ces éléments, lequel ne fait pas partie des six familles de facteurs de risques psychosociaux du rapport Gollac ?",
+      "options": [
+        "L'intensité et le temps de travail",
+        "Les exigences émotionnelles",
+        "La fragilité psychologique des salariés",
+        "L'insécurité de la situation de travail"
+      ],
+      "bonnes": [
+        2
+      ],
+      "explication": "Les RPS viennent de l'organisation du travail, pas de la fragilité des personnes. Les six familles : intensité, exigences émotionnelles, autonomie insuffisante, rapports sociaux dégradés, conflits de valeurs, insécurité."
     }
   ]
 }

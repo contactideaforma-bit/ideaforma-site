@@ -1,5 +1,5 @@
 {
-  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
   "seuil": 70,
   "tentatives_max": 3,
   "corrections": true,
@@ -13,7 +13,9 @@
         "L'apprenti comprendra tout seul qu'il exagère",
         "Il a gagné du temps pour préparer une sanction"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "« On ne peut pas ne pas communiquer » : le silence du manager est lu comme un message par toute l'équipe. Ici, il signifie que le retard passe."
     },
     {
@@ -25,7 +27,9 @@
         "« Si je comprends bien, tu découvres les interventions au dernier moment et ça t'oblige à tout lâcher. »",
         "« Ne t'inquiète pas, ça va s'arranger. »"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Reformuler, c'est redire avec ses mots ce qu'on a compris pour le faire vérifier. Les autres réponses sont un récit de soi, un conseil et un réconfort prématuré, qui interrompent l'écoute."
     },
     {
@@ -37,7 +41,9 @@
         "La projection",
         "L'erreur fondamentale d'attribution"
       ],
-      "bonnes": [3],
+      "bonnes": [
+        3
+      ],
       "explication": "C'est l'erreur fondamentale d'attribution décrite par Lee Ross. Le remède : chercher d'abord la cause dans la situation."
     },
     {
@@ -49,7 +55,9 @@
         "Le besoin de la personne",
         "La bonne pratique à adopter"
       ],
-      "bonnes": [0],
+      "bonnes": [
+        0
+      ],
       "explication": "Le comportement est un fait observable. « Une coulure sur l'aile arrière, véhicule sorti sans contrôle » est un comportement ; « tu es brouillon » est une étiquette."
     },
     {
@@ -61,7 +69,9 @@
         "Parce qu'il est interdit par le Code du travail",
         "Parce qu'il ne fonctionne qu'avec les nouveaux"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le message correctif se perd ou se dilue, et les compliments deviennent suspects. Un correctif clair et respectueux, et des positifs sincères à d'autres moments, valent mieux."
     },
     {
@@ -73,7 +83,11 @@
         "Regrouper plusieurs reproches pour n'avoir à le faire qu'une fois",
         "Terminer par une question ouverte"
       ],
-      "bonnes": [0, 1, 3],
+      "bonnes": [
+        0,
+        1,
+        3
+      ],
       "explication": "Vite, en privé, un seul sujet à la fois, sur ce qui peut changer, avec une question. Regrouper six reproches n'en fait passer aucun."
     },
     {
@@ -85,7 +99,9 @@
         "À négocier une augmentation",
         "À remplir le compte rendu obligatoire de l'entretien de parcours professionnel"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "C'est la partie que les managers sautent, et celle qui fait sortir les problèmes avant qu'ils ne coûtent cher. Le manager écoute et oriente si nécessaire ; il n'est ni médecin ni confident."
     },
     {
@@ -97,7 +113,9 @@
         "L'entretien annuel, facultatif, porte sur le travail de l'année ; l'entretien de parcours, obligatoire (art. L6315-1), porte sur l'avenir professionnel et ne doit pas être une évaluation",
         "L'entretien de parcours est réservé aux salariés de plus de 45 ans"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "L'évaluation annuelle relève du pouvoir de direction (sauf accord). L'entretien de parcours professionnel est une obligation légale au contenu fixé (compétences, formation, évolution, CPF, CEP), avec un écrit remis au salarié."
     },
     {
@@ -109,7 +127,9 @@
         "Dans la première année après l'embauche, puis tous les quatre ans, avec un état des lieux tous les huit ans, plus des entretiens à 45 ans et avant 60 ans",
         "Uniquement au retour d'un congé long"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "C'est le nouveau rythme de l'article L6315-1. La convention collective ou un accord d'entreprise peut l'aménager : vérifiez toujours auprès des RH."
     },
     {
@@ -121,7 +141,9 @@
         "Le manager doit reconvoquer immédiatement",
         "Le CSE doit être informé"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Chaque point doit finir par : décidé quoi, qui, pour quand. Le relevé de décisions, suivi à la réunion suivante, est ce qui donne aux réunions leur crédibilité."
     },
     {
@@ -133,7 +155,9 @@
         "Interrompre sèchement le bavard devant tout le monde",
         "Reporter la réunion"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Le bavard se cadre sans humiliation (« merci, je note, je voudrais entendre les autres ») ; le silencieux se sollicite par son nom, sur une question concrète. Un tour de table court est l'outil le plus efficace."
     },
     {
@@ -145,8 +169,124 @@
         "« Avec l'équipe actuelle on tient la moitié en respectant les délais ; pour tout absorber il faut deux renforts ou accepter deux jours de retard sur le non prioritaire. Que préférez-vous ? » puis confirmation écrite",
         "Accepter, puis expliquer à l'équipe que c'est la faute de la direction"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Les faits, l'impact, des options, une décision demandée, puis l'écrit « comme convenu ». « Faire au mieux » n'est ni un oui ni un non ; désavouer la direction devant l'équipe rompt la loyauté."
+    },
+    {
+      "id": "m3q13",
+      "enonce": "À quoi sert l'écrit (e-mail, note, compte rendu) dans la communication du manager ?",
+      "options": [
+        "À recadrer un collaborateur sans le voir",
+        "À tracer, informer et confirmer ce qui a été dit à l'oral",
+        "À annoncer une réorganisation à toute l'équipe",
+        "À régler un conflit sans confrontation"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "L'écrit trace, il ne convainc pas. On ne recadre pas par message et on n'annonce pas une mauvaise nouvelle par e-mail : l'écrit vient après l'oral."
+    },
+    {
+      "id": "m3q14",
+      "enonce": "« Pourquoi tu n'as pas vérifié ? » Quel est le problème avec cette question, et par quoi la remplacer ?",
+      "options": [
+        "Aucun problème, elle est directe",
+        "C'est une accusation avec un point d'interrogation ; préférer « Qu'est-ce qui a fait que le contrôle n'a pas été fait ? »",
+        "Elle est trop longue ; préférer « Alors ? »",
+        "Elle doit être posée par écrit"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Les questions ouvertes cherchent la cause dans la situation ; les reproches déguisés ferment l'échange et poussent à se justifier."
+    },
+    {
+      "id": "m3q15",
+      "enonce": "Qu'est-ce que l'effet de halo dans l'écoute d'un collaborateur ?",
+      "options": [
+        "Le fait de n'entendre que la première version",
+        "Une impression générale (bonne ou mauvaise) qui colore tout ce que la personne dit",
+        "Le fait de supposer que l'autre ressent ce que nous ressentirions",
+        "L'oubli de reformuler"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Julien a fait deux reprises, donc tout ce qu'il dit sur l'organisation paraît suspect : c'est l'effet de halo. Remède : juger le fait, pas la personne."
+    },
+    {
+      "id": "m3q16",
+      "enonce": "Quand utilise-t-on la méthode DESC plutôt que SBI ?",
+      "options": [
+        "Pour un retour positif",
+        "Quand le sujet touche à la relation (manque de respect, consigne contournée) et demande une étape de négociation",
+        "Pour les entretiens de parcours professionnel",
+        "Jamais : SBI suffit toujours"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "DESC : Décrire les faits, Exprimer en « je », Spécifier ce qu'on demande, Conclure sur les conséquences positives. Se prépare par écrit, quatre phrases."
+    },
+    {
+      "id": "m3q17",
+      "enonce": "Plusieurs réponses. Quels sont les bons réflexes quand on reçoit soi-même un feedback ?",
+      "options": [
+        "Remercier, même si ça pique",
+        "Demander un exemple pour transformer un jugement en fait",
+        "Se justifier immédiatement point par point",
+        "Dire ce qu'on va en faire"
+      ],
+      "bonnes": [
+        0,
+        1,
+        3
+      ],
+      "explication": "Un manager qui reçoit mal les retours n'en reçoit plus, et pilote à l'aveugle. La justification peut venir plus tard, une fois le retour compris."
+    },
+    {
+      "id": "m3q18",
+      "enonce": "Quel rythme réaliste la formation propose-t-elle pour les entretiens individuels de suivi d'un manager de proximité ?",
+      "options": [
+        "Une fois par an, lors de l'entretien annuel",
+        "30 minutes par personne toutes les quatre à six semaines, planifiées pour le trimestre",
+        "Cinq minutes par jour avec chacun",
+        "Uniquement quand il y a un problème"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Pour une équipe de neuf, c'est environ une heure par semaine : le temps qui évite les heures de gestion de crise. Les dates sont posées à l'avance, sinon il n'y a « jamais le temps »."
+    },
+    {
+      "id": "m3q19",
+      "enonce": "Quelle trace l'entretien de parcours professionnel doit-il laisser ?",
+      "options": [
+        "Aucune, c'est un échange informel",
+        "Un compte rendu écrit, dont une copie est remise au salarié",
+        "Une note dans le carnet personnel du manager",
+        "Un e-mail à la direction uniquement"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "L'article L6315-1 impose un écrit remis au salarié. Le carnet du manager sert aux entretiens de suivi, pas à l'entretien de parcours."
+    },
+    {
+      "id": "m3q20",
+      "enonce": "Dans une réunion où l'équipe doit prendre une décision, à quel moment le manager donne-t-il son avis ?",
+      "options": [
+        "En premier, pour cadrer le débat",
+        "En dernier, sinon personne ne dira autre chose que ce qu'il a dit",
+        "Il ne donne jamais son avis",
+        "Par écrit, après la réunion"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "L'animateur tient l'objectif et le temps ; dans une décision, il parle en dernier pour ne pas étouffer les avis. Il conclut par : décidé quoi, qui, pour quand."
     }
   ]
 }

@@ -121,7 +121,7 @@ export default async function LeconEleve({ params }: { params: Promise<{ id: str
 
         {contenu.description && estFichier(lecon.type) && (
           <details className="transcription" open={!urlSignee && !embed}>
-            <summary>{urlSignee || embed ? "Transcription et notes" : "Texte de la leçon (média en cours de mise en ligne)"}</summary>
+            <summary>{urlSignee || embed ? (lecon.type === "podcast" ? "Lire la transcription de l'épisode" : lecon.type === "video" ? "Lire la transcription de la vidéo" : "Texte d'accompagnement") : "Texte de la leçon (média en cours de mise en ligne)"}</summary>
             <TexteCours texte={contenu.description} />
           </details>
         )}

@@ -1,5 +1,5 @@
 {
-  "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
+  "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %.",
   "seuil": 70,
   "tentatives_max": 3,
   "corrections": true,
@@ -13,7 +13,9 @@
         "À représenter l'équipe auprès de la direction",
         "À sanctionner les écarts de comportement"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "Pour Kotter, le management gère la complexité (faire fonctionner) et le leadership gère le changement (faire évoluer). Une organisation a besoin des deux."
     },
     {
@@ -25,14 +27,23 @@
         "Les managers passent la majeure partie de leur temps en communication orale, sur de nombreux sujets courts",
         "Les managers ne prennent presque jamais de décision"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Mintzberg a montré un travail fragmenté, fait d'interruptions fréquentes et dominé par la communication orale (60 à 80 % du temps)."
     },
     {
       "id": "m1q03",
       "enonce": "Parmi les cinq fonctions du manager, laquelle est le plus souvent négligée parce que ses résultats ne se voient qu'à long terme ?",
-      "options": ["Planifier", "Animer", "Contrôler", "Développer"],
-      "bonnes": [3],
+      "options": [
+        "Planifier",
+        "Animer",
+        "Contrôler",
+        "Développer"
+      ],
+      "bonnes": [
+        3
+      ],
       "explication": "Développer les personnes et l'équipe est la première fonction sacrifiée quand le temps manque : il faut la protéger en la mettant à l'agenda."
     },
     {
@@ -44,21 +55,38 @@
         "Ne rien changer du tout",
         "Faire seul"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "C'est le piège de l'expert promu : il n'a pas de temps pour manager. Le temps de management doit être négocié et protégé."
     },
     {
       "id": "m1q05",
       "enonce": "D'après l'étude reprise par Daniel Goleman (2000), quels styles de leadership dégradent le climat de l'équipe lorsqu'ils sont utilisés régulièrement ? (plusieurs réponses)",
-      "options": ["Directif", "Visionnaire", "Chef de file", "Coach"],
-      "bonnes": [0, 2],
+      "options": [
+        "Directif",
+        "Visionnaire",
+        "Chef de file",
+        "Coach"
+      ],
+      "bonnes": [
+        0,
+        2
+      ],
       "explication": "Directif et chef de file sont utiles ponctuellement (crise, équipe d'experts très motivés) mais toxiques en usage courant. Visionnaire, participatif, coach et collaboratif ont un effet positif."
     },
     {
       "id": "m1q06",
       "enonce": "Quel style de leadership consiste à donner une direction claire et un sens (« venez avec moi ») en laissant la liberté des moyens ?",
-      "options": ["Participatif", "Collaboratif", "Visionnaire", "Directif"],
-      "bonnes": [2],
+      "options": [
+        "Participatif",
+        "Collaboratif",
+        "Visionnaire",
+        "Directif"
+      ],
+      "bonnes": [
+        2
+      ],
       "explication": "Le style visionnaire est, selon l'étude, celui qui a l'effet le plus positif sur le climat dans la plupart des situations."
     },
     {
@@ -70,7 +98,9 @@
         "Épauler (peu de direction, beaucoup de soutien)",
         "Déléguer (peu de direction, peu de soutien)"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Compétence forte et engagement variable = niveau A3 : on n'explique plus comment faire, on écoute, on rassure, on consulte."
     },
     {
@@ -82,7 +112,9 @@
         "Un expert est autonome sur toutes les tâches",
         "Le niveau d'autonomie se déduit de l'ancienneté"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "On manage une personne sur une tâche donnée. Un excellent carrossier peut être débutant sur un logiciel de devis. Le style doit évoluer avec le niveau."
     },
     {
@@ -94,7 +126,9 @@
         "Le recevoir en entretien, reconnaître son expérience, nommer les faits et fixer la règle : désaccord en privé, pas devant l'équipe",
         "Demander à la direction de le sanctionner"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "Ni affrontement ni évitement : un entretien individuel qui reconnaît la place de la personne et pose la règle. Les contestations non traitées s'installent."
     },
     {
@@ -106,7 +140,9 @@
         "Elle pèse uniquement sur le salarié, responsable de sa propre sécurité",
         "Elle ne s'applique qu'aux entreprises de plus de 50 salariés"
       ],
-      "bonnes": [1],
+      "bonnes": [
+        1
+      ],
       "explication": "L'employeur doit prendre les mesures nécessaires pour protéger la santé physique et mentale. Le manager en est le relais ; il peut être personnellement responsable en cas de délégation de pouvoirs."
     },
     {
@@ -118,7 +154,9 @@
         "Prendre le signalement au sérieux et le transmettre sans délai à la hiérarchie ou aux RH, par écrit",
         "Organiser une confrontation entre les deux personnes"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "L'employeur doit agir dès qu'il est informé. Le manager ne minimise pas, n'enquête pas seul et transmet immédiatement ; l'inaction engage la responsabilité de l'entreprise et la sienne."
     },
     {
@@ -130,8 +168,123 @@
         "« C'est possible si nous décalons les deux véhicules de particuliers ; sinon il faut deux jours d'intérim. Que préférez-vous ? »",
         "Transmettre la demande à l'équipe telle quelle en précisant que la direction l'exige"
       ],
-      "bonnes": [2],
+      "bonnes": [
+        2
+      ],
       "explication": "« Oui, à ces conditions » : rendre visibles les conséquences et laisser la décision à qui elle appartient, plutôt qu'un oui intenable ou un non sans argument."
+    },
+    {
+      "id": "m1q13",
+      "enonce": "Selon la leçon sur les cinq fonctions du manager, quelle est la différence entre planifier et remplir un planning ?",
+      "options": [
+        "Aucune : c'est la même chose",
+        "Le planning est le résultat ; la planification est le raisonnement qui l'a produit (attentes, objectifs, calendrier)",
+        "Planifier est réservé à la direction",
+        "Remplir un planning demande plus de réflexion que planifier"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Planifier, c'est transformer ce qu'on attend de l'équipe en objectifs et en calendrier. Le planning n'en est que la trace."
+    },
+    {
+      "id": "m1q14",
+      "enonce": "D'après la leçon 1.2, une grande partie des « problèmes de personnes » rencontrés par les managers sont en réalité…",
+      "options": [
+        "des problèmes de caractère, impossibles à traiter",
+        "des problèmes d'organisation : rôles flous, doublons, personne responsable de rien",
+        "des problèmes de rémunération",
+        "des problèmes de génération"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Avant de conclure à un problème de personne, le manager vérifie l'organisation : qui fait quoi, qui décide, qui est responsable."
+    },
+    {
+      "id": "m1q15",
+      "enonce": "Quel style de leadership (Goleman) consiste à dire « Essayez ceci » et vise le développement de la personne à long terme, quitte à accepter des résultats moins rapides ?",
+      "options": [
+        "Le style directif",
+        "Le style chef de file",
+        "Le style coach",
+        "Le style collaboratif"
+      ],
+      "bonnes": [
+        2
+      ],
+      "explication": "Le style coach investit dans la progression des personnes. Il demande du temps et une personne volontaire ; il est sous-utilisé par les managers pressés."
+    },
+    {
+      "id": "m1q16",
+      "enonce": "Un apprenti motivé mais qui ne maîtrise pas encore une tâche. Dans le leadership situationnel, quel style convient ?",
+      "options": [
+        "Déléguer : il est motivé, il apprendra seul",
+        "Diriger : consignes précises, montrer, contrôler de près, retours fréquents",
+        "Épauler : l'écouter et le laisser choisir la méthode",
+        "Ne rien faire tant qu'il ne demande pas d'aide"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Faible compétence et forte motivation appellent le style « diriger ». Ce n'est pas de la méfiance : c'est ce dont un débutant a besoin pour réussir vite."
+    },
+    {
+      "id": "m1q17",
+      "enonce": "Quel est le repos hebdomadaire minimum prévu par le Code du travail (L3132-2), sous réserve des dérogations ?",
+      "options": [
+        "24 heures",
+        "35 heures consécutives",
+        "48 heures",
+        "Aucun minimum si le salarié est d'accord"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "35 heures consécutives par semaine (24 h de repos hebdomadaire auxquelles s'ajoutent les 11 h de repos quotidien). Le manager qui organise les plannings doit connaître ces limites."
+    },
+    {
+      "id": "m1q18",
+      "enonce": "Lucas arrive en retard pour la quatrième fois malgré un recadrage. Sauf délégation expresse, que fait Karim, manager de proximité ?",
+      "options": [
+        "Il lui notifie lui-même un avertissement écrit",
+        "Il retient une heure sur son salaire",
+        "Il recadre, trace les faits (dates, ce qui a été dit) et alerte Michel, l'employeur, qui seul peut sanctionner selon la procédure",
+        "Il attend que ça passe"
+      ],
+      "bonnes": [
+        2
+      ],
+      "explication": "La sanction relève de l'employeur et d'une procédure (L1331-1 et s.). Le manager agit en amont : recadrer, tracer, alerter. Les sanctions pécuniaires sont interdites."
+    },
+    {
+      "id": "m1q19",
+      "enonce": "Fatou a une restriction médicale de port de charge. Que dit Karim à l'équipe ?",
+      "options": [
+        "« Fatou a un problème de dos, elle ne porte plus rien »",
+        "« Fatou ne porte pas les pare-chocs, c'est organisé comme ça » — sans le motif médical",
+        "Il explique le dossier RQTH de Fatou pour éviter les jalousies",
+        "Rien, et il laisse Fatou se débrouiller"
+      ],
+      "bonnes": [
+        1
+      ],
+      "explication": "Une information de santé ne se diffuse jamais, même « pour expliquer ». Le manager organise le travail et énonce la règle, pas la raison médicale."
+    },
+    {
+      "id": "m1q20",
+      "enonce": "Plusieurs réponses. Dans le podcast « De collègue à manager », quelles sont les deux erreurs classiques décrites lors d'une promotion interne ?",
+      "options": [
+        "Ne rien changer : continuer à plaisanter sur le chef, déjeuner avec les mêmes, comme avant",
+        "Surcorriger : s'isoler, manger seul, devenir distant du jour au lendemain",
+        "Demander une formation au management",
+        "Présenter l'équipe à sa hiérarchie"
+      ],
+      "bonnes": [
+        0,
+        1
+      ],
+      "explication": "La distance juste se trouve entre les deux excès : ni copain comme avant, ni chef inaccessible. Elle se construit par des actes cohérents, pas par une posture."
     }
   ]
 }

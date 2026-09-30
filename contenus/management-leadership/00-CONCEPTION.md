@@ -94,7 +94,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 1.7 Manager entre deux feux : la communication avec la hiérarchie | 📝 | 25 min | Communication ascendante (remonter, alerter, proposer) et descendante (relayer une décision, y compris impopulaire), reporting utile. |
 | 1.8 Fiche outil — Ma feuille de route des 90 premiers jours | 📄 | 15 min | Gabarit à remplir. |
 | 1.9 Application à votre situation — carnet de bord | 📝 | 100 min | Transposer : décrire son équipe (ou une équipe connue), son style dominant, ses obligations, sa feuille de route ; consignes et grille d'auto-évaluation. |
-| 1.10 Quiz — Module 1 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 1.10 Quiz — Module 1 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 2 — Organiser et structurer le travail de l'équipe (6 h) — O2, O3, O5 · C1, C2, C3, C4
 
@@ -112,7 +112,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 2.10 Fiche outil — Matrice de compétences + RACI + tableau de bord | 📄 | 20 min | Gabarits. |
 | 2.11 Cas pratique — Organiser l'atelier Garnier | 📝 | 30 min | Exercice guidé avec corrigé commenté. |
 | 2.12 Application à votre situation — carnet de bord | 📝 | 70 min | Construire sa matrice de compétences, son RACI et ses 5 indicateurs. |
-| 2.13 Quiz — Module 2 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 2.13 Quiz — Module 2 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 3 — Communiquer, animer, conduire les entretiens (6 h) — O4 · C6, C10
 
@@ -129,7 +129,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 3.9 Fiche outil — Trame d'entretien de suivi + ordre du jour type | 📄 | 15 min | Gabarits. |
 | 3.10 Cas pratique — Trois entretiens à l'atelier Garnier | 📝 | 30 min | Mises en situation écrites avec corrigé. |
 | 3.11 Application à votre situation — carnet de bord | 📝 | 100 min | Préparer par écrit un feedback réel, un entretien de suivi et l'ordre du jour de sa prochaine réunion. |
-| 3.12 Quiz — Module 3 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 3.12 Quiz — Module 3 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 4 — Motiver, engager, faire progresser (6 h) — O5, O6 · C5, C7
 
@@ -145,7 +145,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 4.8 Le jour où l'équipe a arrêté de se taire | 🎧 | 18 min | Conversation : installer la sécurité psychologique, réagir à une erreur, droit à l'erreur sans laxisme. |
 | 4.9 Fiche outil — Plan de développement individuel + check-list intégration | 📄 | 15 min | Gabarits. |
 | 4.10 Application à votre situation — carnet de bord | 📝 | 110 min | Diagnostic motivation / sécurité psychologique de son équipe, plan de développement d'un collaborateur, check-list charge de travail. |
-| 4.11 Quiz — Module 4 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 4.11 Quiz — Module 4 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 5 — Gérer les tensions et les conflits (4 h) — O7 · C8
 
@@ -160,7 +160,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 5.7 Le conflit que j'ai laissé pourrir | 🎧 | 15 min | Conversation : retour d'expérience et enseignements. |
 | 5.8 Cas pratique — La tension au bureau Garnier | 📝 | 25 min | Cas écrit avec corrigé. |
 | 5.9 Application à votre situation — carnet de bord | 📝 | 40 min | Analyser une tension vécue avec la méthode en cinq étapes. |
-| 5.10 Quiz — Module 5 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 5.10 Quiz — Module 5 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 6 — Piloter la performance et accompagner le changement (5 h) — O3, O8 · C3, C9
 
@@ -175,7 +175,7 @@ Les durées sont des durées estimées d'apprentissage (lecture, visionnage, exe
 | 6.7 Le changement qui a failli tout casser | 🎧 | 18 min | Conversation : nouvel outil, résistances, ce qui a fait basculer l'équipe. |
 | 6.8 Fiche outil — Trame de retex + plan de conduite du changement | 📄 | 15 min | Gabarits. |
 | 6.9 Application à votre situation — carnet de bord | 📝 | 100 min | Rédiger un retex, choisir un problème à traiter en PDCA, esquisser un plan de changement. |
-| 6.10 Quiz — Module 6 | ❓ | 20 min | 12 questions, seuil 70 %. |
+| 6.10 Quiz — Module 6 | ❓ | 20 min | 20 questions, seuil 70 %. |
 
 ### Module 7 — Évaluation finale et plan d'action (2 h) — tous objectifs
 

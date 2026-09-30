@@ -11,13 +11,9 @@ begin
 
   -- 0.1-video-bienvenue.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Ton : chaleureux, direct, vouvoiement · Débit : 140 mots/min
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
+
 Indications visuelles entre crochets. Sous-titres à générer depuis ce texte.
-
----
-
-[Plan : avatar en pied, fond clair, logo IDEAFORMA discret]
 
 Bonjour, et bienvenue.
 
@@ -25,13 +21,13 @@ Vous venez d''ouvrir la formation « Management & Leadership » d''IDEAFORMA. Qu
 
 Je vais prendre quelques minutes pour vous expliquer ce que vous allez apprendre, comment la formation est organisée, et comment en tirer le meilleur.
 
-[Titre à l''écran : « Pourquoi cette formation ? »]
+## Pourquoi cette formation ?
 
 Commençons par une idée simple. On ne naît pas manager. On le devient, et on l''apprend. La plupart des personnes qui encadrent une équipe pour la première fois ont été nommées parce qu''elles étaient bonnes dans leur métier : bon technicien, bonne vendeuse, bon comptable. Et du jour au lendemain, on leur demande autre chose : organiser le travail des autres, fixer des objectifs, faire des retours, gérer des tensions, rendre des comptes à la direction.
 
 Ce sont des compétences. Elles s''apprennent, elles se travaillent, et c''est exactement ce que nous allons faire ensemble.
 
-[Titre à l''écran : « Ce que vous saurez faire à la fin »]
+## Ce que vous saurez faire à la fin
 
 À la fin de ce parcours, vous serez capable de huit choses.
 
@@ -51,11 +47,9 @@ Sept : prévenir et résoudre les tensions et les conflits.
 
 Huit : évaluer les résultats, améliorer en continu et accompagner le changement.
 
-[Schéma : 8 modules alignés, du module 0 au module 7]
-
 Ces huit capacités correspondent aux compétences attendues d''un manager de proximité en France aujourd''hui. Nous nous sommes appuyés sur le référentiel officiel « Animer une équipe de travail », enregistré par France Compétences, pour construire ce programme. Autrement dit : ce que vous allez apprendre ici, c''est ce que le marché du travail attend réellement d''un responsable d''équipe.
 
-[Titre à l''écran : « Comment c''est organisé »]
+## Comment c''est organisé
 
 La formation compte huit modules, pour environ trente-cinq heures de travail.
 
@@ -75,17 +69,17 @@ Le module six, au pilotage de la performance et à la conduite du changement.
 
 Et le module sept termine par une évaluation finale et votre plan d''action personnel.
 
-[Titre à l''écran : « Un cas fil rouge »]
+## Un cas fil rouge
 
 Pour que tout cela reste concret, nous suivrons une seule et même histoire du début à la fin : celle de l''atelier Garnier, une petite entreprise de carrosserie de neuf personnes, où un technicien vient d''être promu chef d''atelier. À chaque module, nous verrons comment il applique les outils, ses réussites et ses erreurs. Puis, à chaque fois, vous transposerez à votre propre situation.
 
 Si vous ne travaillez pas dans l''automobile, aucune inquiétude : les situations sont universelles, et des variantes en commerce, en bureau ou en service sont proposées régulièrement.
 
-[Titre à l''écran : « Les formats »]
+## Les formats
 
 Chaque module mélange plusieurs formats. Des vidéos courtes, comme celle-ci, pour poser l''essentiel. Des cours écrits, pour approfondir les concepts et les méthodes, avec leurs sources. Des podcasts, sous forme de conversation, pour entendre des retours d''expérience et des nuances. Des fiches outils, que vous pourrez réutiliser au travail. Des cas pratiques corrigés. Et un quiz à la fin de chaque module, pour vérifier que l''essentiel est acquis.
 
-[Titre à l''écran : « Quelques règles »]
+## Quelques règles
 
 Trois règles simples.
 
@@ -95,23 +89,15 @@ Deuxième règle : les contenus de cette plateforme sont personnels. Ils sont pr
 
 Troisième règle : vous n''êtes pas seul. Si vous avez une question, une difficulté technique ou un besoin d''aménagement, par exemple en cas de situation de handicap, contactez IDEAFORMA : les coordonnées sont dans la leçon suivante et dans votre espace. Nous répondons sous vingt-quatre heures ouvrées.
 
-[Plan : avatar en plan rapproché]
-
 Une dernière chose avant de commencer. Vous allez apprendre des méthodes, des modèles, des outils. Mais le management, ce n''est pas réciter des modèles. C''est prendre des décisions, avec des personnes réelles, dans des situations qui ne ressemblent jamais tout à fait aux exemples. Les modèles sont là pour vous aider à réfléchir, pas pour réfléchir à votre place.
 
 Alors gardez toujours cette question en tête, à chaque leçon : « Et moi, dans mon équipe, qu''est-ce que je ferais ? »
 
 C''est parti. Rendez-vous dans la leçon suivante pour la méthode de travail.
-
-[Fondu, logo IDEAFORMA]
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Ton : chaleureux, direct, vouvoiement · Débit : 140 mots/min
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
+
 Indications visuelles entre crochets. Sous-titres à générer depuis ce texte.
-
----
-
-[Plan : avatar en pied, fond clair, logo IDEAFORMA discret]
 
 Bonjour, et bienvenue.
 
@@ -119,13 +105,13 @@ Vous venez d''ouvrir la formation « Management & Leadership » d''IDEAFORMA. Qu
 
 Je vais prendre quelques minutes pour vous expliquer ce que vous allez apprendre, comment la formation est organisée, et comment en tirer le meilleur.
 
-[Titre à l''écran : « Pourquoi cette formation ? »]
+## Pourquoi cette formation ?
 
 Commençons par une idée simple. On ne naît pas manager. On le devient, et on l''apprend. La plupart des personnes qui encadrent une équipe pour la première fois ont été nommées parce qu''elles étaient bonnes dans leur métier : bon technicien, bonne vendeuse, bon comptable. Et du jour au lendemain, on leur demande autre chose : organiser le travail des autres, fixer des objectifs, faire des retours, gérer des tensions, rendre des comptes à la direction.
 
 Ce sont des compétences. Elles s''apprennent, elles se travaillent, et c''est exactement ce que nous allons faire ensemble.
 
-[Titre à l''écran : « Ce que vous saurez faire à la fin »]
+## Ce que vous saurez faire à la fin
 
 À la fin de ce parcours, vous serez capable de huit choses.
 
@@ -145,11 +131,9 @@ Sept : prévenir et résoudre les tensions et les conflits.
 
 Huit : évaluer les résultats, améliorer en continu et accompagner le changement.
 
-[Schéma : 8 modules alignés, du module 0 au module 7]
-
 Ces huit capacités correspondent aux compétences attendues d''un manager de proximité en France aujourd''hui. Nous nous sommes appuyés sur le référentiel officiel « Animer une équipe de travail », enregistré par France Compétences, pour construire ce programme. Autrement dit : ce que vous allez apprendre ici, c''est ce que le marché du travail attend réellement d''un responsable d''équipe.
 
-[Titre à l''écran : « Comment c''est organisé »]
+## Comment c''est organisé
 
 La formation compte huit modules, pour environ trente-cinq heures de travail.
 
@@ -169,17 +153,17 @@ Le module six, au pilotage de la performance et à la conduite du changement.
 
 Et le module sept termine par une évaluation finale et votre plan d''action personnel.
 
-[Titre à l''écran : « Un cas fil rouge »]
+## Un cas fil rouge
 
 Pour que tout cela reste concret, nous suivrons une seule et même histoire du début à la fin : celle de l''atelier Garnier, une petite entreprise de carrosserie de neuf personnes, où un technicien vient d''être promu chef d''atelier. À chaque module, nous verrons comment il applique les outils, ses réussites et ses erreurs. Puis, à chaque fois, vous transposerez à votre propre situation.
 
 Si vous ne travaillez pas dans l''automobile, aucune inquiétude : les situations sont universelles, et des variantes en commerce, en bureau ou en service sont proposées régulièrement.
 
-[Titre à l''écran : « Les formats »]
+## Les formats
 
 Chaque module mélange plusieurs formats. Des vidéos courtes, comme celle-ci, pour poser l''essentiel. Des cours écrits, pour approfondir les concepts et les méthodes, avec leurs sources. Des podcasts, sous forme de conversation, pour entendre des retours d''expérience et des nuances. Des fiches outils, que vous pourrez réutiliser au travail. Des cas pratiques corrigés. Et un quiz à la fin de chaque module, pour vérifier que l''essentiel est acquis.
 
-[Titre à l''écran : « Quelques règles »]
+## Quelques règles
 
 Trois règles simples.
 
@@ -189,15 +173,11 @@ Deuxième règle : les contenus de cette plateforme sont personnels. Ils sont pr
 
 Troisième règle : vous n''êtes pas seul. Si vous avez une question, une difficulté technique ou un besoin d''aménagement, par exemple en cas de situation de handicap, contactez IDEAFORMA : les coordonnées sont dans la leçon suivante et dans votre espace. Nous répondons sous vingt-quatre heures ouvrées.
 
-[Plan : avatar en plan rapproché]
-
 Une dernière chose avant de commencer. Vous allez apprendre des méthodes, des modèles, des outils. Mais le management, ce n''est pas réciter des modèles. C''est prendre des décisions, avec des personnes réelles, dans des situations qui ne ressemblent jamais tout à fait aux exemples. Les modèles sont là pour vous aider à réfléchir, pas pour réfléchir à votre place.
 
 Alors gardez toujours cette question en tête, à chaque leçon : « Et moi, dans mon équipe, qu''est-ce que je ferais ? »
 
 C''est parti. Rendez-vous dans la leçon suivante pour la méthode de travail.
-
-[Fondu, logo IDEAFORMA]
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 1 and l.ordre = 1;
@@ -494,50 +474,41 @@ Gardez ces réponses : vous les relirez au module 7.
 
   -- 1.1-video-manager-leader-chef.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 1 — Comprendre le rôle du manager »]
+## Module 1 — Comprendre le rôle du manager
 
 Trois mots reviennent sans arrêt dès qu''on parle d''encadrement : chef, manager, leader. On les emploie souvent comme des synonymes. Ils ne le sont pas, et la différence n''est pas une question de vocabulaire : elle change ce que vous faites chaque jour.
 
-[Titre : « Le chef »]
+## Le chef
 
 Commençons par le plus ancien : le chef. Le chef, c''est une position. On est chef parce qu''on a été nommé, et l''on tire son autorité de cette nomination. Le chef donne des ordres et contrôle qu''ils sont exécutés.
 
 Cette position existe toujours, et elle est nécessaire : dans une équipe, quelqu''un doit pouvoir trancher. Mais si votre seule ressource est « c''est moi le chef », vous obtiendrez au mieux de l''obéissance, jamais de l''engagement. Et vous le paierez le jour où vous aurez besoin que quelqu''un fasse un effort que vous n''avez pas demandé.
 
-[Titre : « Le manager »]
+## Le manager
 
 Le manager, c''est une fonction. Le mot vient de l''italien maneggiare, « manier, conduire », et il désigne celui qui fait fonctionner une organisation.
 
 En 1916, un ingénieur français, Henri Fayol, a été le premier à décrire ce que fait un manager. Il a identifié cinq activités : prévoir, organiser, commander, coordonner, contrôler. Plus d''un siècle après, la liste a été un peu reformulée, mais elle tient toujours.
 
-[Schéma : 5 cases — Planifier · Organiser · Animer · Contrôler · Développer]
-
 Dans cette formation, nous retiendrons cinq fonctions : planifier, organiser, animer, contrôler, développer. Nous les détaillerons dans la leçon suivante.
 
 Dans les années 1970, un chercheur canadien, Henry Mintzberg, a fait quelque chose de très simple et de très rare : il a suivi des managers pendant des semaines, un chronomètre à la main, pour voir ce qu''ils faisaient vraiment. Sa conclusion a surpris tout le monde. Le manager ne passe pas ses journées à planifier calmement dans son bureau. Il est interrompu toutes les neuf minutes. Il gère des dizaines de sujets courts. Il passe l''essentiel de son temps à parler : écouter, informer, négocier, décider.
-
-[Schéma : les 10 rôles de Mintzberg en trois groupes — Relations (symbole, leader, agent de liaison) · Information (observateur, diffuseur, porte-parole) · Décision (entrepreneur, régulateur, répartiteur de ressources, négociateur)]
 
 Mintzberg a décrit dix rôles, regroupés en trois familles. Les rôles de relations : représenter l''équipe, l''animer, faire le lien avec l''extérieur. Les rôles d''information : observer ce qui se passe, diffuser l''information à l''équipe, parler au nom de l''équipe vers la hiérarchie. Et les rôles de décision : lancer des améliorations, régler les problèmes, répartir les ressources, négocier.
 
 Retenez l''idée principale : manager, c''est un métier de relations et d''information au moins autant qu''un métier de décision.
 
-[Titre : « Le leader »]
+## Le leader
 
 Et le leader, alors ? Le leader, ce n''est ni une position ni une fonction : c''est une influence. On est leader parce que les autres choisissent de vous suivre. Cette influence ne se décrète pas ; elle se construit, par ce que vous faites, ce que vous dites, et la cohérence entre les deux.
 
 En 1990, un professeur de Harvard, John Kotter, a proposé une distinction qui fait toujours référence. Le management, dit-il, sert à gérer la complexité : planifier, budgéter, organiser, contrôler, pour que les choses se passent comme prévu. Le leadership sert à gérer le changement : donner une direction, mobiliser les gens, les motiver, pour que les choses se passent autrement qu''avant.
 
-[Schéma : deux colonnes — Management : « faire fonctionner » / Leadership : « faire évoluer »]
-
 Le management fait fonctionner. Le leadership fait évoluer. Et la conclusion de Kotter est importante : une organisation a besoin des deux, et la plupart des managers sont trop faibles en leadership, pas l''inverse.
 
-[Titre : « Et vous ? »]
+## Et vous ?
 
 Alors, où vous situez-vous ?
 
@@ -547,13 +518,13 @@ Votre travail, dès les premières semaines, c''est de devenir manager : prendre
 
 Et votre ambition, sur la durée, c''est de devenir leader : que votre équipe vous suive parce qu''elle vous fait confiance, pas parce qu''elle y est obligée.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 Prenons Karim, à l''atelier Garnier. Il a été nommé chef d''atelier : il a la position. Mais il ne l''exerce pas encore comme manager : il n''a pas planifié, pas organisé, il subit les priorités que Sophie donne à sa place. Et son leadership est fragile : Thierry, le carrossier expérimenté, le lui a fait sentir devant Julien.
 
 Que doit faire Karim ? Pas choisir entre les trois. Assumer la position, qui est la sienne. Prendre en main la fonction, méthodiquement. Et construire l''influence, jour après jour, en commençant par la cohérence : dire ce qu''il va faire, et le faire.
 
-[Titre : « Trois erreurs classiques »]
+## Trois erreurs classiques
 
 Terminons par trois erreurs de débutant, que vous reconnaîtrez peut-être.
 
@@ -563,62 +534,47 @@ Deuxième erreur : se réfugier dans la position. « C''est moi qui décide, poi
 
 Troisième erreur : vouloir être aimé. Éviter tout ce qui pourrait déplaire : les retours difficiles, les arbitrages, les non. On se croit leader ; on est seulement absent.
 
-[Plan rapproché]
-
 Dans les prochaines leçons, nous allons entrer dans le détail : ce que fait vraiment un manager de proximité, les six styles de leadership, comment adapter votre style à chaque personne, et ce que vous engagez légalement en prenant ce poste.
 
 À tout de suite.
-
-[Fondu, logo]
-
----
 
 Sources citées : Fayol, *Administration industrielle et générale* (1916) ; Mintzberg, *The Nature of Managerial Work* (1973) ; Kotter, « What Leaders Really Do », *Harvard Business Review* (1990).
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 1 — Comprendre le rôle du manager »]
+## Module 1 — Comprendre le rôle du manager
 
 Trois mots reviennent sans arrêt dès qu''on parle d''encadrement : chef, manager, leader. On les emploie souvent comme des synonymes. Ils ne le sont pas, et la différence n''est pas une question de vocabulaire : elle change ce que vous faites chaque jour.
 
-[Titre : « Le chef »]
+## Le chef
 
 Commençons par le plus ancien : le chef. Le chef, c''est une position. On est chef parce qu''on a été nommé, et l''on tire son autorité de cette nomination. Le chef donne des ordres et contrôle qu''ils sont exécutés.
 
 Cette position existe toujours, et elle est nécessaire : dans une équipe, quelqu''un doit pouvoir trancher. Mais si votre seule ressource est « c''est moi le chef », vous obtiendrez au mieux de l''obéissance, jamais de l''engagement. Et vous le paierez le jour où vous aurez besoin que quelqu''un fasse un effort que vous n''avez pas demandé.
 
-[Titre : « Le manager »]
+## Le manager
 
 Le manager, c''est une fonction. Le mot vient de l''italien maneggiare, « manier, conduire », et il désigne celui qui fait fonctionner une organisation.
 
 En 1916, un ingénieur français, Henri Fayol, a été le premier à décrire ce que fait un manager. Il a identifié cinq activités : prévoir, organiser, commander, coordonner, contrôler. Plus d''un siècle après, la liste a été un peu reformulée, mais elle tient toujours.
 
-[Schéma : 5 cases — Planifier · Organiser · Animer · Contrôler · Développer]
-
 Dans cette formation, nous retiendrons cinq fonctions : planifier, organiser, animer, contrôler, développer. Nous les détaillerons dans la leçon suivante.
 
 Dans les années 1970, un chercheur canadien, Henry Mintzberg, a fait quelque chose de très simple et de très rare : il a suivi des managers pendant des semaines, un chronomètre à la main, pour voir ce qu''ils faisaient vraiment. Sa conclusion a surpris tout le monde. Le manager ne passe pas ses journées à planifier calmement dans son bureau. Il est interrompu toutes les neuf minutes. Il gère des dizaines de sujets courts. Il passe l''essentiel de son temps à parler : écouter, informer, négocier, décider.
-
-[Schéma : les 10 rôles de Mintzberg en trois groupes — Relations (symbole, leader, agent de liaison) · Information (observateur, diffuseur, porte-parole) · Décision (entrepreneur, régulateur, répartiteur de ressources, négociateur)]
 
 Mintzberg a décrit dix rôles, regroupés en trois familles. Les rôles de relations : représenter l''équipe, l''animer, faire le lien avec l''extérieur. Les rôles d''information : observer ce qui se passe, diffuser l''information à l''équipe, parler au nom de l''équipe vers la hiérarchie. Et les rôles de décision : lancer des améliorations, régler les problèmes, répartir les ressources, négocier.
 
 Retenez l''idée principale : manager, c''est un métier de relations et d''information au moins autant qu''un métier de décision.
 
-[Titre : « Le leader »]
+## Le leader
 
 Et le leader, alors ? Le leader, ce n''est ni une position ni une fonction : c''est une influence. On est leader parce que les autres choisissent de vous suivre. Cette influence ne se décrète pas ; elle se construit, par ce que vous faites, ce que vous dites, et la cohérence entre les deux.
 
 En 1990, un professeur de Harvard, John Kotter, a proposé une distinction qui fait toujours référence. Le management, dit-il, sert à gérer la complexité : planifier, budgéter, organiser, contrôler, pour que les choses se passent comme prévu. Le leadership sert à gérer le changement : donner une direction, mobiliser les gens, les motiver, pour que les choses se passent autrement qu''avant.
 
-[Schéma : deux colonnes — Management : « faire fonctionner » / Leadership : « faire évoluer »]
-
 Le management fait fonctionner. Le leadership fait évoluer. Et la conclusion de Kotter est importante : une organisation a besoin des deux, et la plupart des managers sont trop faibles en leadership, pas l''inverse.
 
-[Titre : « Et vous ? »]
+## Et vous ?
 
 Alors, où vous situez-vous ?
 
@@ -628,13 +584,13 @@ Votre travail, dès les premières semaines, c''est de devenir manager : prendre
 
 Et votre ambition, sur la durée, c''est de devenir leader : que votre équipe vous suive parce qu''elle vous fait confiance, pas parce qu''elle y est obligée.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 Prenons Karim, à l''atelier Garnier. Il a été nommé chef d''atelier : il a la position. Mais il ne l''exerce pas encore comme manager : il n''a pas planifié, pas organisé, il subit les priorités que Sophie donne à sa place. Et son leadership est fragile : Thierry, le carrossier expérimenté, le lui a fait sentir devant Julien.
 
 Que doit faire Karim ? Pas choisir entre les trois. Assumer la position, qui est la sienne. Prendre en main la fonction, méthodiquement. Et construire l''influence, jour après jour, en commençant par la cohérence : dire ce qu''il va faire, et le faire.
 
-[Titre : « Trois erreurs classiques »]
+## Trois erreurs classiques
 
 Terminons par trois erreurs de débutant, que vous reconnaîtrez peut-être.
 
@@ -644,15 +600,9 @@ Deuxième erreur : se réfugier dans la position. « C''est moi qui décide, poi
 
 Troisième erreur : vouloir être aimé. Éviter tout ce qui pourrait déplaire : les retours difficiles, les arbitrages, les non. On se croit leader ; on est seulement absent.
 
-[Plan rapproché]
-
 Dans les prochaines leçons, nous allons entrer dans le détail : ce que fait vraiment un manager de proximité, les six styles de leadership, comment adapter votre style à chaque personne, et ce que vous engagez légalement en prenant ce poste.
 
 À tout de suite.
-
-[Fondu, logo]
-
----
 
 Sources citées : Fayol, *Administration industrielle et générale* (1916) ; Mintzberg, *The Nature of Managerial Work* (1973) ; Kotter, « What Leaders Really Do », *Harvard Business Review* (1990).
 ') end,
@@ -661,7 +611,7 @@ Sources citées : Fayol, *Administration industrielle et générale* (1916) ; Mi
   n := n + 1;
 
   -- 1.10-quiz.json
-  update public.lecons l set contenu = '{"questions": [{"id": "m1q01", "enonce": "Selon la distinction proposée par John Kotter (1990), à quoi sert le leadership, par opposition au management ?", "options": ["À planifier, budgéter et contrôler pour que les choses se passent comme prévu", "À donner une direction, mobiliser et motiver pour que les choses évoluent", "À représenter l''équipe auprès de la direction", "À sanctionner les écarts de comportement"], "bonnes": [1], "explication": "Pour Kotter, le management gère la complexité (faire fonctionner) et le leadership gère le changement (faire évoluer). Une organisation a besoin des deux."}, {"id": "m1q02", "enonce": "Henry Mintzberg a observé des managers au travail. Quelle est la conclusion la plus juste de ses observations ?", "options": ["Les managers passent l''essentiel de leur temps à planifier dans leur bureau", "Les managers sont interrompus rarement et travaillent sur peu de sujets à la fois", "Les managers passent la majeure partie de leur temps en communication orale, sur de nombreux sujets courts", "Les managers ne prennent presque jamais de décision"], "bonnes": [2], "explication": "Mintzberg a montré un travail fragmenté, fait d''interruptions fréquentes et dominé par la communication orale (60 à 80 % du temps)."}, {"id": "m1q03", "enonce": "Parmi les cinq fonctions du manager, laquelle est le plus souvent négligée parce que ses résultats ne se voient qu''à long terme ?", "options": ["Planifier", "Animer", "Contrôler", "Développer"], "bonnes": [3], "explication": "Développer les personnes et l''équipe est la première fonction sacrifiée quand le temps manque : il faut la protéger en la mettant à l''agenda."}, {"id": "m1q04", "enonce": "Un nouveau manager continue à assurer une production personnelle à temps plein et gère l''équipe « entre deux tâches ». Dans quel piège tombe-t-il ?", "options": ["Tout changer tout de suite", "Rester dans la production", "Ne rien changer du tout", "Faire seul"], "bonnes": [1], "explication": "C''est le piège de l''expert promu : il n''a pas de temps pour manager. Le temps de management doit être négocié et protégé."}, {"id": "m1q05", "enonce": "D''après l''étude reprise par Daniel Goleman (2000), quels styles de leadership dégradent le climat de l''équipe lorsqu''ils sont utilisés régulièrement ? (plusieurs réponses)", "options": ["Directif", "Visionnaire", "Chef de file", "Coach"], "bonnes": [0, 2], "explication": "Directif et chef de file sont utiles ponctuellement (crise, équipe d''experts très motivés) mais toxiques en usage courant. Visionnaire, participatif, coach et collaboratif ont un effet positif."}, {"id": "m1q06", "enonce": "Quel style de leadership consiste à donner une direction claire et un sens (« venez avec moi ») en laissant la liberté des moyens ?", "options": ["Participatif", "Collaboratif", "Visionnaire", "Directif"], "bonnes": [2], "explication": "Le style visionnaire est, selon l''étude, celui qui a l''effet le plus positif sur le climat dans la plupart des situations."}, {"id": "m1q07", "enonce": "Dans le leadership situationnel (Hersey & Blanchard), un collaborateur compétent sur une tâche mais qui hésite à prendre l''initiative relève de quel style ?", "options": ["Diriger (beaucoup de direction, peu de soutien)", "Entraîner (beaucoup de direction, beaucoup de soutien)", "Épauler (peu de direction, beaucoup de soutien)", "Déléguer (peu de direction, peu de soutien)"], "bonnes": [2], "explication": "Compétence forte et engagement variable = niveau A3 : on n''explique plus comment faire, on écoute, on rassure, on consulte."}, {"id": "m1q08", "enonce": "Quelle affirmation sur le niveau d''autonomie est exacte ?", "options": ["Le niveau d''autonomie est une caractéristique stable de la personne", "Le niveau d''autonomie dépend de la tâche et évolue dans le temps", "Un expert est autonome sur toutes les tâches", "Le niveau d''autonomie se déduit de l''ancienneté"], "bonnes": [1], "explication": "On manage une personne sur une tâche donnée. Un excellent carrossier peut être débutant sur un logiciel de devis. Le style doit évoluer avec le niveau."}, {"id": "m1q09", "enonce": "Un ancien collègue conteste votre légitimité par des remarques devant l''équipe. Quelle est la réaction la plus appropriée ?", "options": ["L''ignorer : cela passera avec le temps", "Le recadrer publiquement pour montrer que vous êtes le chef", "Le recevoir en entretien, reconnaître son expérience, nommer les faits et fixer la règle : désaccord en privé, pas devant l''équipe", "Demander à la direction de le sanctionner"], "bonnes": [2], "explication": "Ni affrontement ni évitement : un entretien individuel qui reconnaît la place de la personne et pose la règle. Les contestations non traitées s''installent."}, {"id": "m1q10", "enonce": "Concernant l''obligation de sécurité (Code du travail, L4121-1), quelle affirmation est exacte ?", "options": ["Elle ne concerne que les risques physiques", "Elle pèse sur l''employeur et couvre la santé physique et mentale ; le manager la met en œuvre au quotidien", "Elle pèse uniquement sur le salarié, responsable de sa propre sécurité", "Elle ne s''applique qu''aux entreprises de plus de 50 salariés"], "bonnes": [1], "explication": "L''employeur doit prendre les mesures nécessaires pour protéger la santé physique et mentale. Le manager en est le relais ; il peut être personnellement responsable en cas de délégation de pouvoirs."}, {"id": "m1q11", "enonce": "Un salarié vous signale des faits qui pourraient constituer du harcèlement de la part d''un collègue. Que devez-vous faire ?", "options": ["Mener vous-même une enquête discrète avant d''en parler", "Attendre d''avoir des preuves solides pour ne pas accuser à tort", "Prendre le signalement au sérieux et le transmettre sans délai à la hiérarchie ou aux RH, par écrit", "Organiser une confrontation entre les deux personnes"], "bonnes": [2], "explication": "L''employeur doit agir dès qu''il est informé. Le manager ne minimise pas, n''enquête pas seul et transmet immédiatement ; l''inaction engage la responsabilité de l''entreprise et la sienne."}, {"id": "m1q12", "enonce": "Votre direction vous demande de livrer huit véhicules pour vendredi, ce qui est irréaliste avec l''équipe actuelle. Quelle réponse correspond à la méthode vue dans le module ?", "options": ["« D''accord, on va y arriver » puis livrer en retard", "« C''est impossible » sans autre précision", "« C''est possible si nous décalons les deux véhicules de particuliers ; sinon il faut deux jours d''intérim. Que préférez-vous ? »", "Transmettre la demande à l''équipe telle quelle en précisant que la direction l''exige"], "bonnes": [2], "explication": "« Oui, à ces conditions » : rendre visibles les conséquences et laisser la décision à qui elle appartient, plutôt qu''un oui intenable ou un non sans argument."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+  update public.lecons l set contenu = '{"questions": [{"id": "m1q01", "enonce": "Selon la distinction proposée par John Kotter (1990), à quoi sert le leadership, par opposition au management ?", "options": ["À planifier, budgéter et contrôler pour que les choses se passent comme prévu", "À donner une direction, mobiliser et motiver pour que les choses évoluent", "À représenter l''équipe auprès de la direction", "À sanctionner les écarts de comportement"], "bonnes": [1], "explication": "Pour Kotter, le management gère la complexité (faire fonctionner) et le leadership gère le changement (faire évoluer). Une organisation a besoin des deux."}, {"id": "m1q02", "enonce": "Henry Mintzberg a observé des managers au travail. Quelle est la conclusion la plus juste de ses observations ?", "options": ["Les managers passent l''essentiel de leur temps à planifier dans leur bureau", "Les managers sont interrompus rarement et travaillent sur peu de sujets à la fois", "Les managers passent la majeure partie de leur temps en communication orale, sur de nombreux sujets courts", "Les managers ne prennent presque jamais de décision"], "bonnes": [2], "explication": "Mintzberg a montré un travail fragmenté, fait d''interruptions fréquentes et dominé par la communication orale (60 à 80 % du temps)."}, {"id": "m1q03", "enonce": "Parmi les cinq fonctions du manager, laquelle est le plus souvent négligée parce que ses résultats ne se voient qu''à long terme ?", "options": ["Planifier", "Animer", "Contrôler", "Développer"], "bonnes": [3], "explication": "Développer les personnes et l''équipe est la première fonction sacrifiée quand le temps manque : il faut la protéger en la mettant à l''agenda."}, {"id": "m1q04", "enonce": "Un nouveau manager continue à assurer une production personnelle à temps plein et gère l''équipe « entre deux tâches ». Dans quel piège tombe-t-il ?", "options": ["Tout changer tout de suite", "Rester dans la production", "Ne rien changer du tout", "Faire seul"], "bonnes": [1], "explication": "C''est le piège de l''expert promu : il n''a pas de temps pour manager. Le temps de management doit être négocié et protégé."}, {"id": "m1q05", "enonce": "D''après l''étude reprise par Daniel Goleman (2000), quels styles de leadership dégradent le climat de l''équipe lorsqu''ils sont utilisés régulièrement ? (plusieurs réponses)", "options": ["Directif", "Visionnaire", "Chef de file", "Coach"], "bonnes": [0, 2], "explication": "Directif et chef de file sont utiles ponctuellement (crise, équipe d''experts très motivés) mais toxiques en usage courant. Visionnaire, participatif, coach et collaboratif ont un effet positif."}, {"id": "m1q06", "enonce": "Quel style de leadership consiste à donner une direction claire et un sens (« venez avec moi ») en laissant la liberté des moyens ?", "options": ["Participatif", "Collaboratif", "Visionnaire", "Directif"], "bonnes": [2], "explication": "Le style visionnaire est, selon l''étude, celui qui a l''effet le plus positif sur le climat dans la plupart des situations."}, {"id": "m1q07", "enonce": "Dans le leadership situationnel (Hersey & Blanchard), un collaborateur compétent sur une tâche mais qui hésite à prendre l''initiative relève de quel style ?", "options": ["Diriger (beaucoup de direction, peu de soutien)", "Entraîner (beaucoup de direction, beaucoup de soutien)", "Épauler (peu de direction, beaucoup de soutien)", "Déléguer (peu de direction, peu de soutien)"], "bonnes": [2], "explication": "Compétence forte et engagement variable = niveau A3 : on n''explique plus comment faire, on écoute, on rassure, on consulte."}, {"id": "m1q08", "enonce": "Quelle affirmation sur le niveau d''autonomie est exacte ?", "options": ["Le niveau d''autonomie est une caractéristique stable de la personne", "Le niveau d''autonomie dépend de la tâche et évolue dans le temps", "Un expert est autonome sur toutes les tâches", "Le niveau d''autonomie se déduit de l''ancienneté"], "bonnes": [1], "explication": "On manage une personne sur une tâche donnée. Un excellent carrossier peut être débutant sur un logiciel de devis. Le style doit évoluer avec le niveau."}, {"id": "m1q09", "enonce": "Un ancien collègue conteste votre légitimité par des remarques devant l''équipe. Quelle est la réaction la plus appropriée ?", "options": ["L''ignorer : cela passera avec le temps", "Le recadrer publiquement pour montrer que vous êtes le chef", "Le recevoir en entretien, reconnaître son expérience, nommer les faits et fixer la règle : désaccord en privé, pas devant l''équipe", "Demander à la direction de le sanctionner"], "bonnes": [2], "explication": "Ni affrontement ni évitement : un entretien individuel qui reconnaît la place de la personne et pose la règle. Les contestations non traitées s''installent."}, {"id": "m1q10", "enonce": "Concernant l''obligation de sécurité (Code du travail, L4121-1), quelle affirmation est exacte ?", "options": ["Elle ne concerne que les risques physiques", "Elle pèse sur l''employeur et couvre la santé physique et mentale ; le manager la met en œuvre au quotidien", "Elle pèse uniquement sur le salarié, responsable de sa propre sécurité", "Elle ne s''applique qu''aux entreprises de plus de 50 salariés"], "bonnes": [1], "explication": "L''employeur doit prendre les mesures nécessaires pour protéger la santé physique et mentale. Le manager en est le relais ; il peut être personnellement responsable en cas de délégation de pouvoirs."}, {"id": "m1q11", "enonce": "Un salarié vous signale des faits qui pourraient constituer du harcèlement de la part d''un collègue. Que devez-vous faire ?", "options": ["Mener vous-même une enquête discrète avant d''en parler", "Attendre d''avoir des preuves solides pour ne pas accuser à tort", "Prendre le signalement au sérieux et le transmettre sans délai à la hiérarchie ou aux RH, par écrit", "Organiser une confrontation entre les deux personnes"], "bonnes": [2], "explication": "L''employeur doit agir dès qu''il est informé. Le manager ne minimise pas, n''enquête pas seul et transmet immédiatement ; l''inaction engage la responsabilité de l''entreprise et la sienne."}, {"id": "m1q12", "enonce": "Votre direction vous demande de livrer huit véhicules pour vendredi, ce qui est irréaliste avec l''équipe actuelle. Quelle réponse correspond à la méthode vue dans le module ?", "options": ["« D''accord, on va y arriver » puis livrer en retard", "« C''est impossible » sans autre précision", "« C''est possible si nous décalons les deux véhicules de particuliers ; sinon il faut deux jours d''intérim. Que préférez-vous ? »", "Transmettre la demande à l''équipe telle quelle en précisant que la direction l''exige"], "bonnes": [2], "explication": "« Oui, à ces conditions » : rendre visibles les conséquences et laisser la décision à qui elle appartient, plutôt qu''un oui intenable ou un non sans argument."}, {"id": "m1q13", "enonce": "Selon la leçon sur les cinq fonctions du manager, quelle est la différence entre planifier et remplir un planning ?", "options": ["Aucune : c''est la même chose", "Le planning est le résultat ; la planification est le raisonnement qui l''a produit (attentes, objectifs, calendrier)", "Planifier est réservé à la direction", "Remplir un planning demande plus de réflexion que planifier"], "bonnes": [1], "explication": "Planifier, c''est transformer ce qu''on attend de l''équipe en objectifs et en calendrier. Le planning n''en est que la trace."}, {"id": "m1q14", "enonce": "D''après la leçon 1.2, une grande partie des « problèmes de personnes » rencontrés par les managers sont en réalité…", "options": ["des problèmes de caractère, impossibles à traiter", "des problèmes d''organisation : rôles flous, doublons, personne responsable de rien", "des problèmes de rémunération", "des problèmes de génération"], "bonnes": [1], "explication": "Avant de conclure à un problème de personne, le manager vérifie l''organisation : qui fait quoi, qui décide, qui est responsable."}, {"id": "m1q15", "enonce": "Quel style de leadership (Goleman) consiste à dire « Essayez ceci » et vise le développement de la personne à long terme, quitte à accepter des résultats moins rapides ?", "options": ["Le style directif", "Le style chef de file", "Le style coach", "Le style collaboratif"], "bonnes": [2], "explication": "Le style coach investit dans la progression des personnes. Il demande du temps et une personne volontaire ; il est sous-utilisé par les managers pressés."}, {"id": "m1q16", "enonce": "Un apprenti motivé mais qui ne maîtrise pas encore une tâche. Dans le leadership situationnel, quel style convient ?", "options": ["Déléguer : il est motivé, il apprendra seul", "Diriger : consignes précises, montrer, contrôler de près, retours fréquents", "Épauler : l''écouter et le laisser choisir la méthode", "Ne rien faire tant qu''il ne demande pas d''aide"], "bonnes": [1], "explication": "Faible compétence et forte motivation appellent le style « diriger ». Ce n''est pas de la méfiance : c''est ce dont un débutant a besoin pour réussir vite."}, {"id": "m1q17", "enonce": "Quel est le repos hebdomadaire minimum prévu par le Code du travail (L3132-2), sous réserve des dérogations ?", "options": ["24 heures", "35 heures consécutives", "48 heures", "Aucun minimum si le salarié est d''accord"], "bonnes": [1], "explication": "35 heures consécutives par semaine (24 h de repos hebdomadaire auxquelles s''ajoutent les 11 h de repos quotidien). Le manager qui organise les plannings doit connaître ces limites."}, {"id": "m1q18", "enonce": "Lucas arrive en retard pour la quatrième fois malgré un recadrage. Sauf délégation expresse, que fait Karim, manager de proximité ?", "options": ["Il lui notifie lui-même un avertissement écrit", "Il retient une heure sur son salaire", "Il recadre, trace les faits (dates, ce qui a été dit) et alerte Michel, l''employeur, qui seul peut sanctionner selon la procédure", "Il attend que ça passe"], "bonnes": [2], "explication": "La sanction relève de l''employeur et d''une procédure (L1331-1 et s.). Le manager agit en amont : recadrer, tracer, alerter. Les sanctions pécuniaires sont interdites."}, {"id": "m1q19", "enonce": "Fatou a une restriction médicale de port de charge. Que dit Karim à l''équipe ?", "options": ["« Fatou a un problème de dos, elle ne porte plus rien »", "« Fatou ne porte pas les pare-chocs, c''est organisé comme ça » — sans le motif médical", "Il explique le dossier RQTH de Fatou pour éviter les jalousies", "Rien, et il laisse Fatou se débrouiller"], "bonnes": [1], "explication": "Une information de santé ne se diffuse jamais, même « pour expliquer ». Le manager organise le travail et énonce la règle, pas la raison médicale."}, {"id": "m1q20", "enonce": "Plusieurs réponses. Dans le podcast « De collègue à manager », quelles sont les deux erreurs classiques décrites lors d''une promotion interne ?", "options": ["Ne rien changer : continuer à plaisanter sur le chef, déjeuner avec les mêmes, comme avant", "Surcorriger : s''isoler, manger seul, devenir distant du jour au lendemain", "Demander une formation au management", "Présenter l''équipe à sa hiérarchie"], "bonnes": [0, 1], "explication": "La distance juste se trouve entre les deux excès : ni copain comme avant, ni chef inaccessible. Elle se construit par des actes cohérents, pas par une posture."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 2 and l.ordre = 10;
   n := n + 1;
 
@@ -1085,26 +1035,21 @@ Ce dont l''atelier a besoin dans les trois prochains mois : du visionnaire d''ab
 
   -- 1.4-video-leadership-situationnel.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Le leadership situationnel »]
+## Le leadership situationnel
 
 Dans la leçon précédente, vous avez vu qu''un bon manager change de style selon la situation. Mais selon quoi, exactement ? Comment savoir, face à une personne donnée, sur une tâche donnée, s''il faut diriger, accompagner ou laisser faire ?
 
 À la fin des années 1960, deux chercheurs américains, Paul Hersey et Kenneth Blanchard, ont proposé une réponse simple et robuste, qu''on appelle le leadership situationnel. Elle est enseignée dans le monde entier depuis cinquante ans, et elle tient en une idée : adaptez votre style au niveau d''autonomie de la personne sur la tâche.
 
-[Titre : « Deux ingrédients »]
+## Deux ingrédients
 
 Le niveau d''autonomie, c''est la combinaison de deux ingrédients.
 
 Le premier, c''est la compétence : est-ce que la personne sait faire cette tâche précise ? Pas « est-elle compétente en général », mais « sait-elle faire cela ». Un excellent carrossier peut être incompétent pour rédiger un devis.
 
 Le second, c''est l''engagement : a-t-elle envie de le faire, et se sent-elle capable ? La motivation et la confiance en soi.
-
-[Schéma : matrice 2×2 — axe horizontal Compétence (faible → forte), axe vertical Engagement (faible → fort). Quatre cases numérotées A1 à A4]
 
 En croisant les deux, on obtient quatre niveaux d''autonomie.
 
@@ -1116,11 +1061,9 @@ A3 : compétence forte, engagement variable. C''est le collaborateur compétent 
 
 A4 : compétence forte, engagement fort. C''est l''expert autonome. Il sait, il veut, il fait. Pensez à Thierry sur son cœur de métier.
 
-[Titre : « Quatre styles pour quatre niveaux »]
+## Quatre styles pour quatre niveaux
 
 À chaque niveau correspond un style de management, défini par deux dosages : combien je dirige, c''est-à-dire combien j''explique, je cadre, je contrôle ; et combien je soutiens, c''est-à-dire combien j''écoute, j''encourage, je fais participer.
-
-[Schéma : les quatre styles S1 à S4 en face des niveaux A1 à A4]
 
 Style 1, diriger : beaucoup de direction, peu de soutien. Je dis quoi faire, comment, quand ; je montre ; je contrôle de près. C''est ce qu''il faut pour A1, le débutant enthousiaste. Il n''a pas besoin qu''on le motive, il l''est déjà ; il a besoin qu''on lui apprenne.
 
@@ -1130,7 +1073,7 @@ Style 3, épauler : peu de direction, beaucoup de soutien. Je ne lui explique pl
 
 Style 4, déléguer : peu de direction, peu de soutien. Je fixe le résultat attendu et je laisse faire. Je reste disponible, je fais le point de temps en temps, mais je n''interviens pas. C''est ce qu''il faut pour A4, l''expert autonome.
 
-[Titre : « Trois règles d''usage »]
+## Trois règles d''usage
 
 Trois règles pour utiliser ce modèle sans se tromper.
 
@@ -1140,7 +1083,7 @@ Deuxième règle : le niveau évolue, et votre style doit évoluer avec lui. L''
 
 Troisième règle : quand vous hésitez, demandez. « Sur ce sujet, tu préfères que je te montre, ou tu vois comment faire ? » Cette question, à elle seule, évite la plupart des erreurs de dosage.
 
-[Titre : « Les deux erreurs les plus fréquentes »]
+## Les deux erreurs les plus fréquentes
 
 Les deux erreurs les plus fréquentes sont symétriques.
 
@@ -1148,7 +1091,7 @@ La première : sur-diriger les compétents. C''est le manager qui explique à un
 
 La seconde : sous-diriger les débutants, par bienveillance ou par manque de temps. On confie une tâche nouvelle en disant « tu verras, c''est facile », et on découvre le résultat trop tard. C''est ce qui est arrivé avec Julien et la coulure de vernis : personne n''a contrôlé un carrossier qui n''était pas encore autonome sur la finition.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 Appliquons à l''atelier Garnier.
 
@@ -1160,38 +1103,28 @@ Lucas : diriger, franchement. Sur la ponctualité comme sur les tâches : des co
 
 Nadia : épauler. Elle est autonome en peinture ; ce dont elle a besoin, c''est qu''on l''écoute sur son envie d''évoluer, et qu''on lui confie une responsabilité qui le lui permette.
 
-[Plan rapproché]
-
 Vous voyez le principe : même équipe, même manager, quatre styles différents, parce que quatre situations différentes. Ce n''est pas de l''incohérence, c''est de l''adaptation. Et c''est ce que les gens attendent d''un manager : qu''il les traite selon ce dont ils ont besoin, pas tous pareil.
 
 Dans le podcast qui suit, nous parlerons d''une situation particulière et très fréquente : passer de collègue à manager dans la même équipe.
 
-[Fondu, logo]
-
----
-
-Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (rééd. Prentice Hall) ; Blanchard, *Leadership and the One Minute Manager*, 1985 (modèle SLII, terminologie « diriger / entraîner / épauler / déléguer »).
+## Sources
+Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (rééd. Prentice Hall) ; Blanchard, *Leadership and the One Minute Manager*, 1985 (modèle SLII, terminologie « diriger / entraîner / épauler / déléguer »).
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Le leadership situationnel »]
+## Le leadership situationnel
 
 Dans la leçon précédente, vous avez vu qu''un bon manager change de style selon la situation. Mais selon quoi, exactement ? Comment savoir, face à une personne donnée, sur une tâche donnée, s''il faut diriger, accompagner ou laisser faire ?
 
 À la fin des années 1960, deux chercheurs américains, Paul Hersey et Kenneth Blanchard, ont proposé une réponse simple et robuste, qu''on appelle le leadership situationnel. Elle est enseignée dans le monde entier depuis cinquante ans, et elle tient en une idée : adaptez votre style au niveau d''autonomie de la personne sur la tâche.
 
-[Titre : « Deux ingrédients »]
+## Deux ingrédients
 
 Le niveau d''autonomie, c''est la combinaison de deux ingrédients.
 
 Le premier, c''est la compétence : est-ce que la personne sait faire cette tâche précise ? Pas « est-elle compétente en général », mais « sait-elle faire cela ». Un excellent carrossier peut être incompétent pour rédiger un devis.
 
 Le second, c''est l''engagement : a-t-elle envie de le faire, et se sent-elle capable ? La motivation et la confiance en soi.
-
-[Schéma : matrice 2×2 — axe horizontal Compétence (faible → forte), axe vertical Engagement (faible → fort). Quatre cases numérotées A1 à A4]
 
 En croisant les deux, on obtient quatre niveaux d''autonomie.
 
@@ -1203,11 +1136,9 @@ A3 : compétence forte, engagement variable. C''est le collaborateur compétent 
 
 A4 : compétence forte, engagement fort. C''est l''expert autonome. Il sait, il veut, il fait. Pensez à Thierry sur son cœur de métier.
 
-[Titre : « Quatre styles pour quatre niveaux »]
+## Quatre styles pour quatre niveaux
 
 À chaque niveau correspond un style de management, défini par deux dosages : combien je dirige, c''est-à-dire combien j''explique, je cadre, je contrôle ; et combien je soutiens, c''est-à-dire combien j''écoute, j''encourage, je fais participer.
-
-[Schéma : les quatre styles S1 à S4 en face des niveaux A1 à A4]
 
 Style 1, diriger : beaucoup de direction, peu de soutien. Je dis quoi faire, comment, quand ; je montre ; je contrôle de près. C''est ce qu''il faut pour A1, le débutant enthousiaste. Il n''a pas besoin qu''on le motive, il l''est déjà ; il a besoin qu''on lui apprenne.
 
@@ -1217,7 +1148,7 @@ Style 3, épauler : peu de direction, beaucoup de soutien. Je ne lui explique pl
 
 Style 4, déléguer : peu de direction, peu de soutien. Je fixe le résultat attendu et je laisse faire. Je reste disponible, je fais le point de temps en temps, mais je n''interviens pas. C''est ce qu''il faut pour A4, l''expert autonome.
 
-[Titre : « Trois règles d''usage »]
+## Trois règles d''usage
 
 Trois règles pour utiliser ce modèle sans se tromper.
 
@@ -1227,7 +1158,7 @@ Deuxième règle : le niveau évolue, et votre style doit évoluer avec lui. L''
 
 Troisième règle : quand vous hésitez, demandez. « Sur ce sujet, tu préfères que je te montre, ou tu vois comment faire ? » Cette question, à elle seule, évite la plupart des erreurs de dosage.
 
-[Titre : « Les deux erreurs les plus fréquentes »]
+## Les deux erreurs les plus fréquentes
 
 Les deux erreurs les plus fréquentes sont symétriques.
 
@@ -1235,7 +1166,7 @@ La première : sur-diriger les compétents. C''est le manager qui explique à un
 
 La seconde : sous-diriger les débutants, par bienveillance ou par manque de temps. On confie une tâche nouvelle en disant « tu verras, c''est facile », et on découvre le résultat trop tard. C''est ce qui est arrivé avec Julien et la coulure de vernis : personne n''a contrôlé un carrossier qui n''était pas encore autonome sur la finition.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 Appliquons à l''atelier Garnier.
 
@@ -1247,17 +1178,12 @@ Lucas : diriger, franchement. Sur la ponctualité comme sur les tâches : des co
 
 Nadia : épauler. Elle est autonome en peinture ; ce dont elle a besoin, c''est qu''on l''écoute sur son envie d''évoluer, et qu''on lui confie une responsabilité qui le lui permette.
 
-[Plan rapproché]
-
 Vous voyez le principe : même équipe, même manager, quatre styles différents, parce que quatre situations différentes. Ce n''est pas de l''incohérence, c''est de l''adaptation. Et c''est ce que les gens attendent d''un manager : qu''il les traite selon ce dont ils ont besoin, pas tous pareil.
 
 Dans le podcast qui suit, nous parlerons d''une situation particulière et très fréquente : passer de collègue à manager dans la même équipe.
 
-[Fondu, logo]
-
----
-
-Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (rééd. Prentice Hall) ; Blanchard, *Leadership and the One Minute Manager*, 1985 (modèle SLII, terminologie « diriger / entraîner / épauler / déléguer »).
+## Sources
+Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (rééd. Prentice Hall) ; Blanchard, *Leadership and the One Minute Manager*, 1985 (modèle SLII, terminologie « diriger / entraîner / épauler / déléguer »).
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 2 and l.ordre = 4;
@@ -1265,201 +1191,195 @@ Sources : Hersey & Blanchard, *Management of Organizational Behavior*, 1969 (ré
 
   -- 1.5-podcast-de-collegue-a-manager.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles). Débit : 150 mots/min. Voix distinctes pour la synthèse (ElevenLabs / NotebookLM).
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et David, manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles).
 
-**CLAIRE** — Bonjour et bienvenue dans ce podcast IDEAFORMA. Aujourd''hui, on parle d''un moment que beaucoup d''entre vous vivent ou vont vivre : le jour où l''on devient le manager de ses anciens collègues. Pour en parler, j''ai avec moi David, qui est passé par là. David, bonjour.
+**Claire** — Bonjour et bienvenue dans ce podcast IDEAFORMA. Aujourd''hui, on parle d''un moment que beaucoup d''entre vous vivent ou vont vivre : le jour où l''on devient le manager de ses anciens collègues. Pour en parler, j''ai avec moi David, qui est passé par là. David, bonjour.
 
-**DAVID** — Bonjour Claire.
+**David** — Bonjour Claire.
 
-**CLAIRE** — Vous encadrez aujourd''hui une équipe de douze personnes. Racontez-nous comment ça a commencé.
+**Claire** — Vous encadrez aujourd''hui une équipe de douze personnes. Racontez-nous comment ça a commencé.
 
-**DAVID** — J''étais technicien de maintenance dans l''atelier depuis sept ans. Mon chef est parti à la retraite, et le directeur m''a proposé le poste. J''ai dit oui en une soirée. Je pensais que ce serait la même chose avec un peu plus de responsabilités. Ça n''avait rien à voir.
+**David** — J''étais technicien de maintenance dans l''atelier depuis sept ans. Mon chef est parti à la retraite, et le directeur m''a proposé le poste. J''ai dit oui en une soirée. Je pensais que ce serait la même chose avec un peu plus de responsabilités. Ça n''avait rien à voir.
 
-**CLAIRE** — Qu''est-ce qui a changé, concrètement, le premier jour ?
+**Claire** — Qu''est-ce qui a changé, concrètement, le premier jour ?
 
-**DAVID** — Le premier jour, rien. Les gens m''ont félicité. Le problème est arrivé la deuxième semaine, quand j''ai dû demander à un collègue, avec qui je déjeunais tous les jours depuis des années, de refaire un travail qui n''était pas conforme. Il m''a regardé et il m''a dit : « Ah, c''est comme ça maintenant ? » Et là j''ai compris que la relation avait changé, que je le veuille ou non.
+**David** — Le premier jour, rien. Les gens m''ont félicité. Le problème est arrivé la deuxième semaine, quand j''ai dû demander à un collègue, avec qui je déjeunais tous les jours depuis des années, de refaire un travail qui n''était pas conforme. Il m''a regardé et il m''a dit : « Ah, c''est comme ça maintenant ? » Et là j''ai compris que la relation avait changé, que je le veuille ou non.
 
-**CLAIRE** — C''est ce qu''on appelle la question de la légitimité. Vous aviez été nommé, donc légitime sur le papier. Mais visiblement ça ne suffisait pas.
+**Claire** — C''est ce qu''on appelle la question de la légitimité. Vous aviez été nommé, donc légitime sur le papier. Mais visiblement ça ne suffisait pas.
 
-**DAVID** — Non. La nomination vous donne le droit de décider. Elle ne vous donne pas le fait que les gens l''acceptent. Ça, il faut le construire. Et le piège, quand on est promu en interne, c''est qu''on croit que l''ancienne relation va faire le travail à notre place. « Ils me connaissent, ils m''aiment bien, ça va passer. » En réalité, c''est presque l''inverse : ils vous connaissent comme collègue, donc ils ont du mal à vous voir comme manager.
+**David** — Non. La nomination vous donne le droit de décider. Elle ne vous donne pas le fait que les gens l''acceptent. Ça, il faut le construire. Et le piège, quand on est promu en interne, c''est qu''on croit que l''ancienne relation va faire le travail à notre place. « Ils me connaissent, ils m''aiment bien, ça va passer. » En réalité, c''est presque l''inverse : ils vous connaissent comme collègue, donc ils ont du mal à vous voir comme manager.
 
-**CLAIRE** — Il y a une expression qu''on entend souvent : trouver la « bonne distance ». Vous, vous l''avez trouvée comment ?
+**Claire** — Il y a une expression qu''on entend souvent : trouver la « bonne distance ». Vous, vous l''avez trouvée comment ?
 
-**DAVID** — Par erreurs, honnêtement. Ma première erreur, ça a été de ne rien changer. Je continuais à déjeuner avec les mêmes, à plaisanter sur le chef comme avant, sauf que le chef c''était moi. Au bout d''un mois, j''ai réalisé que les trois personnes avec qui je déjeunais étaient perçues comme mes protégés par les neuf autres. Alors que je n''avais rien décidé.
+**David** — Par erreurs, honnêtement. Ma première erreur, ça a été de ne rien changer. Je continuais à déjeuner avec les mêmes, à plaisanter sur le chef comme avant, sauf que le chef c''était moi. Au bout d''un mois, j''ai réalisé que les trois personnes avec qui je déjeunais étaient perçues comme mes protégés par les neuf autres. Alors que je n''avais rien décidé.
 
-**CLAIRE** — Donc la proximité avec certains devient un problème d''équité pour les autres.
+**Claire** — Donc la proximité avec certains devient un problème d''équité pour les autres.
 
-**DAVID** — Exactement. Et ça, on ne le voit pas de l''intérieur. Il a fallu qu''une collègue me le dise. Ensuite, deuxième erreur, j''ai surcorrigé. Je me suis mis à manger seul dans mon bureau, à vouvoyer les gens. Ridicule. Ils ont cru que la promotion m''était montée à la tête.
+**David** — Exactement. Et ça, on ne le voit pas de l''intérieur. Il a fallu qu''une collègue me le dise. Ensuite, deuxième erreur, j''ai surcorrigé. Je me suis mis à manger seul dans mon bureau, à vouvoyer les gens. Ridicule. Ils ont cru que la promotion m''était montée à la tête.
 
-**CLAIRE** — Et la bonne distance, finalement ?
+**Claire** — Et la bonne distance, finalement ?
 
-**DAVID** — Ce que j''ai compris, c''est que la distance, ce n''est pas une question de tutoiement ou de pause-café. C''est une question de rôle. Je peux déjeuner avec l''équipe, plaisanter, être proche. Mais quand il s''agit du travail, je tiens mon rôle : je décide, je fais des retours, je tranche, et je le fais pareil avec tout le monde. Y compris avec mes anciens amis. Surtout avec mes anciens amis, en fait.
+**David** — Ce que j''ai compris, c''est que la distance, ce n''est pas une question de tutoiement ou de pause-café. C''est une question de rôle. Je peux déjeuner avec l''équipe, plaisanter, être proche. Mais quand il s''agit du travail, je tiens mon rôle : je décide, je fais des retours, je tranche, et je le fais pareil avec tout le monde. Y compris avec mes anciens amis. Surtout avec mes anciens amis, en fait.
 
-**CLAIRE** — C''est ça qui construit la légitimité : la constance.
+**Claire** — C''est ça qui construit la légitimité : la constance.
 
-**DAVID** — La constance et l''équité. Les gens ne vous suivent pas parce que vous êtes sympa. Ils vous suivent parce qu''ils savent à quoi s''attendre avec vous. Ce que vous avez dit lundi, vous le tenez vendredi. Ce que vous demandez à l''un, vous le demandez à l''autre. C''est presque ennuyeux à dire, mais c''est ça.
+**David** — La constance et l''équité. Les gens ne vous suivent pas parce que vous êtes sympa. Ils vous suivent parce qu''ils savent à quoi s''attendre avec vous. Ce que vous avez dit lundi, vous le tenez vendredi. Ce que vous demandez à l''un, vous le demandez à l''autre. C''est presque ennuyeux à dire, mais c''est ça.
 
-**CLAIRE** — Parlons de la situation la plus délicate : l''ancien collègue qui voulait le poste, ou qui pense qu''il le méritait plus que vous. Vous avez eu ça ?
+**Claire** — Parlons de la situation la plus délicate : l''ancien collègue qui voulait le poste, ou qui pense qu''il le méritait plus que vous. Vous avez eu ça ?
 
-**DAVID** — Oui. Un technicien plus ancien que moi, très compétent, qui ne l''a jamais dit clairement mais qui le faisait sentir. Des remarques devant les autres, des « moi je ferais pas comme ça », des silences dans les réunions.
+**David** — Oui. Un technicien plus ancien que moi, très compétent, qui ne l''a jamais dit clairement mais qui le faisait sentir. Des remarques devant les autres, des « moi je ferais pas comme ça », des silences dans les réunions.
 
-**CLAIRE** — Et qu''est-ce que vous avez fait ?
+**Claire** — Et qu''est-ce que vous avez fait ?
 
-**DAVID** — D''abord, pendant deux mois, rien. J''espérais que ça passe. Ça ne passe pas. Ça s''installe, et les autres regardent comment vous réagissez. Puis j''ai fait ce que j''aurais dû faire dès le début : je l''ai pris en entretien, seul à seul.
+**David** — D''abord, pendant deux mois, rien. J''espérais que ça passe. Ça ne passe pas. Ça s''installe, et les autres regardent comment vous réagissez. Puis j''ai fait ce que j''aurais dû faire dès le début : je l''ai pris en entretien, seul à seul.
 
-**CLAIRE** — Vous lui avez dit quoi ?
+**Claire** — Vous lui avez dit quoi ?
 
-**DAVID** — Trois choses. La première : que je savais qu''il avait plus d''expérience que moi sur la partie technique, et que j''avais besoin de lui pour ça. C''était vrai, ce n''était pas de la flatterie. La deuxième : que j''avais remarqué les remarques devant l''équipe, avec deux exemples précis, et que ça ne pouvait pas continuer, parce que ça mettait tout le monde mal à l''aise, lui compris. La troisième : qu''il avait le droit de ne pas être d''accord avec mes décisions, et que je voulais qu''il me le dise, mais en entretien, pas devant les autres.
+**David** — Trois choses. La première : que je savais qu''il avait plus d''expérience que moi sur la partie technique, et que j''avais besoin de lui pour ça. C''était vrai, ce n''était pas de la flatterie. La deuxième : que j''avais remarqué les remarques devant l''équipe, avec deux exemples précis, et que ça ne pouvait pas continuer, parce que ça mettait tout le monde mal à l''aise, lui compris. La troisième : qu''il avait le droit de ne pas être d''accord avec mes décisions, et que je voulais qu''il me le dise, mais en entretien, pas devant les autres.
 
-**CLAIRE** — Et il a réagi comment ?
+**Claire** — Et il a réagi comment ?
 
-**DAVID** — Il a d''abord nié. Puis il a dit que de toute façon il n''avait pas voulu du poste. Et à la fin, il m''a dit : « Bon, on fait comment pour la ligne 3 ? » C''est-à-dire qu''il est revenu au travail. Ce n''est pas devenu mon meilleur ami. Mais les remarques publiques ont cessé, et deux ans plus tard c''est lui qui forme les nouveaux.
+**David** — Il a d''abord nié. Puis il a dit que de toute façon il n''avait pas voulu du poste. Et à la fin, il m''a dit : « Bon, on fait comment pour la ligne 3 ? » C''est-à-dire qu''il est revenu au travail. Ce n''est pas devenu mon meilleur ami. Mais les remarques publiques ont cessé, et deux ans plus tard c''est lui qui forme les nouveaux.
 
-**CLAIRE** — Ce que je retiens, c''est que vous ne l''avez pas affronté, vous ne l''avez pas ignoré non plus. Vous lui avez donné une place.
+**Claire** — Ce que je retiens, c''est que vous ne l''avez pas affronté, vous ne l''avez pas ignoré non plus. Vous lui avez donné une place.
 
-**DAVID** — C''est exactement ça. Les gens qui contestent votre légitimité ont souvent besoin qu''on reconnaisse la leur. Un ancien qui râle, c''est souvent quelqu''un qui a peur de ne plus compter.
+**David** — C''est exactement ça. Les gens qui contestent votre légitimité ont souvent besoin qu''on reconnaisse la leur. Un ancien qui râle, c''est souvent quelqu''un qui a peur de ne plus compter.
 
-**CLAIRE** — Passons à un autre point délicat : la relation avec la hiérarchie. Quand on est promu en interne, on a souvent l''impression d''être coincé entre l''équipe et la direction.
+**Claire** — Passons à un autre point délicat : la relation avec la hiérarchie. Quand on est promu en interne, on a souvent l''impression d''être coincé entre l''équipe et la direction.
 
-**DAVID** — C''est le cas. Et il faut l''accepter : c''est le poste. Le manager de proximité, c''est celui qui traduit dans les deux sens. Vers le bas, il explique les décisions de la direction, même celles qu''il n''a pas choisies. Vers le haut, il fait remonter ce que l''équipe vit, même ce que la direction n''a pas envie d''entendre.
+**David** — C''est le cas. Et il faut l''accepter : c''est le poste. Le manager de proximité, c''est celui qui traduit dans les deux sens. Vers le bas, il explique les décisions de la direction, même celles qu''il n''a pas choisies. Vers le haut, il fait remonter ce que l''équipe vit, même ce que la direction n''a pas envie d''entendre.
 
-**CLAIRE** — Le piège, c''est de choisir un camp.
+**Claire** — Le piège, c''est de choisir un camp.
 
-**DAVID** — Oui. Il y a le manager qui devient le porte-parole de la direction : « c''est comme ça, c''est décidé en haut, je n''y peux rien ». L''équipe le lâche. Et il y a le manager qui devient le syndicaliste de son équipe : « moi je suis avec vous, c''est eux le problème ». La direction ne lui fait plus confiance, et il ne peut plus rien obtenir pour son équipe. Dans les deux cas, il a perdu.
+**David** — Oui. Il y a le manager qui devient le porte-parole de la direction : « c''est comme ça, c''est décidé en haut, je n''y peux rien ». L''équipe le lâche. Et il y a le manager qui devient le syndicaliste de son équipe : « moi je suis avec vous, c''est eux le problème ». La direction ne lui fait plus confiance, et il ne peut plus rien obtenir pour son équipe. Dans les deux cas, il a perdu.
 
-**CLAIRE** — Alors comment on fait ?
+**Claire** — Alors comment on fait ?
 
-**DAVID** — Une règle simple : je défends mon équipe devant la direction, et je défends les décisions de la direction devant mon équipe. Quand je ne suis pas d''accord avec une décision, je le dis à mon directeur, en entretien, avec des arguments. Une fois que c''est tranché, je porte la décision devant l''équipe. Je peux dire « j''ai exprimé des réserves », mais pas « je suis contre ». Ce serait me défausser.
+**David** — Une règle simple : je défends mon équipe devant la direction, et je défends les décisions de la direction devant mon équipe. Quand je ne suis pas d''accord avec une décision, je le dis à mon directeur, en entretien, avec des arguments. Une fois que c''est tranché, je porte la décision devant l''équipe. Je peux dire « j''ai exprimé des réserves », mais pas « je suis contre ». Ce serait me défausser.
 
-**CLAIRE** — On a évoqué dans une leçon précédente le cas de Karim, promu chef d''atelier dans une carrosserie, et qui découvre que la secrétaire continue à donner les priorités directement aux carrossiers, et que son patron intervient encore tous les jours. Qu''est-ce que vous lui diriez ?
+**Claire** — On a évoqué dans une leçon précédente le cas de Karim, promu chef d''atelier dans une carrosserie, et qui découvre que la secrétaire continue à donner les priorités directement aux carrossiers, et que son patron intervient encore tous les jours. Qu''est-ce que vous lui diriez ?
 
-**DAVID** — Qu''il a un problème de clarification avant d''avoir un problème de légitimité. Personne n''a dit à l''équipe ce que le chef d''atelier décide et ce qu''il ne décide pas. Donc chacun continue comme avant, et ce n''est même pas de la mauvaise volonté. Je lui dirais d''aller voir son patron avec une feuille : voilà ce que je propose de décider, voilà comment les priorités circulent, voilà ce que je vous remonte et à quel rythme. Et de demander que ce soit annoncé à l''équipe par le patron lui-même.
+**David** — Qu''il a un problème de clarification avant d''avoir un problème de légitimité. Personne n''a dit à l''équipe ce que le chef d''atelier décide et ce qu''il ne décide pas. Donc chacun continue comme avant, et ce n''est même pas de la mauvaise volonté. Je lui dirais d''aller voir son patron avec une feuille : voilà ce que je propose de décider, voilà comment les priorités circulent, voilà ce que je vous remonte et à quel rythme. Et de demander que ce soit annoncé à l''équipe par le patron lui-même.
 
-**CLAIRE** — Pourquoi par le patron ?
+**Claire** — Pourquoi par le patron ?
 
-**DAVID** — Parce que la légitimité, au début, elle vient d''en haut. Si Karim annonce lui-même « désormais c''est moi qui fixe les priorités », ça ressemble à une prise de pouvoir. Si Michel Garnier le dit devant l''équipe, ça devient une organisation. Ensuite, à Karim de la faire vivre.
+**David** — Parce que la légitimité, au début, elle vient d''en haut. Si Karim annonce lui-même « désormais c''est moi qui fixe les priorités », ça ressemble à une prise de pouvoir. Si Michel Garnier le dit devant l''équipe, ça devient une organisation. Ensuite, à Karim de la faire vivre.
 
-**CLAIRE** — On arrive vers la fin. Si vous deviez donner trois conseils à quelqu''un qui devient manager de ses collègues la semaine prochaine ?
+**Claire** — On arrive vers la fin. Si vous deviez donner trois conseils à quelqu''un qui devient manager de ses collègues la semaine prochaine ?
 
-**DAVID** — Premier conseil : parlez-en, individuellement, avec chaque personne de l''équipe, dans les quinze premiers jours. Pas une grande réunion, des entretiens de vingt minutes. « Comment tu vois les choses, qu''est-ce qui marche, qu''est-ce qui ne marche pas, qu''est-ce que tu attends de moi. » Vous apprenez énormément, et vous montrez que le rôle a changé sans avoir à le dire.
+**David** — Premier conseil : parlez-en, individuellement, avec chaque personne de l''équipe, dans les quinze premiers jours. Pas une grande réunion, des entretiens de vingt minutes. « Comment tu vois les choses, qu''est-ce qui marche, qu''est-ce qui ne marche pas, qu''est-ce que tu attends de moi. » Vous apprenez énormément, et vous montrez que le rôle a changé sans avoir à le dire.
 
-**CLAIRE** — Deuxième ?
+**Claire** — Deuxième ?
 
-**DAVID** — Ne changez rien de structurel pendant un mois, mais réglez immédiatement ce qui est inacceptable. Les retards, les manques de sécurité, les manques de respect. Si vous laissez passer ça au début, vous avez perdu, parce que tout le monde regarde.
+**David** — Ne changez rien de structurel pendant un mois, mais réglez immédiatement ce qui est inacceptable. Les retards, les manques de sécurité, les manques de respect. Si vous laissez passer ça au début, vous avez perdu, parce que tout le monde regarde.
 
-**CLAIRE** — Et le troisième ?
+**Claire** — Et le troisième ?
 
-**DAVID** — Acceptez de ne plus être « l''un d''entre eux ». Ce n''est pas une perte. Vous n''êtes plus un collègue ; vous êtes la personne qui va leur permettre de bien travailler. Si vous faites bien ce travail, vous aurez quelque chose de mieux que l''amitié : la confiance.
+**David** — Acceptez de ne plus être « l''un d''entre eux ». Ce n''est pas une perte. Vous n''êtes plus un collègue ; vous êtes la personne qui va leur permettre de bien travailler. Si vous faites bien ce travail, vous aurez quelque chose de mieux que l''amitié : la confiance.
 
-**CLAIRE** — Merci David. Pour résumer : la légitimité ne vient pas de la nomination mais de la constance et de l''équité ; les contestations se traitent en entretien, en donnant une place ; le manager traduit dans les deux sens sans choisir de camp ; et les quinze premiers jours servent à écouter chacun.
+**Claire** — Merci David. Pour résumer : la légitimité ne vient pas de la nomination mais de la constance et de l''équité ; les contestations se traitent en entretien, en donnant une place ; le manager traduit dans les deux sens sans choisir de camp ; et les quinze premiers jours servent à écouter chacun.
 
-**DAVID** — Et à régler tout de suite ce qui est inacceptable.
+**David** — Et à régler tout de suite ce qui est inacceptable.
 
-**CLAIRE** — Et à régler tout de suite ce qui est inacceptable. À bientôt dans la suite du module.
-
----
+**Claire** — Et à régler tout de suite ce qui est inacceptable. À bientôt dans la suite du module.
 
 Repères théoriques mobilisés : Linda Hill, *Becoming a Manager* (2003), sur la découverte du rôle par les nouveaux managers ; Mintzberg (1973), rôles d''agent de liaison et de porte-parole ; Kotter (1990), management vs leadership.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles). Débit : 150 mots/min. Voix distinctes pour la synthèse (ElevenLabs / NotebookLM).
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et David, manager invité, responsable d''un atelier de 12 personnes dans une PME industrielle, promu en interne il y a quatre ans (personnage fictif inspiré de situations réelles).
 
-**CLAIRE** — Bonjour et bienvenue dans ce podcast IDEAFORMA. Aujourd''hui, on parle d''un moment que beaucoup d''entre vous vivent ou vont vivre : le jour où l''on devient le manager de ses anciens collègues. Pour en parler, j''ai avec moi David, qui est passé par là. David, bonjour.
+**Claire** — Bonjour et bienvenue dans ce podcast IDEAFORMA. Aujourd''hui, on parle d''un moment que beaucoup d''entre vous vivent ou vont vivre : le jour où l''on devient le manager de ses anciens collègues. Pour en parler, j''ai avec moi David, qui est passé par là. David, bonjour.
 
-**DAVID** — Bonjour Claire.
+**David** — Bonjour Claire.
 
-**CLAIRE** — Vous encadrez aujourd''hui une équipe de douze personnes. Racontez-nous comment ça a commencé.
+**Claire** — Vous encadrez aujourd''hui une équipe de douze personnes. Racontez-nous comment ça a commencé.
 
-**DAVID** — J''étais technicien de maintenance dans l''atelier depuis sept ans. Mon chef est parti à la retraite, et le directeur m''a proposé le poste. J''ai dit oui en une soirée. Je pensais que ce serait la même chose avec un peu plus de responsabilités. Ça n''avait rien à voir.
+**David** — J''étais technicien de maintenance dans l''atelier depuis sept ans. Mon chef est parti à la retraite, et le directeur m''a proposé le poste. J''ai dit oui en une soirée. Je pensais que ce serait la même chose avec un peu plus de responsabilités. Ça n''avait rien à voir.
 
-**CLAIRE** — Qu''est-ce qui a changé, concrètement, le premier jour ?
+**Claire** — Qu''est-ce qui a changé, concrètement, le premier jour ?
 
-**DAVID** — Le premier jour, rien. Les gens m''ont félicité. Le problème est arrivé la deuxième semaine, quand j''ai dû demander à un collègue, avec qui je déjeunais tous les jours depuis des années, de refaire un travail qui n''était pas conforme. Il m''a regardé et il m''a dit : « Ah, c''est comme ça maintenant ? » Et là j''ai compris que la relation avait changé, que je le veuille ou non.
+**David** — Le premier jour, rien. Les gens m''ont félicité. Le problème est arrivé la deuxième semaine, quand j''ai dû demander à un collègue, avec qui je déjeunais tous les jours depuis des années, de refaire un travail qui n''était pas conforme. Il m''a regardé et il m''a dit : « Ah, c''est comme ça maintenant ? » Et là j''ai compris que la relation avait changé, que je le veuille ou non.
 
-**CLAIRE** — C''est ce qu''on appelle la question de la légitimité. Vous aviez été nommé, donc légitime sur le papier. Mais visiblement ça ne suffisait pas.
+**Claire** — C''est ce qu''on appelle la question de la légitimité. Vous aviez été nommé, donc légitime sur le papier. Mais visiblement ça ne suffisait pas.
 
-**DAVID** — Non. La nomination vous donne le droit de décider. Elle ne vous donne pas le fait que les gens l''acceptent. Ça, il faut le construire. Et le piège, quand on est promu en interne, c''est qu''on croit que l''ancienne relation va faire le travail à notre place. « Ils me connaissent, ils m''aiment bien, ça va passer. » En réalité, c''est presque l''inverse : ils vous connaissent comme collègue, donc ils ont du mal à vous voir comme manager.
+**David** — Non. La nomination vous donne le droit de décider. Elle ne vous donne pas le fait que les gens l''acceptent. Ça, il faut le construire. Et le piège, quand on est promu en interne, c''est qu''on croit que l''ancienne relation va faire le travail à notre place. « Ils me connaissent, ils m''aiment bien, ça va passer. » En réalité, c''est presque l''inverse : ils vous connaissent comme collègue, donc ils ont du mal à vous voir comme manager.
 
-**CLAIRE** — Il y a une expression qu''on entend souvent : trouver la « bonne distance ». Vous, vous l''avez trouvée comment ?
+**Claire** — Il y a une expression qu''on entend souvent : trouver la « bonne distance ». Vous, vous l''avez trouvée comment ?
 
-**DAVID** — Par erreurs, honnêtement. Ma première erreur, ça a été de ne rien changer. Je continuais à déjeuner avec les mêmes, à plaisanter sur le chef comme avant, sauf que le chef c''était moi. Au bout d''un mois, j''ai réalisé que les trois personnes avec qui je déjeunais étaient perçues comme mes protégés par les neuf autres. Alors que je n''avais rien décidé.
+**David** — Par erreurs, honnêtement. Ma première erreur, ça a été de ne rien changer. Je continuais à déjeuner avec les mêmes, à plaisanter sur le chef comme avant, sauf que le chef c''était moi. Au bout d''un mois, j''ai réalisé que les trois personnes avec qui je déjeunais étaient perçues comme mes protégés par les neuf autres. Alors que je n''avais rien décidé.
 
-**CLAIRE** — Donc la proximité avec certains devient un problème d''équité pour les autres.
+**Claire** — Donc la proximité avec certains devient un problème d''équité pour les autres.
 
-**DAVID** — Exactement. Et ça, on ne le voit pas de l''intérieur. Il a fallu qu''une collègue me le dise. Ensuite, deuxième erreur, j''ai surcorrigé. Je me suis mis à manger seul dans mon bureau, à vouvoyer les gens. Ridicule. Ils ont cru que la promotion m''était montée à la tête.
+**David** — Exactement. Et ça, on ne le voit pas de l''intérieur. Il a fallu qu''une collègue me le dise. Ensuite, deuxième erreur, j''ai surcorrigé. Je me suis mis à manger seul dans mon bureau, à vouvoyer les gens. Ridicule. Ils ont cru que la promotion m''était montée à la tête.
 
-**CLAIRE** — Et la bonne distance, finalement ?
+**Claire** — Et la bonne distance, finalement ?
 
-**DAVID** — Ce que j''ai compris, c''est que la distance, ce n''est pas une question de tutoiement ou de pause-café. C''est une question de rôle. Je peux déjeuner avec l''équipe, plaisanter, être proche. Mais quand il s''agit du travail, je tiens mon rôle : je décide, je fais des retours, je tranche, et je le fais pareil avec tout le monde. Y compris avec mes anciens amis. Surtout avec mes anciens amis, en fait.
+**David** — Ce que j''ai compris, c''est que la distance, ce n''est pas une question de tutoiement ou de pause-café. C''est une question de rôle. Je peux déjeuner avec l''équipe, plaisanter, être proche. Mais quand il s''agit du travail, je tiens mon rôle : je décide, je fais des retours, je tranche, et je le fais pareil avec tout le monde. Y compris avec mes anciens amis. Surtout avec mes anciens amis, en fait.
 
-**CLAIRE** — C''est ça qui construit la légitimité : la constance.
+**Claire** — C''est ça qui construit la légitimité : la constance.
 
-**DAVID** — La constance et l''équité. Les gens ne vous suivent pas parce que vous êtes sympa. Ils vous suivent parce qu''ils savent à quoi s''attendre avec vous. Ce que vous avez dit lundi, vous le tenez vendredi. Ce que vous demandez à l''un, vous le demandez à l''autre. C''est presque ennuyeux à dire, mais c''est ça.
+**David** — La constance et l''équité. Les gens ne vous suivent pas parce que vous êtes sympa. Ils vous suivent parce qu''ils savent à quoi s''attendre avec vous. Ce que vous avez dit lundi, vous le tenez vendredi. Ce que vous demandez à l''un, vous le demandez à l''autre. C''est presque ennuyeux à dire, mais c''est ça.
 
-**CLAIRE** — Parlons de la situation la plus délicate : l''ancien collègue qui voulait le poste, ou qui pense qu''il le méritait plus que vous. Vous avez eu ça ?
+**Claire** — Parlons de la situation la plus délicate : l''ancien collègue qui voulait le poste, ou qui pense qu''il le méritait plus que vous. Vous avez eu ça ?
 
-**DAVID** — Oui. Un technicien plus ancien que moi, très compétent, qui ne l''a jamais dit clairement mais qui le faisait sentir. Des remarques devant les autres, des « moi je ferais pas comme ça », des silences dans les réunions.
+**David** — Oui. Un technicien plus ancien que moi, très compétent, qui ne l''a jamais dit clairement mais qui le faisait sentir. Des remarques devant les autres, des « moi je ferais pas comme ça », des silences dans les réunions.
 
-**CLAIRE** — Et qu''est-ce que vous avez fait ?
+**Claire** — Et qu''est-ce que vous avez fait ?
 
-**DAVID** — D''abord, pendant deux mois, rien. J''espérais que ça passe. Ça ne passe pas. Ça s''installe, et les autres regardent comment vous réagissez. Puis j''ai fait ce que j''aurais dû faire dès le début : je l''ai pris en entretien, seul à seul.
+**David** — D''abord, pendant deux mois, rien. J''espérais que ça passe. Ça ne passe pas. Ça s''installe, et les autres regardent comment vous réagissez. Puis j''ai fait ce que j''aurais dû faire dès le début : je l''ai pris en entretien, seul à seul.
 
-**CLAIRE** — Vous lui avez dit quoi ?
+**Claire** — Vous lui avez dit quoi ?
 
-**DAVID** — Trois choses. La première : que je savais qu''il avait plus d''expérience que moi sur la partie technique, et que j''avais besoin de lui pour ça. C''était vrai, ce n''était pas de la flatterie. La deuxième : que j''avais remarqué les remarques devant l''équipe, avec deux exemples précis, et que ça ne pouvait pas continuer, parce que ça mettait tout le monde mal à l''aise, lui compris. La troisième : qu''il avait le droit de ne pas être d''accord avec mes décisions, et que je voulais qu''il me le dise, mais en entretien, pas devant les autres.
+**David** — Trois choses. La première : que je savais qu''il avait plus d''expérience que moi sur la partie technique, et que j''avais besoin de lui pour ça. C''était vrai, ce n''était pas de la flatterie. La deuxième : que j''avais remarqué les remarques devant l''équipe, avec deux exemples précis, et que ça ne pouvait pas continuer, parce que ça mettait tout le monde mal à l''aise, lui compris. La troisième : qu''il avait le droit de ne pas être d''accord avec mes décisions, et que je voulais qu''il me le dise, mais en entretien, pas devant les autres.
 
-**CLAIRE** — Et il a réagi comment ?
+**Claire** — Et il a réagi comment ?
 
-**DAVID** — Il a d''abord nié. Puis il a dit que de toute façon il n''avait pas voulu du poste. Et à la fin, il m''a dit : « Bon, on fait comment pour la ligne 3 ? » C''est-à-dire qu''il est revenu au travail. Ce n''est pas devenu mon meilleur ami. Mais les remarques publiques ont cessé, et deux ans plus tard c''est lui qui forme les nouveaux.
+**David** — Il a d''abord nié. Puis il a dit que de toute façon il n''avait pas voulu du poste. Et à la fin, il m''a dit : « Bon, on fait comment pour la ligne 3 ? » C''est-à-dire qu''il est revenu au travail. Ce n''est pas devenu mon meilleur ami. Mais les remarques publiques ont cessé, et deux ans plus tard c''est lui qui forme les nouveaux.
 
-**CLAIRE** — Ce que je retiens, c''est que vous ne l''avez pas affronté, vous ne l''avez pas ignoré non plus. Vous lui avez donné une place.
+**Claire** — Ce que je retiens, c''est que vous ne l''avez pas affronté, vous ne l''avez pas ignoré non plus. Vous lui avez donné une place.
 
-**DAVID** — C''est exactement ça. Les gens qui contestent votre légitimité ont souvent besoin qu''on reconnaisse la leur. Un ancien qui râle, c''est souvent quelqu''un qui a peur de ne plus compter.
+**David** — C''est exactement ça. Les gens qui contestent votre légitimité ont souvent besoin qu''on reconnaisse la leur. Un ancien qui râle, c''est souvent quelqu''un qui a peur de ne plus compter.
 
-**CLAIRE** — Passons à un autre point délicat : la relation avec la hiérarchie. Quand on est promu en interne, on a souvent l''impression d''être coincé entre l''équipe et la direction.
+**Claire** — Passons à un autre point délicat : la relation avec la hiérarchie. Quand on est promu en interne, on a souvent l''impression d''être coincé entre l''équipe et la direction.
 
-**DAVID** — C''est le cas. Et il faut l''accepter : c''est le poste. Le manager de proximité, c''est celui qui traduit dans les deux sens. Vers le bas, il explique les décisions de la direction, même celles qu''il n''a pas choisies. Vers le haut, il fait remonter ce que l''équipe vit, même ce que la direction n''a pas envie d''entendre.
+**David** — C''est le cas. Et il faut l''accepter : c''est le poste. Le manager de proximité, c''est celui qui traduit dans les deux sens. Vers le bas, il explique les décisions de la direction, même celles qu''il n''a pas choisies. Vers le haut, il fait remonter ce que l''équipe vit, même ce que la direction n''a pas envie d''entendre.
 
-**CLAIRE** — Le piège, c''est de choisir un camp.
+**Claire** — Le piège, c''est de choisir un camp.
 
-**DAVID** — Oui. Il y a le manager qui devient le porte-parole de la direction : « c''est comme ça, c''est décidé en haut, je n''y peux rien ». L''équipe le lâche. Et il y a le manager qui devient le syndicaliste de son équipe : « moi je suis avec vous, c''est eux le problème ». La direction ne lui fait plus confiance, et il ne peut plus rien obtenir pour son équipe. Dans les deux cas, il a perdu.
+**David** — Oui. Il y a le manager qui devient le porte-parole de la direction : « c''est comme ça, c''est décidé en haut, je n''y peux rien ». L''équipe le lâche. Et il y a le manager qui devient le syndicaliste de son équipe : « moi je suis avec vous, c''est eux le problème ». La direction ne lui fait plus confiance, et il ne peut plus rien obtenir pour son équipe. Dans les deux cas, il a perdu.
 
-**CLAIRE** — Alors comment on fait ?
+**Claire** — Alors comment on fait ?
 
-**DAVID** — Une règle simple : je défends mon équipe devant la direction, et je défends les décisions de la direction devant mon équipe. Quand je ne suis pas d''accord avec une décision, je le dis à mon directeur, en entretien, avec des arguments. Une fois que c''est tranché, je porte la décision devant l''équipe. Je peux dire « j''ai exprimé des réserves », mais pas « je suis contre ». Ce serait me défausser.
+**David** — Une règle simple : je défends mon équipe devant la direction, et je défends les décisions de la direction devant mon équipe. Quand je ne suis pas d''accord avec une décision, je le dis à mon directeur, en entretien, avec des arguments. Une fois que c''est tranché, je porte la décision devant l''équipe. Je peux dire « j''ai exprimé des réserves », mais pas « je suis contre ». Ce serait me défausser.
 
-**CLAIRE** — On a évoqué dans une leçon précédente le cas de Karim, promu chef d''atelier dans une carrosserie, et qui découvre que la secrétaire continue à donner les priorités directement aux carrossiers, et que son patron intervient encore tous les jours. Qu''est-ce que vous lui diriez ?
+**Claire** — On a évoqué dans une leçon précédente le cas de Karim, promu chef d''atelier dans une carrosserie, et qui découvre que la secrétaire continue à donner les priorités directement aux carrossiers, et que son patron intervient encore tous les jours. Qu''est-ce que vous lui diriez ?
 
-**DAVID** — Qu''il a un problème de clarification avant d''avoir un problème de légitimité. Personne n''a dit à l''équipe ce que le chef d''atelier décide et ce qu''il ne décide pas. Donc chacun continue comme avant, et ce n''est même pas de la mauvaise volonté. Je lui dirais d''aller voir son patron avec une feuille : voilà ce que je propose de décider, voilà comment les priorités circulent, voilà ce que je vous remonte et à quel rythme. Et de demander que ce soit annoncé à l''équipe par le patron lui-même.
+**David** — Qu''il a un problème de clarification avant d''avoir un problème de légitimité. Personne n''a dit à l''équipe ce que le chef d''atelier décide et ce qu''il ne décide pas. Donc chacun continue comme avant, et ce n''est même pas de la mauvaise volonté. Je lui dirais d''aller voir son patron avec une feuille : voilà ce que je propose de décider, voilà comment les priorités circulent, voilà ce que je vous remonte et à quel rythme. Et de demander que ce soit annoncé à l''équipe par le patron lui-même.
 
-**CLAIRE** — Pourquoi par le patron ?
+**Claire** — Pourquoi par le patron ?
 
-**DAVID** — Parce que la légitimité, au début, elle vient d''en haut. Si Karim annonce lui-même « désormais c''est moi qui fixe les priorités », ça ressemble à une prise de pouvoir. Si Michel Garnier le dit devant l''équipe, ça devient une organisation. Ensuite, à Karim de la faire vivre.
+**David** — Parce que la légitimité, au début, elle vient d''en haut. Si Karim annonce lui-même « désormais c''est moi qui fixe les priorités », ça ressemble à une prise de pouvoir. Si Michel Garnier le dit devant l''équipe, ça devient une organisation. Ensuite, à Karim de la faire vivre.
 
-**CLAIRE** — On arrive vers la fin. Si vous deviez donner trois conseils à quelqu''un qui devient manager de ses collègues la semaine prochaine ?
+**Claire** — On arrive vers la fin. Si vous deviez donner trois conseils à quelqu''un qui devient manager de ses collègues la semaine prochaine ?
 
-**DAVID** — Premier conseil : parlez-en, individuellement, avec chaque personne de l''équipe, dans les quinze premiers jours. Pas une grande réunion, des entretiens de vingt minutes. « Comment tu vois les choses, qu''est-ce qui marche, qu''est-ce qui ne marche pas, qu''est-ce que tu attends de moi. » Vous apprenez énormément, et vous montrez que le rôle a changé sans avoir à le dire.
+**David** — Premier conseil : parlez-en, individuellement, avec chaque personne de l''équipe, dans les quinze premiers jours. Pas une grande réunion, des entretiens de vingt minutes. « Comment tu vois les choses, qu''est-ce qui marche, qu''est-ce qui ne marche pas, qu''est-ce que tu attends de moi. » Vous apprenez énormément, et vous montrez que le rôle a changé sans avoir à le dire.
 
-**CLAIRE** — Deuxième ?
+**Claire** — Deuxième ?
 
-**DAVID** — Ne changez rien de structurel pendant un mois, mais réglez immédiatement ce qui est inacceptable. Les retards, les manques de sécurité, les manques de respect. Si vous laissez passer ça au début, vous avez perdu, parce que tout le monde regarde.
+**David** — Ne changez rien de structurel pendant un mois, mais réglez immédiatement ce qui est inacceptable. Les retards, les manques de sécurité, les manques de respect. Si vous laissez passer ça au début, vous avez perdu, parce que tout le monde regarde.
 
-**CLAIRE** — Et le troisième ?
+**Claire** — Et le troisième ?
 
-**DAVID** — Acceptez de ne plus être « l''un d''entre eux ». Ce n''est pas une perte. Vous n''êtes plus un collègue ; vous êtes la personne qui va leur permettre de bien travailler. Si vous faites bien ce travail, vous aurez quelque chose de mieux que l''amitié : la confiance.
+**David** — Acceptez de ne plus être « l''un d''entre eux ». Ce n''est pas une perte. Vous n''êtes plus un collègue ; vous êtes la personne qui va leur permettre de bien travailler. Si vous faites bien ce travail, vous aurez quelque chose de mieux que l''amitié : la confiance.
 
-**CLAIRE** — Merci David. Pour résumer : la légitimité ne vient pas de la nomination mais de la constance et de l''équité ; les contestations se traitent en entretien, en donnant une place ; le manager traduit dans les deux sens sans choisir de camp ; et les quinze premiers jours servent à écouter chacun.
+**Claire** — Merci David. Pour résumer : la légitimité ne vient pas de la nomination mais de la constance et de l''équité ; les contestations se traitent en entretien, en donnant une place ; le manager traduit dans les deux sens sans choisir de camp ; et les quinze premiers jours servent à écouter chacun.
 
-**DAVID** — Et à régler tout de suite ce qui est inacceptable.
+**David** — Et à régler tout de suite ce qui est inacceptable.
 
-**CLAIRE** — Et à régler tout de suite ce qui est inacceptable. À bientôt dans la suite du module.
-
----
+**Claire** — Et à régler tout de suite ce qui est inacceptable. À bientôt dans la suite du module.
 
 Repères théoriques mobilisés : Linda Hill, *Becoming a Manager* (2003), sur la découverte du rôle par les nouveaux managers ; Mintzberg (1973), rôles d''agent de liaison et de porte-parole ; Kotter (1990), management vs leadership.
 ') end,
@@ -2191,24 +2111,19 @@ Vous pouvez maintenant passer au quiz du module 1.
 
   -- 2.1-video-strategie-objectifs.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 2 — Organiser et structurer le travail de l''équipe »]
+## Module 2 — Organiser et structurer le travail de l''équipe
 
 Bienvenue dans le module 2. Le module 1 vous a situé dans votre rôle. Celui-ci vous donne la méthode pour organiser le travail : objectifs, compétences, répartition des rôles, délégation, priorités, tableau de bord, et prise en compte du handicap.
 
 On commence par la question qui conditionne tout le reste : à quoi sert un objectif ?
 
-[Titre : « Pourquoi un objectif »]
+## Pourquoi un objectif
 
 Imaginez une équipe sans objectif. Chacun fait de son mieux, selon sa propre idée de ce qui compte. Le carrossier soigne la finition, la secrétaire répond vite aux clients, le mécanicien sécurise ses interventions. Tout le monde travaille, et pourtant les délais ne sont pas tenus, parce que personne n''a dit que le délai était la priorité.
 
 Un objectif, c''est ce qui aligne les efforts. Il répond à trois questions : où allons-nous, comment saurons-nous que nous y sommes, et pour quand.
-
-[Schéma : cascade en 4 niveaux — Stratégie de l''entreprise → Objectifs du service → Objectifs de l''équipe → Objectifs individuels]
 
 Les objectifs ne naissent pas dans l''équipe. Ils descendent d''une cascade.
 
@@ -2220,7 +2135,7 @@ Puis les objectifs de l''équipe : ce que vous vous engagez collectivement à fa
 
 Et enfin, les objectifs individuels : la contribution de chacun. Julien : zéro défaut de finition sur le trimestre. Sophie : toutes les demandes clients transmises au chef d''atelier avant midi.
 
-[Titre : « Le rôle du manager dans la cascade »]
+## Le rôle du manager dans la cascade
 
 Votre rôle, c''est de faire la traduction entre le niveau du dessus et celui du dessous. Deux erreurs à éviter.
 
@@ -2230,7 +2145,7 @@ La seconde : fixer des objectifs d''équipe qui ne se rattachent à rien. « Ran
 
 Un bon objectif d''équipe, c''est un objectif dont chacun peut dire : je vois pourquoi on le fait, et je vois ce que j''y fais.
 
-[Titre : « Trois pièges »]
+## Trois pièges
 
 Trois pièges fréquents, que vous verrez dans la leçon suivante avec la méthode SMART.
 
@@ -2240,36 +2155,28 @@ Des objectifs qu''on ne mesure pas. « Améliorer la qualité » n''est pas un o
 
 Des objectifs imposés sans explication. Un objectif accepté vaut dix fois un objectif subi. Cela ne veut pas dire que l''équipe choisit ses objectifs, mais qu''elle comprend d''où ils viennent et qu''elle a pu discuter des moyens.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, Karim va transformer les trois attentes de Michel en objectifs d''équipe pour le trimestre. Vous verrez comment dans les leçons suivantes, et vous ferez le même exercice pour votre équipe dans le carnet de bord.
 
 À tout de suite pour la méthode.
 
-[Fondu, logo]
-
----
-
-Sources : Peter Drucker, *The Practice of Management* (1954) — management par objectifs ; Locke & Latham (1990) — théorie de la fixation d''objectifs.
+## Sources
+Peter Drucker, *The Practice of Management* (1954) — management par objectifs ; Locke & Latham (1990) — théorie de la fixation d''objectifs.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 2 — Organiser et structurer le travail de l''équipe »]
+## Module 2 — Organiser et structurer le travail de l''équipe
 
 Bienvenue dans le module 2. Le module 1 vous a situé dans votre rôle. Celui-ci vous donne la méthode pour organiser le travail : objectifs, compétences, répartition des rôles, délégation, priorités, tableau de bord, et prise en compte du handicap.
 
 On commence par la question qui conditionne tout le reste : à quoi sert un objectif ?
 
-[Titre : « Pourquoi un objectif »]
+## Pourquoi un objectif
 
 Imaginez une équipe sans objectif. Chacun fait de son mieux, selon sa propre idée de ce qui compte. Le carrossier soigne la finition, la secrétaire répond vite aux clients, le mécanicien sécurise ses interventions. Tout le monde travaille, et pourtant les délais ne sont pas tenus, parce que personne n''a dit que le délai était la priorité.
 
 Un objectif, c''est ce qui aligne les efforts. Il répond à trois questions : où allons-nous, comment saurons-nous que nous y sommes, et pour quand.
-
-[Schéma : cascade en 4 niveaux — Stratégie de l''entreprise → Objectifs du service → Objectifs de l''équipe → Objectifs individuels]
 
 Les objectifs ne naissent pas dans l''équipe. Ils descendent d''une cascade.
 
@@ -2281,7 +2188,7 @@ Puis les objectifs de l''équipe : ce que vous vous engagez collectivement à fa
 
 Et enfin, les objectifs individuels : la contribution de chacun. Julien : zéro défaut de finition sur le trimestre. Sophie : toutes les demandes clients transmises au chef d''atelier avant midi.
 
-[Titre : « Le rôle du manager dans la cascade »]
+## Le rôle du manager dans la cascade
 
 Votre rôle, c''est de faire la traduction entre le niveau du dessus et celui du dessous. Deux erreurs à éviter.
 
@@ -2291,7 +2198,7 @@ La seconde : fixer des objectifs d''équipe qui ne se rattachent à rien. « Ran
 
 Un bon objectif d''équipe, c''est un objectif dont chacun peut dire : je vois pourquoi on le fait, et je vois ce que j''y fais.
 
-[Titre : « Trois pièges »]
+## Trois pièges
 
 Trois pièges fréquents, que vous verrez dans la leçon suivante avec la méthode SMART.
 
@@ -2301,17 +2208,14 @@ Des objectifs qu''on ne mesure pas. « Améliorer la qualité » n''est pas un o
 
 Des objectifs imposés sans explication. Un objectif accepté vaut dix fois un objectif subi. Cela ne veut pas dire que l''équipe choisit ses objectifs, mais qu''elle comprend d''où ils viennent et qu''elle a pu discuter des moyens.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, Karim va transformer les trois attentes de Michel en objectifs d''équipe pour le trimestre. Vous verrez comment dans les leçons suivantes, et vous ferez le même exercice pour votre équipe dans le carnet de bord.
 
 À tout de suite pour la méthode.
 
-[Fondu, logo]
-
----
-
-Sources : Peter Drucker, *The Practice of Management* (1954) — management par objectifs ; Locke & Latham (1990) — théorie de la fixation d''objectifs.
+## Sources
+Peter Drucker, *The Practice of Management* (1954) — management par objectifs ; Locke & Latham (1990) — théorie de la fixation d''objectifs.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 3 and l.ordre = 1;
@@ -2784,7 +2688,7 @@ Vous pouvez maintenant passer au quiz du module 2.
   n := n + 1;
 
   -- 2.13-quiz.json
-  update public.lecons l set contenu = '{"questions": [{"id": "m2q01", "enonce": "Selon Locke et Latham, quel type d''objectif produit les meilleurs résultats ?", "options": ["Un objectif vague qui laisse toute liberté (« faites de votre mieux »)", "Un objectif facile, pour ne décourager personne", "Un objectif précis et difficile, accepté par la personne et suivi régulièrement", "Un objectif fixé sans discussion, pour gagner du temps"], "bonnes": [2], "explication": "Précis, difficile mais accepté, avec un retour d''information régulier : ce sont les quatre conditions établies par la recherche sur la fixation d''objectifs."}, {"id": "m2q02", "enonce": "Lequel de ces objectifs est correctement formulé selon la méthode SMART ?", "options": ["Améliorer la qualité des finitions", "Faire plus de contrôles qualité", "D''ici le 31 décembre, aucune reprise pour défaut de finition sur les véhicules de flotte (3 ce trimestre)", "Être le meilleur atelier de la région"], "bonnes": [2], "explication": "Spécifique, mesurable (aucune reprise, contre 3), atteignable, pertinent (lié à l''enjeu client) et daté (31 décembre)."}, {"id": "m2q03", "enonce": "Dans quel ordre fixe-t-on les objectifs d''une équipe ?", "options": ["Les objectifs individuels d''abord, puis on additionne pour obtenir l''objectif collectif", "Les objectifs collectifs d''abord, en réunion, puis les objectifs individuels, en entretien", "Uniquement des objectifs individuels, pour responsabiliser chacun", "Uniquement des objectifs collectifs, pour éviter les comparaisons"], "bonnes": [1], "explication": "Le collectif crée le sens et la solidarité ; l''individuel crée la responsabilité. Commencer par l''individuel donne une somme de contributions, pas une équipe."}, {"id": "m2q04", "enonce": "Dans une matrice de compétences, que signale une compétence détenue par une seule personne au niveau 2 ou 3 ?", "options": ["Que cette personne est indispensable et doit être augmentée", "Un point de fragilité : l''activité s''arrête si elle est absente", "Que la compétence n''est pas importante", "Qu''il faut retirer cette compétence de la matrice"], "bonnes": [1], "explication": "C''est un risque : il appelle un binôme, une formation ou un recrutement. Une organisation ne doit jamais reposer sur une seule personne."}, {"id": "m2q05", "enonce": "Dans une matrice RACI, combien de « A » (approuve / répond du résultat) doit-on trouver sur chaque ligne ?", "options": ["Aucun, c''est facultatif", "Exactement un", "Au moins deux, pour se couvrir", "Autant que de personnes impliquées"], "bonnes": [1], "explication": "Un seul A par ligne. Deux A = un conflit en réserve ; aucun A = personne ne répond du résultat."}, {"id": "m2q06", "enonce": "Parmi ces éléments, lesquels se délèguent ? (plusieurs réponses)", "options": ["Le contrôle technique d''une production", "La formation d''un nouvel arrivant", "L''évaluation et le recadrage des personnes", "La relation avec un fournisseur"], "bonnes": [0, 1, 3], "explication": "L''exécution et l''expertise se délèguent. Le cœur du rôle de manager (objectifs, arbitrages, évaluation, recadrage, sanction, crise) ne se délègue pas."}, {"id": "m2q07", "enonce": "Vous confiez une mission à un collaborateur expert, en lui disant « décide et tiens-moi informé ». À quel niveau de délégation cela correspond-il ?", "options": ["Niveau 1 : exécuter une consigne précise sous contrôle", "Niveau 2 : organiser et faire valider avant la fin", "Niveau 4 : décider seul et rendre compte après", "Niveau 5 : décider sans rendre compte"], "bonnes": [2], "explication": "Le niveau 4 convient à une personne autonome sur la tâche. Rester au niveau 1 ou 2 avec un expert est vécu comme de la défiance."}, {"id": "m2q08", "enonce": "Dans la matrice importance / urgence, quelle case est celle où « se joue le management » et qui disparaît si on ne la planifie pas ?", "options": ["Important et urgent", "Important et pas urgent", "Pas important et urgent", "Pas important et pas urgent"], "bonnes": [1], "explication": "Fixer des objectifs, former, organiser, faire des entretiens : rien n''est urgent, tout est important. Négliger cette case fabrique les urgences de demain."}, {"id": "m2q09", "enonce": "Quelle est la différence entre un indicateur de résultat et un indicateur de moyens ?", "options": ["Le premier est financier, le second ne l''est pas", "Le premier mesure ce qu''on veut obtenir (souvent trop tard pour corriger), le second mesure ce qu''on fait pour y arriver (à temps pour ajuster)", "Le premier est mensuel, le second est annuel", "Il n''y a pas de différence, ce sont deux noms pour la même chose"], "bonnes": [1], "explication": "Un bon tableau de bord combine les deux : le résultat dit si l''on a réussi, les moyens disent si l''on est sur la bonne voie."}, {"id": "m2q10", "enonce": "Le taux d''interventions à l''heure d''une agence grimpe rapidement, mais les intervenantes écourtent les prestations pour y parvenir. De quoi s''agit-il et que faire ?", "options": ["D''une réussite : l''objectif est atteint", "De la loi de Goodhart : l''indicateur est devenu l''objectif ; il faut ajouter un garde-fou (durée réelle des interventions) et cesser d''utiliser le chiffre pour juger les personnes", "D''une fraude à sanctionner individuellement", "D''un problème de logiciel"], "bonnes": [1], "explication": "Quand un indicateur sert à juger, il est optimisé au détriment du résultat réel. Garde-fou, indicateurs collectifs et recherche des causes plutôt que des coupables."}, {"id": "m2q11", "enonce": "Un collaborateur vous informe qu''il a une reconnaissance de travailleur handicapé et une restriction de port de charge. Quelle est la bonne réaction ?", "options": ["Lui demander son diagnostic pour comprendre", "Organiser le travail à partir de la restriction prescrite par le médecin du travail, sans divulguer le motif à l''équipe", "L''écarter des tâches physiques « pour le protéger », sans lui demander son avis", "Informer l''équipe de sa situation médicale pour expliquer l''aménagement"], "bonnes": [1], "explication": "Le médecin du travail prescrit, le manager organise à partir de la restriction. Le diagnostic ne vous regarde pas et ne se divulgue jamais. L''écarter sans son avis serait une discrimination « bienveillante »."}, {"id": "m2q12", "enonce": "Concernant l''aménagement raisonnable du poste d''un travailleur handicapé, quelle affirmation est exacte ?", "options": ["Il n''est obligatoire que dans les entreprises de plus de 250 salariés", "L''employeur doit prendre les mesures appropriées, sauf charge disproportionnée ; un refus non motivé peut constituer une discrimination", "Il est laissé à la libre appréciation du manager", "Il est entièrement financé par le salarié"], "bonnes": [1], "explication": "Code du travail L5213-6 : obligation d''aménagement raisonnable, sous réserve de charge disproportionnée ; l''Agefiph aide à financer. Le refus doit être motivé par écrit."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+  update public.lecons l set contenu = '{"questions": [{"id": "m2q01", "enonce": "Selon Locke et Latham, quel type d''objectif produit les meilleurs résultats ?", "options": ["Un objectif vague qui laisse toute liberté (« faites de votre mieux »)", "Un objectif facile, pour ne décourager personne", "Un objectif précis et difficile, accepté par la personne et suivi régulièrement", "Un objectif fixé sans discussion, pour gagner du temps"], "bonnes": [2], "explication": "Précis, difficile mais accepté, avec un retour d''information régulier : ce sont les quatre conditions établies par la recherche sur la fixation d''objectifs."}, {"id": "m2q02", "enonce": "Lequel de ces objectifs est correctement formulé selon la méthode SMART ?", "options": ["Améliorer la qualité des finitions", "Faire plus de contrôles qualité", "D''ici le 31 décembre, aucune reprise pour défaut de finition sur les véhicules de flotte (3 ce trimestre)", "Être le meilleur atelier de la région"], "bonnes": [2], "explication": "Spécifique, mesurable (aucune reprise, contre 3), atteignable, pertinent (lié à l''enjeu client) et daté (31 décembre)."}, {"id": "m2q03", "enonce": "Dans quel ordre fixe-t-on les objectifs d''une équipe ?", "options": ["Les objectifs individuels d''abord, puis on additionne pour obtenir l''objectif collectif", "Les objectifs collectifs d''abord, en réunion, puis les objectifs individuels, en entretien", "Uniquement des objectifs individuels, pour responsabiliser chacun", "Uniquement des objectifs collectifs, pour éviter les comparaisons"], "bonnes": [1], "explication": "Le collectif crée le sens et la solidarité ; l''individuel crée la responsabilité. Commencer par l''individuel donne une somme de contributions, pas une équipe."}, {"id": "m2q04", "enonce": "Dans une matrice de compétences, que signale une compétence détenue par une seule personne au niveau 2 ou 3 ?", "options": ["Que cette personne est indispensable et doit être augmentée", "Un point de fragilité : l''activité s''arrête si elle est absente", "Que la compétence n''est pas importante", "Qu''il faut retirer cette compétence de la matrice"], "bonnes": [1], "explication": "C''est un risque : il appelle un binôme, une formation ou un recrutement. Une organisation ne doit jamais reposer sur une seule personne."}, {"id": "m2q05", "enonce": "Dans une matrice RACI, combien de « A » (approuve / répond du résultat) doit-on trouver sur chaque ligne ?", "options": ["Aucun, c''est facultatif", "Exactement un", "Au moins deux, pour se couvrir", "Autant que de personnes impliquées"], "bonnes": [1], "explication": "Un seul A par ligne. Deux A = un conflit en réserve ; aucun A = personne ne répond du résultat."}, {"id": "m2q06", "enonce": "Parmi ces éléments, lesquels se délèguent ? (plusieurs réponses)", "options": ["Le contrôle technique d''une production", "La formation d''un nouvel arrivant", "L''évaluation et le recadrage des personnes", "La relation avec un fournisseur"], "bonnes": [0, 1, 3], "explication": "L''exécution et l''expertise se délèguent. Le cœur du rôle de manager (objectifs, arbitrages, évaluation, recadrage, sanction, crise) ne se délègue pas."}, {"id": "m2q07", "enonce": "Vous confiez une mission à un collaborateur expert, en lui disant « décide et tiens-moi informé ». À quel niveau de délégation cela correspond-il ?", "options": ["Niveau 1 : exécuter une consigne précise sous contrôle", "Niveau 2 : organiser et faire valider avant la fin", "Niveau 4 : décider seul et rendre compte après", "Niveau 5 : décider sans rendre compte"], "bonnes": [2], "explication": "Le niveau 4 convient à une personne autonome sur la tâche. Rester au niveau 1 ou 2 avec un expert est vécu comme de la défiance."}, {"id": "m2q08", "enonce": "Dans la matrice importance / urgence, quelle case est celle où « se joue le management » et qui disparaît si on ne la planifie pas ?", "options": ["Important et urgent", "Important et pas urgent", "Pas important et urgent", "Pas important et pas urgent"], "bonnes": [1], "explication": "Fixer des objectifs, former, organiser, faire des entretiens : rien n''est urgent, tout est important. Négliger cette case fabrique les urgences de demain."}, {"id": "m2q09", "enonce": "Quelle est la différence entre un indicateur de résultat et un indicateur de moyens ?", "options": ["Le premier est financier, le second ne l''est pas", "Le premier mesure ce qu''on veut obtenir (souvent trop tard pour corriger), le second mesure ce qu''on fait pour y arriver (à temps pour ajuster)", "Le premier est mensuel, le second est annuel", "Il n''y a pas de différence, ce sont deux noms pour la même chose"], "bonnes": [1], "explication": "Un bon tableau de bord combine les deux : le résultat dit si l''on a réussi, les moyens disent si l''on est sur la bonne voie."}, {"id": "m2q10", "enonce": "Le taux d''interventions à l''heure d''une agence grimpe rapidement, mais les intervenantes écourtent les prestations pour y parvenir. De quoi s''agit-il et que faire ?", "options": ["D''une réussite : l''objectif est atteint", "De la loi de Goodhart : l''indicateur est devenu l''objectif ; il faut ajouter un garde-fou (durée réelle des interventions) et cesser d''utiliser le chiffre pour juger les personnes", "D''une fraude à sanctionner individuellement", "D''un problème de logiciel"], "bonnes": [1], "explication": "Quand un indicateur sert à juger, il est optimisé au détriment du résultat réel. Garde-fou, indicateurs collectifs et recherche des causes plutôt que des coupables."}, {"id": "m2q11", "enonce": "Un collaborateur vous informe qu''il a une reconnaissance de travailleur handicapé et une restriction de port de charge. Quelle est la bonne réaction ?", "options": ["Lui demander son diagnostic pour comprendre", "Organiser le travail à partir de la restriction prescrite par le médecin du travail, sans divulguer le motif à l''équipe", "L''écarter des tâches physiques « pour le protéger », sans lui demander son avis", "Informer l''équipe de sa situation médicale pour expliquer l''aménagement"], "bonnes": [1], "explication": "Le médecin du travail prescrit, le manager organise à partir de la restriction. Le diagnostic ne vous regarde pas et ne se divulgue jamais. L''écarter sans son avis serait une discrimination « bienveillante »."}, {"id": "m2q12", "enonce": "Concernant l''aménagement raisonnable du poste d''un travailleur handicapé, quelle affirmation est exacte ?", "options": ["Il n''est obligatoire que dans les entreprises de plus de 250 salariés", "L''employeur doit prendre les mesures appropriées, sauf charge disproportionnée ; un refus non motivé peut constituer une discrimination", "Il est laissé à la libre appréciation du manager", "Il est entièrement financé par le salarié"], "bonnes": [1], "explication": "Code du travail L5213-6 : obligation d''aménagement raisonnable, sous réserve de charge disproportionnée ; l''Agefiph aide à financer. Le refus doit être motivé par écrit."}, {"id": "m2q13", "enonce": "Comment un objectif individuel se présente-t-il en entretien pour être accepté ?", "options": ["On l''envoie par e-mail pour gagner du temps", "Contexte, proposition, discussion, ajustement, suivi", "On l''annonce en réunion devant l''équipe", "On laisse la personne le fixer seule, sans cadre"], "bonnes": [1], "explication": "Un objectif imposé sans discussion n''est pas accepté ; un objectif discuté et ajusté engage. Le suivi (dates, indicateurs) fait partie de la présentation."}, {"id": "m2q14", "enonce": "Dans la matrice de compétences, que signifie le niveau 3 ?", "options": ["Ne sait pas faire", "Sait faire avec aide", "Sait faire seul au niveau attendu", "Sait faire et peut former ou contrôler les autres"], "bonnes": [3], "explication": "Échelle 0-3 : 0 ne sait pas, 1 avec aide, 2 autonome, 3 peut former ou contrôler. Les niveaux 3 sont les tuteurs et contrôleurs naturels de l''équipe."}, {"id": "m2q15", "enonce": "Dans une matrice RACI, quelle est la différence entre « C » et « I » ?", "options": ["C réalise, I approuve", "C est consulté avant la décision, I est informé après", "C et I sont interchangeables", "C est le chef, I est l''intérimaire"], "bonnes": [1], "explication": "Consulté avant (son avis compte), informé après (il doit savoir). Marc, mécanicien, doit être consulté la veille sur le planning : c''est un C, pas un I."}, {"id": "m2q16", "enonce": "Plusieurs réponses. Qu''est-ce qui ne se délègue pas ?", "options": ["Le recadrage d''un membre de l''équipe", "La commande des pièces", "La responsabilité finale du résultat", "Les décisions qui engagent la sécurité"], "bonnes": [0, 2, 3], "explication": "On délègue des tâches et des décisions, avec un contrat clair ; on ne délègue ni le recadrage, ni la sanction, ni la sécurité, ni la responsabilité finale."}, {"id": "m2q17", "enonce": "Que contient un contrat de délégation ?", "options": ["Uniquement la tâche à faire", "Quoi, jusqu''où (niveau de délégation), avec quels moyens, quel point de contrôle", "Un avenant au contrat de travail", "Le montant de la prime associée"], "bonnes": [1], "explication": "Sans le « jusqu''où » et le point de contrôle, la délégation devient soit un abandon, soit une reprise en main permanente."}, {"id": "m2q18", "enonce": "Dans le podcast sur le tableau de bord, Sandrine a d''abord construit un tableau de 25 colonnes qu''elle a abandonné en trois semaines. Quelle leçon en tire-t-elle ?", "options": ["Il faut un logiciel plus puissant", "Vingt-cinq chiffres, c''est comme zéro chiffre : on part des objectifs et on garde trois à six indicateurs", "Il faut déléguer le tableau de bord au comptable", "Le pilotage au ressenti suffit"], "bonnes": [1], "explication": "Le tableau de bord découle des objectifs : un indicateur de résultat par objectif, des indicateurs de moyens et des garde-fous, pas un inventaire."}, {"id": "m2q19", "enonce": "Karim vise 95 % de délais tenus. Quel indicateur garde-fou doit l''accompagner ?", "options": ["Le chiffre d''affaires du mois", "Le nombre de reprises après restitution (qualité)", "Le nombre de véhicules reçus", "La note de l''atelier sur internet"], "bonnes": [1], "explication": "Un objectif de délai poussé seul dégrade la qualité. Le garde-fou (reprises, réclamations) signale l''effet secondaire avant qu''il ne coûte cher."}, {"id": "m2q20", "enonce": "Une tâche est urgente mais peu importante (une demande de document sans enjeu, à rendre aujourd''hui). Que fait le manager selon la matrice importance / urgence ?", "options": ["Il la traite lui-même en priorité, avant tout le reste", "Il la délègue ou la traite vite, sans y consacrer d''énergie ni d''attention", "Il la reporte au mois prochain", "Il la refuse systématiquement"], "bonnes": [1], "explication": "L''urgent non important se délègue ou s''expédie. Le piège est d''y consacrer le temps qui devait aller à l''important non urgent (organiser, former, anticiper)."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 3 and l.ordre = 13;
   n := n + 1;
 
@@ -3308,18 +3212,15 @@ Dans un service administratif de six personnes, remplacez « contrôle qualité 
 
   -- 2.5-video-deleguer.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Déléguer sans lâcher »]
+## Déléguer sans lâcher
 
 Déléguer, c''est le geste que les nouveaux managers redoutent le plus. Trop tôt, on a l''impression d''abandonner. Trop tard, on s''épuise. Et quand ça se passe mal, on se dit qu''on aurait mieux fait de le faire soi-même.
 
 Pourtant, déléguer n''est pas une option. C''est le seul moyen de dégager du temps pour manager, et c''est le principal levier pour faire progresser les gens. Cette vidéo vous donne une méthode en quatre points.
 
-[Titre : « Ce qui se délègue, ce qui ne se délègue pas »]
+## Ce qui se délègue, ce qui ne se délègue pas
 
 Premier point : savoir quoi déléguer.
 
@@ -3329,11 +3230,9 @@ Ne se délègue pas ce qui fait le cœur du rôle de manager : fixer les objecti
 
 Un test simple : si ça tourne mal, qui devra rendre des comptes ? Si c''est vous quoi qu''il arrive, vous pouvez déléguer l''exécution, mais vous gardez la responsabilité. On délègue le travail et l''autorité nécessaire pour le faire ; on ne délègue jamais la responsabilité finale.
 
-[Titre : « Les niveaux de délégation »]
+## Les niveaux de délégation
 
 Deuxième point : déléguer n''est pas tout ou rien. Il y a des niveaux, et le bon niveau dépend de l''autonomie de la personne sur cette tâche, ce que vous avez vu avec le leadership situationnel.
-
-[Schéma : échelle à 5 niveaux]
 
 Niveau 1 : « Fais ceci, comme ceci, et montre-moi. » La personne exécute une consigne précise et vous vérifiez. C''est pour un débutant sur une tâche nouvelle.
 
@@ -3347,7 +3246,7 @@ Niveau 5 : « C''est à toi. » La personne décide et ne rend compte que si un 
 
 L''erreur classique est de rester bloqué au niveau 1 ou 2 avec des gens qui sont prêts pour le niveau 4. Ils vivent ça comme de la défiance. L''erreur inverse, c''est de sauter au niveau 5 pour se débarrasser d''un sujet. Ça s''appelle abandonner, pas déléguer.
 
-[Titre : « Le contrat de délégation »]
+## Le contrat de délégation
 
 Troisième point : une délégation se contractualise. Pas par écrit forcément, mais explicitement. Cinq questions à régler au moment où vous confiez la mission.
 
@@ -3363,7 +3262,7 @@ Quand : le point de contrôle. « On fait le point chaque vendredi pendant six s
 
 Et une sixième question, que le manager doit se poser à lui-même : est-ce que j''accepte que ce soit fait autrement que je l''aurais fait ? Si la réponse est non, ne déléguez pas, vous allez reprendre le travail par-dessus l''épaule de la personne et la démotiver.
 
-[Titre : « Suivre sans surveiller »]
+## Suivre sans surveiller
 
 Quatrième point : le suivi. Déléguer, ce n''est pas disparaître. C''est changer de mode de contrôle : de la vérification du travail au point sur le résultat.
 
@@ -3371,7 +3270,7 @@ Concrètement : des points fixés d''avance, pas des passages inopinés. Des que
 
 Et une règle : quand quelque chose ne va pas, on traite le problème avec la personne, on ne reprend pas la mission. Reprendre une délégation à la première difficulté, c''est signaler à toute l''équipe que déléguer, chez vous, ne veut rien dire.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, Karim délègue le contrôle qualité final à Thierry. Le quoi : aucune restitution sans contrôle. Le pourquoi : les reprises et le client Ferrand. Le jusqu''où : Thierry peut bloquer un véhicule ; pour toute reprise de plus de deux heures, il prévient Karim. Les moyens : une demi-heure par jour dégagée de la production, une fiche de contrôle qu''ils rédigent ensemble, et l''annonce du rôle à toute l''équipe par Michel. Le suivi : cinq minutes chaque vendredi.
 
@@ -3379,30 +3278,22 @@ Niveau de délégation : 4, « décide et tiens-moi informé », parce que Thier
 
 Résultat, trois semaines plus tard : zéro reprise, et Thierry qui dit à Julien « viens voir, je te montre ce que je regarde ». La délégation a fait de lui un allié.
 
-[Plan rapproché]
-
 Déléguer, c''est un investissement. Les premières semaines, ça prend plus de temps que de faire soi-même. C''est normal. Ce temps, vous le récupérez au centuple, en temps de management et en compétence dans l''équipe.
 
 À tout de suite pour la leçon sur les priorités.
 
-[Fondu, logo]
-
----
-
-Sources : Hersey & Blanchard (leadership situationnel) ; Peter Drucker, *The Effective Executive* (1967) ; Linda Hill, *Becoming a Manager* (2003).
+## Sources
+Hersey & Blanchard (leadership situationnel) ; Peter Drucker, *The Effective Executive* (1967) ; Linda Hill, *Becoming a Manager* (2003).
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Déléguer sans lâcher »]
+## Déléguer sans lâcher
 
 Déléguer, c''est le geste que les nouveaux managers redoutent le plus. Trop tôt, on a l''impression d''abandonner. Trop tard, on s''épuise. Et quand ça se passe mal, on se dit qu''on aurait mieux fait de le faire soi-même.
 
 Pourtant, déléguer n''est pas une option. C''est le seul moyen de dégager du temps pour manager, et c''est le principal levier pour faire progresser les gens. Cette vidéo vous donne une méthode en quatre points.
 
-[Titre : « Ce qui se délègue, ce qui ne se délègue pas »]
+## Ce qui se délègue, ce qui ne se délègue pas
 
 Premier point : savoir quoi déléguer.
 
@@ -3412,11 +3303,9 @@ Ne se délègue pas ce qui fait le cœur du rôle de manager : fixer les objecti
 
 Un test simple : si ça tourne mal, qui devra rendre des comptes ? Si c''est vous quoi qu''il arrive, vous pouvez déléguer l''exécution, mais vous gardez la responsabilité. On délègue le travail et l''autorité nécessaire pour le faire ; on ne délègue jamais la responsabilité finale.
 
-[Titre : « Les niveaux de délégation »]
+## Les niveaux de délégation
 
 Deuxième point : déléguer n''est pas tout ou rien. Il y a des niveaux, et le bon niveau dépend de l''autonomie de la personne sur cette tâche, ce que vous avez vu avec le leadership situationnel.
-
-[Schéma : échelle à 5 niveaux]
 
 Niveau 1 : « Fais ceci, comme ceci, et montre-moi. » La personne exécute une consigne précise et vous vérifiez. C''est pour un débutant sur une tâche nouvelle.
 
@@ -3430,7 +3319,7 @@ Niveau 5 : « C''est à toi. » La personne décide et ne rend compte que si un 
 
 L''erreur classique est de rester bloqué au niveau 1 ou 2 avec des gens qui sont prêts pour le niveau 4. Ils vivent ça comme de la défiance. L''erreur inverse, c''est de sauter au niveau 5 pour se débarrasser d''un sujet. Ça s''appelle abandonner, pas déléguer.
 
-[Titre : « Le contrat de délégation »]
+## Le contrat de délégation
 
 Troisième point : une délégation se contractualise. Pas par écrit forcément, mais explicitement. Cinq questions à régler au moment où vous confiez la mission.
 
@@ -3446,7 +3335,7 @@ Quand : le point de contrôle. « On fait le point chaque vendredi pendant six s
 
 Et une sixième question, que le manager doit se poser à lui-même : est-ce que j''accepte que ce soit fait autrement que je l''aurais fait ? Si la réponse est non, ne déléguez pas, vous allez reprendre le travail par-dessus l''épaule de la personne et la démotiver.
 
-[Titre : « Suivre sans surveiller »]
+## Suivre sans surveiller
 
 Quatrième point : le suivi. Déléguer, ce n''est pas disparaître. C''est changer de mode de contrôle : de la vérification du travail au point sur le résultat.
 
@@ -3454,7 +3343,7 @@ Concrètement : des points fixés d''avance, pas des passages inopinés. Des que
 
 Et une règle : quand quelque chose ne va pas, on traite le problème avec la personne, on ne reprend pas la mission. Reprendre une délégation à la première difficulté, c''est signaler à toute l''équipe que déléguer, chez vous, ne veut rien dire.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, Karim délègue le contrôle qualité final à Thierry. Le quoi : aucune restitution sans contrôle. Le pourquoi : les reprises et le client Ferrand. Le jusqu''où : Thierry peut bloquer un véhicule ; pour toute reprise de plus de deux heures, il prévient Karim. Les moyens : une demi-heure par jour dégagée de la production, une fiche de contrôle qu''ils rédigent ensemble, et l''annonce du rôle à toute l''équipe par Michel. Le suivi : cinq minutes chaque vendredi.
 
@@ -3462,17 +3351,12 @@ Niveau de délégation : 4, « décide et tiens-moi informé », parce que Thier
 
 Résultat, trois semaines plus tard : zéro reprise, et Thierry qui dit à Julien « viens voir, je te montre ce que je regarde ». La délégation a fait de lui un allié.
 
-[Plan rapproché]
-
 Déléguer, c''est un investissement. Les premières semaines, ça prend plus de temps que de faire soi-même. C''est normal. Ce temps, vous le récupérez au centuple, en temps de management et en compétence dans l''équipe.
 
 À tout de suite pour la leçon sur les priorités.
 
-[Fondu, logo]
-
----
-
-Sources : Hersey & Blanchard (leadership situationnel) ; Peter Drucker, *The Effective Executive* (1967) ; Linda Hill, *Becoming a Manager* (2003).
+## Sources
+Hersey & Blanchard (leadership situationnel) ; Peter Drucker, *The Effective Executive* (1967) ; Linda Hill, *Becoming a Manager* (2003).
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 3 and l.ordre = 5;
@@ -3952,171 +3836,167 @@ Fatou a une RQTH pour une pathologie lombaire et une restriction de port de char
 
   -- 2.9-podcast-tableau-de-bord.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **SANDRINE** = responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Sandrine, responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Dans ce podcast, on parle pilotage, et surtout de ce qui se passe quand on n''en a pas. Sandrine, vous dirigez une agence de services à domicile depuis trois ans. Avant, vous étiez intervenante. Comment pilotiez-vous, au début ?
+**Claire** — Bonjour à tous. Dans ce podcast, on parle pilotage, et surtout de ce qui se passe quand on n''en a pas. Sandrine, vous dirigez une agence de services à domicile depuis trois ans. Avant, vous étiez intervenante. Comment pilotiez-vous, au début ?
 
-**SANDRINE** — Au ressenti, honnêtement. Je connaissais les bénéficiaires, je connaissais les intervenantes, je savais « à peu près » où on en était. Quand ma directrice régionale me demandait un chiffre, je le cherchais pendant deux heures dans le logiciel et je lui envoyais un truc dont je n''étais pas sûre.
+**Sandrine** — Au ressenti, honnêtement. Je connaissais les bénéficiaires, je connaissais les intervenantes, je savais « à peu près » où on en était. Quand ma directrice régionale me demandait un chiffre, je le cherchais pendant deux heures dans le logiciel et je lui envoyais un truc dont je n''étais pas sûre.
 
-**CLAIRE** — Et à quel moment ça a posé problème ?
+**Claire** — Et à quel moment ça a posé problème ?
 
-**SANDRINE** — Le jour où on a perdu un gros contrat avec une mutuelle. Ils nous ont dit : « Vos interventions sont en retard une fois sur cinq. » Et moi, je suis tombée des nues. J''avais l''impression que ça allait. En fait, je voyais les retards qu''on me signalait, pas ceux qu''on ne me signalait pas.
+**Sandrine** — Le jour où on a perdu un gros contrat avec une mutuelle. Ils nous ont dit : « Vos interventions sont en retard une fois sur cinq. » Et moi, je suis tombée des nues. J''avais l''impression que ça allait. En fait, je voyais les retards qu''on me signalait, pas ceux qu''on ne me signalait pas.
 
-**CLAIRE** — C''est exactement ce qu''on appelle piloter au rétroviseur. Vous voyez le problème quand il est déjà arrivé.
+**Claire** — C''est exactement ce qu''on appelle piloter au rétroviseur. Vous voyez le problème quand il est déjà arrivé.
 
-**SANDRINE** — Pire que ça : je le voyais quand quelqu''un d''autre me le montrait. Ma directrice m''a dit une phrase que je n''ai pas oubliée : « Si tu ne mesures pas, tu ne sais pas. Et si tu ne sais pas, tu ne manages pas, tu espères. »
+**Sandrine** — Pire que ça : je le voyais quand quelqu''un d''autre me le montrait. Ma directrice m''a dit une phrase que je n''ai pas oubliée : « Si tu ne mesures pas, tu ne sais pas. Et si tu ne sais pas, tu ne manages pas, tu espères. »
 
-**CLAIRE** — Qu''est-ce que vous avez fait ?
+**Claire** — Qu''est-ce que vous avez fait ?
 
-**SANDRINE** — La première chose, c''est que j''ai voulu tout mesurer. J''ai sorti un tableau Excel avec vingt-cinq colonnes. Taux de retard, heures facturées, heures non facturées, absences, kilomètres, satisfaction, réclamations, taux de remplacement… Et j''ai tenu ça trois semaines.
+**Sandrine** — La première chose, c''est que j''ai voulu tout mesurer. J''ai sorti un tableau Excel avec vingt-cinq colonnes. Taux de retard, heures facturées, heures non facturées, absences, kilomètres, satisfaction, réclamations, taux de remplacement… Et j''ai tenu ça trois semaines.
 
-**CLAIRE** — Pourquoi trois semaines ?
+**Claire** — Pourquoi trois semaines ?
 
-**SANDRINE** — Parce que ça me prenait deux heures chaque lundi, que personne ne le regardait, et que moi-même je ne savais plus ce qui était important dedans. Vingt-cinq chiffres, c''est comme zéro chiffre.
+**Sandrine** — Parce que ça me prenait deux heures chaque lundi, que personne ne le regardait, et que moi-même je ne savais plus ce qui était important dedans. Vingt-cinq chiffres, c''est comme zéro chiffre.
 
-**CLAIRE** — Donc vous êtes passée de rien à trop, et ensuite ?
+**Claire** — Donc vous êtes passée de rien à trop, et ensuite ?
 
-**SANDRINE** — Ensuite j''ai fait ce que j''aurais dû faire au départ : je suis partie de mes objectifs. Ma directrice attendait trois choses : les interventions à l''heure, les plannings remplis, et pas de départ d''intervenante. Trois objectifs, donc trois indicateurs de résultat. Le taux d''interventions à l''heure, le taux de remplissage des plannings, et le turnover.
+**Sandrine** — Ensuite j''ai fait ce que j''aurais dû faire au départ : je suis partie de mes objectifs. Ma directrice attendait trois choses : les interventions à l''heure, les plannings remplis, et pas de départ d''intervenante. Trois objectifs, donc trois indicateurs de résultat. Le taux d''interventions à l''heure, le taux de remplissage des plannings, et le turnover.
 
-**CLAIRE** — Et vous avez ajouté des indicateurs de moyens ?
+**Claire** — Et vous avez ajouté des indicateurs de moyens ?
 
-**SANDRINE** — Oui, mais ça, je l''ai compris plus tard. Au début, je n''avais que les trois résultats, et je les regardais à la fin du mois. C''était mieux, mais c''était encore du rétroviseur. Le déclic, c''est quand j''ai cherché pourquoi les interventions étaient en retard. En fait, c''était presque toujours la même cause : les plannings de la semaine étaient envoyés aux intervenantes le lundi matin, elles découvraient leurs trajets au dernier moment, et le premier retard de la journée se propageait sur toute la journée.
+**Sandrine** — Oui, mais ça, je l''ai compris plus tard. Au début, je n''avais que les trois résultats, et je les regardais à la fin du mois. C''était mieux, mais c''était encore du rétroviseur. Le déclic, c''est quand j''ai cherché pourquoi les interventions étaient en retard. En fait, c''était presque toujours la même cause : les plannings de la semaine étaient envoyés aux intervenantes le lundi matin, elles découvraient leurs trajets au dernier moment, et le premier retard de la journée se propageait sur toute la journée.
 
-**CLAIRE** — Donc la cause était en amont.
+**Claire** — Donc la cause était en amont.
 
-**SANDRINE** — La cause, c''était le vendredi, pas le lundi. J''ai ajouté un indicateur : le pourcentage de plannings envoyés le jeudi soir. Ça, c''est un indicateur de moyens. Et là, ça devient intéressant, parce que je peux agir dessus chaque semaine. Si jeudi soir j''ai 60 % des plannings envoyés, je sais que lundi il y aura des retards, et je peux encore faire quelque chose vendredi.
+**Sandrine** — La cause, c''était le vendredi, pas le lundi. J''ai ajouté un indicateur : le pourcentage de plannings envoyés le jeudi soir. Ça, c''est un indicateur de moyens. Et là, ça devient intéressant, parce que je peux agir dessus chaque semaine. Si jeudi soir j''ai 60 % des plannings envoyés, je sais que lundi il y aura des retards, et je peux encore faire quelque chose vendredi.
 
-**CLAIRE** — Combien d''indicateurs, au final ?
+**Claire** — Combien d''indicateurs, au final ?
 
-**SANDRINE** — Six. Trois de résultat, trois de moyens. Plannings envoyés le jeudi, remplacements trouvés en moins de 24 heures, et entretiens individuels réalisés dans le trimestre, parce que le turnover, ça se prévient en parlant aux gens avant qu''elles partent.
+**Sandrine** — Six. Trois de résultat, trois de moyens. Plannings envoyés le jeudi, remplacements trouvés en moins de 24 heures, et entretiens individuels réalisés dans le trimestre, parce que le turnover, ça se prévient en parlant aux gens avant qu''elles partent.
 
-**CLAIRE** — Vous les regardez comment, ces six chiffres ?
+**Claire** — Vous les regardez comment, ces six chiffres ?
 
-**SANDRINE** — Chaque lundi, en réunion de coordination, dix minutes. C''est le premier point de l''ordre du jour. Le tableau est affiché dans le bureau, avec les six lignes, la valeur de la semaine, la cible, et une couleur. Vert, orange, rouge. On ne commente pas le vert. On regarde l''orange et le rouge, on cherche la cause, on décide une action, une seule, pour la semaine.
+**Sandrine** — Chaque lundi, en réunion de coordination, dix minutes. C''est le premier point de l''ordre du jour. Le tableau est affiché dans le bureau, avec les six lignes, la valeur de la semaine, la cible, et une couleur. Vert, orange, rouge. On ne commente pas le vert. On regarde l''orange et le rouge, on cherche la cause, on décide une action, une seule, pour la semaine.
 
-**CLAIRE** — Une seule ?
+**Claire** — Une seule ?
 
-**SANDRINE** — Une seule. Au début, j''en décidais cinq, il ne s''en faisait aucune. Une action, tenue, ça change les chiffres de la semaine suivante. Et ça, l''équipe le voit. C''est ça qui a changé le rapport aux chiffres : au début, elles vivaient le tableau comme de la surveillance. Quand elles ont vu que l''orange devenait vert parce qu''on avait changé quelque chose ensemble, c''est devenu leur tableau.
+**Sandrine** — Une seule. Au début, j''en décidais cinq, il ne s''en faisait aucune. Une action, tenue, ça change les chiffres de la semaine suivante. Et ça, l''équipe le voit. C''est ça qui a changé le rapport aux chiffres : au début, elles vivaient le tableau comme de la surveillance. Quand elles ont vu que l''orange devenait vert parce qu''on avait changé quelque chose ensemble, c''est devenu leur tableau.
 
-**CLAIRE** — Il y a eu des effets pervers ? On parle souvent de l''indicateur qui devient l''objectif.
+**Claire** — Il y a eu des effets pervers ? On parle souvent de l''indicateur qui devient l''objectif.
 
-**SANDRINE** — Oui, un beau. Le taux d''interventions à l''heure a grimpé très vite. Trop vite. Et j''ai découvert que les intervenantes écourtaient la fin de certaines interventions pour arriver à l''heure à la suivante. Le chiffre était bon, le service était moins bon.
+**Sandrine** — Oui, un beau. Le taux d''interventions à l''heure a grimpé très vite. Trop vite. Et j''ai découvert que les intervenantes écourtaient la fin de certaines interventions pour arriver à l''heure à la suivante. Le chiffre était bon, le service était moins bon.
 
-**CLAIRE** — Et vous avez fait quoi ?
+**Claire** — Et vous avez fait quoi ?
 
-**SANDRINE** — J''ai ajouté un garde-fou : la durée réelle des interventions par rapport à la durée prévue. Si on est à l''heure mais qu''on fait quarante minutes au lieu d''une heure, c''est rouge. Et surtout, j''ai arrêté de parler du taux d''à-l''heure comme d''une performance individuelle. C''est un chiffre de l''agence. On cherche les causes ensemble, on ne cherche pas les coupables.
+**Sandrine** — J''ai ajouté un garde-fou : la durée réelle des interventions par rapport à la durée prévue. Si on est à l''heure mais qu''on fait quarante minutes au lieu d''une heure, c''est rouge. Et surtout, j''ai arrêté de parler du taux d''à-l''heure comme d''une performance individuelle. C''est un chiffre de l''agence. On cherche les causes ensemble, on ne cherche pas les coupables.
 
-**CLAIRE** — Ça, c''est un point important pour nos auditeurs : le tableau de bord sert à comprendre, pas à juger.
+**Claire** — Ça, c''est un point important pour nos auditeurs : le tableau de bord sert à comprendre, pas à juger.
 
-**SANDRINE** — Dès que les gens sentent que le chiffre sert à les juger, ils le manipulent. Pas par malhonnêteté : par instinct de protection. Si vous voulez des chiffres vrais, il faut qu''ils ne coûtent rien à dire.
+**Sandrine** — Dès que les gens sentent que le chiffre sert à les juger, ils le manipulent. Pas par malhonnêteté : par instinct de protection. Si vous voulez des chiffres vrais, il faut qu''ils ne coûtent rien à dire.
 
-**CLAIRE** — Et vis-à-vis de votre directrice, ça a changé quoi ?
+**Claire** — Et vis-à-vis de votre directrice, ça a changé quoi ?
 
-**SANDRINE** — Tout. Avant, elle m''appelait pour me demander des chiffres, et j''étais sur la défensive. Maintenant, elle reçoit mon tableau le lundi midi, avec trois lignes de commentaire : ce qui va, ce qui ne va pas, ce que je fais. Elle ne m''appelle plus pour savoir, elle m''appelle pour discuter. Et quand j''ai besoin de quelque chose, une intervenante en plus, un logiciel, j''ai un chiffre pour le justifier.
+**Sandrine** — Tout. Avant, elle m''appelait pour me demander des chiffres, et j''étais sur la défensive. Maintenant, elle reçoit mon tableau le lundi midi, avec trois lignes de commentaire : ce qui va, ce qui ne va pas, ce que je fais. Elle ne m''appelle plus pour savoir, elle m''appelle pour discuter. Et quand j''ai besoin de quelque chose, une intervenante en plus, un logiciel, j''ai un chiffre pour le justifier.
 
-**CLAIRE** — Si vous deviez donner trois conseils à quelqu''un qui construit son premier tableau de bord ?
+**Claire** — Si vous deviez donner trois conseils à quelqu''un qui construit son premier tableau de bord ?
 
-**SANDRINE** — Un : partez de vos objectifs, pas de ce que le logiciel sait sortir. Deux : pas plus de six ou sept indicateurs, et pour chacun, une définition écrite, sinon vous passerez vos réunions à discuter du chiffre au lieu de l''action. Trois : regardez-le chaque semaine avec l''équipe, et décidez une action. Un tableau qu''on regarde seul dans son bureau, c''est un journal intime.
+**Sandrine** — Un : partez de vos objectifs, pas de ce que le logiciel sait sortir. Deux : pas plus de six ou sept indicateurs, et pour chacun, une définition écrite, sinon vous passerez vos réunions à discuter du chiffre au lieu de l''action. Trois : regardez-le chaque semaine avec l''équipe, et décidez une action. Un tableau qu''on regarde seul dans son bureau, c''est un journal intime.
 
-**CLAIRE** — Et le contrat avec la mutuelle ?
+**Claire** — Et le contrat avec la mutuelle ?
 
-**SANDRINE** — On l''a récupéré l''année suivante. Avec le tableau de bord dans le dossier de candidature.
+**Sandrine** — On l''a récupéré l''année suivante. Avec le tableau de bord dans le dossier de candidature.
 
-**CLAIRE** — Merci Sandrine. Pour résumer : sans mesure, on espère ; trop de mesure, on ne voit plus rien ; six indicateurs issus des objectifs, définis, affichés, discutés chaque semaine avec une action décidée, et un garde-fou pour chaque indicateur de résultat.
+**Claire** — Merci Sandrine. Pour résumer : sans mesure, on espère ; trop de mesure, on ne voit plus rien ; six indicateurs issus des objectifs, définis, affichés, discutés chaque semaine avec une action décidée, et un garde-fou pour chaque indicateur de résultat.
 
-**SANDRINE** — Et des chiffres qui ne servent jamais à punir.
+**Sandrine** — Et des chiffres qui ne servent jamais à punir.
 
-**CLAIRE** — Et des chiffres qui ne servent jamais à punir. À bientôt.
+**Claire** — Et des chiffres qui ne servent jamais à punir. À bientôt.
 
----
-
-Repères mobilisés : indicateurs de résultat / de moyens (Kaplan & Norton, 1996) ; loi de Goodhart ; rituel hebdomadaire de pilotage.
+## Sources
+indicateurs de résultat / de moyens (Kaplan & Norton, 1996) ; loi de Goodhart ; rituel hebdomadaire de pilotage.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **SANDRINE** = responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Sandrine, responsable d''une agence de services à la personne (14 salariés), promue responsable après six ans comme intervenante (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Dans ce podcast, on parle pilotage, et surtout de ce qui se passe quand on n''en a pas. Sandrine, vous dirigez une agence de services à domicile depuis trois ans. Avant, vous étiez intervenante. Comment pilotiez-vous, au début ?
+**Claire** — Bonjour à tous. Dans ce podcast, on parle pilotage, et surtout de ce qui se passe quand on n''en a pas. Sandrine, vous dirigez une agence de services à domicile depuis trois ans. Avant, vous étiez intervenante. Comment pilotiez-vous, au début ?
 
-**SANDRINE** — Au ressenti, honnêtement. Je connaissais les bénéficiaires, je connaissais les intervenantes, je savais « à peu près » où on en était. Quand ma directrice régionale me demandait un chiffre, je le cherchais pendant deux heures dans le logiciel et je lui envoyais un truc dont je n''étais pas sûre.
+**Sandrine** — Au ressenti, honnêtement. Je connaissais les bénéficiaires, je connaissais les intervenantes, je savais « à peu près » où on en était. Quand ma directrice régionale me demandait un chiffre, je le cherchais pendant deux heures dans le logiciel et je lui envoyais un truc dont je n''étais pas sûre.
 
-**CLAIRE** — Et à quel moment ça a posé problème ?
+**Claire** — Et à quel moment ça a posé problème ?
 
-**SANDRINE** — Le jour où on a perdu un gros contrat avec une mutuelle. Ils nous ont dit : « Vos interventions sont en retard une fois sur cinq. » Et moi, je suis tombée des nues. J''avais l''impression que ça allait. En fait, je voyais les retards qu''on me signalait, pas ceux qu''on ne me signalait pas.
+**Sandrine** — Le jour où on a perdu un gros contrat avec une mutuelle. Ils nous ont dit : « Vos interventions sont en retard une fois sur cinq. » Et moi, je suis tombée des nues. J''avais l''impression que ça allait. En fait, je voyais les retards qu''on me signalait, pas ceux qu''on ne me signalait pas.
 
-**CLAIRE** — C''est exactement ce qu''on appelle piloter au rétroviseur. Vous voyez le problème quand il est déjà arrivé.
+**Claire** — C''est exactement ce qu''on appelle piloter au rétroviseur. Vous voyez le problème quand il est déjà arrivé.
 
-**SANDRINE** — Pire que ça : je le voyais quand quelqu''un d''autre me le montrait. Ma directrice m''a dit une phrase que je n''ai pas oubliée : « Si tu ne mesures pas, tu ne sais pas. Et si tu ne sais pas, tu ne manages pas, tu espères. »
+**Sandrine** — Pire que ça : je le voyais quand quelqu''un d''autre me le montrait. Ma directrice m''a dit une phrase que je n''ai pas oubliée : « Si tu ne mesures pas, tu ne sais pas. Et si tu ne sais pas, tu ne manages pas, tu espères. »
 
-**CLAIRE** — Qu''est-ce que vous avez fait ?
+**Claire** — Qu''est-ce que vous avez fait ?
 
-**SANDRINE** — La première chose, c''est que j''ai voulu tout mesurer. J''ai sorti un tableau Excel avec vingt-cinq colonnes. Taux de retard, heures facturées, heures non facturées, absences, kilomètres, satisfaction, réclamations, taux de remplacement… Et j''ai tenu ça trois semaines.
+**Sandrine** — La première chose, c''est que j''ai voulu tout mesurer. J''ai sorti un tableau Excel avec vingt-cinq colonnes. Taux de retard, heures facturées, heures non facturées, absences, kilomètres, satisfaction, réclamations, taux de remplacement… Et j''ai tenu ça trois semaines.
 
-**CLAIRE** — Pourquoi trois semaines ?
+**Claire** — Pourquoi trois semaines ?
 
-**SANDRINE** — Parce que ça me prenait deux heures chaque lundi, que personne ne le regardait, et que moi-même je ne savais plus ce qui était important dedans. Vingt-cinq chiffres, c''est comme zéro chiffre.
+**Sandrine** — Parce que ça me prenait deux heures chaque lundi, que personne ne le regardait, et que moi-même je ne savais plus ce qui était important dedans. Vingt-cinq chiffres, c''est comme zéro chiffre.
 
-**CLAIRE** — Donc vous êtes passée de rien à trop, et ensuite ?
+**Claire** — Donc vous êtes passée de rien à trop, et ensuite ?
 
-**SANDRINE** — Ensuite j''ai fait ce que j''aurais dû faire au départ : je suis partie de mes objectifs. Ma directrice attendait trois choses : les interventions à l''heure, les plannings remplis, et pas de départ d''intervenante. Trois objectifs, donc trois indicateurs de résultat. Le taux d''interventions à l''heure, le taux de remplissage des plannings, et le turnover.
+**Sandrine** — Ensuite j''ai fait ce que j''aurais dû faire au départ : je suis partie de mes objectifs. Ma directrice attendait trois choses : les interventions à l''heure, les plannings remplis, et pas de départ d''intervenante. Trois objectifs, donc trois indicateurs de résultat. Le taux d''interventions à l''heure, le taux de remplissage des plannings, et le turnover.
 
-**CLAIRE** — Et vous avez ajouté des indicateurs de moyens ?
+**Claire** — Et vous avez ajouté des indicateurs de moyens ?
 
-**SANDRINE** — Oui, mais ça, je l''ai compris plus tard. Au début, je n''avais que les trois résultats, et je les regardais à la fin du mois. C''était mieux, mais c''était encore du rétroviseur. Le déclic, c''est quand j''ai cherché pourquoi les interventions étaient en retard. En fait, c''était presque toujours la même cause : les plannings de la semaine étaient envoyés aux intervenantes le lundi matin, elles découvraient leurs trajets au dernier moment, et le premier retard de la journée se propageait sur toute la journée.
+**Sandrine** — Oui, mais ça, je l''ai compris plus tard. Au début, je n''avais que les trois résultats, et je les regardais à la fin du mois. C''était mieux, mais c''était encore du rétroviseur. Le déclic, c''est quand j''ai cherché pourquoi les interventions étaient en retard. En fait, c''était presque toujours la même cause : les plannings de la semaine étaient envoyés aux intervenantes le lundi matin, elles découvraient leurs trajets au dernier moment, et le premier retard de la journée se propageait sur toute la journée.
 
-**CLAIRE** — Donc la cause était en amont.
+**Claire** — Donc la cause était en amont.
 
-**SANDRINE** — La cause, c''était le vendredi, pas le lundi. J''ai ajouté un indicateur : le pourcentage de plannings envoyés le jeudi soir. Ça, c''est un indicateur de moyens. Et là, ça devient intéressant, parce que je peux agir dessus chaque semaine. Si jeudi soir j''ai 60 % des plannings envoyés, je sais que lundi il y aura des retards, et je peux encore faire quelque chose vendredi.
+**Sandrine** — La cause, c''était le vendredi, pas le lundi. J''ai ajouté un indicateur : le pourcentage de plannings envoyés le jeudi soir. Ça, c''est un indicateur de moyens. Et là, ça devient intéressant, parce que je peux agir dessus chaque semaine. Si jeudi soir j''ai 60 % des plannings envoyés, je sais que lundi il y aura des retards, et je peux encore faire quelque chose vendredi.
 
-**CLAIRE** — Combien d''indicateurs, au final ?
+**Claire** — Combien d''indicateurs, au final ?
 
-**SANDRINE** — Six. Trois de résultat, trois de moyens. Plannings envoyés le jeudi, remplacements trouvés en moins de 24 heures, et entretiens individuels réalisés dans le trimestre, parce que le turnover, ça se prévient en parlant aux gens avant qu''elles partent.
+**Sandrine** — Six. Trois de résultat, trois de moyens. Plannings envoyés le jeudi, remplacements trouvés en moins de 24 heures, et entretiens individuels réalisés dans le trimestre, parce que le turnover, ça se prévient en parlant aux gens avant qu''elles partent.
 
-**CLAIRE** — Vous les regardez comment, ces six chiffres ?
+**Claire** — Vous les regardez comment, ces six chiffres ?
 
-**SANDRINE** — Chaque lundi, en réunion de coordination, dix minutes. C''est le premier point de l''ordre du jour. Le tableau est affiché dans le bureau, avec les six lignes, la valeur de la semaine, la cible, et une couleur. Vert, orange, rouge. On ne commente pas le vert. On regarde l''orange et le rouge, on cherche la cause, on décide une action, une seule, pour la semaine.
+**Sandrine** — Chaque lundi, en réunion de coordination, dix minutes. C''est le premier point de l''ordre du jour. Le tableau est affiché dans le bureau, avec les six lignes, la valeur de la semaine, la cible, et une couleur. Vert, orange, rouge. On ne commente pas le vert. On regarde l''orange et le rouge, on cherche la cause, on décide une action, une seule, pour la semaine.
 
-**CLAIRE** — Une seule ?
+**Claire** — Une seule ?
 
-**SANDRINE** — Une seule. Au début, j''en décidais cinq, il ne s''en faisait aucune. Une action, tenue, ça change les chiffres de la semaine suivante. Et ça, l''équipe le voit. C''est ça qui a changé le rapport aux chiffres : au début, elles vivaient le tableau comme de la surveillance. Quand elles ont vu que l''orange devenait vert parce qu''on avait changé quelque chose ensemble, c''est devenu leur tableau.
+**Sandrine** — Une seule. Au début, j''en décidais cinq, il ne s''en faisait aucune. Une action, tenue, ça change les chiffres de la semaine suivante. Et ça, l''équipe le voit. C''est ça qui a changé le rapport aux chiffres : au début, elles vivaient le tableau comme de la surveillance. Quand elles ont vu que l''orange devenait vert parce qu''on avait changé quelque chose ensemble, c''est devenu leur tableau.
 
-**CLAIRE** — Il y a eu des effets pervers ? On parle souvent de l''indicateur qui devient l''objectif.
+**Claire** — Il y a eu des effets pervers ? On parle souvent de l''indicateur qui devient l''objectif.
 
-**SANDRINE** — Oui, un beau. Le taux d''interventions à l''heure a grimpé très vite. Trop vite. Et j''ai découvert que les intervenantes écourtaient la fin de certaines interventions pour arriver à l''heure à la suivante. Le chiffre était bon, le service était moins bon.
+**Sandrine** — Oui, un beau. Le taux d''interventions à l''heure a grimpé très vite. Trop vite. Et j''ai découvert que les intervenantes écourtaient la fin de certaines interventions pour arriver à l''heure à la suivante. Le chiffre était bon, le service était moins bon.
 
-**CLAIRE** — Et vous avez fait quoi ?
+**Claire** — Et vous avez fait quoi ?
 
-**SANDRINE** — J''ai ajouté un garde-fou : la durée réelle des interventions par rapport à la durée prévue. Si on est à l''heure mais qu''on fait quarante minutes au lieu d''une heure, c''est rouge. Et surtout, j''ai arrêté de parler du taux d''à-l''heure comme d''une performance individuelle. C''est un chiffre de l''agence. On cherche les causes ensemble, on ne cherche pas les coupables.
+**Sandrine** — J''ai ajouté un garde-fou : la durée réelle des interventions par rapport à la durée prévue. Si on est à l''heure mais qu''on fait quarante minutes au lieu d''une heure, c''est rouge. Et surtout, j''ai arrêté de parler du taux d''à-l''heure comme d''une performance individuelle. C''est un chiffre de l''agence. On cherche les causes ensemble, on ne cherche pas les coupables.
 
-**CLAIRE** — Ça, c''est un point important pour nos auditeurs : le tableau de bord sert à comprendre, pas à juger.
+**Claire** — Ça, c''est un point important pour nos auditeurs : le tableau de bord sert à comprendre, pas à juger.
 
-**SANDRINE** — Dès que les gens sentent que le chiffre sert à les juger, ils le manipulent. Pas par malhonnêteté : par instinct de protection. Si vous voulez des chiffres vrais, il faut qu''ils ne coûtent rien à dire.
+**Sandrine** — Dès que les gens sentent que le chiffre sert à les juger, ils le manipulent. Pas par malhonnêteté : par instinct de protection. Si vous voulez des chiffres vrais, il faut qu''ils ne coûtent rien à dire.
 
-**CLAIRE** — Et vis-à-vis de votre directrice, ça a changé quoi ?
+**Claire** — Et vis-à-vis de votre directrice, ça a changé quoi ?
 
-**SANDRINE** — Tout. Avant, elle m''appelait pour me demander des chiffres, et j''étais sur la défensive. Maintenant, elle reçoit mon tableau le lundi midi, avec trois lignes de commentaire : ce qui va, ce qui ne va pas, ce que je fais. Elle ne m''appelle plus pour savoir, elle m''appelle pour discuter. Et quand j''ai besoin de quelque chose, une intervenante en plus, un logiciel, j''ai un chiffre pour le justifier.
+**Sandrine** — Tout. Avant, elle m''appelait pour me demander des chiffres, et j''étais sur la défensive. Maintenant, elle reçoit mon tableau le lundi midi, avec trois lignes de commentaire : ce qui va, ce qui ne va pas, ce que je fais. Elle ne m''appelle plus pour savoir, elle m''appelle pour discuter. Et quand j''ai besoin de quelque chose, une intervenante en plus, un logiciel, j''ai un chiffre pour le justifier.
 
-**CLAIRE** — Si vous deviez donner trois conseils à quelqu''un qui construit son premier tableau de bord ?
+**Claire** — Si vous deviez donner trois conseils à quelqu''un qui construit son premier tableau de bord ?
 
-**SANDRINE** — Un : partez de vos objectifs, pas de ce que le logiciel sait sortir. Deux : pas plus de six ou sept indicateurs, et pour chacun, une définition écrite, sinon vous passerez vos réunions à discuter du chiffre au lieu de l''action. Trois : regardez-le chaque semaine avec l''équipe, et décidez une action. Un tableau qu''on regarde seul dans son bureau, c''est un journal intime.
+**Sandrine** — Un : partez de vos objectifs, pas de ce que le logiciel sait sortir. Deux : pas plus de six ou sept indicateurs, et pour chacun, une définition écrite, sinon vous passerez vos réunions à discuter du chiffre au lieu de l''action. Trois : regardez-le chaque semaine avec l''équipe, et décidez une action. Un tableau qu''on regarde seul dans son bureau, c''est un journal intime.
 
-**CLAIRE** — Et le contrat avec la mutuelle ?
+**Claire** — Et le contrat avec la mutuelle ?
 
-**SANDRINE** — On l''a récupéré l''année suivante. Avec le tableau de bord dans le dossier de candidature.
+**Sandrine** — On l''a récupéré l''année suivante. Avec le tableau de bord dans le dossier de candidature.
 
-**CLAIRE** — Merci Sandrine. Pour résumer : sans mesure, on espère ; trop de mesure, on ne voit plus rien ; six indicateurs issus des objectifs, définis, affichés, discutés chaque semaine avec une action décidée, et un garde-fou pour chaque indicateur de résultat.
+**Claire** — Merci Sandrine. Pour résumer : sans mesure, on espère ; trop de mesure, on ne voit plus rien ; six indicateurs issus des objectifs, définis, affichés, discutés chaque semaine avec une action décidée, et un garde-fou pour chaque indicateur de résultat.
 
-**SANDRINE** — Et des chiffres qui ne servent jamais à punir.
+**Sandrine** — Et des chiffres qui ne servent jamais à punir.
 
-**CLAIRE** — Et des chiffres qui ne servent jamais à punir. À bientôt.
+**Claire** — Et des chiffres qui ne servent jamais à punir. À bientôt.
 
----
-
-Repères mobilisés : indicateurs de résultat / de moyens (Kaplan & Norton, 1996) ; loi de Goodhart ; rituel hebdomadaire de pilotage.
+## Sources
+indicateurs de résultat / de moyens (Kaplan & Norton, 1996) ; loi de Goodhart ; rituel hebdomadaire de pilotage.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 3 and l.ordre = 9;
@@ -4124,18 +4004,15 @@ Repères mobilisés : indicateurs de résultat / de moyens (Kaplan & Norton, 199
 
   -- 3.1-video-communication-du-manager.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 3 — Communiquer, animer, conduire les entretiens »]
+## Module 3 — Communiquer, animer, conduire les entretiens
 
 Bienvenue dans le module 3. Au module 1, vous avez vu que Mintzberg avait chronométré des managers : entre 60 et 80 % de leur temps passe en communication orale. Ce module est consacré à ce temps-là. Comment écouter, comment faire un retour, comment conduire un entretien, comment animer une réunion, comment parler à sa hiérarchie.
 
 Commençons par une idée qui change tout : en tant que manager, vous ne communiquez jamais « pour rien ».
 
-[Titre : « Tout ce que vous faites est un message »]
+## Tout ce que vous faites est un message
 
 Quand vous êtes salarié dans une équipe, vos paroles sont des paroles. Quand vous êtes manager, elles deviennent des signaux. Un silence après une erreur, une remarque en passant, un e-mail envoyé à 22 h, une réunion annulée : tout est interprété, parce que tout le monde essaie de comprendre ce que le chef pense et ce qu''il attend.
 
@@ -4143,11 +4020,9 @@ Cela a une conséquence : vous ne pouvez pas ne pas communiquer. Si vous ne dite
 
 Le manager qui « ne dit rien pour ne pas faire de vagues » fait, en réalité, beaucoup de vagues.
 
-[Titre : « Les quatre situations »]
+## Les quatre situations
 
 Dans une semaine de manager, la communication prend quatre formes, et chacune a ses règles.
-
-[Schéma : 4 cases — Écrit · Oral individuel · Réunion · Hiérarchie]
 
 L''écrit : e-mails, messages, notes affichées, comptes rendus. Il trace, il informe, il ne convainc pas. On n''annonce pas une mauvaise nouvelle par écrit, on ne recadre pas par message, on ne règle pas un conflit par e-mail. L''écrit vient après l''oral, pour confirmer.
 
@@ -4157,7 +4032,7 @@ La réunion : le moment collectif. Elle sert à aligner, décider, partager. Mal
 
 La hiérarchie : la communication vers le haut et depuis le haut. Vous en avez vu les principes au module 1 ; le podcast de ce module traite des situations difficiles : dire non, alerter, négocier.
 
-[Titre : « Trois principes qui traversent tout »]
+## Trois principes qui traversent tout
 
 Trois principes valent pour les quatre situations.
 
@@ -4167,7 +4042,7 @@ Deuxième principe : le bon canal. Ce qui est délicat se dit en face, seul à s
 
 Troisième principe : l''écoute avant la parole. La plupart des managers parlent trop et écoutent peu. Ils arrivent en entretien avec leur conclusion. Or, ce que vous ne savez pas est presque toujours plus important que ce que vous voulez dire. La leçon suivante y est consacrée.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, ce module va suivre Karim dans trois situations : un retour à faire à Julien après ses reprises, un entretien avec Marc qui se sent oublié, un recadrage de Lucas sur ses retards. Et sa première réunion d''équipe, celle où l''organisation du module 2 est présentée.
 
@@ -4175,24 +4050,18 @@ Vous verrez qu''il n''y a pas de recette miracle, mais des méthodes simples qui
 
 À tout de suite pour l''écoute active.
 
-[Fondu, logo]
-
----
-
-Sources : Mintzberg (1973) ; Paul Watzlawick, *Une logique de la communication* (1967) — « on ne peut pas ne pas communiquer ».
+## Sources
+Mintzberg (1973) ; Paul Watzlawick, *Une logique de la communication* (1967) — « on ne peut pas ne pas communiquer ».
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 3 — Communiquer, animer, conduire les entretiens »]
+## Module 3 — Communiquer, animer, conduire les entretiens
 
 Bienvenue dans le module 3. Au module 1, vous avez vu que Mintzberg avait chronométré des managers : entre 60 et 80 % de leur temps passe en communication orale. Ce module est consacré à ce temps-là. Comment écouter, comment faire un retour, comment conduire un entretien, comment animer une réunion, comment parler à sa hiérarchie.
 
 Commençons par une idée qui change tout : en tant que manager, vous ne communiquez jamais « pour rien ».
 
-[Titre : « Tout ce que vous faites est un message »]
+## Tout ce que vous faites est un message
 
 Quand vous êtes salarié dans une équipe, vos paroles sont des paroles. Quand vous êtes manager, elles deviennent des signaux. Un silence après une erreur, une remarque en passant, un e-mail envoyé à 22 h, une réunion annulée : tout est interprété, parce que tout le monde essaie de comprendre ce que le chef pense et ce qu''il attend.
 
@@ -4200,11 +4069,9 @@ Cela a une conséquence : vous ne pouvez pas ne pas communiquer. Si vous ne dite
 
 Le manager qui « ne dit rien pour ne pas faire de vagues » fait, en réalité, beaucoup de vagues.
 
-[Titre : « Les quatre situations »]
+## Les quatre situations
 
 Dans une semaine de manager, la communication prend quatre formes, et chacune a ses règles.
-
-[Schéma : 4 cases — Écrit · Oral individuel · Réunion · Hiérarchie]
 
 L''écrit : e-mails, messages, notes affichées, comptes rendus. Il trace, il informe, il ne convainc pas. On n''annonce pas une mauvaise nouvelle par écrit, on ne recadre pas par message, on ne règle pas un conflit par e-mail. L''écrit vient après l''oral, pour confirmer.
 
@@ -4214,7 +4081,7 @@ La réunion : le moment collectif. Elle sert à aligner, décider, partager. Mal
 
 La hiérarchie : la communication vers le haut et depuis le haut. Vous en avez vu les principes au module 1 ; le podcast de ce module traite des situations difficiles : dire non, alerter, négocier.
 
-[Titre : « Trois principes qui traversent tout »]
+## Trois principes qui traversent tout
 
 Trois principes valent pour les quatre situations.
 
@@ -4224,7 +4091,7 @@ Deuxième principe : le bon canal. Ce qui est délicat se dit en face, seul à s
 
 Troisième principe : l''écoute avant la parole. La plupart des managers parlent trop et écoutent peu. Ils arrivent en entretien avec leur conclusion. Or, ce que vous ne savez pas est presque toujours plus important que ce que vous voulez dire. La leçon suivante y est consacrée.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, ce module va suivre Karim dans trois situations : un retour à faire à Julien après ses reprises, un entretien avec Marc qui se sent oublié, un recadrage de Lucas sur ses retards. Et sa première réunion d''équipe, celle où l''organisation du module 2 est présentée.
 
@@ -4232,11 +4099,8 @@ Vous verrez qu''il n''y a pas de recette miracle, mais des méthodes simples qui
 
 À tout de suite pour l''écoute active.
 
-[Fondu, logo]
-
----
-
-Sources : Mintzberg (1973) ; Paul Watzlawick, *Une logique de la communication* (1967) — « on ne peut pas ne pas communiquer ».
+## Sources
+Mintzberg (1973) ; Paul Watzlawick, *Une logique de la communication* (1967) — « on ne peut pas ne pas communiquer ».
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 4 and l.ordre = 1;
@@ -4521,7 +4385,7 @@ Conservez ce carnet : le module 4 (motivation, cohésion, conflits) s''appuiera 
   n := n + 1;
 
   -- 3.12-quiz.json
-  update public.lecons l set contenu = '{"questions": [{"id": "m3q01", "enonce": "Un manager ne dit rien après le troisième retard d''un apprenti dans la semaine. Selon le principe de Watzlawick vu en leçon 3.1, que se passe-t-il ?", "options": ["Rien : le silence n''est pas une communication", "Il a communiqué que les retards sont tolérés", "L''apprenti comprendra tout seul qu''il exagère", "Il a gagné du temps pour préparer une sanction"], "bonnes": [1], "explication": "« On ne peut pas ne pas communiquer » : le silence du manager est lu comme un message par toute l''équipe. Ici, il signifie que le retard passe."}, {"id": "m3q02", "enonce": "Laquelle de ces phrases est une reformulation, au sens de l''écoute active ?", "options": ["« Je comprends, moi aussi j''ai connu ça à mes débuts. »", "« Tu devrais en parler à Sophie directement. »", "« Si je comprends bien, tu découvres les interventions au dernier moment et ça t''oblige à tout lâcher. »", "« Ne t''inquiète pas, ça va s''arranger. »"], "bonnes": [2], "explication": "Reformuler, c''est redire avec ses mots ce qu''on a compris pour le faire vérifier. Les autres réponses sont un récit de soi, un conseil et un réconfort prématuré, qui interrompent l''écoute."}, {"id": "m3q03", "enonce": "Quel biais consiste à expliquer les erreurs des autres par leur personnalité et les siennes par les circonstances ?", "options": ["L''effet de halo", "Le biais de confirmation", "La projection", "L''erreur fondamentale d''attribution"], "bonnes": [3], "explication": "C''est l''erreur fondamentale d''attribution décrite par Lee Ross. Le remède : chercher d''abord la cause dans la situation."}, {"id": "m3q04", "enonce": "Dans la méthode SBI, que désigne le « B » (Behavior, comportement) ?", "options": ["Ce que la personne a fait ou dit, observable, sans interprétation", "Ce que le manager pense de la personne", "Le besoin de la personne", "La bonne pratique à adopter"], "bonnes": [0], "explication": "Le comportement est un fait observable. « Une coulure sur l''aile arrière, véhicule sorti sans contrôle » est un comportement ; « tu es brouillon » est une étiquette."}, {"id": "m3q05", "enonce": "Pourquoi le feedback « sandwich » (compliment, critique, compliment) est-il déconseillé ?", "options": ["Parce qu''il est trop long", "Parce que la personne ne retient que le « mais », ou ne retient que les compliments, et apprend à se méfier des compliments", "Parce qu''il est interdit par le Code du travail", "Parce qu''il ne fonctionne qu''avec les nouveaux"], "bonnes": [1], "explication": "Le message correctif se perd ou se dilue, et les compliments deviennent suspects. Un correctif clair et respectueux, et des positifs sincères à d''autres moments, valent mieux."}, {"id": "m3q06", "enonce": "Plusieurs réponses. Quelles règles de forme s''appliquent à un feedback correctif ?", "options": ["Le donner rapidement après les faits", "Le donner en privé", "Regrouper plusieurs reproches pour n''avoir à le faire qu''une fois", "Terminer par une question ouverte"], "bonnes": [0, 1, 3], "explication": "Vite, en privé, un seul sujet à la fois, sur ce qui peut changer, avec une question. Regrouper six reproches n''en fait passer aucun."}, {"id": "m3q07", "enonce": "Dans la trame d''entretien individuel de suivi en cinq temps, à quoi sert le temps « ressenti et besoins » ?", "options": ["À évaluer la personnalité du salarié", "À détecter tôt les difficultés (surcharge, tensions, démotivation) avant qu''elles n''explosent", "À négocier une augmentation", "À remplir le compte rendu obligatoire de l''entretien de parcours professionnel"], "bonnes": [1], "explication": "C''est la partie que les managers sautent, et celle qui fait sortir les problèmes avant qu''ils ne coûtent cher. Le manager écoute et oriente si nécessaire ; il n''est ni médecin ni confident."}, {"id": "m3q08", "enonce": "Quelle est la différence essentielle entre l''entretien annuel d''évaluation et l''entretien de parcours professionnel ?", "options": ["Il n''y en a pas : ce sont deux noms pour le même entretien", "L''entretien annuel est obligatoire, l''entretien de parcours est facultatif", "L''entretien annuel, facultatif, porte sur le travail de l''année ; l''entretien de parcours, obligatoire (art. L6315-1), porte sur l''avenir professionnel et ne doit pas être une évaluation", "L''entretien de parcours est réservé aux salariés de plus de 45 ans"], "bonnes": [2], "explication": "L''évaluation annuelle relève du pouvoir de direction (sauf accord). L''entretien de parcours professionnel est une obligation légale au contenu fixé (compétences, formation, évolution, CPF, CEP), avec un écrit remis au salarié."}, {"id": "m3q09", "enonce": "Depuis la loi du 24 octobre 2025, quelle est la périodicité de droit commun de l''entretien de parcours professionnel, hors accord plus favorable ?", "options": ["Tous les ans", "Tous les deux ans, avec un bilan tous les six ans", "Dans la première année après l''embauche, puis tous les quatre ans, avec un état des lieux tous les huit ans, plus des entretiens à 45 ans et avant 60 ans", "Uniquement au retour d''un congé long"], "bonnes": [2], "explication": "C''est le nouveau rythme de l''article L6315-1. La convention collective ou un accord d''entreprise peut l''aménager : vérifiez toujours auprès des RH."}, {"id": "m3q10", "enonce": "Une réunion d''équipe de 30 minutes se termine sans qu''aucune décision ni action n''ait été formulée. Quelle est la conséquence principale ?", "options": ["Aucune : l''important est que l''équipe se soit vue", "L''équipe apprend que les réunions ne servent à rien, et les suivantes perdent leur crédibilité", "Le manager doit reconvoquer immédiatement", "Le CSE doit être informé"], "bonnes": [1], "explication": "Chaque point doit finir par : décidé quoi, qui, pour quand. Le relevé de décisions, suivi à la réunion suivante, est ce qui donne aux réunions leur crédibilité."}, {"id": "m3q11", "enonce": "En réunion, un participant reste silencieux pendant qu''un autre monopolise la parole. Quelle est la bonne conduite de l''animateur ?", "options": ["Laisser faire : le silencieux parlera s''il a quelque chose à dire", "Recadrer le bavard poliment en notant son point, et donner la parole nommément au silencieux sur une question précise", "Interrompre sèchement le bavard devant tout le monde", "Reporter la réunion"], "bonnes": [1], "explication": "Le bavard se cadre sans humiliation (« merci, je note, je voudrais entendre les autres ») ; le silencieux se sollicite par son nom, sur une question concrète. Un tour de table court est l''outil le plus efficace."}, {"id": "m3q12", "enonce": "Votre directeur vous demande d''absorber une charge que votre équipe ne peut pas tenir. Quelle réponse relève d''une communication de manager vers sa hiérarchie ?", "options": ["« On va faire au mieux. »", "« C''est impossible, débrouillez-vous. »", "« Avec l''équipe actuelle on tient la moitié en respectant les délais ; pour tout absorber il faut deux renforts ou accepter deux jours de retard sur le non prioritaire. Que préférez-vous ? » puis confirmation écrite", "Accepter, puis expliquer à l''équipe que c''est la faute de la direction"], "bonnes": [2], "explication": "Les faits, l''impact, des options, une décision demandée, puis l''écrit « comme convenu ». « Faire au mieux » n''est ni un oui ni un non ; désavouer la direction devant l''équipe rompt la loyauté."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+  update public.lecons l set contenu = '{"questions": [{"id": "m3q01", "enonce": "Un manager ne dit rien après le troisième retard d''un apprenti dans la semaine. Selon le principe de Watzlawick vu en leçon 3.1, que se passe-t-il ?", "options": ["Rien : le silence n''est pas une communication", "Il a communiqué que les retards sont tolérés", "L''apprenti comprendra tout seul qu''il exagère", "Il a gagné du temps pour préparer une sanction"], "bonnes": [1], "explication": "« On ne peut pas ne pas communiquer » : le silence du manager est lu comme un message par toute l''équipe. Ici, il signifie que le retard passe."}, {"id": "m3q02", "enonce": "Laquelle de ces phrases est une reformulation, au sens de l''écoute active ?", "options": ["« Je comprends, moi aussi j''ai connu ça à mes débuts. »", "« Tu devrais en parler à Sophie directement. »", "« Si je comprends bien, tu découvres les interventions au dernier moment et ça t''oblige à tout lâcher. »", "« Ne t''inquiète pas, ça va s''arranger. »"], "bonnes": [2], "explication": "Reformuler, c''est redire avec ses mots ce qu''on a compris pour le faire vérifier. Les autres réponses sont un récit de soi, un conseil et un réconfort prématuré, qui interrompent l''écoute."}, {"id": "m3q03", "enonce": "Quel biais consiste à expliquer les erreurs des autres par leur personnalité et les siennes par les circonstances ?", "options": ["L''effet de halo", "Le biais de confirmation", "La projection", "L''erreur fondamentale d''attribution"], "bonnes": [3], "explication": "C''est l''erreur fondamentale d''attribution décrite par Lee Ross. Le remède : chercher d''abord la cause dans la situation."}, {"id": "m3q04", "enonce": "Dans la méthode SBI, que désigne le « B » (Behavior, comportement) ?", "options": ["Ce que la personne a fait ou dit, observable, sans interprétation", "Ce que le manager pense de la personne", "Le besoin de la personne", "La bonne pratique à adopter"], "bonnes": [0], "explication": "Le comportement est un fait observable. « Une coulure sur l''aile arrière, véhicule sorti sans contrôle » est un comportement ; « tu es brouillon » est une étiquette."}, {"id": "m3q05", "enonce": "Pourquoi le feedback « sandwich » (compliment, critique, compliment) est-il déconseillé ?", "options": ["Parce qu''il est trop long", "Parce que la personne ne retient que le « mais », ou ne retient que les compliments, et apprend à se méfier des compliments", "Parce qu''il est interdit par le Code du travail", "Parce qu''il ne fonctionne qu''avec les nouveaux"], "bonnes": [1], "explication": "Le message correctif se perd ou se dilue, et les compliments deviennent suspects. Un correctif clair et respectueux, et des positifs sincères à d''autres moments, valent mieux."}, {"id": "m3q06", "enonce": "Plusieurs réponses. Quelles règles de forme s''appliquent à un feedback correctif ?", "options": ["Le donner rapidement après les faits", "Le donner en privé", "Regrouper plusieurs reproches pour n''avoir à le faire qu''une fois", "Terminer par une question ouverte"], "bonnes": [0, 1, 3], "explication": "Vite, en privé, un seul sujet à la fois, sur ce qui peut changer, avec une question. Regrouper six reproches n''en fait passer aucun."}, {"id": "m3q07", "enonce": "Dans la trame d''entretien individuel de suivi en cinq temps, à quoi sert le temps « ressenti et besoins » ?", "options": ["À évaluer la personnalité du salarié", "À détecter tôt les difficultés (surcharge, tensions, démotivation) avant qu''elles n''explosent", "À négocier une augmentation", "À remplir le compte rendu obligatoire de l''entretien de parcours professionnel"], "bonnes": [1], "explication": "C''est la partie que les managers sautent, et celle qui fait sortir les problèmes avant qu''ils ne coûtent cher. Le manager écoute et oriente si nécessaire ; il n''est ni médecin ni confident."}, {"id": "m3q08", "enonce": "Quelle est la différence essentielle entre l''entretien annuel d''évaluation et l''entretien de parcours professionnel ?", "options": ["Il n''y en a pas : ce sont deux noms pour le même entretien", "L''entretien annuel est obligatoire, l''entretien de parcours est facultatif", "L''entretien annuel, facultatif, porte sur le travail de l''année ; l''entretien de parcours, obligatoire (art. L6315-1), porte sur l''avenir professionnel et ne doit pas être une évaluation", "L''entretien de parcours est réservé aux salariés de plus de 45 ans"], "bonnes": [2], "explication": "L''évaluation annuelle relève du pouvoir de direction (sauf accord). L''entretien de parcours professionnel est une obligation légale au contenu fixé (compétences, formation, évolution, CPF, CEP), avec un écrit remis au salarié."}, {"id": "m3q09", "enonce": "Depuis la loi du 24 octobre 2025, quelle est la périodicité de droit commun de l''entretien de parcours professionnel, hors accord plus favorable ?", "options": ["Tous les ans", "Tous les deux ans, avec un bilan tous les six ans", "Dans la première année après l''embauche, puis tous les quatre ans, avec un état des lieux tous les huit ans, plus des entretiens à 45 ans et avant 60 ans", "Uniquement au retour d''un congé long"], "bonnes": [2], "explication": "C''est le nouveau rythme de l''article L6315-1. La convention collective ou un accord d''entreprise peut l''aménager : vérifiez toujours auprès des RH."}, {"id": "m3q10", "enonce": "Une réunion d''équipe de 30 minutes se termine sans qu''aucune décision ni action n''ait été formulée. Quelle est la conséquence principale ?", "options": ["Aucune : l''important est que l''équipe se soit vue", "L''équipe apprend que les réunions ne servent à rien, et les suivantes perdent leur crédibilité", "Le manager doit reconvoquer immédiatement", "Le CSE doit être informé"], "bonnes": [1], "explication": "Chaque point doit finir par : décidé quoi, qui, pour quand. Le relevé de décisions, suivi à la réunion suivante, est ce qui donne aux réunions leur crédibilité."}, {"id": "m3q11", "enonce": "En réunion, un participant reste silencieux pendant qu''un autre monopolise la parole. Quelle est la bonne conduite de l''animateur ?", "options": ["Laisser faire : le silencieux parlera s''il a quelque chose à dire", "Recadrer le bavard poliment en notant son point, et donner la parole nommément au silencieux sur une question précise", "Interrompre sèchement le bavard devant tout le monde", "Reporter la réunion"], "bonnes": [1], "explication": "Le bavard se cadre sans humiliation (« merci, je note, je voudrais entendre les autres ») ; le silencieux se sollicite par son nom, sur une question concrète. Un tour de table court est l''outil le plus efficace."}, {"id": "m3q12", "enonce": "Votre directeur vous demande d''absorber une charge que votre équipe ne peut pas tenir. Quelle réponse relève d''une communication de manager vers sa hiérarchie ?", "options": ["« On va faire au mieux. »", "« C''est impossible, débrouillez-vous. »", "« Avec l''équipe actuelle on tient la moitié en respectant les délais ; pour tout absorber il faut deux renforts ou accepter deux jours de retard sur le non prioritaire. Que préférez-vous ? » puis confirmation écrite", "Accepter, puis expliquer à l''équipe que c''est la faute de la direction"], "bonnes": [2], "explication": "Les faits, l''impact, des options, une décision demandée, puis l''écrit « comme convenu ». « Faire au mieux » n''est ni un oui ni un non ; désavouer la direction devant l''équipe rompt la loyauté."}, {"id": "m3q13", "enonce": "À quoi sert l''écrit (e-mail, note, compte rendu) dans la communication du manager ?", "options": ["À recadrer un collaborateur sans le voir", "À tracer, informer et confirmer ce qui a été dit à l''oral", "À annoncer une réorganisation à toute l''équipe", "À régler un conflit sans confrontation"], "bonnes": [1], "explication": "L''écrit trace, il ne convainc pas. On ne recadre pas par message et on n''annonce pas une mauvaise nouvelle par e-mail : l''écrit vient après l''oral."}, {"id": "m3q14", "enonce": "« Pourquoi tu n''as pas vérifié ? » Quel est le problème avec cette question, et par quoi la remplacer ?", "options": ["Aucun problème, elle est directe", "C''est une accusation avec un point d''interrogation ; préférer « Qu''est-ce qui a fait que le contrôle n''a pas été fait ? »", "Elle est trop longue ; préférer « Alors ? »", "Elle doit être posée par écrit"], "bonnes": [1], "explication": "Les questions ouvertes cherchent la cause dans la situation ; les reproches déguisés ferment l''échange et poussent à se justifier."}, {"id": "m3q15", "enonce": "Qu''est-ce que l''effet de halo dans l''écoute d''un collaborateur ?", "options": ["Le fait de n''entendre que la première version", "Une impression générale (bonne ou mauvaise) qui colore tout ce que la personne dit", "Le fait de supposer que l''autre ressent ce que nous ressentirions", "L''oubli de reformuler"], "bonnes": [1], "explication": "Julien a fait deux reprises, donc tout ce qu''il dit sur l''organisation paraît suspect : c''est l''effet de halo. Remède : juger le fait, pas la personne."}, {"id": "m3q16", "enonce": "Quand utilise-t-on la méthode DESC plutôt que SBI ?", "options": ["Pour un retour positif", "Quand le sujet touche à la relation (manque de respect, consigne contournée) et demande une étape de négociation", "Pour les entretiens de parcours professionnel", "Jamais : SBI suffit toujours"], "bonnes": [1], "explication": "DESC : Décrire les faits, Exprimer en « je », Spécifier ce qu''on demande, Conclure sur les conséquences positives. Se prépare par écrit, quatre phrases."}, {"id": "m3q17", "enonce": "Plusieurs réponses. Quels sont les bons réflexes quand on reçoit soi-même un feedback ?", "options": ["Remercier, même si ça pique", "Demander un exemple pour transformer un jugement en fait", "Se justifier immédiatement point par point", "Dire ce qu''on va en faire"], "bonnes": [0, 1, 3], "explication": "Un manager qui reçoit mal les retours n''en reçoit plus, et pilote à l''aveugle. La justification peut venir plus tard, une fois le retour compris."}, {"id": "m3q18", "enonce": "Quel rythme réaliste la formation propose-t-elle pour les entretiens individuels de suivi d''un manager de proximité ?", "options": ["Une fois par an, lors de l''entretien annuel", "30 minutes par personne toutes les quatre à six semaines, planifiées pour le trimestre", "Cinq minutes par jour avec chacun", "Uniquement quand il y a un problème"], "bonnes": [1], "explication": "Pour une équipe de neuf, c''est environ une heure par semaine : le temps qui évite les heures de gestion de crise. Les dates sont posées à l''avance, sinon il n''y a « jamais le temps »."}, {"id": "m3q19", "enonce": "Quelle trace l''entretien de parcours professionnel doit-il laisser ?", "options": ["Aucune, c''est un échange informel", "Un compte rendu écrit, dont une copie est remise au salarié", "Une note dans le carnet personnel du manager", "Un e-mail à la direction uniquement"], "bonnes": [1], "explication": "L''article L6315-1 impose un écrit remis au salarié. Le carnet du manager sert aux entretiens de suivi, pas à l''entretien de parcours."}, {"id": "m3q20", "enonce": "Dans une réunion où l''équipe doit prendre une décision, à quel moment le manager donne-t-il son avis ?", "options": ["En premier, pour cadrer le débat", "En dernier, sinon personne ne dira autre chose que ce qu''il a dit", "Il ne donne jamais son avis", "Par écrit, après la réunion"], "bonnes": [1], "explication": "L''animateur tient l''objectif et le temps ; dans une décision, il parle en dernier pour ne pas étouffer les avis. Il conclut par : décidé quoi, qui, pour quand."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 4 and l.ordre = 12;
   n := n + 1;
 
@@ -4875,66 +4739,69 @@ Et trois semaines plus tard, le positif, devant Thierry : « Trois finitions cet
 
   -- 3.4-video-feedback-en-pratique.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar, avec trois séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar. Titre : « Le feedback en pratique »]
+## Le feedback en pratique
 
 Vous connaissez la méthode SBI : situation, comportement, impact, attente. Voyons-la fonctionner dans trois situations réelles, avec à chaque fois la version qui échoue et la version qui marche.
 
-[Titre : « Situation 1 — Le retard répété »]
+## Situation 1 — Le retard répété
 
 Lucas, apprenti, est arrivé en retard trois fois cette semaine. Personne n''a rien dit. Karim doit lui parler.
 
 Version qui échoue, en passant, dans l''atelier, devant les autres :
 
-[Texte à l''écran, voix off]
 « Lucas, faut arrêter d''arriver à la bourre, hein. »
+
 « Ouais, désolé, c''est le bus. »
+
 « Bon. »
 
 Ce qui s''est passé : pas de faits précis, une excuse acceptée, aucune attente formulée, et tout ça en public. Lucas a compris que ce n''était pas grave.
 
 Version qui marche, dans le bureau, cinq minutes :
 
-[Séquence jouée]
 « Lucas, cette semaine tu es arrivé à 8 h 20 lundi, 8 h 15 mercredi et 8 h 25 vendredi, pour une prise de poste à 8 h. »
+
 « Ouais, c''est le bus, il est jamais à l''heure. »
+
 « Quand tu n''es pas là à 8 h, Fatou ne peut pas démonter, parce que c''est toi qui portes les éléments lourds. Elle attend, et ça décale toute la matinée. Et l''équipe voit que le retard passe sans rien. »
+
 « Je savais pas pour Fatou. »
+
 « Maintenant tu le sais. Ce que j''attends : tu es à 8 h au poste, tous les jours. Si le bus ne le permet pas, tu prends celui d''avant. Si un jour il y a un vrai problème, tu m''envoies un message avant 7 h 45. On se revoit dans deux semaines pour faire le point. Comment tu vois ça ? »
+
 « C''est bon, je prendrai celui d''avant. »
 
-[Retour avatar]
 Ce qui a changé : des faits datés, un impact concret que Lucas ignorait, une attente précise avec une règle pour les exceptions, un point de suivi, et une question à la fin. Et Karim a noté la date et le contenu de l''entretien : si le retard continue, il aura la trace nécessaire pour alerter Michel.
 
-[Titre : « Situation 2 — L''erreur client »]
+## Situation 2 — L''erreur client
 
 Julien a livré un véhicule avec une coulure de vernis. Le client a réclamé.
 
 Version qui échoue, celle de Michel, devant toute l''équipe :
 
-[Texte à l''écran]
 « C''est quoi ce travail ? Tu te fous du monde ? On a un client qui nous rend la voiture, tu crois qu''on peut se permettre ça ? »
 
 Ce qui s''est passé : de l''humiliation publique, aucune méthode, et une question sans réponse possible. Julien a perdu confiance, et l''équipe a appris que les erreurs se paient en public. Prochaine erreur, on la cachera.
 
 Version qui marche, le lendemain matin, seul à seul :
 
-[Séquence jouée]
 « Hier, à la restitution de la Clio de Ferrand, il y avait une coulure sur l''aile arrière, et le véhicule est parti sans contrôle. Le client a écrit, on reprend deux jours, et l''équipe encaisse. »
+
 « Je sais. Je suis allé trop vite sur le vernis. »
+
 « Qu''est-ce qui a fait que tu es allé trop vite ? »
+
 « Il fallait rendre à 17 h, Sophie était venue deux fois me demander où j''en étais. »
+
 « D''accord. Donc il y a un problème de finition et un problème de pression sur les délais. Le second, je m''en occupe : à partir de maintenant, les demandes de Sophie passent par moi. Le premier, on le règle ensemble : jusqu''à la fin de l''année, chaque finition passe par Thierry avant de sortir. Ce n''est pas une sanction, c''est comme ça qu''on apprend. Ça te va ? »
+
 « Oui. Et je préfère que Thierry regarde, honnêtement. »
 
-[Retour avatar]
 Notez la question ouverte : « qu''est-ce qui a fait que ». Elle a révélé une cause d''organisation, la pression de Sophie, que Karim n''aurait pas vue s''il s''était contenté de recadrer. Une erreur a presque toujours deux causes : une cause individuelle et une cause d''organisation. Le feedback traite la première ; le manager traite la seconde.
 
-[Titre : « Situation 3 — Le très bon travail »]
+## Situation 3 — Le très bon travail
 
 Nadia a réalisé une peinture complexe, un raccord de teinte nacrée, que le client a trouvée parfaite.
 
@@ -4942,16 +4809,17 @@ Version qui échoue : rien. Ou, en passant : « Nickel la 308. » Nadia n''a pas
 
 Version qui marche, à l''atelier, devant Julien qui apprend la peinture :
 
-[Séquence jouée]
 « Nadia, la 308 de ce matin. Le raccord sur la nacrée, on ne le voit pas, même sous le néon. Le client l''a dit à Sophie, et c''est ce genre de travail qui fait qu''on garde les flottes. Julien, viens voir, c''est ça qu''on vise. »
+
 « C''est le dégradé sur trois passes, il faut prendre le temps. »
+
 « Tu pourrais le montrer à Julien la semaine prochaine ? Une heure, sur la prochaine nacrée. »
+
 « Oui, sans problème. »
 
-[Retour avatar]
 Un retour positif précis fait trois choses : il dit exactement ce qui est bien, donc ce qu''il faut refaire ; il relie le travail à un enjeu, garder les flottes ; et il donne de la reconnaissance devant les autres. Et Karim en a profité pour lancer le binôme peinture identifié dans la matrice de compétences. Un bon feedback positif est aussi un outil d''organisation.
 
-[Titre : « Ce qu''il faut retenir »]
+## Ce qu''il faut retenir
 
 Dans les trois cas, la même trame : les faits, datés ; l''impact, concret ; l''attente, précise ; et une question. Dans les trois cas, le bon canal : le correctif en privé, le positif en public. Et dans les trois cas, une trace : Karim note dans son carnet la date et l''essentiel de l''échange.
 
@@ -4959,72 +4827,72 @@ Le feedback n''est pas un talent. C''est une méthode qui s''applique en cinq mi
 
 À tout de suite pour l''entretien individuel de suivi.
 
-[Fondu, logo]
-
----
-
-Sources : Center for Creative Leadership, méthode SBI ; Bower & Bower, méthode DESC ; Edmondson (1999) sur les conséquences de l''humiliation publique des erreurs.
+## Sources
+Center for Creative Leadership, méthode SBI ; Bower & Bower, méthode DESC ; Edmondson (1999) sur les conséquences de l''humiliation publique des erreurs.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar, avec trois séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar. Titre : « Le feedback en pratique »]
+## Le feedback en pratique
 
 Vous connaissez la méthode SBI : situation, comportement, impact, attente. Voyons-la fonctionner dans trois situations réelles, avec à chaque fois la version qui échoue et la version qui marche.
 
-[Titre : « Situation 1 — Le retard répété »]
+## Situation 1 — Le retard répété
 
 Lucas, apprenti, est arrivé en retard trois fois cette semaine. Personne n''a rien dit. Karim doit lui parler.
 
 Version qui échoue, en passant, dans l''atelier, devant les autres :
 
-[Texte à l''écran, voix off]
 « Lucas, faut arrêter d''arriver à la bourre, hein. »
+
 « Ouais, désolé, c''est le bus. »
+
 « Bon. »
 
 Ce qui s''est passé : pas de faits précis, une excuse acceptée, aucune attente formulée, et tout ça en public. Lucas a compris que ce n''était pas grave.
 
 Version qui marche, dans le bureau, cinq minutes :
 
-[Séquence jouée]
 « Lucas, cette semaine tu es arrivé à 8 h 20 lundi, 8 h 15 mercredi et 8 h 25 vendredi, pour une prise de poste à 8 h. »
+
 « Ouais, c''est le bus, il est jamais à l''heure. »
+
 « Quand tu n''es pas là à 8 h, Fatou ne peut pas démonter, parce que c''est toi qui portes les éléments lourds. Elle attend, et ça décale toute la matinée. Et l''équipe voit que le retard passe sans rien. »
+
 « Je savais pas pour Fatou. »
+
 « Maintenant tu le sais. Ce que j''attends : tu es à 8 h au poste, tous les jours. Si le bus ne le permet pas, tu prends celui d''avant. Si un jour il y a un vrai problème, tu m''envoies un message avant 7 h 45. On se revoit dans deux semaines pour faire le point. Comment tu vois ça ? »
+
 « C''est bon, je prendrai celui d''avant. »
 
-[Retour avatar]
 Ce qui a changé : des faits datés, un impact concret que Lucas ignorait, une attente précise avec une règle pour les exceptions, un point de suivi, et une question à la fin. Et Karim a noté la date et le contenu de l''entretien : si le retard continue, il aura la trace nécessaire pour alerter Michel.
 
-[Titre : « Situation 2 — L''erreur client »]
+## Situation 2 — L''erreur client
 
 Julien a livré un véhicule avec une coulure de vernis. Le client a réclamé.
 
 Version qui échoue, celle de Michel, devant toute l''équipe :
 
-[Texte à l''écran]
 « C''est quoi ce travail ? Tu te fous du monde ? On a un client qui nous rend la voiture, tu crois qu''on peut se permettre ça ? »
 
 Ce qui s''est passé : de l''humiliation publique, aucune méthode, et une question sans réponse possible. Julien a perdu confiance, et l''équipe a appris que les erreurs se paient en public. Prochaine erreur, on la cachera.
 
 Version qui marche, le lendemain matin, seul à seul :
 
-[Séquence jouée]
 « Hier, à la restitution de la Clio de Ferrand, il y avait une coulure sur l''aile arrière, et le véhicule est parti sans contrôle. Le client a écrit, on reprend deux jours, et l''équipe encaisse. »
+
 « Je sais. Je suis allé trop vite sur le vernis. »
+
 « Qu''est-ce qui a fait que tu es allé trop vite ? »
+
 « Il fallait rendre à 17 h, Sophie était venue deux fois me demander où j''en étais. »
+
 « D''accord. Donc il y a un problème de finition et un problème de pression sur les délais. Le second, je m''en occupe : à partir de maintenant, les demandes de Sophie passent par moi. Le premier, on le règle ensemble : jusqu''à la fin de l''année, chaque finition passe par Thierry avant de sortir. Ce n''est pas une sanction, c''est comme ça qu''on apprend. Ça te va ? »
+
 « Oui. Et je préfère que Thierry regarde, honnêtement. »
 
-[Retour avatar]
 Notez la question ouverte : « qu''est-ce qui a fait que ». Elle a révélé une cause d''organisation, la pression de Sophie, que Karim n''aurait pas vue s''il s''était contenté de recadrer. Une erreur a presque toujours deux causes : une cause individuelle et une cause d''organisation. Le feedback traite la première ; le manager traite la seconde.
 
-[Titre : « Situation 3 — Le très bon travail »]
+## Situation 3 — Le très bon travail
 
 Nadia a réalisé une peinture complexe, un raccord de teinte nacrée, que le client a trouvée parfaite.
 
@@ -5032,16 +4900,17 @@ Version qui échoue : rien. Ou, en passant : « Nickel la 308. » Nadia n''a pas
 
 Version qui marche, à l''atelier, devant Julien qui apprend la peinture :
 
-[Séquence jouée]
 « Nadia, la 308 de ce matin. Le raccord sur la nacrée, on ne le voit pas, même sous le néon. Le client l''a dit à Sophie, et c''est ce genre de travail qui fait qu''on garde les flottes. Julien, viens voir, c''est ça qu''on vise. »
+
 « C''est le dégradé sur trois passes, il faut prendre le temps. »
+
 « Tu pourrais le montrer à Julien la semaine prochaine ? Une heure, sur la prochaine nacrée. »
+
 « Oui, sans problème. »
 
-[Retour avatar]
 Un retour positif précis fait trois choses : il dit exactement ce qui est bien, donc ce qu''il faut refaire ; il relie le travail à un enjeu, garder les flottes ; et il donne de la reconnaissance devant les autres. Et Karim en a profité pour lancer le binôme peinture identifié dans la matrice de compétences. Un bon feedback positif est aussi un outil d''organisation.
 
-[Titre : « Ce qu''il faut retenir »]
+## Ce qu''il faut retenir
 
 Dans les trois cas, la même trame : les faits, datés ; l''impact, concret ; l''attente, précise ; et une question. Dans les trois cas, le bon canal : le correctif en privé, le positif en public. Et dans les trois cas, une trace : Karim note dans son carnet la date et l''essentiel de l''échange.
 
@@ -5049,11 +4918,8 @@ Le feedback n''est pas un talent. C''est une méthode qui s''applique en cinq mi
 
 À tout de suite pour l''entretien individuel de suivi.
 
-[Fondu, logo]
-
----
-
-Sources : Center for Creative Leadership, méthode SBI ; Bower & Bower, méthode DESC ; Edmondson (1999) sur les conséquences de l''humiliation publique des erreurs.
+## Sources
+Center for Creative Leadership, méthode SBI ; Bower & Bower, méthode DESC ; Edmondson (1999) sur les conséquences de l''humiliation publique des erreurs.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 4 and l.ordre = 4;
@@ -5607,211 +5473,207 @@ Thierry commence à raconter comment on faisait « avant » ; Karim le remercie,
 
   -- 3.8-podcast-dire-non-alerter-negocier.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et David, responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Aujourd''hui, on parle d''une communication dont les formations de management parlent peu : celle qui va vers le haut. Comment on dit non à son directeur, comment on lui remonte un problème sans passer pour celui qui râle, comment on obtient des moyens. David, vous encadrez une équipe logistique depuis quatre ans. Est-ce que vous vous souvenez de la première fois où vous avez dû dire non à votre hiérarchie ?
+**Claire** — Bonjour à tous. Aujourd''hui, on parle d''une communication dont les formations de management parlent peu : celle qui va vers le haut. Comment on dit non à son directeur, comment on lui remonte un problème sans passer pour celui qui râle, comment on obtient des moyens. David, vous encadrez une équipe logistique depuis quatre ans. Est-ce que vous vous souvenez de la première fois où vous avez dû dire non à votre hiérarchie ?
 
-**DAVID** — Très bien. Et je ne l''ai pas dit. C''était trois mois après ma prise de poste. Mon directeur de site m''annonce qu''on va absorber les flux d''un autre entrepôt pendant deux semaines, sans renfort. Je savais que c''était impossible avec mes effectifs. J''ai dit « on va faire au mieux ».
+**David** — Très bien. Et je ne l''ai pas dit. C''était trois mois après ma prise de poste. Mon directeur de site m''annonce qu''on va absorber les flux d''un autre entrepôt pendant deux semaines, sans renfort. Je savais que c''était impossible avec mes effectifs. J''ai dit « on va faire au mieux ».
 
-**CLAIRE** — Et ?
+**Claire** — Et ?
 
-**DAVID** — Et on n''a pas fait au mieux. On a fait des heures, on a eu deux arrêts de travail, on a livré en retard, et à la fin le directeur m''a demandé pourquoi je ne l''avais pas prévenu. Ce qui m''a rendu fou, parce que j''avais l''impression de l''avoir prévenu.
+**David** — Et on n''a pas fait au mieux. On a fait des heures, on a eu deux arrêts de travail, on a livré en retard, et à la fin le directeur m''a demandé pourquoi je ne l''avais pas prévenu. Ce qui m''a rendu fou, parce que j''avais l''impression de l''avoir prévenu.
 
-**CLAIRE** — Vous aviez dit « on va faire au mieux ».
+**Claire** — Vous aviez dit « on va faire au mieux ».
 
-**DAVID** — Oui. Et pour lui, ça voulait dire « c''est bon ». Pour moi, ça voulait dire « c''est impossible mais je n''ose pas le dire ». C''est là que j''ai compris que « faire au mieux », pour un manager, c''est la pire réponse possible. Ce n''est ni un oui, ni un non, et tout le monde entend ce qui l''arrange.
+**David** — Oui. Et pour lui, ça voulait dire « c''est bon ». Pour moi, ça voulait dire « c''est impossible mais je n''ose pas le dire ». C''est là que j''ai compris que « faire au mieux », pour un manager, c''est la pire réponse possible. Ce n''est ni un oui, ni un non, et tout le monde entend ce qui l''arrange.
 
-**CLAIRE** — Alors qu''est-ce qu''il aurait fallu dire ?
+**Claire** — Alors qu''est-ce qu''il aurait fallu dire ?
 
-**DAVID** — Avec le recul, quelque chose comme : « Avec l''équipe actuelle, on peut absorber la moitié du flux en tenant les délais. Pour absorber tout, il me faut trois intérimaires sur deux semaines, ou on accepte deux jours de retard sur les commandes non prioritaires. Qu''est-ce que vous préférez ? »
+**David** — Avec le recul, quelque chose comme : « Avec l''équipe actuelle, on peut absorber la moitié du flux en tenant les délais. Pour absorber tout, il me faut trois intérimaires sur deux semaines, ou on accepte deux jours de retard sur les commandes non prioritaires. Qu''est-ce que vous préférez ? »
 
-**CLAIRE** — C''est intéressant, parce que ce n''est pas un non.
+**Claire** — C''est intéressant, parce que ce n''est pas un non.
 
-**DAVID** — Non, c''est mieux qu''un non. Un non sec, à un directeur, ça ne passe pas, et ça ne devrait pas passer, d''ailleurs : c''est lui qui décide. Mais un « oui, à ces conditions » ou un « oui, avec ces conséquences », c''est du management. Vous lui donnez les faits, vous lui donnez des options, et vous lui laissez la décision. Et si sa décision c''est « on absorbe tout sans renfort et on tient les délais », là vous dites : « Je ne sais pas le faire. Je vais essayer, mais je vous dis maintenant que ça ne tiendra pas, et je vous le redirai par écrit. »
+**David** — Non, c''est mieux qu''un non. Un non sec, à un directeur, ça ne passe pas, et ça ne devrait pas passer, d''ailleurs : c''est lui qui décide. Mais un « oui, à ces conditions » ou un « oui, avec ces conséquences », c''est du management. Vous lui donnez les faits, vous lui donnez des options, et vous lui laissez la décision. Et si sa décision c''est « on absorbe tout sans renfort et on tient les délais », là vous dites : « Je ne sais pas le faire. Je vais essayer, mais je vous dis maintenant que ça ne tiendra pas, et je vous le redirai par écrit. »
 
-**CLAIRE** — On va revenir sur l''écrit. Mais d''abord, cette idée d''options. Pourquoi c''est si important ?
+**Claire** — On va revenir sur l''écrit. Mais d''abord, cette idée d''options. Pourquoi c''est si important ?
 
-**DAVID** — Parce qu''un chef qui reçoit un problème sans option se retrouve avec le problème sur les bras, et il n''aime pas ça. Il a vingt problèmes déjà. Si vous arrivez avec « j''ai un problème », vous en êtes un de plus. Si vous arrivez avec « j''ai un problème, voilà deux façons de le régler, je recommande la première, j''ai besoin de votre accord », vous êtes une solution.
+**David** — Parce qu''un chef qui reçoit un problème sans option se retrouve avec le problème sur les bras, et il n''aime pas ça. Il a vingt problèmes déjà. Si vous arrivez avec « j''ai un problème », vous en êtes un de plus. Si vous arrivez avec « j''ai un problème, voilà deux façons de le régler, je recommande la première, j''ai besoin de votre accord », vous êtes une solution.
 
-**CLAIRE** — C''est ce qu''on appelle parfois « monter avec une solution ».
+**Claire** — C''est ce qu''on appelle parfois « monter avec une solution ».
 
-**DAVID** — Oui, mais attention à un piège : il ne faut pas attendre d''avoir la solution parfaite pour remonter le problème. J''ai vu des chefs d''équipe garder un problème trois semaines parce qu''ils cherchaient la solution, et quand ils l''ont remonté, c''était trop tard. La règle que je donne à mes chefs d''équipe : un problème se remonte dans les 24 heures, avec ce qu''on sait, avec ce qu''on ne sait pas, et avec ce qu''on propose, même si c''est imparfait.
+**David** — Oui, mais attention à un piège : il ne faut pas attendre d''avoir la solution parfaite pour remonter le problème. J''ai vu des chefs d''équipe garder un problème trois semaines parce qu''ils cherchaient la solution, et quand ils l''ont remonté, c''était trop tard. La règle que je donne à mes chefs d''équipe : un problème se remonte dans les 24 heures, avec ce qu''on sait, avec ce qu''on ne sait pas, et avec ce qu''on propose, même si c''est imparfait.
 
-**CLAIRE** — Vous avez dit « sans passer pour celui qui râle ». C''est une vraie peur chez les managers de proximité.
+**Claire** — Vous avez dit « sans passer pour celui qui râle ». C''est une vraie peur chez les managers de proximité.
 
-**DAVID** — C''est la peur principale. On a l''impression que remonter un problème, c''est se plaindre, ou avouer qu''on ne gère pas. Alors on se tait, et on gère seul, et un jour ça explose, et là on est vraiment celui qui ne gère pas.
+**David** — C''est la peur principale. On a l''impression que remonter un problème, c''est se plaindre, ou avouer qu''on ne gère pas. Alors on se tait, et on gère seul, et un jour ça explose, et là on est vraiment celui qui ne gère pas.
 
-**CLAIRE** — Comment on fait la différence entre alerter et se plaindre ?
+**Claire** — Comment on fait la différence entre alerter et se plaindre ?
 
-**DAVID** — Se plaindre, c''est parler de soi et de ce qu''on ressent : « c''est ingérable, on n''en peut plus, on n''a jamais les moyens ». Alerter, c''est parler des faits et des conséquences pour l''entreprise : « on est à 82 % de délais tenus au lieu de 95 %, la cause principale c''est l''absence de cariste le samedi, si ça continue on perd le contrat X ». Le premier message, votre chef l''entend comme du bruit. Le second, il l''entend comme un risque, et les chefs sont là pour gérer les risques.
+**David** — Se plaindre, c''est parler de soi et de ce qu''on ressent : « c''est ingérable, on n''en peut plus, on n''a jamais les moyens ». Alerter, c''est parler des faits et des conséquences pour l''entreprise : « on est à 82 % de délais tenus au lieu de 95 %, la cause principale c''est l''absence de cariste le samedi, si ça continue on perd le contrat X ». Le premier message, votre chef l''entend comme du bruit. Le second, il l''entend comme un risque, et les chefs sont là pour gérer les risques.
 
-**CLAIRE** — Donc les faits, encore. C''est le même principe que pour le feedback à l''équipe.
+**Claire** — Donc les faits, encore. C''est le même principe que pour le feedback à l''équipe.
 
-**DAVID** — C''est exactement le même. Vers le bas, vers le haut, c''est la même méthode : les faits, l''impact, ce qu''on propose. La seule différence, c''est qu''en montant, vous ne donnez pas une consigne, vous demandez une décision.
+**David** — C''est exactement le même. Vers le bas, vers le haut, c''est la même méthode : les faits, l''impact, ce qu''on propose. La seule différence, c''est qu''en montant, vous ne donnez pas une consigne, vous demandez une décision.
 
-**CLAIRE** — Vous avez évoqué l''écrit. Quand est-ce qu''on écrit à sa hiérarchie ?
+**Claire** — Vous avez évoqué l''écrit. Quand est-ce qu''on écrit à sa hiérarchie ?
 
-**DAVID** — Toujours après l''oral, jamais à la place. Je dis d''abord les choses en face, et ensuite je confirme par un message court : « Comme convenu ce matin, on absorbe le flux de l''entrepôt B avec deux intérimaires à partir de lundi ; sans renfort, je vous confirme que les délais ne tiendront pas sur les commandes non prioritaires. » Ce n''est pas pour me couvrir, enfin pas seulement. C''est pour que la décision soit claire, pour lui comme pour moi.
+**David** — Toujours après l''oral, jamais à la place. Je dis d''abord les choses en face, et ensuite je confirme par un message court : « Comme convenu ce matin, on absorbe le flux de l''entrepôt B avec deux intérimaires à partir de lundi ; sans renfort, je vous confirme que les délais ne tiendront pas sur les commandes non prioritaires. » Ce n''est pas pour me couvrir, enfin pas seulement. C''est pour que la décision soit claire, pour lui comme pour moi.
 
-**CLAIRE** — Mais ça sert aussi à se couvrir.
+**Claire** — Mais ça sert aussi à se couvrir.
 
-**DAVID** — Oui. Et il faut le dire sans gêne : un manager qui a alerté par écrit et à qui on a dit de continuer quand même n''est pas dans la même position que celui qui n''a rien dit. Pour la sécurité, en particulier, c''est essentiel. Si mon directeur me demande de faire tourner un chariot dont le contrôle périodique est dépassé, je dis non, je le dis par écrit, et là c''est un vrai non. Il y a des sujets où « oui à ces conditions » n''existe pas : la sécurité, la légalité, la dignité des gens. Là, le non est net, et il est écrit.
+**David** — Oui. Et il faut le dire sans gêne : un manager qui a alerté par écrit et à qui on a dit de continuer quand même n''est pas dans la même position que celui qui n''a rien dit. Pour la sécurité, en particulier, c''est essentiel. Si mon directeur me demande de faire tourner un chariot dont le contrôle périodique est dépassé, je dis non, je le dis par écrit, et là c''est un vrai non. Il y a des sujets où « oui à ces conditions » n''existe pas : la sécurité, la légalité, la dignité des gens. Là, le non est net, et il est écrit.
 
-**CLAIRE** — Vous encadrez trois chefs d''équipe. Vous leur apprenez ça ?
+**Claire** — Vous encadrez trois chefs d''équipe. Vous leur apprenez ça ?
 
-**DAVID** — J''essaie. Et je leur dis surtout une chose : je préfère un chef d''équipe qui me dit non avec des arguments qu''un chef d''équipe qui me dit oui et qui ne livre pas. Le premier me fait gagner du temps. Le second m''en fait perdre, et il perd ma confiance.
+**David** — J''essaie. Et je leur dis surtout une chose : je préfère un chef d''équipe qui me dit non avec des arguments qu''un chef d''équipe qui me dit oui et qui ne livre pas. Le premier me fait gagner du temps. Le second m''en fait perdre, et il perd ma confiance.
 
-**CLAIRE** — Passons à la négociation. Obtenir des moyens : un poste, du matériel, du budget de formation. Comment vous vous y prenez ?
+**Claire** — Passons à la négociation. Obtenir des moyens : un poste, du matériel, du budget de formation. Comment vous vous y prenez ?
 
-**DAVID** — Je prépare comme un dossier. Ça paraît lourd, mais un directeur qui reçoit une demande de poste doit lui-même la défendre au-dessus de lui, donc il a besoin de mes arguments. Le dossier, c''est une page : le besoin, chiffré ; ce que ça coûte ; ce que ça rapporte ou ce que ça évite ; ce qui se passe si on ne le fait pas ; et ce que je propose comme alternative si le budget n''est pas là.
+**David** — Je prépare comme un dossier. Ça paraît lourd, mais un directeur qui reçoit une demande de poste doit lui-même la défendre au-dessus de lui, donc il a besoin de mes arguments. Le dossier, c''est une page : le besoin, chiffré ; ce que ça coûte ; ce que ça rapporte ou ce que ça évite ; ce qui se passe si on ne le fait pas ; et ce que je propose comme alternative si le budget n''est pas là.
 
-**CLAIRE** — Donnez-nous un exemple.
+**Claire** — Donnez-nous un exemple.
 
-**DAVID** — Le cariste du samedi. Ma demande : un poste à temps partiel, 8 heures le samedi. Le coût : environ 12 000 euros par an chargés. Ce que ça évite : les heures supplémentaires actuelles, qui coûtent déjà 7 000, et les retards du lundi, qui nous ont valu deux pénalités à 3 000 euros chacune l''année dernière. Donc le poste se paie tout seul. L''alternative si on refuse : je décale les commandes du samedi au lundi, et on accepte un délai de plus sur ces commandes-là. Avec ça, mon directeur a tout ce qu''il faut pour décider, et pour défendre le poste auprès de la direction régionale.
+**David** — Le cariste du samedi. Ma demande : un poste à temps partiel, 8 heures le samedi. Le coût : environ 12 000 euros par an chargés. Ce que ça évite : les heures supplémentaires actuelles, qui coûtent déjà 7 000, et les retards du lundi, qui nous ont valu deux pénalités à 3 000 euros chacune l''année dernière. Donc le poste se paie tout seul. L''alternative si on refuse : je décale les commandes du samedi au lundi, et on accepte un délai de plus sur ces commandes-là. Avec ça, mon directeur a tout ce qu''il faut pour décider, et pour défendre le poste auprès de la direction régionale.
 
-**CLAIRE** — Vous parlez le langage de la direction.
+**Claire** — Vous parlez le langage de la direction.
 
-**DAVID** — Le langage de la direction, c''est les chiffres et les risques. Pas parce que les directeurs sont insensibles, mais parce que c''est comme ça qu''ils arbitrent entre vingt demandes. Si je dis « mon équipe est fatiguée », c''est vrai, mais ça ne pèse rien face à une autre demande chiffrée. Si je dis « la fatigue nous coûte deux arrêts de travail par trimestre, soit tant de jours perdus », ça pèse.
+**David** — Le langage de la direction, c''est les chiffres et les risques. Pas parce que les directeurs sont insensibles, mais parce que c''est comme ça qu''ils arbitrent entre vingt demandes. Si je dis « mon équipe est fatiguée », c''est vrai, mais ça ne pèse rien face à une autre demande chiffrée. Si je dis « la fatigue nous coûte deux arrêts de travail par trimestre, soit tant de jours perdus », ça pèse.
 
-**CLAIRE** — Et quand la réponse est non ?
+**Claire** — Et quand la réponse est non ?
 
-**DAVID** — D''abord, je demande pourquoi. Pas pour contester, pour comprendre. Souvent, le non a une raison que je ne connaissais pas : un gel des embauches, une autre priorité. Ensuite, je demande ce qui pourrait faire changer la réponse : « À quelles conditions ce serait envisageable ? Dans quel délai ? » Et je reviens trois mois plus tard avec les chiffres mis à jour. Un non aujourd''hui n''est pas un non pour toujours.
+**David** — D''abord, je demande pourquoi. Pas pour contester, pour comprendre. Souvent, le non a une raison que je ne connaissais pas : un gel des embauches, une autre priorité. Ensuite, je demande ce qui pourrait faire changer la réponse : « À quelles conditions ce serait envisageable ? Dans quel délai ? » Et je reviens trois mois plus tard avec les chiffres mis à jour. Un non aujourd''hui n''est pas un non pour toujours.
 
-**CLAIRE** — Et vis-à-vis de l''équipe, quand vous revenez avec un non ?
+**Claire** — Et vis-à-vis de l''équipe, quand vous revenez avec un non ?
 
-**DAVID** — C''est le moment le plus délicat. La tentation, c''est de dire « j''ai demandé, ils ont refusé, c''est pas moi ». Et c''est une catastrophe, parce que vous vous mettez du côté de l''équipe contre la direction, et vous n''êtes plus manager. Je dis : « J''ai demandé un cariste le samedi. La réponse est non pour cette année, parce que les embauches sont gelées. Voilà ce qu''on fait en attendant. Et je redemande en janvier. » Je porte la décision, même si je ne la partage pas. Ce que j''en pense, je l''ai dit à mon directeur, pas à l''équipe.
+**David** — C''est le moment le plus délicat. La tentation, c''est de dire « j''ai demandé, ils ont refusé, c''est pas moi ». Et c''est une catastrophe, parce que vous vous mettez du côté de l''équipe contre la direction, et vous n''êtes plus manager. Je dis : « J''ai demandé un cariste le samedi. La réponse est non pour cette année, parce que les embauches sont gelées. Voilà ce qu''on fait en attendant. Et je redemande en janvier. » Je porte la décision, même si je ne la partage pas. Ce que j''en pense, je l''ai dit à mon directeur, pas à l''équipe.
 
-**CLAIRE** — C''est la loyauté dont on parle au module 1.
+**Claire** — C''est la loyauté dont on parle au module 1.
 
-**DAVID** — Oui. Loyal vers le haut, ça veut dire : je conteste avant, en face, avec des arguments ; et une fois que c''est décidé, je porte. Loyal vers le bas, ça veut dire : je ne cache pas les décisions, je ne fais pas semblant de les avoir prises quand je ne les ai pas prises, et je dis ce que je fais pour l''équipe.
+**David** — Oui. Loyal vers le haut, ça veut dire : je conteste avant, en face, avec des arguments ; et une fois que c''est décidé, je porte. Loyal vers le bas, ça veut dire : je ne cache pas les décisions, je ne fais pas semblant de les avoir prises quand je ne les ai pas prises, et je dis ce que je fais pour l''équipe.
 
-**CLAIRE** — Il y a un autre sujet difficile : le manager qui doit alerter sur un problème qui concerne sa hiérarchie elle-même. Un directeur qui prend de mauvaises décisions, ou qui a un comportement inapproprié.
+**Claire** — Il y a un autre sujet difficile : le manager qui doit alerter sur un problème qui concerne sa hiérarchie elle-même. Un directeur qui prend de mauvaises décisions, ou qui a un comportement inapproprié.
 
-**DAVID** — C''est rare, mais ça arrive, et il faut savoir quoi faire. Pour une mauvaise décision, c''est ce qu''on a dit : les faits, l''impact, les options, en face, puis par écrit. Si ça ne suffit pas et que le risque est grave, on monte d''un niveau, en le disant : « Je vais en parler à la direction régionale, je vous en informe. » Ce n''est pas de la trahison, c''est de l''alerte.
+**David** — C''est rare, mais ça arrive, et il faut savoir quoi faire. Pour une mauvaise décision, c''est ce qu''on a dit : les faits, l''impact, les options, en face, puis par écrit. Si ça ne suffit pas et que le risque est grave, on monte d''un niveau, en le disant : « Je vais en parler à la direction régionale, je vous en informe. » Ce n''est pas de la trahison, c''est de l''alerte.
 
-**CLAIRE** — Et pour un comportement ?
+**Claire** — Et pour un comportement ?
 
-**DAVID** — Là, on ne gère pas seul. Si un supérieur a un comportement de harcèlement, de discrimination, ou met les gens en danger, il y a des circuits prévus : les ressources humaines, le CSE, le médecin du travail, le référent harcèlement, et, si l''entreprise ne réagit pas, l''inspection du travail. Un manager de proximité qui constate ça a l''obligation de le remonter, et il a une protection légale quand il le fait de bonne foi. Ce n''est pas un sujet de négociation.
+**David** — Là, on ne gère pas seul. Si un supérieur a un comportement de harcèlement, de discrimination, ou met les gens en danger, il y a des circuits prévus : les ressources humaines, le CSE, le médecin du travail, le référent harcèlement, et, si l''entreprise ne réagit pas, l''inspection du travail. Un manager de proximité qui constate ça a l''obligation de le remonter, et il a une protection légale quand il le fait de bonne foi. Ce n''est pas un sujet de négociation.
 
-**CLAIRE** — Pour terminer, si vous deviez donner trois conseils à un nouveau manager sur la communication vers le haut ?
+**Claire** — Pour terminer, si vous deviez donner trois conseils à un nouveau manager sur la communication vers le haut ?
 
-**DAVID** — Un : ne dites jamais « on va faire au mieux ». Dites « oui », « non », ou « oui à ces conditions », et dites-le avec des faits. Deux : remontez les problèmes dans les 24 heures, avec ce que vous savez et ce que vous proposez, même imparfait ; votre chef préfère un problème tôt qu''une catastrophe tard. Trois : quand vous revenez vers l''équipe, portez la décision. Vous avez le droit de la contester avant, en face ; vous n''avez pas le droit de la désavouer après, devant l''équipe.
+**David** — Un : ne dites jamais « on va faire au mieux ». Dites « oui », « non », ou « oui à ces conditions », et dites-le avec des faits. Deux : remontez les problèmes dans les 24 heures, avec ce que vous savez et ce que vous proposez, même imparfait ; votre chef préfère un problème tôt qu''une catastrophe tard. Trois : quand vous revenez vers l''équipe, portez la décision. Vous avez le droit de la contester avant, en face ; vous n''avez pas le droit de la désavouer après, devant l''équipe.
 
-**CLAIRE** — Et le quatrième, que vous n''avez pas dit : l''écrit après l''oral.
+**Claire** — Et le quatrième, que vous n''avez pas dit : l''écrit après l''oral.
 
-**DAVID** — Toujours. Court, factuel, « comme convenu ». Ça protège tout le monde, à commencer par la décision elle-même.
+**David** — Toujours. Court, factuel, « comme convenu ». Ça protège tout le monde, à commencer par la décision elle-même.
 
-**CLAIRE** — Merci David. Dans la fiche outil qui suit, vous trouverez la trame de l''entretien de suivi et un modèle d''ordre du jour. Et dans le cas pratique, Karim va devoir, lui aussi, parler à Michel.
+**Claire** — Merci David. Dans la fiche outil qui suit, vous trouverez la trame de l''entretien de suivi et un modèle d''ordre du jour. Et dans le cas pratique, Karim va devoir, lui aussi, parler à Michel.
 
----
-
-Sources : Mintzberg (1973) sur les rôles de liaison ; Code du travail, art. L1152-2 et L1132-3-3 (protection des salariés qui relatent des faits de harcèlement ou de discrimination), art. L4122-1 (obligation de sécurité du salarié) ; Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 (éd. originale *Getting to Yes*, 1981) — négociation sur les intérêts.
+## Sources
+Mintzberg (1973) sur les rôles de liaison ; Code du travail, art. L1152-2 et L1132-3-3 (protection des salariés qui relatent des faits de harcèlement ou de discrimination), art. L4122-1 (obligation de sécurité du salarié) ; Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 (éd. originale *Getting to Yes*, 1981) — négociation sur les intérêts.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **DAVID** = responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et David, responsable d''équipe logistique dans une plateforme de distribution (22 salariés, trois chefs d''équipe au-dessus de lui un directeur de site), en poste depuis quatre ans après avoir été cariste puis chef de quai (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Aujourd''hui, on parle d''une communication dont les formations de management parlent peu : celle qui va vers le haut. Comment on dit non à son directeur, comment on lui remonte un problème sans passer pour celui qui râle, comment on obtient des moyens. David, vous encadrez une équipe logistique depuis quatre ans. Est-ce que vous vous souvenez de la première fois où vous avez dû dire non à votre hiérarchie ?
+**Claire** — Bonjour à tous. Aujourd''hui, on parle d''une communication dont les formations de management parlent peu : celle qui va vers le haut. Comment on dit non à son directeur, comment on lui remonte un problème sans passer pour celui qui râle, comment on obtient des moyens. David, vous encadrez une équipe logistique depuis quatre ans. Est-ce que vous vous souvenez de la première fois où vous avez dû dire non à votre hiérarchie ?
 
-**DAVID** — Très bien. Et je ne l''ai pas dit. C''était trois mois après ma prise de poste. Mon directeur de site m''annonce qu''on va absorber les flux d''un autre entrepôt pendant deux semaines, sans renfort. Je savais que c''était impossible avec mes effectifs. J''ai dit « on va faire au mieux ».
+**David** — Très bien. Et je ne l''ai pas dit. C''était trois mois après ma prise de poste. Mon directeur de site m''annonce qu''on va absorber les flux d''un autre entrepôt pendant deux semaines, sans renfort. Je savais que c''était impossible avec mes effectifs. J''ai dit « on va faire au mieux ».
 
-**CLAIRE** — Et ?
+**Claire** — Et ?
 
-**DAVID** — Et on n''a pas fait au mieux. On a fait des heures, on a eu deux arrêts de travail, on a livré en retard, et à la fin le directeur m''a demandé pourquoi je ne l''avais pas prévenu. Ce qui m''a rendu fou, parce que j''avais l''impression de l''avoir prévenu.
+**David** — Et on n''a pas fait au mieux. On a fait des heures, on a eu deux arrêts de travail, on a livré en retard, et à la fin le directeur m''a demandé pourquoi je ne l''avais pas prévenu. Ce qui m''a rendu fou, parce que j''avais l''impression de l''avoir prévenu.
 
-**CLAIRE** — Vous aviez dit « on va faire au mieux ».
+**Claire** — Vous aviez dit « on va faire au mieux ».
 
-**DAVID** — Oui. Et pour lui, ça voulait dire « c''est bon ». Pour moi, ça voulait dire « c''est impossible mais je n''ose pas le dire ». C''est là que j''ai compris que « faire au mieux », pour un manager, c''est la pire réponse possible. Ce n''est ni un oui, ni un non, et tout le monde entend ce qui l''arrange.
+**David** — Oui. Et pour lui, ça voulait dire « c''est bon ». Pour moi, ça voulait dire « c''est impossible mais je n''ose pas le dire ». C''est là que j''ai compris que « faire au mieux », pour un manager, c''est la pire réponse possible. Ce n''est ni un oui, ni un non, et tout le monde entend ce qui l''arrange.
 
-**CLAIRE** — Alors qu''est-ce qu''il aurait fallu dire ?
+**Claire** — Alors qu''est-ce qu''il aurait fallu dire ?
 
-**DAVID** — Avec le recul, quelque chose comme : « Avec l''équipe actuelle, on peut absorber la moitié du flux en tenant les délais. Pour absorber tout, il me faut trois intérimaires sur deux semaines, ou on accepte deux jours de retard sur les commandes non prioritaires. Qu''est-ce que vous préférez ? »
+**David** — Avec le recul, quelque chose comme : « Avec l''équipe actuelle, on peut absorber la moitié du flux en tenant les délais. Pour absorber tout, il me faut trois intérimaires sur deux semaines, ou on accepte deux jours de retard sur les commandes non prioritaires. Qu''est-ce que vous préférez ? »
 
-**CLAIRE** — C''est intéressant, parce que ce n''est pas un non.
+**Claire** — C''est intéressant, parce que ce n''est pas un non.
 
-**DAVID** — Non, c''est mieux qu''un non. Un non sec, à un directeur, ça ne passe pas, et ça ne devrait pas passer, d''ailleurs : c''est lui qui décide. Mais un « oui, à ces conditions » ou un « oui, avec ces conséquences », c''est du management. Vous lui donnez les faits, vous lui donnez des options, et vous lui laissez la décision. Et si sa décision c''est « on absorbe tout sans renfort et on tient les délais », là vous dites : « Je ne sais pas le faire. Je vais essayer, mais je vous dis maintenant que ça ne tiendra pas, et je vous le redirai par écrit. »
+**David** — Non, c''est mieux qu''un non. Un non sec, à un directeur, ça ne passe pas, et ça ne devrait pas passer, d''ailleurs : c''est lui qui décide. Mais un « oui, à ces conditions » ou un « oui, avec ces conséquences », c''est du management. Vous lui donnez les faits, vous lui donnez des options, et vous lui laissez la décision. Et si sa décision c''est « on absorbe tout sans renfort et on tient les délais », là vous dites : « Je ne sais pas le faire. Je vais essayer, mais je vous dis maintenant que ça ne tiendra pas, et je vous le redirai par écrit. »
 
-**CLAIRE** — On va revenir sur l''écrit. Mais d''abord, cette idée d''options. Pourquoi c''est si important ?
+**Claire** — On va revenir sur l''écrit. Mais d''abord, cette idée d''options. Pourquoi c''est si important ?
 
-**DAVID** — Parce qu''un chef qui reçoit un problème sans option se retrouve avec le problème sur les bras, et il n''aime pas ça. Il a vingt problèmes déjà. Si vous arrivez avec « j''ai un problème », vous en êtes un de plus. Si vous arrivez avec « j''ai un problème, voilà deux façons de le régler, je recommande la première, j''ai besoin de votre accord », vous êtes une solution.
+**David** — Parce qu''un chef qui reçoit un problème sans option se retrouve avec le problème sur les bras, et il n''aime pas ça. Il a vingt problèmes déjà. Si vous arrivez avec « j''ai un problème », vous en êtes un de plus. Si vous arrivez avec « j''ai un problème, voilà deux façons de le régler, je recommande la première, j''ai besoin de votre accord », vous êtes une solution.
 
-**CLAIRE** — C''est ce qu''on appelle parfois « monter avec une solution ».
+**Claire** — C''est ce qu''on appelle parfois « monter avec une solution ».
 
-**DAVID** — Oui, mais attention à un piège : il ne faut pas attendre d''avoir la solution parfaite pour remonter le problème. J''ai vu des chefs d''équipe garder un problème trois semaines parce qu''ils cherchaient la solution, et quand ils l''ont remonté, c''était trop tard. La règle que je donne à mes chefs d''équipe : un problème se remonte dans les 24 heures, avec ce qu''on sait, avec ce qu''on ne sait pas, et avec ce qu''on propose, même si c''est imparfait.
+**David** — Oui, mais attention à un piège : il ne faut pas attendre d''avoir la solution parfaite pour remonter le problème. J''ai vu des chefs d''équipe garder un problème trois semaines parce qu''ils cherchaient la solution, et quand ils l''ont remonté, c''était trop tard. La règle que je donne à mes chefs d''équipe : un problème se remonte dans les 24 heures, avec ce qu''on sait, avec ce qu''on ne sait pas, et avec ce qu''on propose, même si c''est imparfait.
 
-**CLAIRE** — Vous avez dit « sans passer pour celui qui râle ». C''est une vraie peur chez les managers de proximité.
+**Claire** — Vous avez dit « sans passer pour celui qui râle ». C''est une vraie peur chez les managers de proximité.
 
-**DAVID** — C''est la peur principale. On a l''impression que remonter un problème, c''est se plaindre, ou avouer qu''on ne gère pas. Alors on se tait, et on gère seul, et un jour ça explose, et là on est vraiment celui qui ne gère pas.
+**David** — C''est la peur principale. On a l''impression que remonter un problème, c''est se plaindre, ou avouer qu''on ne gère pas. Alors on se tait, et on gère seul, et un jour ça explose, et là on est vraiment celui qui ne gère pas.
 
-**CLAIRE** — Comment on fait la différence entre alerter et se plaindre ?
+**Claire** — Comment on fait la différence entre alerter et se plaindre ?
 
-**DAVID** — Se plaindre, c''est parler de soi et de ce qu''on ressent : « c''est ingérable, on n''en peut plus, on n''a jamais les moyens ». Alerter, c''est parler des faits et des conséquences pour l''entreprise : « on est à 82 % de délais tenus au lieu de 95 %, la cause principale c''est l''absence de cariste le samedi, si ça continue on perd le contrat X ». Le premier message, votre chef l''entend comme du bruit. Le second, il l''entend comme un risque, et les chefs sont là pour gérer les risques.
+**David** — Se plaindre, c''est parler de soi et de ce qu''on ressent : « c''est ingérable, on n''en peut plus, on n''a jamais les moyens ». Alerter, c''est parler des faits et des conséquences pour l''entreprise : « on est à 82 % de délais tenus au lieu de 95 %, la cause principale c''est l''absence de cariste le samedi, si ça continue on perd le contrat X ». Le premier message, votre chef l''entend comme du bruit. Le second, il l''entend comme un risque, et les chefs sont là pour gérer les risques.
 
-**CLAIRE** — Donc les faits, encore. C''est le même principe que pour le feedback à l''équipe.
+**Claire** — Donc les faits, encore. C''est le même principe que pour le feedback à l''équipe.
 
-**DAVID** — C''est exactement le même. Vers le bas, vers le haut, c''est la même méthode : les faits, l''impact, ce qu''on propose. La seule différence, c''est qu''en montant, vous ne donnez pas une consigne, vous demandez une décision.
+**David** — C''est exactement le même. Vers le bas, vers le haut, c''est la même méthode : les faits, l''impact, ce qu''on propose. La seule différence, c''est qu''en montant, vous ne donnez pas une consigne, vous demandez une décision.
 
-**CLAIRE** — Vous avez évoqué l''écrit. Quand est-ce qu''on écrit à sa hiérarchie ?
+**Claire** — Vous avez évoqué l''écrit. Quand est-ce qu''on écrit à sa hiérarchie ?
 
-**DAVID** — Toujours après l''oral, jamais à la place. Je dis d''abord les choses en face, et ensuite je confirme par un message court : « Comme convenu ce matin, on absorbe le flux de l''entrepôt B avec deux intérimaires à partir de lundi ; sans renfort, je vous confirme que les délais ne tiendront pas sur les commandes non prioritaires. » Ce n''est pas pour me couvrir, enfin pas seulement. C''est pour que la décision soit claire, pour lui comme pour moi.
+**David** — Toujours après l''oral, jamais à la place. Je dis d''abord les choses en face, et ensuite je confirme par un message court : « Comme convenu ce matin, on absorbe le flux de l''entrepôt B avec deux intérimaires à partir de lundi ; sans renfort, je vous confirme que les délais ne tiendront pas sur les commandes non prioritaires. » Ce n''est pas pour me couvrir, enfin pas seulement. C''est pour que la décision soit claire, pour lui comme pour moi.
 
-**CLAIRE** — Mais ça sert aussi à se couvrir.
+**Claire** — Mais ça sert aussi à se couvrir.
 
-**DAVID** — Oui. Et il faut le dire sans gêne : un manager qui a alerté par écrit et à qui on a dit de continuer quand même n''est pas dans la même position que celui qui n''a rien dit. Pour la sécurité, en particulier, c''est essentiel. Si mon directeur me demande de faire tourner un chariot dont le contrôle périodique est dépassé, je dis non, je le dis par écrit, et là c''est un vrai non. Il y a des sujets où « oui à ces conditions » n''existe pas : la sécurité, la légalité, la dignité des gens. Là, le non est net, et il est écrit.
+**David** — Oui. Et il faut le dire sans gêne : un manager qui a alerté par écrit et à qui on a dit de continuer quand même n''est pas dans la même position que celui qui n''a rien dit. Pour la sécurité, en particulier, c''est essentiel. Si mon directeur me demande de faire tourner un chariot dont le contrôle périodique est dépassé, je dis non, je le dis par écrit, et là c''est un vrai non. Il y a des sujets où « oui à ces conditions » n''existe pas : la sécurité, la légalité, la dignité des gens. Là, le non est net, et il est écrit.
 
-**CLAIRE** — Vous encadrez trois chefs d''équipe. Vous leur apprenez ça ?
+**Claire** — Vous encadrez trois chefs d''équipe. Vous leur apprenez ça ?
 
-**DAVID** — J''essaie. Et je leur dis surtout une chose : je préfère un chef d''équipe qui me dit non avec des arguments qu''un chef d''équipe qui me dit oui et qui ne livre pas. Le premier me fait gagner du temps. Le second m''en fait perdre, et il perd ma confiance.
+**David** — J''essaie. Et je leur dis surtout une chose : je préfère un chef d''équipe qui me dit non avec des arguments qu''un chef d''équipe qui me dit oui et qui ne livre pas. Le premier me fait gagner du temps. Le second m''en fait perdre, et il perd ma confiance.
 
-**CLAIRE** — Passons à la négociation. Obtenir des moyens : un poste, du matériel, du budget de formation. Comment vous vous y prenez ?
+**Claire** — Passons à la négociation. Obtenir des moyens : un poste, du matériel, du budget de formation. Comment vous vous y prenez ?
 
-**DAVID** — Je prépare comme un dossier. Ça paraît lourd, mais un directeur qui reçoit une demande de poste doit lui-même la défendre au-dessus de lui, donc il a besoin de mes arguments. Le dossier, c''est une page : le besoin, chiffré ; ce que ça coûte ; ce que ça rapporte ou ce que ça évite ; ce qui se passe si on ne le fait pas ; et ce que je propose comme alternative si le budget n''est pas là.
+**David** — Je prépare comme un dossier. Ça paraît lourd, mais un directeur qui reçoit une demande de poste doit lui-même la défendre au-dessus de lui, donc il a besoin de mes arguments. Le dossier, c''est une page : le besoin, chiffré ; ce que ça coûte ; ce que ça rapporte ou ce que ça évite ; ce qui se passe si on ne le fait pas ; et ce que je propose comme alternative si le budget n''est pas là.
 
-**CLAIRE** — Donnez-nous un exemple.
+**Claire** — Donnez-nous un exemple.
 
-**DAVID** — Le cariste du samedi. Ma demande : un poste à temps partiel, 8 heures le samedi. Le coût : environ 12 000 euros par an chargés. Ce que ça évite : les heures supplémentaires actuelles, qui coûtent déjà 7 000, et les retards du lundi, qui nous ont valu deux pénalités à 3 000 euros chacune l''année dernière. Donc le poste se paie tout seul. L''alternative si on refuse : je décale les commandes du samedi au lundi, et on accepte un délai de plus sur ces commandes-là. Avec ça, mon directeur a tout ce qu''il faut pour décider, et pour défendre le poste auprès de la direction régionale.
+**David** — Le cariste du samedi. Ma demande : un poste à temps partiel, 8 heures le samedi. Le coût : environ 12 000 euros par an chargés. Ce que ça évite : les heures supplémentaires actuelles, qui coûtent déjà 7 000, et les retards du lundi, qui nous ont valu deux pénalités à 3 000 euros chacune l''année dernière. Donc le poste se paie tout seul. L''alternative si on refuse : je décale les commandes du samedi au lundi, et on accepte un délai de plus sur ces commandes-là. Avec ça, mon directeur a tout ce qu''il faut pour décider, et pour défendre le poste auprès de la direction régionale.
 
-**CLAIRE** — Vous parlez le langage de la direction.
+**Claire** — Vous parlez le langage de la direction.
 
-**DAVID** — Le langage de la direction, c''est les chiffres et les risques. Pas parce que les directeurs sont insensibles, mais parce que c''est comme ça qu''ils arbitrent entre vingt demandes. Si je dis « mon équipe est fatiguée », c''est vrai, mais ça ne pèse rien face à une autre demande chiffrée. Si je dis « la fatigue nous coûte deux arrêts de travail par trimestre, soit tant de jours perdus », ça pèse.
+**David** — Le langage de la direction, c''est les chiffres et les risques. Pas parce que les directeurs sont insensibles, mais parce que c''est comme ça qu''ils arbitrent entre vingt demandes. Si je dis « mon équipe est fatiguée », c''est vrai, mais ça ne pèse rien face à une autre demande chiffrée. Si je dis « la fatigue nous coûte deux arrêts de travail par trimestre, soit tant de jours perdus », ça pèse.
 
-**CLAIRE** — Et quand la réponse est non ?
+**Claire** — Et quand la réponse est non ?
 
-**DAVID** — D''abord, je demande pourquoi. Pas pour contester, pour comprendre. Souvent, le non a une raison que je ne connaissais pas : un gel des embauches, une autre priorité. Ensuite, je demande ce qui pourrait faire changer la réponse : « À quelles conditions ce serait envisageable ? Dans quel délai ? » Et je reviens trois mois plus tard avec les chiffres mis à jour. Un non aujourd''hui n''est pas un non pour toujours.
+**David** — D''abord, je demande pourquoi. Pas pour contester, pour comprendre. Souvent, le non a une raison que je ne connaissais pas : un gel des embauches, une autre priorité. Ensuite, je demande ce qui pourrait faire changer la réponse : « À quelles conditions ce serait envisageable ? Dans quel délai ? » Et je reviens trois mois plus tard avec les chiffres mis à jour. Un non aujourd''hui n''est pas un non pour toujours.
 
-**CLAIRE** — Et vis-à-vis de l''équipe, quand vous revenez avec un non ?
+**Claire** — Et vis-à-vis de l''équipe, quand vous revenez avec un non ?
 
-**DAVID** — C''est le moment le plus délicat. La tentation, c''est de dire « j''ai demandé, ils ont refusé, c''est pas moi ». Et c''est une catastrophe, parce que vous vous mettez du côté de l''équipe contre la direction, et vous n''êtes plus manager. Je dis : « J''ai demandé un cariste le samedi. La réponse est non pour cette année, parce que les embauches sont gelées. Voilà ce qu''on fait en attendant. Et je redemande en janvier. » Je porte la décision, même si je ne la partage pas. Ce que j''en pense, je l''ai dit à mon directeur, pas à l''équipe.
+**David** — C''est le moment le plus délicat. La tentation, c''est de dire « j''ai demandé, ils ont refusé, c''est pas moi ». Et c''est une catastrophe, parce que vous vous mettez du côté de l''équipe contre la direction, et vous n''êtes plus manager. Je dis : « J''ai demandé un cariste le samedi. La réponse est non pour cette année, parce que les embauches sont gelées. Voilà ce qu''on fait en attendant. Et je redemande en janvier. » Je porte la décision, même si je ne la partage pas. Ce que j''en pense, je l''ai dit à mon directeur, pas à l''équipe.
 
-**CLAIRE** — C''est la loyauté dont on parle au module 1.
+**Claire** — C''est la loyauté dont on parle au module 1.
 
-**DAVID** — Oui. Loyal vers le haut, ça veut dire : je conteste avant, en face, avec des arguments ; et une fois que c''est décidé, je porte. Loyal vers le bas, ça veut dire : je ne cache pas les décisions, je ne fais pas semblant de les avoir prises quand je ne les ai pas prises, et je dis ce que je fais pour l''équipe.
+**David** — Oui. Loyal vers le haut, ça veut dire : je conteste avant, en face, avec des arguments ; et une fois que c''est décidé, je porte. Loyal vers le bas, ça veut dire : je ne cache pas les décisions, je ne fais pas semblant de les avoir prises quand je ne les ai pas prises, et je dis ce que je fais pour l''équipe.
 
-**CLAIRE** — Il y a un autre sujet difficile : le manager qui doit alerter sur un problème qui concerne sa hiérarchie elle-même. Un directeur qui prend de mauvaises décisions, ou qui a un comportement inapproprié.
+**Claire** — Il y a un autre sujet difficile : le manager qui doit alerter sur un problème qui concerne sa hiérarchie elle-même. Un directeur qui prend de mauvaises décisions, ou qui a un comportement inapproprié.
 
-**DAVID** — C''est rare, mais ça arrive, et il faut savoir quoi faire. Pour une mauvaise décision, c''est ce qu''on a dit : les faits, l''impact, les options, en face, puis par écrit. Si ça ne suffit pas et que le risque est grave, on monte d''un niveau, en le disant : « Je vais en parler à la direction régionale, je vous en informe. » Ce n''est pas de la trahison, c''est de l''alerte.
+**David** — C''est rare, mais ça arrive, et il faut savoir quoi faire. Pour une mauvaise décision, c''est ce qu''on a dit : les faits, l''impact, les options, en face, puis par écrit. Si ça ne suffit pas et que le risque est grave, on monte d''un niveau, en le disant : « Je vais en parler à la direction régionale, je vous en informe. » Ce n''est pas de la trahison, c''est de l''alerte.
 
-**CLAIRE** — Et pour un comportement ?
+**Claire** — Et pour un comportement ?
 
-**DAVID** — Là, on ne gère pas seul. Si un supérieur a un comportement de harcèlement, de discrimination, ou met les gens en danger, il y a des circuits prévus : les ressources humaines, le CSE, le médecin du travail, le référent harcèlement, et, si l''entreprise ne réagit pas, l''inspection du travail. Un manager de proximité qui constate ça a l''obligation de le remonter, et il a une protection légale quand il le fait de bonne foi. Ce n''est pas un sujet de négociation.
+**David** — Là, on ne gère pas seul. Si un supérieur a un comportement de harcèlement, de discrimination, ou met les gens en danger, il y a des circuits prévus : les ressources humaines, le CSE, le médecin du travail, le référent harcèlement, et, si l''entreprise ne réagit pas, l''inspection du travail. Un manager de proximité qui constate ça a l''obligation de le remonter, et il a une protection légale quand il le fait de bonne foi. Ce n''est pas un sujet de négociation.
 
-**CLAIRE** — Pour terminer, si vous deviez donner trois conseils à un nouveau manager sur la communication vers le haut ?
+**Claire** — Pour terminer, si vous deviez donner trois conseils à un nouveau manager sur la communication vers le haut ?
 
-**DAVID** — Un : ne dites jamais « on va faire au mieux ». Dites « oui », « non », ou « oui à ces conditions », et dites-le avec des faits. Deux : remontez les problèmes dans les 24 heures, avec ce que vous savez et ce que vous proposez, même imparfait ; votre chef préfère un problème tôt qu''une catastrophe tard. Trois : quand vous revenez vers l''équipe, portez la décision. Vous avez le droit de la contester avant, en face ; vous n''avez pas le droit de la désavouer après, devant l''équipe.
+**David** — Un : ne dites jamais « on va faire au mieux ». Dites « oui », « non », ou « oui à ces conditions », et dites-le avec des faits. Deux : remontez les problèmes dans les 24 heures, avec ce que vous savez et ce que vous proposez, même imparfait ; votre chef préfère un problème tôt qu''une catastrophe tard. Trois : quand vous revenez vers l''équipe, portez la décision. Vous avez le droit de la contester avant, en face ; vous n''avez pas le droit de la désavouer après, devant l''équipe.
 
-**CLAIRE** — Et le quatrième, que vous n''avez pas dit : l''écrit après l''oral.
+**Claire** — Et le quatrième, que vous n''avez pas dit : l''écrit après l''oral.
 
-**DAVID** — Toujours. Court, factuel, « comme convenu ». Ça protège tout le monde, à commencer par la décision elle-même.
+**David** — Toujours. Court, factuel, « comme convenu ». Ça protège tout le monde, à commencer par la décision elle-même.
 
-**CLAIRE** — Merci David. Dans la fiche outil qui suit, vous trouverez la trame de l''entretien de suivi et un modèle d''ordre du jour. Et dans le cas pratique, Karim va devoir, lui aussi, parler à Michel.
+**Claire** — Merci David. Dans la fiche outil qui suit, vous trouverez la trame de l''entretien de suivi et un modèle d''ordre du jour. Et dans le cas pratique, Karim va devoir, lui aussi, parler à Michel.
 
----
-
-Sources : Mintzberg (1973) sur les rôles de liaison ; Code du travail, art. L1152-2 et L1132-3-3 (protection des salariés qui relatent des faits de harcèlement ou de discrimination), art. L4122-1 (obligation de sécurité du salarié) ; Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 (éd. originale *Getting to Yes*, 1981) — négociation sur les intérêts.
+## Sources
+Mintzberg (1973) sur les rôles de liaison ; Code du travail, art. L1152-2 et L1132-3-3 (protection des salariés qui relatent des faits de harcèlement ou de discrimination), art. L4122-1 (obligation de sécurité du salarié) ; Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 1982 (éd. originale *Getting to Yes*, 1981) — négociation sur les intérêts.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 4 and l.ordre = 8;
@@ -6069,12 +5931,9 @@ Sujets parqués pour une prochaine fois : ____________________
 
   -- 4.1-video-motivation.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 4 — Motiver, engager, faire progresser »]
+## Module 4 — Motiver, engager, faire progresser
 
 Bienvenue dans le module 4. Vous savez maintenant organiser le travail et communiquer avec votre équipe. Reste une question que tous les managers se posent, souvent à voix basse : comment faire pour que les gens aient envie ?
 
@@ -6082,13 +5941,11 @@ Commençons par démonter une idée reçue. La plupart des managers pensent que 
 
 Trois chercheurs, à trois époques, ont éclairé ce qui motive au travail. Leurs conclusions se complètent, et elles donnent au manager des leviers qu''il peut actionner sans budget.
 
-[Titre : « Herzberg : deux familles de facteurs »]
+## Herzberg : deux familles de facteurs
 
 Le premier est Frederick Herzberg, psychologue américain. À la fin des années 1950, il a interrogé des centaines de salariés en leur demandant de raconter un moment où ils s''étaient sentis exceptionnellement bien au travail, et un moment où ils s''étaient sentis exceptionnellement mal.
 
 Il s''attendait à trouver les mêmes causes, dans un sens et dans l''autre. Ce n''est pas ce qu''il a trouvé.
-
-[Schéma : deux colonnes. Gauche « Facteurs d''hygiène » : salaire, conditions de travail, relations avec le chef, politique de l''entreprise, sécurité de l''emploi. Droite « Facteurs de motivation » : accomplissement, reconnaissance, intérêt du travail, responsabilité, progression.]
 
 Les mauvais moments étaient liés à ce qu''il a appelé les facteurs d''hygiène : le salaire, les conditions de travail, la relation avec le supérieur, les règles de l''entreprise. Quand ces facteurs sont mauvais, les gens sont insatisfaits. Mais quand ils sont bons, les gens ne sont pas motivés pour autant : ils ne sont simplement plus insatisfaits.
 
@@ -6096,11 +5953,9 @@ Les bons moments, eux, étaient liés à une autre famille : l''accomplissement,
 
 Ce que cela signifie pour vous : le salaire et les conditions de travail sont indispensables, mais ils ne créent pas l''engagement. Ils évitent le désengagement. Une augmentation fait plaisir trois semaines. Un travail intéressant, une responsabilité confiée, une progression visible font effet pendant des années. Et ces leviers-là, c''est vous qui les tenez.
 
-[Titre : « Deci et Ryan : trois besoins »]
+## Deci et Ryan : trois besoins
 
 Le deuxième éclairage vient d''Edward Deci et Richard Ryan, psychologues américains, avec la théorie de l''autodétermination, développée à partir des années 1980. Ils ont montré, expériences à l''appui, que la motivation la plus solide, celle qui dure et qui produit de la qualité, vient de l''intérieur de la personne, et qu''elle se nourrit de trois besoins.
-
-[Schéma : trois cercles : Autonomie · Compétence · Lien]
 
 L''autonomie : avoir une marge de décision sur la façon de faire son travail. Pas l''absence de cadre, mais un espace à l''intérieur du cadre.
 
@@ -6112,7 +5967,7 @@ Quand ces trois besoins sont nourris, les gens s''engagent d''eux-mêmes. Quand 
 
 Pour le manager, la traduction est simple : à chaque décision, demandez-vous si elle augmente ou diminue l''autonomie, la compétence et le lien de la personne concernée.
 
-[Titre : « Amabile et Kramer : le principe du progrès »]
+## Amabile et Kramer : le principe du progrès
 
 Le troisième éclairage est le plus récent. Teresa Amabile et Steven Kramer, chercheurs à Harvard, ont demandé à plus de deux cents personnes, dans sept entreprises, de tenir un journal quotidien de leur journée de travail pendant plusieurs mois. Près de douze mille journées analysées.
 
@@ -6120,11 +5975,11 @@ Leur question : qu''est-ce qui distingue une bonne journée d''une mauvaise, du 
 
 La réponse, publiée en 2011, tient en une phrase : ce qui compte le plus, c''est le sentiment d''avancer dans un travail qui a du sens. Pas les grandes victoires. Les petits progrès. Une pièce terminée, un problème résolu, un client satisfait. Et à l''inverse, ce qui plombe le plus une journée, c''est le sentiment de reculer : un travail refait, une décision annulée, un obstacle qui bloque.
 
-[Texte à l''écran : « Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses. »]
+**Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses.**
 
 Ce que cela signifie pour vous : votre rôle est de rendre le progrès possible et visible. Enlever les obstacles, donner les moyens, fixer des objectifs qui permettent de constater qu''on avance, et dire quand ça avance. Un manager qui ne relève que ce qui ne va pas fabrique des journées de recul.
 
-[Titre : « Ce que le manager peut faire, sans budget »]
+## Ce que le manager peut faire, sans budget
 
 Rassemblons. Trois modèles, un même message : la motivation ne s''achète pas, elle se construit dans le travail lui-même. Et voici ce que vous pouvez faire dès demain.
 
@@ -6140,7 +5995,7 @@ Enlever les obstacles : c''est peut-être le plus important et le moins vu. Chaq
 
 Et protéger le lien : une équipe où l''on peut parler, où l''on n''est pas humilié, où l''on compte. C''est la sécurité psychologique, la leçon suivante.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, deux histoires illustrent tout cela. Marc, le mécanicien, était démotivé. Pas à cause de son salaire : à cause du sentiment de reculer chaque jour, en découvrant les interventions au dernier moment, et de ne compter pour personne. Le jour où Karim l''a consulté chaque soir pour le planning du lendemain, Marc a retrouvé de l''autonomie, du lien, et des journées qui avancent.
 
@@ -6150,18 +6005,12 @@ La motivation n''est pas un mystère. C''est le résultat de conditions que vous
 
 À tout de suite pour la sécurité psychologique.
 
-[Fondu, logo]
-
----
-
-Sources : Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
+## Sources
+Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 4 — Motiver, engager, faire progresser »]
+## Module 4 — Motiver, engager, faire progresser
 
 Bienvenue dans le module 4. Vous savez maintenant organiser le travail et communiquer avec votre équipe. Reste une question que tous les managers se posent, souvent à voix basse : comment faire pour que les gens aient envie ?
 
@@ -6169,13 +6018,11 @@ Commençons par démonter une idée reçue. La plupart des managers pensent que 
 
 Trois chercheurs, à trois époques, ont éclairé ce qui motive au travail. Leurs conclusions se complètent, et elles donnent au manager des leviers qu''il peut actionner sans budget.
 
-[Titre : « Herzberg : deux familles de facteurs »]
+## Herzberg : deux familles de facteurs
 
 Le premier est Frederick Herzberg, psychologue américain. À la fin des années 1950, il a interrogé des centaines de salariés en leur demandant de raconter un moment où ils s''étaient sentis exceptionnellement bien au travail, et un moment où ils s''étaient sentis exceptionnellement mal.
 
 Il s''attendait à trouver les mêmes causes, dans un sens et dans l''autre. Ce n''est pas ce qu''il a trouvé.
-
-[Schéma : deux colonnes. Gauche « Facteurs d''hygiène » : salaire, conditions de travail, relations avec le chef, politique de l''entreprise, sécurité de l''emploi. Droite « Facteurs de motivation » : accomplissement, reconnaissance, intérêt du travail, responsabilité, progression.]
 
 Les mauvais moments étaient liés à ce qu''il a appelé les facteurs d''hygiène : le salaire, les conditions de travail, la relation avec le supérieur, les règles de l''entreprise. Quand ces facteurs sont mauvais, les gens sont insatisfaits. Mais quand ils sont bons, les gens ne sont pas motivés pour autant : ils ne sont simplement plus insatisfaits.
 
@@ -6183,11 +6030,9 @@ Les bons moments, eux, étaient liés à une autre famille : l''accomplissement,
 
 Ce que cela signifie pour vous : le salaire et les conditions de travail sont indispensables, mais ils ne créent pas l''engagement. Ils évitent le désengagement. Une augmentation fait plaisir trois semaines. Un travail intéressant, une responsabilité confiée, une progression visible font effet pendant des années. Et ces leviers-là, c''est vous qui les tenez.
 
-[Titre : « Deci et Ryan : trois besoins »]
+## Deci et Ryan : trois besoins
 
 Le deuxième éclairage vient d''Edward Deci et Richard Ryan, psychologues américains, avec la théorie de l''autodétermination, développée à partir des années 1980. Ils ont montré, expériences à l''appui, que la motivation la plus solide, celle qui dure et qui produit de la qualité, vient de l''intérieur de la personne, et qu''elle se nourrit de trois besoins.
-
-[Schéma : trois cercles : Autonomie · Compétence · Lien]
 
 L''autonomie : avoir une marge de décision sur la façon de faire son travail. Pas l''absence de cadre, mais un espace à l''intérieur du cadre.
 
@@ -6199,7 +6044,7 @@ Quand ces trois besoins sont nourris, les gens s''engagent d''eux-mêmes. Quand 
 
 Pour le manager, la traduction est simple : à chaque décision, demandez-vous si elle augmente ou diminue l''autonomie, la compétence et le lien de la personne concernée.
 
-[Titre : « Amabile et Kramer : le principe du progrès »]
+## Amabile et Kramer : le principe du progrès
 
 Le troisième éclairage est le plus récent. Teresa Amabile et Steven Kramer, chercheurs à Harvard, ont demandé à plus de deux cents personnes, dans sept entreprises, de tenir un journal quotidien de leur journée de travail pendant plusieurs mois. Près de douze mille journées analysées.
 
@@ -6207,11 +6052,11 @@ Leur question : qu''est-ce qui distingue une bonne journée d''une mauvaise, du 
 
 La réponse, publiée en 2011, tient en une phrase : ce qui compte le plus, c''est le sentiment d''avancer dans un travail qui a du sens. Pas les grandes victoires. Les petits progrès. Une pièce terminée, un problème résolu, un client satisfait. Et à l''inverse, ce qui plombe le plus une journée, c''est le sentiment de reculer : un travail refait, une décision annulée, un obstacle qui bloque.
 
-[Texte à l''écran : « Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses. »]
+**Le principe du progrès : les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses.**
 
 Ce que cela signifie pour vous : votre rôle est de rendre le progrès possible et visible. Enlever les obstacles, donner les moyens, fixer des objectifs qui permettent de constater qu''on avance, et dire quand ça avance. Un manager qui ne relève que ce qui ne va pas fabrique des journées de recul.
 
-[Titre : « Ce que le manager peut faire, sans budget »]
+## Ce que le manager peut faire, sans budget
 
 Rassemblons. Trois modèles, un même message : la motivation ne s''achète pas, elle se construit dans le travail lui-même. Et voici ce que vous pouvez faire dès demain.
 
@@ -6227,7 +6072,7 @@ Enlever les obstacles : c''est peut-être le plus important et le moins vu. Chaq
 
 Et protéger le lien : une équipe où l''on peut parler, où l''on n''est pas humilié, où l''on compte. C''est la sécurité psychologique, la leçon suivante.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, deux histoires illustrent tout cela. Marc, le mécanicien, était démotivé. Pas à cause de son salaire : à cause du sentiment de reculer chaque jour, en découvrant les interventions au dernier moment, et de ne compter pour personne. Le jour où Karim l''a consulté chaque soir pour le planning du lendemain, Marc a retrouvé de l''autonomie, du lien, et des journées qui avancent.
 
@@ -6237,11 +6082,8 @@ La motivation n''est pas un mystère. C''est le résultat de conditions que vous
 
 À tout de suite pour la sécurité psychologique.
 
-[Fondu, logo]
-
----
-
-Sources : Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
+## Sources
+Frederick Herzberg, Bernard Mausner, Barbara Snyderman, *The Motivation to Work*, 1959 ; Herzberg, « One More Time: How Do You Motivate Employees? », *Harvard Business Review*, 1968 ; Edward Deci, Richard Ryan, *Intrinsic Motivation and Self-Determination in Human Behavior*, 1985, et « Self-Determination Theory », *American Psychologist*, 2000 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, Harvard Business Review Press, 2011.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 1;
@@ -6360,7 +6202,7 @@ Conservez ce carnet : le module 5 (tensions et conflits) reprend la sécurité p
   n := n + 1;
 
   -- 4.11-quiz.json
-  update public.lecons l set contenu = '{"questions": [{"id": "m4q01", "enonce": "Selon Herzberg, qu''est-ce qu''un facteur d''hygiène (salaire, conditions de travail, relation avec le chef) ?", "options": ["Un facteur qui crée la motivation quand il est bon", "Un facteur dont l''absence crée de l''insatisfaction, mais dont la présence ne crée pas de motivation durable", "Un facteur sans aucun effet sur les salariés", "Un facteur réservé aux métiers physiques"], "bonnes": [1], "explication": "Les facteurs d''hygiène évitent le désengagement ; ce sont les facteurs de motivation (accomplissement, reconnaissance, intérêt du travail, responsabilité, progression) qui créent l''engagement."}, {"id": "m4q02", "enonce": "Quels sont les trois besoins de la théorie de l''autodétermination de Deci et Ryan ?", "options": ["Salaire, sécurité, statut", "Autonomie, compétence, lien", "Pouvoir, réussite, affiliation", "Reconnaissance, prime, promotion"], "bonnes": [1], "explication": "Quand l''autonomie, la compétence et le lien sont nourris, la motivation vient de l''intérieur ; quand ils sont frustrés, aucune prime ne compense."}, {"id": "m4q03", "enonce": "D''après Amabile et Kramer (principe du progrès), qu''est-ce qui distingue le plus une bonne journée de travail d''une mauvaise ?", "options": ["Le montant de la prime du mois", "Le nombre d''heures travaillées", "Le sentiment d''avancer dans un travail qui a du sens, même par de petits progrès", "L''absence totale de difficulté"], "bonnes": [2], "explication": "Les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses ; le sentiment de reculer (travail refait, obstacle) est ce qui la plombe."}, {"id": "m4q04", "enonce": "Qu''est-ce que la sécurité psychologique au sens d''Amy Edmondson ?", "options": ["Une équipe où tout le monde est d''accord et où l''on évite les sujets difficiles", "La conviction partagée que l''on peut poser une question, admettre une erreur, proposer ou contester sans être puni ni humilié", "Un dispositif de sécurité physique obligatoire dans les ateliers", "L''absence de toute exigence de la part du manager"], "bonnes": [1], "explication": "La sécurité psychologique se combine avec l''exigence : c''est ce qui permet de se dire les choses difficiles, pas de les éviter."}, {"id": "m4q05", "enonce": "Dans l''étude d''Edmondson en milieu hospitalier, pourquoi les meilleures équipes déclaraient-elles plus d''erreurs ?", "options": ["Parce qu''elles en faisaient réellement plus", "Parce qu''elles osaient les signaler, alors que les autres les cachaient", "Parce qu''elles étaient moins compétentes", "Parce qu''elles y étaient obligées par la direction"], "bonnes": [1], "explication": "Les erreurs existaient partout ; seules les équipes psychologiquement sûres les signalaient, ce qui permettait de les traiter."}, {"id": "m4q06", "enonce": "Plusieurs réponses. Quels comportements du manager construisent la sécurité psychologique ?", "options": ["Admettre ses propres erreurs devant l''équipe", "Remercier la personne qui signale un problème, même si elle s''est trompée", "Ne jamais dire « je ne sais pas » pour préserver son autorité", "Poser des limites aux moqueries et au mépris dans l''équipe"], "bonnes": [0, 1, 3], "explication": "Un manager qui ne se trompe jamais et sait tout oblige les autres à cacher et à se taire. Admettre, remercier, questionner et poser des limites sont les comportements qui comptent."}, {"id": "m4q07", "enonce": "Selon la typologie de Brun et Dugas, quelle forme de reconnaissance permet de reconnaître aussi ceux qui n''ont pas encore de résultats (débutants, tâches ingrates) ?", "options": ["La reconnaissance des résultats uniquement", "La reconnaissance de la pratique de travail et de l''investissement (la manière de faire, l''effort)", "La prime de fin d''année", "La comparaison avec les meilleurs"], "bonnes": [1], "explication": "Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs. La manière de faire et l''effort se reconnaissent chez tous, et la reconnaissance existentielle (bonjour, informer, consulter) est la base."}, {"id": "m4q08", "enonce": "Dans le modèle GROW pour un entretien de progression, que signifie le « O » ?", "options": ["Objectif : ce que la personne veut être capable de faire", "Obstacles : ce qui empêche la personne de progresser", "Options : les pistes possibles, celles de la personne d''abord, puis celles du manager", "Ordre : la consigne donnée par le manager"], "bonnes": [2], "explication": "G = Goal (objectif), R = Reality (réalité), O = Options, W = Will (engagement). Le manager questionne plus qu''il ne conseille."}, {"id": "m4q09", "enonce": "Un nouveau salarié arrive lundi. Quelle formation est obligatoire dès son arrivée selon le Code du travail (art. L4141-2) ?", "options": ["Une formation au management", "Une formation pratique et appropriée à la sécurité", "Une formation aux outils informatiques", "Aucune formation n''est obligatoire avant la fin de la période d''essai"], "bonnes": [1], "explication": "La formation à la sécurité est obligatoire pour tout nouvel embauché, y compris les intérimaires et les salariés changeant de poste, et elle est tracée."}, {"id": "m4q10", "enonce": "Sophie, seule à un poste administratif, demande un jour de télétravail. L''entreprise n''a ni accord collectif ni charte. Que dit le Code du travail (L1222-9) ?", "options": ["Le télétravail est impossible sans accord collectif", "Le télétravail peut être mis en place par simple accord entre le salarié et l''employeur, formalisé par tout moyen", "L''employeur peut l''imposer à tout moment", "Le télétravail est réservé aux cadres"], "bonnes": [1], "explication": "À défaut d''accord collectif ou de charte, un accord individuel suffit. Le télétravail est volontaire des deux côtés, sauf circonstances exceptionnelles."}, {"id": "m4q11", "enonce": "Quelle est la limite légale de la durée quotidienne de travail (hors dérogations) et du repos quotidien ?", "options": ["8 heures de travail, 8 heures de repos", "10 heures de travail, 11 heures de repos consécutives", "12 heures de travail, 10 heures de repos", "Aucune limite si le salarié est d''accord"], "bonnes": [1], "explication": "Art. L3121-18 et L3131-1. S''y ajoutent 48 h par semaine, 44 h en moyenne sur douze semaines, 35 h de repos hebdomadaire et 20 min de pause dès 6 h de travail."}, {"id": "m4q12", "enonce": "Thierry arrive plus tôt, ne prend plus de pause, fait des erreurs inhabituelles et a eu un accrochage. Quelle est la bonne conduite du manager ?", "options": ["Lui dire qu''il fait un burn-out et lui conseiller de s''arrêter", "Ne rien faire tant qu''il ne se plaint pas", "Le voir seul avec des faits, écouter sans creuser la vie privée, agir sur ce qui pèse dans le travail, rappeler l''accès au médecin du travail, alerter la hiérarchie si nécessaire, suivre", "Convoquer une réunion d''équipe pour en parler devant tous"], "bonnes": [2], "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte et suit ; il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+  update public.lecons l set contenu = '{"questions": [{"id": "m4q01", "enonce": "Selon Herzberg, qu''est-ce qu''un facteur d''hygiène (salaire, conditions de travail, relation avec le chef) ?", "options": ["Un facteur qui crée la motivation quand il est bon", "Un facteur dont l''absence crée de l''insatisfaction, mais dont la présence ne crée pas de motivation durable", "Un facteur sans aucun effet sur les salariés", "Un facteur réservé aux métiers physiques"], "bonnes": [1], "explication": "Les facteurs d''hygiène évitent le désengagement ; ce sont les facteurs de motivation (accomplissement, reconnaissance, intérêt du travail, responsabilité, progression) qui créent l''engagement."}, {"id": "m4q02", "enonce": "Quels sont les trois besoins de la théorie de l''autodétermination de Deci et Ryan ?", "options": ["Salaire, sécurité, statut", "Autonomie, compétence, lien", "Pouvoir, réussite, affiliation", "Reconnaissance, prime, promotion"], "bonnes": [1], "explication": "Quand l''autonomie, la compétence et le lien sont nourris, la motivation vient de l''intérieur ; quand ils sont frustrés, aucune prime ne compense."}, {"id": "m4q03", "enonce": "D''après Amabile et Kramer (principe du progrès), qu''est-ce qui distingue le plus une bonne journée de travail d''une mauvaise ?", "options": ["Le montant de la prime du mois", "Le nombre d''heures travaillées", "Le sentiment d''avancer dans un travail qui a du sens, même par de petits progrès", "L''absence totale de difficulté"], "bonnes": [2], "explication": "Les petites victoires quotidiennes nourrissent la motivation plus que les grandes récompenses ; le sentiment de reculer (travail refait, obstacle) est ce qui la plombe."}, {"id": "m4q04", "enonce": "Qu''est-ce que la sécurité psychologique au sens d''Amy Edmondson ?", "options": ["Une équipe où tout le monde est d''accord et où l''on évite les sujets difficiles", "La conviction partagée que l''on peut poser une question, admettre une erreur, proposer ou contester sans être puni ni humilié", "Un dispositif de sécurité physique obligatoire dans les ateliers", "L''absence de toute exigence de la part du manager"], "bonnes": [1], "explication": "La sécurité psychologique se combine avec l''exigence : c''est ce qui permet de se dire les choses difficiles, pas de les éviter."}, {"id": "m4q05", "enonce": "Dans l''étude d''Edmondson en milieu hospitalier, pourquoi les meilleures équipes déclaraient-elles plus d''erreurs ?", "options": ["Parce qu''elles en faisaient réellement plus", "Parce qu''elles osaient les signaler, alors que les autres les cachaient", "Parce qu''elles étaient moins compétentes", "Parce qu''elles y étaient obligées par la direction"], "bonnes": [1], "explication": "Les erreurs existaient partout ; seules les équipes psychologiquement sûres les signalaient, ce qui permettait de les traiter."}, {"id": "m4q06", "enonce": "Plusieurs réponses. Quels comportements du manager construisent la sécurité psychologique ?", "options": ["Admettre ses propres erreurs devant l''équipe", "Remercier la personne qui signale un problème, même si elle s''est trompée", "Ne jamais dire « je ne sais pas » pour préserver son autorité", "Poser des limites aux moqueries et au mépris dans l''équipe"], "bonnes": [0, 1, 3], "explication": "Un manager qui ne se trompe jamais et sait tout oblige les autres à cacher et à se taire. Admettre, remercier, questionner et poser des limites sont les comportements qui comptent."}, {"id": "m4q07", "enonce": "Selon la typologie de Brun et Dugas, quelle forme de reconnaissance permet de reconnaître aussi ceux qui n''ont pas encore de résultats (débutants, tâches ingrates) ?", "options": ["La reconnaissance des résultats uniquement", "La reconnaissance de la pratique de travail et de l''investissement (la manière de faire, l''effort)", "La prime de fin d''année", "La comparaison avec les meilleurs"], "bonnes": [1], "explication": "Ne reconnaître que les résultats, c''est ne reconnaître que les meilleurs. La manière de faire et l''effort se reconnaissent chez tous, et la reconnaissance existentielle (bonjour, informer, consulter) est la base."}, {"id": "m4q08", "enonce": "Dans le modèle GROW pour un entretien de progression, que signifie le « O » ?", "options": ["Objectif : ce que la personne veut être capable de faire", "Obstacles : ce qui empêche la personne de progresser", "Options : les pistes possibles, celles de la personne d''abord, puis celles du manager", "Ordre : la consigne donnée par le manager"], "bonnes": [2], "explication": "G = Goal (objectif), R = Reality (réalité), O = Options, W = Will (engagement). Le manager questionne plus qu''il ne conseille."}, {"id": "m4q09", "enonce": "Un nouveau salarié arrive lundi. Quelle formation est obligatoire dès son arrivée selon le Code du travail (art. L4141-2) ?", "options": ["Une formation au management", "Une formation pratique et appropriée à la sécurité", "Une formation aux outils informatiques", "Aucune formation n''est obligatoire avant la fin de la période d''essai"], "bonnes": [1], "explication": "La formation à la sécurité est obligatoire pour tout nouvel embauché, y compris les intérimaires et les salariés changeant de poste, et elle est tracée."}, {"id": "m4q10", "enonce": "Sophie, seule à un poste administratif, demande un jour de télétravail. L''entreprise n''a ni accord collectif ni charte. Que dit le Code du travail (L1222-9) ?", "options": ["Le télétravail est impossible sans accord collectif", "Le télétravail peut être mis en place par simple accord entre le salarié et l''employeur, formalisé par tout moyen", "L''employeur peut l''imposer à tout moment", "Le télétravail est réservé aux cadres"], "bonnes": [1], "explication": "À défaut d''accord collectif ou de charte, un accord individuel suffit. Le télétravail est volontaire des deux côtés, sauf circonstances exceptionnelles."}, {"id": "m4q11", "enonce": "Quelle est la limite légale de la durée quotidienne de travail (hors dérogations) et du repos quotidien ?", "options": ["8 heures de travail, 8 heures de repos", "10 heures de travail, 11 heures de repos consécutives", "12 heures de travail, 10 heures de repos", "Aucune limite si le salarié est d''accord"], "bonnes": [1], "explication": "Art. L3121-18 et L3131-1. S''y ajoutent 48 h par semaine, 44 h en moyenne sur douze semaines, 35 h de repos hebdomadaire et 20 min de pause dès 6 h de travail."}, {"id": "m4q12", "enonce": "Thierry arrive plus tôt, ne prend plus de pause, fait des erreurs inhabituelles et a eu un accrochage. Quelle est la bonne conduite du manager ?", "options": ["Lui dire qu''il fait un burn-out et lui conseiller de s''arrêter", "Ne rien faire tant qu''il ne se plaint pas", "Le voir seul avec des faits, écouter sans creuser la vie privée, agir sur ce qui pèse dans le travail, rappeler l''accès au médecin du travail, alerter la hiérarchie si nécessaire, suivre", "Convoquer une réunion d''équipe pour en parler devant tous"], "bonnes": [2], "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte et suit ; il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."}, {"id": "m4q13", "enonce": "Deci a montré un effet contre-intuitif des récompenses. Lequel ?", "options": ["Une prime augmente toujours la motivation", "Dans certaines conditions, récompenser financièrement une activité que les gens aimaient faire diminue leur intérêt pour cette activité", "Les récompenses n''ont aucun effet", "Seules les récompenses en nature fonctionnent"], "bonnes": [1], "explication": "La récompense externe peut remplacer le plaisir interne. Cela ne veut pas dire qu''il ne faut jamais récompenser, mais que la motivation ne s''achète pas."}, {"id": "m4q14", "enonce": "Selon Edmondson, que produit une équipe où l''exigence est forte mais la sécurité psychologique faible ?", "options": ["Une zone d''apprentissage et de performance", "Une zone de confort", "Une zone d''anxiété : on cache les erreurs et on se tait", "Une zone d''apathie"], "bonnes": [2], "explication": "Sécurité sans exigence = confort ; exigence sans sécurité = anxiété ; les deux ensemble = apprentissage. Le manager tient les deux."}, {"id": "m4q15", "enonce": "Comment traite-t-on les trois catégories d''erreur (apprentissage, inattention, faute délibérée) ?", "options": ["Toutes de la même façon, par une remarque devant l''équipe", "Apprentissage : on en tire les leçons sans conséquence ; inattention : on cherche la cause et on en parle si ça se répète ; faute délibérée : recadrage et, selon la gravité, sanction", "Toutes par une sanction, pour être juste", "Aucune ne doit être relevée, pour préserver la sécurité psychologique"], "bonnes": [1], "explication": "Le droit à l''erreur n''est pas le droit à la négligence. Distinguer les trois catégories est ce qui rend l''exigence juste et la sécurité crédible."}, {"id": "m4q16", "enonce": "Plusieurs réponses. Quelles sont des erreurs de reconnaissance ?", "options": ["« C''est bien, mais… »", "« Tu es formidable, tu peux rester ce soir ? »", "« Toi au moins tu fais les choses proprement, pas comme Julien »", "Un mot précis, le jour même, sur ce qui a été bien fait"], "bonnes": [0, 1, 2], "explication": "Le « mais » annule, le compliment instrumental est une manipulation, la comparaison détruit l''équipe. La reconnaissance est précise, sincère, à temps, sans condition."}, {"id": "m4q17", "enonce": "Combien d''objectifs contient un plan de développement individuel (PDI) efficace ?", "options": ["Un seul à la fois, deux au maximum", "Au moins six, pour couvrir tous les manques", "Autant que de compétences dans la matrice", "Aucun objectif précis, juste une intention"], "bonnes": [0], "explication": "Un PDI à six objectifs n''aboutit jamais. Un objectif, des moyens datés, un point de suivi, relu à chaque entretien."}, {"id": "m4q18", "enonce": "Une rupture de période d''essai est envisagée pour un nouveau salarié. Quelle règle la formation pose-t-elle ?", "options": ["Elle peut être annoncée le dernier jour, sans préavis d''explication", "Elle ne doit jamais être une surprise : les difficultés ont été dites, avec des attentes précises et un délai, lors des points à une semaine et à un mois", "Elle relève du parrain", "Elle est impossible si le salarié a été formé à la sécurité"], "bonnes": [1], "explication": "Le point formel à un mois dit clairement si l''essai est en bonne voie. Une décision motivée, sans surprise, est plus juste et moins risquée."}, {"id": "m4q19", "enonce": "Qu''a changé l''accord national interprofessionnel du 9 décembre 2020 (transposé par la loi du 2 août 2021) ?", "options": ["Il a supprimé le CSE", "Il a remplacé la « qualité de vie au travail » par la « qualité de vie et des conditions de travail », recentrée sur le travail lui-même", "Il a rendu le télétravail obligatoire", "Il a créé le CPF"], "bonnes": [1], "explication": "La QVCT porte sur le contenu et l''organisation du travail, pas sur les à-côtés. Elle se construit avec les salariés, par exemple dans des espaces de discussion sur le travail."}, {"id": "m4q20", "enonce": "Parmi ces éléments, lequel ne fait pas partie des six familles de facteurs de risques psychosociaux du rapport Gollac ?", "options": ["L''intensité et le temps de travail", "Les exigences émotionnelles", "La fragilité psychologique des salariés", "L''insécurité de la situation de travail"], "bonnes": [2], "explication": "Les RPS viennent de l''organisation du travail, pas de la fragilité des personnes. Les six familles : intensité, exigences émotionnelles, autonomie insuffisante, rapports sociaux dégradés, conflits de valeurs, insécurité."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 11;
   n := n + 1;
 
@@ -7284,195 +7126,191 @@ Thierry, depuis un mois, arrive plus tôt, ne prend plus sa pause, a fait une er
 
   -- 4.8-podcast-securite-psychologique.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Hélène, responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
+**Claire** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
 
-**HÉLÈNE** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
+**Hélène** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
 
-**CLAIRE** — Pourquoi ?
+**Claire** — Pourquoi ?
 
-**HÉLÈNE** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
+**Hélène** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
 
-**CLAIRE** — Une remarque.
+**Claire** — Une remarque.
 
-**HÉLÈNE** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
+**Hélène** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
 
-**CLAIRE** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
+**Claire** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
 
-**HÉLÈNE** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
+**Hélène** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
 
-**CLAIRE** — Qu''est-ce que vous avez fait, après le rappel ?
+**Claire** — Qu''est-ce que vous avez fait, après le rappel ?
 
-**HÉLÈNE** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
+**Hélène** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
 
-**CLAIRE** — Alors ?
+**Claire** — Alors ?
 
-**HÉLÈNE** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
+**Hélène** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
 
-**CLAIRE** — Vous avez commencé par reconnaître votre erreur.
+**Claire** — Vous avez commencé par reconnaître votre erreur.
 
-**HÉLÈNE** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
+**Hélène** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
 
-**CLAIRE** — Comment vous l''avez vu changer ?
+**Claire** — Comment vous l''avez vu changer ?
 
-**HÉLÈNE** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
+**Hélène** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
 
-**CLAIRE** — Et vous avez réagi comment ?
+**Claire** — Et vous avez réagi comment ?
 
-**HÉLÈNE** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
+**Hélène** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
 
-**CLAIRE** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
+**Claire** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
 
-**HÉLÈNE** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
+**Hélène** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
 
-**CLAIRE** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
+**Claire** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
 
-**HÉLÈNE** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
+**Hélène** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
 
-**CLAIRE** — Et la différence, l''équipe la comprend ?
+**Claire** — Et la différence, l''équipe la comprend ?
 
-**HÉLÈNE** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
+**Hélène** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
 
-**CLAIRE** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
+**Claire** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
 
-**HÉLÈNE** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
+**Hélène** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
 
-**CLAIRE** — La deuxième ?
+**Claire** — La deuxième ?
 
-**HÉLÈNE** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
+**Hélène** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
 
-**CLAIRE** — Et la troisième ?
+**Claire** — Et la troisième ?
 
-**HÉLÈNE** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
+**Hélène** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
 
-**CLAIRE** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
+**Claire** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
 
-**HÉLÈNE** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
+**Hélène** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
 
-**CLAIRE** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
+**Claire** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
 
-**HÉLÈNE** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
+**Hélène** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
 
-**CLAIRE** — Est-ce que ça a eu un effet sur les chiffres ?
+**Claire** — Est-ce que ça a eu un effet sur les chiffres ?
 
-**HÉLÈNE** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
+**Hélène** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
 
-**CLAIRE** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
+**Claire** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
 
-**HÉLÈNE** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
+**Hélène** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
 
-**CLAIRE** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
+**Claire** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
 
-**HÉLÈNE** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
+**Hélène** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
 
-**CLAIRE** — Merci Hélène.
+**Claire** — Merci Hélène.
 
-**HÉLÈNE** — Merci à vous.
+**Hélène** — Merci à vous.
 
-**CLAIRE** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
+**Claire** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
 
----
-
-Sources : Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
+## Sources
+Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **HÉLÈNE** = responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Hélène, responsable d''un service de production en agroalimentaire (18 opérateurs, deux équipes), en poste depuis cinq ans après avoir été conductrice de ligne (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
+**Claire** — Bonjour à tous. Aujourd''hui on parle de sécurité psychologique, c''est-à-dire de ce qui fait qu''une équipe ose parler, ou se tait. Hélène, vous dirigez un service de production, dix-huit personnes, depuis cinq ans. Vous m''avez dit avant l''enregistrement qu''il y avait eu un « avant » et un « après ». Qu''est-ce qui s''est passé ?
 
-**HÉLÈNE** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
+**Hélène** — Il s''est passé un lot de deux tonnes de produit parti chez un client avec un défaut d''étiquetage. Allergènes manquants. Rappel de produit, pénalités, et une semaine à répondre au service qualité du client. Et quand on a fait l''enquête, on a découvert que deux opérateurs avaient vu le problème sur la ligne. Deux. Et qu''aucun n''avait rien dit.
 
-**CLAIRE** — Pourquoi ?
+**Claire** — Pourquoi ?
 
-**HÉLÈNE** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
+**Hélène** — C''est la question que je leur ai posée, et la réponse m''a fait mal. L''un m''a dit : « La dernière fois que j''ai arrêté la ligne, on m''a dit que j''avais fait perdre une heure de production. » L''autre m''a dit : « Je me suis dit que ce n''était pas à moi de le dire. » Et le « on », c''était moi. Je ne m''en souvenais même pas. Une remarque en passant, six mois plus tôt, sur un arrêt de ligne que j''avais trouvé injustifié.
 
-**CLAIRE** — Une remarque.
+**Claire** — Une remarque.
 
-**HÉLÈNE** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
+**Hélène** — Une remarque. Et six mois plus tard, deux tonnes de produit. C''est ça que j''ai compris ce jour-là : ce que je dis, en tant que responsable, ça ne pèse pas le poids que je crois. Ça pèse dix fois plus. Une remarque sèche sur un arrêt de ligne, ça devient une règle : « ici, on n''arrête pas la ligne ». Même si je n''ai jamais dit ça.
 
-**CLAIRE** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
+**Claire** — C''est exactement ce que décrit Amy Edmondson, la chercheuse qui a théorisé la sécurité psychologique. Les gens font un calcul, souvent inconscient : est-ce que je risque quelque chose si je parle ? Et si la réponse est oui, ils se taisent. Même quand l''enjeu est grave.
 
-**HÉLÈNE** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
+**Hélène** — Surtout quand l''enjeu est grave, en fait. Parce que plus l''enjeu est grave, plus la peur de se tromper est grande. « Et si j''arrête la ligne pour rien ? » Alors on laisse passer, en espérant que quelqu''un d''autre verra.
 
-**CLAIRE** — Qu''est-ce que vous avez fait, après le rappel ?
+**Claire** — Qu''est-ce que vous avez fait, après le rappel ?
 
-**HÉLÈNE** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
+**Hélène** — La première chose, c''est que j''ai failli faire l''inverse de ce qu''il fallait. Mon réflexe, c''était de sanctionner les deux qui n''avaient rien dit. Mon directeur voulait des têtes. Et j''ai compris que si je faisais ça, j''envoyais le message : « Si vous voyez un problème et que vous ne le dites pas, vous êtes punis. Et si vous le dites et que vous vous trompez, vous êtes punis aussi. » Donc personne ne verrait plus jamais rien.
 
-**CLAIRE** — Alors ?
+**Claire** — Alors ?
 
-**HÉLÈNE** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
+**Hélène** — Alors j''ai fait une réunion avec les dix-huit. Et j''ai commencé par moi. J''ai dit : « Il y a six mois, j''ai fait une remarque à quelqu''un qui avait arrêté la ligne. J''avais tort. Cette remarque a coûté deux tonnes de produit. Je vous demande pardon, et je vous demande une chose : à partir de maintenant, n''importe qui, n''importe quand, peut arrêter la ligne s''il a un doute. Un arrêt pour rien, ça coûte une heure. Un arrêt qu''on n''a pas fait, ça coûte ce qu''on vient de vivre. »
 
-**CLAIRE** — Vous avez commencé par reconnaître votre erreur.
+**Claire** — Vous avez commencé par reconnaître votre erreur.
 
-**HÉLÈNE** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
+**Hélène** — Je n''avais pas le choix. Si je leur avais demandé d''admettre leurs erreurs sans admettre la mienne, personne ne m''aurait crue. Et honnêtement, ça a été le moment le plus difficile de ma carrière. Dire devant dix-huit personnes « j''ai eu tort et ça a coûté cher ». Mais c''est le moment où tout a changé.
 
-**CLAIRE** — Comment vous l''avez vu changer ?
+**Claire** — Comment vous l''avez vu changer ?
 
-**HÉLÈNE** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
+**Hélène** — Pas tout de suite. Les gens ne vous croient pas sur une déclaration. Ils attendent de voir ce que vous faites la première fois que quelqu''un vous prend au mot. Et ça a pris trois semaines. Un opérateur, Bastien, a arrêté la ligne pour une soudure de sachet qu''il trouvait bizarre. On a vérifié. Elle était bonne. Une demi-heure de perdue.
 
-**CLAIRE** — Et vous avez réagi comment ?
+**Claire** — Et vous avez réagi comment ?
 
-**HÉLÈNE** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
+**Hélène** — Devant tout le monde, au briefing du lendemain : « Bastien a arrêté la ligne hier pour une soudure. Elle était bonne. C''est exactement ce que je vous ai demandé. Merci Bastien. » Et là, j''ai vu les têtes. Ils m''ont regardée comme si je venais de dire quelque chose d''incroyable. Parce que pendant des années, un arrêt pour rien, c''était un reproche.
 
-**CLAIRE** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
+**Claire** — C''est ce qu''Edmondson appelle « réagir de façon productive ». Le moment où quelqu''un prend un risque, la réaction du chef dans les secondes qui suivent fixe la règle pour tout le monde.
 
-**HÉLÈNE** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
+**Hélène** — Et il faut le refaire à chaque fois. Pas une fois. Parce qu''une seule réaction agacée, un seul soupir, et vous êtes revenu six mois en arrière. J''ai dû apprendre à contrôler mon visage. Ça paraît bête, mais quand quelqu''un vient vous dire qu''il a fait une erreur, la première chose qu''il regarde, c''est votre visage.
 
-**CLAIRE** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
+**Claire** — Parlons justement de l''erreur. Beaucoup de managers qui nous écoutent se disent : « Si j''accepte les erreurs, je vais avoir du laxisme. » Qu''est-ce que vous leur répondez ?
 
-**HÉLÈNE** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
+**Hélène** — Que c''est la confusion la plus répandue et la plus dangereuse. Le droit à l''erreur, ce n''est pas le droit à la négligence. Je fais trois catégories, et je les ai expliquées à l''équipe. L''erreur d''apprentissage : tu fais quelque chose de nouveau, tu te trompes, c''est normal, on en tire les leçons. L''erreur d''inattention : tu savais faire, tu as fait une faute, ça arrive, on regarde pourquoi, et s''il y a une cause dans l''organisation on la traite, et si ça se répète on en parle sérieusement. Et la faute délibérée : tu as contourné une règle en le sachant, là ce n''est plus une erreur, et ça se traite avec les moyens du chapitre suivant de votre formation, le recadrage, la sanction.
 
-**CLAIRE** — Et la différence, l''équipe la comprend ?
+**Claire** — Et la différence, l''équipe la comprend ?
 
-**HÉLÈNE** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
+**Hélène** — Très bien, parce qu''elle est juste. Ce qui n''était pas juste avant, c''était de traiter les trois de la même manière : par la remarque humiliante. Ce qui ne serait pas juste non plus, c''est de ne rien dire dans les trois cas. La sécurité psychologique, ce n''est pas l''absence d''exigence. Edmondson le dit très bien : il faut les deux. La sécurité sans l''exigence, c''est une colonie de vacances. L''exigence sans la sécurité, c''est ce que j''avais : une usine où tout le monde a peur et où les problèmes se cachent.
 
-**CLAIRE** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
+**Claire** — Vous avez parlé de la réaction aux erreurs. Il y a d''autres choses que vous avez changées ?
 
-**HÉLÈNE** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
+**Hélène** — Trois choses. La première, je pose des questions. Avant, j''arrivais au briefing avec des consignes. Maintenant, j''arrive avec une question : « Qu''est-ce qui a failli mal tourner hier ? » Les premières semaines, silence. Puis les réponses sont venues. Et ce sont des mines d''or : chaque « ça a failli » est un accident qu''on évite.
 
-**CLAIRE** — La deuxième ?
+**Claire** — La deuxième ?
 
-**HÉLÈNE** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
+**Hélène** — J''ai arrêté de laisser passer les moqueries. Il y avait dans l''équipe une habitude de charrier, gentiment en apparence, celui qui posait une question « bête ». « Alors, t''as pas encore compris ? » Je trouvais ça inoffensif. Ce n''est pas inoffensif : celui qui s''est fait charrier ne pose plus de question. Maintenant, je dis, calmement, devant tout le monde : « Il n''y a pas de question bête ici. » Et je réponds à la question. Trois fois, et l''habitude a disparu.
 
-**CLAIRE** — Et la troisième ?
+**Claire** — Et la troisième ?
 
-**HÉLÈNE** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
+**Hélène** — Je dis quand je ne sais pas. « Je ne sais pas, je vais me renseigner. » Avant, je pensais que le chef devait tout savoir. En fait, un chef qui sait tout, c''est un chef à qui personne n''ose rien apprendre. Depuis que je dis « je ne sais pas », les opérateurs m''expliquent des choses sur les machines que je n''avais jamais comprises.
 
-**CLAIRE** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
+**Claire** — Vous avez un exemple de quelque chose qui est remonté grâce à ça et qui n''aurait jamais remonté avant ?
 
-**HÉLÈNE** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
+**Hélène** — Plein. Mais le plus marquant, c''est une opératrice, Sonia, qui est venue me dire qu''elle n''y arrivait plus. Qu''elle était épuisée, qu''elle faisait des erreurs, qu''elle avait peur qu''on s''en aperçoive. Avant, elle aurait tenu jusqu''à l''arrêt maladie, ou jusqu''à l''accident. Là, elle est venue. Je n''ai pas joué au médecin, je lui ai dit qu''elle pouvait voir le médecin du travail, j''ai regardé son poste et sa charge, et on a trouvé qu''elle absorbait seule tous les changements de format parce qu''elle était la seule à savoir les faire. On a formé deux autres personnes. Elle va bien. Et elle est restée.
 
-**CLAIRE** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
+**Claire** — C''est un bon exemple du lien entre sécurité psychologique et prévention des risques psychosociaux.
 
-**HÉLÈNE** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
+**Hélène** — C''est le même sujet. Une équipe qui ose parler, c''est une équipe où les problèmes se voient avant qu''ils ne deviennent des drames. Que ce soit un défaut d''étiquetage ou une personne qui s''épuise.
 
-**CLAIRE** — Est-ce que ça a eu un effet sur les chiffres ?
+**Claire** — Est-ce que ça a eu un effet sur les chiffres ?
 
-**HÉLÈNE** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
+**Hélène** — Le nombre d''arrêts de ligne a augmenté. Mon directeur a d''abord tiqué. Et puis le nombre de non-conformités chez les clients a baissé, nettement, et l''absentéisme aussi. Je ne vais pas vous donner de pourcentages, ce sont les chiffres de mon usine, mais la tendance était claire au bout d''un an. Et j''ai pu lui montrer que les arrêts de ligne, c''était le prix des non-conformités qu''on n''avait plus.
 
-**CLAIRE** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
+**Claire** — Vous avez dit que votre directeur voulait des têtes après le rappel. Comment vous l''avez convaincu de ne pas sanctionner ?
 
-**HÉLÈNE** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
+**Hélène** — Avec des faits et une question. Je lui ai dit : « Si on sanctionne les deux qui n''ont rien dit, qu''est-ce que les seize autres vont retenir ? » Il a réfléchi. Et je lui ai proposé : « Donnez-moi six mois avec ma méthode. Si le nombre de signalements n''augmente pas, on reparle de sanctions. » Il a accepté. C''est ce qu''on vous apprend sur la communication vers le haut : pas un non, un « oui à ces conditions ».
 
-**CLAIRE** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
+**Claire** — Pour terminer, si un manager nous écoute et se dit « mon équipe se tait », par quoi il commence ?
 
-**HÉLÈNE** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
+**Hélène** — Par lui. Par regarder ce qu''il a fait, ou ce que son prédécesseur a fait, la dernière fois que quelqu''un a signalé un problème, admis une erreur, ou dit qu''il n''était pas d''accord. La réponse est là. Ensuite, admettre une erreur devant l''équipe, une vraie. Ensuite, poser une question à chaque briefing et attendre la réponse, sans la donner soi-même. Ensuite, remercier la première personne qui prend un risque, devant tout le monde, même si elle s''est trompée. Et ensuite, tenir. Des mois. Parce que la confiance se construit à la vitesse d''un escargot et se détruit à la vitesse d''un claquement de porte.
 
-**CLAIRE** — Merci Hélène.
+**Claire** — Merci Hélène.
 
-**HÉLÈNE** — Merci à vous.
+**Hélène** — Merci à vous.
 
-**CLAIRE** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
+**Claire** — Dans la fiche outil qui suit, vous trouverez le gabarit du plan de développement individuel et la check-list d''intégration. Et dans le carnet de bord, vous ferez le diagnostic de sécurité psychologique de votre propre équipe.
 
----
-
-Sources : Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
+## Sources
+Amy Edmondson, « Psychological Safety and Learning Behavior in Work Teams » (1999) et *The Fearless Organization* (2018) ; Google re:Work, projet Aristotle (2015) ; INRS, dossier « Risques psychosociaux ».
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 5 and l.ordre = 8;
@@ -7692,22 +7530,17 @@ Mes cinq comportements (leçon 4.2), à noter de 1 à 5 :
 
   -- 5.1-video-conflit.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 5 — Gérer les tensions et les conflits »]
+## Module 5 — Gérer les tensions et les conflits
 
 Bienvenue dans le module 5. Nous allons parler de ce que la plupart des managers redoutent le plus : les tensions et les conflits dans l''équipe. Deux personnes qui ne se parlent plus. Un salarié qui conteste chaque consigne. Une équipe coupée en deux clans. Un client qui s''en prend à un salarié.
 
 Commençons par une idée qui va peut-être vous surprendre : le conflit n''est pas le problème. Le problème, c''est ce qu''on en fait.
 
-[Titre : « Conflit de tâche, conflit de relation »]
+## Conflit de tâche, conflit de relation
 
 Il y a deux sortes de conflits, et il est essentiel de les distinguer, parce qu''ils ne se traitent pas de la même façon.
-
-[Schéma : deux colonnes. « Conflit de tâche » : désaccord sur le travail, la méthode, la priorité, la décision. « Conflit de relation » : attaque de la personne, ressentiment, mépris, rivalité.]
 
 Le conflit de tâche, c''est un désaccord sur le travail. Sur la méthode, sur la priorité, sur la décision à prendre. Thierry pense qu''il faut redresser avant de commander la pièce ; Karim pense l''inverse. C''est un conflit de tâche. Et les recherches, notamment celles de Karen Jehn dans les années 1990, montrent qu''un conflit de tâche, s''il reste sur le terrain du travail, est utile. Il fait émerger les désaccords, il évite les décisions prises sans examen, il améliore les solutions. Une équipe sans aucun conflit de tâche est une équipe où l''on ne dit plus rien. Vous avez vu au module 4 ce que cela produit.
 
@@ -7715,11 +7548,9 @@ Le conflit de relation, c''est autre chose. Ce n''est plus la méthode qui est e
 
 Le drame, c''est que le premier se transforme en second si on ne s''en occupe pas. Un désaccord de méthode non traité devient, en quelques semaines, une affaire de personnes. Le rôle du manager est de garder les conflits sur le terrain de la tâche, et de traiter vite ceux qui glissent vers la relation.
 
-[Titre : « L''escalade : les neuf marches de Glasl »]
+## L''escalade : les neuf marches de Glasl
 
 Friedrich Glasl, chercheur autrichien spécialiste des conflits, a décrit en 1980 comment un conflit s''aggrave. Il a identifié neuf niveaux, qu''on regroupe en trois phases.
-
-[Schéma : un escalier qui descend, neuf marches, trois paliers de couleur.]
 
 Première phase, niveaux 1 à 3 : on peut encore se parler. Les positions se durcissent, les débats deviennent des polémiques, puis on cesse de discuter et on met l''autre devant le fait accompli. Mais chacun pense encore qu''une solution où les deux y gagnent est possible. C''est ici que le manager doit intervenir. C''est ici que c''est facile.
 
@@ -7729,19 +7560,19 @@ Troisième phase, niveaux 7 à 9 : on cherche à nuire, même à ses propres dé
 
 Ce que Glasl nous apprend : un conflit ne reste jamais au même niveau. Il descend, marche par marche, tant que personne ne l''arrête. Et plus on attend, plus il est coûteux de remonter.
 
-[Titre : « Le coût de l''évitement »]
+## Le coût de l''évitement
 
 Pourquoi les managers attendent-ils ? Par peur d''aggraver, par manque de temps, par espoir que ça passe, par crainte de devoir trancher. L''évitement est la réponse la plus fréquente au conflit, et la plus chère.
 
 Un conflit évité ne disparaît pas. Il s''installe. Il coûte du temps de travail perdu en discussions de couloir, en énergie, en absences. Il coûte de la qualité : deux personnes qui ne se parlent plus ne se transmettent plus l''information, et l''erreur arrive. Il coûte des gens : celui qui se sent seul face à l''autre finit par partir, et c''est rarement le moins bon. Et il coûte l''autorité du manager : une équipe qui voit un conflit durer sans que le chef intervienne conclut que le chef ne protège personne.
 
-[Texte à l''écran : « Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne. »]
+**Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne.**
 
-[Titre : « Ce que ce module vous apprend »]
+## Ce que ce module vous apprend
 
 Ce module vous donne d''abord de quoi comprendre ce qui se joue dans un conflit : ses sources, le piège du triangle dramatique, vos propres biais. Puis de quoi prévenir : un cadre, des règles du jeu, et l''attention aux signaux faibles. Puis une méthode pour résoudre, en cinq étapes, avec la communication non violente et le recours à la médiation. Vous verrez une mise en situation complète en vidéo. Et enfin, les situations difficiles : recadrer, sanctionner, alerter, avec ce que le manager fait et ne fait pas, et ce que dit la loi.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, deux tensions couvent. Sophie et Marc ne se parlent plus depuis l''affaire du planning de la Clio : Marc estime que Sophie « balance les urgences sans prévenir », Sophie estime que Marc « fait la tête au lieu de bosser ». Et Thierry, qui a mal vécu l''arrivée d''Amine, laisse entendre à Julien que « le nouveau ne sait pas ce que c''est, un vrai atelier ». Deux conflits, niveau 2 ou 3. Karim a quelques semaines pour agir avant qu''ils ne descendent.
 
@@ -7749,28 +7580,20 @@ Le conflit n''est pas le problème. L''attente, oui.
 
 À tout de suite pour comprendre ce qui se joue.
 
-[Fondu, logo]
-
----
-
-Sources : Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
+## Sources
+Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar · Débit : 140 mots/min · Indications visuelles entre crochets
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar, fond clair. Titre : « Module 5 — Gérer les tensions et les conflits »]
+## Module 5 — Gérer les tensions et les conflits
 
 Bienvenue dans le module 5. Nous allons parler de ce que la plupart des managers redoutent le plus : les tensions et les conflits dans l''équipe. Deux personnes qui ne se parlent plus. Un salarié qui conteste chaque consigne. Une équipe coupée en deux clans. Un client qui s''en prend à un salarié.
 
 Commençons par une idée qui va peut-être vous surprendre : le conflit n''est pas le problème. Le problème, c''est ce qu''on en fait.
 
-[Titre : « Conflit de tâche, conflit de relation »]
+## Conflit de tâche, conflit de relation
 
 Il y a deux sortes de conflits, et il est essentiel de les distinguer, parce qu''ils ne se traitent pas de la même façon.
-
-[Schéma : deux colonnes. « Conflit de tâche » : désaccord sur le travail, la méthode, la priorité, la décision. « Conflit de relation » : attaque de la personne, ressentiment, mépris, rivalité.]
 
 Le conflit de tâche, c''est un désaccord sur le travail. Sur la méthode, sur la priorité, sur la décision à prendre. Thierry pense qu''il faut redresser avant de commander la pièce ; Karim pense l''inverse. C''est un conflit de tâche. Et les recherches, notamment celles de Karen Jehn dans les années 1990, montrent qu''un conflit de tâche, s''il reste sur le terrain du travail, est utile. Il fait émerger les désaccords, il évite les décisions prises sans examen, il améliore les solutions. Une équipe sans aucun conflit de tâche est une équipe où l''on ne dit plus rien. Vous avez vu au module 4 ce que cela produit.
 
@@ -7778,11 +7601,9 @@ Le conflit de relation, c''est autre chose. Ce n''est plus la méthode qui est e
 
 Le drame, c''est que le premier se transforme en second si on ne s''en occupe pas. Un désaccord de méthode non traité devient, en quelques semaines, une affaire de personnes. Le rôle du manager est de garder les conflits sur le terrain de la tâche, et de traiter vite ceux qui glissent vers la relation.
 
-[Titre : « L''escalade : les neuf marches de Glasl »]
+## L''escalade : les neuf marches de Glasl
 
 Friedrich Glasl, chercheur autrichien spécialiste des conflits, a décrit en 1980 comment un conflit s''aggrave. Il a identifié neuf niveaux, qu''on regroupe en trois phases.
-
-[Schéma : un escalier qui descend, neuf marches, trois paliers de couleur.]
 
 Première phase, niveaux 1 à 3 : on peut encore se parler. Les positions se durcissent, les débats deviennent des polémiques, puis on cesse de discuter et on met l''autre devant le fait accompli. Mais chacun pense encore qu''une solution où les deux y gagnent est possible. C''est ici que le manager doit intervenir. C''est ici que c''est facile.
 
@@ -7792,19 +7613,19 @@ Troisième phase, niveaux 7 à 9 : on cherche à nuire, même à ses propres dé
 
 Ce que Glasl nous apprend : un conflit ne reste jamais au même niveau. Il descend, marche par marche, tant que personne ne l''arrête. Et plus on attend, plus il est coûteux de remonter.
 
-[Titre : « Le coût de l''évitement »]
+## Le coût de l''évitement
 
 Pourquoi les managers attendent-ils ? Par peur d''aggraver, par manque de temps, par espoir que ça passe, par crainte de devoir trancher. L''évitement est la réponse la plus fréquente au conflit, et la plus chère.
 
 Un conflit évité ne disparaît pas. Il s''installe. Il coûte du temps de travail perdu en discussions de couloir, en énergie, en absences. Il coûte de la qualité : deux personnes qui ne se parlent plus ne se transmettent plus l''information, et l''erreur arrive. Il coûte des gens : celui qui se sent seul face à l''autre finit par partir, et c''est rarement le moins bon. Et il coûte l''autorité du manager : une équipe qui voit un conflit durer sans que le chef intervienne conclut que le chef ne protège personne.
 
-[Texte à l''écran : « Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne. »]
+**Un conflit traité au niveau 2 coûte une heure. Au niveau 5, il coûte des semaines. Au niveau 8, il coûte une personne.**
 
-[Titre : « Ce que ce module vous apprend »]
+## Ce que ce module vous apprend
 
 Ce module vous donne d''abord de quoi comprendre ce qui se joue dans un conflit : ses sources, le piège du triangle dramatique, vos propres biais. Puis de quoi prévenir : un cadre, des règles du jeu, et l''attention aux signaux faibles. Puis une méthode pour résoudre, en cinq étapes, avec la communication non violente et le recours à la médiation. Vous verrez une mise en situation complète en vidéo. Et enfin, les situations difficiles : recadrer, sanctionner, alerter, avec ce que le manager fait et ne fait pas, et ce que dit la loi.
 
-[Plan : reprise du cas]
+## À l''atelier Garnier
 
 À l''atelier Garnier, deux tensions couvent. Sophie et Marc ne se parlent plus depuis l''affaire du planning de la Clio : Marc estime que Sophie « balance les urgences sans prévenir », Sophie estime que Marc « fait la tête au lieu de bosser ». Et Thierry, qui a mal vécu l''arrivée d''Amine, laisse entendre à Julien que « le nouveau ne sait pas ce que c''est, un vrai atelier ». Deux conflits, niveau 2 ou 3. Karim a quelques semaines pour agir avant qu''ils ne descendent.
 
@@ -7812,18 +7633,15 @@ Le conflit n''est pas le problème. L''attente, oui.
 
 À tout de suite pour comprendre ce qui se joue.
 
-[Fondu, logo]
-
----
-
-Sources : Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
+## Sources
+Karen A. Jehn, « A Multimethod Examination of the Benefits and Detriments of Intragroup Conflict », *Administrative Science Quarterly*, 1995 ; Friedrich Glasl, *Konfliktmanagement*, 1980 (11e éd. 2013) ; Kenneth Thomas, Ralph Kilmann, *Thomas-Kilmann Conflict Mode Instrument*, 1974 (sur l''évitement).
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 1;
   n := n + 1;
 
   -- 5.10-quiz.json
-  update public.lecons l set contenu = '{"questions": [{"id": "m5q01", "enonce": "Thierry et Karim ne sont pas d''accord sur l''ordre des opérations (redresser avant ou après la commande de pièce). De quel type de conflit s''agit-il, et que faut-il en penser ?", "options": ["Un conflit de relation, à faire cesser immédiatement", "Un conflit de tâche, utile s''il reste sur le terrain du travail", "Une insubordination à sanctionner", "Un signe que Thierry doit changer d''équipe"], "bonnes": [1], "explication": "Le conflit de tâche (désaccord sur le travail) est utile : il évite les décisions non examinées. Le rôle du manager est de l''empêcher de glisser vers un conflit de relation (attaque des personnes)."}, {"id": "m5q02", "enonce": "Dans l''escalier de Glasl, que caractérise la deuxième phase (niveaux 4 à 6) ?", "options": ["On peut encore se parler et chercher une solution où les deux gagnent", "On ne cherche plus à résoudre mais à gagner : alliés, attaques sur la réputation, menaces", "On cherche à nuire à l''autre même à ses propres dépens", "Le conflit s''est éteint de lui-même"], "bonnes": [1], "explication": "Phase 1 (1-3) : on peut encore se parler, c''est là que le manager intervient facilement. Phase 2 (4-6) : chacun pense que l''un doit perdre ; il faut une méthode formelle, souvent un tiers. Phase 3 (7-9) : destruction, registre disciplinaire ou juridique."}, {"id": "m5q03", "enonce": "Devant une tension entre deux personnes, dans quel ordre le manager cherche-t-il la source ?", "options": ["Les personnes d''abord, puis l''organisation", "Les rôles flous et les ressources (organisation), puis les valeurs et manières de faire, et seulement en dernier les personnes", "Uniquement les personnes : un conflit est toujours une affaire de caractère", "Il ne cherche pas la source, il tranche"], "bonnes": [1], "explication": "La cause est le plus souvent dans l''organisation. Traiter les personnes sans traiter la cause, c''est repartir pour un tour."}, {"id": "m5q04", "enonce": "Marc vient se plaindre de Sophie à Karim. Karim décide d''aller « régler ça » avec Sophie à la place de Marc. Dans le triangle de Karpman, quel rôle Karim vient-il de prendre, et quel est le risque ?", "options": ["Le persécuteur : il va sanctionner Sophie", "Le sauveur : Marc reste victime sans rien avoir à faire, Sophie devient persécutrice, et Karim sera le prochain persécuteur dès qu''il ne donnera pas raison à Marc", "La victime : il subit le conflit", "Aucun rôle : c''est la bonne conduite"], "bonnes": [1], "explication": "Sortir du triangle, c''est refuser les trois rôles et ramener chacun à sa responsabilité : « qu''est-ce que tu as dit à Sophie ? »"}, {"id": "m5q05", "enonce": "Plusieurs réponses. Quels sont des signaux faibles d''un conflit naissant ?", "options": ["Deux personnes qui ne se parlent plus que par un tiers ou par écrit", "Le passage du fait au trait de caractère (« elle ne prévient jamais »)", "Un désaccord exprimé ouvertement en réunion sur une méthode", "Des alliances : les mêmes appuient toujours les mêmes, déjeunent toujours ensemble"], "bonnes": [0, 1, 3], "explication": "Un désaccord exprimé ouvertement sur le travail est sain. La communication indirecte, les « toujours / jamais » et les alliances sont les signes d''un conflit qui glisse vers la relation."}, {"id": "m5q06", "enonce": "Quelle est la règle que le manager impose si l''équipe ne la propose pas lors de la construction des règles du jeu ?", "options": ["L''interdiction de tout désaccord", "Le respect des personnes : on peut tout se dire sur le travail, on ne s''attaque pas aux personnes, et pas devant les autres", "L''obligation de déjeuner ensemble", "La priorité aux plus anciens"], "bonnes": [1], "explication": "C''est la ligne que le manager défend sans négociation ; les autres règles (cinq à huit, positives, vérifiables) sont construites avec l''équipe."}, {"id": "m5q07", "enonce": "Dans la méthode en cinq étapes, pourquoi écoute-t-on chaque partie séparément avant de les réunir ?", "options": ["Pour gagner du temps", "Pour pouvoir choisir la version la plus crédible", "Pour entendre chacun sans qu''il rejoue le conflit devant l''autre, et repérer derrière les positions les besoins, qui sont rarement incompatibles", "Parce que la loi l''impose"], "bonnes": [2], "explication": "Réunir tout de suite, c''est faire rejouer le conflit devant le chef. Les positions s''opposent ; les besoins (savoir la veille, être reconnu) peuvent presque toujours être satisfaits ensemble."}, {"id": "m5q08", "enonce": "Quels sont les quatre temps de la communication non violente (Rosenberg) ?", "options": ["Accuser, exiger, menacer, conclure", "Observation sans jugement, sentiment, besoin, demande concrète", "Situation, comportement, impact, sanction", "Écouter, trancher, notifier, sanctionner"], "bonnes": [1], "explication": "« Mardi j''ai appris à 14 h… / j''étais en colère / j''ai besoin de savoir la veille / est-ce que tu peux me dire à 17 h… » : une façon de dire ce qui ne va pas sans attaquer, avec une demande à laquelle l''autre peut répondre."}, {"id": "m5q09", "enonce": "Quand le manager doit-il passer la main à un tiers neutre (RH, médiateur) ?", "options": ["Jamais : un bon manager gère tout seul", "Dès la première pique en réunion", "Quand le conflit a dépassé le niveau 4, quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué", "Uniquement si le salarié le demande par écrit"], "bonnes": [2], "explication": "Passer la main n''est pas un échec : c''est la reconnaissance qu''un conflit installé demande d''autres moyens, et une protection pour le manager et les personnes."}, {"id": "m5q10", "enonce": "Quelle est la différence entre un recadrage et une sanction disciplinaire ?", "options": ["Aucune : ce sont deux mots pour la même chose", "Le recadrage est un acte de management du manager, sans forme légale ; la sanction est un acte de l''employeur, encadré par une procédure (L1332-1 et s.), le règlement intérieur et la prescription de deux mois", "Le recadrage est réservé aux cadres", "La sanction est décidée par le manager de proximité seul, sans procédure"], "bonnes": [1], "explication": "Le manager recadre et trace ; l''employeur sanctionne, avec entretien préalable pour toute sanction ayant une incidence sur la présence, la fonction, la carrière ou la rémunération. Les sanctions pécuniaires sont interdites."}, {"id": "m5q11", "enonce": "Un salarié refuse d''exécuter une consigne. Dans quel cas ce refus n''est-il pas une faute ?", "options": ["Quand il n''est pas d''accord avec la méthode", "Quand la consigne est illégale, expose à un danger grave et imminent (droit de retrait, L4131-1) ou sort du cadre du contrat", "Quand il a plus d''ancienneté que le manager", "Jamais : tout refus est une faute"], "bonnes": [1], "explication": "Face à un refus, le manager demande d''abord la raison. Si c''est un danger ou une illégalité, c''est lui qui a un problème à traiter ; sinon, il recadre et remonte."}, {"id": "m5q12", "enonce": "Nadia signale à Karim qu''un client lui fait des remarques sur son physique et l''a touchée avec insistance. Que fait Karim ?", "options": ["Il lui dit que c''est sûrement un malentendu et qu''il faut relativiser", "Il mène l''enquête lui-même en confrontant Nadia et le client", "Il prend au sérieux, note les faits, informe l''employeur sans délai et par écrit, protège Nadia (ne plus la laisser seule avec ce client), l''oriente vers les relais, garde la confidentialité", "Il en parle à l''équipe pour que tout le monde soit vigilant"], "bonnes": [2], "explication": "L''employeur a l''obligation de prévenir et de faire cesser le harcèlement (L1153-5) ; le manager déclenche cette obligation en informant sans délai. Il n''enquête pas lui-même. La personne qui parle de bonne foi est protégée."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "12 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+  update public.lecons l set contenu = '{"questions": [{"id": "m5q01", "enonce": "Thierry et Karim ne sont pas d''accord sur l''ordre des opérations (redresser avant ou après la commande de pièce). De quel type de conflit s''agit-il, et que faut-il en penser ?", "options": ["Un conflit de relation, à faire cesser immédiatement", "Un conflit de tâche, utile s''il reste sur le terrain du travail", "Une insubordination à sanctionner", "Un signe que Thierry doit changer d''équipe"], "bonnes": [1], "explication": "Le conflit de tâche (désaccord sur le travail) est utile : il évite les décisions non examinées. Le rôle du manager est de l''empêcher de glisser vers un conflit de relation (attaque des personnes)."}, {"id": "m5q02", "enonce": "Dans l''escalier de Glasl, que caractérise la deuxième phase (niveaux 4 à 6) ?", "options": ["On peut encore se parler et chercher une solution où les deux gagnent", "On ne cherche plus à résoudre mais à gagner : alliés, attaques sur la réputation, menaces", "On cherche à nuire à l''autre même à ses propres dépens", "Le conflit s''est éteint de lui-même"], "bonnes": [1], "explication": "Phase 1 (1-3) : on peut encore se parler, c''est là que le manager intervient facilement. Phase 2 (4-6) : chacun pense que l''un doit perdre ; il faut une méthode formelle, souvent un tiers. Phase 3 (7-9) : destruction, registre disciplinaire ou juridique."}, {"id": "m5q03", "enonce": "Devant une tension entre deux personnes, dans quel ordre le manager cherche-t-il la source ?", "options": ["Les personnes d''abord, puis l''organisation", "Les rôles flous et les ressources (organisation), puis les valeurs et manières de faire, et seulement en dernier les personnes", "Uniquement les personnes : un conflit est toujours une affaire de caractère", "Il ne cherche pas la source, il tranche"], "bonnes": [1], "explication": "La cause est le plus souvent dans l''organisation. Traiter les personnes sans traiter la cause, c''est repartir pour un tour."}, {"id": "m5q04", "enonce": "Marc vient se plaindre de Sophie à Karim. Karim décide d''aller « régler ça » avec Sophie à la place de Marc. Dans le triangle de Karpman, quel rôle Karim vient-il de prendre, et quel est le risque ?", "options": ["Le persécuteur : il va sanctionner Sophie", "Le sauveur : Marc reste victime sans rien avoir à faire, Sophie devient persécutrice, et Karim sera le prochain persécuteur dès qu''il ne donnera pas raison à Marc", "La victime : il subit le conflit", "Aucun rôle : c''est la bonne conduite"], "bonnes": [1], "explication": "Sortir du triangle, c''est refuser les trois rôles et ramener chacun à sa responsabilité : « qu''est-ce que tu as dit à Sophie ? »"}, {"id": "m5q05", "enonce": "Plusieurs réponses. Quels sont des signaux faibles d''un conflit naissant ?", "options": ["Deux personnes qui ne se parlent plus que par un tiers ou par écrit", "Le passage du fait au trait de caractère (« elle ne prévient jamais »)", "Un désaccord exprimé ouvertement en réunion sur une méthode", "Des alliances : les mêmes appuient toujours les mêmes, déjeunent toujours ensemble"], "bonnes": [0, 1, 3], "explication": "Un désaccord exprimé ouvertement sur le travail est sain. La communication indirecte, les « toujours / jamais » et les alliances sont les signes d''un conflit qui glisse vers la relation."}, {"id": "m5q06", "enonce": "Quelle est la règle que le manager impose si l''équipe ne la propose pas lors de la construction des règles du jeu ?", "options": ["L''interdiction de tout désaccord", "Le respect des personnes : on peut tout se dire sur le travail, on ne s''attaque pas aux personnes, et pas devant les autres", "L''obligation de déjeuner ensemble", "La priorité aux plus anciens"], "bonnes": [1], "explication": "C''est la ligne que le manager défend sans négociation ; les autres règles (cinq à huit, positives, vérifiables) sont construites avec l''équipe."}, {"id": "m5q07", "enonce": "Dans la méthode en cinq étapes, pourquoi écoute-t-on chaque partie séparément avant de les réunir ?", "options": ["Pour gagner du temps", "Pour pouvoir choisir la version la plus crédible", "Pour entendre chacun sans qu''il rejoue le conflit devant l''autre, et repérer derrière les positions les besoins, qui sont rarement incompatibles", "Parce que la loi l''impose"], "bonnes": [2], "explication": "Réunir tout de suite, c''est faire rejouer le conflit devant le chef. Les positions s''opposent ; les besoins (savoir la veille, être reconnu) peuvent presque toujours être satisfaits ensemble."}, {"id": "m5q08", "enonce": "Quels sont les quatre temps de la communication non violente (Rosenberg) ?", "options": ["Accuser, exiger, menacer, conclure", "Observation sans jugement, sentiment, besoin, demande concrète", "Situation, comportement, impact, sanction", "Écouter, trancher, notifier, sanctionner"], "bonnes": [1], "explication": "« Mardi j''ai appris à 14 h… / j''étais en colère / j''ai besoin de savoir la veille / est-ce que tu peux me dire à 17 h… » : une façon de dire ce qui ne va pas sans attaquer, avec une demande à laquelle l''autre peut répondre."}, {"id": "m5q09", "enonce": "Quand le manager doit-il passer la main à un tiers neutre (RH, médiateur) ?", "options": ["Jamais : un bon manager gère tout seul", "Dès la première pique en réunion", "Quand le conflit a dépassé le niveau 4, quand le manager est lui-même trop impliqué, ou quand la méthode en cinq étapes a échoué", "Uniquement si le salarié le demande par écrit"], "bonnes": [2], "explication": "Passer la main n''est pas un échec : c''est la reconnaissance qu''un conflit installé demande d''autres moyens, et une protection pour le manager et les personnes."}, {"id": "m5q10", "enonce": "Quelle est la différence entre un recadrage et une sanction disciplinaire ?", "options": ["Aucune : ce sont deux mots pour la même chose", "Le recadrage est un acte de management du manager, sans forme légale ; la sanction est un acte de l''employeur, encadré par une procédure (L1332-1 et s.), le règlement intérieur et la prescription de deux mois", "Le recadrage est réservé aux cadres", "La sanction est décidée par le manager de proximité seul, sans procédure"], "bonnes": [1], "explication": "Le manager recadre et trace ; l''employeur sanctionne, avec entretien préalable pour toute sanction ayant une incidence sur la présence, la fonction, la carrière ou la rémunération. Les sanctions pécuniaires sont interdites."}, {"id": "m5q11", "enonce": "Un salarié refuse d''exécuter une consigne. Dans quel cas ce refus n''est-il pas une faute ?", "options": ["Quand il n''est pas d''accord avec la méthode", "Quand la consigne est illégale, expose à un danger grave et imminent (droit de retrait, L4131-1) ou sort du cadre du contrat", "Quand il a plus d''ancienneté que le manager", "Jamais : tout refus est une faute"], "bonnes": [1], "explication": "Face à un refus, le manager demande d''abord la raison. Si c''est un danger ou une illégalité, c''est lui qui a un problème à traiter ; sinon, il recadre et remonte."}, {"id": "m5q12", "enonce": "Nadia signale à Karim qu''un client lui fait des remarques sur son physique et l''a touchée avec insistance. Que fait Karim ?", "options": ["Il lui dit que c''est sûrement un malentendu et qu''il faut relativiser", "Il mène l''enquête lui-même en confrontant Nadia et le client", "Il prend au sérieux, note les faits, informe l''employeur sans délai et par écrit, protège Nadia (ne plus la laisser seule avec ce client), l''oriente vers les relais, garde la confidentialité", "Il en parle à l''équipe pour que tout le monde soit vigilant"], "bonnes": [2], "explication": "L''employeur a l''obligation de prévenir et de faire cesser le harcèlement (L1153-5) ; le manager déclenche cette obligation en informant sans délai. Il n''enquête pas lui-même. La personne qui parle de bonne foi est protégée."}, {"id": "m5q13", "enonce": "Que devient un conflit de tâche (désaccord sur la méthode) qu''on laisse sans réponse pendant des semaines ?", "options": ["Il disparaît de lui-même", "Il se transforme en conflit de relation : ce n''est plus la méthode qui est en cause, c''est la personne", "Il devient un conflit de valeurs", "Il n''a aucune conséquence"], "bonnes": [1], "explication": "Le rôle du manager est de garder les conflits sur le terrain de la tâche et de traiter vite ceux qui glissent vers la relation."}, {"id": "m5q14", "enonce": "Deux peintres se disputent régulièrement le créneau de cabine du matin. Quelle est la source la plus probable, et quel remède ?", "options": ["Un conflit de personnes : les séparer", "Une ressource rare distribuée sans règle connue : fixer une règle de répartition", "Un conflit de valeurs : trancher pour le plus ancien", "Une insubordination : sanctionner"], "bonnes": [1], "explication": "La rareté crée la rivalité. Un manager qui distribue les ressources sans règle fabrique des conflits ; la règle connue les prévient."}, {"id": "m5q15", "enonce": "Qu''est-ce que le biais de la première version ?", "options": ["Croire la version écrite plutôt qu''orale", "Le récit de celui qui vient se plaindre en premier structure la façon dont le manager voit la situation", "Préférer l''avis du plus ancien", "Retenir la dernière chose entendue"], "bonnes": [1], "explication": "Remède : ne jamais conclure avant d''avoir entendu l''autre partie, séparément."}, {"id": "m5q16", "enonce": "Un incident vient d''éclater entre deux membres de l''équipe, à chaud. Que fait le manager ?", "options": ["Il réunit les deux immédiatement pour régler l''affaire", "Il dit « calmez-vous » et reprend le travail", "Il sépare, reconnaît l''émotion, laisse retomber (quelques heures ou une nuit) et fixe le moment de reprendre, chacun d''abord séparément", "Il tranche sur place en faveur du plus calme"], "bonnes": [2], "explication": "« Calme-toi » est la phrase la plus inefficace du monde. Un entretien de résolution ne se tient pas à chaud."}, {"id": "m5q17", "enonce": "Dans le podcast « Le conflit que j''ai laissé pourrir », Patrice passait son temps à transmettre les informations entre ses deux chefs de rayon. Que faisait-il en réalité ?", "options": ["Il gérait le conflit", "Il entretenait le conflit en compensant, tout en croyant le maîtriser", "Il appliquait la méthode en cinq étapes", "Il jouait le rôle de médiateur neutre"], "bonnes": [1], "explication": "Quand le manager fait l''intermédiaire à la place des gens, le conflit s''installe. Le signal d''alarme : « Dis à Untel que… »."}, {"id": "m5q18", "enonce": "Marc réclame : « je veux qu''elle arrête de me donner des urgences ». Selon Fisher et Ury, qu''est-ce que le manager cherche derrière cette position ?", "options": ["Qui a raison", "Le besoin : savoir la veille ce qui l''attend, qui, lui, peut être satisfait sans que l''autre perde", "Une sanction proportionnée", "Un compromis où chacun perd la moitié"], "bonnes": [1], "explication": "Les positions sont incompatibles ; les besoins ne le sont presque jamais. C''est sur les besoins qu''on trouve des options."}, {"id": "m5q19", "enonce": "Pour une sanction ayant une incidence sur la présence, la fonction ou la rémunération (mise à pied, mutation, licenciement), que prévoit la procédure (L1332-2) ?", "options": ["Une simple lettre, sans entretien", "Convocation écrite à un entretien préalable où le salarié peut être assisté, puis notification écrite et motivée au plus tôt deux jours ouvrables et au plus tard un mois après l''entretien", "Un vote de l''équipe", "Une amende retenue sur salaire"], "bonnes": [1], "explication": "La sanction relève de l''employeur, avec cette procédure ; les faits doivent avoir moins de deux mois (L1332-4). Le manager fournit les faits datés et les recadrages tracés."}, {"id": "m5q20", "enonce": "Un salarié se présente manifestement sous l''emprise de l''alcool à un poste dangereux. Que fait le manager ?", "options": ["Il le laisse travailler en le surveillant", "Il le retire du poste immédiatement, veille à ce qu''il soit raccompagné, et informe l''employeur ; la procédure du règlement intérieur s''applique ensuite", "Il lui fait un feedback SBI le lendemain", "Il appelle le médecin traitant du salarié"], "bonnes": [1], "explication": "L''obligation de sécurité prime : retrait immédiat du poste. Souffrance éventuelle et faute se traitent ensuite, séparément."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 10;
   n := n + 1;
 
@@ -8309,38 +8127,31 @@ Passer la main n''est pas un échec du manager. C''est la reconnaissance qu''un 
 
   -- 5.5-video-deux-collegues.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar. Titre : « Deux collègues qui ne se parlent plus »]
+## Deux collègues qui ne se parlent plus
 
 Vous connaissez la méthode en cinq étapes. Voyons-la fonctionner sur une situation réelle, dans un autre secteur que la carrosserie : une agence bancaire de quartier, sept personnes. Le manager s''appelle Nour. Deux conseillères, Léa et Camille, ne se parlent plus depuis trois semaines. Les clients commencent à le sentir : un dossier de prêt a traîné parce que chacune pensait que l''autre s''en occupait.
 
-[Titre : « Ce qui a été fait de travers d''abord »]
+## Ce qui a été fait de travers d''abord
 
 Nour a d''abord fait ce que font beaucoup de managers : elle a réuni Léa et Camille dans son bureau, sans préparation, un vendredi à 17 h 30, et leur a dit : « Bon, vous allez me dire ce qui se passe, et vous allez arrêter, parce que ça se voit. »
 
-[Texte à l''écran, voix off]
 LÉA : « Il ne se passe rien. »
 CAMILLE : « Demande-lui, c''est elle qui a un problème. »
 LÉA : « Moi j''ai un problème ? C''est toi qui as pris mon client. »
 NOUR : « Bon, on se calme. Vous êtes adultes, faites un effort, on en reparle lundi. »
 
-[Retour avatar]
 Résultat : rien. Le conflit a été rejoué devant le chef, chacune a durci sa position, et Nour a demandé un effort sans rien changer. Lundi, les deux se parlaient encore moins. Reprenons avec la méthode.
 
-[Titre : « Étape 1 — Accueillir »]
+## Étape 1 — Accueillir
 
 Nour convoque Léa mardi à 9 h, Camille à 9 h 30, dans la salle de réunion, porte fermée. Même phrase d''ouverture pour les deux :
 
-[Séquence jouée]
 NOUR : « Il y a une difficulté entre Camille et toi qui pèse sur l''agence ; le dossier Martin a pris quatre jours de retard. Je ne cherche pas qui a raison. Je cherche comment on travaille ensemble. Je vais vous écouter chacune, puis on se verra à trois. Ce qu''on se dit ici reste ici. D''accord ? »
 
-[Titre : « Étape 2 — Écouter chacune »]
+## Étape 2 — Écouter chacune
 
-[Séquence jouée, Léa]
 NOUR : « Raconte-moi ce qui s''est passé. »
 LÉA : « Le client Rousseau, c''est moi qui le suis depuis deux ans. Camille l''a reçu pendant mes congés et elle lui a ouvert une assurance-vie. Le client est passé dans son portefeuille. Elle ne m''a rien dit. Je l''ai découvert dans l''outil. »
 NOUR : « Tu l''as découvert dans l''outil, sans qu''elle t''en parle. » (reformulation)
@@ -8348,9 +8159,8 @@ LÉA : « Oui. Et depuis, je ne lui adresse plus la parole, parce que si je lui 
 NOUR : « Qu''est-ce qu''il te faudrait ? »
 LÉA : « Que mes clients restent mes clients. Et qu''on me le dise, au moins. »
 
-[Voix off] Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
+Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
 
-[Séquence jouée, Camille]
 NOUR : « Raconte-moi ce qui s''est passé. »
 CAMILLE : « Le client Rousseau est venu pendant les congés de Léa avec un besoin urgent, une succession. Je l''ai traité. L''outil a basculé le client automatiquement dans mon portefeuille, je ne l''ai pas demandé. Quand Léa est revenue, elle ne m''a pas dit bonjour. Alors je n''ai rien dit non plus. »
 NOUR : « Tu as traité une urgence, l''outil a fait le transfert, et tu as pris le silence de Léa comme une accusation. »
@@ -8358,20 +8168,18 @@ CAMILLE : « Exactement. Et je ne vais pas m''excuser d''avoir fait mon travail.
 NOUR : « Qu''est-ce qu''il te faudrait ? »
 CAMILLE : « Qu''on ne me traite pas comme une voleuse. Et qu''il y ait une règle claire quand on remplace quelqu''un. »
 
-[Voix off] Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
+Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
 
-[Titre : « Étape 3 — Objectiver »]
+## Étape 3 — Objectiver
 
-[Retour avatar]
 Nour met à plat. Les faits concordent : Camille a traité une urgence, l''outil a transféré le client, personne ne s''est parlé. Le fait divergent, « elle m''a pris mon client », n''est pas un fait ; c''est une interprétation. La source : un rôle flou. Que se passe-t-il quand on reçoit le client d''un collègue absent ? Personne ne l''a jamais dit. Et la règle manque : c''est à Nour de la fixer.
 
 Elle remarque aussi ses propres biais : elle a entendu Léa en premier, elle connaît Léa depuis plus longtemps, et elle avait déjà, en son for intérieur, donné tort à Camille. Elle le met de côté.
 
-[Titre : « Étape 4 — Chercher les options ensemble »]
+## Étape 4 — Chercher les options ensemble
 
 Jeudi 9 h, à trois. Nour rappelle le cadre, puis expose ce qu''elle a compris, de façon équilibrée.
 
-[Séquence jouée]
 NOUR : « Ce que j''ai compris : Camille a traité une urgence pendant les congés de Léa, l''outil a transféré le client, et personne ne s''est parlé au retour. Léa, tu as eu le sentiment qu''on te retirait deux ans de travail. Camille, tu as eu le sentiment d''être traitée en voleuse pour avoir fait ton travail. Et il n''y a pas de règle sur ce qu''on fait quand on remplace un collègue. Ça, c''est de ma responsabilité. Je vous propose que chacune dise à l''autre ce qui s''est passé pour elle, en quatre temps : ce qu''elle a observé, ce qu''elle a ressenti, ce dont elle a besoin, ce qu''elle demande. Léa ? »
 LÉA : « Quand je suis rentrée, j''ai vu dans l''outil que Rousseau était dans ton portefeuille. J''ai été blessée, parce que je le suis depuis deux ans. J''ai besoin que mon travail soit reconnu. Je te demande de me prévenir quand tu traites un de mes clients. »
 CAMILLE : « Je comprends. Quand tu es rentrée, tu ne m''as pas dit bonjour. J''ai été vexée, parce que j''avais traité une succession en urgence. J''ai besoin qu''on ne me prenne pas pour quelqu''un qui pique des clients. Je te demande de me parler quand quelque chose ne va pas, plutôt que de te taire. »
@@ -8380,14 +8188,13 @@ CAMILLE : « On peut remettre Rousseau dans le portefeuille de Léa. Je ne tiens
 LÉA : « Et quand on remplace, on laisse un mot au retour. Un mail, deux lignes. »
 NOUR : « Je fixe la règle pour l''agence : un client reçu pendant l''absence de son conseiller reste dans son portefeuille ; le remplaçant lui envoie un mail de passation. Je vais voir avec le siège pour le paramétrage de l''outil. »
 
-[Titre : « Étape 5 — Contractualiser et suivre »]
+## Étape 5 — Contractualiser et suivre
 
-[Retour avatar]
 Trois engagements, reformulés à voix haute et notés : Camille remet le client Rousseau à Léa cette semaine ; toute passation fait l''objet d''un mail au retour ; Nour fixe la règle pour l''agence et voit le siège pour l''outil. Point dans deux semaines. Et Nour ajoute une chose : « Ce conflit vient d''une règle qui manquait. C''était à moi de la poser. » Ce n''est pas de la faiblesse ; c''est ce qui permet aux deux de sortir sans perdre la face.
 
 Deux semaines plus tard, Léa et Camille se parlent. Pas comme des amies ; comme des collègues. C''est tout ce que Nour avait à obtenir.
 
-[Titre : « Ce qu''il faut retenir »]
+## Ce qu''il faut retenir
 
 Trois choses. D''abord : écouter séparément avant de réunir. La première tentative de Nour a échoué là. Ensuite : chercher la source dans l''organisation ; ici, une règle manquante, que le manager pose. Enfin : ne pas trancher entre les personnes, mais organiser leur échange, avec un format qui empêche les attaques, et conclure par des engagements suivis.
 
@@ -8395,44 +8202,34 @@ Et une quatrième : si Léa avait refusé l''entretien à trois, ou si les attaq
 
 À tout de suite pour les situations difficiles : recadrer, sanctionner, alerter.
 
-[Fondu, logo]
-
----
-
-Sources : méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
+## Sources
+méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Type : vidéo avatar avec séquences jouées (voix off + texte à l''écran, ou second avatar). Débit : 140 mots/min. Le cas est volontairement pris hors de l''atelier Garnier pour montrer la méthode dans un autre secteur.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
 
----
-
-[Plan : avatar. Titre : « Deux collègues qui ne se parlent plus »]
+## Deux collègues qui ne se parlent plus
 
 Vous connaissez la méthode en cinq étapes. Voyons-la fonctionner sur une situation réelle, dans un autre secteur que la carrosserie : une agence bancaire de quartier, sept personnes. Le manager s''appelle Nour. Deux conseillères, Léa et Camille, ne se parlent plus depuis trois semaines. Les clients commencent à le sentir : un dossier de prêt a traîné parce que chacune pensait que l''autre s''en occupait.
 
-[Titre : « Ce qui a été fait de travers d''abord »]
+## Ce qui a été fait de travers d''abord
 
 Nour a d''abord fait ce que font beaucoup de managers : elle a réuni Léa et Camille dans son bureau, sans préparation, un vendredi à 17 h 30, et leur a dit : « Bon, vous allez me dire ce qui se passe, et vous allez arrêter, parce que ça se voit. »
 
-[Texte à l''écran, voix off]
 LÉA : « Il ne se passe rien. »
 CAMILLE : « Demande-lui, c''est elle qui a un problème. »
 LÉA : « Moi j''ai un problème ? C''est toi qui as pris mon client. »
 NOUR : « Bon, on se calme. Vous êtes adultes, faites un effort, on en reparle lundi. »
 
-[Retour avatar]
 Résultat : rien. Le conflit a été rejoué devant le chef, chacune a durci sa position, et Nour a demandé un effort sans rien changer. Lundi, les deux se parlaient encore moins. Reprenons avec la méthode.
 
-[Titre : « Étape 1 — Accueillir »]
+## Étape 1 — Accueillir
 
 Nour convoque Léa mardi à 9 h, Camille à 9 h 30, dans la salle de réunion, porte fermée. Même phrase d''ouverture pour les deux :
 
-[Séquence jouée]
 NOUR : « Il y a une difficulté entre Camille et toi qui pèse sur l''agence ; le dossier Martin a pris quatre jours de retard. Je ne cherche pas qui a raison. Je cherche comment on travaille ensemble. Je vais vous écouter chacune, puis on se verra à trois. Ce qu''on se dit ici reste ici. D''accord ? »
 
-[Titre : « Étape 2 — Écouter chacune »]
+## Étape 2 — Écouter chacune
 
-[Séquence jouée, Léa]
 NOUR : « Raconte-moi ce qui s''est passé. »
 LÉA : « Le client Rousseau, c''est moi qui le suis depuis deux ans. Camille l''a reçu pendant mes congés et elle lui a ouvert une assurance-vie. Le client est passé dans son portefeuille. Elle ne m''a rien dit. Je l''ai découvert dans l''outil. »
 NOUR : « Tu l''as découvert dans l''outil, sans qu''elle t''en parle. » (reformulation)
@@ -8440,9 +8237,8 @@ LÉA : « Oui. Et depuis, je ne lui adresse plus la parole, parce que si je lui 
 NOUR : « Qu''est-ce qu''il te faudrait ? »
 LÉA : « Que mes clients restent mes clients. Et qu''on me le dise, au moins. »
 
-[Voix off] Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
+Position : « mes clients restent mes clients ». Besoin : la reconnaissance de son travail, et l''information.
 
-[Séquence jouée, Camille]
 NOUR : « Raconte-moi ce qui s''est passé. »
 CAMILLE : « Le client Rousseau est venu pendant les congés de Léa avec un besoin urgent, une succession. Je l''ai traité. L''outil a basculé le client automatiquement dans mon portefeuille, je ne l''ai pas demandé. Quand Léa est revenue, elle ne m''a pas dit bonjour. Alors je n''ai rien dit non plus. »
 NOUR : « Tu as traité une urgence, l''outil a fait le transfert, et tu as pris le silence de Léa comme une accusation. »
@@ -8450,20 +8246,18 @@ CAMILLE : « Exactement. Et je ne vais pas m''excuser d''avoir fait mon travail.
 NOUR : « Qu''est-ce qu''il te faudrait ? »
 CAMILLE : « Qu''on ne me traite pas comme une voleuse. Et qu''il y ait une règle claire quand on remplace quelqu''un. »
 
-[Voix off] Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
+Position : « je ne m''excuserai pas ». Besoin : la reconnaissance, et une règle.
 
-[Titre : « Étape 3 — Objectiver »]
+## Étape 3 — Objectiver
 
-[Retour avatar]
 Nour met à plat. Les faits concordent : Camille a traité une urgence, l''outil a transféré le client, personne ne s''est parlé. Le fait divergent, « elle m''a pris mon client », n''est pas un fait ; c''est une interprétation. La source : un rôle flou. Que se passe-t-il quand on reçoit le client d''un collègue absent ? Personne ne l''a jamais dit. Et la règle manque : c''est à Nour de la fixer.
 
 Elle remarque aussi ses propres biais : elle a entendu Léa en premier, elle connaît Léa depuis plus longtemps, et elle avait déjà, en son for intérieur, donné tort à Camille. Elle le met de côté.
 
-[Titre : « Étape 4 — Chercher les options ensemble »]
+## Étape 4 — Chercher les options ensemble
 
 Jeudi 9 h, à trois. Nour rappelle le cadre, puis expose ce qu''elle a compris, de façon équilibrée.
 
-[Séquence jouée]
 NOUR : « Ce que j''ai compris : Camille a traité une urgence pendant les congés de Léa, l''outil a transféré le client, et personne ne s''est parlé au retour. Léa, tu as eu le sentiment qu''on te retirait deux ans de travail. Camille, tu as eu le sentiment d''être traitée en voleuse pour avoir fait ton travail. Et il n''y a pas de règle sur ce qu''on fait quand on remplace un collègue. Ça, c''est de ma responsabilité. Je vous propose que chacune dise à l''autre ce qui s''est passé pour elle, en quatre temps : ce qu''elle a observé, ce qu''elle a ressenti, ce dont elle a besoin, ce qu''elle demande. Léa ? »
 LÉA : « Quand je suis rentrée, j''ai vu dans l''outil que Rousseau était dans ton portefeuille. J''ai été blessée, parce que je le suis depuis deux ans. J''ai besoin que mon travail soit reconnu. Je te demande de me prévenir quand tu traites un de mes clients. »
 CAMILLE : « Je comprends. Quand tu es rentrée, tu ne m''as pas dit bonjour. J''ai été vexée, parce que j''avais traité une succession en urgence. J''ai besoin qu''on ne me prenne pas pour quelqu''un qui pique des clients. Je te demande de me parler quand quelque chose ne va pas, plutôt que de te taire. »
@@ -8472,14 +8266,13 @@ CAMILLE : « On peut remettre Rousseau dans le portefeuille de Léa. Je ne tiens
 LÉA : « Et quand on remplace, on laisse un mot au retour. Un mail, deux lignes. »
 NOUR : « Je fixe la règle pour l''agence : un client reçu pendant l''absence de son conseiller reste dans son portefeuille ; le remplaçant lui envoie un mail de passation. Je vais voir avec le siège pour le paramétrage de l''outil. »
 
-[Titre : « Étape 5 — Contractualiser et suivre »]
+## Étape 5 — Contractualiser et suivre
 
-[Retour avatar]
 Trois engagements, reformulés à voix haute et notés : Camille remet le client Rousseau à Léa cette semaine ; toute passation fait l''objet d''un mail au retour ; Nour fixe la règle pour l''agence et voit le siège pour l''outil. Point dans deux semaines. Et Nour ajoute une chose : « Ce conflit vient d''une règle qui manquait. C''était à moi de la poser. » Ce n''est pas de la faiblesse ; c''est ce qui permet aux deux de sortir sans perdre la face.
 
 Deux semaines plus tard, Léa et Camille se parlent. Pas comme des amies ; comme des collègues. C''est tout ce que Nour avait à obtenir.
 
-[Titre : « Ce qu''il faut retenir »]
+## Ce qu''il faut retenir
 
 Trois choses. D''abord : écouter séparément avant de réunir. La première tentative de Nour a échoué là. Ensuite : chercher la source dans l''organisation ; ici, une règle manquante, que le manager pose. Enfin : ne pas trancher entre les personnes, mais organiser leur échange, avec un format qui empêche les attaques, et conclure par des engagements suivis.
 
@@ -8487,11 +8280,8 @@ Et une quatrième : si Léa avait refusé l''entretien à trois, ou si les attaq
 
 À tout de suite pour les situations difficiles : recadrer, sanctionner, alerter.
 
-[Fondu, logo]
-
----
-
-Sources : méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
+## Sources
+méthode en cinq étapes (leçon 5.4) ; Rosenberg, communication non violente ; Fisher et Ury, positions et intérêts.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 5;
@@ -8687,187 +8477,183 @@ Nadia vient voir Karim, tendue : depuis deux semaines, un client de flotte, qui 
 
   -- 5.7-podcast-le-conflit-que-jai-laisse-pourrir.md
   update public.lecons l set contenu = case when l.type = 'texte'
-      then jsonb_build_object('texte', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Patrice, responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
+**Claire** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
 
-**PATRICE** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
+**Patrice** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
 
-**CLAIRE** — Et là ?
+**Claire** — Et là ?
 
-**PATRICE** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
+**Patrice** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
 
-**CLAIRE** — Qu''est-ce que vous avez fait à ce moment-là ?
+**Claire** — Qu''est-ce que vous avez fait à ce moment-là ?
 
-**PATRICE** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
+**Patrice** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
 
-**CLAIRE** — Et ensuite ?
+**Claire** — Et ensuite ?
 
-**PATRICE** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
+**Patrice** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
 
-**CLAIRE** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
+**Claire** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
 
-**PATRICE** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
+**Patrice** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
 
-**CLAIRE** — Quand est-ce que ça a basculé ?
+**Claire** — Quand est-ce que ça a basculé ?
 
-**PATRICE** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
+**Patrice** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
 
-**CLAIRE** — Et vous, pendant ce temps ?
+**Claire** — Et vous, pendant ce temps ?
 
-**PATRICE** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
+**Patrice** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
 
-**CLAIRE** — Et l''équipe ?
+**Claire** — Et l''équipe ?
 
-**PATRICE** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
+**Patrice** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
 
-**CLAIRE** — Qu''est-ce qui vous a forcé à agir ?
+**Claire** — Qu''est-ce qui vous a forcé à agir ?
 
-**PATRICE** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
+**Patrice** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
 
-**CLAIRE** — C''est dur.
+**Claire** — C''est dur.
 
-**PATRICE** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
+**Patrice** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
 
-**CLAIRE** — Qu''est-ce que vous avez fait avec Bruno ?
+**Claire** — Qu''est-ce que vous avez fait avec Bruno ?
 
-**PATRICE** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
+**Patrice** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
 
-**CLAIRE** — Vous aviez laissé la règle s''effacer.
+**Claire** — Vous aviez laissé la règle s''effacer.
 
-**PATRICE** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
+**Patrice** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
 
-**CLAIRE** — Qu''est-ce que vous avez entendu ?
+**Claire** — Qu''est-ce que vous avez entendu ?
 
-**PATRICE** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
+**Patrice** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
 
-**CLAIRE** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
+**Claire** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
 
-**PATRICE** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
+**Patrice** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
 
-**CLAIRE** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
+**Claire** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
 
-**PATRICE** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
+**Patrice** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
 
-**CLAIRE** — C''est courageux de le dire.
+**Claire** — C''est courageux de le dire.
 
-**PATRICE** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
+**Patrice** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
 
-**CLAIRE** — Et aujourd''hui, comment vous repérez le niveau 1 ?
+**Claire** — Et aujourd''hui, comment vous repérez le niveau 1 ?
 
-**PATRICE** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
+**Patrice** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
 
-**CLAIRE** — Et Bruno ?
+**Claire** — Et Bruno ?
 
-**PATRICE** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
+**Patrice** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
 
-**CLAIRE** — Un dernier conseil ?
+**Claire** — Un dernier conseil ?
 
-**PATRICE** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
+**Patrice** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
 
-**CLAIRE** — Merci Patrice.
+**Claire** — Merci Patrice.
 
-**PATRICE** — Merci.
+**Patrice** — Merci.
 
-**CLAIRE** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
+**Claire** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
 
----
-
-Sources : Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
+## Sources
+Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
 ')
-      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Format : conversation à deux voix. **CLAIRE** = animatrice IDEAFORMA. **PATRICE** = responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif). Débit : 150 mots/min.
-Charte : voir `contenus/CHARTE-VIDEO-PODCAST.md` (couleurs, présentateur, structure, types d''écrans, son). Les indications entre crochets renvoient aux types d''écrans de la charte.
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
 
----
+Conversation entre Claire, animatrice IDEAFORMA et Patrice, responsable d''un magasin de bricolage (24 salariés), en poste depuis huit ans, ancien chef de rayon (personnage fictif).
 
-**CLAIRE** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
+**Claire** — Bonjour à tous. Dans ce podcast, un retour d''expérience sur ce que la plupart des managers ont vécu au moins une fois : un conflit qu''on a vu venir, et qu''on a laissé pourrir. Patrice, vous dirigez un magasin de bricolage depuis huit ans. Vous m''avez dit que cette histoire vous avait appris plus que toutes les formations. Racontez-nous le début.
 
-**PATRICE** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
+**Patrice** — Le début, c''est deux chefs de rayon. Appelons-les Bruno et Sandra. Bruno, quinze ans de maison, le rayon outillage, quelqu''un de très compétent et de très sûr de lui. Sandra, arrivée trois ans plus tôt, le rayon jardin, plus jeune, très organisée, très à l''aise avec les outils informatiques. Au début, ils s''entendaient. Et puis on a changé le logiciel de gestion des stocks.
 
-**CLAIRE** — Et là ?
+**Claire** — Et là ?
 
-**PATRICE** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
+**Patrice** — Sandra a pris le logiciel en main en une semaine. Bruno a détesté, il a continué à faire ses commandes à sa façon, et il y a eu des erreurs de stock. Sandra, en réunion, a dit quelque chose comme : « Si tout le monde utilisait l''outil, on n''aurait pas ces problèmes. » Devant tout le monde. Bruno l''a pris pour lui. Et c''est parti de là.
 
-**CLAIRE** — Qu''est-ce que vous avez fait à ce moment-là ?
+**Claire** — Qu''est-ce que vous avez fait à ce moment-là ?
 
-**PATRICE** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
+**Patrice** — Rien. Je me suis dit : c''est une remarque, il va digérer, ils sont adultes. Vous voyez, c''est exactement le niveau 1 de ce que votre formation appelle l''escalier de Glasl. Une crispation. Une heure de conversation aurait suffi. Je ne l''ai pas prise.
 
-**CLAIRE** — Et ensuite ?
+**Claire** — Et ensuite ?
 
-**PATRICE** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
+**Patrice** — Ensuite, ça a descendu marche par marche, sur presque un an. D''abord les piques en réunion, dans les deux sens. Bruno qui parlait des « gens qui ne connaissent pas le terrain », Sandra qui parlait des « gens qui refusent d''évoluer ». Niveau 2, la polémique. Je trouvais ça pénible, mais je ne voyais pas un conflit ; je voyais deux caractères.
 
-**CLAIRE** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
+**Claire** — C''est le biais dont parle la formation : attribuer à la personnalité ce qui vient de la situation.
 
-**PATRICE** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
+**Patrice** — Exactement. Et la situation, c''était quoi ? Un changement d''outil mal accompagné, et une répartition des rôles que je n''avais pas clarifiée : qui était référent sur le logiciel ? Personne. Sandra l''était de fait, Bruno ne le supportait pas, et moi je n''avais rien décidé.
 
-**CLAIRE** — Quand est-ce que ça a basculé ?
+**Claire** — Quand est-ce que ça a basculé ?
 
-**PATRICE** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
+**Patrice** — Au niveau 3, quand ils ont arrêté de se parler. Ils communiquaient par les vendeurs. « Dis à Sandra que… » Et puis au niveau 4, ils ont commencé à recruter. Chacun avait ses vendeurs. Le magasin s''est coupé en deux, l''outillage et le jardin, avec le rayon décoration au milieu qui ne savait plus à qui parler. J''ai vu des vendeurs se lever de table à la pause quand un vendeur de l''autre camp s''asseyait.
 
-**CLAIRE** — Et vous, pendant ce temps ?
+**Claire** — Et vous, pendant ce temps ?
 
-**PATRICE** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
+**Patrice** — Je faisais ce que font beaucoup de managers : je compensais. Je passais mon temps à faire l''intermédiaire, à transmettre les informations qui ne passaient plus, à arrondir les angles. Je travaillais deux fois plus pour un magasin qui marchait moins bien. Et je me disais que j''avais la situation en main, puisque le magasin tournait.
 
-**CLAIRE** — Et l''équipe ?
+**Claire** — Et l''équipe ?
 
-**PATRICE** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
+**Patrice** — L''équipe attendait que je fasse quelque chose. Je l''ai compris beaucoup plus tard, quand une vendeuse m''a dit : « On se demandait pourquoi vous ne faisiez rien. » Pour eux, mon silence voulait dire que je ne les protégeais pas. Ou que j''avais peur de Bruno. Ou que j''avais choisi Sandra. Chacun avait sa théorie. La seule chose qu''ils ne pensaient pas, c''est que je gérais.
 
-**CLAIRE** — Qu''est-ce qui vous a forcé à agir ?
+**Claire** — Qu''est-ce qui vous a forcé à agir ?
 
-**PATRICE** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
+**Patrice** — Deux choses en une semaine. Un client, d''abord. Il avait acheté une tondeuse au jardin, il venait chercher une pièce à l''outillage, et Bruno lui a dit devant tout le monde : « Ça, c''est le rayon de Sandra, faut voir avec elle, moi je ne sais pas ce qu''elle vend. » Le client a fait une réclamation écrite. Et puis Sandra est venue me voir avec sa lettre de démission. Elle avait trouvé ailleurs. Elle m''a dit : « Je ne pars pas à cause de Bruno. Je pars parce que vous n''avez rien fait. »
 
-**CLAIRE** — C''est dur.
+**Claire** — C''est dur.
 
-**PATRICE** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
+**Patrice** — C''est juste. Et c''est ce que dit votre leçon : un conflit qu''on laisse pourrir, ça coûte une personne, et c''est rarement la moins bonne. J''ai perdu ma meilleure chef de rayon. Elle est partie. Je n''ai pas réussi à la retenir, et je n''aurais pas dû essayer à ce moment-là ; c''était trop tard.
 
-**CLAIRE** — Qu''est-ce que vous avez fait avec Bruno ?
+**Claire** — Qu''est-ce que vous avez fait avec Bruno ?
 
-**PATRICE** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
+**Patrice** — D''abord, l''affaire du client. Ça, c''était une faute : refuser de servir un client et dénigrer une collègue devant lui. J''ai fait un recadrage en règle, avec les faits, et j''ai fait remonter à ma direction, qui a mis un avertissement. Bruno a été très surpris. Il m''a dit : « Ça fait un an que ça dure et c''est maintenant que tu réagis ? » Et il avait raison sur ce point. Ma passivité pendant un an lui avait dit que tout était permis.
 
-**CLAIRE** — Vous aviez laissé la règle s''effacer.
+**Claire** — Vous aviez laissé la règle s''effacer.
 
-**PATRICE** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
+**Patrice** — Voilà. Quand le manager ne dit rien, la règle, c''est ce que fait le plus fort. Et ensuite, j''ai fait le travail que j''aurais dû faire un an plus tôt. J''ai reconstruit la répartition des rôles, avec un référent logiciel désigné, formé, reconnu. J''ai refait des règles de fonctionnement avec toute l''équipe, en commençant par une : on ne parle pas d''un collègue à un client, jamais. Et j''ai eu un entretien avec chaque vendeur, un par un, pour entendre ce qu''ils avaient vécu. Ça m''a pris un mois. Ça a été un mois très instructif.
 
-**CLAIRE** — Qu''est-ce que vous avez entendu ?
+**Claire** — Qu''est-ce que vous avez entendu ?
 
-**PATRICE** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
+**Patrice** — Que le clan, ils n''en voulaient pas. Que la plupart avaient choisi un camp par loyauté envers leur chef de rayon, pas par conviction. Qu''ils étaient soulagés que ça s''arrête. Et qu''ils avaient perdu confiance en moi. Ça, ça a pris plus longtemps à réparer. Un an environ.
 
-**CLAIRE** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
+**Claire** — Si vous deviez refaire le film, à quel moment vous interviendriez ?
 
-**PATRICE** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
+**Patrice** — Le jour de la remarque en réunion. Le jour même. Deux conversations de dix minutes. À Sandra : « Ce que tu as dit sur l''outil était juste, mais le dire comme ça devant tout le monde, ça vise Bruno. Dis-le-lui à lui. » À Bruno : « Le logiciel est là pour rester ; qu''est-ce qu''il te faut pour le prendre en main ? » Et une décision : un référent, une formation, un délai. Fin de l''histoire. Au lieu de ça, un an, une démission, un avertissement, une équipe coupée en deux.
 
-**CLAIRE** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
+**Claire** — Pourquoi vous ne l''avez pas fait, ce jour-là ? Honnêtement.
 
-**PATRICE** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
+**Patrice** — Honnêtement ? Parce que Bruno m''impressionnait. Quinze ans de maison, il était là avant moi, il connaissait tout. J''avais peur de la confrontation avec lui. Et parce que j''aimais bien Sandra, et que je ne voulais pas la reprendre sur une remarque que je trouvais juste sur le fond. Deux biais, l''affinité et l''évitement, et un manager qui préfère être aimé que faire son travail.
 
-**CLAIRE** — C''est courageux de le dire.
+**Claire** — C''est courageux de le dire.
 
-**PATRICE** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
+**Patrice** — C''est surtout utile pour ceux qui écoutent. Parce que la question n''est pas « est-ce que je vais avoir des conflits dans mon équipe ». Vous en aurez. La question, c''est : est-ce que vous allez les traiter au niveau 1, quand ça coûte dix minutes, ou au niveau 5, quand ça coûte une personne.
 
-**CLAIRE** — Et aujourd''hui, comment vous repérez le niveau 1 ?
+**Claire** — Et aujourd''hui, comment vous repérez le niveau 1 ?
 
-**PATRICE** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
+**Patrice** — Je me suis fait une règle simple : dès que deux personnes de mon équipe communiquent par un tiers, je vais voir. « Dis à Untel que… », c''est mon signal d''alarme. Et dès qu''une remarque en réunion vise quelqu''un, même juste sur le fond, j''en parle le jour même à celui qui l''a faite. Pas pour le reprendre : pour qu''il aille le dire à la bonne personne.
 
-**CLAIRE** — Et Bruno ?
+**Claire** — Et Bruno ?
 
-**PATRICE** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
+**Patrice** — Bruno est toujours là. Il a fini par apprendre le logiciel, avec le référent, qui est un vendeur de son propre rayon. Il n''est pas devenu un autre homme. Mais il ne dénigre plus personne, parce qu''il sait que je réagirai le jour même. La règle est revenue.
 
-**CLAIRE** — Un dernier conseil ?
+**Claire** — Un dernier conseil ?
 
-**PATRICE** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
+**Patrice** — Deux. Le premier : quand vous vous dites « ils sont adultes, ça va se tasser », c''est précisément le moment d''intervenir. Cette phrase, c''est le nom que l''évitement se donne pour être présentable. Le second : quand vous découvrez que vous compensez, que vous faites l''intermédiaire, que vous transmettez à la place des gens, arrêtez. Vous n''êtes pas en train de gérer un conflit. Vous êtes en train de l''entretenir.
 
-**CLAIRE** — Merci Patrice.
+**Claire** — Merci Patrice.
 
-**PATRICE** — Merci.
+**Patrice** — Merci.
 
-**CLAIRE** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
+**Claire** — Dans le cas pratique qui suit, vous allez traiter une tension au bureau de l''atelier Garnier, et le carnet de bord vous demandera d''analyser un conflit que vous avez vécu, avec la méthode en cinq étapes.
 
----
-
-Sources : Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
+## Sources
+Friedrich Glasl, niveaux d''escalade ; Thomas et Kilmann, modes de gestion des conflits (évitement) ; leçons 5.2 à 5.6.
 ') end,
     publie = true
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 7;
