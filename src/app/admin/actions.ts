@@ -5,7 +5,10 @@ import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { envoyerMail, genererMotDePasse, mailBienvenue, mailNouveauMotDePasse, mailPersonnalise, type FormationAttribuee } from "@/lib/mail";
+import { envoyerMail, destinataireContact, genererMotDePasse, mailBienvenue, mailNouveauMotDePasse, mailPersonnalise, type FormationAttribuee } from "@/lib/mail";
+import { chargerDossier, donneesFigees, TYPES_DOCUMENT, type TypeDocument } from "@/lib/documents";
+import { construireDocument } from "@/lib/documents-modele";
+import { genererPdf } from "@/lib/documents-pdf";
 
 /* ───────────────────────── helpers ───────────────────────── */
 
@@ -450,4 +453,108 @@ export async function urlSigneeAdmin(storagePath: string): Promise<string | null
   const supabase = await createClient();
   const { data } = await supabase.storage.from("contenus").createSignedUrl(storagePath, 60 * 30);
   return data?.signedUrl ?? null;
+}
+
+/* ───────────────────────── documents officiels ───────────────────────── */
+
+export type EtatDocument = { ok?: boolean; erreur?: string; numero?: string };
+
+/** Attribue un numéro officiel et enregistre le document dans le registre. */
+async function emettre(adminId: string, inscriptionId: string, eleveId: string, type: TypeDocument, donnees: Record<string, unknown>): Promise<{ numero: string; emis_le: string } | { erreur: string }> {
+  const supabase = await createClient();
+  const { data: numero, error: e1 } = await supabase.rpc("prochain_numero_document");
+  if (e1 || !numero) return { erreur: `Numérotation impossible : ${e1?.message ?? "inconnu"}` };
+  const { data, error } = await supabase.from("documents_emis")
+    .insert({ numero, type, inscription_id: inscriptionId, eleve_id: eleveId, emis_par: adminId, donnees })
+    .select("numero, emis_le").single();
+  if (error || !data) return { erreur: `Enregistrement impossible : ${error?.message ?? "inconnu"}` };
+  return data as { numero: string; emis_le: string };
+}
+
+/**
+ * Émet un document officiel (attestation, certificat, relevé) : attribue un numéro séquentiel
+ * IDF-AAAA-NNNN et fige les données affichées, pour pouvoir le rééditer à l'identique.
+ */
+export async function emettreDocument(inscriptionId: string, type: TypeDocument, donnees: Record<string, unknown>): Promise<EtatDocument> {
+  const admin = await requireAdmin();
+  const supabase = await createClient();
+  const { data: insc } = await supabase.from("inscriptions").select("id, eleve_id").eq("id", inscriptionId).maybeSingle();
+  if (!insc) return { erreur: "Inscription introuvable." };
+  const eleveId = (insc as { eleve_id: string }).eleve_id;
+  const r = await emettre(admin.id, inscriptionId, eleveId, type, donnees);
+  if ("erreur" in r) return { erreur: r.erreur };
+  revalidatePath(`/documents/${inscriptionId}/${type}`);
+  revalidatePath(`/admin/eleves/${eleveId}`);
+  return { ok: true, numero: r.numero };
+}
+
+export type EtatEnvoiDocuments = { ok?: boolean; erreur?: string; message?: string };
+
+/**
+ * Envoie à l'élève, en pièces jointes PDF, les documents cochés. Un document non encore émis
+ * reçoit son numéro officiel au moment de l'envoi (on n'envoie jamais de brouillon).
+ */
+export async function envoyerDocuments(inscriptionId: string, _prev: EtatEnvoiDocuments, fd: FormData): Promise<EtatEnvoiDocuments> {
+  const admin = await requireAdmin();
+  const types = fd.getAll("documents").map(String).filter((t): t is TypeDocument => TYPES_DOCUMENT.some((x) => x.type === t));
+  const sujet = s(fd, "sujet", 200);
+  const message = s(fd, "message", 6000);
+  const copie = fd.get("copie") === "on";
+  if (types.length === 0) return { erreur: "Sélectionnez au moins un document." };
+  if (!sujet) return { erreur: "L'objet est obligatoire." };
+  if (!message) return { erreur: "Le message est vide." };
+
+  const d = await chargerDossier(inscriptionId);
+  if (!d) return { erreur: "Inscription introuvable." };
+
+  const pieces: { filename: string; content: Buffer }[] = [];
+  const numeros: string[] = [];
+  const donnees = donneesFigees(d);
+  for (const type of types) {
+    let emis = d.documents.find((x) => x.type === type) ?? null;
+    if (!emis) {
+      const r = await emettre(admin.id, inscriptionId, d.eleve.id, type, donnees);
+      if ("erreur" in r) return { erreur: r.erreur };
+      emis = { id: "", numero: r.numero, type, emis_le: r.emis_le, donnees };
+      d.documents.push(emis);
+    }
+    const modele = construireDocument(d, type, emis.numero, emis.emis_le);
+    try {
+      pieces.push({ filename: modele.nomFichier, content: await genererPdf(modele) });
+    } catch (e) {
+      return { erreur: `Génération du PDF impossible (${modele.libelle}) : ${e instanceof Error ? e.message : "erreur"}` };
+    }
+    numeros.push(emis.numero);
+  }
+
+  const m = mailPersonnalise({ sujet, message, email: d.eleve.email, sansBouton: true });
+  const r = await envoyerMail({ to: d.eleve.email, ...m, attachments: pieces });
+  if (!r.ok) return { erreur: `E-mail non envoyé (${r.raison}).` };
+  if (copie) {
+    await envoyerMail({ to: destinataireContact(), subject: `[Copie] ${sujet} — ${d.eleve.email}`, html: m.html, text: m.text, attachments: pieces });
+  }
+
+  const supabase = await createClient();
+  await supabase.from("envois_documents").insert({
+    inscription_id: inscriptionId, eleve_id: d.eleve.id, envoye_par: admin.id, destinataire: d.eleve.email, sujet, documents: numeros, types,
+  });
+  revalidatePath(`/admin/eleves/${d.eleve.id}`);
+  revalidatePath("/admin/eleves");
+  revalidatePath("/admin");
+  return { ok: true, message: `${pieces.length} document${pieces.length > 1 ? "s" : ""} envoyé${pieces.length > 1 ? "s" : ""} à ${d.eleve.email} (${numeros.join(", ")}).` };
+}
+
+/* ───────────────────────── suivi pédagogique ───────────────────────── */
+
+/** Prochain échange planifié et note de suivi sur une inscription. */
+export async function enregistrerSuivi(inscriptionId: string, eleveId: string, fd: FormData): Promise<void> {
+  await requireAdmin();
+  const supabase = await createClient();
+  await supabase.from("inscriptions").update({
+    prochain_contact: sOrNull(fd, "prochain_contact", 10),
+    note_suivi: sOrNull(fd, "note_suivi", 2000),
+  }).eq("id", inscriptionId);
+  revalidatePath(`/admin/eleves/${eleveId}`);
+  revalidatePath("/admin/eleves");
+  revalidatePath("/admin");
 }

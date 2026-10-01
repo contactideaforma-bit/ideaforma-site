@@ -2,11 +2,12 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import { createClient } from "@/lib/supabase/server";
 import { formatDate } from "@/lib/types";
+import { evaluerSuivi, depuis, type LigneSuivi } from "@/lib/suivi";
 
 export default async function AdminDashboard() {
   const supabase = await createClient();
 
-  const [eleves, elevesActifs, formations, inscriptions, demandes, dernieresInscriptions, derniersEleves] =
+  const [eleves, elevesActifs, formations, inscriptions, demandes, dernieresInscriptions, derniersEleves, suiviRes, profilsRes] =
     await Promise.all([
       supabase.from("profiles").select("id", { count: "exact", head: true }).eq("role", "eleve"),
       supabase.from("profiles").select("id", { count: "exact", head: true }).eq("role", "eleve").eq("actif", true),
@@ -20,7 +21,20 @@ export default async function AdminDashboard() {
         .limit(8),
       supabase.from("profiles").select("id, prenom, nom, email, actif, created_at").eq("role", "eleve")
         .order("created_at", { ascending: false }).limit(6),
+      supabase.from("v_suivi").select("*"),
+      supabase.from("profiles").select("id, prenom, nom, email").eq("role", "eleve"),
     ]);
+
+  // Suivi : actions à mener, triées par priorité
+  const maintenant = new Date();
+  const profils = new Map(((profilsRes.data ?? []) as { id: string; prenom: string | null; nom: string | null; email: string }[]).map((p) => [p.id, p]));
+  const aFaire = ((suiviRes.data ?? []) as LigneSuivi[])
+    .map((l) => ({ l, alerte: evaluerSuivi(l, maintenant), p: profils.get(l.eleve_id) }))
+    .filter((x) => x.alerte.priorite >= 2)
+    .sort((a, b) => b.alerte.priorite - a.alerte.priorite);
+  const enCours = ((suiviRes.data ?? []) as LigneSuivi[]).filter((l) => l.statut === "active" && (l.pourcentage ?? 0) < 100);
+  const avancementMoyen = enCours.length ? Math.round(enCours.reduce((s, l) => s + (l.pourcentage ?? 0), 0) / enCours.length) : 0;
+  const actifs7j = ((suiviRes.data ?? []) as LigneSuivi[]).filter((l) => l.derniere_activite && (maintenant.getTime() - new Date(l.derniere_activite).getTime()) < 7 * 86_400_000).length;
 
   type Rel = { id: string; prenom: string | null; nom: string | null; email: string } | null;
   type RelF = { id: string; titre: string } | null;
@@ -47,8 +61,36 @@ export default async function AdminDashboard() {
       <div className="stats-grid">
         <div className="stat-tile"><div className="label">Élèves</div><div className="value">{eleves.count ?? 0}</div><div className="sub">{elevesActifs.count ?? 0} actifs</div></div>
         <div className="stat-tile"><div className="label">Formations</div><div className="value">{formations.count ?? 0}</div><div className="sub">au catalogue</div></div>
-        <div className="stat-tile"><div className="label">Inscriptions actives</div><div className="value">{inscriptions.count ?? 0}</div><div className="sub">parcours en cours</div></div>
+        <div className="stat-tile"><div className="label">Inscriptions actives</div><div className="value">{inscriptions.count ?? 0}</div><div className="sub">{avancementMoyen} % d&apos;avancement moyen · {actifs7j} actif{actifs7j > 1 ? "s" : ""} ces 7 jours</div></div>
         <div className="stat-tile"><div className="label">Demandes à traiter</div><div className="value">{demandes.count ?? 0}</div><div className="sub"><Link href="/admin/demandes" style={{ color: "var(--blue)" }}>voir les demandes</Link></div></div>
+      </div>
+
+      <div className="panel">
+        <h2>À faire <span className="count">{aFaire.length}</span></h2>
+        {aFaire.length === 0 ? (
+          <div className="empty"><div className="big"><Icon name="check-circle" size={26} /></div>Rien d&apos;urgent : aucune relance, aucun échange en retard, aucun document en attente.</div>
+        ) : (
+          <div className="table-wrap">
+            <table className="table">
+              <thead><tr><th>Élève</th><th>Situation</th><th>Avancement</th><th>Dernière activité</th><th>Note</th><th></th></tr></thead>
+              <tbody>
+                {aFaire.map(({ l, alerte, p }) => (
+                  <tr key={l.inscription_id} className={alerte.priorite >= 3 ? "ligne-urgente" : undefined}>
+                    <td>{p ? <Link href={`/admin/eleves/${p.id}`} className="row-link">{[p.prenom, p.nom].filter(Boolean).join(" ") || p.email}</Link> : "—"}</td>
+                    <td><span className={`badge ${alerte.badge}`}>{alerte.libelle}</span></td>
+                    <td>{l.pourcentage ?? 0} %</td>
+                    <td className="muted">{depuis(l.derniere_activite, maintenant)}</td>
+                    <td className="muted note-courte" title={l.note_suivi ?? ""}>{l.note_suivi ?? ""}</td>
+                    <td>{p && <Link href={`/admin/eleves/${p.id}`} className="btn btn-ghost btn-sm">Ouvrir</Link>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <p className="muted" style={{ fontSize: ".8rem", marginTop: ".6rem" }}>
+          Règles : échange planifié arrivé à échéance, parcours terminé sans attestation et certificat émis, jamais connecté 7 jours après l&apos;ouverture, inactif depuis 14 jours, fin d&apos;accès dans 15 jours.
+        </p>
       </div>
 
       <div className="two-cols">

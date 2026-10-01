@@ -6,11 +6,13 @@ import { mailConfigure as mailEstConfigure } from "@/lib/mail";
 import { formatDate, type Profile } from "@/lib/types";
 import { nomComplet } from "@/lib/auth";
 import {
-  basculerActif, inscrire, modifierEleve, modifierInscription, supprimerEleve, supprimerInscription,
+  basculerActif, enregistrerSuivi, inscrire, modifierEleve, modifierInscription, supprimerEleve, supprimerInscription,
 } from "@/app/admin/actions";
 import ConfirmForm from "@/components/admin/ConfirmForm";
 import MotDePasseActions from "@/components/admin/MotDePasseActions";
 import MailEleveForm from "@/components/admin/MailEleveForm";
+import { TYPES_DOCUMENT, formatDateCourte, formatHeure } from "@/lib/documents";
+import EnvoiDocumentsForm, { type DocumentDisponible } from "@/components/admin/EnvoiDocumentsForm";
 
 export default async function FicheEleve({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -20,23 +22,29 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
     supabase.from("profiles").select("*").eq("id", id).eq("role", "eleve").maybeSingle(),
     supabase.from("inscriptions").select("*, formations:formation_id(id, titre)").eq("eleve_id", id).order("created_at"),
     supabase.from("formations").select("id, titre").order("titre"),
-    supabase.from("v_avancement").select("*").eq("eleve_id", id),
+    supabase.from("v_suivi").select("*").eq("eleve_id", id),
   ]);
   if (!eleve) notFound();
   const e = eleve as Profile;
 
   const inscIds = ((inscriptionsData ?? []) as { id: string }[]).map((i) => i.id);
   const { data: quizData } = inscIds.length
-    ? await supabase.from("quiz_reponses").select("id, lecon_id, score, reussi, created_at, lecons:lecon_id(titre)").in("inscription_id", inscIds).order("created_at", { ascending: false }).limit(50)
+    ? await supabase.from("quiz_reponses").select("id, lecon_id, inscription_id, score, reussi, created_at, lecons:lecon_id(titre, type)").in("inscription_id", inscIds).order("created_at", { ascending: false }).limit(50)
     : { data: [] };
-  const tentativesQuiz = (quizData ?? []) as unknown as { id: string; score: number; reussi: boolean; created_at: string; lecons: { titre: string } | null }[];
+  const { data: envoisData } = inscIds.length
+    ? await supabase.from("envois_documents").select("id, inscription_id, envoye_le, destinataire, sujet, documents, types").in("inscription_id", inscIds).order("envoye_le", { ascending: false })
+    : { data: [] };
+  const envois = (envoisData ?? []) as { id: string; inscription_id: string; envoye_le: string; destinataire: string; sujet: string; documents: string[]; types: string[] }[];
+  const { data: docsData } = inscIds.length
+    ? await supabase.from("documents_emis").select("id, numero, type, emis_le, inscription_id").in("inscription_id", inscIds).order("emis_le", { ascending: false })
+    : { data: [] };
+  const documentsEmis = (docsData ?? []) as { id: string; numero: string; type: string; emis_le: string; inscription_id: string }[];
+  const tentativesQuiz = (quizData ?? []) as unknown as { id: string; inscription_id: string; score: number; reussi: boolean; created_at: string; lecons: { titre: string; type: string } | null }[];
 
-  type Insc = { id: string; formation_id: string; date_debut: string; date_fin: string | null; statut: string; formations: { id: string; titre: string } | null };
+  type Insc = { id: string; formation_id: string; date_debut: string; date_fin: string | null; statut: string; prochain_contact: string | null; note_suivi: string | null; formations: { id: string; titre: string } | null };
   const inscriptions = (inscriptionsData ?? []) as unknown as Insc[];
-  const avance = new Map<string, { pourcentage: number; nb_lecons: number; nb_terminees: number }>(
-    ((avancement ?? []) as { inscription_id: string; pourcentage: number; nb_lecons: number; nb_terminees: number }[])
-      .map((a) => [a.inscription_id, a])
-  );
+  type Suivi = { inscription_id: string; pourcentage: number; nb_lecons: number; nb_terminees: number; derniere_activite: string | null; nb_connexions: number };
+  const avance = new Map<string, Suivi>(((avancement ?? []) as Suivi[]).map((a) => [a.inscription_id, a]));
   const dejaInscrit = new Set(inscriptions.map((i) => i.formation_id));
   const disponibles = ((formations ?? []) as { id: string; titre: string }[]).filter((f) => !dejaInscrit.has(f.id));
   const mailConfigure = mailEstConfigure();
@@ -80,20 +88,35 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
               const modifierInsc = modifierInscription.bind(null, i.id, e.id);
               const supprimerInsc = supprimerInscription.bind(null, i.id, e.id);
               const expiree = i.date_fin ? i.date_fin < aujourdhui : false;
+              const suiviAction = enregistrerSuivi.bind(null, i.id, e.id);
+              const termine = (a?.pourcentage ?? 0) >= 100;
+              const evalTentatives = tentativesQuiz.filter((t) => t.inscription_id === i.id && t.lecons?.type === "evaluation");
+              const evalReussie: boolean | null = evalTentatives.length ? evalTentatives.some((t) => t.reussi) : null;
+              const docsDisponibles: DocumentDisponible[] = TYPES_DOCUMENT.map((d) => ({
+                type: d.type, libelle: d.libelle, description: d.description,
+                numero: documentsEmis.find((x) => x.inscription_id === i.id && x.type === d.type)?.numero ?? null,
+                conseille: d.type === "releve" ? false : termine,
+              }));
+              const envoisInsc = envois.filter((env) => env.inscription_id === i.id);
               return (
                 <div key={i.id} className="module-item" style={{ marginBottom: ".75rem" }}>
                   <header>
                     <h3>
                       <Link href={`/admin/formations/${i.formation_id}`}>{i.formations?.titre ?? "Formation"}</Link>
                     </h3>
-                    {i.statut === "active" && !expiree && <span className="badge badge-blue">En cours</span>}
+                    {termine && <span className="badge badge-green">Parcours terminé</span>}
+                    {i.statut === "active" && !expiree && !termine && <span className="badge badge-blue">En cours</span>}
                     {i.statut === "active" && expiree && <span className="badge badge-orange">Délai dépassé</span>}
                     {i.statut === "terminee" && <span className="badge badge-green">Terminée</span>}
                     {i.statut === "suspendue" && <span className="badge badge-grey">Suspendue</span>}
                   </header>
                   <div style={{ margin: ".6rem 0" }}>
                     <div className="progress"><span style={{ width: `${a?.pourcentage ?? 0}%` }} /></div>
-                    <div className="progress-label">{a?.pourcentage ?? 0} % — {a?.nb_terminees ?? 0}/{a?.nb_lecons ?? 0} leçons terminées</div>
+                    <div className="progress-label">
+                      {a?.pourcentage ?? 0} % — {a?.nb_terminees ?? 0}/{a?.nb_lecons ?? 0} leçons terminées
+                      {" · "}{a?.derniere_activite ? `dernière activité le ${formatDateCourte(a.derniere_activite)} à ${formatHeure(a.derniere_activite)}` : "aucune activité enregistrée"}
+                      {a?.nb_connexions ? ` · ${a.nb_connexions} connexion${a.nb_connexions > 1 ? "s" : ""}` : ""}
+                    </div>
                   </div>
                   <form action={modifierInsc} className="inline-form">
                     <label className="muted" style={{ fontSize: ".78rem" }}>Du</label>
@@ -107,6 +130,52 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
                     </select>
                     <button className="btn btn-ghost btn-sm" type="submit">Enregistrer</button>
                   </form>
+
+                  <form action={suiviAction} className="suivi-form">
+                    <div>
+                      <label className="muted" style={{ fontSize: ".78rem" }}>Prochain échange</label>
+                      <input type="date" name="prochain_contact" defaultValue={i.prochain_contact ?? ""} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <label className="muted" style={{ fontSize: ".78rem" }}>Note de suivi (visible seulement par vous)</label>
+                      <input name="note_suivi" defaultValue={i.note_suivi ?? ""} placeholder="Ex. relancer sur le module 3, appel prévu avec le responsable…" maxLength={2000} />
+                    </div>
+                    <button className="btn btn-ghost btn-sm" type="submit">Enregistrer</button>
+                  </form>
+
+                  <div className="doc-liens">
+                    <span className="muted" style={{ fontSize: ".78rem" }}>Documents officiels :</span>
+                    {TYPES_DOCUMENT.map((d) => {
+                      const emis = documentsEmis.find((x) => x.inscription_id === i.id && x.type === d.type);
+                      return (
+                        <a key={d.type} href={`/documents/${i.id}/${d.type}`} target="_blank" rel="noopener" className="btn btn-ghost btn-sm" title={d.description}>
+                          <Icon name="file" size={14} /> {d.libelle}
+                          {emis ? <span className="badge badge-green" style={{ marginLeft: ".4rem" }}>n° {emis.numero}</span> : <span className="badge badge-grey" style={{ marginLeft: ".4rem" }}>brouillon</span>}
+                        </a>
+                      );
+                    })}
+                  </div>
+                  <div style={{ marginTop: ".6rem" }}>
+                    <EnvoiDocumentsForm
+                      inscriptionId={i.id}
+                      prenom={e.prenom}
+                      email={e.email}
+                      entreprise={e.entreprise}
+                      formation={i.formations?.titre ?? "Formation"}
+                      pourcentage={a?.pourcentage ?? 0}
+                      evaluationReussie={evalReussie}
+                      documents={docsDisponibles}
+                      mailConfigure={mailConfigure}
+                      site={process.env.NEXT_PUBLIC_SITE_URL || "https://ideaforma.fr"}
+                    />
+                  </div>
+                  {envoisInsc.length > 0 && (
+                    <div className="muted" style={{ fontSize: ".78rem", marginTop: ".5rem" }}>
+                      {envoisInsc.map((env) => (
+                        <div key={env.id}>Envoyé le {formatDateCourte(env.envoye_le)} à {env.destinataire} : {env.documents.join(", ")}</div>
+                      ))}
+                    </div>
+                  )}
                   <ConfirmForm action={supprimerInsc} message="Retirer cette formation à l'élève ? Sa progression sera perdue." style={{ marginTop: ".5rem" }}>
                     <button className="btn btn-danger btn-sm" type="submit">Retirer</button>
                   </ConfirmForm>
@@ -147,6 +216,27 @@ export default async function FicheEleve({ params }: { params: Promise<{ id: str
                         <td>{t.score} %</td>
                         <td>{t.reussi ? <span className="badge badge-green">Réussi</span> : <span className="badge badge-orange">Échec</span>}</td>
                         <td className="muted">{formatDate(t.created_at)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {documentsEmis.length > 0 && (
+            <div className="panel">
+              <h2>Registre des documents émis <span className="count">{documentsEmis.length}</span></h2>
+              <div className="table-wrap">
+                <table className="table">
+                  <thead><tr><th>N°</th><th>Document</th><th>Émis le</th><th></th></tr></thead>
+                  <tbody>
+                    {documentsEmis.map((d) => (
+                      <tr key={d.id}>
+                        <td><strong>{d.numero}</strong></td>
+                        <td>{TYPES_DOCUMENT.find((t) => t.type === d.type)?.libelle ?? d.type}</td>
+                        <td className="muted">{formatDate(d.emis_le)}</td>
+                        <td><a href={`/documents/${d.inscription_id}/${d.type}`} target="_blank" rel="noopener" className="btn btn-ghost btn-sm">Ouvrir</a></td>
                       </tr>
                     ))}
                   </tbody>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { journaliserConnexion } from "@/app/espace/actions";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
@@ -42,6 +43,7 @@ export default function LoginForm({ suivant }: { suivant?: string }) {
     const role = profile?.role ?? roleJeton;
     const destination =
       suivant && suivant.startsWith("/") ? suivant : role === "admin" ? "/admin" : "/espace";
+    if (role !== "admin") journaliserConnexion().catch(() => null);
     router.replace(destination);
     router.refresh();
   }

@@ -125,6 +125,8 @@ export function mailPersonnalise(opts: {
   email: string;
   motDePasse?: string | null;
   site?: string;
+  /** Sans le bouton « Accéder à ma formation » (ex. envoi de documents de fin de formation). */
+  sansBouton?: boolean;
 }) {
   const site = opts.site ?? "https://ideaforma.fr";
   const url = `${site}/connexion`;
@@ -132,12 +134,12 @@ export function mailPersonnalise(opts: {
   const [avant, apres] = opts.message.includes(MARQUEUR_IDENTIFIANTS)
     ? opts.message.split(MARQUEUR_IDENTIFIANTS, 2)
     : [opts.message, ""];
-  const bloc = (opts.motDePasse ? blocIdentifiants(opts.email, opts.motDePasse) : "") + bouton("Accéder à ma formation", url);
+  const bloc = (opts.motDePasse ? blocIdentifiants(opts.email, opts.motDePasse) : "") + (opts.sansBouton ? "" : bouton("Accéder à ma formation", url));
   const corps = texteVersHtml(avant) + bloc + (apres.trim() ? texteVersHtml(apres) : "");
   const html = gabarit(opts.sujet, corps, { site });
   const blocTexte =
     (opts.motDePasse ? `\n\n— Vos identifiants —\nIdentifiant : ${opts.email}\nMot de passe : ${opts.motDePasse}` : "") +
-    `\nConnexion : ${url}`;
+    (opts.sansBouton ? "" : `\nConnexion : ${url}`);
   const text = avant.trim() + blocTexte + (apres.trim() ? `\n\n${apres.trim()}` : "") + `\n\nIDEAFORMA · ${CONTACT_EMAIL} · ${CONTACT_TEL}`;
   return { subject: opts.sujet, html, text };
 }
@@ -185,4 +187,66 @@ export function mailDemandeContact(d: {
   );
   const text = `Nouvelle demande de contact\n\nNom : ${d.prenom} ${d.nom}\nE-mail : ${d.email}\nTéléphone : ${d.telephone ?? "-"}\nEntreprise : ${d.entreprise ?? "-"}\nFonction : ${d.fonction ?? "-"}\nFormation : ${d.formation ?? "-"}\nParticipants : ${d.participants ?? "-"}\n\n${d.message}`;
   return { subject: `[ideaforma.fr] Demande de ${d.prenom} ${d.nom}`, html, text };
+}
+
+/* ───────────── Envoi de documents officiels (attestation, certificat, relevé) ───────────── */
+
+export type DocumentJoint = { type: "attestation" | "certificat" | "releve"; libelle: string };
+
+/** Objet d'e-mail proposé selon les pièces jointes. */
+export function sujetDocumentsParDefaut(docs: DocumentJoint[], formation: string): string {
+  const types = new Set(docs.map((d) => d.type));
+  if (types.has("attestation") && types.has("certificat")) return `Vos documents de fin de formation — ${formation}`;
+  if (types.has("attestation")) return `Votre attestation de fin de formation — ${formation}`;
+  if (types.has("certificat")) return `Certificat de réalisation — ${formation}`;
+  if (types.has("releve")) return `Relevé de connexion et de progression — ${formation}`;
+  return `Documents de formation — ${formation}`;
+}
+
+/**
+ * Message d'accompagnement proposé, adapté aux pièces jointes et à la situation de l'élève.
+ * L'admin peut le modifier librement avant envoi.
+ */
+export function messageDocumentsParDefaut(opts: {
+  prenom: string | null;
+  formation: string;
+  docs: DocumentJoint[];
+  pourcentage: number;
+  evaluationReussie: boolean | null;
+  entreprise?: string | null;
+}): string {
+  const bonjour = opts.prenom ? `Bonjour ${opts.prenom},` : "Bonjour,";
+  const types = new Set(opts.docs.map((d) => d.type));
+  const liste = opts.docs.map((d) => `– ${d.libelle}`).join("\n");
+  const pluriel = opts.docs.length > 1;
+  const paras: string[] = [bonjour];
+
+  if (types.has("attestation") && opts.evaluationReussie) {
+    paras.push(`Félicitations : vous avez terminé la formation « ${opts.formation} » et validé l'évaluation finale. Vous trouverez ci-joint ${pluriel ? "les documents qui l'attestent" : "le document qui l'atteste"} :`);
+  } else if (types.has("attestation")) {
+    paras.push(`Vous trouverez ci-joint ${pluriel ? "les documents" : "le document"} relatifs à votre parcours « ${opts.formation} » (${opts.pourcentage} % du parcours réalisé) :`);
+  } else if (types.has("certificat")) {
+    paras.push(`Vous trouverez ci-joint le certificat de réalisation de la formation « ${opts.formation} »${pluriel ? ", accompagné des pièces suivantes" : ""} :`);
+  } else {
+    paras.push(`Vous trouverez ci-joint ${pluriel ? "les documents suivants" : "le document suivant"}, relatif${pluriel ? "s" : ""} à votre formation « ${opts.formation} » :`);
+  }
+  paras.push(liste);
+
+  if (types.has("certificat")) {
+    paras.push(opts.entreprise
+      ? `Le certificat de réalisation est le justificatif attendu par votre employeur (${opts.entreprise}) et, le cas échéant, par l'organisme financeur : pensez à le leur transmettre.`
+      : "Le certificat de réalisation est le justificatif attendu par votre employeur ou votre organisme financeur, si votre formation a été prise en charge.");
+  }
+  if (types.has("attestation")) {
+    paras.push("Conservez l'attestation de fin de formation : elle récapitule les objectifs, la durée et les résultats de l'évaluation des acquis, et pourra vous être demandée dans votre parcours professionnel.");
+  }
+  if (types.has("releve") && !types.has("attestation") && !types.has("certificat")) {
+    paras.push("Ce relevé détaille vos connexions et votre progression sur la plateforme. Il sert de justificatif d'assiduité pour une formation à distance.");
+  }
+  if (types.has("attestation") || types.has("certificat")) {
+    paras.push("Nous vous remercions de votre engagement tout au long de ce parcours. Votre avis compte : vous recevrez prochainement un court questionnaire de satisfaction, qui nous aide à améliorer nos formations.");
+  }
+  paras.push(`Pour toute question, répondez simplement à cet e-mail ou écrivez-nous à ${CONTACT_EMAIL}.`);
+  paras.push("Bien cordialement,\nMyriam Ayouaz\nIDEAFORMA");
+  return paras.join("\n\n");
 }

@@ -17,15 +17,41 @@ async function inscriptionPour(formationId: string) {
   return { user, supabase, inscriptionId: (insc?.id as string | undefined) ?? null };
 }
 
+type TypeJournal = "connexion" | "ouverture" | "fin_lecon" | "quiz";
+/** Journal d'activité : preuve de réalisation du distanciel (relevé de connexion). Jamais bloquant. */
+async function journaliser(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  eleveId: string,
+  type: TypeJournal,
+  opts: { inscriptionId?: string | null; leconId?: string | null; meta?: Record<string, unknown> } = {}
+) {
+  const { error } = await supabase
+    .from("journal_activite")
+    .insert({ eleve_id: eleveId, inscription_id: opts.inscriptionId ?? null, lecon_id: opts.leconId ?? null, type, meta: opts.meta ?? {} });
+  if (error) console.warn("[journal]", error.message);
+}
+
+/** Appelé après connexion réussie (côté client) : trace une connexion pour chaque inscription active. */
+export async function journaliserConnexion(): Promise<void> {
+  const user = await requireUser();
+  if (user.role !== "eleve") return;
+  const supabase = await createClient();
+  const { data: inscs } = await supabase.from("inscriptions").select("id").eq("eleve_id", user.id).eq("statut", "active");
+  const liste = (inscs ?? []) as { id: string }[];
+  if (liste.length === 0) { await journaliser(supabase, user.id, "connexion"); return; }
+  for (const i of liste) await journaliser(supabase, user.id, "connexion", { inscriptionId: i.id });
+}
+
 /** L'élève marque une leçon (non notée) comme terminée. La RLS vérifie l'inscription et le délai d'accès. */
 export async function terminerLecon(formationId: string, leconId: string): Promise<void> {
-  const { supabase, inscriptionId } = await inscriptionPour(formationId);
+  const { user, supabase, inscriptionId } = await inscriptionPour(formationId);
   if (!inscriptionId) return;
 
   await supabase.from("progression").upsert(
     { inscription_id: inscriptionId, lecon_id: leconId, statut: "termine", termine_le: new Date().toISOString(), derniere_activite: new Date().toISOString() },
     { onConflict: "inscription_id,lecon_id" }
   );
+  await journaliser(supabase, user.id, "fin_lecon", { inscriptionId, leconId });
   revalidatePath(`/espace/formation/${formationId}`);
   revalidatePath(`/espace/formation/${formationId}/lecon/${leconId}`);
   revalidatePath("/espace");
@@ -33,8 +59,9 @@ export async function terminerLecon(formationId: string, leconId: string): Promi
 
 /** Trace l'ouverture d'une leçon (statut en_cours si pas déjà terminée). */
 export async function ouvrirLecon(formationId: string, leconId: string): Promise<void> {
-  const { supabase, inscriptionId } = await inscriptionPour(formationId);
+  const { user, supabase, inscriptionId } = await inscriptionPour(formationId);
   if (!inscriptionId) return;
+  await journaliser(supabase, user.id, "ouverture", { inscriptionId, leconId });
   const { data: existante } = await supabase
     .from("progression").select("id, statut").eq("inscription_id", inscriptionId).eq("lecon_id", leconId).maybeSingle();
   if (existante) {
@@ -61,7 +88,7 @@ export type ResultatQuiz = {
 
 /** Correction côté serveur : les bonnes réponses ne quittent jamais la base avant soumission. */
 export async function soumettreQuiz(formationId: string, leconId: string, reponses: number[][], dureeSecondes?: number): Promise<ResultatQuiz> {
-  const { supabase, inscriptionId } = await inscriptionPour(formationId);
+  const { user, supabase, inscriptionId } = await inscriptionPour(formationId);
   if (!inscriptionId) return { ok: false, erreur: "Vous n'êtes pas inscrit(e) à cette formation." };
 
   const { data: lecon } = await supabase.from("lecons").select("id, type, contenu").eq("id", leconId).maybeSingle();
@@ -88,6 +115,7 @@ export async function soumettreQuiz(formationId: string, leconId: string, repons
     duree_secondes: dureeSecondes ? Math.round(dureeSecondes) : null,
   });
   if (error) return { ok: false, erreur: "Enregistrement impossible : " + error.message };
+  await journaliser(supabase, user.id, "quiz", { inscriptionId, leconId, meta: { score: resultat.score, reussi: resultat.reussi, duree_secondes: dureeSecondes ? Math.round(dureeSecondes) : null } });
 
   // Progression : meilleur score conservé ; terminé dès qu'une tentative atteint le seuil.
   const { data: prog } = await supabase

@@ -31,6 +31,8 @@ def inline(t: str) -> str:
     t = html.escape(t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", t)
+    # groupes « ____ / ____ » (dates, fractions) : petits champs sur une même ligne
+    t = re.sub(r"_{2,}(?:\s*/\s*_{2,})+", lambda m: '<span class="groupe">' + " / ".join('<span class="champ petit"></span>' for _ in m.group(0).split("/")) + "</span>", t)
     t = re.sub(r"_{4,}", '<span class="champ"></span>', t)
     return t
 
@@ -72,9 +74,10 @@ def md_vers_html(md: str) -> str:
             else:
                 out.append(f"<h2>{inline(titre)}</h2>")
             continue
-        if l.startswith("- ") or l.startswith("• "):
+        if l in ("-", "•") or l.startswith("- ") or l.startswith("• "):
             if para: out.append("<p>" + inline(" ".join(para)) + "</p>"); para = []
-            liste.append(l[2:]); continue
+            item = l[2:].strip()
+            liste.append(item if item else "________________________________________"); continue
         m = re.match(r"^(\d+)\. (.*)$", l)
         if m and not para:
             ol.append(m.group(2)); continue
@@ -86,7 +89,10 @@ def md_vers_html(md: str) -> str:
 CSS = """
 @page { size: A4; margin: 18mm 16mm 20mm 16mm; }
 * { box-sizing: border-box; }
-body { font-family: 'Poppins', 'DejaVu Sans', Arial, sans-serif; font-weight: 300; color: #14213D; font-size: 10.2pt; line-height: 1.45; margin: 0; background: #ffffff; }
+body { font-family: 'Poppins', 'DejaVu Sans', Arial, sans-serif; font-weight: 300; color: #14213D; font-size: 10.2pt; line-height: 1.45; margin: 0; background: #ffffff; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+html { lang: fr; }
+h1, h2, h3, th, .sous, .entete, .ref { text-align: left; hyphens: none; }
+td { text-align: left; hyphens: none; }
 strong { font-weight: 600; }
 h1 { font-size: 20pt; font-weight: 700; color: #0B2545; margin: 0 0 2mm; line-height: 1.2; }
 .sous { font-size: 9.5pt; color: #5B6B82; margin: 0 0 6mm; }
@@ -100,10 +106,13 @@ li { margin-bottom: 1mm; }
 hr.sep { border: 0; border-top: 1px dashed #C9D6E3; margin: 6mm 0; }
 table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9pt; break-inside: auto; }
 th { background: #EAF4FC; color: #0B2545; font-weight: 600; text-align: left; padding: 2mm 2.2mm; border: 1px solid #14213D; }
-td { padding: 2.2mm 2.2mm; border: 1px solid #14213D; vertical-align: top; min-height: 7mm; }
-tbody tr td:empty::after, td { height: 7.5mm; }
+td { padding: 2mm 2.2mm; border: 1px solid #14213D; vertical-align: top; height: 6.8mm; }
 tr { break-inside: avoid; }
-.champ { display: inline-block; min-width: 34mm; border-bottom: 1px solid #14213D; height: 4.5mm; vertical-align: baseline; margin: 0 1mm; }
+.champ { display: inline-block; min-width: 34mm; max-width: 100%; border-bottom: 1px solid #14213D; height: 4.5mm; vertical-align: baseline; margin: 0 1mm; }
+li:has(.champ), p:has(.champ), td:has(.champ) { text-align: left; }
+li .champ.petit, .groupe .champ { display: inline-block; width: 22mm; min-width: 22mm; margin: 0 1mm; height: 4.5mm; }
+.groupe { white-space: nowrap; }
+li .champ:not(.petit) { display: block; width: 100%; min-width: 0; margin: 1.2mm 0 2.2mm; height: 5mm; }
 .encadre { border: 1.5px solid #14213D; border-radius: 2mm; padding: 3mm 4mm; background: #ffffff; margin: 3mm 0 5mm; }
 .entete { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4mm; }
 .logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15pt; color: #0B2545; letter-spacing: .5px; }

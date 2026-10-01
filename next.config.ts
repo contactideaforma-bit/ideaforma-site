@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Pas de config ESLint dans le projet : on ne bloque pas le build Vercel dessus.
   eslint: { ignoreDuringBuilds: true },
+  // Génération des PDF officiels côté serveur : le paquet doit rester hors du bundle webpack.
+  serverExternalPackages: ["@react-pdf/renderer"],
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**.supabase.co" }],
   },

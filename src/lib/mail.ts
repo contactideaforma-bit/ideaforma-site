@@ -19,6 +19,8 @@ type MailInput = {
   html: string;
   text: string;
   replyTo?: string;
+  /** Pièces jointes (PDF générés, etc.). */
+  attachments?: { filename: string; content: Buffer; contentType?: string }[];
 };
 
 export type MailResult = { ok: true } | { ok: false; raison: string };
@@ -78,6 +80,7 @@ async function envoyerSmtp(input: MailInput): Promise<MailResult> {
       html: input.html,
       text: input.text,
       replyTo: input.replyTo,
+      attachments: input.attachments?.map((a) => ({ filename: a.filename, content: a.content, contentType: a.contentType ?? "application/pdf" })),
     });
     return { ok: true };
   } catch (e) {
@@ -97,6 +100,7 @@ async function envoyerResend(input: MailInput): Promise<MailResult> {
         html: input.html,
         text: input.text,
         reply_to: input.replyTo,
+        attachments: input.attachments?.map((a) => ({ filename: a.filename, content: a.content.toString("base64") })),
       }),
     });
     if (!res.ok) {

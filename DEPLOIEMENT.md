@@ -186,8 +186,34 @@ Limites à connaître :
 - Capture d'écran : impossible à empêcher techniquement dans un navigateur ; le filigrane nominatif et le
   floutage hors focus rendent la fuite dissuasive et traçable.
 
-## Étape 3 (à venir)
+## Étape 3 — documents officiels et suivi des élèves (livrée)
 
-Attestations / certificats de réalisation PDF générés automatiquement, relevés de connexion (temps passé
-par leçon), questionnaire de satisfaction à chaud, rappels e-mail avant la fin du délai d'accès, et
-création des premières formations complètes.
+**Base de données** : exécuter dans l'ordre, dans le SQL Editor de Supabase,
+`supabase/migrations/0004_journal_documents.sql` (journal d'activité, registre des documents, numérotation
+IDF-AAAA-NNNN) puis `supabase/migrations/0005_suivi_envois.sql` (prochain échange, note de suivi, historique
+des envois, vue `v_suivi`).
+
+**Dépendance** : `@react-pdf/renderer` (génération des PDF côté serveur). Après `git pull`, lancer `npm install`
+et committer `package-lock.json`, sinon le build Vercel échoue avec « Can't resolve '@react-pdf/renderer' ».
+
+**Ce que fait l'admin** :
+- Fiche élève → pour chaque formation : barre d'avancement, dernière activité, nombre de connexions, prochain
+  échange planifié et note de suivi (privée) ; liens vers les trois documents (attestation de fin de formation,
+  certificat de réalisation, relevé de connexion et de progression), aperçu A4, bouton PDF, impression.
+- « Émettre » attribue un numéro officiel et fige les données dans le registre (`documents_emis`). Un document
+  envoyé par e-mail est émis automatiquement s'il ne l'était pas : on n'envoie jamais de brouillon.
+- « Envoyer des documents par e-mail » : cocher les pièces, objet et message pré-rédigés selon la sélection
+  (modifiables), aperçu, copie à contact@ideaforma.fr, PDF en pièces jointes. Historique dans `envois_documents`.
+- Liste des élèves : une ligne par inscription, avancement, dernière activité, état du suivi (à relancer,
+  échange prévu, documents à envoyer, fin d'accès proche), filtre « À traiter », tri par priorité.
+- Tableau de bord : panneau « À faire » qui regroupe tout ce qui demande une action aujourd'hui.
+
+**Limites connues** : le journal de connexion n'enregistre qu'à partir du déploiement de l'étape 3 ; les
+élèves inscrits avant n'ont pas d'historique de connexion antérieur (leur progression et leurs quiz sont bien
+présents). La signature sur les documents est un cadre à signer/tamponner ; une signature image pourra être
+ajoutée plus tard.
+
+## Étape 4 (à venir)
+
+Questionnaires de satisfaction à chaud et à froid (avec synthèse pour l'audit Qualiopi), rappels e-mail
+automatiques avant la fin du délai d'accès et en cas d'inactivité, convocation et programme pré-remplis.
