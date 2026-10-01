@@ -1,6 +1,7 @@
 import "server-only";
 import React from "react";
 import { Document, Page, Text, View, StyleSheet, Font, renderToBuffer } from "@react-pdf/renderer";
+import type { Style } from "@react-pdf/types";
 import { ORGANISME } from "@/lib/organisme";
 import { formatDateLongue } from "@/lib/documents";
 import { segments, type Bloc, type ModeleDocument } from "@/lib/documents-modele";
@@ -43,7 +44,7 @@ const st = StyleSheet.create({
   pageNum: { position: "absolute", right: 50, bottom: 12, fontSize: 7, color: "#888888" },
 });
 
-type StylePdf = React.ComponentProps<typeof Text>["style"];
+type StylePdf = Style | Style[];
 
 function Riche({ texte, style }: { texte: string; style?: StylePdf }) {
   return (
