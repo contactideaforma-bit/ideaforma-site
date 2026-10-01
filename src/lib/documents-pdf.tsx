@@ -43,7 +43,9 @@ const st = StyleSheet.create({
   pageNum: { position: "absolute", right: 50, bottom: 12, fontSize: 7, color: "#888888" },
 });
 
-function Riche({ texte, style }: { texte: string; style?: object }) {
+type StylePdf = React.ComponentProps<typeof Text>["style"];
+
+function Riche({ texte, style }: { texte: string; style?: StylePdf }) {
   return (
     <Text style={style}>
       {segments(texte).map((s, i) => (s.gras ? <Text key={i} style={{ fontFamily: "Helvetica-Bold" }}>{s.texte}</Text> : <Text key={i}>{s.texte}</Text>))}
