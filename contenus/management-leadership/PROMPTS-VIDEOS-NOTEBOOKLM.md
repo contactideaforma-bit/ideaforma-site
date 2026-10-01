@@ -5,7 +5,7 @@ Prompts prêts à coller dans NotebookLM (Google) pour produire les vidéos de c
 ## Mode d'emploi
 
 1. Créez un carnet NotebookLM par module (« IDEAFORMA — M&L — Module N »).
-2. Importez comme sources le fichier `contenus/CHARTE-VIDEO-PODCAST.md` et les fichiers `.md` du module (dossier `contenus/management-leadership/0N-module-N/`). Importez au minimum le script de la vidéo concernée et les leçons écrites qu'elle introduit. Pour les modules 6 et 7, attendez que les contenus soient rédigés (phase P4) ; les prompts ci-dessous sont déjà prêts.
+2. Importez comme sources le fichier `contenus/CHARTE-VIDEO-PODCAST.md` et les fichiers `.md` du module (dossier `contenus/management-leadership/0N-module-N/`). Importez au minimum le script de la vidéo concernée et les leçons écrites qu'elle introduit.
 3. Dans le studio, choisissez « Vue d'ensemble vidéo », puis « Personnaliser ». Collez le bloc commun suivi du prompt de la vidéo. Choisissez le format « Explication » (pas « Résumé ») et un style visuel sobre (classique ou tableau blanc). Langue de sortie : français (réglage du carnet).
 4. Générez, visionnez, et regénérez si la vidéo s'écarte du script : NotebookLM reformule à partir des sources, il ne lit pas le script mot à mot. Pour une lecture mot à mot avec avatar, c'est la phase P5 (HeyGen, Synthesia ou équivalent) avec les scripts tels quels.
 5. Exportez la vidéo, puis déposez-la dans le bucket `contenus` de Supabase et renseignez le chemin dans l'éditeur de leçon (type vidéo).
@@ -204,7 +204,7 @@ Objectif : rappel avant le quiz : conflit de tâche et de relation, escalade de 
 
 ## Module 6 — Piloter la performance et accompagner le changement
 
-Sources à importer : tous les fichiers de `06-module-6/` (à rédiger en phase P4).
+Sources à importer : tous les fichiers de `06-module-6/`.
 
 ### Vidéo 6.1 — Évaluer sans juger : le bilan d'activité
 

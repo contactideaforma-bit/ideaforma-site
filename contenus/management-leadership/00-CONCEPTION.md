@@ -3,7 +3,7 @@
 **Organisme** : IDEAFORMA (NDA 11922999392, Qualiopi n° 26-027-04)
 **Modalité** : 100 % en ligne, asynchrone, sur la plateforme ideaforma.fr (texte, vidéo, podcast, quiz, évaluations)
 **Durée estimée** : 35 heures (≈ 5 jours) — accès conseillé : 3 mois
-**Version** : 1.0 — 28/09/2026 — statut : structure validée, contenus à produire
+**Version** : 1.0 — 28/09/2026 — statut : contenus rédigés (modules 0 à 7), médias en cours de production
 
 ---
 

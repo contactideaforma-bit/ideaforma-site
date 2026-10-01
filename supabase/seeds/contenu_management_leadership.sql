@@ -8859,5 +8859,1748 @@ Conservez ce carnet : le module 6 (piloter la performance, accompagner le change
     from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 6 and l.ordre = 9;
   n := n + 1;
 
+  -- 6.1-video-bilan-activite.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
+
+## Module 6 — Piloter la performance et accompagner le changement
+
+Bienvenue dans le module 6, le dernier module de contenu avant votre évaluation finale. Vous avez appris à organiser, à communiquer, à motiver, à gérer les tensions. Reste une question que toute hiérarchie finit par poser, et que vous devez vous poser avant elle : est-ce que ça marche ?
+
+Évaluer les résultats de l''activité collective est la neuvième compétence du référentiel sur lequel cette formation est construite. C''est aussi, dans la pratique, l''une des plus mal faites. Non par manque d''outils, mais parce qu''on confond deux choses.
+
+## Évaluer l''activité, évaluer les personnes
+
+La première confusion est la plus grave. Évaluer l''activité, c''est regarder ce que l''équipe a produit, avec quels moyens, dans quelles conditions. Évaluer les personnes, c''est apprécier la contribution de chacun, dans le cadre réglé du module 3 : entretiens de suivi, entretien annuel, avec des critères connus à l''avance.
+
+Quand on mélange les deux, le bilan d''activité devient une recherche de coupables. « Les délais ont glissé en mars. Qui a traîné ? » Et aussitôt, l''équipe se tait, cache, se défend. Vous retrouvez la sécurité psychologique du module 4 : une équipe qui a peur du bilan ne vous dira jamais ce qui s''est vraiment passé.
+
+Le bilan d''activité est collectif et factuel. Il sert à décider ce qu''on change, pas à désigner qui a tort. Les personnes, on en parle ailleurs, autrement, seul à seul.
+
+## Trois questions : résultats, moyens, conditions
+
+Un bilan d''activité répond à trois questions, dans cet ordre.
+
+Les résultats : qu''est-ce qu''on visait, qu''est-ce qu''on a obtenu ? C''est votre tableau de bord du module 2 : les indicateurs de résultat, comparés aux cibles. À l''atelier Garnier, le trimestre visait 95 % de délais tenus, au plus une reprise par mois, un planning validé chaque soir. Résultat : 91 %, une reprise, dix-huit soirs sur vingt. Trois chiffres, trois écarts à comprendre.
+
+Les moyens : qu''est-ce qu''on a réellement engagé ? Les heures supplémentaires, le temps de Thierry sur le contrôle, l''arrivée d''Amine en cours de trimestre. Un résultat ne se lit pas sans ses moyens. 91 % de délais tenus avec quarante heures supplémentaires, ce n''est pas le même résultat que 91 % sans.
+
+Les conditions : qu''est-ce qui a aidé, qu''est-ce qui a gêné ? Le nouveau circuit des pièces, le retard du fournisseur en février, l''absence de Nadia une semaine. C''est la colonne qu''on oublie, et c''est celle qui explique le plus. Elle transforme « on n''a pas atteint 95 % » en « on a perdu quatre points sur la semaine du retard fournisseur ».
+
+## Comprendre avant de conclure
+
+Un écart n''est pas une faute. C''est une information. Devant un écart, le manager pose trois questions avant de décider quoi que ce soit : est-ce que l''objectif était réaliste ? Est-ce que les moyens étaient là ? Qu''est-ce qui s''est passé dans les conditions ?
+
+Et il regarde aussi les résultats atteints, pas seulement les écarts. Un bilan qui ne parle que de ce qui manque fabrique des journées de recul, vous l''avez vu au module 4. Un objectif atteint mérite d''être nommé, et la façon dont il a été atteint mérite d''être comprise, pour la reproduire.
+
+**Un écart est une information, pas une faute.**
+
+## Le bilan se partage
+
+Le bilan d''activité n''est pas un document que le manager rédige seul pour sa hiérarchie. Il se construit avec l''équipe, en réunion, sur le tableau de bord. Trente minutes, une fois par mois ou par trimestre : où on en est, qu''est-ce qui l''explique, qu''est-ce qu''on change. C''est ce que vous appellerez la rétrospective dans la leçon suivante.
+
+Puis il remonte à la hiérarchie, avec la méthode du module 3 : les faits, l''analyse, ce qu''on propose. Un manager qui présente un bilan honnête, avec ses écarts et ce qu''il en fait, est plus crédible qu''un manager qui présente un bilan parfait.
+
+## Et ensuite
+
+Le bilan ouvre sur deux chemins. Quand quelque chose a mal tourné, on en tire un retour d''expérience, pour comprendre les causes et éviter que ça se reproduise. Quand le fonctionnement peut s''améliorer, on entre dans l''amélioration continue : des petits changements, testés, mesurés, adoptés ou abandonnés. Et quand le changement nécessaire est plus grand, un nouvel outil, une nouvelle organisation, c''est de la conduite du changement, avec ses résistances et sa méthode. Ce module vous donne les trois.
+
+## À l''atelier Garnier
+
+À l''atelier Garnier, Karim présente son premier bilan de trimestre à l''équipe, puis à Michel. Il commence par ce qui a été atteint : zéro reprise sur deux mois, un planning tenu dix-huit soirs sur vingt. Puis l''écart : quatre points de délais perdus, dont trois sur la semaine du retard fournisseur. Puis ce qu''il propose : un stock de sécurité sur les dix pièces les plus courantes, idée d''Amine, et un point hebdomadaire avec le fournisseur. Michel, qui attendait des reproches, découvre un pilotage.
+
+À tout de suite pour le retour d''expérience.
+
+## Sources
+France Compétences, référentiel RS7377, compétence 9 ; Robert S. Kaplan, David P. Norton, *Le tableau de bord prospectif*, 1996 ; Amy Edmondson sur les bilans sans blâme (*The Fearless Organization*, 2018).
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
+
+## Module 6 — Piloter la performance et accompagner le changement
+
+Bienvenue dans le module 6, le dernier module de contenu avant votre évaluation finale. Vous avez appris à organiser, à communiquer, à motiver, à gérer les tensions. Reste une question que toute hiérarchie finit par poser, et que vous devez vous poser avant elle : est-ce que ça marche ?
+
+Évaluer les résultats de l''activité collective est la neuvième compétence du référentiel sur lequel cette formation est construite. C''est aussi, dans la pratique, l''une des plus mal faites. Non par manque d''outils, mais parce qu''on confond deux choses.
+
+## Évaluer l''activité, évaluer les personnes
+
+La première confusion est la plus grave. Évaluer l''activité, c''est regarder ce que l''équipe a produit, avec quels moyens, dans quelles conditions. Évaluer les personnes, c''est apprécier la contribution de chacun, dans le cadre réglé du module 3 : entretiens de suivi, entretien annuel, avec des critères connus à l''avance.
+
+Quand on mélange les deux, le bilan d''activité devient une recherche de coupables. « Les délais ont glissé en mars. Qui a traîné ? » Et aussitôt, l''équipe se tait, cache, se défend. Vous retrouvez la sécurité psychologique du module 4 : une équipe qui a peur du bilan ne vous dira jamais ce qui s''est vraiment passé.
+
+Le bilan d''activité est collectif et factuel. Il sert à décider ce qu''on change, pas à désigner qui a tort. Les personnes, on en parle ailleurs, autrement, seul à seul.
+
+## Trois questions : résultats, moyens, conditions
+
+Un bilan d''activité répond à trois questions, dans cet ordre.
+
+Les résultats : qu''est-ce qu''on visait, qu''est-ce qu''on a obtenu ? C''est votre tableau de bord du module 2 : les indicateurs de résultat, comparés aux cibles. À l''atelier Garnier, le trimestre visait 95 % de délais tenus, au plus une reprise par mois, un planning validé chaque soir. Résultat : 91 %, une reprise, dix-huit soirs sur vingt. Trois chiffres, trois écarts à comprendre.
+
+Les moyens : qu''est-ce qu''on a réellement engagé ? Les heures supplémentaires, le temps de Thierry sur le contrôle, l''arrivée d''Amine en cours de trimestre. Un résultat ne se lit pas sans ses moyens. 91 % de délais tenus avec quarante heures supplémentaires, ce n''est pas le même résultat que 91 % sans.
+
+Les conditions : qu''est-ce qui a aidé, qu''est-ce qui a gêné ? Le nouveau circuit des pièces, le retard du fournisseur en février, l''absence de Nadia une semaine. C''est la colonne qu''on oublie, et c''est celle qui explique le plus. Elle transforme « on n''a pas atteint 95 % » en « on a perdu quatre points sur la semaine du retard fournisseur ».
+
+## Comprendre avant de conclure
+
+Un écart n''est pas une faute. C''est une information. Devant un écart, le manager pose trois questions avant de décider quoi que ce soit : est-ce que l''objectif était réaliste ? Est-ce que les moyens étaient là ? Qu''est-ce qui s''est passé dans les conditions ?
+
+Et il regarde aussi les résultats atteints, pas seulement les écarts. Un bilan qui ne parle que de ce qui manque fabrique des journées de recul, vous l''avez vu au module 4. Un objectif atteint mérite d''être nommé, et la façon dont il a été atteint mérite d''être comprise, pour la reproduire.
+
+**Un écart est une information, pas une faute.**
+
+## Le bilan se partage
+
+Le bilan d''activité n''est pas un document que le manager rédige seul pour sa hiérarchie. Il se construit avec l''équipe, en réunion, sur le tableau de bord. Trente minutes, une fois par mois ou par trimestre : où on en est, qu''est-ce qui l''explique, qu''est-ce qu''on change. C''est ce que vous appellerez la rétrospective dans la leçon suivante.
+
+Puis il remonte à la hiérarchie, avec la méthode du module 3 : les faits, l''analyse, ce qu''on propose. Un manager qui présente un bilan honnête, avec ses écarts et ce qu''il en fait, est plus crédible qu''un manager qui présente un bilan parfait.
+
+## Et ensuite
+
+Le bilan ouvre sur deux chemins. Quand quelque chose a mal tourné, on en tire un retour d''expérience, pour comprendre les causes et éviter que ça se reproduise. Quand le fonctionnement peut s''améliorer, on entre dans l''amélioration continue : des petits changements, testés, mesurés, adoptés ou abandonnés. Et quand le changement nécessaire est plus grand, un nouvel outil, une nouvelle organisation, c''est de la conduite du changement, avec ses résistances et sa méthode. Ce module vous donne les trois.
+
+## À l''atelier Garnier
+
+À l''atelier Garnier, Karim présente son premier bilan de trimestre à l''équipe, puis à Michel. Il commence par ce qui a été atteint : zéro reprise sur deux mois, un planning tenu dix-huit soirs sur vingt. Puis l''écart : quatre points de délais perdus, dont trois sur la semaine du retard fournisseur. Puis ce qu''il propose : un stock de sécurité sur les dix pièces les plus courantes, idée d''Amine, et un point hebdomadaire avec le fournisseur. Michel, qui attendait des reproches, découvre un pilotage.
+
+À tout de suite pour le retour d''expérience.
+
+## Sources
+France Compétences, référentiel RS7377, compétence 9 ; Robert S. Kaplan, David P. Norton, *Le tableau de bord prospectif*, 1996 ; Amy Edmondson sur les bilans sans blâme (*The Fearless Organization*, 2018).
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 1;
+  n := n + 1;
+
+  -- 6.10-quiz.json
+  update public.lecons l set contenu = '{"questions": [{"id": "m6q01", "enonce": "Quelle est la différence essentielle entre évaluer l''activité et évaluer les personnes ?", "options": ["Aucune : un bon bilan désigne qui a bien et mal travaillé", "L''évaluation de l''activité est collective et factuelle et sert à décider ce qu''on change ; l''évaluation des personnes se fait séparément, seul à seul, avec des critères connus", "L''évaluation de l''activité ne concerne que la direction", "L''évaluation des personnes se fait en réunion d''équipe"], "bonnes": [1], "explication": "Mélanger les deux transforme le bilan en recherche de coupables, et l''équipe cesse de dire ce qui s''est passé."}, {"id": "m6q02", "enonce": "Un bilan d''activité répond à trois questions. Lesquelles, dans l''ordre ?", "options": ["Qui, quand, combien", "Résultats (objectifs atteints ?), moyens (réellement engagés), conditions (ce qui a aidé ou gêné)", "Forces, faiblesses, menaces", "Chiffre d''affaires, marge, trésorerie"], "bonnes": [1], "explication": "Un résultat ne se lit pas sans ses moyens ni ses conditions : 91 % de délais tenus avec quarante heures supplémentaires n''est pas le même résultat que sans."}, {"id": "m6q03", "enonce": "Les délais ont glissé de quatre points sur le trimestre. Quelle est la bonne attitude du manager devant cet écart ?", "options": ["Chercher qui a traîné et le dire en réunion", "Le traiter comme une information : l''objectif était-il réaliste, les moyens étaient-ils là, que s''est-il passé dans les conditions ?", "Ne pas en parler pour ne pas démotiver", "Baisser l''objectif du trimestre suivant"], "bonnes": [1], "explication": "Un écart est une information, pas une faute. Et le bilan nomme aussi ce qui a été atteint, pour le reproduire."}, {"id": "m6q04", "enonce": "Sur quel principe repose le retour d''expérience tel que l''aviation et la santé l''ont formalisé ?", "options": ["Toute erreur est sanctionnée pour l''exemple", "La culture juste : l''erreur signalée de bonne foi n''est pas sanctionnée, la négligence délibérée et la dissimulation le sont", "Seuls les incidents graves sont analysés", "L''analyse est confiée à un expert extérieur, sans les personnes concernées"], "bonnes": [1], "explication": "Sans cette garantie, personne ne déclare rien et le système ne voit que les catastrophes."}, {"id": "m6q05", "enonce": "Quels sont les quatre temps d''un retour d''expérience ?", "options": ["Problème, coupable, sanction, communication", "Faits (chronologie partagée), causes (jusqu''à la cause racine), enseignements (généraux), décisions (peu nombreuses, suivies)", "Objectif, moyens, délai, budget", "Constat, excuse, promesse, oubli"], "bonnes": [1], "explication": "La chronologie se reconstitue ensemble ; les causes se combinent (technique, organisation, humain) ; les décisions sont écrites et vérifiées à la réunion suivante."}, {"id": "m6q06", "enonce": "Un retex conclut : « Julien est allé trop vite. » Qu''en pensez-vous ?", "options": ["Le retex est terminé, la cause est trouvée", "Le retex s''est arrêté à la cause apparente ; il faut continuer à demander pourquoi jusqu''à une cause organisationnelle sur laquelle on peut agir", "Il faut sanctionner Julien", "Il faut refaire le retex sans Julien"], "bonnes": [1], "explication": "Pourquoi est-il allé trop vite ? Parce qu''on lui a demandé deux fois où il en était. Pourquoi ? Parce qu''aucun circuit des demandes n''existait. La cause racine est une règle à créer, pas une personne."}, {"id": "m6q07", "enonce": "Qu''est-ce qu''une rétrospective d''équipe ?", "options": ["Une réunion annuelle de la direction", "Un retex régulier sur une période (semaine, mois) en trois questions : ce qui a bien fonctionné, ce qui a moins bien fonctionné, ce qu''on essaie d''ici la prochaine fois", "Un entretien individuel d''évaluation", "Une enquête de satisfaction anonyme"], "bonnes": [1], "explication": "Trente minutes, tour de table, le manager parle en dernier, une ou deux choses à essayer, et la réunion suivante commence par « qu''est-ce que ça a donné ? »."}, {"id": "m6q08", "enonce": "Que signifie PDCA (roue de Deming) ?", "options": ["Planifier, Déléguer, Contrôler, Archiver", "Plan (planifier : problème, cause, action, mesure), Do (faire, à petite échelle), Check (vérifier, mesurer), Act (généraliser ou recommencer)", "Produire, Distribuer, Compter, Analyser", "Prévoir, Décider, Communiquer, Agir"], "bonnes": [1], "explication": "L''étape le plus souvent sautée est Check : on met en place, on passe à autre chose, et on ne sait jamais si ça a marché."}, {"id": "m6q09", "enonce": "Quelle idée centrale Deming répétait-il à propos des problèmes de qualité ?", "options": ["Ils viennent des personnes : il faut recruter mieux", "Ils viennent du système, des processus : c''est l''organisation qu''il faut améliorer", "Ils sont inévitables", "Ils se règlent par des primes"], "bonnes": [1], "explication": "C''est la même idée qu''aux modules 1, 5 et 6 : les « problèmes de personnes » sont le plus souvent des problèmes d''organisation."}, {"id": "m6q10", "enonce": "Quand s''arrête-t-on dans la méthode des cinq pourquoi ?", "options": ["Exactement à la cinquième question", "Quand on a trouvé le nom d''un responsable", "Quand la réponse est une règle ou une organisation à créer, sur laquelle on peut agir", "Quand l''équipe est d''accord pour arrêter"], "bonnes": [2], "explication": "Et comme les problèmes réels ont souvent plusieurs causes, on refait la chaîne à partir de chaque cause plausible, ou on complète avec un diagramme d''Ishikawa."}, {"id": "m6q11", "enonce": "Quelles sont les cinq familles du diagramme d''Ishikawa (5M) ?", "options": ["Marché, Marketing, Management, Marge, Mesure", "Matière, Matériel, Méthode, Main-d''œuvre, Milieu", "Mission, Moyens, Motivation, Mesure, Maîtrise", "Manager, Métier, Machine, Mode, Mémoire"], "bonnes": [1], "explication": "Fait en équipe au tableau, il évite de se focaliser sur la cause la plus visible et fait apparaître celles qu''on ne voyait pas."}, {"id": "m6q12", "enonce": "Pourquoi la formation recommande-t-elle les petites améliorations avant les grands chantiers ?", "options": ["Parce que les grands chantiers sont interdits aux managers de proximité", "Parce qu''elles dépendent de l''équipe, sont appliquées puisqu''elles viennent d''elle, et valent sur un an un grand chantier", "Parce qu''elles ne coûtent rien et ne servent à rien", "Parce que la direction n''aime pas les grands chantiers"], "bonnes": [1], "explication": "Déplacer un rangement, créer un stock de sécurité, afficher une check-list : chacune gagne quelques minutes ou évite quelques erreurs par jour."}, {"id": "m6q13", "enonce": "Un membre de l''équipe propose une idée d''amélioration. Quelle règle la formation fixe-t-elle ?", "options": ["Toute idée est mise en œuvre immédiatement", "Toute idée reçoit une réponse sous quinze jours (oui on teste, non et pourquoi, ou pas maintenant et quand), et une amélioration adoptée porte le nom de celui qui l''a eue", "Les idées sont recueillies une fois par an", "Seules les idées du manager sont retenues"], "bonnes": [1], "explication": "Une idée sans réponse est la dernière que la personne proposera."}, {"id": "m6q14", "enonce": "À quoi les gens résistent-ils vraiment lors d''un changement ?", "options": ["Au changement en soi, par principe", "À ce qu''ils perdent, à ce qu''ils ne comprennent pas, à ce qu''on leur impose, et à la peur de ne pas y arriver", "Uniquement à la baisse de salaire", "À la nouveauté technologique"], "bonnes": [1], "explication": "Chaque source a sa réponse : nommer la perte, donner le sens, ouvrir ce qui peut l''être, former et accorder le droit à l''erreur."}, {"id": "m6q15", "enonce": "Comment la formation vous demande-t-elle de prendre la courbe d''adaptation au changement (inspirée de Kübler-Ross) ?", "options": ["Comme une loi : chacun passe obligatoirement par toutes les étapes dans l''ordre", "Comme un repère pédagogique : les réactions négatives des premières semaines sont normales et passent si on les accompagne, mais les étapes ne sont ni obligatoires ni ordonnées", "Comme un outil d''évaluation des personnes", "Comme une raison de reporter le changement"], "bonnes": [1], "explication": "Le repère sert surtout à rappeler au manager, qui a souvent été informé plus tôt, que l''équipe n''en est pas au même point que lui."}, {"id": "m6q16", "enonce": "Plusieurs réponses. Parmi les huit étapes de Kotter, lesquelles sont citées ici correctement ?", "options": ["Créer un sentiment d''urgence avec des faits", "Obtenir des victoires rapides et les montrer", "Crier victoire dès le premier succès pour motiver", "Ancrer le changement dans les règles et l''intégration des nouveaux"], "bonnes": [0, 1, 3], "explication": "L''étape 7 dit l''inverse de la troisième proposition : consolider sans crier victoire trop tôt, c''est là que la plupart des changements échouent."}, {"id": "m6q17", "enonce": "La direction a décidé un changement que vous n''auriez pas choisi. Que faites-vous avant de l''annoncer à l''équipe ?", "options": ["Vous l''annoncez le jour même par e-mail pour aller vite", "Vous vous informez complètement (pourquoi, quoi, quand, marges), vous dites à votre hiérarchie les difficultés que vous anticipez et vous obtenez des marges à ouvrir à l''équipe", "Vous attendez que l''équipe l''apprenne par la direction", "Vous dites à l''équipe que vous êtes contre"], "bonnes": [1], "explication": "Le manager relais est exigeant vers le haut avant, porte la décision à la première personne pendant, et fait remonter ce que l''équipe vit après."}, {"id": "m6q18", "enonce": "Que contient une annonce de changement bien faite, en réunion ?", "options": ["La date et le nom du logiciel", "Le pourquoi (faits), ce qui change et ce qui ne change pas, le quand, le comment (formation, référents, droit à l''erreur), ce qui reste ouvert, et ce qu''on ne sait pas encore", "Une promesse que rien ne changera pour personne", "La liste des sanctions en cas de refus"], "bonnes": [1], "explication": "Puis un temps de questions où les objections sont écoutées sans être balayées, et des semaines de répétition, d''entretiens individuels et de premiers résultats montrés."}, {"id": "m6q19", "enonce": "Selon l''Insee (Insee Analyses n° 105, mars 2025), au premier semestre 2024, quelle part des salariés du privé a télétravaillé au moins une fois sur quatre semaines ?", "options": ["Environ 5 %", "Environ 22 %, avec de très fortes différences selon les postes (63 % des cadres, 10 % des employés, presque aucun ouvrier)", "Environ 50 %", "Environ 80 %"], "bonnes": [1], "explication": "C''est l''asymétrie entre postes éligibles et non éligibles qui demande le plus de management : expliquer l''éligibilité par le poste, et offrir d''autres souplesses."}, {"id": "m6q20", "enonce": "Un manager veut installer un logiciel qui garde la webcam des télétravailleurs allumée en continu « pour vérifier qu''ils travaillent ». Qu''en dit la formation ?", "options": ["C''est une bonne pratique de contrôle", "C''est inefficace, cela détruit la confiance et c''est illicite (surveillance disproportionnée) ; on manage sur les résultats : objectifs, livrables, points réguliers", "C''est autorisé si le salarié est d''accord", "C''est obligatoire dans les entreprises de plus de 50 salariés"], "bonnes": [1], "explication": "Tout dispositif de contrôle doit être proportionné, porté à la connaissance des salariés et soumis au CSE le cas échéant (L1222-4, L2312-38) ; la CNIL rappelle que la surveillance permanente est illicite."}], "seuil": 70, "tentatives_max": 3, "corrections": true, "consigne": "20 questions. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %."}'::jsonb, publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 10;
+  n := n + 1;
+
+  -- 6.2-retour-d-experience-et-retrospective.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Une équipe qui ne regarde jamais en arrière refait les mêmes erreurs. Une équipe qui regarde en arrière pour chercher des coupables cache les erreurs. Entre les deux, il y a une pratique que les métiers à risque (aviation, nucléaire, hôpital, pompiers) ont formalisée depuis longtemps et que tout manager de proximité peut adopter : le retour d''expérience, et sa version collective régulière, la rétrospective.
+
+## D''où vient le retour d''expérience
+
+Le retour d''expérience (retex, ou REX) est né dans les secteurs où une erreur coûte des vies. L''aviation civile en a fait un système complet : tout incident, même sans conséquence, est déclaré, analysé, et les enseignements sont diffusés à tous les équipages. Le principe qui le rend possible est la culture juste : on ne sanctionne pas l''erreur signalée de bonne foi, on sanctionne la négligence délibérée et la dissimulation. Sans cette garantie, personne ne déclare rien, et le système ne voit que les catastrophes.
+
+En santé, la Haute Autorité de santé demande aux établissements d''analyser les événements indésirables selon la même logique. En entreprise, le retex est devenu un outil courant de gestion de projet et de qualité. Pour un manager de proximité, il tient en trente minutes et en une page.
+
+## Quand faire un retex
+
+Après un incident ou un échec : une reprise client, un accident évité de justesse, un délai manqué, un conflit qui a dégénéré. Mais aussi après une réussite inhabituelle : un chantier terminé en avance, une semaine sans aucune reprise. Comprendre pourquoi ça a marché est aussi utile que comprendre pourquoi ça a raté, et beaucoup plus rare.
+
+Le retex se fait vite, dans les jours qui suivent, tant que les faits sont frais. Il se fait avec les personnes concernées, pas sur elles. Et il se fait à froid : pas le jour de l''incident, quand l''émotion domine.
+
+## La structure en quatre temps
+
+Le retex suit une trame simple, que la fiche outil 6.8 reprend en gabarit.
+
+Les faits. Ce qui s''est passé, dans l''ordre, avec les heures, les personnes, les décisions. Sans interprétation, sans « il aurait dû ». On reconstitue la chronologie ensemble, et on s''arrête quand tout le monde est d''accord sur ce qui s''est passé. C''est souvent plus long qu''on ne croit : trois personnes ont trois versions, et c''est en les confrontant qu''on découvre ce que personne ne savait.
+
+Les causes. Pourquoi ça s''est passé. Et surtout : pourquoi ça a pu se passer. Un retex qui s''arrête à « Julien est allé trop vite » n''a rien compris. Pourquoi est-il allé trop vite ? Parce que Sophie était venue deux fois lui demander où il en était. Pourquoi ? Parce que le client appelait et qu''elle n''avait personne d''autre à qui transmettre. Pourquoi ? Parce que le circuit des demandes n''existait pas. La cause racine est organisationnelle ; la cause apparente est individuelle. La méthode des cinq pourquoi, que vous verrez à la leçon suivante, sert exactement à cela. Dans la plupart des incidents, il y a plusieurs causes qui se combinent : une cause technique, une cause d''organisation, une cause humaine. Un retex sérieux les cherche toutes.
+
+Les enseignements. Qu''est-ce qu''on apprend ? Formulé de façon générale, réutilisable : « Une demande client qui arrive directement à l''atelier crée de la pression sans décision. » Pas : « Sophie ne doit plus venir dans l''atelier. »
+
+Les décisions. Qu''est-ce qu''on change, qui s''en charge, pour quand, et comment on saura que ça a marché. Une ou deux décisions, pas dix. Et une date de vérification.
+
+## Les règles qui font qu''un retex fonctionne
+
+- Pas de blâme. Le manager le dit en ouverture et le tient : « On cherche ce qui doit changer dans notre fonctionnement, pas qui a tort. » S''il y a une faute délibérée, elle se traite ailleurs (module 5), pas dans le retex.
+- Les personnes concernées sont là, et parlent les premières.
+- Le manager cherche aussi sa part : une consigne floue, une absence, un circuit mal conçu. S''il ne trouve jamais rien de son côté, l''équipe cesse de croire au « pas de blâme ».
+- Le résultat est écrit, court, et partagé avec l''équipe. Un retex oral s''oublie en une semaine.
+- Les décisions sont suivies à la réunion suivante : « On avait décidé le stock de sécurité, où en est-on ? »
+
+## La rétrospective : le retex régulier
+
+Le retex traite un événement. La rétrospective traite une période : la semaine, le mois, le trimestre. Elle vient des méthodes agiles du développement logiciel, où les équipes se réunissent à la fin de chaque cycle pour améliorer leur façon de travailler, mais elle s''applique à n''importe quelle équipe.
+
+Trente minutes, à la fin du point hebdomadaire ou de la réunion mensuelle, trois questions, chacun répond :
+
+- Qu''est-ce qui a bien fonctionné ? (et qu''il faut continuer)
+- Qu''est-ce qui a moins bien fonctionné ? (et qu''il faut changer)
+- Qu''est-ce qu''on essaie d''ici la prochaine fois ? (une ou deux choses, pas plus)
+
+La rétrospective porte sur le fonctionnement de l''équipe, pas sur les personnes. Le manager anime avec les règles du module 3 : tour de table, chacun parle, le manager en dernier. Il note, et la réunion suivante commence par « qu''est-ce que ça a donné ? ».
+
+Ce rituel est le moteur de l''amélioration continue : il produit en permanence de petites décisions, testées, gardées ou abandonnées. Il est aussi un outil de prévention des conflits (module 5) : les irritations trouvent un lieu légitime pour s''exprimer avant de devenir des griefs.
+
+## Le cas Garnier — le retex de la coulure
+
+Trois jours après la réclamation du client Ferrand, Karim réunit Julien, Thierry, Sophie et Nadia, vingt minutes, dans le bureau.
+
+Les faits : mardi 14 h 10, Sophie demande à Julien où en est la Clio ; 15 h 30, elle redemande ; 16 h 45, Julien termine le vernis ; 17 h, le véhicule est restitué sans contrôle ; jeudi, le client écrit. Personne n''avait cette chronologie complète : Thierry ne savait pas que Sophie était venue deux fois.
+
+Les causes : Julien a accéléré le vernis (cause humaine) ; la pression venait de Sophie, elle-même sous la pression du client (cause d''organisation : pas de circuit des demandes) ; aucun contrôle avant restitution n''existait (cause d''organisation) ; le vernis utilisé demande un temps de pose que Julien ne maîtrisait pas encore (cause technique et de compétence).
+
+Les enseignements : une demande client qui arrive directement au poste de travail crée de la pression sans décision ; une finition qui sort sans contrôle est un pari ; un carrossier en apprentissage sur un produit a besoin d''un binôme.
+
+Les décisions : le circuit des demandes passe par Karim (immédiat) ; contrôle des finitions par Thierry avant restitution (immédiat) ; binôme peinture Nadia-Julien, une heure par semaine (dès lundi). Vérification dans un mois : nombre de reprises.
+
+Le retex a pris vingt minutes. Il a produit trois décisions dont deux sont devenues des règles de l''atelier. Et Julien, qui attendait un procès, est reparti avec un binôme.
+
+## À retenir
+
+- Le retex vient des métiers à risque ; il repose sur la culture juste : on ne sanctionne pas l''erreur signalée de bonne foi.
+- Il se fait vite, à froid, avec les personnes concernées, après un échec comme après une réussite.
+- Quatre temps : les faits (chronologie partagée), les causes (jusqu''à la cause racine, souvent organisationnelle), les enseignements (généraux), les décisions (peu nombreuses, suivies).
+- Pas de blâme, le manager cherche sa part, le résultat est écrit et suivi.
+- La rétrospective est le retex régulier de l''équipe : trois questions, trente minutes, une ou deux choses à essayer.
+
+## Sources
+
+- James Reason, *Managing the Risks of Organizational Accidents*, Ashgate, 1997 ; et *L''erreur humaine*, PUF, 2013 — culture juste, causes organisationnelles.
+- Sidney Dekker, *Just Culture: Balancing Safety and Accountability*, 3e éd., CRC Press, 2016.
+- Haute Autorité de santé, « Revue de mortalité et de morbidité » et « Analyse des événements indésirables associés aux soins », has-sante.fr.
+- INRS, « Analyse des accidents du travail : la méthode de l''arbre des causes », ED 6163.
+- Esther Derby, Diana Larsen, *Agile Retrospectives*, Pragmatic Bookshelf, 2006 (2e éd. 2024).
+- France Compétences, référentiel RS7377, compétence 9.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Une équipe qui ne regarde jamais en arrière refait les mêmes erreurs. Une équipe qui regarde en arrière pour chercher des coupables cache les erreurs. Entre les deux, il y a une pratique que les métiers à risque (aviation, nucléaire, hôpital, pompiers) ont formalisée depuis longtemps et que tout manager de proximité peut adopter : le retour d''expérience, et sa version collective régulière, la rétrospective.
+
+## D''où vient le retour d''expérience
+
+Le retour d''expérience (retex, ou REX) est né dans les secteurs où une erreur coûte des vies. L''aviation civile en a fait un système complet : tout incident, même sans conséquence, est déclaré, analysé, et les enseignements sont diffusés à tous les équipages. Le principe qui le rend possible est la culture juste : on ne sanctionne pas l''erreur signalée de bonne foi, on sanctionne la négligence délibérée et la dissimulation. Sans cette garantie, personne ne déclare rien, et le système ne voit que les catastrophes.
+
+En santé, la Haute Autorité de santé demande aux établissements d''analyser les événements indésirables selon la même logique. En entreprise, le retex est devenu un outil courant de gestion de projet et de qualité. Pour un manager de proximité, il tient en trente minutes et en une page.
+
+## Quand faire un retex
+
+Après un incident ou un échec : une reprise client, un accident évité de justesse, un délai manqué, un conflit qui a dégénéré. Mais aussi après une réussite inhabituelle : un chantier terminé en avance, une semaine sans aucune reprise. Comprendre pourquoi ça a marché est aussi utile que comprendre pourquoi ça a raté, et beaucoup plus rare.
+
+Le retex se fait vite, dans les jours qui suivent, tant que les faits sont frais. Il se fait avec les personnes concernées, pas sur elles. Et il se fait à froid : pas le jour de l''incident, quand l''émotion domine.
+
+## La structure en quatre temps
+
+Le retex suit une trame simple, que la fiche outil 6.8 reprend en gabarit.
+
+Les faits. Ce qui s''est passé, dans l''ordre, avec les heures, les personnes, les décisions. Sans interprétation, sans « il aurait dû ». On reconstitue la chronologie ensemble, et on s''arrête quand tout le monde est d''accord sur ce qui s''est passé. C''est souvent plus long qu''on ne croit : trois personnes ont trois versions, et c''est en les confrontant qu''on découvre ce que personne ne savait.
+
+Les causes. Pourquoi ça s''est passé. Et surtout : pourquoi ça a pu se passer. Un retex qui s''arrête à « Julien est allé trop vite » n''a rien compris. Pourquoi est-il allé trop vite ? Parce que Sophie était venue deux fois lui demander où il en était. Pourquoi ? Parce que le client appelait et qu''elle n''avait personne d''autre à qui transmettre. Pourquoi ? Parce que le circuit des demandes n''existait pas. La cause racine est organisationnelle ; la cause apparente est individuelle. La méthode des cinq pourquoi, que vous verrez à la leçon suivante, sert exactement à cela. Dans la plupart des incidents, il y a plusieurs causes qui se combinent : une cause technique, une cause d''organisation, une cause humaine. Un retex sérieux les cherche toutes.
+
+Les enseignements. Qu''est-ce qu''on apprend ? Formulé de façon générale, réutilisable : « Une demande client qui arrive directement à l''atelier crée de la pression sans décision. » Pas : « Sophie ne doit plus venir dans l''atelier. »
+
+Les décisions. Qu''est-ce qu''on change, qui s''en charge, pour quand, et comment on saura que ça a marché. Une ou deux décisions, pas dix. Et une date de vérification.
+
+## Les règles qui font qu''un retex fonctionne
+
+- Pas de blâme. Le manager le dit en ouverture et le tient : « On cherche ce qui doit changer dans notre fonctionnement, pas qui a tort. » S''il y a une faute délibérée, elle se traite ailleurs (module 5), pas dans le retex.
+- Les personnes concernées sont là, et parlent les premières.
+- Le manager cherche aussi sa part : une consigne floue, une absence, un circuit mal conçu. S''il ne trouve jamais rien de son côté, l''équipe cesse de croire au « pas de blâme ».
+- Le résultat est écrit, court, et partagé avec l''équipe. Un retex oral s''oublie en une semaine.
+- Les décisions sont suivies à la réunion suivante : « On avait décidé le stock de sécurité, où en est-on ? »
+
+## La rétrospective : le retex régulier
+
+Le retex traite un événement. La rétrospective traite une période : la semaine, le mois, le trimestre. Elle vient des méthodes agiles du développement logiciel, où les équipes se réunissent à la fin de chaque cycle pour améliorer leur façon de travailler, mais elle s''applique à n''importe quelle équipe.
+
+Trente minutes, à la fin du point hebdomadaire ou de la réunion mensuelle, trois questions, chacun répond :
+
+- Qu''est-ce qui a bien fonctionné ? (et qu''il faut continuer)
+- Qu''est-ce qui a moins bien fonctionné ? (et qu''il faut changer)
+- Qu''est-ce qu''on essaie d''ici la prochaine fois ? (une ou deux choses, pas plus)
+
+La rétrospective porte sur le fonctionnement de l''équipe, pas sur les personnes. Le manager anime avec les règles du module 3 : tour de table, chacun parle, le manager en dernier. Il note, et la réunion suivante commence par « qu''est-ce que ça a donné ? ».
+
+Ce rituel est le moteur de l''amélioration continue : il produit en permanence de petites décisions, testées, gardées ou abandonnées. Il est aussi un outil de prévention des conflits (module 5) : les irritations trouvent un lieu légitime pour s''exprimer avant de devenir des griefs.
+
+## Le cas Garnier — le retex de la coulure
+
+Trois jours après la réclamation du client Ferrand, Karim réunit Julien, Thierry, Sophie et Nadia, vingt minutes, dans le bureau.
+
+Les faits : mardi 14 h 10, Sophie demande à Julien où en est la Clio ; 15 h 30, elle redemande ; 16 h 45, Julien termine le vernis ; 17 h, le véhicule est restitué sans contrôle ; jeudi, le client écrit. Personne n''avait cette chronologie complète : Thierry ne savait pas que Sophie était venue deux fois.
+
+Les causes : Julien a accéléré le vernis (cause humaine) ; la pression venait de Sophie, elle-même sous la pression du client (cause d''organisation : pas de circuit des demandes) ; aucun contrôle avant restitution n''existait (cause d''organisation) ; le vernis utilisé demande un temps de pose que Julien ne maîtrisait pas encore (cause technique et de compétence).
+
+Les enseignements : une demande client qui arrive directement au poste de travail crée de la pression sans décision ; une finition qui sort sans contrôle est un pari ; un carrossier en apprentissage sur un produit a besoin d''un binôme.
+
+Les décisions : le circuit des demandes passe par Karim (immédiat) ; contrôle des finitions par Thierry avant restitution (immédiat) ; binôme peinture Nadia-Julien, une heure par semaine (dès lundi). Vérification dans un mois : nombre de reprises.
+
+Le retex a pris vingt minutes. Il a produit trois décisions dont deux sont devenues des règles de l''atelier. Et Julien, qui attendait un procès, est reparti avec un binôme.
+
+## À retenir
+
+- Le retex vient des métiers à risque ; il repose sur la culture juste : on ne sanctionne pas l''erreur signalée de bonne foi.
+- Il se fait vite, à froid, avec les personnes concernées, après un échec comme après une réussite.
+- Quatre temps : les faits (chronologie partagée), les causes (jusqu''à la cause racine, souvent organisationnelle), les enseignements (généraux), les décisions (peu nombreuses, suivies).
+- Pas de blâme, le manager cherche sa part, le résultat est écrit et suivi.
+- La rétrospective est le retex régulier de l''équipe : trois questions, trente minutes, une ou deux choses à essayer.
+
+## Sources
+
+- James Reason, *Managing the Risks of Organizational Accidents*, Ashgate, 1997 ; et *L''erreur humaine*, PUF, 2013 — culture juste, causes organisationnelles.
+- Sidney Dekker, *Just Culture: Balancing Safety and Accountability*, 3e éd., CRC Press, 2016.
+- Haute Autorité de santé, « Revue de mortalité et de morbidité » et « Analyse des événements indésirables associés aux soins », has-sante.fr.
+- INRS, « Analyse des accidents du travail : la méthode de l''arbre des causes », ED 6163.
+- Esther Derby, Diana Larsen, *Agile Retrospectives*, Pragmatic Bookshelf, 2006 (2e éd. 2024).
+- France Compétences, référentiel RS7377, compétence 9.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 2;
+  n := n + 1;
+
+  -- 6.3-amelioration-continue.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'L''amélioration continue est l''idée que la performance d''une équipe se construit par une succession de petits changements, décidés près du terrain, testés et mesurés, plutôt que par de grands projets décidés loin. Elle vient de l''industrie, mais elle s''applique à un atelier de carrosserie, à un commerce, à un service administratif ou à une équipe de soins. Pour un manager de proximité, c''est la façon la plus sûre d''obtenir des résultats durables sans attendre des moyens qu''il n''aura peut-être jamais.
+
+## D''où ça vient
+
+William Edwards Deming, statisticien américain, a popularisé dans les années 1950, d''abord au Japon, un cycle en quatre temps qu''on appelle la roue de Deming ou PDCA : Plan, Do, Check, Act. Les entreprises japonaises, Toyota en tête, en ont fait une culture, le kaizen (« changement pour le mieux »), où chaque opérateur est invité à proposer et à tester des améliorations sur son poste. L''idée centrale, que Deming répétait, est que la plupart des problèmes de qualité viennent du système, pas des personnes, et que ce sont donc les processus qu''il faut améliorer.
+
+Cette idée rejoint tout ce que vous avez vu : les « problèmes de personnes » sont souvent des problèmes d''organisation (module 1), les conflits viennent des rôles flous (module 5), les erreurs ont des causes organisationnelles (leçon 6.2).
+
+## Le cycle PDCA
+
+Plan (planifier) : identifier un problème précis, comprendre ses causes, choisir une action et décider comment on mesurera son effet. « Les pièces arrivent en retard une fois sur quatre. Cause principale : commande passée quand le carrossier en a besoin. Action : commander à la réception du devis accepté. Mesure : taux de pièces disponibles au démontage. »
+
+Do (faire) : mettre en œuvre l''action, à petite échelle si possible, pendant une durée définie. Deux semaines, sur un type de véhicule, avec une personne.
+
+Check (vérifier) : mesurer. Le taux est-il passé de 75 % à 90 % ? Qu''est-ce qui s''est passé qu''on n''avait pas prévu ? C''est l''étape que les managers sautent : on met en place, on passe à autre chose, et on ne sait jamais si ça a marché.
+
+Act (ajuster, généraliser) : si ça marche, on en fait la règle, on l''écrit, on forme ; si ça ne marche pas, on comprend pourquoi et on revient au Plan avec une autre action. Dans les deux cas, on apprend.
+
+Puis on recommence sur le problème suivant. La roue tourne ; c''est ce qui fait la différence entre une organisation qui s''améliore et une organisation qui « a fait une réorganisation en 2024 ».
+
+## Trois outils pour trouver la cause
+
+Le PDCA suppose qu''on ait compris la cause du problème. Trois outils simples, utilisables en réunion d''équipe en dix minutes, servent à cela.
+
+Les cinq pourquoi. On part du problème et on demande « pourquoi ? » jusqu''à atteindre une cause sur laquelle on peut agir, généralement en trois à cinq questions. Pourquoi la Clio est-elle sortie avec une coulure ? Parce que le vernis n''a pas eu le temps de poser. Pourquoi ? Parce que Julien a accéléré. Pourquoi ? Parce qu''on lui a demandé deux fois où il en était. Pourquoi ? Parce que le client appelait Sophie et qu''elle n''avait pas de circuit pour transmettre. Pourquoi ? Parce que personne n''avait défini qui gère les urgences. On s''arrête quand la réponse est une règle ou une organisation à créer, pas quand elle est une personne. Attention au piège : la méthode est linéaire, et les problèmes réels ont souvent plusieurs causes. On la refait donc à partir de chaque cause plausible.
+
+Le diagramme d''Ishikawa (ou en arêtes de poisson, ou 5M). On écrit le problème à droite, et on classe les causes possibles en cinq familles : Matière (pièces, produits), Matériel (outils, machines), Méthode (procédures, circuits), Main-d''œuvre (compétences, effectifs), Milieu (lieu, ambiance, conditions). Fait en équipe sur un tableau, il évite de se focaliser sur la cause la plus visible et fait apparaître celles qu''on ne voyait pas. Pour la coulure : Matière (vernis à temps de pose long), Méthode (pas de contrôle, pas de circuit), Main-d''œuvre (Julien non autonome sur ce produit), Milieu (pression du client au poste).
+
+Le QQOQCP. Qui, Quoi, Où, Quand, Comment, Pourquoi (et parfois Combien). C''est l''outil pour décrire un problème avant de le traiter. Beaucoup de « problèmes » mal résolus sont d''abord des problèmes mal décrits : « les pièces arrivent en retard » devient, après QQOQCP, « les pièces de carrosserie des véhicules de flotte (quoi) arrivent après le démontage (quand) une fois sur quatre (combien) parce qu''elles sont commandées au démontage (comment) ». Le problème précis contient déjà la moitié de la solution.
+
+## Petites améliorations, grands chantiers
+
+Le réflexe du manager débutant est de chercher le grand chantier : le nouveau logiciel, la réorganisation complète, le recrutement. Ces chantiers sont parfois nécessaires (la leçon suivante traite de leur conduite), mais ils sont lents, coûteux, et ils dépendent de décisions qui ne sont pas les vôtres.
+
+Les petites améliorations, elles, dépendent de vous et de l''équipe : déplacer un rangement, changer l''ordre de deux étapes, afficher une check-list, créer un stock de sécurité de dix références, décaler un horaire de brief. Chacune gagne quelques minutes ou évite quelques erreurs par jour. Mises bout à bout, sur un an, elles valent un grand chantier, et elles ont un avantage décisif : elles viennent de l''équipe, donc l''équipe les applique.
+
+Un manager en amélioration continue tient un registre simple : les problèmes identifiés, l''action testée, le résultat, la décision. Dix lignes par trimestre. C''est aussi un excellent support pour le bilan d''activité et pour montrer à sa hiérarchie ce qui a été fait sans budget.
+
+## Faire participer l''équipe
+
+L''amélioration continue ne fonctionne que si les idées viennent du terrain, parce que c''est le terrain qui connaît les détails. Trois moyens simples :
+
+- Le point « ce qui nous a compliqué la vie » à la fin du point hebdomadaire (module 5) : c''est la source des problèmes à traiter.
+- La question en rétrospective : « Qu''est-ce qu''on essaie d''ici la prochaine fois ? »
+- Une règle de réponse : toute idée reçoit une réponse sous quinze jours. Oui, on teste ; non, et voici pourquoi ; ou pas maintenant, et quand. Une idée sans réponse est la dernière que la personne proposera.
+
+Et quand une amélioration vient d''un membre de l''équipe, elle est présentée comme la sienne. C''est de la reconnaissance (module 4), et c''est ce qui fait venir la suivante.
+
+## Le cas Garnier — le stock de sécurité
+
+Problème (QQOQCP) : sur les véhicules de flotte, les pièces de carrosserie courantes (pare-chocs, rétroviseurs, feux) arrivent après le démontage une fois sur quatre, ce qui immobilise le véhicule un à deux jours de plus. Causes (cinq pourquoi) : commandées au démontage, parce que le devis n''est validé que tardivement, parce que l''expert passe deux jours après la réception. Idée d''Amine, venue de son ancien atelier : un stock de sécurité des dix références les plus courantes.
+
+Plan : stock de dix références, réapprovisionné chaque semaine ; mesure : taux de pièces disponibles au démontage, aujourd''hui 75 %. Do : un mois, sur les flottes uniquement. Check : 94 % de disponibilité, deux jours d''immobilisation gagnés en moyenne, un coût de stock de 1 800 € que Michel a accepté après avoir vu le gain. Act : règle d''atelier, Fatou responsable du réapprovisionnement, décision inscrite au registre, Amine félicité en réunion.
+
+## À retenir
+
+- La plupart des problèmes viennent du système, pas des personnes (Deming) : on améliore les processus.
+- PDCA : planifier (problème, cause, action, mesure), faire (petit, limité dans le temps), vérifier (mesurer, vraiment), ajuster (généraliser ou recommencer).
+- Trois outils de cause : cinq pourquoi (jusqu''à une règle, pas une personne), Ishikawa (cinq familles), QQOQCP (décrire avant de traiter).
+- Les petites améliorations qui dépendent de l''équipe valent, sur un an, un grand chantier, et elles sont appliquées.
+- Toute idée reçoit une réponse sous quinze jours ; une amélioration porte le nom de celui qui l''a eue.
+
+## Sources
+
+- W. Edwards Deming, *Hors de la crise*, Economica, 2002 (éd. originale *Out of the Crisis*, 1986).
+- Masaaki Imai, *Kaizen : la clé de la compétitivité japonaise*, Eyrolles, 1989 (éd. révisée *Gemba Kaizen*, 2012).
+- Kaoru Ishikawa, *La gestion de la qualité : outils et applications pratiques*, Dunod, 1984.
+- AFNOR, norme NF EN ISO 9001:2015, chapitre 10 « Amélioration ».
+- France Compétences, référentiel RS7377, compétences 3 et 9.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'L''amélioration continue est l''idée que la performance d''une équipe se construit par une succession de petits changements, décidés près du terrain, testés et mesurés, plutôt que par de grands projets décidés loin. Elle vient de l''industrie, mais elle s''applique à un atelier de carrosserie, à un commerce, à un service administratif ou à une équipe de soins. Pour un manager de proximité, c''est la façon la plus sûre d''obtenir des résultats durables sans attendre des moyens qu''il n''aura peut-être jamais.
+
+## D''où ça vient
+
+William Edwards Deming, statisticien américain, a popularisé dans les années 1950, d''abord au Japon, un cycle en quatre temps qu''on appelle la roue de Deming ou PDCA : Plan, Do, Check, Act. Les entreprises japonaises, Toyota en tête, en ont fait une culture, le kaizen (« changement pour le mieux »), où chaque opérateur est invité à proposer et à tester des améliorations sur son poste. L''idée centrale, que Deming répétait, est que la plupart des problèmes de qualité viennent du système, pas des personnes, et que ce sont donc les processus qu''il faut améliorer.
+
+Cette idée rejoint tout ce que vous avez vu : les « problèmes de personnes » sont souvent des problèmes d''organisation (module 1), les conflits viennent des rôles flous (module 5), les erreurs ont des causes organisationnelles (leçon 6.2).
+
+## Le cycle PDCA
+
+Plan (planifier) : identifier un problème précis, comprendre ses causes, choisir une action et décider comment on mesurera son effet. « Les pièces arrivent en retard une fois sur quatre. Cause principale : commande passée quand le carrossier en a besoin. Action : commander à la réception du devis accepté. Mesure : taux de pièces disponibles au démontage. »
+
+Do (faire) : mettre en œuvre l''action, à petite échelle si possible, pendant une durée définie. Deux semaines, sur un type de véhicule, avec une personne.
+
+Check (vérifier) : mesurer. Le taux est-il passé de 75 % à 90 % ? Qu''est-ce qui s''est passé qu''on n''avait pas prévu ? C''est l''étape que les managers sautent : on met en place, on passe à autre chose, et on ne sait jamais si ça a marché.
+
+Act (ajuster, généraliser) : si ça marche, on en fait la règle, on l''écrit, on forme ; si ça ne marche pas, on comprend pourquoi et on revient au Plan avec une autre action. Dans les deux cas, on apprend.
+
+Puis on recommence sur le problème suivant. La roue tourne ; c''est ce qui fait la différence entre une organisation qui s''améliore et une organisation qui « a fait une réorganisation en 2024 ».
+
+## Trois outils pour trouver la cause
+
+Le PDCA suppose qu''on ait compris la cause du problème. Trois outils simples, utilisables en réunion d''équipe en dix minutes, servent à cela.
+
+Les cinq pourquoi. On part du problème et on demande « pourquoi ? » jusqu''à atteindre une cause sur laquelle on peut agir, généralement en trois à cinq questions. Pourquoi la Clio est-elle sortie avec une coulure ? Parce que le vernis n''a pas eu le temps de poser. Pourquoi ? Parce que Julien a accéléré. Pourquoi ? Parce qu''on lui a demandé deux fois où il en était. Pourquoi ? Parce que le client appelait Sophie et qu''elle n''avait pas de circuit pour transmettre. Pourquoi ? Parce que personne n''avait défini qui gère les urgences. On s''arrête quand la réponse est une règle ou une organisation à créer, pas quand elle est une personne. Attention au piège : la méthode est linéaire, et les problèmes réels ont souvent plusieurs causes. On la refait donc à partir de chaque cause plausible.
+
+Le diagramme d''Ishikawa (ou en arêtes de poisson, ou 5M). On écrit le problème à droite, et on classe les causes possibles en cinq familles : Matière (pièces, produits), Matériel (outils, machines), Méthode (procédures, circuits), Main-d''œuvre (compétences, effectifs), Milieu (lieu, ambiance, conditions). Fait en équipe sur un tableau, il évite de se focaliser sur la cause la plus visible et fait apparaître celles qu''on ne voyait pas. Pour la coulure : Matière (vernis à temps de pose long), Méthode (pas de contrôle, pas de circuit), Main-d''œuvre (Julien non autonome sur ce produit), Milieu (pression du client au poste).
+
+Le QQOQCP. Qui, Quoi, Où, Quand, Comment, Pourquoi (et parfois Combien). C''est l''outil pour décrire un problème avant de le traiter. Beaucoup de « problèmes » mal résolus sont d''abord des problèmes mal décrits : « les pièces arrivent en retard » devient, après QQOQCP, « les pièces de carrosserie des véhicules de flotte (quoi) arrivent après le démontage (quand) une fois sur quatre (combien) parce qu''elles sont commandées au démontage (comment) ». Le problème précis contient déjà la moitié de la solution.
+
+## Petites améliorations, grands chantiers
+
+Le réflexe du manager débutant est de chercher le grand chantier : le nouveau logiciel, la réorganisation complète, le recrutement. Ces chantiers sont parfois nécessaires (la leçon suivante traite de leur conduite), mais ils sont lents, coûteux, et ils dépendent de décisions qui ne sont pas les vôtres.
+
+Les petites améliorations, elles, dépendent de vous et de l''équipe : déplacer un rangement, changer l''ordre de deux étapes, afficher une check-list, créer un stock de sécurité de dix références, décaler un horaire de brief. Chacune gagne quelques minutes ou évite quelques erreurs par jour. Mises bout à bout, sur un an, elles valent un grand chantier, et elles ont un avantage décisif : elles viennent de l''équipe, donc l''équipe les applique.
+
+Un manager en amélioration continue tient un registre simple : les problèmes identifiés, l''action testée, le résultat, la décision. Dix lignes par trimestre. C''est aussi un excellent support pour le bilan d''activité et pour montrer à sa hiérarchie ce qui a été fait sans budget.
+
+## Faire participer l''équipe
+
+L''amélioration continue ne fonctionne que si les idées viennent du terrain, parce que c''est le terrain qui connaît les détails. Trois moyens simples :
+
+- Le point « ce qui nous a compliqué la vie » à la fin du point hebdomadaire (module 5) : c''est la source des problèmes à traiter.
+- La question en rétrospective : « Qu''est-ce qu''on essaie d''ici la prochaine fois ? »
+- Une règle de réponse : toute idée reçoit une réponse sous quinze jours. Oui, on teste ; non, et voici pourquoi ; ou pas maintenant, et quand. Une idée sans réponse est la dernière que la personne proposera.
+
+Et quand une amélioration vient d''un membre de l''équipe, elle est présentée comme la sienne. C''est de la reconnaissance (module 4), et c''est ce qui fait venir la suivante.
+
+## Le cas Garnier — le stock de sécurité
+
+Problème (QQOQCP) : sur les véhicules de flotte, les pièces de carrosserie courantes (pare-chocs, rétroviseurs, feux) arrivent après le démontage une fois sur quatre, ce qui immobilise le véhicule un à deux jours de plus. Causes (cinq pourquoi) : commandées au démontage, parce que le devis n''est validé que tardivement, parce que l''expert passe deux jours après la réception. Idée d''Amine, venue de son ancien atelier : un stock de sécurité des dix références les plus courantes.
+
+Plan : stock de dix références, réapprovisionné chaque semaine ; mesure : taux de pièces disponibles au démontage, aujourd''hui 75 %. Do : un mois, sur les flottes uniquement. Check : 94 % de disponibilité, deux jours d''immobilisation gagnés en moyenne, un coût de stock de 1 800 € que Michel a accepté après avoir vu le gain. Act : règle d''atelier, Fatou responsable du réapprovisionnement, décision inscrite au registre, Amine félicité en réunion.
+
+## À retenir
+
+- La plupart des problèmes viennent du système, pas des personnes (Deming) : on améliore les processus.
+- PDCA : planifier (problème, cause, action, mesure), faire (petit, limité dans le temps), vérifier (mesurer, vraiment), ajuster (généraliser ou recommencer).
+- Trois outils de cause : cinq pourquoi (jusqu''à une règle, pas une personne), Ishikawa (cinq familles), QQOQCP (décrire avant de traiter).
+- Les petites améliorations qui dépendent de l''équipe valent, sur un an, un grand chantier, et elles sont appliquées.
+- Toute idée reçoit une réponse sous quinze jours ; une amélioration porte le nom de celui qui l''a eue.
+
+## Sources
+
+- W. Edwards Deming, *Hors de la crise*, Economica, 2002 (éd. originale *Out of the Crisis*, 1986).
+- Masaaki Imai, *Kaizen : la clé de la compétitivité japonaise*, Eyrolles, 1989 (éd. révisée *Gemba Kaizen*, 2012).
+- Kaoru Ishikawa, *La gestion de la qualité : outils et applications pratiques*, Dunod, 1984.
+- AFNOR, norme NF EN ISO 9001:2015, chapitre 10 « Amélioration ».
+- France Compétences, référentiel RS7377, compétences 3 et 9.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 3;
+  n := n + 1;
+
+  -- 6.4-conduire-le-changement.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Un nouveau logiciel, une nouvelle organisation des horaires, un déménagement, une fusion de deux équipes, une nouvelle norme à appliquer : le manager de proximité ne décide presque jamais de ces changements, mais c''est lui qui les fait vivre, ou échouer. Les études sur les transformations en entreprise, depuis trente ans, convergent sur un constat : la majorité des changements n''atteignent pas leurs objectifs, et la cause principale n''est pas technique. C''est la façon dont les personnes ont été, ou non, embarquées. Le manager de proximité est au centre de cette question.
+
+## Pourquoi les gens résistent
+
+Le mot « résistance » est trompeur : il laisse croire que les gens sont contre le changement par principe. En réalité, les gens résistent à ce qu''ils perdent, à ce qu''ils ne comprennent pas et à ce qu''on leur impose. Trois sources, et trois réponses du manager.
+
+Les pertes. Tout changement fait perdre quelque chose : une compétence qui avait de la valeur (Bruno, dans le podcast du module 5, maîtrisait l''ancien système de commandes), une habitude confortable, un statut, une relation, un repère. Le manager qui ne voit pas la perte ne comprend pas la résistance. Réponse : nommer la perte, la reconnaître (« je sais que ça te coûte »), et montrer ce qui est gagné ou préservé.
+
+L''incompréhension. Quand on ne sait pas pourquoi on change, ni vers quoi, on imagine le pire. Réponse : le sens, dit et redit ; le pourquoi avant le comment.
+
+L''imposition. Un changement subi est combattu ; un changement auquel on a contribué est porté. Réponse : associer l''équipe à ce qui peut l''être, qui est souvent plus large qu''on ne croit. La décision de changer d''outil n''est pas négociable ; la façon de l''installer, l''ordre, le calendrier, les règles d''usage, le sont.
+
+Il faut ajouter une quatrième source, moins avouable : la peur de ne pas y arriver. Un salarié de cinquante ans devant un nouveau logiciel ne résiste pas par mauvaise volonté ; il a peur d''être ridicule. Réponse : former, accompagner, et donner le droit à l''erreur pendant l''apprentissage (module 4).
+
+## La courbe d''adaptation
+
+On représente souvent les réactions au changement par une courbe inspirée des travaux d''Elisabeth Kübler-Ross sur le deuil (1969), adaptée ensuite au monde du travail : choc, déni, colère, négociation, tristesse ou découragement, acceptation, engagement. Il faut la prendre pour ce qu''elle est : un repère pédagogique, pas une loi. Les étapes ne sont ni obligatoires ni ordonnées, chacun les traverse à sa vitesse, et certains ne passent pas par la colère. Mais le repère est utile pour une chose : il rappelle au manager que les réactions négatives des premières semaines sont normales, qu''elles ne signifient pas que le changement est mauvais, et qu''elles passent, à condition qu''on les accompagne.
+
+Concrètement : la phase de déni se traite par l''information répétée ; la colère par l''écoute (module 3), sans la prendre pour soi ; le découragement par le soutien et les premiers succès ; l''acceptation par la reconnaissance. Et le manager lui-même traverse la courbe, souvent avant l''équipe, parce qu''il a été informé plus tôt. Il doit s''en souvenir quand il s''impatiente devant une équipe qui en est encore au choc.
+
+## Une méthode : les huit étapes de Kotter, à l''échelle d''une équipe
+
+John Kotter, professeur à Harvard, a publié en 1996 un modèle en huit étapes, issu de l''observation de transformations d''entreprises réussies et ratées. Il est conçu pour des organisations entières, mais chaque étape a sa traduction pour un manager de proximité qui doit faire adopter un changement à son équipe.
+
+| Étape de Kotter | Pour le manager de proximité |
+|---|---|
+| 1. Créer un sentiment d''urgence | Expliquer pourquoi on ne peut pas rester comme ça, avec des faits (le client perdu, les reprises, le temps gaspillé), pas des slogans. |
+| 2. Former une coalition | Identifier deux ou trois personnes de l''équipe qui comprennent l''enjeu, les associer tôt, s''appuyer sur elles. Un ancien respecté qui adhère vaut dix notes de service. |
+| 3. Développer une vision | Dire en deux phrases à quoi ressemblera le travail après : « Dans trois mois, chaque véhicule a ses pièces le jour du démontage et personne ne court après Sophie. » |
+| 4. Communiquer la vision | La répéter, dans chaque brief, chaque réunion, chaque entretien. Kotter estime que les dirigeants sous-communiquent d''un facteur dix. Le manager de proximité aussi. |
+| 5. Lever les obstacles | Repérer ce qui empêche concrètement (un outil manquant, une règle contradictoire, une personne qui bloque) et le traiter. Un obstacle laissé en place dit « le changement n''est pas sérieux ». |
+| 6. Obtenir des victoires rapides | Choisir un premier résultat visible en quelques semaines, le mesurer, le montrer. C''est le principe du progrès (module 4) appliqué au changement. |
+| 7. Consolider, ne pas crier victoire trop tôt | Après le premier succès, continuer : former les derniers, régler les cas particuliers, tenir les règles. La plupart des changements échouent ici, quand l''attention se relâche. |
+| 8. Ancrer dans la culture | Inscrire le changement dans les règles de l''atelier, les fiches de poste, l''intégration des nouveaux, le tableau de bord. Ce qui n''est pas ancré revient en arrière dès que le manager regarde ailleurs. |
+
+Kotter a lui-même fait évoluer son modèle (2014) vers une vision moins séquentielle, où plusieurs étapes se mènent en parallèle. Retenez l''essentiel : le sens, les alliés, la communication répétée, les obstacles levés, les premiers succès, et la persévérance après le premier succès.
+
+## Le manager relais : entre la décision et l''équipe
+
+Dans la plupart des cas, le changement est décidé au-dessus du manager, qui doit le porter sans l''avoir choisi. C''est la situation du module 1 et du podcast 3.8 : loyal vers le haut, loyal vers le bas.
+
+Ce que cela implique. Avant l''annonce, le manager s''informe complètement (pourquoi, quoi, quand, quelles marges) et dit à sa hiérarchie ce qu''il anticipe comme difficultés et ce dont il a besoin. Il obtient, si possible, les marges de manœuvre qu''il pourra ouvrir à l''équipe. Pendant l''annonce et après, il porte la décision à la première personne (« voilà ce que nous faisons »), jamais « ils ont décidé ». Il ne cache pas ce qu''il ne sait pas : « Je n''ai pas encore la date, je vous la dis dès que je l''ai. » Il fait remonter ce que l''équipe vit, avec des faits, à sa hiérarchie, qui en a besoin pour ajuster. Et il ne promet pas ce qu''il ne maîtrise pas.
+
+## Communiquer le changement : qui, quoi, quand
+
+L''annonce se fait en réunion, en présence, jamais par e-mail ni par affichage (module 3). Elle contient : le pourquoi (les faits qui rendent le changement nécessaire), le quoi (ce qui change, et tout aussi important, ce qui ne change pas), le quand (les étapes et les dates connues), le comment (la formation, l''accompagnement, à qui s''adresser), et ce qui reste ouvert (sur quoi l''équipe peut peser). Puis un temps de questions, où le manager écoute les objections sans les balayer et note celles auxquelles il n''a pas de réponse.
+
+L''annonce n''est que le début. Les semaines suivantes, le manager redit, en brief, en entretien, où on en est et ce qui vient. Les personnes les plus inquiètes sont vues individuellement. Les premiers résultats sont montrés. Les questions reviennent plusieurs fois : c''est normal, on ne retient pas une annonce du premier coup quand elle inquiète.
+
+## Les erreurs qui coûtent le plus cher
+
+- Annoncer sans le pourquoi, ou avec un pourquoi qui ne tient pas (« c''est la direction qui veut »).
+- Promettre que « rien ne changera pour vous » quand c''est faux.
+- Ne pas voir les pertes, et traiter la résistance comme de la mauvaise volonté.
+- Former trop tard ou pas assez, et laisser les gens se débrouiller avec le nouvel outil.
+- Crier victoire au premier succès et relâcher l''attention.
+- Laisser un obstacle connu en place pendant des semaines.
+- Se désolidariser de la décision devant l''équipe.
+
+## Le cas Garnier — le logiciel d''atelier
+
+Michel a acheté un logiciel de gestion d''atelier (ordres de réparation, planning, pièces, facturation) : fin des fiches papier et du tableau blanc dans trois mois. Il l''annonce à Karim un vendredi, en lui demandant « de gérer ».
+
+Avant l''annonce, Karim obtient de Michel trois choses : la date de bascule (le 1er du mois dans trois mois), deux demi-journées de formation par l''éditeur, et la possibilité de garder le tableau blanc un mois en parallèle. Il identifie ses alliés : Sophie, qui attend ce logiciel depuis des années, et Amine, qui l''a utilisé dans son ancien atelier. Il anticipe les pertes : Thierry maîtrise le papier et déteste les écrans ; Marc craint que le logiciel serve à le chronométrer.
+
+L''annonce, en réunion : le pourquoi (les fiches perdues, les deux reprises dues à des informations manquantes, le temps de Sophie), le quoi (ordres de réparation et planning sur écran ; ce qui ne change pas : le brief du matin, les rôles, le contrôle finition), le quand (formation dans six semaines, bascule dans trois mois, tableau blanc gardé un mois), le comment (Amine référent, Sophie en soutien, droit à l''erreur pendant deux mois), ce qui est ouvert (l''équipe choisit comment le planning s''affiche à l''atelier). Thierry : « Je ne toucherai pas à ce truc. » Karim : « Je sais que c''est ce qui te plaît le moins. On en parle tous les deux. » Marc : « Ça va servir à nous fliquer ? » Karim : « Le logiciel enregistre les temps par véhicule, comme les fiches le font aujourd''hui. Il ne servira pas à comparer les personnes, et je le dis devant tout le monde. Il servira à savoir où en est chaque véhicule. »
+
+Les semaines suivantes : entretien avec Thierry, qui accepte qu''Amine saisisse pour lui le premier mois puis apprenne les trois écrans dont il a besoin ; premier succès à deux semaines (zéro pièce manquante au démontage sur la semaine, grâce au suivi dans l''outil), affiché ; relance de Michel qui voulait supprimer le tableau blanc dès la première semaine ; au bout de deux mois, le tableau blanc disparaît de lui-même parce que plus personne ne le regarde. À trois mois, la règle « tout ordre de réparation est dans l''outil avant le démontage » entre dans les règles de l''atelier et dans la check-list d''intégration.
+
+## À retenir
+
+- On ne résiste pas au changement, on résiste aux pertes, à l''incompréhension, à l''imposition, et à la peur de ne pas y arriver.
+- La courbe d''adaptation est un repère, pas une loi : les réactions négatives des premières semaines sont normales et passent si on les accompagne.
+- Kotter à l''échelle de l''équipe : le pourquoi factuel, des alliés, une vision en deux phrases, répétée dix fois, les obstacles levés, un premier succès visible, la persévérance, l''ancrage dans les règles.
+- Le manager relais s''informe et négocie des marges avant, porte la décision à la première personne pendant, fait remonter après.
+- Annoncer en réunion : pourquoi, quoi (et ce qui ne change pas), quand, comment, ce qui reste ouvert. Puis redire, voir les inquiets, montrer les résultats.
+
+## Sources
+
+- John P. Kotter, *Conduire le changement : feuille de route en 8 étapes*, Pearson, 2015 (éd. originale *Leading Change*, 1996) ; *Accelerate*, Harvard Business Review Press, 2014.
+- William Bridges, *Managing Transitions*, 4e éd., Da Capo, 2016 — les pertes et les transitions.
+- Elisabeth Kübler-Ross, *Les derniers instants de la vie*, Labor et Fides, 1975 (éd. originale 1969) — origine de la courbe, à utiliser avec prudence.
+- ANACT, « Conduire un projet de changement : associer les salariés », anact.fr.
+- David Autissier, Jean-Michel Moutot, *Méthode de conduite du changement*, 5e éd., Dunod, 2023.
+- France Compétences, référentiel RS7377, compétences 9 et 10.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Un nouveau logiciel, une nouvelle organisation des horaires, un déménagement, une fusion de deux équipes, une nouvelle norme à appliquer : le manager de proximité ne décide presque jamais de ces changements, mais c''est lui qui les fait vivre, ou échouer. Les études sur les transformations en entreprise, depuis trente ans, convergent sur un constat : la majorité des changements n''atteignent pas leurs objectifs, et la cause principale n''est pas technique. C''est la façon dont les personnes ont été, ou non, embarquées. Le manager de proximité est au centre de cette question.
+
+## Pourquoi les gens résistent
+
+Le mot « résistance » est trompeur : il laisse croire que les gens sont contre le changement par principe. En réalité, les gens résistent à ce qu''ils perdent, à ce qu''ils ne comprennent pas et à ce qu''on leur impose. Trois sources, et trois réponses du manager.
+
+Les pertes. Tout changement fait perdre quelque chose : une compétence qui avait de la valeur (Bruno, dans le podcast du module 5, maîtrisait l''ancien système de commandes), une habitude confortable, un statut, une relation, un repère. Le manager qui ne voit pas la perte ne comprend pas la résistance. Réponse : nommer la perte, la reconnaître (« je sais que ça te coûte »), et montrer ce qui est gagné ou préservé.
+
+L''incompréhension. Quand on ne sait pas pourquoi on change, ni vers quoi, on imagine le pire. Réponse : le sens, dit et redit ; le pourquoi avant le comment.
+
+L''imposition. Un changement subi est combattu ; un changement auquel on a contribué est porté. Réponse : associer l''équipe à ce qui peut l''être, qui est souvent plus large qu''on ne croit. La décision de changer d''outil n''est pas négociable ; la façon de l''installer, l''ordre, le calendrier, les règles d''usage, le sont.
+
+Il faut ajouter une quatrième source, moins avouable : la peur de ne pas y arriver. Un salarié de cinquante ans devant un nouveau logiciel ne résiste pas par mauvaise volonté ; il a peur d''être ridicule. Réponse : former, accompagner, et donner le droit à l''erreur pendant l''apprentissage (module 4).
+
+## La courbe d''adaptation
+
+On représente souvent les réactions au changement par une courbe inspirée des travaux d''Elisabeth Kübler-Ross sur le deuil (1969), adaptée ensuite au monde du travail : choc, déni, colère, négociation, tristesse ou découragement, acceptation, engagement. Il faut la prendre pour ce qu''elle est : un repère pédagogique, pas une loi. Les étapes ne sont ni obligatoires ni ordonnées, chacun les traverse à sa vitesse, et certains ne passent pas par la colère. Mais le repère est utile pour une chose : il rappelle au manager que les réactions négatives des premières semaines sont normales, qu''elles ne signifient pas que le changement est mauvais, et qu''elles passent, à condition qu''on les accompagne.
+
+Concrètement : la phase de déni se traite par l''information répétée ; la colère par l''écoute (module 3), sans la prendre pour soi ; le découragement par le soutien et les premiers succès ; l''acceptation par la reconnaissance. Et le manager lui-même traverse la courbe, souvent avant l''équipe, parce qu''il a été informé plus tôt. Il doit s''en souvenir quand il s''impatiente devant une équipe qui en est encore au choc.
+
+## Une méthode : les huit étapes de Kotter, à l''échelle d''une équipe
+
+John Kotter, professeur à Harvard, a publié en 1996 un modèle en huit étapes, issu de l''observation de transformations d''entreprises réussies et ratées. Il est conçu pour des organisations entières, mais chaque étape a sa traduction pour un manager de proximité qui doit faire adopter un changement à son équipe.
+
+| Étape de Kotter | Pour le manager de proximité |
+|---|---|
+| 1. Créer un sentiment d''urgence | Expliquer pourquoi on ne peut pas rester comme ça, avec des faits (le client perdu, les reprises, le temps gaspillé), pas des slogans. |
+| 2. Former une coalition | Identifier deux ou trois personnes de l''équipe qui comprennent l''enjeu, les associer tôt, s''appuyer sur elles. Un ancien respecté qui adhère vaut dix notes de service. |
+| 3. Développer une vision | Dire en deux phrases à quoi ressemblera le travail après : « Dans trois mois, chaque véhicule a ses pièces le jour du démontage et personne ne court après Sophie. » |
+| 4. Communiquer la vision | La répéter, dans chaque brief, chaque réunion, chaque entretien. Kotter estime que les dirigeants sous-communiquent d''un facteur dix. Le manager de proximité aussi. |
+| 5. Lever les obstacles | Repérer ce qui empêche concrètement (un outil manquant, une règle contradictoire, une personne qui bloque) et le traiter. Un obstacle laissé en place dit « le changement n''est pas sérieux ». |
+| 6. Obtenir des victoires rapides | Choisir un premier résultat visible en quelques semaines, le mesurer, le montrer. C''est le principe du progrès (module 4) appliqué au changement. |
+| 7. Consolider, ne pas crier victoire trop tôt | Après le premier succès, continuer : former les derniers, régler les cas particuliers, tenir les règles. La plupart des changements échouent ici, quand l''attention se relâche. |
+| 8. Ancrer dans la culture | Inscrire le changement dans les règles de l''atelier, les fiches de poste, l''intégration des nouveaux, le tableau de bord. Ce qui n''est pas ancré revient en arrière dès que le manager regarde ailleurs. |
+
+Kotter a lui-même fait évoluer son modèle (2014) vers une vision moins séquentielle, où plusieurs étapes se mènent en parallèle. Retenez l''essentiel : le sens, les alliés, la communication répétée, les obstacles levés, les premiers succès, et la persévérance après le premier succès.
+
+## Le manager relais : entre la décision et l''équipe
+
+Dans la plupart des cas, le changement est décidé au-dessus du manager, qui doit le porter sans l''avoir choisi. C''est la situation du module 1 et du podcast 3.8 : loyal vers le haut, loyal vers le bas.
+
+Ce que cela implique. Avant l''annonce, le manager s''informe complètement (pourquoi, quoi, quand, quelles marges) et dit à sa hiérarchie ce qu''il anticipe comme difficultés et ce dont il a besoin. Il obtient, si possible, les marges de manœuvre qu''il pourra ouvrir à l''équipe. Pendant l''annonce et après, il porte la décision à la première personne (« voilà ce que nous faisons »), jamais « ils ont décidé ». Il ne cache pas ce qu''il ne sait pas : « Je n''ai pas encore la date, je vous la dis dès que je l''ai. » Il fait remonter ce que l''équipe vit, avec des faits, à sa hiérarchie, qui en a besoin pour ajuster. Et il ne promet pas ce qu''il ne maîtrise pas.
+
+## Communiquer le changement : qui, quoi, quand
+
+L''annonce se fait en réunion, en présence, jamais par e-mail ni par affichage (module 3). Elle contient : le pourquoi (les faits qui rendent le changement nécessaire), le quoi (ce qui change, et tout aussi important, ce qui ne change pas), le quand (les étapes et les dates connues), le comment (la formation, l''accompagnement, à qui s''adresser), et ce qui reste ouvert (sur quoi l''équipe peut peser). Puis un temps de questions, où le manager écoute les objections sans les balayer et note celles auxquelles il n''a pas de réponse.
+
+L''annonce n''est que le début. Les semaines suivantes, le manager redit, en brief, en entretien, où on en est et ce qui vient. Les personnes les plus inquiètes sont vues individuellement. Les premiers résultats sont montrés. Les questions reviennent plusieurs fois : c''est normal, on ne retient pas une annonce du premier coup quand elle inquiète.
+
+## Les erreurs qui coûtent le plus cher
+
+- Annoncer sans le pourquoi, ou avec un pourquoi qui ne tient pas (« c''est la direction qui veut »).
+- Promettre que « rien ne changera pour vous » quand c''est faux.
+- Ne pas voir les pertes, et traiter la résistance comme de la mauvaise volonté.
+- Former trop tard ou pas assez, et laisser les gens se débrouiller avec le nouvel outil.
+- Crier victoire au premier succès et relâcher l''attention.
+- Laisser un obstacle connu en place pendant des semaines.
+- Se désolidariser de la décision devant l''équipe.
+
+## Le cas Garnier — le logiciel d''atelier
+
+Michel a acheté un logiciel de gestion d''atelier (ordres de réparation, planning, pièces, facturation) : fin des fiches papier et du tableau blanc dans trois mois. Il l''annonce à Karim un vendredi, en lui demandant « de gérer ».
+
+Avant l''annonce, Karim obtient de Michel trois choses : la date de bascule (le 1er du mois dans trois mois), deux demi-journées de formation par l''éditeur, et la possibilité de garder le tableau blanc un mois en parallèle. Il identifie ses alliés : Sophie, qui attend ce logiciel depuis des années, et Amine, qui l''a utilisé dans son ancien atelier. Il anticipe les pertes : Thierry maîtrise le papier et déteste les écrans ; Marc craint que le logiciel serve à le chronométrer.
+
+L''annonce, en réunion : le pourquoi (les fiches perdues, les deux reprises dues à des informations manquantes, le temps de Sophie), le quoi (ordres de réparation et planning sur écran ; ce qui ne change pas : le brief du matin, les rôles, le contrôle finition), le quand (formation dans six semaines, bascule dans trois mois, tableau blanc gardé un mois), le comment (Amine référent, Sophie en soutien, droit à l''erreur pendant deux mois), ce qui est ouvert (l''équipe choisit comment le planning s''affiche à l''atelier). Thierry : « Je ne toucherai pas à ce truc. » Karim : « Je sais que c''est ce qui te plaît le moins. On en parle tous les deux. » Marc : « Ça va servir à nous fliquer ? » Karim : « Le logiciel enregistre les temps par véhicule, comme les fiches le font aujourd''hui. Il ne servira pas à comparer les personnes, et je le dis devant tout le monde. Il servira à savoir où en est chaque véhicule. »
+
+Les semaines suivantes : entretien avec Thierry, qui accepte qu''Amine saisisse pour lui le premier mois puis apprenne les trois écrans dont il a besoin ; premier succès à deux semaines (zéro pièce manquante au démontage sur la semaine, grâce au suivi dans l''outil), affiché ; relance de Michel qui voulait supprimer le tableau blanc dès la première semaine ; au bout de deux mois, le tableau blanc disparaît de lui-même parce que plus personne ne le regarde. À trois mois, la règle « tout ordre de réparation est dans l''outil avant le démontage » entre dans les règles de l''atelier et dans la check-list d''intégration.
+
+## À retenir
+
+- On ne résiste pas au changement, on résiste aux pertes, à l''incompréhension, à l''imposition, et à la peur de ne pas y arriver.
+- La courbe d''adaptation est un repère, pas une loi : les réactions négatives des premières semaines sont normales et passent si on les accompagne.
+- Kotter à l''échelle de l''équipe : le pourquoi factuel, des alliés, une vision en deux phrases, répétée dix fois, les obstacles levés, un premier succès visible, la persévérance, l''ancrage dans les règles.
+- Le manager relais s''informe et négocie des marges avant, porte la décision à la première personne pendant, fait remonter après.
+- Annoncer en réunion : pourquoi, quoi (et ce qui ne change pas), quand, comment, ce qui reste ouvert. Puis redire, voir les inquiets, montrer les résultats.
+
+## Sources
+
+- John P. Kotter, *Conduire le changement : feuille de route en 8 étapes*, Pearson, 2015 (éd. originale *Leading Change*, 1996) ; *Accelerate*, Harvard Business Review Press, 2014.
+- William Bridges, *Managing Transitions*, 4e éd., Da Capo, 2016 — les pertes et les transitions.
+- Elisabeth Kübler-Ross, *Les derniers instants de la vie*, Labor et Fides, 1975 (éd. originale 1969) — origine de la courbe, à utiliser avec prudence.
+- ANACT, « Conduire un projet de changement : associer les salariés », anact.fr.
+- David Autissier, Jean-Michel Moutot, *Méthode de conduite du changement*, 5e éd., Dunod, 2023.
+- France Compétences, référentiel RS7377, compétences 9 et 10.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 4;
+  n := n + 1;
+
+  -- 6.5-video-changement-impopulaire.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
+
+## Annoncer un changement impopulaire
+
+Vous connaissez maintenant la méthode. Voyons-la sur le cas le plus difficile : un changement décidé au-dessus de vous, que vous n''auriez pas choisi, et que l''équipe va détester.
+
+Le cadre : un magasin de bricolage, dix-huit salariés. La direction régionale décide que le magasin ouvrira désormais le dimanche matin, de 9 h à 13 h, dans le cadre légal des dérogations au repos dominical et avec les contreparties prévues par l''accord de branche. La responsable du magasin s''appelle Inès. Elle l''apprend un mardi, par un appel de quinze minutes, avec une consigne : « Tu annonces à l''équipe cette semaine, ça démarre dans deux mois. »
+
+## Ce qui échoue
+
+Première version, celle qui échoue. Inès, pressée et elle-même contrariée, envoie un message sur le groupe de l''équipe le mardi soir :
+
+« Bonjour à tous. La direction a décidé l''ouverture le dimanche matin à partir du 1er mars. Un planning sera communiqué. Je sais que ça ne va pas plaire, mais ce n''est pas moi qui décide. »
+
+Tout y est. L''écrit pour une mauvaise nouvelle. Aucun pourquoi. Aucune information sur ce qui est négociable, sur les contreparties, sur le volontariat. Et la phrase qui achève : « ce n''est pas moi qui décide ». Inès vient de se désolidariser de la décision et de se placer du côté de l''équipe contre la direction. Résultat prévisible : le mercredi matin, trois personnes sont en arrêt, deux ont écrit à la direction régionale, et Inès n''est plus la responsable du magasin, elle est la messagère.
+
+## Avant l''annonce : s''informer et négocier
+
+Deuxième version. Inès raccroche, et avant toute chose, elle rappelle sa directrice régionale le lendemain, avec des questions préparées.
+
+INÈS : « J''ai besoin de comprendre pour pouvoir l''expliquer. Pourquoi le dimanche ? »
+DIRECTRICE : « Les trois concurrents de la zone ouvrent. On perd des clients du week-end, et le chiffre du samedi baisse depuis un an. »
+INÈS : « Quel est le cadre pour les salariés ? Volontariat ? Contreparties ? »
+DIRECTRICE : « Volontariat écrit, comme la loi l''impose pour notre cas. Majoration et repos compensateur selon l''accord de branche. »
+INÈS : « Combien de personnes faut-il le dimanche ? »
+DIRECTRICE : « Six. »
+INÈS : « Donc douze personnes ne sont pas concernées, et six volontaires suffisent. Est-ce que je peux construire le planning avec l''équipe, par roulement, en respectant un dimanche sur trois maximum ? »
+DIRECTRICE : « Si tu as tes six volontaires, oui. »
+INÈS : « Et si je ne les ai pas ? »
+DIRECTRICE : « On en reparle. On verra avec les intérimaires. »
+INÈS : « Je vous le dis maintenant : je vais avoir des réactions fortes. Je vous propose de vous faire un point dans quinze jours. »
+
+En dix minutes, Inès a obtenu le pourquoi, le cadre légal, et une marge de manœuvre considérable : le volontariat, le roulement, la construction du planning avec l''équipe. Elle a aussi prévenu sa hiérarchie, et obtenu un rendez-vous. C''est le manager relais du module 1 : loyal vers le haut, c''est-à-dire exigeant vers le haut.
+
+## L''annonce
+
+Jeudi, réunion de toute l''équipe, trente minutes, avant l''ouverture. Inès a préparé cinq points : pourquoi, quoi, ce qui ne change pas, quand, ce qui est ouvert.
+
+INÈS : « J''ai une décision à vous annoncer, qui vient de la direction, et que je vais porter avec vous. À partir du 1er mars, le magasin ouvre le dimanche matin, de 9 h à 13 h. Je vous dis d''abord pourquoi : les trois concurrents de la zone ouvrent le dimanche, et notre chiffre du samedi baisse depuis un an. Les clients du week-end vont ailleurs. Si on ne fait rien, c''est l''emploi ici qui est en jeu à terme. »
+
+« Ce qui change : six personnes le dimanche matin. Ce qui ne change pas : vos horaires de la semaine, et personne n''est obligé. Le dimanche, c''est sur la base du volontariat, par écrit, avec les contreparties de l''accord de branche : majoration et repos compensateur. Je vous les détaillerai individuellement. »
+
+« Ce qui est ouvert, et sur quoi j''ai besoin de vous : on construit le planning ensemble, par roulement, un dimanche sur trois maximum pour les volontaires. Et je veux savoir ce qui vous poserait problème, pour voir ce qu''on peut régler. »
+
+« Maintenant, je vous écoute. »
+
+BRUNO : « Et si personne n''est volontaire ? »
+INÈS : « Alors je retourne voir la direction avec ce fait, et on en reparle. Je ne vous mentirai pas : ils regardent aussi l''intérim. Mais je préfère six personnes d''ici qu''on connaît. »
+SANDRA : « Moi j''ai les enfants le dimanche, c''est non. »
+INÈS : « C''est noté, et c''est respecté. Le volontariat, c''est pour ça. »
+KARIM : « Vous l''avez appris quand ? »
+INÈS : « Mardi. J''ai pris deux jours pour avoir des réponses avant de vous en parler. »
+LÉA : « Et la majoration, c''est combien ? »
+INÈS : « Je vous le dis en entretien individuel cette semaine, avec votre situation. Je ne veux pas donner un chiffre faux devant tout le monde. »
+
+Regardez ce qu''Inès a fait. Elle a porté la décision à la première personne, sans la désavouer et sans prétendre l''avoir prise. Elle a donné le pourquoi avec des faits. Elle a dit ce qui ne change pas avant qu''on lui demande. Elle a ouvert ce qui pouvait l''être. Elle a écouté chaque objection sans la balayer, y compris celle sur le délai, à laquelle elle a répondu honnêtement. Et quand elle ne savait pas, elle l''a dit.
+
+## Après l''annonce
+
+L''annonce est le début. La semaine suivante, Inès voit chacun en entretien, dix minutes : situation personnelle, contreparties exactes, volontaire ou non, contraintes. Elle obtient sept volontaires, dont Bruno, qui a compris l''enjeu pour le magasin. Sandra n''est pas volontaire, et ne subit aucune remarque. Le planning est construit avec les sept, affiché trois semaines avant.
+
+Elle redit, à chaque brief, où en est la préparation. Elle fait son point à la directrice régionale à quinze jours, avec les faits : sept volontaires, deux inquiétudes sur la garde d''enfants, une demande de formation pour la caisse du dimanche. Et après le premier dimanche, elle réunit les sept pour un retour d''expérience : ce qui a marché, ce qui a manqué. Deux ajustements, affichés. Le premier succès, un dimanche à 4 200 euros de chiffre, est annoncé à toute l''équipe.
+
+## Les trois erreurs qui coûtent le plus cher
+
+Première erreur : annoncer sans s''être informé. On ne peut pas porter ce qu''on ne comprend pas, et on ne peut pas ouvrir des marges qu''on n''a pas demandées.
+
+Deuxième erreur : se désolidariser. « Ce n''est pas moi qui décide » est vrai, et c''est la phrase qui détruit votre rôle. Vous contestez avant, en face, vers le haut ; vous portez après, devant l''équipe.
+
+Troisième erreur : considérer que l''annonce suffit. Un changement impopulaire se porte pendant des semaines : entretiens individuels, répétition, premier succès montré, ajustements.
+
+Et une quatrième, plus discrète : promettre que rien ne changera. Si c''est faux, vous l''aurez payé au centuple.
+
+À tout de suite pour le management à distance et en hybride.
+
+## Sources
+Kotter (1996, 2014) ; Bridges (2016) sur les pertes ; Code du travail, art. L3132-20 et s. et L3132-25-3 à L3132-25-4 (dérogations au repos dominical, volontariat et contreparties) ; leçons 1.7, 3.8 et 6.4.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
+
+## Annoncer un changement impopulaire
+
+Vous connaissez maintenant la méthode. Voyons-la sur le cas le plus difficile : un changement décidé au-dessus de vous, que vous n''auriez pas choisi, et que l''équipe va détester.
+
+Le cadre : un magasin de bricolage, dix-huit salariés. La direction régionale décide que le magasin ouvrira désormais le dimanche matin, de 9 h à 13 h, dans le cadre légal des dérogations au repos dominical et avec les contreparties prévues par l''accord de branche. La responsable du magasin s''appelle Inès. Elle l''apprend un mardi, par un appel de quinze minutes, avec une consigne : « Tu annonces à l''équipe cette semaine, ça démarre dans deux mois. »
+
+## Ce qui échoue
+
+Première version, celle qui échoue. Inès, pressée et elle-même contrariée, envoie un message sur le groupe de l''équipe le mardi soir :
+
+« Bonjour à tous. La direction a décidé l''ouverture le dimanche matin à partir du 1er mars. Un planning sera communiqué. Je sais que ça ne va pas plaire, mais ce n''est pas moi qui décide. »
+
+Tout y est. L''écrit pour une mauvaise nouvelle. Aucun pourquoi. Aucune information sur ce qui est négociable, sur les contreparties, sur le volontariat. Et la phrase qui achève : « ce n''est pas moi qui décide ». Inès vient de se désolidariser de la décision et de se placer du côté de l''équipe contre la direction. Résultat prévisible : le mercredi matin, trois personnes sont en arrêt, deux ont écrit à la direction régionale, et Inès n''est plus la responsable du magasin, elle est la messagère.
+
+## Avant l''annonce : s''informer et négocier
+
+Deuxième version. Inès raccroche, et avant toute chose, elle rappelle sa directrice régionale le lendemain, avec des questions préparées.
+
+INÈS : « J''ai besoin de comprendre pour pouvoir l''expliquer. Pourquoi le dimanche ? »
+DIRECTRICE : « Les trois concurrents de la zone ouvrent. On perd des clients du week-end, et le chiffre du samedi baisse depuis un an. »
+INÈS : « Quel est le cadre pour les salariés ? Volontariat ? Contreparties ? »
+DIRECTRICE : « Volontariat écrit, comme la loi l''impose pour notre cas. Majoration et repos compensateur selon l''accord de branche. »
+INÈS : « Combien de personnes faut-il le dimanche ? »
+DIRECTRICE : « Six. »
+INÈS : « Donc douze personnes ne sont pas concernées, et six volontaires suffisent. Est-ce que je peux construire le planning avec l''équipe, par roulement, en respectant un dimanche sur trois maximum ? »
+DIRECTRICE : « Si tu as tes six volontaires, oui. »
+INÈS : « Et si je ne les ai pas ? »
+DIRECTRICE : « On en reparle. On verra avec les intérimaires. »
+INÈS : « Je vous le dis maintenant : je vais avoir des réactions fortes. Je vous propose de vous faire un point dans quinze jours. »
+
+En dix minutes, Inès a obtenu le pourquoi, le cadre légal, et une marge de manœuvre considérable : le volontariat, le roulement, la construction du planning avec l''équipe. Elle a aussi prévenu sa hiérarchie, et obtenu un rendez-vous. C''est le manager relais du module 1 : loyal vers le haut, c''est-à-dire exigeant vers le haut.
+
+## L''annonce
+
+Jeudi, réunion de toute l''équipe, trente minutes, avant l''ouverture. Inès a préparé cinq points : pourquoi, quoi, ce qui ne change pas, quand, ce qui est ouvert.
+
+INÈS : « J''ai une décision à vous annoncer, qui vient de la direction, et que je vais porter avec vous. À partir du 1er mars, le magasin ouvre le dimanche matin, de 9 h à 13 h. Je vous dis d''abord pourquoi : les trois concurrents de la zone ouvrent le dimanche, et notre chiffre du samedi baisse depuis un an. Les clients du week-end vont ailleurs. Si on ne fait rien, c''est l''emploi ici qui est en jeu à terme. »
+
+« Ce qui change : six personnes le dimanche matin. Ce qui ne change pas : vos horaires de la semaine, et personne n''est obligé. Le dimanche, c''est sur la base du volontariat, par écrit, avec les contreparties de l''accord de branche : majoration et repos compensateur. Je vous les détaillerai individuellement. »
+
+« Ce qui est ouvert, et sur quoi j''ai besoin de vous : on construit le planning ensemble, par roulement, un dimanche sur trois maximum pour les volontaires. Et je veux savoir ce qui vous poserait problème, pour voir ce qu''on peut régler. »
+
+« Maintenant, je vous écoute. »
+
+BRUNO : « Et si personne n''est volontaire ? »
+INÈS : « Alors je retourne voir la direction avec ce fait, et on en reparle. Je ne vous mentirai pas : ils regardent aussi l''intérim. Mais je préfère six personnes d''ici qu''on connaît. »
+SANDRA : « Moi j''ai les enfants le dimanche, c''est non. »
+INÈS : « C''est noté, et c''est respecté. Le volontariat, c''est pour ça. »
+KARIM : « Vous l''avez appris quand ? »
+INÈS : « Mardi. J''ai pris deux jours pour avoir des réponses avant de vous en parler. »
+LÉA : « Et la majoration, c''est combien ? »
+INÈS : « Je vous le dis en entretien individuel cette semaine, avec votre situation. Je ne veux pas donner un chiffre faux devant tout le monde. »
+
+Regardez ce qu''Inès a fait. Elle a porté la décision à la première personne, sans la désavouer et sans prétendre l''avoir prise. Elle a donné le pourquoi avec des faits. Elle a dit ce qui ne change pas avant qu''on lui demande. Elle a ouvert ce qui pouvait l''être. Elle a écouté chaque objection sans la balayer, y compris celle sur le délai, à laquelle elle a répondu honnêtement. Et quand elle ne savait pas, elle l''a dit.
+
+## Après l''annonce
+
+L''annonce est le début. La semaine suivante, Inès voit chacun en entretien, dix minutes : situation personnelle, contreparties exactes, volontaire ou non, contraintes. Elle obtient sept volontaires, dont Bruno, qui a compris l''enjeu pour le magasin. Sandra n''est pas volontaire, et ne subit aucune remarque. Le planning est construit avec les sept, affiché trois semaines avant.
+
+Elle redit, à chaque brief, où en est la préparation. Elle fait son point à la directrice régionale à quinze jours, avec les faits : sept volontaires, deux inquiétudes sur la garde d''enfants, une demande de formation pour la caisse du dimanche. Et après le premier dimanche, elle réunit les sept pour un retour d''expérience : ce qui a marché, ce qui a manqué. Deux ajustements, affichés. Le premier succès, un dimanche à 4 200 euros de chiffre, est annoncé à toute l''équipe.
+
+## Les trois erreurs qui coûtent le plus cher
+
+Première erreur : annoncer sans s''être informé. On ne peut pas porter ce qu''on ne comprend pas, et on ne peut pas ouvrir des marges qu''on n''a pas demandées.
+
+Deuxième erreur : se désolidariser. « Ce n''est pas moi qui décide » est vrai, et c''est la phrase qui détruit votre rôle. Vous contestez avant, en face, vers le haut ; vous portez après, devant l''équipe.
+
+Troisième erreur : considérer que l''annonce suffit. Un changement impopulaire se porte pendant des semaines : entretiens individuels, répétition, premier succès montré, ajustements.
+
+Et une quatrième, plus discrète : promettre que rien ne changera. Si c''est faux, vous l''aurez payé au centuple.
+
+À tout de suite pour le management à distance et en hybride.
+
+## Sources
+Kotter (1996, 2014) ; Bridges (2016) sur les pertes ; Code du travail, art. L3132-20 et s. et L3132-25-3 à L3132-25-4 (dérogations au repos dominical, volontariat et contreparties) ; leçons 1.7, 3.8 et 6.4.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 5;
+  n := n + 1;
+
+  -- 6.6-manager-a-distance-et-en-hybride.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Au premier semestre 2024, 22 % des salariés du secteur privé ont télétravaillé au moins une fois sur quatre semaines, en moyenne 1,9 jour par semaine ; 63 % des cadres, 10 % des employés, presque aucun ouvrier (Insee Analyses n° 105, mars 2025). Ces chiffres disent deux choses au manager de proximité. D''abord, le télétravail est devenu une réalité ordinaire pour une partie des équipes, et un manager doit savoir le gérer. Ensuite, il est très inégalement réparti : dans un atelier, un commerce, un service de soins, il concerne un ou deux postes, pas l''équipe, et c''est cette asymétrie qui pose le plus de questions.
+
+Cette leçon traite du management d''une équipe dont une partie travaille à distance, de façon régulière ou occasionnelle, et d''une équipe éclatée sur plusieurs sites. Le cadre légal a été vu en leçon 4.6 ; ici, il s''agit de la pratique.
+
+## Ce qui change, ce qui ne change pas
+
+Les principes ne changent pas : objectifs clairs, rôles définis, feedback, entretiens, reconnaissance, cadre équitable. Ce qui change, c''est que le manager perd l''information informelle : le coup d''œil dans l''atelier, la conversation à la machine à café, la tête que fait quelqu''un en sortant d''une réunion. À distance, cette information doit être remplacée par des rituels explicites, sinon le manager pilote à l''aveugle et compense par de la surveillance.
+
+La recherche de la DARES (2024) sur l''évolution des pratiques montre que le télétravail intensif a reculé après la période 2020-2021 au profit d''un rythme hybride, un à deux jours par semaine, et que les effets sur les conditions de travail dépendent surtout de l''organisation mise en place : autonomie, charge, soutien du manager. Autrement dit, ce n''est pas le télétravail qui fait du bien ou du mal, c''est la façon de le manager.
+
+## Manager sur les résultats, pas sur la présence
+
+La première erreur du manager à distance est de chercher à reproduire le contrôle de la présence : logiciels de surveillance, demandes de « statut » toutes les heures, réunions pour vérifier que les gens sont là. C''est inefficace, cela détruit la confiance, et c''est encadré par le droit : tout dispositif de contrôle doit être proportionné, porté à la connaissance des salariés et, le cas échéant, soumis au CSE (L1222-4, L2312-38). La CNIL rappelle régulièrement que la surveillance permanente d''un télétravailleur (webcam allouée en continu, enregistreur de frappe) est illicite.
+
+L''alternative est de manager sur les résultats : des objectifs précis (module 2), des livrables définis, des échéances, et un point régulier où l''on regarde ce qui a été produit. Le télétravailleur sait ce qu''on attend de lui à la fin de la journée ou de la semaine, et il a la liberté de s''organiser. C''est le niveau de délégation « décide et tiens-moi informé », qui suppose que la personne soit autonome sur ses tâches. Un débutant ou une personne en difficulté télétravaille moins, ou avec un accompagnement renforcé, et ce n''est pas une sanction.
+
+## Les rituels adaptés
+
+Les rituels du module 3 restent, adaptés :
+
+- Le brief quotidien devient un point court en visioconférence ou par message écrit à heure fixe (« ce que je fais aujourd''hui, ce qui me bloque »). Dix minutes, caméra allumée si possible.
+- Le point hebdomadaire se tient en visioconférence, avec un ordre du jour écrit à l''avance, 45 minutes maximum, un rapporteur, et des tours de parole explicites : à distance, personne ne « prend » la parole naturellement, l''animateur la donne.
+- L''entretien de suivi individuel est le rituel le plus important à distance. Il se tient en visioconférence, caméra allumée, sans autre fenêtre ouverte, à la même fréquence qu''en présence, et il commence toujours par « comment ça va, vraiment ? ». C''est là que se détecte l''isolement.
+- Un temps collectif en présence, régulier : une journée par semaine où tout le monde est là, ou une réunion mensuelle sur site. Les équipes totalement à distance ont besoin de se voir de temps en temps ; les études sur les équipes distribuées le montrent sans ambiguïté.
+
+Deux règles d''hygiène : des plages de joignabilité définies (L1222-9 l''impose) et respectées dans les deux sens ; et la règle du canal : ce qui est délicat se dit en visio ou par téléphone, jamais par message écrit. Un recadrage par messagerie instantanée est une erreur qu''on ne rattrape pas.
+
+## Repérer l''isolement
+
+Le risque principal du télétravail, pour la personne, est l''isolement : perte du lien, sentiment de ne plus compter, difficulté à demander de l''aide, journées qui s''allongent sans que personne le voie. Les signaux : des messages de plus en plus tardifs, un silence en réunion, des réponses courtes, une personne qui ne demande plus rien, une baisse de qualité qui n''est pas expliquée. Le manager réagit comme au module 4 : il voit la personne, seul à seul, en visio ou mieux en présence, avec des faits, et il écoute. Et il traite ce qui dépend de lui : la charge, le lien (un binôme, un projet commun), le retour sur site s''il est souhaité.
+
+## L''équité entre présents et distants
+
+C''est la question qui fait le plus de dégâts dans les équipes hybrides, et elle a deux faces.
+
+Les distants sont les oubliés : ils ne sont pas dans la pièce quand une décision se prend, ils n''ont pas l''information informelle, ils sont moins sollicités pour les missions intéressantes, moins visibles pour la reconnaissance et la promotion. Les études sur la « pénalité de proximité » montrent que les salariés moins présents physiquement sont moins bien évalués à travail égal. Le manager compense délibérément : les décisions se prennent en réunion, pas au café ; l''information importante est écrite et envoyée à tous ; les missions sont attribuées sur un critère objectif, en tenant le compte (leçon 4.6) ; la reconnaissance est explicite et inclut les distants.
+
+Les présents sont les frustrés : dans une équipe où seuls certains postes sont éligibles au télétravail, ceux qui ne peuvent pas (l''atelier, la caisse, le soin) voient les autres chez eux. Le manager explique une fois, clairement, que l''éligibilité tient au poste, pas à la personne, et il cherche d''autres souplesses pour les postes non éligibles : horaires, jours, récupérations, choix dans le planning. Il veille aussi à ce que les présents n''absorbent pas les tâches des absents « parce qu''ils sont là ».
+
+## Le manager lui-même à distance
+
+Un manager qui télétravaille encadre une équipe sur site : c''est fréquent dans les services, plus rare en atelier. Il doit alors être joignable, présent aux moments clés (brief, réunion, entretiens), et sur site les jours où l''équipe a besoin de lui. Un manager invisible trois jours par semaine perd sa légitimité en un trimestre, quelle que soit la qualité de ses messages.
+
+## Le cas Garnier
+
+À l''atelier Garnier, le télétravail concerne un poste : Sophie, un jour par semaine, le mercredi, obtenu à la leçon 4.6. Karim installe trois règles : le mercredi, les demandes clients passent par le téléphone de l''atelier, redirigé vers Sophie, avec un message dans l''outil pour chaque urgence ; Sophie assiste au brief de 8 h en visio depuis son téléphone, cinq minutes ; et son entretien de suivi ne se tient jamais le mercredi, mais en présence. Le premier mois, Marc remarque que « Sophie n''est jamais là quand il y a un problème le mercredi ». Karim vérifie : deux appels manqués en quatre mercredis, parce que la redirection ne marchait pas. Il règle la redirection, le dit à l''équipe, et rappelle que l''éligibilité tient au poste : si quelqu''un veut un aménagement d''horaires, on en parle en entretien. Thierry demande à commencer à 7 h le vendredi pour finir plus tôt : accordé, par roulement avec Nadia, qui le souhaitait aussi.
+
+## À retenir
+
+- Le télétravail concerne 22 % des salariés du privé (Insee, 2025), très inégalement selon les postes : c''est l''asymétrie qui demande du management.
+- Manager sur les résultats, pas sur la présence ; la surveillance permanente est inefficace et illicite.
+- Rituels adaptés : brief court, point hebdo en visio avec tours de parole, entretien de suivi caméra allumée, temps collectif en présence régulier ; plages de joignabilité ; jamais de sujet délicat par écrit.
+- Repérer l''isolement (messages tardifs, silence, baisse inexpliquée) et le traiter comme un signal du module 4.
+- Équité : compenser l''invisibilité des distants (décisions en réunion, information écrite, missions sur critère), expliquer l''éligibilité par le poste aux présents et leur ouvrir d''autres souplesses.
+
+## Sources
+
+- Philippe Askenazy, Ugo Di Nallo, Ismaël Ramajo, Conrad Thiounn, « En France, au premier semestre 2024, le télétravail concerne plus d''un salarié du privé sur cinq », *Insee Analyses* n° 105, mars 2025.
+- DARES, « Télétravail : évolution des pratiques et conditions de travail », *Dares Analyses*, 2024.
+- ANACT, « Télétravail : guide pour les managers », anact.fr ; INRS, « Télétravail », dossier web.
+- CNIL, « Télétravail : les règles à respecter en matière de surveillance des salariés », cnil.fr.
+- Code du travail, art. L1222-4, L1222-9 à L1222-11, L2312-38 ; ANI du 26 novembre 2020 sur le télétravail.
+- Nicholas Bloom et al., « Hybrid working from home improves retention without damaging performance », *Nature*, 2024.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Au premier semestre 2024, 22 % des salariés du secteur privé ont télétravaillé au moins une fois sur quatre semaines, en moyenne 1,9 jour par semaine ; 63 % des cadres, 10 % des employés, presque aucun ouvrier (Insee Analyses n° 105, mars 2025). Ces chiffres disent deux choses au manager de proximité. D''abord, le télétravail est devenu une réalité ordinaire pour une partie des équipes, et un manager doit savoir le gérer. Ensuite, il est très inégalement réparti : dans un atelier, un commerce, un service de soins, il concerne un ou deux postes, pas l''équipe, et c''est cette asymétrie qui pose le plus de questions.
+
+Cette leçon traite du management d''une équipe dont une partie travaille à distance, de façon régulière ou occasionnelle, et d''une équipe éclatée sur plusieurs sites. Le cadre légal a été vu en leçon 4.6 ; ici, il s''agit de la pratique.
+
+## Ce qui change, ce qui ne change pas
+
+Les principes ne changent pas : objectifs clairs, rôles définis, feedback, entretiens, reconnaissance, cadre équitable. Ce qui change, c''est que le manager perd l''information informelle : le coup d''œil dans l''atelier, la conversation à la machine à café, la tête que fait quelqu''un en sortant d''une réunion. À distance, cette information doit être remplacée par des rituels explicites, sinon le manager pilote à l''aveugle et compense par de la surveillance.
+
+La recherche de la DARES (2024) sur l''évolution des pratiques montre que le télétravail intensif a reculé après la période 2020-2021 au profit d''un rythme hybride, un à deux jours par semaine, et que les effets sur les conditions de travail dépendent surtout de l''organisation mise en place : autonomie, charge, soutien du manager. Autrement dit, ce n''est pas le télétravail qui fait du bien ou du mal, c''est la façon de le manager.
+
+## Manager sur les résultats, pas sur la présence
+
+La première erreur du manager à distance est de chercher à reproduire le contrôle de la présence : logiciels de surveillance, demandes de « statut » toutes les heures, réunions pour vérifier que les gens sont là. C''est inefficace, cela détruit la confiance, et c''est encadré par le droit : tout dispositif de contrôle doit être proportionné, porté à la connaissance des salariés et, le cas échéant, soumis au CSE (L1222-4, L2312-38). La CNIL rappelle régulièrement que la surveillance permanente d''un télétravailleur (webcam allouée en continu, enregistreur de frappe) est illicite.
+
+L''alternative est de manager sur les résultats : des objectifs précis (module 2), des livrables définis, des échéances, et un point régulier où l''on regarde ce qui a été produit. Le télétravailleur sait ce qu''on attend de lui à la fin de la journée ou de la semaine, et il a la liberté de s''organiser. C''est le niveau de délégation « décide et tiens-moi informé », qui suppose que la personne soit autonome sur ses tâches. Un débutant ou une personne en difficulté télétravaille moins, ou avec un accompagnement renforcé, et ce n''est pas une sanction.
+
+## Les rituels adaptés
+
+Les rituels du module 3 restent, adaptés :
+
+- Le brief quotidien devient un point court en visioconférence ou par message écrit à heure fixe (« ce que je fais aujourd''hui, ce qui me bloque »). Dix minutes, caméra allumée si possible.
+- Le point hebdomadaire se tient en visioconférence, avec un ordre du jour écrit à l''avance, 45 minutes maximum, un rapporteur, et des tours de parole explicites : à distance, personne ne « prend » la parole naturellement, l''animateur la donne.
+- L''entretien de suivi individuel est le rituel le plus important à distance. Il se tient en visioconférence, caméra allumée, sans autre fenêtre ouverte, à la même fréquence qu''en présence, et il commence toujours par « comment ça va, vraiment ? ». C''est là que se détecte l''isolement.
+- Un temps collectif en présence, régulier : une journée par semaine où tout le monde est là, ou une réunion mensuelle sur site. Les équipes totalement à distance ont besoin de se voir de temps en temps ; les études sur les équipes distribuées le montrent sans ambiguïté.
+
+Deux règles d''hygiène : des plages de joignabilité définies (L1222-9 l''impose) et respectées dans les deux sens ; et la règle du canal : ce qui est délicat se dit en visio ou par téléphone, jamais par message écrit. Un recadrage par messagerie instantanée est une erreur qu''on ne rattrape pas.
+
+## Repérer l''isolement
+
+Le risque principal du télétravail, pour la personne, est l''isolement : perte du lien, sentiment de ne plus compter, difficulté à demander de l''aide, journées qui s''allongent sans que personne le voie. Les signaux : des messages de plus en plus tardifs, un silence en réunion, des réponses courtes, une personne qui ne demande plus rien, une baisse de qualité qui n''est pas expliquée. Le manager réagit comme au module 4 : il voit la personne, seul à seul, en visio ou mieux en présence, avec des faits, et il écoute. Et il traite ce qui dépend de lui : la charge, le lien (un binôme, un projet commun), le retour sur site s''il est souhaité.
+
+## L''équité entre présents et distants
+
+C''est la question qui fait le plus de dégâts dans les équipes hybrides, et elle a deux faces.
+
+Les distants sont les oubliés : ils ne sont pas dans la pièce quand une décision se prend, ils n''ont pas l''information informelle, ils sont moins sollicités pour les missions intéressantes, moins visibles pour la reconnaissance et la promotion. Les études sur la « pénalité de proximité » montrent que les salariés moins présents physiquement sont moins bien évalués à travail égal. Le manager compense délibérément : les décisions se prennent en réunion, pas au café ; l''information importante est écrite et envoyée à tous ; les missions sont attribuées sur un critère objectif, en tenant le compte (leçon 4.6) ; la reconnaissance est explicite et inclut les distants.
+
+Les présents sont les frustrés : dans une équipe où seuls certains postes sont éligibles au télétravail, ceux qui ne peuvent pas (l''atelier, la caisse, le soin) voient les autres chez eux. Le manager explique une fois, clairement, que l''éligibilité tient au poste, pas à la personne, et il cherche d''autres souplesses pour les postes non éligibles : horaires, jours, récupérations, choix dans le planning. Il veille aussi à ce que les présents n''absorbent pas les tâches des absents « parce qu''ils sont là ».
+
+## Le manager lui-même à distance
+
+Un manager qui télétravaille encadre une équipe sur site : c''est fréquent dans les services, plus rare en atelier. Il doit alors être joignable, présent aux moments clés (brief, réunion, entretiens), et sur site les jours où l''équipe a besoin de lui. Un manager invisible trois jours par semaine perd sa légitimité en un trimestre, quelle que soit la qualité de ses messages.
+
+## Le cas Garnier
+
+À l''atelier Garnier, le télétravail concerne un poste : Sophie, un jour par semaine, le mercredi, obtenu à la leçon 4.6. Karim installe trois règles : le mercredi, les demandes clients passent par le téléphone de l''atelier, redirigé vers Sophie, avec un message dans l''outil pour chaque urgence ; Sophie assiste au brief de 8 h en visio depuis son téléphone, cinq minutes ; et son entretien de suivi ne se tient jamais le mercredi, mais en présence. Le premier mois, Marc remarque que « Sophie n''est jamais là quand il y a un problème le mercredi ». Karim vérifie : deux appels manqués en quatre mercredis, parce que la redirection ne marchait pas. Il règle la redirection, le dit à l''équipe, et rappelle que l''éligibilité tient au poste : si quelqu''un veut un aménagement d''horaires, on en parle en entretien. Thierry demande à commencer à 7 h le vendredi pour finir plus tôt : accordé, par roulement avec Nadia, qui le souhaitait aussi.
+
+## À retenir
+
+- Le télétravail concerne 22 % des salariés du privé (Insee, 2025), très inégalement selon les postes : c''est l''asymétrie qui demande du management.
+- Manager sur les résultats, pas sur la présence ; la surveillance permanente est inefficace et illicite.
+- Rituels adaptés : brief court, point hebdo en visio avec tours de parole, entretien de suivi caméra allumée, temps collectif en présence régulier ; plages de joignabilité ; jamais de sujet délicat par écrit.
+- Repérer l''isolement (messages tardifs, silence, baisse inexpliquée) et le traiter comme un signal du module 4.
+- Équité : compenser l''invisibilité des distants (décisions en réunion, information écrite, missions sur critère), expliquer l''éligibilité par le poste aux présents et leur ouvrir d''autres souplesses.
+
+## Sources
+
+- Philippe Askenazy, Ugo Di Nallo, Ismaël Ramajo, Conrad Thiounn, « En France, au premier semestre 2024, le télétravail concerne plus d''un salarié du privé sur cinq », *Insee Analyses* n° 105, mars 2025.
+- DARES, « Télétravail : évolution des pratiques et conditions de travail », *Dares Analyses*, 2024.
+- ANACT, « Télétravail : guide pour les managers », anact.fr ; INRS, « Télétravail », dossier web.
+- CNIL, « Télétravail : les règles à respecter en matière de surveillance des salariés », cnil.fr.
+- Code du travail, art. L1222-4, L1222-9 à L1222-11, L2312-38 ; ANI du 26 novembre 2020 sur le télétravail.
+- Nicholas Bloom et al., « Hybrid working from home improves retention without damaging performance », *Nature*, 2024.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 6;
+  n := n + 1;
+
+  -- 6.7-podcast-le-changement-qui-a-failli-tout-casser.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Transcription de l''épisode.
+
+Conversation entre Claire, animatrice IDEAFORMA et Nathalie, cadre de santé dans un service de soins de suite (équipe de 26 soignants, trois roulements), en poste depuis six ans, ancienne infirmière du service (personnage fictif).
+
+**Claire** — Bonjour à tous. Dernier podcast de cette formation, et on termine par un sujet qui fait peur à beaucoup de managers : le changement qui tourne mal. Nathalie, vous êtes cadre de santé, vous encadrez vingt-six soignants en soins de suite. Il y a trois ans, votre établissement a changé de logiciel de dossier patient. Vous m''avez dit que ça avait failli « tout casser ». Racontez-nous.
+
+**Nathalie** — Il faut d''abord dire ce qu''est un dossier patient informatisé pour une équipe de soins. C''est l''outil de toute la journée : les prescriptions, les transmissions entre équipes, les constantes, les soins à faire. Quand on change ça, on change la façon dont vingt-six personnes travaillent, à chaque heure, sur trois roulements. Ce n''est pas un détail.
+
+**Claire** — Et comment ça a été annoncé ?
+
+**Nathalie** — Mal. Par un e-mail de la direction des systèmes d''information, un vendredi, à tout l''établissement : « Le nouveau logiciel sera déployé le 15 du mois prochain. Des formations seront proposées. » Cinq semaines avant. Et moi, cadre, je l''ai appris en même temps que l''équipe.
+
+**Claire** — Vous n''aviez pas été informée avant ?
+
+**Nathalie** — Il y avait eu un comité de pilotage, avec des cadres supérieurs, mais l''information n''était pas redescendue. Donc le lundi matin, j''arrive, et j''ai six soignants qui m''attendent avec l''e-mail imprimé : « C''est quoi ça ? » Et je n''avais pas de réponse. Ça, c''est la première chose que j''ai apprise : un manager qui ne sait pas, devant son équipe, perd en une minute ce qu''il a construit en des mois.
+
+**Claire** — Qu''est-ce que vous avez fait ?
+
+**Nathalie** — J''ai dit que je ne savais pas, et que je saurais le lendemain. Et j''ai passé la journée à obtenir des réponses : pourquoi ce logiciel, pourquoi cette date, quelles formations, qui serait référent. J''ai eu un entretien avec ma cadre supérieure que je n''oublierai pas, parce que je lui ai dit : « Vous m''avez mise dans une position impossible. » Et elle l''a reconnu.
+
+**Claire** — C''est le manager relais dont parle la formation. Vous avez d''abord été exigeante vers le haut.
+
+**Nathalie** — Je n''avais pas le choix. Et j''ai obtenu des choses : deux référents dans mon équipe, formés une semaine avant les autres ; des sessions de formation par roulement, y compris pour l''équipe de nuit, qu''on avait oubliée ; et une période d''un mois de double saisie, papier et informatique, pour les transmissions. C''est ce dernier point qui a sauvé le service.
+
+**Claire** — Racontez-nous les résistances. Qu''est-ce que vous avez entendu ?
+
+**Nathalie** — Tout. « Je ne suis pas là pour faire de l''informatique, je suis là pour soigner. » Ça, c''était la perte de sens, et ce n''est pas rien dans un métier de soin. « Je n''y arriverai jamais », de la part de deux aides-soignantes de plus de cinquante-cinq ans, et c''était de la peur, pas de la mauvaise volonté. « On va passer notre temps devant l''écran et pas auprès des patients », et celle-là était fondée, au début. Et puis la colère pure : « On n''a pas été consultés. » Ce qui était vrai.
+
+**Claire** — Comment on répond à « on n''a pas été consultés » quand c''est vrai ?
+
+**Nathalie** — On ne répond pas que c''est faux. J''ai dit : « Vous avez raison, et moi non plus. La décision est prise, elle ne se rediscute pas. Ce qu''on peut décider ensemble, c''est comment on l''applique ici. » Et j''ai listé ce qui était ouvert : l''organisation des formations, qui serait référent, comment on gérait les transmissions pendant la transition, à quel moment de la journée on saisissait. C''était plus large que ce que les gens croyaient. Et ça a changé la discussion.
+
+**Claire** — Et la peur de ne pas y arriver ?
+
+**Nathalie** — Ça, c''était le sujet le plus délicat, et celui que l''e-mail de la direction ignorait complètement. Deux personnes, excellentes soignantes, qui n''avaient jamais utilisé un ordinateur ailleurs que pour les constantes. Je les ai vues chacune, seule. La première m''a dit : « Je vais être ridicule devant les jeunes. » J''ai organisé pour elles une formation en petit groupe, à part, avec une des référentes, et un droit à l''erreur explicite pendant deux mois. Et j''ai mis une règle pour tout le monde : personne ne commente la vitesse de saisie d''un collègue. Personne.
+
+**Claire** — Vous aviez identifié des alliés ?
+
+**Nathalie** — Oui, et c''est ce que la formation appelle la coalition, je crois. Deux soignantes qui avaient connu un logiciel similaire ailleurs, et surtout un infirmier très respecté, ancien, qui avait tout de suite vu l''intérêt : les prescriptions lisibles, fini les erreurs de transcription. Quand lui a dit en réunion « moi je préfère ça aux fiches papier », ça a plus pesé que tout ce que j''avais pu dire.
+
+**Claire** — Parlons du jour de la bascule.
+
+**Nathalie** — Catastrophe. Le logiciel était lent, les mots de passe ne marchaient pas pour la moitié de l''équipe de nuit, et une prescription a failli être manquée parce qu''elle était dans un onglet que personne ne voyait. Rien de grave au final, grâce à la double saisie, mais ce soir-là, j''ai eu trois personnes en larmes et deux qui m''ont dit qu''elles allaient demander leur mutation.
+
+**Claire** — Qu''est-ce que vous avez fait ce soir-là ?
+
+**Nathalie** — Je suis restée. Jusqu''à 22 h, avec l''équipe de nuit, pour les mots de passe et pour montrer que j''étais là. Et le lendemain matin, j''ai fait un retour d''expérience à chaud, quinze minutes, avec l''équipe du matin : qu''est-ce qui a coincé, précisément. Pas « c''était horrible », mais : les mots de passe, l''onglet des prescriptions, la lenteur entre 14 h et 16 h. Trois problèmes, trois actions remontées à la DSI le jour même, avec des faits. Deux réglés dans la semaine.
+
+**Claire** — C''est la méthode du bilan : les faits, pas les impressions.
+
+**Nathalie** — Et c''est ce qui a changé la perception. L''équipe a vu que les problèmes qu''elle signalait étaient réglés. Pas tous, pas tout de suite, mais réglés. Au bout de deux semaines, les transmissions informatiques étaient plus complètes que les transmissions papier ne l''avaient jamais été. Je l''ai montré, chiffres à l''appui : le nombre de transmissions incomplètes avait baissé de moitié. C''était le premier succès, et je l''ai dit à toute l''équipe, en nommant les deux référentes.
+
+**Claire** — Et les deux qui voulaient demander leur mutation ?
+
+**Nathalie** — Elles sont restées. L''une d''elles est devenue référente pour les nouveaux arrivants, six mois plus tard. Mais ça n''a pas été automatique : je les ai vues chaque semaine pendant deux mois. Dix minutes. « Où tu en es, qu''est-ce qui te bloque. » Le soutien, dans un changement, ce n''est pas une phrase le jour de l''annonce ; c''est une présence pendant des semaines.
+
+**Claire** — Qu''est-ce qui a failli tout casser, exactement ? Le logiciel ?
+
+**Nathalie** — Non. Le logiciel était correct, il est très bien aujourd''hui. Ce qui a failli tout casser, c''est la façon dont le changement a été lancé : sans le pourquoi, sans les relais informés, sans penser aux pertes, sans penser à la peur, sans la nuit. Si j''avais fait ce qu''on me demandait, c''est-à-dire « appliquer », j''aurais perdu trois ou quatre personnes, et dans un service de soins, perdre quatre soignants expérimentés, c''est des mois de désorganisation et un risque pour les patients.
+
+**Claire** — Qu''est-ce que vous feriez différemment aujourd''hui ?
+
+**Nathalie** — Je demanderais à être dans le comité de pilotage, ou au moins à être informée avant l''équipe. Je ne négocie plus ça : un cadre qui apprend un changement en même temps que son équipe ne peut pas le porter. Et j''anticiperais la nuit. Dans les changements, les équipes de nuit, les temps partiels, les gens qui ne sont pas là le jour de l''annonce sont toujours oubliés, et ce sont eux qui vivent le pire.
+
+**Claire** — Un mot sur l''ancrage ? Trois ans après, qu''est-ce qui reste ?
+
+**Nathalie** — Deux choses. Le logiciel est dans l''intégration de chaque nouvel arrivant : une demi-journée avec une référente, avant le premier soin. Et on a gardé le réflexe du retour d''expérience à chaud : à chaque incident sur l''outil, quinze minutes, les faits, les actions. C''est devenu une habitude du service, bien au-delà du logiciel. On fait pareil pour une chute de patient ou un problème de planning.
+
+**Claire** — Si vous deviez résumer, pour un manager qui doit annoncer lundi un changement qu''il n''a pas choisi ?
+
+**Nathalie** — Trois choses. D''abord, ne dites rien tant que vous n''avez pas les réponses aux questions que l''équipe va poser : pourquoi, quand, comment, et qu''est-ce qui est ouvert. Prenez deux jours s''il le faut. Ensuite, cherchez les pertes et les peurs, pas les résistances : derrière chaque « je ne veux pas », il y a un « je vais perdre » ou un « je n''y arriverai pas », et ça, ça se traite. Et enfin, soyez là après. Le jour de la bascule, la semaine d''après, le mois d''après. C''est là que le changement se gagne ou se perd, pas le jour de l''annonce.
+
+**Claire** — Merci Nathalie.
+
+**Nathalie** — Merci à vous.
+
+**Claire** — La fiche outil qui suit vous donne la trame du retour d''expérience et le plan de conduite du changement. Puis le carnet de bord vous demandera de rédiger un retex réel, de choisir un problème à traiter en PDCA, et d''esquisser votre propre plan de changement. Et ensuite, ce sera l''évaluation finale.
+
+## Sources
+Kotter (1996) ; Bridges (2016) ; HAS, retour d''expérience en établissement de santé ; leçons 6.2 et 6.4.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de l''épisode.
+
+Conversation entre Claire, animatrice IDEAFORMA et Nathalie, cadre de santé dans un service de soins de suite (équipe de 26 soignants, trois roulements), en poste depuis six ans, ancienne infirmière du service (personnage fictif).
+
+**Claire** — Bonjour à tous. Dernier podcast de cette formation, et on termine par un sujet qui fait peur à beaucoup de managers : le changement qui tourne mal. Nathalie, vous êtes cadre de santé, vous encadrez vingt-six soignants en soins de suite. Il y a trois ans, votre établissement a changé de logiciel de dossier patient. Vous m''avez dit que ça avait failli « tout casser ». Racontez-nous.
+
+**Nathalie** — Il faut d''abord dire ce qu''est un dossier patient informatisé pour une équipe de soins. C''est l''outil de toute la journée : les prescriptions, les transmissions entre équipes, les constantes, les soins à faire. Quand on change ça, on change la façon dont vingt-six personnes travaillent, à chaque heure, sur trois roulements. Ce n''est pas un détail.
+
+**Claire** — Et comment ça a été annoncé ?
+
+**Nathalie** — Mal. Par un e-mail de la direction des systèmes d''information, un vendredi, à tout l''établissement : « Le nouveau logiciel sera déployé le 15 du mois prochain. Des formations seront proposées. » Cinq semaines avant. Et moi, cadre, je l''ai appris en même temps que l''équipe.
+
+**Claire** — Vous n''aviez pas été informée avant ?
+
+**Nathalie** — Il y avait eu un comité de pilotage, avec des cadres supérieurs, mais l''information n''était pas redescendue. Donc le lundi matin, j''arrive, et j''ai six soignants qui m''attendent avec l''e-mail imprimé : « C''est quoi ça ? » Et je n''avais pas de réponse. Ça, c''est la première chose que j''ai apprise : un manager qui ne sait pas, devant son équipe, perd en une minute ce qu''il a construit en des mois.
+
+**Claire** — Qu''est-ce que vous avez fait ?
+
+**Nathalie** — J''ai dit que je ne savais pas, et que je saurais le lendemain. Et j''ai passé la journée à obtenir des réponses : pourquoi ce logiciel, pourquoi cette date, quelles formations, qui serait référent. J''ai eu un entretien avec ma cadre supérieure que je n''oublierai pas, parce que je lui ai dit : « Vous m''avez mise dans une position impossible. » Et elle l''a reconnu.
+
+**Claire** — C''est le manager relais dont parle la formation. Vous avez d''abord été exigeante vers le haut.
+
+**Nathalie** — Je n''avais pas le choix. Et j''ai obtenu des choses : deux référents dans mon équipe, formés une semaine avant les autres ; des sessions de formation par roulement, y compris pour l''équipe de nuit, qu''on avait oubliée ; et une période d''un mois de double saisie, papier et informatique, pour les transmissions. C''est ce dernier point qui a sauvé le service.
+
+**Claire** — Racontez-nous les résistances. Qu''est-ce que vous avez entendu ?
+
+**Nathalie** — Tout. « Je ne suis pas là pour faire de l''informatique, je suis là pour soigner. » Ça, c''était la perte de sens, et ce n''est pas rien dans un métier de soin. « Je n''y arriverai jamais », de la part de deux aides-soignantes de plus de cinquante-cinq ans, et c''était de la peur, pas de la mauvaise volonté. « On va passer notre temps devant l''écran et pas auprès des patients », et celle-là était fondée, au début. Et puis la colère pure : « On n''a pas été consultés. » Ce qui était vrai.
+
+**Claire** — Comment on répond à « on n''a pas été consultés » quand c''est vrai ?
+
+**Nathalie** — On ne répond pas que c''est faux. J''ai dit : « Vous avez raison, et moi non plus. La décision est prise, elle ne se rediscute pas. Ce qu''on peut décider ensemble, c''est comment on l''applique ici. » Et j''ai listé ce qui était ouvert : l''organisation des formations, qui serait référent, comment on gérait les transmissions pendant la transition, à quel moment de la journée on saisissait. C''était plus large que ce que les gens croyaient. Et ça a changé la discussion.
+
+**Claire** — Et la peur de ne pas y arriver ?
+
+**Nathalie** — Ça, c''était le sujet le plus délicat, et celui que l''e-mail de la direction ignorait complètement. Deux personnes, excellentes soignantes, qui n''avaient jamais utilisé un ordinateur ailleurs que pour les constantes. Je les ai vues chacune, seule. La première m''a dit : « Je vais être ridicule devant les jeunes. » J''ai organisé pour elles une formation en petit groupe, à part, avec une des référentes, et un droit à l''erreur explicite pendant deux mois. Et j''ai mis une règle pour tout le monde : personne ne commente la vitesse de saisie d''un collègue. Personne.
+
+**Claire** — Vous aviez identifié des alliés ?
+
+**Nathalie** — Oui, et c''est ce que la formation appelle la coalition, je crois. Deux soignantes qui avaient connu un logiciel similaire ailleurs, et surtout un infirmier très respecté, ancien, qui avait tout de suite vu l''intérêt : les prescriptions lisibles, fini les erreurs de transcription. Quand lui a dit en réunion « moi je préfère ça aux fiches papier », ça a plus pesé que tout ce que j''avais pu dire.
+
+**Claire** — Parlons du jour de la bascule.
+
+**Nathalie** — Catastrophe. Le logiciel était lent, les mots de passe ne marchaient pas pour la moitié de l''équipe de nuit, et une prescription a failli être manquée parce qu''elle était dans un onglet que personne ne voyait. Rien de grave au final, grâce à la double saisie, mais ce soir-là, j''ai eu trois personnes en larmes et deux qui m''ont dit qu''elles allaient demander leur mutation.
+
+**Claire** — Qu''est-ce que vous avez fait ce soir-là ?
+
+**Nathalie** — Je suis restée. Jusqu''à 22 h, avec l''équipe de nuit, pour les mots de passe et pour montrer que j''étais là. Et le lendemain matin, j''ai fait un retour d''expérience à chaud, quinze minutes, avec l''équipe du matin : qu''est-ce qui a coincé, précisément. Pas « c''était horrible », mais : les mots de passe, l''onglet des prescriptions, la lenteur entre 14 h et 16 h. Trois problèmes, trois actions remontées à la DSI le jour même, avec des faits. Deux réglés dans la semaine.
+
+**Claire** — C''est la méthode du bilan : les faits, pas les impressions.
+
+**Nathalie** — Et c''est ce qui a changé la perception. L''équipe a vu que les problèmes qu''elle signalait étaient réglés. Pas tous, pas tout de suite, mais réglés. Au bout de deux semaines, les transmissions informatiques étaient plus complètes que les transmissions papier ne l''avaient jamais été. Je l''ai montré, chiffres à l''appui : le nombre de transmissions incomplètes avait baissé de moitié. C''était le premier succès, et je l''ai dit à toute l''équipe, en nommant les deux référentes.
+
+**Claire** — Et les deux qui voulaient demander leur mutation ?
+
+**Nathalie** — Elles sont restées. L''une d''elles est devenue référente pour les nouveaux arrivants, six mois plus tard. Mais ça n''a pas été automatique : je les ai vues chaque semaine pendant deux mois. Dix minutes. « Où tu en es, qu''est-ce qui te bloque. » Le soutien, dans un changement, ce n''est pas une phrase le jour de l''annonce ; c''est une présence pendant des semaines.
+
+**Claire** — Qu''est-ce qui a failli tout casser, exactement ? Le logiciel ?
+
+**Nathalie** — Non. Le logiciel était correct, il est très bien aujourd''hui. Ce qui a failli tout casser, c''est la façon dont le changement a été lancé : sans le pourquoi, sans les relais informés, sans penser aux pertes, sans penser à la peur, sans la nuit. Si j''avais fait ce qu''on me demandait, c''est-à-dire « appliquer », j''aurais perdu trois ou quatre personnes, et dans un service de soins, perdre quatre soignants expérimentés, c''est des mois de désorganisation et un risque pour les patients.
+
+**Claire** — Qu''est-ce que vous feriez différemment aujourd''hui ?
+
+**Nathalie** — Je demanderais à être dans le comité de pilotage, ou au moins à être informée avant l''équipe. Je ne négocie plus ça : un cadre qui apprend un changement en même temps que son équipe ne peut pas le porter. Et j''anticiperais la nuit. Dans les changements, les équipes de nuit, les temps partiels, les gens qui ne sont pas là le jour de l''annonce sont toujours oubliés, et ce sont eux qui vivent le pire.
+
+**Claire** — Un mot sur l''ancrage ? Trois ans après, qu''est-ce qui reste ?
+
+**Nathalie** — Deux choses. Le logiciel est dans l''intégration de chaque nouvel arrivant : une demi-journée avec une référente, avant le premier soin. Et on a gardé le réflexe du retour d''expérience à chaud : à chaque incident sur l''outil, quinze minutes, les faits, les actions. C''est devenu une habitude du service, bien au-delà du logiciel. On fait pareil pour une chute de patient ou un problème de planning.
+
+**Claire** — Si vous deviez résumer, pour un manager qui doit annoncer lundi un changement qu''il n''a pas choisi ?
+
+**Nathalie** — Trois choses. D''abord, ne dites rien tant que vous n''avez pas les réponses aux questions que l''équipe va poser : pourquoi, quand, comment, et qu''est-ce qui est ouvert. Prenez deux jours s''il le faut. Ensuite, cherchez les pertes et les peurs, pas les résistances : derrière chaque « je ne veux pas », il y a un « je vais perdre » ou un « je n''y arriverai pas », et ça, ça se traite. Et enfin, soyez là après. Le jour de la bascule, la semaine d''après, le mois d''après. C''est là que le changement se gagne ou se perd, pas le jour de l''annonce.
+
+**Claire** — Merci Nathalie.
+
+**Nathalie** — Merci à vous.
+
+**Claire** — La fiche outil qui suit vous donne la trame du retour d''expérience et le plan de conduite du changement. Puis le carnet de bord vous demandera de rédiger un retex réel, de choisir un problème à traiter en PDCA, et d''esquisser votre propre plan de changement. Et ensuite, ce sera l''évaluation finale.
+
+## Sources
+Kotter (1996) ; Bridges (2016) ; HAS, retour d''expérience en établissement de santé ; leçons 6.2 et 6.4.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 7;
+  n := n + 1;
+
+  -- 6.8-fiche-retex-et-plan-de-changement.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Trois gabarits à recopier ou à imprimer (PDF à générer, mise en page IDEAFORMA, fond clair). Ils servent au carnet de bord du module (leçon 6.9) et ensuite au quotidien.
+
+---
+
+## GABARIT 1 — Retour d''expérience (une page, 30 minutes)
+
+Événement : ____________________ Date de l''événement : ________ Date du retex : ________
+Participants (les personnes concernées) : ____________________ Animateur : ________
+
+Règle annoncée en ouverture : « On cherche ce qui doit changer dans notre fonctionnement, pas qui a tort. »
+
+1. Les faits (chronologie partagée, sans interprétation)
+
+| Heure / moment | Qui | Ce qui s''est passé, ce qui a été décidé | Source (vu, dit, document) |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+
+2. Les causes (chercher jusqu''à la cause sur laquelle on peut agir ; plusieurs causes se combinent presque toujours)
+
+| Famille | Cause identifiée | Cause racine (après « pourquoi ? ») |
+|---|---|---|
+| Organisation (circuits, rôles, règles) | | |
+| Technique / matériel / produit | | |
+| Compétence / information | | |
+| Conditions (charge, imprévu, pression) | | |
+| Part du manager (consigne, absence, décision) | | |
+
+3. Les enseignements (formulés de façon générale et réutilisable)
+
+- 
+- 
+- 
+
+4. Les décisions (une ou deux, pas dix)
+
+| Décision | Responsable | Échéance | Comment on saura que ça a marché | Vérifié le |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+
+Diffusé à l''équipe le : ________ Point de vérification prévu le : ________
+
+---
+
+## GABARIT 2 — Fiche PDCA (amélioration continue)
+
+Problème décrit (QQOQCP) : quoi ____________________ qui ________ où ________ quand ________ combien ________ comment ____________________
+
+Cause principale retenue (cinq pourquoi ou Ishikawa) : ____________________
+
+| Étape | Contenu | Date |
+|---|---|---|
+| Plan — action testée | | |
+| Plan — indicateur et valeur de départ | | |
+| Do — périmètre et durée du test (petit, limité) | | |
+| Check — valeur mesurée à la fin du test, imprévus | | |
+| Act — décision : généraliser (règle écrite, formation) / abandonner / nouveau test | | |
+
+Idée proposée par : ____________________ (à nommer lors de la généralisation)
+
+Registre d''amélioration continue (à tenir au fil de l''année) :
+
+| Date | Problème | Action testée | Résultat | Décision | Proposé par |
+|---|---|---|---|---|---|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+---
+
+## GABARIT 3 — Plan de conduite du changement dans mon équipe
+
+Changement : ____________________ Décidé par : ________ Date de bascule : ________
+
+Avant l''annonce (le manager relais s''informe et négocie)
+
+| Question | Réponse obtenue | Reste à obtenir |
+|---|---|---|
+| Pourquoi ce changement (faits) ? | | |
+| Qu''est-ce qui change exactement ? Qu''est-ce qui ne change pas ? | | |
+| Calendrier, étapes | | |
+| Formation et accompagnement prévus | | |
+| Marges ouvertes à l''équipe (ce qu''elle peut décider) | | |
+| Ce que je demande à ma hiérarchie (temps, moyens, période de transition) | | |
+
+Les personnes
+
+| Personne | Ce qu''elle perd | Ce qu''elle craint | Ce qu''elle gagne | Rôle (allié, référent, à accompagner) | Action prévue |
+|---|---|---|---|---|---|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+Ne pas oublier : les absents le jour de l''annonce, l''équipe de nuit, les temps partiels, les nouveaux.
+
+L''annonce (en réunion, en présence)
+
+| Point | Ce que je dis |
+|---|---|
+| Pourquoi (faits) | |
+| Quoi — ce qui change | |
+| Quoi — ce qui ne change pas | |
+| Quand (étapes, dates connues) | |
+| Comment (formation, référents, droit à l''erreur, à qui s''adresser) | |
+| Ce qui est ouvert (ce qu''on décide ensemble) | |
+| Ce que je ne sais pas encore, et quand je le dirai | |
+
+Les objections anticipées et mes réponses : ____________________
+
+Après l''annonce (les huit étapes à l''échelle de l''équipe)
+
+| Étape | Action concrète | Date | Fait |
+|---|---|---|---|
+| Alliés identifiés et associés | | | |
+| Vision en deux phrases, répétée (brief, réunion, entretiens) | | | |
+| Entretiens individuels avec les plus inquiets | | | |
+| Obstacles repérés et levés | | | |
+| Premier succès visible, mesuré, montré | | | |
+| Point à ma hiérarchie (faits, difficultés, besoins) | | | |
+| Retex après la bascule | | | |
+| Ancrage : règles, fiches de poste, intégration, tableau de bord | | | |
+
+---
+
+## Rappels d''usage
+
+- Un retex se fait dans les jours qui suivent, à froid, avec les personnes concernées, et il est écrit.
+- Une fiche PDCA par problème ; le registre tient l''historique et sert au bilan d''activité.
+- Le plan de changement se remplit avant l''annonce, pas après ; la colonne « ce que je ne sais pas » est aussi importante que les autres.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Trois gabarits à recopier ou à imprimer (PDF à générer, mise en page IDEAFORMA, fond clair). Ils servent au carnet de bord du module (leçon 6.9) et ensuite au quotidien.
+
+---
+
+## GABARIT 1 — Retour d''expérience (une page, 30 minutes)
+
+Événement : ____________________ Date de l''événement : ________ Date du retex : ________
+Participants (les personnes concernées) : ____________________ Animateur : ________
+
+Règle annoncée en ouverture : « On cherche ce qui doit changer dans notre fonctionnement, pas qui a tort. »
+
+1. Les faits (chronologie partagée, sans interprétation)
+
+| Heure / moment | Qui | Ce qui s''est passé, ce qui a été décidé | Source (vu, dit, document) |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+
+2. Les causes (chercher jusqu''à la cause sur laquelle on peut agir ; plusieurs causes se combinent presque toujours)
+
+| Famille | Cause identifiée | Cause racine (après « pourquoi ? ») |
+|---|---|---|
+| Organisation (circuits, rôles, règles) | | |
+| Technique / matériel / produit | | |
+| Compétence / information | | |
+| Conditions (charge, imprévu, pression) | | |
+| Part du manager (consigne, absence, décision) | | |
+
+3. Les enseignements (formulés de façon générale et réutilisable)
+
+- 
+- 
+- 
+
+4. Les décisions (une ou deux, pas dix)
+
+| Décision | Responsable | Échéance | Comment on saura que ça a marché | Vérifié le |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+
+Diffusé à l''équipe le : ________ Point de vérification prévu le : ________
+
+---
+
+## GABARIT 2 — Fiche PDCA (amélioration continue)
+
+Problème décrit (QQOQCP) : quoi ____________________ qui ________ où ________ quand ________ combien ________ comment ____________________
+
+Cause principale retenue (cinq pourquoi ou Ishikawa) : ____________________
+
+| Étape | Contenu | Date |
+|---|---|---|
+| Plan — action testée | | |
+| Plan — indicateur et valeur de départ | | |
+| Do — périmètre et durée du test (petit, limité) | | |
+| Check — valeur mesurée à la fin du test, imprévus | | |
+| Act — décision : généraliser (règle écrite, formation) / abandonner / nouveau test | | |
+
+Idée proposée par : ____________________ (à nommer lors de la généralisation)
+
+Registre d''amélioration continue (à tenir au fil de l''année) :
+
+| Date | Problème | Action testée | Résultat | Décision | Proposé par |
+|---|---|---|---|---|---|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+---
+
+## GABARIT 3 — Plan de conduite du changement dans mon équipe
+
+Changement : ____________________ Décidé par : ________ Date de bascule : ________
+
+Avant l''annonce (le manager relais s''informe et négocie)
+
+| Question | Réponse obtenue | Reste à obtenir |
+|---|---|---|
+| Pourquoi ce changement (faits) ? | | |
+| Qu''est-ce qui change exactement ? Qu''est-ce qui ne change pas ? | | |
+| Calendrier, étapes | | |
+| Formation et accompagnement prévus | | |
+| Marges ouvertes à l''équipe (ce qu''elle peut décider) | | |
+| Ce que je demande à ma hiérarchie (temps, moyens, période de transition) | | |
+
+Les personnes
+
+| Personne | Ce qu''elle perd | Ce qu''elle craint | Ce qu''elle gagne | Rôle (allié, référent, à accompagner) | Action prévue |
+|---|---|---|---|---|---|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+Ne pas oublier : les absents le jour de l''annonce, l''équipe de nuit, les temps partiels, les nouveaux.
+
+L''annonce (en réunion, en présence)
+
+| Point | Ce que je dis |
+|---|---|
+| Pourquoi (faits) | |
+| Quoi — ce qui change | |
+| Quoi — ce qui ne change pas | |
+| Quand (étapes, dates connues) | |
+| Comment (formation, référents, droit à l''erreur, à qui s''adresser) | |
+| Ce qui est ouvert (ce qu''on décide ensemble) | |
+| Ce que je ne sais pas encore, et quand je le dirai | |
+
+Les objections anticipées et mes réponses : ____________________
+
+Après l''annonce (les huit étapes à l''échelle de l''équipe)
+
+| Étape | Action concrète | Date | Fait |
+|---|---|---|---|
+| Alliés identifiés et associés | | | |
+| Vision en deux phrases, répétée (brief, réunion, entretiens) | | | |
+| Entretiens individuels avec les plus inquiets | | | |
+| Obstacles repérés et levés | | | |
+| Premier succès visible, mesuré, montré | | | |
+| Point à ma hiérarchie (faits, difficultés, besoins) | | | |
+| Retex après la bascule | | | |
+| Ancrage : règles, fiches de poste, intégration, tableau de bord | | | |
+
+---
+
+## Rappels d''usage
+
+- Un retex se fait dans les jours qui suivent, à froid, avec les personnes concernées, et il est écrit.
+- Une fiche PDCA par problème ; le registre tient l''historique et sert au bilan d''activité.
+- Le plan de changement se remplit avant l''annonce, pas après ; la colonne « ce que je ne sais pas » est aussi importante que les autres.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 8;
+  n := n + 1;
+
+  -- 6.9-carnet-application.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Vous avez vu comment évaluer l''activité sans juger les personnes, conduire un retour d''expérience et une rétrospective, pratiquer l''amélioration continue, conduire un changement et manager à distance. À vous de l''appliquer. Comptez 1 h 30 à 1 h 45. Utilisez les gabarits de la fiche outil (leçon 6.8).
+
+Si vous n''encadrez pas d''équipe, travaillez sur une équipe que vous connaissez, ou sur l''atelier Garnier en transposant dans votre secteur.
+
+## Étape 1 — Mon bilan d''activité (20 min)
+
+- Reprenez les objectifs et le tableau de bord que vous avez construits au module 2. Pour chaque objectif : la cible, le résultat obtenu (ou estimé), l''écart.
+- Pour chaque écart, les trois questions : l''objectif était-il réaliste ? Les moyens étaient-ils là ? Qu''est-ce qui, dans les conditions, l''explique ?
+- Notez aussi un objectif atteint, et ce qui l''explique : qu''est-ce qu''il faut reproduire ?
+- Rédigez en dix lignes le bilan que vous présenteriez à votre hiérarchie : ce qui est atteint, les écarts et leurs causes, ce que vous proposez. Relisez : y a-t-il un nom de personne là où il devrait y avoir une cause ?
+
+## Étape 2 — Un retour d''expérience réel (25 min)
+
+- Choisissez un incident, un échec ou une réussite inhabituelle récente dans votre équipe.
+- Remplissez le gabarit 1 : la chronologie (en consultant si possible les personnes concernées), les causes par famille, jusqu''à la cause racine, en cherchant aussi votre part.
+- Formulez deux enseignements généraux, et une ou deux décisions avec un responsable, une échéance et un critère de vérification.
+- Si l''événement est réel et récent, tenez le retex avec les personnes concernées cette semaine. Notez ce qui est sorti que vous ne saviez pas.
+- Quel rituel de rétrospective installez-vous (fréquence, durée, trois questions) ? Date de la première ?
+
+## Étape 3 — Un problème en PDCA (20 min)
+
+- Listez trois problèmes récurrents de votre équipe (le point « ce qui nous a compliqué la vie » est une bonne source). Choisissez le plus fréquent ou le plus coûteux.
+- Décrivez-le en QQOQCP. Cherchez la cause par cinq pourquoi ; vérifiez avec Ishikawa que vous n''avez pas oublié une famille de causes.
+- Remplissez le gabarit 2 : une action testable à petite échelle, un indicateur, une valeur de départ, une durée de test.
+- Qui, dans l''équipe, a proposé ou pourrait proposer cette amélioration ? Comment la présenterez-vous ?
+- Ouvrez votre registre d''amélioration continue avec cette première ligne.
+
+## Étape 4 — Mon plan de changement (25 min)
+
+- Identifiez un changement en cours ou à venir dans votre équipe (outil, organisation, horaires, locaux, norme), de préférence un changement que vous n''avez pas décidé.
+- Remplissez le gabarit 3, partie « avant l''annonce » : ce que vous savez, ce qui vous manque, ce que vous demandez à votre hiérarchie. Fixez la date à laquelle vous poserez ces questions.
+- Partie « les personnes » : pour chaque membre de l''équipe, ce qu''il perd, ce qu''il craint, ce qu''il gagne, son rôle possible. Qui sont vos alliés ? Qui faut-il voir seul ? Qui risque d''être oublié ?
+- Rédigez votre annonce en sept points (pourquoi, ce qui change, ce qui ne change pas, quand, comment, ce qui est ouvert, ce que vous ne savez pas). Lisez-la à voix haute : tient-elle en cinq minutes ?
+- Quel sera votre premier succès visible, et comment le mesurerez-vous ?
+
+## Étape 5 — Distance et hybride (10 min)
+
+- Si une partie de votre équipe travaille à distance ou sur un autre site : quels rituels avez-vous adaptés ? Les plages de joignabilité sont-elles définies ? Quand avez-vous eu un entretien de suivi en caméra allumée avec chaque distant ?
+- Y a-t-il une décision prise « au café » cette semaine qu''un distant n''a pas eue ? Une mission intéressante attribuée à quelqu''un parce qu''il était là ?
+- Si personne ne télétravaille dans votre équipe : comment expliquez-vous l''éligibilité par le poste, et quelles souplesses offrez-vous aux postes non éligibles ?
+
+## Étape 6 — Bilan du module (10 min)
+
+- Parmi les cinq compétences du module (bilan d''activité, retex, amélioration continue, conduite du changement, management à distance), laquelle maîtrisez-vous le mieux ? Laquelle vous demande le plus d''effort ?
+- Quelle est la première chose que vous faites dès demain ? Écrivez-la avec une date.
+
+Conservez ce carnet, avec ceux des modules précédents : le module 7 vous demandera de construire votre plan d''action à 30, 60 et 90 jours à partir de l''ensemble.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Vous avez vu comment évaluer l''activité sans juger les personnes, conduire un retour d''expérience et une rétrospective, pratiquer l''amélioration continue, conduire un changement et manager à distance. À vous de l''appliquer. Comptez 1 h 30 à 1 h 45. Utilisez les gabarits de la fiche outil (leçon 6.8).
+
+Si vous n''encadrez pas d''équipe, travaillez sur une équipe que vous connaissez, ou sur l''atelier Garnier en transposant dans votre secteur.
+
+## Étape 1 — Mon bilan d''activité (20 min)
+
+- Reprenez les objectifs et le tableau de bord que vous avez construits au module 2. Pour chaque objectif : la cible, le résultat obtenu (ou estimé), l''écart.
+- Pour chaque écart, les trois questions : l''objectif était-il réaliste ? Les moyens étaient-ils là ? Qu''est-ce qui, dans les conditions, l''explique ?
+- Notez aussi un objectif atteint, et ce qui l''explique : qu''est-ce qu''il faut reproduire ?
+- Rédigez en dix lignes le bilan que vous présenteriez à votre hiérarchie : ce qui est atteint, les écarts et leurs causes, ce que vous proposez. Relisez : y a-t-il un nom de personne là où il devrait y avoir une cause ?
+
+## Étape 2 — Un retour d''expérience réel (25 min)
+
+- Choisissez un incident, un échec ou une réussite inhabituelle récente dans votre équipe.
+- Remplissez le gabarit 1 : la chronologie (en consultant si possible les personnes concernées), les causes par famille, jusqu''à la cause racine, en cherchant aussi votre part.
+- Formulez deux enseignements généraux, et une ou deux décisions avec un responsable, une échéance et un critère de vérification.
+- Si l''événement est réel et récent, tenez le retex avec les personnes concernées cette semaine. Notez ce qui est sorti que vous ne saviez pas.
+- Quel rituel de rétrospective installez-vous (fréquence, durée, trois questions) ? Date de la première ?
+
+## Étape 3 — Un problème en PDCA (20 min)
+
+- Listez trois problèmes récurrents de votre équipe (le point « ce qui nous a compliqué la vie » est une bonne source). Choisissez le plus fréquent ou le plus coûteux.
+- Décrivez-le en QQOQCP. Cherchez la cause par cinq pourquoi ; vérifiez avec Ishikawa que vous n''avez pas oublié une famille de causes.
+- Remplissez le gabarit 2 : une action testable à petite échelle, un indicateur, une valeur de départ, une durée de test.
+- Qui, dans l''équipe, a proposé ou pourrait proposer cette amélioration ? Comment la présenterez-vous ?
+- Ouvrez votre registre d''amélioration continue avec cette première ligne.
+
+## Étape 4 — Mon plan de changement (25 min)
+
+- Identifiez un changement en cours ou à venir dans votre équipe (outil, organisation, horaires, locaux, norme), de préférence un changement que vous n''avez pas décidé.
+- Remplissez le gabarit 3, partie « avant l''annonce » : ce que vous savez, ce qui vous manque, ce que vous demandez à votre hiérarchie. Fixez la date à laquelle vous poserez ces questions.
+- Partie « les personnes » : pour chaque membre de l''équipe, ce qu''il perd, ce qu''il craint, ce qu''il gagne, son rôle possible. Qui sont vos alliés ? Qui faut-il voir seul ? Qui risque d''être oublié ?
+- Rédigez votre annonce en sept points (pourquoi, ce qui change, ce qui ne change pas, quand, comment, ce qui est ouvert, ce que vous ne savez pas). Lisez-la à voix haute : tient-elle en cinq minutes ?
+- Quel sera votre premier succès visible, et comment le mesurerez-vous ?
+
+## Étape 5 — Distance et hybride (10 min)
+
+- Si une partie de votre équipe travaille à distance ou sur un autre site : quels rituels avez-vous adaptés ? Les plages de joignabilité sont-elles définies ? Quand avez-vous eu un entretien de suivi en caméra allumée avec chaque distant ?
+- Y a-t-il une décision prise « au café » cette semaine qu''un distant n''a pas eue ? Une mission intéressante attribuée à quelqu''un parce qu''il était là ?
+- Si personne ne télétravaille dans votre équipe : comment expliquez-vous l''éligibilité par le poste, et quelles souplesses offrez-vous aux postes non éligibles ?
+
+## Étape 6 — Bilan du module (10 min)
+
+- Parmi les cinq compétences du module (bilan d''activité, retex, amélioration continue, conduite du changement, management à distance), laquelle maîtrisez-vous le mieux ? Laquelle vous demande le plus d''effort ?
+- Quelle est la première chose que vous faites dès demain ? Écrivez-la avec une date.
+
+Conservez ce carnet, avec ceux des modules précédents : le module 7 vous demandera de construire votre plan d''action à 30, 60 et 90 jours à partir de l''ensemble.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 7 and l.ordre = 9;
+  n := n + 1;
+
+  -- 7.1-evaluation-finale.json
+  update public.lecons l set contenu = '{"questions": [{"id": "ef01", "enonce": "Un an après. L''atelier a tenu 94 % de ses délais, l''équipe compte dix personnes avec Amine, et Michel a confié à Karim l''ouverture d''un second poste de peinture. Pour cette nouvelle activité, Karim commence par lister les étapes (préparation, masquage, application, séchage, contrôle) et les compétences requises à chaque étape. Quelle compétence du manager exerce-t-il ?", "options": ["Résoudre un conflit", "Identifier les compétences nécessaires à la réalisation d''une activité", "Sanctionner un salarié", "Communiquer vers la hiérarchie"], "bonnes": [1], "explication": "C''est la première compétence du référentiel : partir de l''activité pour déduire les compétences, puis les confronter à la matrice de l''équipe."}, {"id": "ef02", "enonce": "La matrice de compétences montre que seule Nadia est au niveau 3 sur la peinture nacrée et que Thierry, seul au niveau 3 sur le redressage lourd, part à la retraite dans deux ans. Que fait Karim ?", "options": ["Rien : les deux sont là aujourd''hui", "Il traite ces deux compétences uniques comme des risques : binôme et PDI pour Amine sur la nacrée, et plan de transmission de Thierry vers Julien sur le redressage, avec un calendrier", "Il recrute immédiatement deux personnes", "Il demande à Nadia et Thierry de rédiger une procédure"], "bonnes": [1], "explication": "Une compétence portée par une seule personne est un risque pour l''équipe ; la transmission se planifie des mois à l''avance, par binôme et plan de développement."}, {"id": "ef03", "enonce": "Avec dix personnes et deux postes de peinture, les rôles se brouillent : deux personnes commandent des pièces, personne ne valide les restitutions du second poste. Quel outil Karim met-il à jour, et avec quelle règle ?", "options": ["Le règlement intérieur, avec des sanctions", "La matrice RACI, avec un seul « A » (répond du résultat) par activité", "L''organigramme de l''entreprise", "Le tableau de bord, avec plus d''indicateurs"], "bonnes": [1], "explication": "Les rôles flous sont la première source de conflits et d''erreurs ; le RACI fixe qui réalise, qui approuve, qui est consulté, qui est informé, un seul A par ligne."}, {"id": "ef04", "enonce": "Michel demande à Karim « de faire mieux l''an prochain ». Comment Karim traduit-il cette attente en objectifs pour l''équipe ?", "options": ["Il affiche « faire mieux » dans l''atelier", "Il fixe trois objectifs SMART, précis et difficiles mais acceptés, chacun avec un indicateur de résultat et un garde-fou, et les présente en réunion puis en entretien individuel", "Il fixe quinze objectifs pour couvrir tous les sujets", "Il laisse chacun choisir ses objectifs sans cadre"], "bonnes": [1], "explication": "Locke et Latham : précis, difficile, accepté, suivi. Un garde-fou (reprises, heures supplémentaires) accompagne chaque objectif de résultat."}, {"id": "ef05", "enonce": "Le tableau de bord indique 94 % de délais tenus, mais aussi 60 heures supplémentaires sur le mois et deux réclamations clients. Que conclut Karim ?", "options": ["Objectif atteint, rien à signaler", "Le résultat est obtenu au prix d''un dépassement des moyens et d''un signal qualité : les garde-fous s''allument, il faut comprendre les causes avant de se féliciter", "Il faut supprimer les indicateurs qui dérangent", "Il faut sanctionner les auteurs des réclamations"], "bonnes": [1], "explication": "Un résultat ne se lit pas sans ses moyens et ses conditions ; c''est à cela que servent les indicateurs de garde-fou."}, {"id": "ef06", "enonce": "Fatou, préparatrice, a vu sa restriction médicale de port de charge renouvelée et le médecin du travail a préconisé un chariot élévateur léger pour les éléments de plus de 10 kg. Que fait Karim ?", "options": ["Il demande à Fatou le détail de son dossier médical pour comprendre", "Il organise le poste selon la préconisation (demande du matériel à Michel, règle d''atelier, formation à l''usage), sans communiquer le motif médical à l''équipe, et vérifie que Fatou garde un accès égal aux missions et à la formation", "Il explique à l''équipe la pathologie de Fatou pour éviter les jalousies", "Il propose à Fatou de changer de métier"], "bonnes": [1], "explication": "Aménagement raisonnable du poste sur préconisation du médecin du travail, confidentialité de la santé, égalité de traitement : c''est la compétence 4 du référentiel."}, {"id": "ef07", "enonce": "Lucas, maintenant carrossier en CDI, s''est plaint que les missions intéressantes (les flottes, les véhicules haut de gamme) vont toujours à Julien et Amine. Karim vérifie : c''est vrai depuis six mois. Qu''est-ce que cela relève, et que fait-il ?", "options": ["D''une préférence normale du manager pour les meilleurs", "D''un risque d''inéquité, voire de discrimination indirecte : il met en place une règle d''attribution objective et connue, tient le compte, et explique", "D''une jalousie de Lucas à recadrer", "D''un problème de Lucas à régler en formation"], "bonnes": [1], "explication": "Un cadre équitable, c''est des différences justifiées par un critère objectif, connues et expliquées. Les attributions « sans y penser » sont le terreau de la discrimination indirecte."}, {"id": "ef08", "enonce": "Depuis trois mois, Marc reste tard, ne prend plus sa pause, a fait deux erreurs inhabituelles de diagnostic et a eu un accrochage sec avec Sophie. Que fait Karim ?", "options": ["Il lui dit qu''il fait un burn-out et lui conseille un arrêt", "Il le voit seul, avec les faits observés, écoute sans creuser la vie privée, agit sur ce qui pèse dans le travail, rappelle l''accès au médecin du travail, informe Michel qu''il a une inquiétude sur la charge, et fixe un point rapproché", "Il attend que Marc se plaigne", "Il lui retire la mécanique pour le soulager, sans lui en parler"], "bonnes": [1], "explication": "Le manager repère, écoute, agit sur le travail, oriente, alerte, suit. Il ne diagnostique pas. Tout salarié peut voir le médecin du travail à sa demande (L4624-1)."}, {"id": "ef09", "enonce": "Karim doit encadrer deux profils très différents : Amine, autonome et expérimenté, et Inès, nouvelle apprentie de 19 ans. Quelle posture adopte-t-il selon le leadership situationnel ?", "options": ["La même pour les deux, par équité", "Déléguer avec Amine (décide et informe-moi) ; diriger avec Inès (consignes précises, contrôle rapproché, retours fréquents), puis évoluer vers entraîner au fil de ses progrès", "Diriger les deux pour garder le contrôle", "Déléguer aux deux pour gagner du temps"], "bonnes": [1], "explication": "Le style dépend de l''autonomie de la personne sur la tâche (compétence et motivation), et il évolue : c''est la compétence 6, adopter une posture adaptée aux profils."}, {"id": "ef10", "enonce": "En réunion d''équipe, Thierry conteste devant tous une décision d''organisation que Karim vient d''annoncer. Que fait Karim sur le moment ?", "options": ["Il cède pour éviter le conflit devant l''équipe", "Il l''humilie pour affirmer son autorité", "Il écoute l''objection, reformule, répond sur le fond ou dit qu''il y reviendra, maintient la décision si elle est fondée, et voit Thierry seul ensuite si la forme était inacceptable", "Il quitte la réunion"], "bonnes": [2], "explication": "Écouter n''est pas céder : comprendre, puis décider. La forme (contester devant l''équipe) se traite en privé, avec SBI ou DESC."}, {"id": "ef11", "enonce": "Julien a livré trois finitions impeccables cette semaine, sur un produit qu''il ne maîtrisait pas l''an dernier. Que fait Karim ?", "options": ["Rien : c''est normal de bien faire son travail", "Un retour positif précis, à temps, en nommant ce qui est bien et ce que cela permet, devant l''équipe si Julien l''accepte", "Une prime, décidée seul, sans un mot", "« C''est bien, mais fais attention la semaine prochaine »"], "bonnes": [1], "explication": "Le positif apprend autant que le correctif : il dit quoi reproduire. Précis, sincère, à temps, sans « mais »."}, {"id": "ef12", "enonce": "Nadia a mal vécu que Michel la reprenne devant un client sur un détail de teinte. Elle vient en parler à Karim. Que fait-il ?", "options": ["Il lui dit que Michel est comme ça et qu''il faut s''y habituer", "Il écoute Nadia, reconnaît ce qu''elle a vécu, puis fait à Michel un feedback factuel sur l''impact des remarques en public et redemande que cela passe par lui, sans désavouer Michel devant Nadia", "Il critique Michel avec Nadia pour la soutenir", "Il ne fait rien pour ne pas froisser Michel"], "bonnes": [1], "explication": "Loyal vers le haut (feedback en face, avec des faits), loyal vers le bas (ne pas laisser Nadia seule, ne pas désavouer l''employeur devant elle)."}, {"id": "ef13", "enonce": "Sophie doit avoir cette année son entretien de parcours professionnel. Que contient-il, et que ne contient-il pas ?", "options": ["Les objectifs de l''année et la prime : c''est l''entretien annuel", "Ses compétences et leur évolution, sa situation et ses perspectives, ses besoins de formation, ses souhaits d''évolution, l''information sur le CPF et le CEP ; pas d''évaluation de son travail ; un écrit lui est remis", "Uniquement une discussion informelle sans trace", "Un bilan de ses erreurs de l''année"], "bonnes": [1], "explication": "Art. L6315-1 (loi du 24 octobre 2025) : l''entretien de parcours professionnel porte sur l''avenir, jamais sur l''évaluation, et donne lieu à un compte rendu écrit."}, {"id": "ef14", "enonce": "Inès, l''apprentie, arrive en retard pour la troisième fois malgré un feedback. Comment Karim conduit-il l''entretien ?", "options": ["Un avertissement écrit qu''il rédige lui-même", "Un recadrage : faits datés, la règle et pourquoi elle existe, écoute (« qu''est-ce qui explique ça ? »), attente non négociable et délai, conséquence annoncée (information de Michel), trace écrite, point de contrôle rapproché", "Une remarque devant l''équipe pour que ça serve d''exemple", "Rien, parce qu''elle est apprentie"], "bonnes": [1], "explication": "Le recadrage relève du manager et se trace ; la sanction relève de l''employeur avec sa procédure. L''écoute peut révéler une cause (transport, organisation) qui change la suite."}, {"id": "ef15", "enonce": "Amine et Julien ne se parlent plus depuis deux semaines après un désaccord sur l''ordre des opérations du second poste de peinture. Les autres commencent à prendre parti. Que fait Karim ?", "options": ["Il les réunit tout de suite pour qu''ils s''expliquent devant lui", "Il tranche pour celui qui a le plus d''expérience", "Il applique la méthode en cinq étapes : cadre, écoute de chacun séparément (positions et besoins), objectivation (faits, source : probablement un rôle ou une règle flous), options ensemble, engagements suivis ; et il fixe la règle manquante", "Il attend que ça se tasse"], "bonnes": [2], "explication": "Niveau 3-4 de Glasl : on intervient maintenant. La cause est souvent organisationnelle (qui décide de l''ordre des opérations ?), et c''est le manager qui pose la règle."}, {"id": "ef16", "enonce": "Lors de l''entretien séparé, Julien dit à Karim : « Amine veut tout commander, il faut qu''il arrête. » Que cherche Karim derrière cette phrase ?", "options": ["Qui a raison", "Le besoin derrière la position : être reconnu comme compétent, savoir qui décide quoi", "Une preuve contre Amine", "Un motif de sanction"], "bonnes": [1], "explication": "Les positions sont incompatibles, les besoins presque jamais (Fisher et Ury). C''est sur les besoins qu''on trouve des options."}, {"id": "ef17", "enonce": "Un client régulier a eu, à deux reprises, des propos déplacés envers Inès, 19 ans. Elle en parle à Karim en demandant « de ne pas faire d''histoires ». Que fait Karim ?", "options": ["Il respecte sa demande et ne fait rien", "Il prend au sérieux, note les faits avec ses mots, l''informe qu''il doit en parler à l''employeur (obligation de prévention et d''action), protège (plus jamais seule avec ce client), oriente (référent, médecin du travail), et garde la confidentialité vis-à-vis de l''équipe", "Il confronte le client avec Inès", "Il en parle à l''équipe pour que tout le monde surveille"], "bonnes": [1], "explication": "L''employeur a l''obligation de prévenir et de faire cesser les agissements sexistes et le harcèlement (L1153-5) ; le manager déclenche cette obligation. La protection passe avant la demande de discrétion, qu''on respecte vis-à-vis de l''équipe."}, {"id": "ef18", "enonce": "Au bilan du trimestre, Karim présente à l''équipe les résultats, les moyens et les conditions. Comment commence-t-il ?", "options": ["Par la liste des erreurs de chacun", "Par ce qui a été atteint et comment, puis les écarts et leurs causes (objectif réaliste ? moyens ? conditions ?), puis ce qu''il propose de changer", "Par la demande de Michel de faire mieux", "Par les sanctions prévues si ça continue"], "bonnes": [1], "explication": "Le bilan d''activité est collectif et factuel ; un écart est une information, pas une faute ; les personnes s''évaluent ailleurs."}, {"id": "ef19", "enonce": "Un véhicule est reparti avec une pièce mal fixée ; le client l''a signalé sans dommage. Comment Karim organise-t-il le retour d''expérience ?", "options": ["Il cherche qui a fixé la pièce et le sanctionne", "Dans les jours qui suivent, à froid, avec les personnes concernées : chronologie partagée, causes jusqu''à la cause racine (y compris sa part), enseignements généraux, une ou deux décisions suivies, le tout écrit et diffusé", "Il envoie un e-mail de rappel à tous", "Il ajoute une case à la check-list sans en parler"], "bonnes": [1], "explication": "La culture juste : l''erreur signalée de bonne foi n''est pas sanctionnée ; on cherche ce qui doit changer dans le fonctionnement."}, {"id": "ef20", "enonce": "Karim a listé trois idées d''amélioration proposées par l''équipe. Comment les traite-t-il ?", "options": ["Il les met toutes en place en même temps", "Une à la fois, en PDCA : problème décrit, cause, action testée à petite échelle avec un indicateur, mesure, puis généralisation ou abandon ; chaque idée reçoit une réponse sous quinze jours et porte le nom de son auteur", "Il les transmet à Michel et attend", "Il choisit la sienne"], "bonnes": [1], "explication": "L''amélioration continue vit par les petites décisions testées et mesurées, et par la réponse systématique aux idées du terrain."}, {"id": "ef21", "enonce": "Michel annonce à Karim, un vendredi, que l''atelier passera sur un nouveau logiciel de devis dans six semaines, et lui demande « de gérer ». Que fait Karim avant d''en parler à l''équipe ?", "options": ["Il envoie un message à l''équipe le soir même", "Il s''informe (pourquoi, quoi, quand, formation), anticipe les pertes et les peurs de chacun, identifie ses alliés, négocie des marges (période de transition, référent, formation de tous y compris les absents), et prévient Michel des difficultés attendues", "Il dit à l''équipe qu''il n''est pas d''accord", "Il attend que Michel l''annonce lui-même"], "bonnes": [1], "explication": "Le manager relais est exigeant vers le haut avant l''annonce ; c''est ce qui lui permet de porter la décision ensuite."}, {"id": "ef22", "enonce": "Lors de l''annonce du logiciel, Thierry dit : « Moi, je ne toucherai pas à ce truc. » Quelle est la réponse la plus juste de Karim ?", "options": ["« Tu n''as pas le choix. »", "« Ce n''est pas moi qui décide. »", "« Je sais que c''est ce qui te plaît le moins, et je comprends ce que ça te demande. La décision est prise ; ce qu''on peut décider ensemble, c''est comment tu y viens. On en parle tous les deux. »", "« Alors tu n''as plus ta place ici. »"], "bonnes": [2], "explication": "Reconnaître la perte et la peur, maintenir la décision, ouvrir ce qui peut l''être, et traiter le cas individuel en privé."}, {"id": "ef23", "enonce": "Deux semaines après la bascule, le suivi des pièces dans le nouvel outil a permis une semaine sans aucune pièce manquante. Que fait Karim ?", "options": ["Rien, c''est le minimum attendu", "Il le mesure, le montre à toute l''équipe comme premier succès, nomme ceux qui y ont contribué, puis continue : former les derniers, régler les cas particuliers, ancrer la règle", "Il déclare le changement terminé et passe à autre chose", "Il demande à Michel une prime"], "bonnes": [1], "explication": "Victoire rapide montrée, puis consolidation sans crier victoire trop tôt, puis ancrage : c''est là que les changements se gagnent ou se perdent."}, {"id": "ef24", "enonce": "Karim doit remonter à Michel que, sans un second préparateur, le nouveau poste de peinture ne tiendra pas les délais. Comment formule-t-il sa demande ?", "options": ["« On n''y arrivera jamais, il faut embaucher. »", "« On va faire au mieux. »", "Les faits chiffrés (heures de préparation, délais), l''impact (retards, heures supplémentaires, risque client), deux options (un préparateur à temps partiel, ou décaler les flottes), ce qu''il recommande, et une confirmation écrite après l''échange", "Il ne dit rien pour ne pas passer pour quelqu''un qui se plaint"], "bonnes": [2], "explication": "Communication ascendante : faits, impact, options, décision demandée, écrit après l''oral. Alerter n''est pas se plaindre."}, {"id": "ef25", "enonce": "Plusieurs réponses. Un an après, quels principes Karim a-t-il appliqués qui expliquent le mieux la transformation de l''atelier ?", "options": ["Chercher d''abord la cause dans l''organisation avant de l''attribuer aux personnes", "Donner des retours précis, à temps, en privé pour le correctif et en public pour le positif", "Garder toutes les décisions pour lui afin de rester indispensable", "Construire la sécurité psychologique : signaler une erreur n''est pas puni, la cacher l''est"], "bonnes": [0, 1, 3], "explication": "Organisation avant personnes, feedback, sécurité psychologique : trois fils qui traversent toute la formation. Garder tout pour soi est l''inverse de la délégation et de la robustesse de l''équipe."}], "seuil": 70, "tentatives_max": 2, "corrections": true, "consigne": "Évaluation finale : 25 situations à l''atelier Garnier, un an après la prise de poste de Karim. Chaque situation appelle la décision la plus juste au regard de la formation. Une seule bonne réponse par question, sauf mention « plusieurs réponses ». Seuil de réussite : 70 %. Deux tentatives. Comptez 60 minutes."}'::jsonb, publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 8 and l.ordre = 1;
+  n := n + 1;
+
+  -- 7.2-autopositionnement-final.json
+  update public.lecons l set contenu = '{"questions": [{"id": "fap01", "enonce": "Je sais expliquer clairement en quoi le rôle d''un manager diffère de celui d''un expert technique.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap02", "enonce": "Je connais les principales obligations légales qui pèsent sur un manager (sécurité, harcèlement, discrimination, temps de travail).", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap03", "enonce": "Je suis capable d''adapter ma façon de manager selon la personne et la situation, plutôt que d''appliquer un seul style.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap04", "enonce": "Je sais lister les compétences nécessaires à une activité et repérer celles qui manquent dans une équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap05", "enonce": "Je sais répartir les rôles et les missions dans une équipe de façon claire et équitable.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap06", "enonce": "Je sais formuler un objectif précis, mesurable et daté pour une équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap07", "enonce": "Je sais construire et utiliser un tableau de bord simple (quelques indicateurs) pour suivre l''activité.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap08", "enonce": "Je sais déléguer une tâche en fixant le cadre, le niveau d''autonomie et le point de contrôle.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap09", "enonce": "Je sais donner un retour (feedback) sur un comportement, positif ou correctif, sans blesser ni minimiser.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap10", "enonce": "Je sais préparer et conduire un entretien individuel de suivi avec un collaborateur.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap11", "enonce": "Je connais la différence entre l''entretien annuel d''évaluation et l''entretien de parcours professionnel prévu par la loi.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap12", "enonce": "Je sais animer une réunion d''équipe qui aboutit à des décisions et à des actions suivies.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap13", "enonce": "Je sais faire remonter un problème ou un désaccord à ma hiérarchie de manière constructive.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap14", "enonce": "Je sais ce qui motive réellement les personnes au travail et comment agir dessus en tant que manager.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap15", "enonce": "Je sais créer un climat où chacun ose signaler un problème ou une erreur sans crainte.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap16", "enonce": "Je sais repérer les signaux d''une charge de travail excessive ou d''un risque psychosocial dans une équipe et je sais quoi faire.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap17", "enonce": "Je sais ce qu''un manager peut et doit faire pour intégrer un collaborateur en situation de handicap.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap18", "enonce": "Je sais accompagner la montée en compétences d''un collaborateur (plan de développement, tutorat, formation).", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap19", "enonce": "Je sais intervenir dans un conflit entre deux collaborateurs avec une méthode, sans prendre parti.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}, {"id": "fap20", "enonce": "Je sais évaluer les résultats d''une équipe, en tirer des enseignements et conduire un changement dans l''équipe.", "options": ["Pas du tout", "Un peu", "Assez bien", "Tout à fait"], "bonnes": [3]}], "seuil": 0, "tentatives_max": 0, "corrections": false, "consigne": "Les mêmes 20 affirmations qu''au module 0. Répondez spontanément, puis comparez avec votre première réponse : c''est la mesure de votre progression. Il n''y a ni bonne ni mauvaise réponse, ni seuil."}'::jsonb, publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 8 and l.ordre = 2;
+  n := n + 1;
+
+  -- 7.3-plan-d-action-30-60-90.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Vous avez suivi 35 heures de formation, rempli six carnets de bord et passé l''évaluation finale. Il reste la seule chose qui compte vraiment : ce que vous allez faire, dans votre équipe, à partir de lundi. Ce plan d''action est votre engagement envers vous-même. Il tient sur deux pages, il se construit en trente minutes à partir de vos carnets, et il se relit tous les mois.
+
+Pourquoi 30, 60, 90 jours ? Parce qu''un changement de pratique managériale se joue dans les trois premiers mois : au-delà, soit la pratique est installée, soit elle a disparu. Et parce que trois étapes courtes se tiennent mieux qu''un objectif annuel.
+
+## Avant de remplir : relire ses carnets
+
+Reprenez les six carnets de bord et, pour chacun, notez en une ligne la « première chose à faire dès demain » que vous aviez écrite. Vous obtenez six intentions. Certaines sont faites. Certaines ne le sont pas. C''est de ces dernières que part le plan.
+
+Reprenez aussi votre autopositionnement final (leçon 7.2) et comparez-le à celui du module 0. Les affirmations où vous êtes passé de « pas du tout » à « tout à fait » sont vos acquis. Celles qui ont peu bougé sont vos chantiers.
+
+## Le gabarit
+
+Ma situation en une phrase (équipe, taille, contexte, ce qui a changé pendant la formation) : ____________________
+
+Mes trois acquis les plus nets (ce que je fais maintenant et que je ne faisais pas avant) :
+
+- 
+- 
+- 
+
+Mes trois chantiers (ce que je sais devoir changer et que je n''ai pas encore changé) :
+
+- 
+- 
+- 
+
+## À 30 jours — installer les fondations
+
+Un seul objectif, tiré de vos chantiers, qui ne dépend que de vous et qui se voit. Exemples issus des carnets : installer le brief quotidien ; tenir un entretien de suivi avec chaque membre de l''équipe ; afficher les trois objectifs et le tableau de bord ; faire un retour positif précis par personne et par semaine ; écrire le RACI des cinq décisions les plus floues.
+
+| Objectif à 30 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## À 60 jours — consolider et ouvrir
+
+Un deuxième objectif, qui peut s''appuyer sur le premier et impliquer l''équipe. Exemples : construire les règles du jeu avec l''équipe ; lancer une première rétrospective ; mettre en place un PDI pour deux personnes ; traiter un premier problème en PDCA ; conduire le retex d''un incident.
+
+| Objectif à 60 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## À 90 jours — faire le bilan et remonter
+
+Un troisième objectif, tourné vers le pilotage et la hiérarchie. Exemples : présenter un premier bilan d''activité (résultats, moyens, conditions) à ma hiérarchie ; faire un point formel avec mon responsable sur mon rôle, mes marges et mes besoins ; vérifier que les entretiens de parcours professionnel de l''équipe sont à jour ; proposer une amélioration chiffrée.
+
+| Objectif à 90 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## Mes rituels (ce que je fais chaque semaine, quoi qu''il arrive)
+
+| Rituel | Jour et heure | Durée | Installé le |
+|---|---|---|---|
+| Brief quotidien | | | |
+| Point hebdomadaire avec relevé de décisions | | | |
+| Entretiens de suivi (planifiés pour le trimestre) | | | |
+| Point « ce qui nous a compliqué la vie » / rétrospective | | | |
+| Dix minutes de préparation avant chaque entretien | | | |
+
+## Mes garde-fous personnels
+
+Ce que je m''engage à ne plus faire : ____________________ (exemples tirés de la formation : « faire au mieux » sans dire non ; recadrer par message ; laisser passer une pique en réunion ; « ça va se tasser » ; répondre à mes messages le soir)
+
+Le signal qui me dira que je retombe dans mes anciennes habitudes : ____________________
+
+La personne à qui je demanderai un retour sur mon management dans trois mois (mon responsable, un pair, un membre de l''équipe) : ____________________
+
+## Relecture
+
+| Date | Objectif | Fait / en cours / abandonné | Ce que j''en retiens |
+|---|---|---|---|
+| J+30 | | | |
+| J+60 | | | |
+| J+90 | | | |
+
+## Comment utiliser ce plan
+
+Imprimez-le ou gardez-le dans votre carnet. Mettez les trois dates de relecture dans votre agenda, maintenant. À chaque relecture, trois questions : qu''est-ce que j''ai fait ? Qu''est-ce qui m''en a empêché ? Qu''est-ce que je change ? Un objectif abandonné n''est pas un échec si vous savez pourquoi ; un objectif oublié en est un.
+
+Si vous le souhaitez, vous pouvez transmettre ce plan à IDEAFORMA (contact@ideaforma.fr) : nous vous proposerons un point téléphonique de trente minutes à 90 jours pour en faire le bilan avec vous. Ce point fait partie de l''accompagnement de la formation ; il n''est pas noté et reste confidentiel.
+
+## Pour aller plus loin, à partir de vos chantiers
+
+- Rôle et posture : Henry Mintzberg, *Manager : ce que font vraiment les managers*, Vuibert, 2011.
+- Organisation et pilotage : Patrick Lencioni, *Les cinq dysfonctionnements d''une équipe*, Un monde différent, 2005.
+- Communication et entretiens : Center for Creative Leadership, *Feedback That Works*, 2019 ; Marshall Rosenberg, *Les mots sont des fenêtres*, La Découverte, 1999.
+- Motivation et sécurité psychologique : Amy Edmondson, *L''entreprise sans peur*, Pearson, 2021 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, 2011.
+- Conflits : Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 2006.
+- Changement : John Kotter, *Conduire le changement*, Pearson, 2015.
+- Droit du travail au quotidien : Ministère du Travail, fiches pratiques, travail-emploi.gouv.fr ; INRS, inrs.fr ; ANACT, anact.fr.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Vous avez suivi 35 heures de formation, rempli six carnets de bord et passé l''évaluation finale. Il reste la seule chose qui compte vraiment : ce que vous allez faire, dans votre équipe, à partir de lundi. Ce plan d''action est votre engagement envers vous-même. Il tient sur deux pages, il se construit en trente minutes à partir de vos carnets, et il se relit tous les mois.
+
+Pourquoi 30, 60, 90 jours ? Parce qu''un changement de pratique managériale se joue dans les trois premiers mois : au-delà, soit la pratique est installée, soit elle a disparu. Et parce que trois étapes courtes se tiennent mieux qu''un objectif annuel.
+
+## Avant de remplir : relire ses carnets
+
+Reprenez les six carnets de bord et, pour chacun, notez en une ligne la « première chose à faire dès demain » que vous aviez écrite. Vous obtenez six intentions. Certaines sont faites. Certaines ne le sont pas. C''est de ces dernières que part le plan.
+
+Reprenez aussi votre autopositionnement final (leçon 7.2) et comparez-le à celui du module 0. Les affirmations où vous êtes passé de « pas du tout » à « tout à fait » sont vos acquis. Celles qui ont peu bougé sont vos chantiers.
+
+## Le gabarit
+
+Ma situation en une phrase (équipe, taille, contexte, ce qui a changé pendant la formation) : ____________________
+
+Mes trois acquis les plus nets (ce que je fais maintenant et que je ne faisais pas avant) :
+
+- 
+- 
+- 
+
+Mes trois chantiers (ce que je sais devoir changer et que je n''ai pas encore changé) :
+
+- 
+- 
+- 
+
+## À 30 jours — installer les fondations
+
+Un seul objectif, tiré de vos chantiers, qui ne dépend que de vous et qui se voit. Exemples issus des carnets : installer le brief quotidien ; tenir un entretien de suivi avec chaque membre de l''équipe ; afficher les trois objectifs et le tableau de bord ; faire un retour positif précis par personne et par semaine ; écrire le RACI des cinq décisions les plus floues.
+
+| Objectif à 30 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## À 60 jours — consolider et ouvrir
+
+Un deuxième objectif, qui peut s''appuyer sur le premier et impliquer l''équipe. Exemples : construire les règles du jeu avec l''équipe ; lancer une première rétrospective ; mettre en place un PDI pour deux personnes ; traiter un premier problème en PDCA ; conduire le retex d''un incident.
+
+| Objectif à 60 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## À 90 jours — faire le bilan et remonter
+
+Un troisième objectif, tourné vers le pilotage et la hiérarchie. Exemples : présenter un premier bilan d''activité (résultats, moyens, conditions) à ma hiérarchie ; faire un point formel avec mon responsable sur mon rôle, mes marges et mes besoins ; vérifier que les entretiens de parcours professionnel de l''équipe sont à jour ; proposer une amélioration chiffrée.
+
+| Objectif à 90 jours | Première action (date) | Comment je saurai que c''est fait | Ce qui pourrait m''en empêcher | Ce que je fais si ça arrive |
+|---|---|---|---|---|
+| | | | | |
+
+## Mes rituels (ce que je fais chaque semaine, quoi qu''il arrive)
+
+| Rituel | Jour et heure | Durée | Installé le |
+|---|---|---|---|
+| Brief quotidien | | | |
+| Point hebdomadaire avec relevé de décisions | | | |
+| Entretiens de suivi (planifiés pour le trimestre) | | | |
+| Point « ce qui nous a compliqué la vie » / rétrospective | | | |
+| Dix minutes de préparation avant chaque entretien | | | |
+
+## Mes garde-fous personnels
+
+Ce que je m''engage à ne plus faire : ____________________ (exemples tirés de la formation : « faire au mieux » sans dire non ; recadrer par message ; laisser passer une pique en réunion ; « ça va se tasser » ; répondre à mes messages le soir)
+
+Le signal qui me dira que je retombe dans mes anciennes habitudes : ____________________
+
+La personne à qui je demanderai un retour sur mon management dans trois mois (mon responsable, un pair, un membre de l''équipe) : ____________________
+
+## Relecture
+
+| Date | Objectif | Fait / en cours / abandonné | Ce que j''en retiens |
+|---|---|---|---|
+| J+30 | | | |
+| J+60 | | | |
+| J+90 | | | |
+
+## Comment utiliser ce plan
+
+Imprimez-le ou gardez-le dans votre carnet. Mettez les trois dates de relecture dans votre agenda, maintenant. À chaque relecture, trois questions : qu''est-ce que j''ai fait ? Qu''est-ce qui m''en a empêché ? Qu''est-ce que je change ? Un objectif abandonné n''est pas un échec si vous savez pourquoi ; un objectif oublié en est un.
+
+Si vous le souhaitez, vous pouvez transmettre ce plan à IDEAFORMA (contact@ideaforma.fr) : nous vous proposerons un point téléphonique de trente minutes à 90 jours pour en faire le bilan avec vous. Ce point fait partie de l''accompagnement de la formation ; il n''est pas noté et reste confidentiel.
+
+## Pour aller plus loin, à partir de vos chantiers
+
+- Rôle et posture : Henry Mintzberg, *Manager : ce que font vraiment les managers*, Vuibert, 2011.
+- Organisation et pilotage : Patrick Lencioni, *Les cinq dysfonctionnements d''une équipe*, Un monde différent, 2005.
+- Communication et entretiens : Center for Creative Leadership, *Feedback That Works*, 2019 ; Marshall Rosenberg, *Les mots sont des fenêtres*, La Découverte, 1999.
+- Motivation et sécurité psychologique : Amy Edmondson, *L''entreprise sans peur*, Pearson, 2021 ; Teresa Amabile, Steven Kramer, *The Progress Principle*, 2011.
+- Conflits : Roger Fisher, William Ury, *Comment réussir une négociation*, Seuil, 2006.
+- Changement : John Kotter, *Conduire le changement*, Pearson, 2015.
+- Droit du travail au quotidien : Ministère du Travail, fiches pratiques, travail-emploi.gouv.fr ; INRS, inrs.fr ; ANACT, anact.fr.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 8 and l.ordre = 3;
+  n := n + 1;
+
+  -- 7.4-video-et-apres.md
+  update public.lecons l set contenu = case when l.type = 'texte'
+      then jsonb_build_object('texte', 'Transcription de la vidéo.
+
+## Et après ?
+
+Vous y êtes. Trente-cinq heures, huit modules, six carnets de bord, une évaluation finale. Avant de vous laisser, je voudrais faire trois choses avec vous : regarder le chemin parcouru, parler de ce qui vient, et vous donner les moyens d''aller plus loin.
+
+## Le chemin parcouru
+
+Au module 0, vous avez répondu à vingt affirmations sur votre pratique de manager. Vous venez d''y répondre à nouveau. Regardez l''écart. Ce n''est pas une note : c''est la carte de ce que vous avez appris, et de ce qu''il vous reste à travailler.
+
+Vous savez maintenant ce qu''est le rôle d''un manager de proximité, et ce qu''il n''est pas. Vous savez le situer dans le droit : l''obligation de sécurité, ce qui relève de vous et ce qui relève de l''employeur, ce qu''on ne diffuse jamais sur la vie des gens. Vous savez organiser : des objectifs précis, une matrice de compétences, un RACI, un tableau de bord avec ses garde-fous, un poste aménagé sans en dire le motif. Vous savez communiquer : écouter avant de répondre, donner un retour qui s''appuie sur des faits, conduire un entretien de suivi, distinguer l''entretien annuel de l''entretien de parcours professionnel, animer une réunion qui décide, dire non à votre hiérarchie avec des options. Vous savez ce qui motive, ce qui fait qu''une équipe ose parler, comment reconnaître sans flatter, comment développer et intégrer, comment tenir un cadre soutenable et repérer les signaux qui comptent. Vous savez qu''un conflit se traite au niveau 2, pas au niveau 5, et que le registre change quand il s''agit d''une faute, d''une souffrance ou d''un harcèlement. Et vous savez évaluer sans juger, faire un retour d''expérience, améliorer en continu, et conduire un changement que vous n''avez pas choisi.
+
+**Le management s''apprend. Il s''apprend en le pratiquant.**
+
+Rien de tout cela n''est acquis parce que vous l''avez lu. C''est acquis quand vous l''avez fait trois fois dans votre équipe. C''est pour cela que la dernière leçon de cette formation n''est pas un quiz : c''est votre plan d''action à 30, 60 et 90 jours. Si vous ne l''avez pas encore rempli, faites-le maintenant, avant de fermer cette page. Trente minutes. Trois objectifs. Trois dates dans votre agenda.
+
+## Ce que vous pouvez faire d''IDEAFORMA après
+
+Deux choses, concrètement.
+
+La première : le point à 90 jours. Si vous nous transmettez votre plan d''action, nous vous proposons un entretien téléphonique de trente minutes, trois mois après la fin de votre formation, pour en faire le bilan avec vous. Qu''est-ce qui a marché, qu''est-ce qui a coincé, qu''est-ce qu''on ajuste. Ce point fait partie de la formation. Il n''est pas noté, il reste entre nous.
+
+La deuxième : la certification. Cette formation est construite sur le référentiel « Animer une équipe de travail », enregistré au Répertoire spécifique de France Compétences sous le numéro RS7377, dont le certificateur est CCI France. Les dix compétences de ce référentiel sont exactement celles que vous avez travaillées. Je dois être précise avec vous : à ce jour, IDEAFORMA n''est pas habilité à délivrer ce certificat. Ce que vous recevez, c''est une attestation de fin de formation, qui détaille les compétences travaillées et les résultats de votre évaluation. Si IDEAFORMA obtient l''habilitation, nous vous en informerons, et vous pourrez présenter la certification avec le bénéfice de ce que vous avez déjà fait. Nous ne vous promettons rien de plus que cela.
+
+## Pour aller plus loin
+
+Si vous voulez approfondir, trois conseils, et pas une bibliothèque.
+
+Lisez un livre, un seul, sur le chantier que votre autopositionnement a fait ressortir. Les références sont dans votre plan d''action, module par module. Pour la plupart des managers de proximité, le plus utile est celui d''Amy Edmondson sur l''entreprise sans peur, parce que la sécurité psychologique est ce qui conditionne tout le reste.
+
+Trouvez un pair. Un autre manager, dans votre entreprise ou ailleurs, avec qui parler une fois par mois de ce qui vous arrive. Le manager de proximité est seul entre sa hiérarchie et son équipe ; un pair, c''est le seul endroit où l''on peut dire « je ne sais pas comment faire » sans conséquence.
+
+Et demandez un retour sur votre management, dans trois mois, à quelqu''un qui vous voit faire. Votre responsable, ou un membre de l''équipe en qui vous avez confiance. Vous avez appris à recevoir un feedback au module 3 : remercier, demander un exemple, dire ce qu''on en fait. C''est le moment.
+
+## Votre avis
+
+Une dernière chose, qui compte pour nous. En tant qu''organisme de formation certifié Qualiopi, nous mesurons la satisfaction et les résultats de chaque formation, et nous les utilisons pour l''améliorer. Vous allez recevoir un questionnaire de satisfaction par e-mail. Il prend cinq minutes. Dites-nous ce qui vous a servi, ce qui vous a manqué, ce que vous auriez voulu voir traité autrement. Les prochains apprenants, et les prochaines versions de cette formation, en dépendent. Et dans trois mois, un second questionnaire vous demandera ce que vous avez réellement mis en œuvre : c''est celui-là qui nous dit si la formation a été utile.
+
+## À l''atelier Garnier
+
+Et Karim ? Un an après, l''atelier Garnier tient ses délais, l''équipe a grandi, Thierry prépare sa succession, Julien peint des nacrées, Fatou a son chariot, Marc est consulté chaque soir, Sophie télétravaille le mercredi, et Michel, qui voulait « que ça tourne », a découvert qu''il avait un manager. Rien de tout cela n''est venu d''un talent particulier. C''est venu de méthodes simples, appliquées avec constance, dans l''ordre : comprendre, organiser, communiquer, motiver, apaiser, piloter.
+
+C''est exactement ce qui vous attend. Merci d''avoir suivi cette formation. Et bon management.
+
+## Sources
+France Compétences, fiche RS7377 « Animer une équipe de travail », certificateur CCI France ; Référentiel national qualité (Qualiopi), indicateurs 11 (évaluation des acquis) et 30-32 (recueil des appréciations et amélioration continue) ; leçons 0.1, 7.2 et 7.3.
+')
+      else (coalesce(l.contenu, '{}'::jsonb) - 'note_conception') || jsonb_build_object('description', 'Transcription de la vidéo.
+
+## Et après ?
+
+Vous y êtes. Trente-cinq heures, huit modules, six carnets de bord, une évaluation finale. Avant de vous laisser, je voudrais faire trois choses avec vous : regarder le chemin parcouru, parler de ce qui vient, et vous donner les moyens d''aller plus loin.
+
+## Le chemin parcouru
+
+Au module 0, vous avez répondu à vingt affirmations sur votre pratique de manager. Vous venez d''y répondre à nouveau. Regardez l''écart. Ce n''est pas une note : c''est la carte de ce que vous avez appris, et de ce qu''il vous reste à travailler.
+
+Vous savez maintenant ce qu''est le rôle d''un manager de proximité, et ce qu''il n''est pas. Vous savez le situer dans le droit : l''obligation de sécurité, ce qui relève de vous et ce qui relève de l''employeur, ce qu''on ne diffuse jamais sur la vie des gens. Vous savez organiser : des objectifs précis, une matrice de compétences, un RACI, un tableau de bord avec ses garde-fous, un poste aménagé sans en dire le motif. Vous savez communiquer : écouter avant de répondre, donner un retour qui s''appuie sur des faits, conduire un entretien de suivi, distinguer l''entretien annuel de l''entretien de parcours professionnel, animer une réunion qui décide, dire non à votre hiérarchie avec des options. Vous savez ce qui motive, ce qui fait qu''une équipe ose parler, comment reconnaître sans flatter, comment développer et intégrer, comment tenir un cadre soutenable et repérer les signaux qui comptent. Vous savez qu''un conflit se traite au niveau 2, pas au niveau 5, et que le registre change quand il s''agit d''une faute, d''une souffrance ou d''un harcèlement. Et vous savez évaluer sans juger, faire un retour d''expérience, améliorer en continu, et conduire un changement que vous n''avez pas choisi.
+
+**Le management s''apprend. Il s''apprend en le pratiquant.**
+
+Rien de tout cela n''est acquis parce que vous l''avez lu. C''est acquis quand vous l''avez fait trois fois dans votre équipe. C''est pour cela que la dernière leçon de cette formation n''est pas un quiz : c''est votre plan d''action à 30, 60 et 90 jours. Si vous ne l''avez pas encore rempli, faites-le maintenant, avant de fermer cette page. Trente minutes. Trois objectifs. Trois dates dans votre agenda.
+
+## Ce que vous pouvez faire d''IDEAFORMA après
+
+Deux choses, concrètement.
+
+La première : le point à 90 jours. Si vous nous transmettez votre plan d''action, nous vous proposons un entretien téléphonique de trente minutes, trois mois après la fin de votre formation, pour en faire le bilan avec vous. Qu''est-ce qui a marché, qu''est-ce qui a coincé, qu''est-ce qu''on ajuste. Ce point fait partie de la formation. Il n''est pas noté, il reste entre nous.
+
+La deuxième : la certification. Cette formation est construite sur le référentiel « Animer une équipe de travail », enregistré au Répertoire spécifique de France Compétences sous le numéro RS7377, dont le certificateur est CCI France. Les dix compétences de ce référentiel sont exactement celles que vous avez travaillées. Je dois être précise avec vous : à ce jour, IDEAFORMA n''est pas habilité à délivrer ce certificat. Ce que vous recevez, c''est une attestation de fin de formation, qui détaille les compétences travaillées et les résultats de votre évaluation. Si IDEAFORMA obtient l''habilitation, nous vous en informerons, et vous pourrez présenter la certification avec le bénéfice de ce que vous avez déjà fait. Nous ne vous promettons rien de plus que cela.
+
+## Pour aller plus loin
+
+Si vous voulez approfondir, trois conseils, et pas une bibliothèque.
+
+Lisez un livre, un seul, sur le chantier que votre autopositionnement a fait ressortir. Les références sont dans votre plan d''action, module par module. Pour la plupart des managers de proximité, le plus utile est celui d''Amy Edmondson sur l''entreprise sans peur, parce que la sécurité psychologique est ce qui conditionne tout le reste.
+
+Trouvez un pair. Un autre manager, dans votre entreprise ou ailleurs, avec qui parler une fois par mois de ce qui vous arrive. Le manager de proximité est seul entre sa hiérarchie et son équipe ; un pair, c''est le seul endroit où l''on peut dire « je ne sais pas comment faire » sans conséquence.
+
+Et demandez un retour sur votre management, dans trois mois, à quelqu''un qui vous voit faire. Votre responsable, ou un membre de l''équipe en qui vous avez confiance. Vous avez appris à recevoir un feedback au module 3 : remercier, demander un exemple, dire ce qu''on en fait. C''est le moment.
+
+## Votre avis
+
+Une dernière chose, qui compte pour nous. En tant qu''organisme de formation certifié Qualiopi, nous mesurons la satisfaction et les résultats de chaque formation, et nous les utilisons pour l''améliorer. Vous allez recevoir un questionnaire de satisfaction par e-mail. Il prend cinq minutes. Dites-nous ce qui vous a servi, ce qui vous a manqué, ce que vous auriez voulu voir traité autrement. Les prochains apprenants, et les prochaines versions de cette formation, en dépendent. Et dans trois mois, un second questionnaire vous demandera ce que vous avez réellement mis en œuvre : c''est celui-là qui nous dit si la formation a été utile.
+
+## À l''atelier Garnier
+
+Et Karim ? Un an après, l''atelier Garnier tient ses délais, l''équipe a grandi, Thierry prépare sa succession, Julien peint des nacrées, Fatou a son chariot, Marc est consulté chaque soir, Sophie télétravaille le mercredi, et Michel, qui voulait « que ça tourne », a découvert qu''il avait un manager. Rien de tout cela n''est venu d''un talent particulier. C''est venu de méthodes simples, appliquées avec constance, dans l''ordre : comprendre, organiser, communiquer, motiver, apaiser, piloter.
+
+C''est exactement ce qui vous attend. Merci d''avoir suivi cette formation. Et bon management.
+
+## Sources
+France Compétences, fiche RS7377 « Animer une équipe de travail », certificateur CCI France ; Référentiel national qualité (Qualiopi), indicateurs 11 (évaluation des acquis) et 30-32 (recueil des appréciations et amélioration continue) ; leçons 0.1, 7.2 et 7.3.
+') end,
+    publie = true
+    from public.modules m where l.module_id = m.id and m.formation_id = f and m.ordre = 8 and l.ordre = 4;
+  n := n + 1;
+
   raise notice 'Contenus importés : % leçons', n;
 end $$;
